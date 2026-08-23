@@ -1,0 +1,9 @@
+gate_id,description,required,observed,threshold,status,notes,protocol_commit
+V1_finite,V1 finite,PASS for all four settings,PASS,Original P3 validity protocol,PASS,Core validity gate,a1f2e1bf712ec757963db4a5fb890ac02854d27e
+V2_control_invariant,V2 control invariant,PASS for all four settings,PASS,Original P3 validity protocol,PASS,Core validity gate,a1f2e1bf712ec757963db4a5fb890ac02854d27e
+V3_estimator_agreement,V3 estimator agreement,PASS for all four settings,PASS,Original P3 validity protocol,PASS,Core validity gate,a1f2e1bf712ec757963db4a5fb890ac02854d27e
+V4_stationarity,V4 stationarity,PASS for all four settings,PASS,Original P3 validity protocol,PASS,Core validity gate,a1f2e1bf712ec757963db4a5fb890ac02854d27e
+V5_precision,V5 precision,PASS for all four settings,PASS,Original P3 validity protocol,PASS,Core validity gate,a1f2e1bf712ec757963db4a5fb890ac02854d27e
+A_directional_convergence,Strict decrease of |C-B| over all four frozen points,Three strict decreases,PASS,small reversal <= 1.0 combined SE and CI overlap >= 0.5,PASS,reversals=[],a1f2e1bf712ec757963db4a5fb890ac02854d27e
+B_smallest_step_proximity,Relative coefficient error at gamma=1/192,relative error <= 0.02,0.013261777676873228,0.02,PASS,"Numerical adjudication tolerance, not a theorem error bound.",a1f2e1bf712ec757963db4a5fb890ac02854d27e
+C_O_gamma_compatibility,Bounded and sign-compatible scaled errors E/gamma,D_max/D_min <= 2.0 and compatible signs,1.0939947203153932,2.0,PASS,D_min=1.3819469; D_max=1.5118427; signs_compatible=True; near_zero=False,a1f2e1bf712ec757963db4a5fb890ac02854d27e

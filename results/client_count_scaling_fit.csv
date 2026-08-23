@@ -1,0 +1,2 @@
+H,gamma,alpha0,alpha0_ci_low,alpha0_ci_high,alpha1,intercept_excludes_zero,validity_gates_pass,N64_N128_negative,N64_N128_ci_exclude_zero,bootstrap_repetitions,bootstrap_seed,p3b_status
+2,0.0416666666666666,-0.1891448004815381,-0.1903977858500693,-0.1880349237607213,0.16499257302591114,True,True,True,True,2000,20260819,SUPPORT_N_NONVANISHING

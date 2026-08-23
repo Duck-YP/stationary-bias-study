@@ -1,0 +1,8 @@
+control_name,gamma,N,H,target,estimate,ci_low,ci_high,status,notes
+no_stochastic_noise,0.0416666666666666,24,2,0.0,-1.0453729711064724e-17,-2.2752786655376943e-17,1.845327233247494e-18,PASS,b gate 1e-10; last-batch max_abs_x=1.27764e-15
+no_stochastic_noise,0.0208333333333333,48,2,0.0,-1.0730456940884472e-17,-2.5994454205177313e-17,4.533540323408369e-18,PASS,b gate 1e-10; last-batch max_abs_x=1.63553e-14
+no_nonlinear_conversion,0.0416666666666666,24,2,0.0,0.0,0.0,0.0,PASS,C_quad=0; 3SE_C=0
+no_nonlinear_conversion,0.0208333333333333,48,2,0.0,0.0,0.0,0.0,PASS,C_quad=0; 3SE_C=0
+h1_boundary_sanity,0.0416666666666666,24,1,0.0,-0.0023448817821127878,-0.00415649742875885,-0.0005332661354667256,SANITY_CONSISTENT,Boundary-only H=1 check; never a theorem-domain failure.
+h1_boundary_sanity,0.0208333333333333,48,1,0.0,-0.00048669339114816264,-0.003657538222475939,0.0026841514401796133,SANITY_CONSISTENT,Boundary-only H=1 check; never a theorem-domain failure.
+no_persistent_control_fluctuation,,,,,,,,NOT_RUN_MISSING_APPROVED_RECURSION,NC4 was not run because no approved modified recursion is frozen.
