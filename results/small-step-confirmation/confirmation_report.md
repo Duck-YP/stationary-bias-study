@@ -13,7 +13,7 @@ linear extrapolation.
 
 **Research status: CANDIDATE THEOREM. This simulation is not a proof.**
 
-Frozen confirmation protocol commit: `a1f2e1bf712ec757963db4a5fb890ac02854d27e`
+Frozen confirmation protocol commit: `ec3917fa33cf0fd2fcb814ec2f7cba7bafc01418`
 
 ```text
 directional_convergence = PASS
