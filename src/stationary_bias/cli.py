@@ -13,6 +13,7 @@ from typing import Any, Sequence
 
 from .confirmation_figures import plot_confirmation_all
 from .figures import plot_all
+from .publication_figures import plot_publication_figures
 from .project_io import (
     CONFIG_ROOT,
     EXPERIMENT_CONFIG_ROOT,
@@ -154,6 +155,10 @@ def _parser() -> argparse.ArgumentParser:
     run_parser.add_argument("experiment", choices=RUN_CHOICES)
 
     subparsers.add_parser("build-report", help="Rebuild summaries, reports, and figures from raw CSV files.")
+    subparsers.add_parser(
+        "plot-paper-figures",
+        help="Rebuild only the publication figures from saved summary and fit CSV files.",
+    )
     subparsers.add_parser("test", help="Run the automated test suite.")
     subparsers.add_parser(
         "reproduce",
@@ -173,6 +178,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         run_named_experiment(args.experiment)
         manifest = _write_run_manifest("run", {"experiment": args.experiment})
         print(f"manifest={manifest}")
+    elif args.command == "plot-paper-figures":
+        outputs = plot_publication_figures()
+        relative = [Path(path).relative_to(REPO_ROOT).as_posix() for path in outputs]
+        print(json.dumps({"figures": relative}, indent=2))
     elif args.command == "build-report":
         outputs = build_reports()
         manifest = _write_run_manifest("build-report", outputs)

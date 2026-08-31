@@ -29,9 +29,14 @@ python run.py run coefficient-convergence
 python run.py run client-count-scaling
 python run.py run negative-controls
 python run.py run small-step-confirmation
+python run.py plot-paper-figures
 python run.py build-report
 python run.py reproduce
 ```
+
+`plot-paper-figures` is the plotting-only entry point. It reads the saved
+summary and fit CSV files and rewrites the publication PNG files without
+running simulations or recomputing means, confidence intervals, or regressions.
 
 `reproduce` runs the tests, validates all frozen matrices, executes every
 formal experiment, and rebuilds all summaries, figures, reports, and the run
@@ -94,4 +99,3 @@ The random number generator is isolated per chain and all formal seeds are
 frozen. `requirements.lock` records the exact reference package versions.
 Numerical outputs should be compared with explicit floating-point tolerances;
 PNG files need not be byte-identical across operating systems.
-

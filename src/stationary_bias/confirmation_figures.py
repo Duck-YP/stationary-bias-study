@@ -11,6 +11,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from .paper_figure_style import (
+    PAPER_STYLE,
+    REFERENCE_COLOR,
+    SCALED_ERROR_COLOR,
+    finish_paper_figure,
+    paper_axes,
+    paper_errorbar,
+)
 from .statistical_analysis import student_t_critical_95
 from .small_step_confirmation import CONFIRMATION_RESULT_ROOT
 
@@ -40,23 +48,28 @@ def _points(
 
 def plot_C(setting: pd.DataFrame) -> Path:
     data = setting.sort_values("gamma")
-    fig, ax = plt.subplots(figsize=(6.6, 4.5))
-    _points(
-        ax,
-        data["gamma"].to_numpy(float),
-        data["C_mean"].to_numpy(float),
-        data["C_ci_low"].to_numpy(float),
-        data["C_ci_high"].to_numpy(float),
-        label="Chain mean and 95% t CI",
-    )
-    target = float(data["B_theory"].iloc[0])
-    ax.axhline(target, color="#b3261e", linestyle="--", label=f"Candidate B20(4) = {target:g}")
-    ax.set_xlabel(r"Step size $\gamma$")
-    ax.set_ylabel(r"Debiased normalized coefficient $C_{\gamma,N}$")
-    ax.set_title("Small-step H=4 confirmatory coefficient")
-    ax.grid(alpha=0.25)
-    ax.legend()
-    return _finish(fig, "coefficient_vs_step_size.png", str(data["protocol_commit"].iloc[0]))
+    with plt.rc_context(PAPER_STYLE):
+        fig, ax = paper_axes()
+        paper_errorbar(
+            ax,
+            data["gamma"].to_numpy(float),
+            data["C_mean"].to_numpy(float),
+            data["C_ci_low"].to_numpy(float),
+            data["C_ci_high"].to_numpy(float),
+        )
+        target = float(data["B_theory"].iloc[0])
+        ax.axhline(
+            target,
+            color=REFERENCE_COLOR,
+            linestyle="--",
+            label=rf"Theory $B_{{20}}(4)={target:g}$",
+        )
+        ax.set_xlabel(r"Step size $\gamma$")
+        ax.set_ylabel(r"$C_{\gamma,1/\gamma,4}$")
+        ax.set_title("Normalized residual")
+        ax.grid(alpha=0.25)
+        ax.legend(loc="upper left")
+        return finish_paper_figure(fig, CONFIRMATION_RESULT_ROOT / "coefficient_vs_step_size.png")
 
 
 def plot_error(setting: pd.DataFrame) -> Path:
@@ -82,23 +95,23 @@ def plot_error(setting: pd.DataFrame) -> Path:
 
 def plot_scaled_error(setting: pd.DataFrame) -> Path:
     data = setting.sort_values("gamma")
-    fig, ax = plt.subplots(figsize=(6.6, 4.5))
-    _points(
-        ax,
-        data["gamma"].to_numpy(float),
-        data["scaled_error"].to_numpy(float),
-        data["scaled_error_ci_low"].to_numpy(float),
-        data["scaled_error_ci_high"].to_numpy(float),
-        label="Scaled error and 95% t CI",
-        color="#2e7d32",
-    )
-    ax.axhline(0.0, color="#b3261e", linestyle="--", label="Zero reference")
-    ax.set_xlabel(r"Step size $\gamma$")
-    ax.set_ylabel(r"Scaled error $E(\gamma)/\gamma$")
-    ax.set_title(r"$O(\gamma)$ compatibility diagnostic")
-    ax.grid(alpha=0.25)
-    ax.legend()
-    return _finish(fig, "scaled_error_vs_step_size.png", str(data["protocol_commit"].iloc[0]))
+    with plt.rc_context(PAPER_STYLE):
+        fig, ax = paper_axes()
+        paper_errorbar(
+            ax,
+            data["gamma"].to_numpy(float),
+            data["scaled_error"].to_numpy(float),
+            data["scaled_error_ci_low"].to_numpy(float),
+            data["scaled_error_ci_high"].to_numpy(float),
+            color=SCALED_ERROR_COLOR,
+        )
+        ax.axhline(0.0, color=REFERENCE_COLOR, linestyle="--", label="Zero reference")
+        ax.set_xlabel(r"Step size $\gamma$")
+        ax.set_ylabel(r"$\frac{C_{\gamma,1/\gamma,4}-B_{20}(4)}{\gamma}$")
+        ax.set_title("Scaled asymptotic error")
+        ax.grid(alpha=0.25)
+        ax.legend(loc="center right")
+        return finish_paper_figure(fig, CONFIRMATION_RESULT_ROOT / "scaled_error_vs_step_size.png")
 
 
 def plot_estimator_agreement(setting: pd.DataFrame) -> Path:

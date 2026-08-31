@@ -11,6 +11,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from .paper_figure_style import (
+    PAPER_STYLE,
+    REFERENCE_COLOR,
+    finish_paper_figure,
+    paper_axes,
+    paper_errorbar,
+)
 from .statistical_analysis import student_t_critical_95
 from .project_io import RESULT_ROOT, experiment_result_root
 
@@ -30,49 +37,67 @@ def _errorbar(ax: plt.Axes, x: np.ndarray, mean: np.ndarray, low: np.ndarray, hi
 
 def plot_coefficient_convergence(setting: pd.DataFrame, H: int) -> Path:
     data = setting[(setting["experiment"] == "p3a") & (setting["H"] == H)].sort_values("gamma")
-    fig, ax = plt.subplots(figsize=(6.4, 4.3))
-    _errorbar(
-        ax,
-        data["gamma"].to_numpy(float),
-        data["C_mean"].to_numpy(float),
-        data["C_ci_low"].to_numpy(float),
-        data["C_ci_high"].to_numpy(float),
-        color="#1769aa",
-        label="Chain mean and 95% t CI",
-    )
-    target = float(data["B_theory"].iloc[0])
-    ax.axhline(target, color="#b3261e", linestyle="--", label=f"Candidate B20({H}) = {target:g}")
-    ax.set_xlabel(r"Step size $\gamma$")
-    ax.set_ylabel(r"Debiased normalized coefficient $C_{\gamma,N,H}$")
-    ax.set_title(f"Coefficient convergence, H={H}")
-    ax.grid(alpha=0.25)
-    ax.legend()
-    return _finish(fig, experiment_result_root("p3a") / f"coefficient_convergence_H{H}.png")
+    with plt.rc_context(PAPER_STYLE):
+        fig, ax = paper_axes()
+        paper_errorbar(
+            ax,
+            data["gamma"].to_numpy(float),
+            data["C_mean"].to_numpy(float),
+            data["C_ci_low"].to_numpy(float),
+            data["C_ci_high"].to_numpy(float),
+        )
+        target = float(data["B_theory"].iloc[0])
+        ax.axhline(
+            target,
+            color=REFERENCE_COLOR,
+            linestyle="--",
+            label=rf"Theory $B_{{20}}({H})={target:g}$",
+        )
+        ax.set_xlabel(r"Step size $\gamma$")
+        ax.set_ylabel("Debiased normalized\nresidual\n" + r"$C_{\gamma,N,H}$")
+        ax.set_title(rf"Normalized residual ($H={H}$)")
+        ax.grid(alpha=0.25)
+        ax.legend(loc="upper left")
+        return finish_paper_figure(
+            fig,
+            experiment_result_root("p3a") / f"coefficient_convergence_H{H}.png",
+        )
 
 
 def plot_client_count_scaling(setting: pd.DataFrame) -> Path:
     data = setting[setting["experiment"] == "p3b"].copy()
-    data["inverse_N"] = 1.0 / data["N"].astype(float)
-    data = data.sort_values("inverse_N")
-    fig, ax = plt.subplots(figsize=(6.4, 4.3))
-    _errorbar(
-        ax,
-        data["inverse_N"].to_numpy(float),
-        data["C_mean"].to_numpy(float),
-        data["C_ci_low"].to_numpy(float),
-        data["C_ci_high"].to_numpy(float),
-        color="#1769aa",
-        label="Chain mean and 95% t CI",
-    )
-    target = float(data["B_theory"].iloc[0])
-    ax.axhline(target, color="#b3261e", linestyle="--", label=f"Reference B20(2) = {target:g}")
-    ax.axhline(0.0, color="black", linewidth=0.8, alpha=0.6)
-    ax.set_xlabel(r"Inverse client count $1/N$")
-    ax.set_ylabel(r"Debiased normalized coefficient $C_{\gamma,N,2}$")
-    ax.set_title(r"Client-count scaling at $\gamma=1/24$")
-    ax.grid(alpha=0.25)
-    ax.legend()
-    return _finish(fig, experiment_result_root("p3b") / "client_count_scaling.png")
+    data = data.sort_values("N")
+    clients = data["N"].to_numpy(float)
+
+    with plt.rc_context(PAPER_STYLE):
+        fig, ax = paper_axes()
+        paper_errorbar(
+            ax,
+            clients,
+            data["C_mean"].to_numpy(float),
+            data["C_ci_low"].to_numpy(float),
+            data["C_ci_high"].to_numpy(float),
+        )
+        target = float(data["B_theory"].iloc[0])
+        ax.axhline(
+            target,
+            color=REFERENCE_COLOR,
+            linestyle="--",
+            label=rf"Theory $B_{{20}}(2)={target:g}$",
+        )
+        ax.axhline(0.0, color="black", linewidth=0.8, alpha=0.6)
+        ax.set_xscale("log", base=2)
+        ax.set_xticks(clients, [str(int(value)) for value in clients])
+        ax.set_xlim(clients.min() / 1.15, clients.max() * 1.15)
+        ax.set_xlabel(r"Number of clients $N$")
+        ax.set_ylabel("Debiased normalized\nresidual\n" + r"$C_{\gamma,N,2}$")
+        ax.set_title(r"Client-count scaling at $\gamma=1/24$")
+        ax.grid(alpha=0.25)
+        ax.legend(loc="center right")
+        return finish_paper_figure(
+            fig,
+            experiment_result_root("p3b") / "client_count_scaling.png",
+        )
 
 
 def plot_negative_controls(setting: pd.DataFrame) -> Path:
