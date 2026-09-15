@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Obvious, installation-free entry point for the complete study."""
+"""Installation-free router for every research workstream."""
 
 from __future__ import annotations
 
@@ -15,4 +15,3 @@ from stationary_bias.cli import main  # noqa: E402
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -1,101 +1,97 @@
 # Stationary Bias Study
 
-This repository numerically studies the stationary bias of one-dimensional
-stochastic SCAFFOLD. It is organized so a first-time reader can identify the
-main entry point, experiment definitions, numerical engine, tests, and outputs
-without knowing the thesis's historical experiment numbers.
+這個 repository 依研究 workstream 垂直切分。第一次進入專案時，只需要先看
+`workstreams/README.md`，再進入 `P0` 或 `P1`；不用先理解舊論文章節代號。
 
-The simulations are falsification attempts. They do not prove or disprove the
-candidate theorem by themselves.
+數值模擬的定位是反證與診斷工具，不單獨構成數學證明。
 
-## Start here
-
-From this directory:
+## 快速入口
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.lock
+.\.venv\Scripts\python.exe run.py list
 .\.venv\Scripts\python.exe run.py check
-.\.venv\Scripts\python.exe run.py smoke-test
+.\.venv\Scripts\python.exe run.py test
 ```
 
-The only project entry point is `run.py`:
+所有操作都由根目錄的 `run.py` 進入，再明確指定 workstream：
 
 ```text
+python run.py list
 python run.py check
-python run.py smoke-test
 python run.py test
-python run.py run coefficient-convergence
-python run.py run client-count-scaling
-python run.py run negative-controls
-python run.py run small-step-confirmation
-python run.py plot-paper-figures
-python run.py build-report
-python run.py reproduce
+
+python run.py p0 check
+python run.py p0 smoke
+python run.py p0 run coefficient-convergence
+python run.py p0 run client-count-scaling
+python run.py p0 run negative-controls
+python run.py p0 run small-step-confirmation
+python run.py p0 report
+python run.py p0 plot
+
+python run.py p1 check
+python run.py p1 smoke
+python run.py p1 run
+python run.py p1 report
+python run.py p1 plateau check
+python run.py p1 plateau smoke
+python run.py p1 plateau run
+python run.py p1 plateau report
 ```
 
-`plot-paper-figures` is the plotting-only entry point. It reads the saved
-summary and fit CSV files and rewrites the publication PNG files without
-running simulations or recomputing means, confidence intervals, or regressions.
+`python run.py p1 run` 與 `python run.py p1 plateau run` 是正式 matched-pair
+simulation；不是日常檢查指令。正式執行只接受乾淨且已有 commit 的來源，輸出採
+受控覆寫。
 
-`reproduce` runs the tests, validates all frozen matrices, executes every
-formal experiment, and rebuilds all summaries, figures, reports, and the run
-manifest. Formal simulations can take substantially longer than the smoke
-test.
-
-## Experiments
-
-| Public name | Research question | Config |
-| --- | --- | --- |
-| `coefficient-convergence` | Does the debiased coefficient converge to the candidate theoretical value? | `configs/experiments/coefficient_convergence.yaml` |
-| `client-count-scaling` | Does the normalized effect persist as the client count increases? | `configs/experiments/client_count_scaling.yaml` |
-| `negative-controls` | Do zero-noise, quadratic, and boundary cases behave as expected? | `configs/experiments/negative_controls.yaml` |
-| `small-step-confirmation` | Does the H=4 discrepancy shrink at smaller step sizes? | `configs/experiments/small_step_confirmation.yaml` |
-
-Historical thesis labels such as P3-A are stored only as metadata and in the
-preserved scientific report. They are not used as public file or directory
-names.
-
-## Where to look
+## 專案地圖
 
 ```text
-run.py                              one obvious entry point
-configs/simulation_defaults.yaml    shared frozen protocol
-configs/experiments/                one readable config per research question
-src/stationary_bias/                simulation and analysis implementation
-tests/                              mathematical, invariant, and reproducibility tests
-results/                            raw results, derived tables, figures, and reports
-docs/                               protocol and architecture explanations
+run.py                         唯一的專案級 CLI 入口
+shared/configs/                跨 workstream 共用的數值預設
+workstreams/
+  README.md                    workstream 索引與命名規則
+  ROADMAP.md                   現有研究問題、方法與邊界
+  p0_scaffold_bias/            出版基線研究
+    README.md                  P0 目的、入口與輸出說明
+    study.yaml                 可機讀的識別與路徑
+    configs/                   P0 專屬設定
+    artifacts/                 P0 結果、圖與報告
+  p1_matched_fedavg/           matched FedAvg vs SCAFFOLD
+    README.md                  P1 目的、入口與輸出說明
+    study.yaml                 可機讀的識別與路徑
+    configs/                   P1 專屬設定
+    artifacts/                 smoke 與 formal 輸出隔離
+src/stationary_bias/
+  cli.py                       workstream 路由
+  core/                        共用模型、演算法、推論、I/O、理論
+  workstreams/                 各 workstream 的模擬與分析實作
+tests/
+  core/                        共用核心測試
+  workstreams/                 與實作同名的 workstream 測試
+docs/                          跨 workstream 的方法與架構說明
 ```
 
-Important implementation files:
+## 分流原則
 
-| File | Responsibility |
-| --- | --- |
-| `scaffold_algorithm.py` | Exact one-round SCAFFOLD recursion |
-| `simulation.py` | Seeds, burn-in, batches, stopping rules, and raw CSV output |
-| `theoretical_bias.py` | Candidate coefficients and normalization |
-| `statistical_analysis.py` | Confidence intervals and bootstrap fits |
-| `validation_checks.py` | Stationarity, finite-state, invariant, and estimator checks |
-| `result_tables.py` | Derived CSV tables and the main report |
-| `figures.py` | Original-study figures |
-| `small_step_confirmation.py` | Isolated follow-up experiment and adjudication gates |
+- 跨研究問題且語意穩定的程式放 `src/stationary_bias/core/`。
+- 只服務單一研究問題的程式、設定、結果與說明放在同一個 workstream 名下。
+- `smoke` 與 `formal` 輸出分開；P1 正式快照位於帶 matrix ID 的目錄。
+- 只有已有程式、設定或 artifact 的 workstream 才出現在索引及 CLI。
+- 現行程式與設定使用 workstream ID 及描述性名稱；舊章節縮寫不再是執行介面的一部分。
 
-## Main outputs
+更多細節見 [workstream 索引](workstreams/README.md)與
+[架構資料流](docs/project_structure.md)。
 
-- `results/final_report.md`: original preregistered study report.
-- `results/small-step-confirmation/confirmation_report.md`: confirmatory follow-up report.
-- `results/*/run_summary.csv`: one row per independent chain.
-- `results/*/batch_summary.csv`: batch-level observations used for inference.
-- `results/run_manifest.json`: config hashes, Git state, runtime, and package versions.
+## 可重現性邊界
 
-Raw CSV files are treated as primary numerical records. Summary tables,
-figures, and Markdown reports are derived artifacts and can be rebuilt with
-`python run.py build-report`.
+每條 chain 使用獨立 NumPy RNG，正式 seeds 與矩陣由設定檔固定。
+`requirements.lock` 記錄參考套件版本。CSV 是主要數值紀錄；PNG 在不同作業系統間
+不要求 byte-identical。
 
-## Reproducibility boundary
-
-The random number generator is isolated per chain and all formal seeds are
-frozen. `requirements.lock` records the exact reference package versions.
-Numerical outputs should be compared with explicit floating-point tolerances;
-PNG files need not be byte-identical across operating systems.
+P1 正式執行先記錄來源 commit、dirty state、config hash、matrix ID、seeds 與套件
+版本，再於 staging 目錄產生完整輸出。同一 matrix ID 已有結果時，三份原始 CSV
+必須在排除 commit／dirty provenance 欄位後逐欄逐列相同，才會整體取代 canonical
+目錄；不相同則保留原目錄並停止。`report` 可由原始 CSV 重建並覆寫衍生的摘要、
+報告與圖片。出版 archive 不屬於受控覆寫目標。

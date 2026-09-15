@@ -1,0 +1,113 @@
+{
+  "config_hash": "a1285b43e060afa8345bfe80739f18a82dfa481dcd97e8dcf6c70797bfceb809",
+  "config_path": "C:\\Users\\User\\source\\yp\\stationary-bias-study\\configs\\experiments\\p1_matched_fedavg.yaml",
+  "config_sha256": "5fb248b245200ea85da1622ea30303b2cd9121e7a302bc2ae788e3bc5579b85a",
+  "environment": {
+    "git_commit": "6db4b66cf1e542108be0d03cf98cb8a58643bb11",
+    "git_dirty": false,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    },
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.13"
+  },
+  "experiment_matrix_identifier": "p1-f7-matched-v1",
+  "figures": [
+    "fedavg_coefficient_H2.png",
+    "fedavg_coefficient_H4.png",
+    "matched_difference_H2.png",
+    "matched_difference_H4.png"
+  ],
+  "formal_matrix": {
+    "all_unique": true,
+    "primary_pairs": 80,
+    "primary_seeds": [
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308
+    ],
+    "settings": 14,
+    "small_step_h4_pairs": 32,
+    "small_step_h4_seeds": [
+      401,
+      402,
+      403,
+      404,
+      405,
+      406,
+      407,
+      408
+    ],
+    "total_pairs": 112,
+    "unique_pair_ids": 112
+  },
+  "git_commit": "6db4b66cf1e542108be0d03cf98cb8a58643bb11",
+  "phase": "formal",
+  "provenance_capture_point": "before_any_p1_output_write",
+  "rows": {
+    "algorithm_runs": 224,
+    "batches": 22400,
+    "matched_pairs": 112
+  },
+  "run_matrix": {
+    "all_unique": true,
+    "primary_pairs": 80,
+    "primary_seeds": [
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308
+    ],
+    "settings": 14,
+    "small_step_h4_pairs": 32,
+    "small_step_h4_seeds": [
+      401,
+      402,
+      403,
+      404,
+      405,
+      406,
+      407,
+      408
+    ],
+    "total_pairs": 112,
+    "unique_pair_ids": 112
+  },
+  "schema_version": 1,
+  "seeds": {
+    "primary": [
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308
+    ],
+    "small_step_h4": [
+      401,
+      402,
+      403,
+      404,
+      405,
+      406,
+      407,
+      408
+    ]
+  },
+  "source_git_dirty_at_run_start": false,
+  "study": "p1-matched-fedavg"
+}

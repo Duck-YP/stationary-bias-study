@@ -1,0 +1,28 @@
+experiment: negative_controls
+description: Frozen negative controls and a boundary sanity check.
+study_role: original_preregistered_experiment
+controls:
+  - name: no_stochastic_noise
+    objective: nonlinear_main
+    noise: zero
+    H: 2
+    settings:
+      - {gamma_denominator: 24, N: 24}
+      - {gamma_denominator: 48, N: 48}
+  - name: no_nonlinear_conversion
+    objective: quadratic
+    noise: rademacher
+    H: 2
+    settings:
+      - {gamma_denominator: 24, N: 24}
+      - {gamma_denominator: 48, N: 48}
+  - name: h1_boundary_sanity
+    objective: nonlinear_main
+    noise: rademacher
+    H: 1
+    settings:
+      - {gamma_denominator: 24, N: 24}
+      - {gamma_denominator: 48, N: 48}
+    sanity_rule: both_settings_abs_C_le_max_3SE_or_0p02
+  - name: no_persistent_control_fluctuation
+    status: NOT_RUN_MISSING_APPROVED_RECURSION

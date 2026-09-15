@@ -24,8 +24,16 @@ replicates in cross-chain confidence intervals.
 5. Check finite states, the control-sum invariant, stationarity, and agreement
    of two estimators.
 6. Write raw chain and batch records before deriving summaries.
-7. Apply frozen falsification or confirmation gates.
+7. Apply the configured falsification or confirmation gates.
+8. For a formal P1 run, compare staged raw scientific fields with any canonical
+   result for the same matrix, then replace the canonical directory as one unit.
 
-All numerical parameters and thresholds are defined in `configs/`. The
-implementation records a SHA-256 hash of those files in `run_manifest.json`.
+Shared numerical defaults are defined in `shared/configs/`; each research
+matrix and its thresholds are defined in that workstream's `configs/`
+directory. A formal manifest records SHA-256 hashes for the relevant files.
 
+Formal P1 provenance is captured before any staging or canonical output write.
+The recorded source state includes the Git commit and run-start dirty state;
+formal execution requires that dirty state to be false. Commit and dirty fields
+may differ between reproductions, but raw scientific fields must match exactly
+before an existing canonical result can be replaced.
