@@ -1,7 +1,7 @@
 # Stationary Bias Study
 
-這個 repository 依研究 workstream 垂直切分。第一次進入專案時，只需要先看
-`workstreams/README.md`，再進入 `P0` 或 `P1`；不用先理解舊論文章節代號。
+這個 repository 依研究 workstream 垂直切分。
+第一次進入專案時，只需要先看 `workstreams/README.md`，再進入 `P0`、`P1` 或 `P2`。
 
 數值模擬的定位是反證與診斷工具，不單獨構成數學證明。
 
@@ -39,11 +39,31 @@ python run.py p1 plateau check
 python run.py p1 plateau smoke
 python run.py p1 plateau run
 python run.py p1 plateau report
+
+python run.py p2 check
+python run.py p2 smoke
+python run.py p2 formal check
+python run.py p2 formal primary run
+python run.py p2 formal primary analyze
+python run.py p2 formal primary report
+python run.py p2 formal h4-small-step run
+python run.py p2 formal h4-small-step analyze
+python run.py p2 formal h4-small-step report
+python run.py p2 rotation check
+python run.py p2 rotation run
+python run.py p2 rotation report
+python run.py p2 d5 check
+python run.py p2 d5 run
+python run.py p2 d5 analyze
+python run.py p2 d5 report
+python run.py p2 plateau check
+python run.py p2 plateau run
+python run.py p2 plateau analyze
+python run.py p2 plateau report
 ```
 
-`python run.py p1 run` 與 `python run.py p1 plateau run` 是正式 matched-pair
-simulation；不是日常檢查指令。正式執行只接受乾淨且已有 commit 的來源，輸出採
-受控覆寫。
+`python run.py p1 run` 與 `python run.py p1 plateau run` 是正式 matched-pair simulation；不是日常檢查指令。
+正式執行只接受乾淨且已有 commit 的來源，輸出採受控覆寫。
 
 ## 專案地圖
 
@@ -63,6 +83,11 @@ workstreams/
     study.yaml                 可機讀的識別與路徑
     configs/                   P1 專屬設定
     artifacts/                 smoke 與 formal 輸出隔離
+  p2_multidimensional_validation/
+    README.md                  P2 目的、入口與輸出說明
+    study.yaml                 可機讀的識別與路徑
+    configs/                   P2 smoke、d=2、rotation、plateau 與 d=5 設定
+    artifacts/                 P2 smoke 與 formal 輸出隔離
 src/stationary_bias/
   cli.py                       workstream 路由
   core/                        共用模型、演算法、推論、I/O、理論
@@ -77,21 +102,22 @@ docs/                          跨 workstream 的方法與架構說明
 
 - 跨研究問題且語意穩定的程式放 `src/stationary_bias/core/`。
 - 只服務單一研究問題的程式、設定、結果與說明放在同一個 workstream 名下。
-- `smoke` 與 `formal` 輸出分開；P1 正式快照位於帶 matrix ID 的目錄。
+- `smoke` 與 `formal` 輸出分開；P1、P2 正式快照位於帶 matrix ID 的目錄。
 - 只有已有程式、設定或 artifact 的 workstream 才出現在索引及 CLI。
 - 現行程式與設定使用 workstream ID 及描述性名稱；舊章節縮寫不再是執行介面的一部分。
 
-更多細節見 [workstream 索引](workstreams/README.md)與
-[架構資料流](docs/project_structure.md)。
+更多細節見 [workstream 索引](workstreams/README.md)與 [架構資料流](docs/project_structure.md)。
 
 ## 可重現性邊界
 
 每條 chain 使用獨立 NumPy RNG，正式 seeds 與矩陣由設定檔固定。
-`requirements.lock` 記錄參考套件版本。CSV 是主要數值紀錄；PNG 在不同作業系統間
-不要求 byte-identical。
+`requirements.lock` 記錄參考套件版本。
+CSV 是主要數值紀錄；PNG 在不同作業系統間不要求 byte-identical。
 
-P1 正式執行先記錄來源 commit、dirty state、config hash、matrix ID、seeds 與套件
-版本，再於 staging 目錄產生完整輸出。同一 matrix ID 已有結果時，三份原始 CSV
-必須在排除 commit／dirty provenance 欄位後逐欄逐列相同，才會整體取代 canonical
-目錄；不相同則保留原目錄並停止。`report` 可由原始 CSV 重建並覆寫衍生的摘要、
-報告與圖片。出版 archive 不屬於受控覆寫目標。
+P1 正式執行先記錄來源 commit、dirty state、config hash、matrix ID、seeds 與套件版本，再於 staging 目錄產生完整輸出。
+同一 matrix ID 已有結果時，三份原始 CSV 在排除 commit／dirty provenance 欄位後，離散與識別欄位必須逐欄逐列相同；指定的連續數值欄位只接受文件化的跨平台浮點 roundoff 容差。
+通過後才會整體取代 canonical 目錄；不相容則保留原目錄並停止。
+`report` 可由原始 CSV 重建並覆寫衍生的摘要、報告與圖片。
+
+P2 的 coefficient、rotation 與 fixed-γ plateau runner 採相同的 clean-commit、staging、raw scientific field comparison 與原子目錄交換規則。
+`analyze`、`report` 只讀取已保存的 raw／derived 資料，並在 staging 重建後交換 canonical 目錄，不會呼叫 simulator。

@@ -18,7 +18,7 @@ def test_public_experiment_names_are_descriptive() -> None:
         "client_count_scaling",
         "negative_controls",
     }
-    assert set(WORKSTREAMS) == {"p0", "p1"}
+    assert set(WORKSTREAMS) == {"p0", "p1", "p2"}
 
 
 def test_project_has_one_obvious_entry_point() -> None:
@@ -27,7 +27,11 @@ def test_project_has_one_obvious_entry_point() -> None:
 
 
 def test_implemented_workstreams_have_matching_project_areas() -> None:
-    for slug in ("p0_scaffold_bias", "p1_matched_fedavg"):
+    for slug in (
+        "p0_scaffold_bias",
+        "p1_matched_fedavg",
+        "p2_multidimensional_validation",
+    ):
         assert (PROJECT_ROOT / "workstreams" / slug / "README.md").is_file()
         assert (PROJECT_ROOT / "workstreams" / slug / "study.yaml").is_file()
         assert (PROJECT_ROOT / "src" / "stationary_bias" / "workstreams" / slug).is_dir()
@@ -35,7 +39,19 @@ def test_implemented_workstreams_have_matching_project_areas() -> None:
 
 
 def test_frozen_run_matrices_pass() -> None:
-    assert check_all()["status"] == "PASS"
+    checked = check_all()
+    assert checked["status"] == "PASS"
+    assert set(checked["p2"]) == {
+        "status",
+        "workstream",
+        "smoke",
+        "formal_d2",
+        "rotation_d2",
+        "formal_d5",
+        "fixed_gamma_large_N_d2",
+        "artifacts",
+    }
+    assert checked["p2"]["artifacts"]["status"] == "PASS"
 
 
 def test_reader_facing_documents_describe_only_current_project_state() -> None:

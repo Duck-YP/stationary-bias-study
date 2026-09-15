@@ -1,66 +1,61 @@
 # Project structure and data flow
 
-Repository 採用「workstream 垂直切分、核心能力水平共用」的結構。
+Repository 採用「研究 workstream 垂直切分、穩定能力水平共用」的結構。
 
 ```text
                          python run.py
                               |
-                  +-----------+-----------+
-                  |                       |
-              P0 router               P1 router
-                  |                       |
-          workstream config       workstream config
-                  |                       |
-          P0 simulation           P1 matched simulation
-                  \                       /
-                   +------ shared core --+
+                    workstream registry
                               |
-                    isolated artifacts
+                     workstream modules
+                              |
+                         shared core
+                              |
+                  workstream-owned artifacts
 ```
 
-`src/stationary_bias/core/` 只放跨 workstream 的穩定元件：objective/noise model、
-SCAFFOLD kernel、統計推論、驗證、共用理論、I/O 與繪圖樣式。它不決定特定研究題目
-的矩陣、停止規則或輸出報告。
+`src/stationary_bias/core/` 只放跨 workstream 且介面穩定的能力，例如模型、演算法 kernel、統計推論、驗證、artifact transaction、I/O 與繪圖樣式。
+研究矩陣、seeds、停止規則、判定門檻與結果敘事由個別 workstream 擁有。
 
-`src/stationary_bias/workstreams/<slug>/` 擁有該題目的 simulation、analysis、theory
-補充與 figures。對應的設定、說明與 artifacts 放在 repository 根目錄下同名的
-`workstreams/<slug>/`，因此從資料夾名稱即可一路找到入口與輸出。
-
-## Artifact isolation
+## Workstream layout
 
 ```text
-workstreams/p0_scaffold_bias/artifacts/
-  publication_snapshot/      原始出版研究快照
-  small_step_confirmation/    P0 小步長確認
-  smoke/                      可拋棄的快速檢查
+workstreams/<slug>/
+  README.md                 研究問題、方法、入口與結果解讀
+  study.yaml                workstream policy and metadata
+  configs/                  matrices, seeds, thresholds and budgets
+  artifacts/
+    smoke/                  disposable engineering checks
+    formal/<matrix-id>/     canonical formal result
+    archive/                optional immutable snapshots
 
-workstreams/p1_matched_fedavg/artifacts/
-  smoke/                      P1 快速檢查
-  formal/<matrix-id>/         P1 正式矩陣快照
-  archive/                    命名整理前保存的出版快照
+src/stationary_bias/workstreams/<slug>/
+  simulation / analysis / theory / figures / routing
+
+tests/workstreams/<slug>/
+  contract and regression tests
 ```
 
-P1 formal runner 只接受乾淨且已有 commit 的來源。它先在 canonical 目錄旁的 staging
-目錄建立 raw CSV、run-start provenance、摘要、manifest、報告與圖片；全部產生後，
-才檢查既有 canonical raw CSV 的科學欄位是否完全相同。相同時整體交換目錄，不同時
-保留原目錄。交換失敗時會復原原目錄。`archive/` 永遠不會成為交換目標。
+只建立實際需要的檔案與 artifact 類別，不建立空的階段佔位。
 
-Smoke 路徑由 `.gitignore` 排除並可直接覆寫。衍生摘要、報告與圖片可從已保存的 raw
-CSV 重建。run-start provenance 在 staging 目錄建立前取得，因此實驗輸出不會改變
-所記錄的來源 dirty state。
+## Artifact lifecycle
+
+每個 workstream 只寫入自己的 artifact 目錄。
+Formal runner 先在 staging 產生 raw data、provenance、摘要、manifest、報告與圖片，通過 workstream policy 的驗證後才整體替換 canonical directory；失敗時保留原目錄。
+`archive/` 不得成為替換目標。
+
+Smoke output 是否忽略或覆寫由 workstream policy 決定。
+衍生內容應能從保存的 raw data 重建。
 
 ## Adding a workstream
 
-1. 在 `workstreams/ROADMAP.md` 登錄研究問題、方法與範圍。
-2. 建立 `workstreams/<pN_slug>/{README.md,study.yaml,configs/,artifacts/}`。
-3. 實作放 `src/stationary_bias/workstreams/<pN_slug>/`，測試鏡像放
-   `tests/workstreams/<pN_slug>/`。
-4. 只有真正跨題目且介面穩定的元件才上移至 `core/`。
-5. 在 `src/stationary_bias/cli.py` 註冊 `python run.py pN ...` 入口。
+1. 登錄研究問題、方法、範圍與預期證據。
+2. 建立 workstream 說明、設定、實作與測試。
+3. 凍結 inferential unit、run matrix、seeds、停止規則、gates、provenance policy 與 artifact schema。
+4. 只將跨題目且介面穩定的元件移入 `core/`。
+5. 註冊 CLI 入口與 repository-level checks。
 
 ## Documentation contract
 
-Repository 內的說明文件只描述目前可由程式、設定或 artifact 驗證的專案內容，包括
-研究問題、方法、入口、資料結構、輸出規格與科學判定。專案管理進度、空的 workstream
-佔位、工作清單及撰寫工具不屬於公開研究文件；這些資訊使用版本控制歷史或外部 issue
-tracker 管理。
+`docs/` 描述共用架構、數值原則與資料生命週期；`workstreams/<slug>/` 描述個別研究。
+文件只記錄可由程式、設定或 artifact 驗證的內容。

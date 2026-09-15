@@ -1,39 +1,41 @@
 # Numerical protocol
 
+This document defines the numerical rules shared by all workstreams.
+Each workstream defines its research question, estimators, run matrix, seeds, thresholds, stopping rules, and exceptions in its own README, study file, and configuration directory.
+
 ## Claim boundary
 
-The numerical study is designed to challenge a candidate asymptotic formula.
-A passing simulation is evidence of numerical consistency, not a mathematical
-proof. A discrepancy triggers implementation and theorem audits before any
-claim about the theorem is made.
+A passing simulation shows numerical consistency, not mathematical proof. 
+A discrepancy requires implementation, configuration, and theorem audits before drawing a scientific conclusion.
 
-## Independent unit
+## Inferential unit
 
-The independent inferential unit is the Markov chain. Eight chains use frozen,
-distinct seeds and initial states. Batch means within one chain are used to
-estimate its Monte Carlo uncertainty; they are not counted as independent
-replicates in cross-chain confidence intervals.
+Each workstream must identify its independent inferential unit and dependence structure before formal execution. 
+For chain-based studies, batch means estimate within-chain Monte Carlo uncertainty and are not independent cross-chain replicates.
 
-## Execution stages
+## Formal execution
 
-1. Validate the exact run matrix and unique run keys.
-2. Initialize one RNG stream and one state per chain.
-3. Discard the frozen burn-in interval.
-4. Collect batch means until the precision rule passes or the maximum number
-   of batches is reached.
-5. Check finite states, the control-sum invariant, stationarity, and agreement
-   of two estimators.
-6. Write raw chain and batch records before deriving summaries.
-7. Apply the configured falsification or confirmation gates.
-8. For a formal P1 run, compare staged raw scientific fields with any canonical
-   result for the same matrix, then replace the canonical directory as one unit.
+1. Load the frozen configuration and validate the run matrix and unique run keys.
+2. Initialize the configured random streams and states.
+3. Apply warm-up or burn-in when required.
+4. Collect data until the precision rule passes or the budget is exhausted.
+5. Check model invariants, numerical stability, stationarity, estimator agreement, and workstream-specific gates.
+6. Save raw records before deriving summaries, reports, or figures.
+7. Build formal output in staging and validate it before replacing a canonical result.
 
-Shared numerical defaults are defined in `shared/configs/`; each research
-matrix and its thresholds are defined in that workstream's `configs/`
-directory. A formal manifest records SHA-256 hashes for the relevant files.
+An omitted stage must be documented by the workstream.
 
-Formal P1 provenance is captured before any staging or canonical output write.
-The recorded source state includes the Git commit and run-start dirty state;
-formal execution requires that dirty state to be false. Commit and dirty fields
-may differ between reproductions, but raw scientific fields must match exactly
-before an existing canonical result can be replaced.
+## Configuration and provenance
+
+Shared defaults live in `shared/configs/`; workstream settings live in `workstreams/<slug>/configs/`.
+The workstream declares its source policy.
+Formal provenance records the applicable source commit, dirty state, configuration hashes, matrix identifier, seeds, runtime, platform, and package versions before any output write.
+
+## Controlled overwrite
+
+Result identity, schemas, row counts, run keys, discrete values, and non-numeric scientific fields must match exactly.
+Numeric fields also match exactly unless the workstream declares field-level tolerances for bounded floating-point roundoff.
+Tolerances must be explicit, tested, and recorded in the overwrite audit.
+A failed comparison preserves the canonical result.
+
+Expected-to-change provenance fields may be excluded from scientific comparison but remain recorded in the new provenance and manifest.

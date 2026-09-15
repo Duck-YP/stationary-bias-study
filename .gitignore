@@ -217,12 +217,19 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
+# Local operating-system metadata and ad hoc source archives
+.DS_Store
+/workstreams/p2_multidimensional_validation.zip
 
 # Workstream smoke-test output
 workstreams/p0_scaffold_bias/artifacts/smoke/
 workstreams/p1_matched_fedavg/artifacts/smoke/
+workstreams/p2_multidimensional_validation/artifacts/smoke/
 
 # P1 formal-output transaction workspaces
 workstreams/p1_matched_fedavg/artifacts/formal/.*.staging-*/
 workstreams/p1_matched_fedavg/artifacts/formal/.*.previous-*/
 
+# P2 formal-output transaction workspaces
+workstreams/p2_multidimensional_validation/artifacts/formal/.*.staging-*/
+workstreams/p2_multidimensional_validation/artifacts/formal/.*.previous-*/

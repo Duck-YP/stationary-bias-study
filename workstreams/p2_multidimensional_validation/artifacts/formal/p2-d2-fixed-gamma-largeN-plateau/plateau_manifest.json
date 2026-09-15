@@ -1,0 +1,341 @@
+{
+  "artifact_filenames": [
+    "run_start_provenance.json",
+    "d2_fixed_gamma_largeN_plateau_config_snapshot.yaml",
+    "run_summary.csv",
+    "batch_summary.csv",
+    "setting_summary.csv",
+    "setting_diagnostics.csv",
+    "plateau_fit_summary.csv",
+    "plateau_fit_curve.csv",
+    "bootstrap_intercepts.csv",
+    "falsification_summary.csv",
+    "p2_d2_fixed_gamma_largeN_coordinate_1.png",
+    "p2_d2_fixed_gamma_largeN_coordinate_2.png",
+    "p2_d2_fixed_gamma_largeN_plateau_report.md",
+    "plateau_manifest.json"
+  ],
+  "artifact_namespace": "workstreams/p2_multidimensional_validation/artifacts/formal/p2-d2-fixed-gamma-largeN-plateau",
+  "commands": {
+    "analyze": ".venv/bin/python run.py p2 plateau analyze",
+    "check": ".venv/bin/python run.py p2 plateau check",
+    "report": ".venv/bin/python run.py p2 plateau report",
+    "run": ".venv/bin/python run.py p2 plateau run"
+  },
+  "config_path": "workstreams/p2_multidimensional_validation/configs/d2_fixed_gamma_largeN_plateau.yaml",
+  "config_sha256": "41be0d24d0de3f38df4eaf5db65db51e212e4667611a789ded4b0c3c730119d2",
+  "config_snapshot": "d2_fixed_gamma_largeN_plateau_config_snapshot.yaml",
+  "environment": {
+    "git_commit": "c9c21e71710e4d8dc24b540e3c489f68debef73c",
+    "git_dirty": false,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.14"
+  },
+  "estimators": {
+    "norm_only_primary_forbidden": true,
+    "primary": "stationary_mean_balance",
+    "primary_representation": "signed_coordinatewise",
+    "secondary_diagnostic": "direct_stationary_sample_mean"
+  },
+  "expected_chain_count": 40,
+  "figures": [
+    "p2_d2_fixed_gamma_largeN_coordinate_1.png",
+    "p2_d2_fixed_gamma_largeN_coordinate_2.png"
+  ],
+  "fit_model": {
+    "fit_variable": "inverse_N",
+    "fit_variable_formula": "1/N",
+    "model": "C_hat_j = beta0_j + beta1_j / N",
+    "per": "coordinate",
+    "plateau_estimate": "beta0_j",
+    "response": "setting_mean_balance_C_hat_coordinate"
+  },
+  "gate_definitions": {
+    "F0": "every N setting passes finite-state, zero-sum-control, and stationarity validity",
+    "F1": "all five frozen N settings and all eight frozen seeds are present without exclusion",
+    "F2": "both coordinate intercept estimates and bootstrap intervals are finite",
+    "F3": "each coordinate has a simultaneous intercept interval excluding zero, consistent per-N sign, and the N=128 mean is closer to beta0 than the N=8 mean",
+    "F4": "beta0 minus B20 and that discrepancy divided by gamma are explicitly finite and reported",
+    "F5": "exact B20 confidence-interval coverage is diagnostic only and is not a PASS requirement",
+    "F6": "flag a scientific warning for a near-zero or theory-sign-reversed intercept, repeated per-N sign changes, or an N=128 magnitude exceeding three times abs(B20)"
+  },
+  "gate_results": [
+    {
+      "detail": "finite_state_zero_sum_control_and_stationarity",
+      "gate": "F0",
+      "passed": true,
+      "scientific_warning": false,
+      "scope": "all_N_settings"
+    },
+    {
+      "detail": "all_five_N_settings_and_all_eight_seeds_present",
+      "gate": "F1",
+      "passed": true,
+      "scientific_warning": false,
+      "scope": "frozen_matrix"
+    },
+    {
+      "detail": "finite_intercept_and_bootstrap_interval",
+      "gate": "F2",
+      "passed": true,
+      "scientific_warning": false,
+      "scope": "coordinate_1"
+    },
+    {
+      "detail": "{\"N128_closer_to_beta0_than_N8\": true, \"per_N_sign_consistent\": true, \"simultaneous_interval_excludes_zero\": true}",
+      "gate": "F3",
+      "passed": true,
+      "scientific_warning": false,
+      "scope": "coordinate_1"
+    },
+    {
+      "detail": "beta0_minus_B20=-0.00061023369259453203;scaled=-0.014645608622268791",
+      "gate": "F4",
+      "passed": true,
+      "scientific_warning": false,
+      "scope": "coordinate_1"
+    },
+    {
+      "detail": "diagnostic_only_B20_coverage=False",
+      "gate": "F5",
+      "passed": "",
+      "scientific_warning": false,
+      "scope": "coordinate_1"
+    },
+    {
+      "detail": "{\"large_N_magnitude_excess\": false, \"near_zero_intercept\": false, \"repeated_per_N_sign_changes\": false, \"theory_sign_reversed\": false}",
+      "gate": "F6",
+      "passed": true,
+      "scientific_warning": false,
+      "scope": "coordinate_1"
+    },
+    {
+      "detail": "finite_intercept_and_bootstrap_interval",
+      "gate": "F2",
+      "passed": true,
+      "scientific_warning": false,
+      "scope": "coordinate_2"
+    },
+    {
+      "detail": "{\"N128_closer_to_beta0_than_N8\": true, \"per_N_sign_consistent\": true, \"simultaneous_interval_excludes_zero\": true}",
+      "gate": "F3",
+      "passed": true,
+      "scientific_warning": false,
+      "scope": "coordinate_2"
+    },
+    {
+      "detail": "beta0_minus_B20=-0.00039016135013247161;scaled=-0.0093638724031793324",
+      "gate": "F4",
+      "passed": true,
+      "scientific_warning": false,
+      "scope": "coordinate_2"
+    },
+    {
+      "detail": "diagnostic_only_B20_coverage=False",
+      "gate": "F5",
+      "passed": "",
+      "scientific_warning": false,
+      "scope": "coordinate_2"
+    },
+    {
+      "detail": "{\"large_N_magnitude_excess\": false, \"near_zero_intercept\": false, \"repeated_per_N_sign_changes\": false, \"theory_sign_reversed\": false}",
+      "gate": "F6",
+      "passed": true,
+      "scientific_warning": false,
+      "scope": "coordinate_2"
+    }
+  ],
+  "interpretation_boundary": "fixed_gamma_empirical_consistency_test_not_exact_B20_test_or_proof",
+  "matrix_id": "p2-d2-fixed-gamma-largeN-plateau",
+  "normalization": "C_hat = (b_hat - (gamma / N) * B10) / gamma^2",
+  "observed_chain_count": 40,
+  "observed_rows": {
+    "batch_summary": 16000,
+    "run_summary": 160
+  },
+  "phase": "formal_fixed_gamma_large_N_plateau",
+  "plateau_fits": [
+    {
+      "B20_component": -0.048004016395207,
+      "B20_covered_simultaneous_diagnostic": false,
+      "H": 2,
+      "beta0": -0.048614250087801535,
+      "beta0_minus_B20": -0.000610233692594532,
+      "beta0_minus_B20_over_gamma": -0.014645608622268791,
+      "beta1": 0.028190038068046052,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 3901,
+      "coordinate": 0,
+      "fit_variable": "inverse_N",
+      "gamma": 0.0416666666666666,
+      "marginal_ci_high": -0.04838918111766296,
+      "marginal_ci_low": -0.04886620795762221,
+      "num_settings": 5,
+      "simultaneous_ci_high": -0.048350400250256505,
+      "simultaneous_ci_low": -0.048907907551780365
+    },
+    {
+      "B20_component": -0.060005020494009,
+      "B20_covered_simultaneous_diagnostic": false,
+      "H": 2,
+      "beta0": -0.06039518184414147,
+      "beta0_minus_B20": -0.0003901613501324716,
+      "beta0_minus_B20_over_gamma": -0.009363872403179332,
+      "beta1": 0.03486034940327177,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 3901,
+      "coordinate": 1,
+      "fit_variable": "inverse_N",
+      "gamma": 0.0416666666666666,
+      "marginal_ci_high": -0.060113907725746304,
+      "marginal_ci_low": -0.0607101310350283,
+      "num_settings": 5,
+      "simultaneous_ci_high": -0.06006556640853644,
+      "simultaneous_ci_low": -0.060762180169785136
+    }
+  ],
+  "protocol_path": "workstreams/p2_multidimensional_validation/d2_fixed_gamma_largeN_plateau_protocol.md",
+  "protocol_sha256": "891b2d2a52137de92289167d012248f83beee851110031ecc769cb92ab85a483",
+  "report": "p2_d2_fixed_gamma_largeN_plateau_report.md",
+  "run_matrix": {
+    "H_values": [
+      2
+    ],
+    "N_values": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "all_unique": true,
+    "chains": 40,
+    "chains_per_setting": [
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "d_values": [
+      2
+    ],
+    "gamma_fixed": true,
+    "gamma_values": [
+      0.041666666666666664
+    ],
+    "matrix_id": "p2-d2-fixed-gamma-largeN-plateau",
+    "seeds": [
+      1301,
+      1302,
+      1303,
+      1304,
+      1305,
+      1306,
+      1307,
+      1308
+    ],
+    "settings": 5,
+    "unique_run_ids": 40
+  },
+  "schema_version": 1,
+  "seeds": [
+    1301,
+    1302,
+    1303,
+    1304,
+    1305,
+    1306,
+    1307,
+    1308
+  ],
+  "source_commit": "c9c21e71710e4d8dc24b540e3c489f68debef73c",
+  "source_dirty": false,
+  "stopping_protocol": {
+    "absolute_half_width": 0.0025,
+    "check_after_batches": 100,
+    "coordinate_rule": "h_j <= max(0.0025, 0.10 * abs(B20_j(H)))",
+    "extend_by_batches": 50,
+    "relative_half_width": 0.1,
+    "scope": "every_coordinate",
+    "simultaneous_interval": "bonferroni_familywise_95_percent",
+    "statistic": "primary_balance_normalized_coefficient",
+    "stop_at_batches": 400,
+    "stop_on_invalidity": true
+  },
+  "study": "p2_multidimensional_validation",
+  "theory": {
+    "B10": [
+      -0.024459428167733,
+      -0.030574285209666
+    ],
+    "B10_sign_is_intrinsic": true,
+    "B20": {
+      "H": 2,
+      "control": [
+        -0.016001338798402,
+        -0.020001673498003
+      ],
+      "local": [
+        -0.032002677596805,
+        -0.040003346996006
+      ],
+      "value": [
+        -0.048004016395207,
+        -0.060005020494009
+      ]
+    },
+    "S_C": [
+      [
+        0.413009404388715,
+        0.021943573667712
+      ],
+      [
+        0.021943573667712,
+        0.345611285266458
+      ]
+    ],
+    "exact_B20_CI_coverage_required": false,
+    "finite_gamma_discrepancy_scale": "O(gamma)",
+    "fixed_gamma_expansion": "C_hat = B20(H) + O(1/N + gamma)",
+    "normalization": "C_hat = (b_hat - (gamma / N) * B10) / gamma^2"
+  },
+  "uncertainty_protocol": {
+    "bootstrap": {
+      "correction": "bonferroni",
+      "marginal_diagnostic_percentile_level": 0.95,
+      "marginal_diagnostic_quantiles": [
+        0.025,
+        0.975
+      ],
+      "preserve_same_seed_across_settings": true,
+      "repetitions": 2000,
+      "seed": 3901,
+      "simultaneous_coordinate_percentile_level": 0.975,
+      "simultaneous_familywise_confidence_level": 0.95,
+      "simultaneous_quantiles": [
+        0.0125,
+        0.9875
+      ],
+      "unit": "seed_label_block"
+    },
+    "per_setting": {
+      "coordinates": 2,
+      "correction": "bonferroni",
+      "degrees_of_freedom": 7,
+      "familywise_confidence_level": 0.95,
+      "marginal_diagnostic_confidence_level": 0.95,
+      "method": "student_t_coordinatewise",
+      "pool_coordinates": false,
+      "simultaneous_coordinate_confidence_level": 0.975,
+      "source": "eight_independent_chain_estimates"
+    }
+  },
+  "verdict": "PASS"
+}

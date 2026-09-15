@@ -1,12 +1,13 @@
 # Workstream index
 
 每個 workstream 代表一個可獨立說明、執行、驗證與保存 artifacts 的研究問題。
-內部 ID 使用 `P<number>`，資料夾 slug 再補上可讀的題目名稱；目前索引為 P0 與 P1。
+內部 ID 使用 `P<number>`，資料夾 slug 再補上可讀的題目名稱；目前索引為 P0 至 P2。
 
 | ID | Slug | Research question | 主要入口 |
 | --- | --- | --- | --- |
 | P0 | `p0_scaffold_bias` | SCAFFOLD stationary-bias publication baseline | `python run.py p0 check` |
 | P1 | `p1_matched_fedavg` | Matched FedAvg vs SCAFFOLD coefficient attribution | `python run.py p1 check` |
+| P2 | `p2_multidimensional_validation` | Multidimensional homogeneous SCAFFOLD validation | `python run.py p2 check` |
 
 
 索引只列出已有程式、設定或 artifact 的題目。研究問題、方法與範圍見 `ROADMAP.md`。

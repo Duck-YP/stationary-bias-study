@@ -1,0 +1,82 @@
+{
+  "artifact_namespace": "workstreams/p2_multidimensional_validation/artifacts/formal/p2-d5-controlled-validation",
+  "bootstrap_repetitions": 5000,
+  "bootstrap_seed": 3901,
+  "capture_point": "before_any_p2_formal_output_write",
+  "config_path": "workstreams/p2_multidimensional_validation/configs/d5_controlled_validation.yaml",
+  "config_sha256": "c3381beec6214cf5286b66d657b9cc7ff614a48bd5fa5edfe2acd35f5cc36c7b",
+  "environment": {
+    "git_commit": "c90054942e4090908f60c8e2864e763e9bc42785",
+    "git_dirty": false,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.14"
+  },
+  "expected_chain_count": 80,
+  "matrix_id": "p2-d5-controlled-validation",
+  "phase": "formal",
+  "planned_coordinate_run_rows": 800,
+  "protocol_path": "workstreams/p2_multidimensional_validation/d5_protocol.md",
+  "protocol_sha256": "33e45f5d9c3414725d26fb2987906faa9d22cca5969136d846c4fd434b713c76",
+  "run_matrix": {
+    "H_values": [
+      2,
+      4
+    ],
+    "N_values": [
+      32,
+      48,
+      64,
+      96,
+      128
+    ],
+    "all_unique": true,
+    "chains": 80,
+    "chains_per_setting": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "gamma_equals_inverse_N": true,
+    "matrix_id": "p2-d5-controlled-validation",
+    "seeds": [
+      1201,
+      1202,
+      1203,
+      1204,
+      1205,
+      1206,
+      1207,
+      1208
+    ],
+    "settings": 10,
+    "target": "d5",
+    "unique_run_ids": 80
+  },
+  "schema_version": 1,
+  "seeds": [
+    1201,
+    1202,
+    1203,
+    1204,
+    1205,
+    1206,
+    1207,
+    1208
+  ],
+  "source_commit": "c90054942e4090908f60c8e2864e763e9bc42785",
+  "source_dirty_at_run_start": false,
+  "study": "p2_multidimensional_validation"
+}

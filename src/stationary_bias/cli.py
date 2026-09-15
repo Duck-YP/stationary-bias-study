@@ -38,6 +38,10 @@ WORKSTREAMS = {
         "slug": "p1_matched_fedavg",
         "question": "Matched FedAvg versus SCAFFOLD coefficient attribution.",
     },
+    "p2": {
+        "slug": "p2_multidimensional_validation",
+        "question": "Multidimensional homogeneous SCAFFOLD validation.",
+    },
 }
 
 
@@ -133,7 +137,42 @@ def check_p1() -> dict[str, Any]:
 
 
 def check_all() -> dict[str, Any]:
-    return {"status": "PASS", "p0": check_p0(), "p1": check_p1()}
+    return {
+        "status": "PASS",
+        "p0": check_p0(),
+        "p1": check_p1(),
+        "p2": check_p2_all(),
+    }
+
+
+def check_p2_all() -> dict[str, Any]:
+    """Validate every implemented P2 matrix and its saved formal evidence."""
+
+    from .workstreams.p2_multidimensional_validation.artifact_audit import (
+        audit_saved_p2_artifacts,
+    )
+    from .workstreams.p2_multidimensional_validation.formal import (
+        check_d5_protocol,
+        check_formal_protocol,
+    )
+    from .workstreams.p2_multidimensional_validation.rotation import (
+        check_rotation_protocol,
+    )
+    from .workstreams.p2_multidimensional_validation.plateau import (
+        check_plateau_protocol,
+    )
+    from .workstreams.p2_multidimensional_validation.simulation import check_p2
+
+    return {
+        "status": "PASS",
+        "workstream": "p2",
+        "smoke": check_p2(),
+        "formal_d2": check_formal_protocol(),
+        "rotation_d2": check_rotation_protocol(),
+        "formal_d5": check_d5_protocol(),
+        "fixed_gamma_large_N_d2": check_plateau_protocol(),
+        "artifacts": audit_saved_p2_artifacts(),
+    }
 
 
 def _write_p0_manifest(action: str, details: dict[str, Any] | None = None) -> Path:
@@ -236,6 +275,53 @@ def _parser() -> argparse.ArgumentParser:
     p1_plateau_actions.add_parser("smoke")
     p1_plateau_actions.add_parser("run")
     p1_plateau_actions.add_parser("report")
+
+    p2 = root.add_parser("p2", help="Multidimensional homogeneous SCAFFOLD study.")
+    p2_actions = p2.add_subparsers(dest="action", required=True)
+    p2_actions.add_parser("check")
+    p2_actions.add_parser("smoke")
+    p2_d5 = p2_actions.add_parser(
+        "d5", help="Frozen controlled d=5 coefficient pipeline."
+    )
+    p2_d5_actions = p2_d5.add_subparsers(dest="d5_action", required=True)
+    p2_d5_actions.add_parser("check")
+    p2_d5_actions.add_parser("run")
+    p2_d5_actions.add_parser("analyze")
+    p2_d5_actions.add_parser("report")
+    p2_formal = p2_actions.add_parser(
+        "formal", help="Frozen d=2 coefficient pipeline."
+    )
+    p2_formal_targets = p2_formal.add_subparsers(
+        dest="formal_target", required=True
+    )
+    p2_formal_targets.add_parser("check")
+    for target in ("primary", "h4-small-step"):
+        target_parser = p2_formal_targets.add_parser(target)
+        target_actions = target_parser.add_subparsers(
+            dest="formal_action", required=True
+        )
+        target_actions.add_parser("run")
+        target_actions.add_parser("analyze")
+        target_actions.add_parser("report")
+    p2_rotation = p2_actions.add_parser(
+        "rotation", help="Frozen d=2 coordinate-equivariance pipeline."
+    )
+    p2_rotation_actions = p2_rotation.add_subparsers(
+        dest="rotation_action", required=True
+    )
+    p2_rotation_actions.add_parser("check")
+    p2_rotation_actions.add_parser("run")
+    p2_rotation_actions.add_parser("report")
+    p2_plateau = p2_actions.add_parser(
+        "plateau", help="Frozen d=2 fixed-gamma, large-N plateau pipeline."
+    )
+    p2_plateau_actions = p2_plateau.add_subparsers(
+        dest="plateau_action", required=True
+    )
+    p2_plateau_actions.add_parser("check")
+    p2_plateau_actions.add_parser("run")
+    p2_plateau_actions.add_parser("analyze")
+    p2_plateau_actions.add_parser("report")
     return parser
 
 
@@ -443,6 +529,195 @@ def _run_p1_plateau_action(args: argparse.Namespace) -> None:
         )
 
 
+def _run_p2_formal_action(args: argparse.Namespace) -> None:
+    from .workstreams.p2_multidimensional_validation.formal import (
+        check_formal_protocol,
+        run_formal_matrix,
+    )
+
+    if args.formal_target == "check":
+        print(json.dumps(check_formal_protocol(), indent=2, sort_keys=True))
+        return
+
+    target = str(args.formal_target)
+    if args.formal_action == "run":
+        outputs = run_formal_matrix(target)
+        print(
+            json.dumps(
+                {
+                    "status": "FORMAL_OUTPUT_WRITTEN",
+                    "output_root": str(outputs["output_root"]),
+                    "run_rows": len(outputs["run_rows"]),
+                    "batch_rows": len(outputs["batch_rows"]),
+                    "report": str(outputs["report"]),
+                    "figures": [str(path) for path in outputs["figures"]],
+                    "overwrite_audit": outputs["overwrite_audit"],
+                },
+                indent=2,
+            )
+        )
+    elif args.formal_action == "analyze":
+        from .workstreams.p2_multidimensional_validation.formal_analysis import (
+            rebuild_formal_analysis,
+        )
+
+        outputs = rebuild_formal_analysis(target)
+        print(
+            json.dumps(
+                {
+                    "status": "ANALYSIS_WRITTEN",
+                    "output_root": str(outputs["output_root"]),
+                    "setting_rows": len(outputs["setting_summary"]),
+                    "fit_rows": len(outputs["fit_summary"]),
+                    "manifest": str(outputs["manifest"]),
+                },
+                indent=2,
+            )
+        )
+    elif args.formal_action == "report":
+        from .workstreams.p2_multidimensional_validation.formal_analysis import (
+            rebuild_formal_report,
+        )
+
+        outputs = rebuild_formal_report(target)
+        print(
+            json.dumps(
+                {
+                    "status": "REPORT_WRITTEN",
+                    "report": str(outputs["report"]),
+                    "figures": [str(path) for path in outputs["figures"]],
+                },
+                indent=2,
+            )
+        )
+
+
+def _run_p2_d5_action(args: argparse.Namespace) -> None:
+    from .workstreams.p2_multidimensional_validation.formal import (
+        check_d5_protocol,
+        run_formal_matrix,
+    )
+
+    if args.d5_action == "check":
+        print(json.dumps(check_d5_protocol(), indent=2, sort_keys=True))
+    elif args.d5_action == "run":
+        outputs = run_formal_matrix("d5")
+        print(
+            json.dumps(
+                {
+                    "status": "FORMAL_OUTPUT_WRITTEN",
+                    "output_root": str(outputs["output_root"]),
+                    "run_rows": len(outputs["run_rows"]),
+                    "batch_rows": len(outputs["batch_rows"]),
+                    "report": str(outputs["report"]),
+                    "figures": [str(path) for path in outputs["figures"]],
+                    "overwrite_audit": outputs["overwrite_audit"],
+                },
+                indent=2,
+            )
+        )
+    elif args.d5_action == "analyze":
+        from .workstreams.p2_multidimensional_validation.formal_analysis import (
+            rebuild_formal_analysis,
+        )
+
+        outputs = rebuild_formal_analysis("d5")
+        print(
+            json.dumps(
+                {
+                    "status": "ANALYSIS_WRITTEN",
+                    "output_root": str(outputs["output_root"]),
+                    "setting_rows": len(outputs["setting_summary"]),
+                    "fit_rows": len(outputs["fit_summary"]),
+                    "manifest": str(outputs["manifest"]),
+                },
+                indent=2,
+            )
+        )
+    elif args.d5_action == "report":
+        from .workstreams.p2_multidimensional_validation.formal_analysis import (
+            rebuild_formal_report,
+        )
+
+        outputs = rebuild_formal_report("d5")
+        print(
+            json.dumps(
+                {
+                    "status": "REPORT_WRITTEN",
+                    "report": str(outputs["report"]),
+                    "figures": [str(path) for path in outputs["figures"]],
+                },
+                indent=2,
+            )
+        )
+
+
+def _run_p2_rotation_action(args: argparse.Namespace) -> None:
+    from .workstreams.p2_multidimensional_validation.rotation import (
+        check_rotation_protocol,
+        report_rotation_formal,
+        run_rotation_matrix,
+    )
+
+    if args.rotation_action == "check":
+        print(json.dumps(check_rotation_protocol(), indent=2, sort_keys=True))
+    elif args.rotation_action == "run":
+        outputs = run_rotation_matrix()
+        print(
+            json.dumps(
+                {
+                    "status": "FORMAL_ROTATION_OUTPUT_WRITTEN",
+                    "output_root": str(outputs["output_root"]),
+                    "pair_rows": len(outputs["pair_rows"]),
+                    "theory_rows": len(outputs["theory_rows"]),
+                    "manifest": str(outputs["manifest"]),
+                    "report": str(outputs["output_root"] / "p2_d2_rotation_report.md"),
+                },
+                indent=2,
+            )
+        )
+    elif args.rotation_action == "report":
+        report = report_rotation_formal()
+        print(json.dumps({"status": "REPORT_WRITTEN", "report": str(report)}, indent=2))
+
+
+def _run_p2_plateau_action(args: argparse.Namespace) -> None:
+    from .workstreams.p2_multidimensional_validation.plateau import (
+        check_plateau_protocol,
+        run_plateau_experiment,
+    )
+
+    if args.plateau_action == "check":
+        print(json.dumps(check_plateau_protocol(), indent=2, sort_keys=True))
+        return
+    if args.plateau_action == "run":
+        outputs = run_plateau_experiment()
+    else:
+        from .workstreams.p2_multidimensional_validation.plateau_analysis import (
+            rebuild_plateau_outputs,
+        )
+
+        outputs = rebuild_plateau_outputs()
+    print(
+        json.dumps(
+            {
+                "status": (
+                    "FORMAL_PLATEAU_OUTPUT_WRITTEN"
+                    if args.plateau_action == "run"
+                    else "PLATEAU_DERIVED_OUTPUTS_REBUILT"
+                ),
+                "verdict": outputs["verdict"],
+                "output_root": str(outputs["output_root"]),
+                "report": str(outputs["report"]),
+                "figures": [str(path) for path in outputs["figures"]],
+                "manifest": str(outputs["manifest"]),
+                "overwrite_audit": outputs["overwrite_audit"],
+            },
+            indent=2,
+        )
+    )
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     if args.command == "list":
@@ -455,4 +730,41 @@ def main(argv: Sequence[str] | None = None) -> int:
         _run_p0_action(args)
     elif args.command == "p1":
         _run_p1_action(args)
+    elif args.command == "p2":
+        if args.action == "d5":
+            _run_p2_d5_action(args)
+            return 0
+        if args.action == "formal":
+            _run_p2_formal_action(args)
+            return 0
+        if args.action == "rotation":
+            _run_p2_rotation_action(args)
+            return 0
+        if args.action == "plateau":
+            _run_p2_plateau_action(args)
+            return 0
+        from .workstreams.p2_multidimensional_validation.simulation import run_p2_smoke
+
+        if args.action == "check":
+            print(json.dumps(check_p2_all(), indent=2, sort_keys=True))
+        elif args.action == "smoke":
+            outputs = run_p2_smoke()
+            diagnostics = outputs["diagnostic_rows"]
+            print(
+                json.dumps(
+                    {
+                        "status": "PASS",
+                        "coordinate_run_rows": len(outputs["run_rows"]),
+                        "coordinate_batch_rows": len(outputs["batch_rows"]),
+                        "diagnostic_rows": len(diagnostics),
+                        "finite_state_pass": all(
+                            row["finite_state_pass"] for row in diagnostics
+                        ),
+                        "scientific_interpretation": "NOT_APPLICABLE_ENGINEERING_SMOKE",
+                        "output_root": str(outputs["output_root"]),
+                        "manifest": str(outputs["manifest"]),
+                    },
+                    indent=2,
+                )
+            )
     return 0

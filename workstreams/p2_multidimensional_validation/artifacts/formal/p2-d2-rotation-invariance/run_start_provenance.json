@@ -1,0 +1,186 @@
+{
+  "artifact_namespace": "workstreams/p2_multidimensional_validation/artifacts/formal/p2-d2-rotation-invariance",
+  "capture_point": "before_any_p2_rotation_output_write",
+  "config_path": "workstreams/p2_multidimensional_validation/configs/d2_rotation_invariance.yaml",
+  "config_sha256": "2a3d8e68842563c35c3e044a8dacfee82498d08a4cbb31fedb80b278a1fe993a",
+  "environment": {
+    "git_commit": "2199e736b529c4cb0ca2c1ba33364fac6f7d04f1",
+    "git_dirty": false,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.14"
+  },
+  "matrix_id": "p2-d2-rotation-invariance",
+  "pairs": [
+    {
+      "H": 2,
+      "N": 16,
+      "communication_rounds": 200,
+      "gamma": 0.0625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H2__N16__g0p0625000000__seed1101",
+      "seed": 1101
+    },
+    {
+      "H": 2,
+      "N": 16,
+      "communication_rounds": 200,
+      "gamma": 0.0625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H2__N16__g0p0625000000__seed1102",
+      "seed": 1102
+    },
+    {
+      "H": 2,
+      "N": 16,
+      "communication_rounds": 200,
+      "gamma": 0.0625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H2__N16__g0p0625000000__seed1103",
+      "seed": 1103
+    },
+    {
+      "H": 2,
+      "N": 16,
+      "communication_rounds": 200,
+      "gamma": 0.0625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H2__N16__g0p0625000000__seed1104",
+      "seed": 1104
+    },
+    {
+      "H": 2,
+      "N": 64,
+      "communication_rounds": 200,
+      "gamma": 0.015625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H2__N64__g0p0156250000__seed1101",
+      "seed": 1101
+    },
+    {
+      "H": 2,
+      "N": 64,
+      "communication_rounds": 200,
+      "gamma": 0.015625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H2__N64__g0p0156250000__seed1102",
+      "seed": 1102
+    },
+    {
+      "H": 2,
+      "N": 64,
+      "communication_rounds": 200,
+      "gamma": 0.015625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H2__N64__g0p0156250000__seed1103",
+      "seed": 1103
+    },
+    {
+      "H": 2,
+      "N": 64,
+      "communication_rounds": 200,
+      "gamma": 0.015625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H2__N64__g0p0156250000__seed1104",
+      "seed": 1104
+    },
+    {
+      "H": 4,
+      "N": 16,
+      "communication_rounds": 200,
+      "gamma": 0.0625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H4__N16__g0p0625000000__seed1101",
+      "seed": 1101
+    },
+    {
+      "H": 4,
+      "N": 16,
+      "communication_rounds": 200,
+      "gamma": 0.0625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H4__N16__g0p0625000000__seed1102",
+      "seed": 1102
+    },
+    {
+      "H": 4,
+      "N": 16,
+      "communication_rounds": 200,
+      "gamma": 0.0625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H4__N16__g0p0625000000__seed1103",
+      "seed": 1103
+    },
+    {
+      "H": 4,
+      "N": 16,
+      "communication_rounds": 200,
+      "gamma": 0.0625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H4__N16__g0p0625000000__seed1104",
+      "seed": 1104
+    },
+    {
+      "H": 4,
+      "N": 64,
+      "communication_rounds": 200,
+      "gamma": 0.015625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H4__N64__g0p0156250000__seed1101",
+      "seed": 1101
+    },
+    {
+      "H": 4,
+      "N": 64,
+      "communication_rounds": 200,
+      "gamma": 0.015625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H4__N64__g0p0156250000__seed1102",
+      "seed": 1102
+    },
+    {
+      "H": 4,
+      "N": 64,
+      "communication_rounds": 200,
+      "gamma": 0.015625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H4__N64__g0p0156250000__seed1103",
+      "seed": 1103
+    },
+    {
+      "H": 4,
+      "N": 64,
+      "communication_rounds": 200,
+      "gamma": 0.015625,
+      "pair_id": "p2__phase-rotation__matrix-p2-d2-rotation-invariance__H4__N64__g0p0156250000__seed1104",
+      "seed": 1104
+    }
+  ],
+  "phase": "rotation",
+  "protocol_path": "workstreams/p2_multidimensional_validation/rotation_protocol.md",
+  "protocol_sha256": "00c00fcd3bb06562fc3f8e71edbb495a54775b90ded8e641db3859bc15d499fd",
+  "run_matrix": {
+    "H_values": [
+      2,
+      4
+    ],
+    "all_unique": true,
+    "communication_rounds": [
+      200
+    ],
+    "gamma_equals_inverse_N": true,
+    "matrix_id": "p2-d2-rotation-invariance",
+    "pair_count": 16,
+    "seeds": [
+      1101,
+      1102,
+      1103,
+      1104
+    ],
+    "settings": [
+      {
+        "N": 16,
+        "gamma": 0.0625
+      },
+      {
+        "N": 64,
+        "gamma": 0.015625
+      }
+    ],
+    "unique_pair_ids": 16
+  },
+  "schema_version": 1,
+  "source_commit": "2199e736b529c4cb0ca2c1ba33364fac6f7d04f1",
+  "source_dirty_at_run_start": false,
+  "study": "p2_multidimensional_validation"
+}
