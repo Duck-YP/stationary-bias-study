@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 protocol_status: frozen_not_executed
 protocol_frozen_at: "2026-09-10"
 experiment: p2_d2_rotation_invariance
@@ -57,13 +57,13 @@ theory:
   transformation_laws:
     S_rot: Q @ S_C @ Q.T
     tensor_contraction: T_rot[M] = Q @ T[Q.T @ M @ Q]
-    B10_rot: Q @ B10
+    B11_d_rot: Q @ B11_d
     B20_rot: Q @ B20
   original:
     S_C:
       - [0.413009404388715, 0.021943573667712]
       - [0.021943573667712, 0.345611285266458]
-    B10: [-0.024459428167733, -0.030574285209666]
+    B11_d: [-0.024459428167733, -0.030574285209666]
     by_H:
       2:
         B20: [-0.048004016395207, -0.060005020494009]
@@ -73,7 +73,7 @@ theory:
     S_rot:
       - [0.377156182362097, 0.040156028497438]
       - [0.040156028497438, 0.381464507293076]
-    B10_rot: [-0.005895343550464, -0.038707821777988]
+    B11_d_rot: [-0.005895343550464, -0.038707821777988]
     by_H:
       2:
         B20_rot: [-0.011570187434929, -0.075967880300021]
@@ -145,7 +145,7 @@ theory_equivariance_gates:
     residual: norm_fro(S_rot - Q @ S_C @ Q.T)
     tolerance: 1.0e-12
   R5:
-    residual: norm_2(B10_rot - Q @ B10)
+    residual: norm_2(B11_d_rot - Q @ B11_d)
     tolerance: 1.0e-12
   R6:
     residual: norm_2(B20_rot(H) - Q @ B20(H))

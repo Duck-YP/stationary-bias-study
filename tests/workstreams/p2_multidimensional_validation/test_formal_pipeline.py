@@ -56,7 +56,7 @@ def test_theory_and_noncommuting_config_integrity() -> None:
         targets = vector_theory_targets(objective, covariance, H)
         expected = config["theory"]["by_H"][H]
         np.testing.assert_allclose(targets.S_C, config["theory"]["S_C"], atol=1e-14)
-        np.testing.assert_allclose(targets.B10, config["theory"]["B10"], atol=1e-14)
+        np.testing.assert_allclose(targets.B11_d, config["theory"]["B11_d"], atol=1e-14)
         np.testing.assert_allclose(targets.B20, expected["B20"], atol=1e-14)
         np.testing.assert_allclose(
             targets.B20_local + targets.B20_ctrl, targets.B20, atol=1e-15
@@ -172,7 +172,7 @@ def _synthetic_saved_matrix(root: Path, target: str) -> None:
                 )
                 b_value = (
                     spec.gamma**2 * C_value
-                    + (spec.gamma / spec.N) * targets.B10[coordinate]
+                    + (spec.gamma / spec.N) * targets.B11_d[coordinate]
                 )
                 row = {
                     "study": "p2_multidimensional_validation",
@@ -189,7 +189,7 @@ def _synthetic_saved_matrix(root: Path, target: str) -> None:
                     "delta": spec.delta,
                     "estimator": estimator,
                     "b_component": b_value,
-                    "B10_component": targets.B10[coordinate],
+                    "B11_d_component": targets.B11_d[coordinate],
                     "C_component": C_value,
                     "B20_component": targets.B20[coordinate],
                     "normalized_error_component": C_value - targets.B20[coordinate],
@@ -229,7 +229,7 @@ def _synthetic_saved_matrix(root: Path, target: str) -> None:
                             "delta",
                             "estimator",
                             "b_component",
-                            "B10_component",
+                            "B11_d_component",
                             "C_component",
                             "B20_component",
                             "normalized_error_component",
@@ -243,7 +243,7 @@ def _synthetic_saved_matrix(root: Path, target: str) -> None:
     pd.DataFrame(run_rows).to_csv(root / "run_summary.csv", index=False)
     pd.DataFrame(batch_rows).to_csv(root / "batch_summary.csv", index=False)
     provenance = {
-        "schema_version": 1,
+        "schema_version": 2,
         "capture_point": "before_any_p2_formal_output_write",
         "study": "p2_multidimensional_validation",
         "phase": "formal",
@@ -287,7 +287,7 @@ def test_saved_fixture_analysis_report_and_plots_do_not_simulate(
         "delta",
         "estimator",
         "b_component",
-        "B10_component",
+        "B11_d_component",
         "C_component",
         "B20_component",
         "batches_used",
@@ -488,7 +488,7 @@ def test_formal_write_guards_refuse_dirty_existing_and_other_workstreams(
         formal.run_formal_matrix("primary")
 
     p0 = tmp_path / "workstreams" / "p0_scaffold_bias" / "artifacts" / "formal"
-    with pytest.raises(RuntimeError, match="P0 or P1"):
+    with pytest.raises(RuntimeError, match="another workstream namespace"):
         formal.validate_formal_output_root(p0, p0)
 
 

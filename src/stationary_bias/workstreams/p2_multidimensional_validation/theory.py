@@ -1,4 +1,4 @@
-"""Exact NumPy-only theory targets for the P2 controlled objective."""
+"""Exact NumPy-only theory targets for the controlled objective."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from .objective import RankOneVectorObjective
 @dataclass(frozen=True)
 class VectorTheoryTargets:
     S_C: np.ndarray
-    B10: np.ndarray
+    B11_d: np.ndarray
     B20: np.ndarray
     B20_local: np.ndarray
     B20_ctrl: np.ndarray
@@ -49,19 +49,18 @@ def vector_theory_targets(
     solve_T_C = np.linalg.solve(
         objective.A, objective.third_derivative_contraction(C)
     )
-    B10 = -0.5 * solve_T_S
+    B11_d = -0.5 * solve_T_S
     B20_local = -((H - 1) / 4.0) * solve_T_C
     B20_ctrl = -((H - 1) * (2 * H - 1) / (12.0 * H)) * solve_T_C
     B20 = -((H - 1) * (5 * H - 1) / (12.0 * H)) * solve_T_C
-    return VectorTheoryTargets(S_C, B10, B20, B20_local, B20_ctrl)
+    return VectorTheoryTargets(S_C, B11_d, B20, B20_local, B20_ctrl)
 
 
 def normalize_vector_bias(
-    bias: np.ndarray, *, gamma: float, N: int, B10: np.ndarray
+    bias: np.ndarray, *, gamma: float, N: int, B11_d: np.ndarray
 ) -> np.ndarray:
     values = np.asarray(bias, dtype=np.float64)
-    leading = np.asarray(B10, dtype=np.float64)
+    leading = np.asarray(B11_d, dtype=np.float64)
     if values.shape[-1] != leading.size:
-        raise ValueError("bias and B10 dimensions differ")
+        raise ValueError("bias and B11_d dimensions differ")
     return (values - (gamma / N) * leading) / gamma**2
-

@@ -1,4 +1,4 @@
-# P2 d=2 rotation-equivariance report
+# Rotation-equivariance report, d=2
 
 ## Classification
 
@@ -8,8 +8,8 @@ EMPIRICAL / NUMERICAL SANITY
 
 - Source commit: `2199e736b529c4cb0ca2c1ba33364fac6f7d04f1`
 - Source dirty at run start: `False`
-- Config SHA-256: `2a3d8e68842563c35c3e044a8dacfee82498d08a4cbb31fedb80b278a1fe993a`
-- Protocol SHA-256: `00c00fcd3bb06562fc3f8e71edbb495a54775b90ded8e641db3859bc15d499fd`
+- Config SHA-256: `d82bf75525e66a7ea4d1da1e484f5c40633ca0d26745c5e5a4096a6fa01944fa`
+- Protocol SHA-256: `9360e34f2963b1c3ca6fae12c443195c55d0086bb55a2b50dd006af894c39301`
 
 ## Frozen transformation
 

@@ -1,4 +1,4 @@
-"""P1-only figures built exclusively from saved matched result tables."""
+"""Figures built exclusively from saved matched result tables."""
 
 from __future__ import annotations
 
@@ -100,7 +100,7 @@ def plot_p1_figures(
     output_root: Path,
 ) -> list[Path]:
     if algorithm_summary.empty or pair_summary.empty:
-        raise ValueError("P1 summary tables must be non-empty")
+        raise ValueError("Summary tables must be non-empty")
     return [
         *plot_fedavg_coefficient_convergence(algorithm_summary, output_root),
         *plot_matched_difference(pair_summary, output_root),

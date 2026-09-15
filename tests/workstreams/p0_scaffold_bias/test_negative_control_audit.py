@@ -15,8 +15,8 @@ def test_h1_coefficient_identity_keeps_nonzero_leading_bias() -> None:
     assert b20_local(1) == 0.0
     assert b20_control(1) == 0.0
     assert b20_total(1) == 0.0
-    B10 = leading_bias_coefficient(MAIN_OBJECTIVE.a, MAIN_OBJECTIVE.tau, 1.0)
-    assert B10 != 0.0
+    B11_d = leading_bias_coefficient(MAIN_OBJECTIVE.a, MAIN_OBJECTIVE.tau, 1.0)
+    assert B11_d != 0.0
     gamma = 1.0 / 24.0
     N = 24
     b = 0.001
@@ -28,7 +28,7 @@ def test_h1_coefficient_identity_keeps_nonzero_leading_bias() -> None:
         tau=MAIN_OBJECTIVE.tau,
         sigma2=1.0,
     )
-    assert observed == (b - B10 * gamma / N) / gamma**2
+    assert observed == (b - B11_d * gamma / N) / gamma**2
 
 
 def _synthetic_frames(
@@ -127,4 +127,4 @@ def test_h1_audit_uses_boundary_sanity_semantics_only() -> None:
     audit = build_negative_control_audit(*frames)
     assert audit.iloc[0]["audit_status"] == "SANITY_FLAG"
     assert audit.iloc[0]["audit_status"] not in {"PASS", "FAIL"}
-    assert audit.iloc[0]["B10"] != 0.0
+    assert audit.iloc[0]["B11_d"] != 0.0

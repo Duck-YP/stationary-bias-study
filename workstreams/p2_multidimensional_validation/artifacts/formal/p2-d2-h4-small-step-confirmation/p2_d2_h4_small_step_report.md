@@ -1,16 +1,18 @@
-# P2 d=2 formal coefficient analysis
+# Formal coefficient analysis, d=2
 
 ## EMPIRICAL numerical outcomes
 
 All numerical tables below are simulation outcomes, not proven statements.
 
-Source commit: `1347e99513d8b44dbec52f0a9f11ca2315935595`  
-Config SHA-256: `bf412635cf6f703cbb3d5f60639653e13ac7519ec90145fe8bb4b6ff6368cb4c`  
+Source commit: `1347e99513d8b44dbec52f0a9f11ca2315935595`
+
+Config SHA-256: `f977860d1299ee9b3b94de0470dbe00fe486b3238c7df20ed9a09fd442cdb826`
+
 Matrix: `p2-d2-h4-small-step-confirmation`
 
 ## Frozen inputs
 
-Theory: `{"B10": [-0.024459428167733, -0.030574285209666], "B10_sign_is_intrinsic": true, "B20": [-0.152012718584823, -0.190015898231029], "B20_ctrl": [-0.056004685794409, -0.070005857243011], "B20_local": [-0.096008032790415, -0.120010040988019], "H": 4, "S_C": [[0.413009404388715, 0.021943573667712], [0.021943573667712, 0.345611285266458]], "normalization": "C_hat = (b_hat - (gamma / N) * B10) / gamma^2", "remainder": "O(1/N + gamma)"}`
+Theory: `{"B11_d": [-0.024459428167733, -0.030574285209666], "B11_d_sign_is_intrinsic": true, "B20": [-0.152012718584823, -0.190015898231029], "B20_ctrl": [-0.056004685794409, -0.070005857243011], "B20_local": [-0.096008032790415, -0.120010040988019], "H": 4, "S_C": [[0.413009404388715, 0.021943573667712], [0.021943573667712, 0.345611285266458]], "normalization": "C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2", "remainder": "O(1/N + gamma)"}`
 
 Setting matrix: `{"H_values": [4], "N_values": [64, 96, 128, 192], "all_unique": true, "chains": 32, "chains_per_setting": [8, 8, 8, 8], "gamma_equals_inverse_N": true, "matrix_id": "p2-d2-h4-small-step-confirmation", "seeds": [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008], "settings": 4, "target": "h4-small-step", "unique_run_ids": 32}`
 

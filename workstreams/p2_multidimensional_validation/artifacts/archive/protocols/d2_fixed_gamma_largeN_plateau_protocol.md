@@ -14,7 +14,7 @@ implementation failure.
 The primary coordinate statistic is
 
 ```text
-C_hat_j = (b_hat_j - (gamma/N) B10_j) / gamma^2,
+C_hat_j = (b_hat_j - (gamma/N) B11_d_j) / gamma^2,
 ```
 
 where `b_hat` is the stationary mean-balance estimator. Direct stationary sample means are

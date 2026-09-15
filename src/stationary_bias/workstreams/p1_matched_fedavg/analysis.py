@@ -1,4 +1,4 @@
-"""Paired inference, neutral falsification summaries, and reports for P1."""
+"""Paired inference, neutral falsification summaries, and reports."""
 
 from __future__ import annotations
 
@@ -323,7 +323,7 @@ def _report_text(
     phase = "smoke" if set(run_df["phase"]) == {"smoke"} else "formal"
     return "\n".join(
         [
-            "# P1 Matched FedAvg vs SCAFFOLD",
+            "# Matched FedAvg versus SCAFFOLD",
             "",
             f"Run phase: **{phase.upper()}**",
             "",
@@ -392,11 +392,11 @@ def build_p1_outputs(output_root: Path = P1_RESULT_ROOT) -> dict[str, Any]:
     batch_path = output_root / "batch_summary.csv"
     for path in (run_path, pair_path, batch_path):
         if not path.exists():
-            raise FileNotFoundError(f"Missing P1 raw output: {path}")
+            raise FileNotFoundError(f"Missing matched-study raw output: {path}")
     provenance_path = output_root / P1_RUN_START_PROVENANCE
     if not provenance_path.exists():
         raise FileNotFoundError(
-            f"Missing P1 run-start provenance: {provenance_path}"
+            f"Missing run-start provenance: {provenance_path}"
         )
     provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
     run_df = pd.read_csv(run_path, keep_default_na=False)
@@ -406,9 +406,9 @@ def build_p1_outputs(output_root: Path = P1_RESULT_ROOT) -> dict[str, Any]:
     base = load_configs()["base"]
     current_config_sha256 = hashlib.sha256(P1_CONFIG_PATH.read_bytes()).hexdigest()
     if current_config_sha256 != provenance["config_sha256"]:
-        raise RuntimeError("P1 config file changed after the simulation started")
+        raise RuntimeError("Config file changed after the simulation started")
     if config_hash(base, config) != provenance["config_hash"]:
-        raise RuntimeError("P1 base or experiment config changed after the simulation started")
+        raise RuntimeError("Base or experiment config changed after simulation started")
     algorithm_summary = build_algorithm_summary(run_df)
     pair_summary = build_pair_setting_summary(pair_df)
     fits = build_fit_summary(pair_df, config)

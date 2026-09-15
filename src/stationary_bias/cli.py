@@ -82,7 +82,7 @@ def check_p0() -> dict[str, Any]:
     }
     if publication != expected_publication:
         raise RuntimeError(
-            f"P0 matrix differs from the frozen protocol: {publication}"
+            f"Publication matrix differs from the frozen protocol: {publication}"
         )
     if not (
         confirmation["actual_runs"] == 32
@@ -91,7 +91,7 @@ def check_p0() -> dict[str, Any]:
         and confirmation["all_unique"]
     ):
         raise RuntimeError(
-            f"P0 confirmation matrix differs from the frozen protocol: {confirmation}"
+            f"Confirmation matrix differs from the frozen protocol: {confirmation}"
         )
     config_paths = [
         SHARED_CONFIG_ROOT / "simulation_defaults.yaml",
@@ -112,6 +112,9 @@ def check_p0() -> dict[str, Any]:
 
 
 def check_p1() -> dict[str, Any]:
+    from .workstreams.p1_matched_fedavg.artifact_audit import (
+        audit_archived_config_closure,
+    )
     from .workstreams.p1_matched_fedavg.plateau import check_plateau_matrix
     from .workstreams.p1_matched_fedavg.simulation import audit_p1_run_matrix
 
@@ -127,12 +130,13 @@ def check_p1() -> dict[str, Any]:
         "small_step_h4_seeds": list(range(401, 409)),
     }
     if audit != expected:
-        raise RuntimeError(f"P1 matrix differs from the defined formal matrix: {audit}")
+        raise RuntimeError(f"Matrix differs from the defined formal matrix: {audit}")
     return {
         "status": "PASS",
         "workstream": "p1",
         "matched_fedavg_matrix": audit,
         "fixed_gamma_large_n_matrix": check_plateau_matrix(),
+        "archive_config": audit_archived_config_closure(),
     }
 
 
@@ -146,7 +150,7 @@ def check_all() -> dict[str, Any]:
 
 
 def check_p2_all() -> dict[str, Any]:
-    """Validate every implemented P2 matrix and its saved formal evidence."""
+    """Validate every implemented matrix and its saved formal evidence."""
 
     from .workstreams.p2_multidimensional_validation.artifact_audit import (
         audit_saved_p2_artifacts,
@@ -205,7 +209,7 @@ def run_p0_experiment(name: str) -> None:
             run_experiment(experiment)
         run_confirmation()
         return
-    raise ValueError(f"Unknown P0 experiment: {name}")
+    raise ValueError(f"Unknown baseline experiment: {name}")
 
 
 def build_p0_reports() -> dict[str, Any]:

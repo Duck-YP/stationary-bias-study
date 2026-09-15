@@ -1,4 +1,4 @@
-"""Controlled rank-one nonlinear objective used by the P2 smoke test."""
+"""Controlled rank-one nonlinear objective used by the smoke test."""
 
 from __future__ import annotations
 
@@ -79,4 +79,3 @@ class RankOneVectorObjective:
 
 def controlled_objective() -> RankOneVectorObjective:
     return RankOneVectorObjective(CONTROLLED_A, CONTROLLED_U, CONTROLLED_ALPHA)
-

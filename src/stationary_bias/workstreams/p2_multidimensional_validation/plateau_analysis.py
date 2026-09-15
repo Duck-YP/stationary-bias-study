@@ -1,4 +1,4 @@
-"""Analysis, gates, report, and manifest for the P2 fixed-gamma plateau."""
+"""Analysis, gates, report, and manifest for the fixed-gamma plateau."""
 
 from __future__ import annotations
 
@@ -38,7 +38,7 @@ def _required_paths(output_root: Path, names: tuple[str, ...]) -> list[Path]:
     paths = [output_root / name for name in names]
     missing = [str(path) for path in paths if not path.is_file()]
     if missing:
-        raise FileNotFoundError("Missing P2 plateau artifact: " + ", ".join(missing))
+        raise FileNotFoundError("Missing plateau artifact: " + ", ".join(missing))
     return paths
 
 
@@ -75,17 +75,17 @@ def validate_saved_plateau(
     protocol_sha = hashlib.sha256(P2_PLATEAU_PROTOCOL_PATH.read_bytes()).hexdigest()
     snapshot_sha = hashlib.sha256(snapshot_path.read_bytes()).hexdigest()
     if provenance.get("matrix_id") != P2_PLATEAU_MATRIX_ID:
-        raise RuntimeError("P2 plateau provenance matrix identity changed")
+        raise RuntimeError("Plateau provenance matrix identity changed")
     if provenance.get("source_dirty_at_run_start") is not False:
-        raise RuntimeError("P2 plateau provenance must identify a clean source tree")
+        raise RuntimeError("Plateau provenance must identify a clean source tree")
     if provenance.get("source_commit") in (None, "", "NO_COMMIT"):
-        raise RuntimeError("P2 plateau provenance lacks a source commit")
+        raise RuntimeError("Plateau provenance lacks a source commit")
     if config_sha != snapshot_sha or provenance.get("config_sha256") != config_sha:
-        raise RuntimeError("P2 plateau config or snapshot changed after run start")
+        raise RuntimeError("Plateau config or snapshot changed after run start")
     if provenance.get("protocol_sha256") != protocol_sha:
-        raise RuntimeError("P2 plateau protocol changed after run start")
+        raise RuntimeError("Plateau protocol changed after run start")
     if provenance.get("run_matrix") != audit_plateau_run_matrix():
-        raise RuntimeError("P2 plateau provenance lacks the frozen 40-chain matrix")
+        raise RuntimeError("Plateau provenance lacks the frozen matrix")
 
     run_df = pd.read_csv(run_path, keep_default_na=False)
     batch_df = pd.read_csv(batch_path, keep_default_na=False)
@@ -111,12 +111,12 @@ def validate_saved_plateau(
 
     source_commit = str(provenance["source_commit"])
     if set(run_df["source_commit"].astype(str)) != {source_commit}:
-        raise ValueError("P2 plateau run rows do not match captured source provenance")
+        raise ValueError("Plateau run rows do not match captured source provenance")
     if _bool_series(run_df["source_dirty_at_run_start"]).any():
-        raise ValueError("P2 plateau run rows record a dirty source tree")
+        raise ValueError("Plateau run rows record a dirty source tree")
     expected_sha = str(provenance["config_sha256"])
     if set(run_df["config_sha256"].astype(str)) != {expected_sha}:
-        raise ValueError("P2 plateau run rows do not match the frozen config")
+        raise ValueError("Plateau run rows do not match the frozen config")
 
     for row in run_df.itertuples(index=False):
         expected_gamma = 1.0 / 24.0
@@ -124,17 +124,17 @@ def validate_saved_plateau(
         if int(row.H) != 2 or not np.isclose(
             float(row.gamma), expected_gamma, rtol=0.0, atol=1.0e-15
         ):
-            raise ValueError("P2 plateau changed H or gamma across N")
+            raise ValueError("Plateau changed H or gamma across N")
         if not np.isclose(float(row.delta), expected_delta, rtol=0.0, atol=1.0e-15):
-            raise ValueError("P2 plateau raw path coordinate is inconsistent")
+            raise ValueError("Plateau raw path coordinate is inconsistent")
         normalized = (
             float(row.b_component)
-            - (float(row.gamma) / int(row.N)) * float(row.B10_component)
+            - (float(row.gamma) / int(row.N)) * float(row.B11_d_component)
         ) / float(row.gamma) ** 2
         if not np.isclose(
             normalized, float(row.C_component), rtol=1.0e-12, atol=1.0e-13
         ):
-            raise ValueError("P2 plateau C_hat does not use the frozen B10 subtraction")
+            raise ValueError("Plateau C_hat does not use the frozen B11_d subtraction")
     return run_df, batch_df, provenance, config
 
 
@@ -434,7 +434,7 @@ def _report_text(
     ]
     return "\n".join(
         [
-            "# P2 d=2 fixed-gamma large-N plateau",
+            "# Fixed-gamma large-client plateau, d=2",
             "",
             f"Verdict: **{verdict}**",
             "",
@@ -552,7 +552,7 @@ def build_plateau_outputs(output_root: Path) -> dict[str, Any]:
 
     figures = plot_plateau_figures(setting_summary, fit_summary, fit_curve, output_root)
     if len(figures) != 2 or not all(path.is_file() for path in figures):
-        raise RuntimeError("P2 plateau must create exactly two physical figure files")
+        raise RuntimeError("Plateau must create exactly two physical figure files")
     report = output_root / "p2_d2_fixed_gamma_largeN_plateau_report.md"
     report.write_text(
         _report_text(
@@ -569,7 +569,7 @@ def build_plateau_outputs(output_root: Path) -> dict[str, Any]:
 
     manifest_path = output_root / P2_PLATEAU_MANIFEST
     manifest = {
-        "schema_version": 1,
+        "schema_version": 2,
         "study": "p2_multidimensional_validation",
         "phase": "formal_fixed_gamma_large_N_plateau",
         "matrix_id": P2_PLATEAU_MATRIX_ID,
@@ -617,7 +617,7 @@ def build_plateau_outputs(output_root: Path) -> dict[str, Any]:
     )
     if missing:
         raise RuntimeError(
-            "P2 plateau derived artifact inventory is incomplete: "
+            "Plateau derived artifact inventory is incomplete: "
             + ", ".join(missing)
         )
     write_json(manifest, manifest_path)

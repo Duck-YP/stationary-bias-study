@@ -74,3 +74,65 @@ def test_reader_facing_documents_describe_only_current_project_state() -> None:
         if (text := path.read_text(encoding="utf-8")) and prohibited.search(text)
     }
     assert violations == {}
+
+
+def test_editable_narrative_uses_descriptive_workstream_names() -> None:
+    paths = [PROJECT_ROOT / "README.md"]
+    paths.extend((PROJECT_ROOT / "docs").rglob("*.md"))
+    paths.extend(
+        [
+            PROJECT_ROOT / "workstreams" / "README.md",
+            PROJECT_ROOT / "workstreams" / "ROADMAP.md",
+            PROJECT_ROOT / "workstreams" / "p0_scaffold_bias" / "README.md",
+            PROJECT_ROOT / "workstreams" / "p1_matched_fedavg" / "README.md",
+            PROJECT_ROOT
+            / "workstreams"
+            / "p2_multidimensional_validation"
+            / "README.md",
+            PROJECT_ROOT
+            / "workstreams"
+            / "p1_matched_fedavg"
+            / "artifacts"
+            / "archive"
+            / "README.md",
+        ]
+    )
+    paths.extend((PROJECT_ROOT / "src").rglob("*.py"))
+    paths.extend((PROJECT_ROOT / "tests").rglob("*.py"))
+    numbered_label = re.compile(r"\bP[0-9]+\b")
+
+    violations = [
+        str(path.relative_to(PROJECT_ROOT))
+        for path in paths
+        if numbered_label.search(path.read_text(encoding="utf-8"))
+    ]
+    assert violations == []
+
+
+def test_deprecated_leading_coefficient_label_is_absent() -> None:
+    deprecated = "B" + "10"
+    text_suffixes = {
+        ".csv",
+        ".json",
+        ".lock",
+        ".md",
+        ".py",
+        ".toml",
+        ".txt",
+        ".yaml",
+        ".yml",
+    }
+    violations: list[str] = []
+    excluded_directories = {".git", ".pytest_cache", ".venv", "__pycache__"}
+    for path in PROJECT_ROOT.rglob("*"):
+        if excluded_directories.intersection(path.parts) or not path.is_file():
+            continue
+        relative = str(path.relative_to(PROJECT_ROOT))
+        if deprecated in relative:
+            violations.append(relative)
+            continue
+        if path.suffix in text_suffixes and deprecated in path.read_text(
+            encoding="utf-8"
+        ):
+            violations.append(relative)
+    assert violations == []

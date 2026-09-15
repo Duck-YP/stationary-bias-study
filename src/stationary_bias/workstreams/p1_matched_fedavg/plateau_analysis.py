@@ -1,4 +1,4 @@
-"""Paired large-N extrapolation, report, and manifest for the P1 plateau."""
+"""Paired large-client extrapolation, report, and manifest."""
 
 from __future__ import annotations
 
@@ -165,7 +165,7 @@ def _report_text(
     phase = "smoke" if set(run_df["phase"]) == {"smoke"} else "formal"
     return "\n".join(
         [
-            "# P1 Fixed-gamma Large-N Matched Plateau",
+            "# Fixed-gamma large-client matched plateau",
             "",
             f"Run phase: **{phase.upper()}**",
             "",
@@ -232,7 +232,7 @@ def build_plateau_outputs(output_root: Path = PLATEAU_RESULT_ROOT) -> dict[str, 
     ]
     for path in required:
         if not path.exists():
-            raise FileNotFoundError(f"Missing P1 plateau raw artifact: {path}")
+            raise FileNotFoundError(f"Missing plateau raw artifact: {path}")
 
     provenance = json.loads(required[3].read_text(encoding="utf-8"))
     config = load_plateau_config()
@@ -240,9 +240,9 @@ def build_plateau_outputs(output_root: Path = PLATEAU_RESULT_ROOT) -> dict[str, 
     current_sha = hashlib.sha256(PLATEAU_CONFIG_PATH.read_bytes()).hexdigest()
     snapshot_sha = hashlib.sha256(required[4].read_bytes()).hexdigest()
     if current_sha != provenance["config_sha256"] or snapshot_sha != current_sha:
-        raise RuntimeError("P1 plateau config or its snapshot changed after run start")
+        raise RuntimeError("Plateau config or its snapshot changed after run start")
     if config_hash(base, config) != provenance["config_hash"]:
-        raise RuntimeError("P1 base or plateau config changed after run start")
+        raise RuntimeError("Base or plateau config changed after run start")
 
     run_df = pd.read_csv(required[0], keep_default_na=False)
     pair_df = pd.read_csv(required[1], keep_default_na=False)

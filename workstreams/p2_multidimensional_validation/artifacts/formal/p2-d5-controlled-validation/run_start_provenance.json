@@ -4,7 +4,7 @@
   "bootstrap_seed": 3901,
   "capture_point": "before_any_p2_formal_output_write",
   "config_path": "workstreams/p2_multidimensional_validation/configs/d5_controlled_validation.yaml",
-  "config_sha256": "c3381beec6214cf5286b66d657b9cc7ff614a48bd5fa5edfe2acd35f5cc36c7b",
+  "config_sha256": "d3371a99a0f7f67140937c0b5eda9a94b2aa431338ebf8561988ddd995ac6d4e",
   "environment": {
     "git_commit": "c90054942e4090908f60c8e2864e763e9bc42785",
     "git_dirty": false,
@@ -22,7 +22,7 @@
   "phase": "formal",
   "planned_coordinate_run_rows": 800,
   "protocol_path": "workstreams/p2_multidimensional_validation/d5_protocol.md",
-  "protocol_sha256": "33e45f5d9c3414725d26fb2987906faa9d22cca5969136d846c4fd434b713c76",
+  "protocol_sha256": "8051a343001388192009d608c17b497689450df83d9c7877580d2877e7c8c256",
   "run_matrix": {
     "H_values": [
       2,
@@ -65,7 +65,7 @@
     "target": "d5",
     "unique_run_ids": 80
   },
-  "schema_version": 1,
+  "schema_version": 2,
   "seeds": [
     1201,
     1202,

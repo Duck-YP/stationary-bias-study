@@ -10,7 +10,7 @@ smaller-step matrix are defined in `configs/d2_coefficient_primary.yaml` and
 For the controlled model, the study asks whether
 
 ```text
-C_hat(gamma, N, H) = [b_hat(gamma, N, H) - (gamma/N) B10] / gamma^2
+C_hat(gamma, N, H) = [b_hat(gamma, N, H) - (gamma/N) B11_d] / gamma^2
 ```
 
 approaches
@@ -63,7 +63,7 @@ The NumPy-only P2 theory utilities give a Lyapunov residual at machine precision
 ```text
 S_C = [[0.413009404388715, 0.021943573667712],
        [0.021943573667712, 0.345611285266458]]
-B10 = [-0.024459428167733, -0.030574285209666]
+B11_d = [-0.024459428167733, -0.030574285209666]
 
 H=2:
 B20       = [-0.048004016395207, -0.060005020494009]
@@ -76,7 +76,7 @@ B20_local = [-0.096008032790415, -0.120010040988019]
 B20_ctrl  = [-0.056004685794409, -0.070005857243011]
 ```
 
-For both H values, `B20_local + B20_ctrl = B20`. The sign already contained in `B10` is retained
+For both H values, `B20_local + B20_ctrl = B20`. The sign already contained in `B11_d` is retained
 when computing every coordinate of `C_hat`.
 
 ## Matrices and seeds

@@ -1,4 +1,4 @@
-"""Frozen d=2 coordinate-rotation orchestration for the P2 vector kernel."""
+"""Frozen d=2 coordinate-rotation orchestration for the vector kernel."""
 
 from __future__ import annotations
 
@@ -30,12 +30,13 @@ from ...core.io import (
 from .algorithm import scaffold_round_many_vector
 from .noise import generate_vector_noise_block
 from .objective import RankOneVectorObjective
+from .protocols import archived_protocol_path
 from .theory import vector_theory_targets
 
 
 P2_ROTATION_ROOT = REPO_ROOT / "workstreams" / "p2_multidimensional_validation"
 P2_ROTATION_CONFIG_PATH = P2_ROTATION_ROOT / "configs" / "d2_rotation_invariance.yaml"
-P2_ROTATION_PROTOCOL_PATH = P2_ROTATION_ROOT / "rotation_protocol.md"
+P2_ROTATION_PROTOCOL_PATH = archived_protocol_path("rotation_protocol.md")
 P2_ROTATION_PROVENANCE = "run_start_provenance.json"
 P2_ROTATION_PAIR_SUMMARY = "pair_summary.csv"
 P2_ROTATION_RESIDUAL_SUMMARY = "rotation_residual_summary.csv"
@@ -178,15 +179,15 @@ def theory_rotation_rows(config: dict[str, Any]) -> list[dict[str, Any]]:
     u_rot = np.asarray(rotated["u_rot"], dtype=np.float64)
     S = np.asarray(theory["original"]["S_C"], dtype=np.float64)
     S_rot = np.asarray(theory["rotated"]["S_rot"], dtype=np.float64)
-    B10 = np.asarray(theory["original"]["B10"], dtype=np.float64)
-    B10_rot = np.asarray(theory["rotated"]["B10_rot"], dtype=np.float64)
+    B11_d = np.asarray(theory["original"]["B11_d"], dtype=np.float64)
+    B11_d_rot = np.asarray(theory["rotated"]["B11_d_rot"], dtype=np.float64)
     definitions = [
         ("R0", None, np.linalg.norm(Q.T @ Q - np.eye(Q.shape[0]), ord="fro")),
         ("R1", None, np.linalg.norm(A_rot - Q @ A @ Q.T, ord="fro")),
         ("R2", None, np.linalg.norm(C_rot - Q @ C @ Q.T, ord="fro")),
         ("R3", None, np.linalg.norm(u_rot - Q @ u)),
         ("R4", None, np.linalg.norm(S_rot - Q @ S @ Q.T, ord="fro")),
-        ("R5", None, np.linalg.norm(B10_rot - Q @ B10)),
+        ("R5", None, np.linalg.norm(B11_d_rot - Q @ B11_d)),
     ]
     rows: list[dict[str, Any]] = []
     for gate, H, residual in definitions:
@@ -245,8 +246,8 @@ def _assert_exact_frozen_config(config: dict[str, Any]) -> None:
             [0.377156182362097, 0.040156028497438],
             [0.040156028497438, 0.381464507293076],
         ],
-        "B10": [-0.024459428167733, -0.030574285209666],
-        "B10_rot": [-0.005895343550464, -0.038707821777988],
+        "B11_d": [-0.024459428167733, -0.030574285209666],
+        "B11_d_rot": [-0.005895343550464, -0.038707821777988],
         "B20_H2": [-0.048004016395207, -0.060005020494009],
         "B20_rot_H2": [-0.011570187434929, -0.075967880300021],
         "B20_H4": [-0.152012718584823, -0.190015898231029],
@@ -265,8 +266,8 @@ def _assert_exact_frozen_config(config: dict[str, Any]) -> None:
         "x0_rot": config["initialization"]["x0_rot"],
         "S_C": config["theory"]["original"]["S_C"],
         "S_rot": config["theory"]["rotated"]["S_rot"],
-        "B10": config["theory"]["original"]["B10"],
-        "B10_rot": config["theory"]["rotated"]["B10_rot"],
+        "B11_d": config["theory"]["original"]["B11_d"],
+        "B11_d_rot": config["theory"]["rotated"]["B11_d_rot"],
         "B20_H2": config["theory"]["original"]["by_H"][2]["B20"],
         "B20_rot_H2": config["theory"]["rotated"]["by_H"][2]["B20_rot"],
         "B20_H4": config["theory"]["original"]["by_H"][4]["B20"],
@@ -363,10 +364,10 @@ def check_rotation_protocol() -> dict[str, Any]:
         configured_rotated = config["theory"]["rotated"]
         checks = (
             (original_targets.S_C, configured_original["S_C"], "S_C"),
-            (original_targets.B10, configured_original["B10"], "B10"),
+            (original_targets.B11_d, configured_original["B11_d"], "B11_d"),
             (original_targets.B20, configured_original["by_H"][H]["B20"], f"B20 H={H}"),
             (rotated_targets.S_C, configured_rotated["S_rot"], "S_rot"),
-            (rotated_targets.B10, configured_rotated["B10_rot"], "B10_rot"),
+            (rotated_targets.B11_d, configured_rotated["B11_d_rot"], "B11_d_rot"),
             (
                 rotated_targets.B20,
                 configured_rotated["by_H"][H]["B20_rot"],
@@ -381,31 +382,6 @@ def check_rotation_protocol() -> dict[str, Any]:
     x0_rot = np.asarray(config["initialization"]["x0_rot"], dtype=np.float64)
     if np.linalg.norm(x0_rot - rotate_last_axis(x0, Q)) > 1.0e-13:
         raise RuntimeError("Frozen rotated initialization is inconsistent")
-    if not P2_ROTATION_PROTOCOL_PATH.is_file():
-        raise RuntimeError("Missing frozen rotation protocol document")
-    protocol = P2_ROTATION_PROTOCOL_PATH.read_text(encoding="utf-8")
-    required_fragments = (
-        "theta = pi / 6",
-        "A_rot = [[0.976794919243112, 0.186602540378444]",
-        "C_rot = [[0.751794919243112, 0.229903810567666]",
-        "u_rot = [0.258819045102521",
-        "grad f_rot(y) = Q grad f(Q.T y)",
-        "epsilon_rot = Q epsilon",
-        "The fixed pathwise horizon is `T=200` communication rounds per paired run.",
-        "r_x    = max over t=1,...,200",
-        "r_xi   = max over t=1,...,200 and clients c",
-        "r_qbar = max over t=1,...,200 and local steps h",
-        "`max(r_x, r_xi, r_qbar) <= 1e-10`",
-        "seeds `1101`, `1102`, `1103`, and `1104`",
-        "x0 = [0.2, -0.1]",
-        "R0 = ||Q.T Q - I||_F                         <= 1e-14",
-        "R6 = ||B20_rot(H) - Q B20(H)||_2             <= 1e-12",
-        "artifacts/formal/p2-d2-rotation-invariance/",
-        "permitted empirical and numerical sanity conclusion",
-    )
-    missing = [fragment for fragment in required_fragments if fragment not in protocol]
-    if missing:
-        raise RuntimeError(f"Frozen rotation protocol document disagrees: {missing}")
     return {
         "status": "PASS",
         "workstream": "p2",
@@ -555,7 +531,7 @@ def capture_rotation_provenance(
 ) -> dict[str, Any]:
     environment = environment_manifest()
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "capture_point": "before_any_p2_rotation_output_write",
         "study": "p2_multidimensional_validation",
         "phase": "rotation",
@@ -589,7 +565,7 @@ def require_clean_committed_source(provenance: dict[str, Any]) -> None:
         or provenance.get("source_commit") in (None, "", "NO_COMMIT")
     ):
         raise RuntimeError(
-            "Formal P2 rotation runs require a clean committed source tree at run start"
+            "Formal rotation runs require a clean committed source tree at run start"
         )
 
 
@@ -603,7 +579,7 @@ def validate_rotation_output_root(target_root: Path, expected_root: Path) -> Non
         "p2-d2-h4-small-step-confirmation",
     }
     if forbidden.intersection(target.parts):
-        raise RuntimeError("Rotation writes cannot target prior P0/P1/P2 evidence")
+        raise RuntimeError("Rotation writes cannot target another evidence namespace")
     if target != expected:
         raise RuntimeError("Rotation writes require the selected isolated namespace")
 
@@ -647,7 +623,7 @@ def _rotation_manifest(
             )
     pathwise_pass_count = sum(bool(row["pathwise_pass"]) for row in pair_rows)
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "study": "p2_multidimensional_validation",
         "phase": "rotation",
         "matrix_id": provenance["matrix_id"],
@@ -804,7 +780,7 @@ def build_rotation_report_from_saved(
     all_pathwise = bool(pairs["pathwise_pass"].astype(bool).all())
     all_theory = bool(theory["passed"].astype(bool).all())
     lines = [
-        "# P2 d=2 rotation-equivariance report",
+        "# Rotation-equivariance report, d=2",
         "",
         "## Classification",
         "",

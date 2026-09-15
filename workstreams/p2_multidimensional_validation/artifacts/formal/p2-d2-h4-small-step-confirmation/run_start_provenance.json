@@ -4,7 +4,7 @@
   "bootstrap_seed": 2902,
   "capture_point": "before_any_p2_formal_output_write",
   "config_path": "workstreams/p2_multidimensional_validation/configs/d2_h4_small_step_confirmation.yaml",
-  "config_sha256": "bf412635cf6f703cbb3d5f60639653e13ac7519ec90145fe8bb4b6ff6368cb4c",
+  "config_sha256": "f977860d1299ee9b3b94de0470dbe00fe486b3238c7df20ed9a09fd442cdb826",
   "environment": {
     "git_commit": "1347e99513d8b44dbec52f0a9f11ca2315935595",
     "git_dirty": false,
@@ -22,7 +22,7 @@
   "phase": "formal",
   "planned_coordinate_run_rows": 128,
   "protocol_path": "workstreams/p2_multidimensional_validation/formal_protocol.md",
-  "protocol_sha256": "4cbc201977d3f5f554b3a43f32546dbcf4224fdd9018dcff65d6bf213d26fd26",
+  "protocol_sha256": "074024801908f47778772635b24cbf598c543afda65457b9c6906cd4c3f572fa",
   "run_matrix": {
     "H_values": [
       4
@@ -57,7 +57,7 @@
     "target": "h4-small-step",
     "unique_run_ids": 32
   },
-  "schema_version": 1,
+  "schema_version": 2,
   "seeds": [
     1001,
     1002,

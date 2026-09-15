@@ -219,7 +219,6 @@ __marimo__/
 
 # Local operating-system metadata and ad hoc source archives
 .DS_Store
-/workstreams/p2_multidimensional_validation.zip
 
 # Workstream smoke-test output
 workstreams/p0_scaffold_bias/artifacts/smoke/

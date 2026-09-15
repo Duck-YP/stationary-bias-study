@@ -1,4 +1,4 @@
-"""Fixed-gamma large-N plateau figure built from saved P1 summaries."""
+"""Fixed-gamma large-client plateau figure built from saved summaries."""
 
 from __future__ import annotations
 

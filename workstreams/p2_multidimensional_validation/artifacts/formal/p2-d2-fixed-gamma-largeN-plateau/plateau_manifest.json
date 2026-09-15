@@ -23,7 +23,7 @@
     "run": ".venv/bin/python run.py p2 plateau run"
   },
   "config_path": "workstreams/p2_multidimensional_validation/configs/d2_fixed_gamma_largeN_plateau.yaml",
-  "config_sha256": "41be0d24d0de3f38df4eaf5db65db51e212e4667611a789ded4b0c3c730119d2",
+  "config_sha256": "e11693b2b6966a029ae71f4819526a73b53c5e19581798470a9adc760b5bb148",
   "config_snapshot": "d2_fixed_gamma_largeN_plateau_config_snapshot.yaml",
   "environment": {
     "git_commit": "c9c21e71710e4d8dc24b540e3c489f68debef73c",
@@ -153,7 +153,7 @@
   ],
   "interpretation_boundary": "fixed_gamma_empirical_consistency_test_not_exact_B20_test_or_proof",
   "matrix_id": "p2-d2-fixed-gamma-largeN-plateau",
-  "normalization": "C_hat = (b_hat - (gamma / N) * B10) / gamma^2",
+  "normalization": "C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2",
   "observed_chain_count": 40,
   "observed_rows": {
     "batch_summary": 16000,
@@ -201,7 +201,7 @@
     }
   ],
   "protocol_path": "workstreams/p2_multidimensional_validation/d2_fixed_gamma_largeN_plateau_protocol.md",
-  "protocol_sha256": "891b2d2a52137de92289167d012248f83beee851110031ecc769cb92ab85a483",
+  "protocol_sha256": "9debb9802ac3dbd990195fbc8da9e6b8268962328c53e656b6209636ad7a33b5",
   "report": "p2_d2_fixed_gamma_largeN_plateau_report.md",
   "run_matrix": {
     "H_values": [
@@ -244,7 +244,7 @@
     "settings": 5,
     "unique_run_ids": 40
   },
-  "schema_version": 1,
+  "schema_version": 2,
   "seeds": [
     1301,
     1302,
@@ -271,11 +271,11 @@
   },
   "study": "p2_multidimensional_validation",
   "theory": {
-    "B10": [
+    "B11_d": [
       -0.024459428167733,
       -0.030574285209666
     ],
-    "B10_sign_is_intrinsic": true,
+    "B11_d_sign_is_intrinsic": true,
     "B20": {
       "H": 2,
       "control": [
@@ -304,7 +304,7 @@
     "exact_B20_CI_coverage_required": false,
     "finite_gamma_discrepancy_scale": "O(gamma)",
     "fixed_gamma_expansion": "C_hat = B20(H) + O(1/N + gamma)",
-    "normalization": "C_hat = (b_hat - (gamma / N) * B10) / gamma^2"
+    "normalization": "C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2"
   },
   "uncertainty_protocol": {
     "bootstrap": {

@@ -1,4 +1,4 @@
-"""Saved-table analysis and reporting for the frozen P2 formal matrices."""
+"""Saved-table analysis and reporting for frozen formal matrices."""
 
 from __future__ import annotations
 
@@ -54,7 +54,7 @@ def _required_paths(output_root: Path, names: tuple[str, ...]) -> list[Path]:
     paths = [output_root / name for name in names]
     missing = [str(path) for path in paths if not path.is_file()]
     if missing:
-        raise FileNotFoundError("Missing P2 formal saved artifact: " + ", ".join(missing))
+        raise FileNotFoundError("Missing formal saved artifact: " + ", ".join(missing))
     return paths
 
 
@@ -76,12 +76,12 @@ def validate_saved_formal_matrix(
     provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
     current_hash = hashlib.sha256(formal_config_path(target).read_bytes()).hexdigest()
     if provenance.get("config_sha256") != current_hash:
-        raise RuntimeError("P2 formal config changed after simulation provenance capture")
+        raise RuntimeError("Formal config changed after simulation provenance capture")
     if provenance.get("matrix_id") != config["matrix_identifier"]:
-        raise RuntimeError("P2 saved matrix ID differs from the frozen config")
+        raise RuntimeError("Saved matrix ID differs from the frozen config")
     protocol_hash = hashlib.sha256(formal_protocol_path(target).read_bytes()).hexdigest()
     if provenance.get("protocol_sha256") != protocol_hash:
-        raise RuntimeError("P2 formal protocol changed after simulation provenance capture")
+        raise RuntimeError("Formal protocol changed after simulation provenance capture")
 
     run_df = pd.read_csv(run_path, keep_default_na=False)
     batch_df = pd.read_csv(batch_path, keep_default_na=False)
@@ -100,7 +100,7 @@ def validate_saved_formal_matrix(
         "delta",
         "estimator",
         "b_component",
-        "B10_component",
+        "B11_d_component",
         "C_component",
         "B20_component",
         "normalized_error_component",
@@ -129,10 +129,10 @@ def validate_saved_formal_matrix(
         "validity_pass",
     }
     if not required_run <= set(run_df.columns):
-        raise ValueError(f"P2 run summary lacks {sorted(required_run - set(run_df.columns))}")
+        raise ValueError(f"Run summary lacks {sorted(required_run - set(run_df.columns))}")
     if not required_batch <= set(batch_df.columns):
         raise ValueError(
-            f"P2 batch summary lacks {sorted(required_batch - set(batch_df.columns))}"
+            f"Batch summary lacks {sorted(required_batch - set(batch_df.columns))}"
         )
 
     expected_specs = build_formal_run_matrix(target, config)
@@ -151,7 +151,7 @@ def validate_saved_formal_matrix(
         )
     )
     if len(observed_keys) != len(set(observed_keys)):
-        raise ValueError("P2 formal run summary contains duplicate coordinate rows")
+        raise ValueError("Formal run summary contains duplicate coordinate rows")
     observed = set(observed_keys)
     if observed != expected:
         missing = len(expected - observed)
@@ -633,7 +633,7 @@ def _manifest(
         falsification["gate"].isin(["V0", "V1", "V2", "V5"])
     ]
     manifest = {
-        "schema_version": 1,
+        "schema_version": 2,
         "study": "p2_multidimensional_validation",
         "phase": "formal",
         "matrix_id": config["matrix_identifier"],
@@ -819,14 +819,16 @@ def build_formal_report_and_plots(
     report_path = output_root / report_name
     report_text = "\n".join(
         [
-            f"# P2 d={dimension} formal coefficient analysis",
+            f"# Formal coefficient analysis, d={dimension}",
             "",
             "## EMPIRICAL numerical outcomes",
             "",
             "All numerical tables below are simulation outcomes, not proven statements.",
             "",
-            f"Source commit: `{provenance['source_commit']}`  ",
-            f"Config SHA-256: `{provenance['config_sha256']}`  ",
+            f"Source commit: `{provenance['source_commit']}`",
+            "",
+            f"Config SHA-256: `{provenance['config_sha256']}`",
+            "",
             f"Matrix: `{config['matrix_identifier']}`",
             "",
             "## Frozen inputs",

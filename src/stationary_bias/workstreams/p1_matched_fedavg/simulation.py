@@ -1,4 +1,4 @@
-"""Isolated matched common-random-number simulation for P1."""
+"""Isolated matched common-random-number simulation."""
 
 from __future__ import annotations
 
@@ -215,7 +215,7 @@ def _capture_run_start_provenance(
     config_path: Path = P1_CONFIG_PATH,
     matrix_audit: Callable[[Sequence[P1RunSpec]], dict[str, Any]] = audit_p1_run_matrix,
 ) -> dict[str, Any]:
-    """Capture source and environment identity before any P1 output write."""
+    """Capture source and environment identity before any output write."""
 
     environment = environment_manifest()
     seeds_by_grid = {
@@ -905,7 +905,7 @@ def _run_controlled_formal_matrix(
         or provenance["git_commit"] == "NO_COMMIT"
     ):
         raise RuntimeError(
-            "Formal P1 runs require a clean committed source tree at run start"
+            "Formal runs require a clean committed source tree at run start"
         )
 
     staged_root = create_staging_directory(target_root)
@@ -944,7 +944,7 @@ def run_p1_experiment() -> dict[str, Any]:
         "primary_seeds": list(range(301, 309)),
         "small_step_h4_seeds": list(range(401, 409)),
     }:
-        raise RuntimeError(f"P1 matrix differs from the defined formal matrix: {audit}")
+        raise RuntimeError(f"Matrix differs from the defined formal matrix: {audit}")
     config = load_p1_config()
     from .analysis import build_p1_outputs
 

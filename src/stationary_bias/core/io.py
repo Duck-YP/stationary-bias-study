@@ -49,7 +49,7 @@ def load_yaml(path: Path) -> dict[str, Any]:
 
 
 def load_configs() -> dict[str, dict[str, Any]]:
-    """Load the frozen P0 study under descriptive experiment identifiers."""
+    """Load the frozen baseline study under descriptive experiment identifiers."""
 
     return {
         "base": load_yaml(SHARED_CONFIG_ROOT / "simulation_defaults.yaml"),

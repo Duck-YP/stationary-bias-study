@@ -1,4 +1,4 @@
-"""Setting summaries, falsification gates, bootstrap fits, and P0 report."""
+"""Setting summaries, falsification gates, bootstrap fits, and reporting."""
 
 from __future__ import annotations
 
@@ -345,7 +345,7 @@ def build_negative_control_audit(
         if run_group.empty:
             raise ValueError(f"Missing raw negative controls rows for {name}, N={N}, gamma={gamma}")
         raw = run_group.iloc[0]
-        B10 = leading_bias_coefficient(float(raw["a"]), float(raw["tau"]), float(raw["sigma2"]))
+        B11_d = leading_bias_coefficient(float(raw["a"]), float(raw["tau"]), float(raw["sigma2"]))
         direct_low = float(setting["b_direct_ci_low"])
         direct_high = float(setting["b_direct_ci_high"])
         direct_contains_zero = direct_low <= 0.0 <= direct_high
@@ -385,7 +385,7 @@ def build_negative_control_audit(
             )
             descriptive_trend = h1_trend
             notes = (
-                "Boundary sanity only: C_balance=(b_balance-B10*gamma/N)/gamma^2; "
+                "Boundary sanity only: C_balance=(b_balance-B11_d*gamma/N)/gamma^2; "
                 "raw stationary bias is not targeted to zero."
             )
         else:
@@ -399,7 +399,7 @@ def build_negative_control_audit(
                 "gamma": gamma,
                 "N": N,
                 "H": H,
-                "B10": B10,
+                "B11_d": B11_d,
                 "b_direct_mean": float(setting["b_direct_mean"]),
                 "b_direct_ci_low": direct_low,
                 "b_direct_ci_high": direct_high,
@@ -702,7 +702,7 @@ def write_report(
         "",
         "The balance estimator is structurally zero for the quadratic objective because q(x) is identically zero; therefore the independent direct stationary-mean estimator is used as the robustness check.",
         "",
-        "For H=1, this is a boundary sanity check. The relevant quantity is the normalized residual after subtracting B10*gamma/N, not the raw stationary bias.",
+        "For H=1, this is a boundary sanity check. The relevant quantity is the normalized residual after subtracting $B_{11}^{(1)}\\gamma/N$, not the raw stationary bias.",
         "",
         "## Research interpretation",
         "",

@@ -98,7 +98,7 @@ S_C =
 For `T[M] = alpha u (u^T M u)`, use
 
 ```text
-B10 = [-0.007741472935786256, -0.025158890352923790,
+B11_d = [-0.007741472935786256, -0.025158890352923790,
         0.017734150314997830, -0.018766028411084970,
         0.008807230104405750].
 
@@ -142,7 +142,7 @@ chains per setting, and 80 chain runs. No setting may be filtered or added. Alon
 The primary signed coordinatewise estimator is
 
 ```text
-C_hat_j = [b_hat_j - (gamma/N) B10_j] / gamma^2.
+C_hat_j = [b_hat_j - (gamma/N) B11_d_j] / gamma^2.
 ```
 
 The stationary mean-balance estimate is primary. The direct stationary sample mean is diagnostic.

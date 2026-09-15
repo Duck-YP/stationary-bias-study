@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 experiment: p2_multidimensional_validation
 setting_id: d2-controlled-smoke
 description: Controlled two-dimensional SCAFFOLD engineering smoke setting.
@@ -33,4 +33,3 @@ smoke:
     burn_in_multiples: 5
     batch_length_multiples: 2
     num_batches: 4
-

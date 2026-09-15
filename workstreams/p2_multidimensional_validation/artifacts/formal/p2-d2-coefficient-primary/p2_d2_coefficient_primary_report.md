@@ -1,16 +1,18 @@
-# P2 d=2 formal coefficient analysis
+# Formal coefficient analysis, d=2
 
 ## EMPIRICAL numerical outcomes
 
 All numerical tables below are simulation outcomes, not proven statements.
 
-Source commit: `541342963f3dc936cc7bb458f117d7dca49babcf`  
-Config SHA-256: `e6dd7f32288001b1e68edf019c002fc5fac1d2e3632bf7d08e4d62f8883ed47b`  
+Source commit: `541342963f3dc936cc7bb458f117d7dca49babcf`
+
+Config SHA-256: `9409e25e7a417794c61d94eadbedc8dd0a498a79968d7d206ede205db3b73197`
+
 Matrix: `p2-d2-coefficient-primary`
 
 ## Frozen inputs
 
-Theory: `{"B10": [-0.024459428167733, -0.030574285209666], "B10_sign_is_intrinsic": true, "S_C": [[0.413009404388715, 0.021943573667712], [0.021943573667712, 0.345611285266458]], "by_H": {"2": {"B20": [-0.048004016395207, -0.060005020494009], "B20_ctrl": [-0.016001338798402, -0.020001673498003], "B20_local": [-0.032002677596805, -0.040003346996006]}, "4": {"B20": [-0.152012718584823, -0.190015898231029], "B20_ctrl": [-0.056004685794409, -0.070005857243011], "B20_local": [-0.096008032790415, -0.120010040988019]}}, "normalization": "C_hat = (b_hat - (gamma / N) * B10) / gamma^2", "remainder": "O(1/N + gamma)"}`
+Theory: `{"B11_d": [-0.024459428167733, -0.030574285209666], "B11_d_sign_is_intrinsic": true, "S_C": [[0.413009404388715, 0.021943573667712], [0.021943573667712, 0.345611285266458]], "by_H": {"2": {"B20": [-0.048004016395207, -0.060005020494009], "B20_ctrl": [-0.016001338798402, -0.020001673498003], "B20_local": [-0.032002677596805, -0.040003346996006]}, "4": {"B20": [-0.152012718584823, -0.190015898231029], "B20_ctrl": [-0.056004685794409, -0.070005857243011], "B20_local": [-0.096008032790415, -0.120010040988019]}}, "normalization": "C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2", "remainder": "O(1/N + gamma)"}`
 
 Setting matrix: `{"H_values": [2, 4], "N_values": [12, 16, 24, 32, 48], "all_unique": true, "chains": 80, "chains_per_setting": [8, 8, 8, 8, 8, 8, 8, 8, 8, 8], "gamma_equals_inverse_N": true, "matrix_id": "p2-d2-coefficient-primary", "seeds": [901, 902, 903, 904, 905, 906, 907, 908], "settings": 10, "target": "primary", "unique_run_ids": 80}`
 

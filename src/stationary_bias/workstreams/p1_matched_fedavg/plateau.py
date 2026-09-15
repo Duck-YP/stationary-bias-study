@@ -1,4 +1,4 @@
-"""Isolated fixed-gamma, large-N matched plateau experiment for P1."""
+"""Isolated fixed-gamma, large-client matched plateau experiment."""
 
 from __future__ import annotations
 
@@ -103,7 +103,7 @@ def check_plateau_matrix() -> dict[str, Any]:
     audit = audit_plateau_run_matrix()
     expected = expected_plateau_audit()
     if audit != expected:
-        raise RuntimeError(f"P1 plateau matrix differs from its formal protocol: {audit}")
+        raise RuntimeError(f"Plateau matrix differs from its formal protocol: {audit}")
     theory = config["theory"]
     expected_theory = {
         "B20_fedavg": b20_fedavg(2),
@@ -112,7 +112,7 @@ def check_plateau_matrix() -> dict[str, Any]:
     }
     for key, value in expected_theory.items():
         if float(theory[key]) != value:
-            raise RuntimeError(f"P1 plateau theory constant {key} changed")
+            raise RuntimeError(f"Plateau theory constant {key} changed")
     return audit
 
 

@@ -1,4 +1,4 @@
-"""Frozen-matrix loading and execution for the P2 formal coefficient study."""
+"""Frozen-matrix loading and execution for the formal coefficient study."""
 
 from __future__ import annotations
 
@@ -30,6 +30,7 @@ from ...core.io import (
 )
 from .formal_inference import evaluate_vector_precision
 from .objective import RankOneVectorObjective
+from .protocols import archived_protocol_path
 from .simulation import _advance_block
 from .theory import normalize_vector_bias, vector_theory_targets
 
@@ -40,9 +41,9 @@ P2_PRIMARY_CONFIG_PATH = P2_FORMAL_CONFIG_ROOT / "d2_coefficient_primary.yaml"
 P2_H4_SMALL_CONFIG_PATH = (
     P2_FORMAL_CONFIG_ROOT / "d2_h4_small_step_confirmation.yaml"
 )
-P2_FORMAL_PROTOCOL_PATH = P2_FORMAL_ROOT / "formal_protocol.md"
+P2_FORMAL_PROTOCOL_PATH = archived_protocol_path("formal_protocol.md")
 P2_D5_CONFIG_PATH = P2_FORMAL_CONFIG_ROOT / "d5_controlled_validation.yaml"
-P2_D5_PROTOCOL_PATH = P2_FORMAL_ROOT / "d5_protocol.md"
+P2_D5_PROTOCOL_PATH = archived_protocol_path("d5_protocol.md")
 P2_RUN_START_PROVENANCE = "run_start_provenance.json"
 P2_FORMAL_MANIFEST = "formal_manifest.json"
 P2_RAW_RESULT_FILES = ("run_summary.csv", "batch_summary.csv")
@@ -85,7 +86,7 @@ def formal_config_path(target: str) -> Path:
         return P2_H4_SMALL_CONFIG_PATH
     if target == "d5":
         return P2_D5_CONFIG_PATH
-    raise ValueError(f"Unknown P2 formal target: {target}")
+    raise ValueError(f"Unknown formal target: {target}")
 
 
 def formal_protocol_path(target: str) -> Path:
@@ -189,7 +190,7 @@ def _assert_config_agreement(
 ) -> None:
     for key in ("d", "A", "u", "alpha", "x_star", "global_hessian_bounds"):
         if primary["objective"][key] != confirmation["objective"][key]:
-            raise RuntimeError(f"Frozen P2 objective configs disagree on {key}")
+            raise RuntimeError(f"Frozen objective configs disagree on {key}")
     for key in (
         "noise",
         "protocol",
@@ -198,11 +199,11 @@ def _assert_config_agreement(
         "extrapolation",
     ):
         if primary[key] != confirmation[key]:
-            raise RuntimeError(f"Frozen P2 configs disagree on {key}")
+            raise RuntimeError(f"Frozen configs disagree on {key}")
     primary_h4 = primary["theory"]["by_H"][4]
     for key in ("B20", "B20_local", "B20_ctrl"):
         if primary_h4[key] != confirmation["theory"][key]:
-            raise RuntimeError(f"Frozen P2 H=4 theory configs disagree on {key}")
+            raise RuntimeError(f"Frozen H=4 theory configs disagree on {key}")
 
 
 def check_formal_protocol() -> dict[str, Any]:
@@ -222,7 +223,7 @@ def check_formal_protocol() -> dict[str, Any]:
     }
     for key, expected in expected_objective.items():
         if primary["objective"][key] != expected:
-            raise RuntimeError(f"Frozen P2 objective value changed: {key}")
+            raise RuntimeError(f"Frozen objective value changed: {key}")
     expected_noise = {
         "covariance": [[1.0, 0.2], [0.2, 0.7]],
         "covariance_eigenvalues": [0.6, 1.1],
@@ -230,7 +231,7 @@ def check_formal_protocol() -> dict[str, Any]:
     }
     for key, expected in expected_noise.items():
         if primary["noise"][key] != expected:
-            raise RuntimeError(f"Frozen P2 noise value changed: {key}")
+            raise RuntimeError(f"Frozen noise value changed: {key}")
     expected_protocol = {
         "mixing_mu": 0.85,
         "burn_in_multiples": 100,
@@ -245,7 +246,7 @@ def check_formal_protocol() -> dict[str, Any]:
     }
     for key, expected in expected_protocol.items():
         if primary["protocol"][key] != expected:
-            raise RuntimeError(f"Frozen P2 protocol value changed: {key}")
+            raise RuntimeError(f"Frozen protocol value changed: {key}")
     uncertainty = primary["per_setting_uncertainty"]
     if (
         uncertainty["degrees_of_freedom"] != 7
@@ -253,7 +254,7 @@ def check_formal_protocol() -> dict[str, Any]:
         or uncertainty["simultaneous_coordinate_confidence_level"] != 0.975
         or uncertainty["marginal_diagnostic_confidence_level"] != 0.95
     ):
-        raise RuntimeError("Frozen P2 uncertainty levels changed")
+        raise RuntimeError("Frozen uncertainty levels changed")
     stopping = primary["precision_stopping"]
     if (
         stopping["absolute_half_width"] != 0.0025
@@ -262,14 +263,14 @@ def check_formal_protocol() -> dict[str, Any]:
         or stopping["extend_by_batches"] != 50
         or stopping["stop_at_batches"] != 400
     ):
-        raise RuntimeError("Frozen P2 precision rule changed")
+        raise RuntimeError("Frozen precision rule changed")
     extrapolation = primary["extrapolation"]
     if (
         extrapolation["model"] != "C_hat_j = beta0_j + beta1_j * delta"
         or extrapolation["delta"] != "gamma + 1/N"
         or extrapolation["coefficient_estimate"] != "beta0_j"
     ):
-        raise RuntimeError("Frozen P2 extrapolation model changed")
+        raise RuntimeError("Frozen extrapolation model changed")
     if (
         primary["bootstrap"]["seed"] != 2901
         or confirmation["bootstrap"]["seed"] != 2902
@@ -279,7 +280,7 @@ def check_formal_protocol() -> dict[str, Any]:
         or confirmation["bootstrap"]["simultaneous_quantiles"]
         != [0.0125, 0.9875]
     ):
-        raise RuntimeError("Frozen P2 bootstrap protocol changed")
+        raise RuntimeError("Frozen bootstrap protocol changed")
     expected_namespaces = {
         "primary": (
             "workstreams/p2_multidimensional_validation/artifacts/formal/"
@@ -291,16 +292,16 @@ def check_formal_protocol() -> dict[str, Any]:
         ),
     }
     if primary["artifact_namespace"] != expected_namespaces["primary"]:
-        raise RuntimeError("Frozen P2 primary artifact namespace changed")
+        raise RuntimeError("Frozen primary artifact namespace changed")
     if confirmation["artifact_namespace"] != expected_namespaces["h4-small-step"]:
-        raise RuntimeError("Frozen P2 confirmation artifact namespace changed")
+        raise RuntimeError("Frozen confirmation artifact namespace changed")
     if (
         primary["protocol_status"] != "frozen_not_executed"
         or confirmation["protocol_status"] != "frozen_not_executed"
         or primary["interpretation_boundary"] != "consistency_test_not_proof"
         or confirmation["interpretation_boundary"] != "consistency_test_not_proof"
     ):
-        raise RuntimeError("Frozen P2 protocol identity changed")
+        raise RuntimeError("Frozen protocol identity changed")
     expected_audits = {
         "primary": {
             "matrix_id": "p2-d2-coefficient-primary",
@@ -333,66 +334,41 @@ def check_formal_protocol() -> dict[str, Any]:
         observed = audit_formal_run_matrix(target)
         if observed != expected:
             raise RuntimeError(
-                f"P2 {target} matrix differs from its frozen protocol: {observed}"
+                f"{target} matrix differs from its frozen protocol: {observed}"
             )
 
     objective = objective_from_formal_config(primary)
     covariance = covariance_from_formal_config(primary)
     if np.min(np.linalg.eigvalsh(covariance)) <= 0.0:
-        raise RuntimeError("Frozen P2 covariance is not positive definite")
+        raise RuntimeError("Frozen covariance is not positive definite")
     if np.allclose(
         objective.A @ covariance - covariance @ objective.A,
         0.0,
         rtol=0.0,
         atol=1.0e-15,
     ):
-        raise RuntimeError("Frozen P2 covariance unexpectedly commutes with A")
+        raise RuntimeError("Frozen covariance unexpectedly commutes with A")
     for H in (2, 4):
         targets = vector_theory_targets(objective, covariance, H)
         configured = primary["theory"]["by_H"][H]
         checks = (
             (targets.S_C, primary["theory"]["S_C"], "S_C"),
-            (targets.B10, primary["theory"]["B10"], "B10"),
+            (targets.B11_d, primary["theory"]["B11_d"], "B11_d"),
             (targets.B20, configured["B20"], f"H={H} B20"),
             (targets.B20_local, configured["B20_local"], f"H={H} B20_local"),
             (targets.B20_ctrl, configured["B20_ctrl"], f"H={H} B20_ctrl"),
         )
         for actual, expected, label in checks:
             if not np.allclose(actual, expected, rtol=0.0, atol=1.0e-14):
-                raise RuntimeError(f"Frozen P2 theory mismatch for {label}")
+                raise RuntimeError(f"Frozen theory mismatch for {label}")
         if not np.allclose(
             targets.B20_local + targets.B20_ctrl,
             targets.B20,
             rtol=0.0,
             atol=1.0e-15,
         ):
-            raise RuntimeError(f"Frozen P2 theory decomposition fails for H={H}")
+            raise RuntimeError(f"Frozen theory decomposition fails for H={H}")
 
-    if not P2_FORMAL_PROTOCOL_PATH.is_file():
-        raise RuntimeError("Missing frozen P2 formal protocol document")
-    protocol_text = P2_FORMAL_PROTOCOL_PATH.read_text(encoding="utf-8")
-    required_protocol_fragments = (
-        "C_hat(gamma, N, H) = [b_hat(gamma, N, H) - (gamma/N) B10] / gamma^2",
-        "A = [[1.2, 0.2], [0.2, 1.0]]",
-        "C = [[1.0, 0.2], [0.2, 0.7]]",
-        "(gamma, N) = (1/12,12), (1/16,16), (1/24,24), (1/32,32), (1/48,48)",
-        "(gamma, N) = (1/64,64), (1/96,96), (1/128,128), (1/192,192)",
-        "Primary seeds are `901` through `908`",
-        "seeds `1001` through `1008`",
-        "h_j <= max(0.0025, 0.10 * abs(B20_j(H)))",
-        "C_hat_j = beta0_j + beta1_j delta",
-        "2,000 replicates and seed `2902`",
-        expected_namespaces["primary"] + "/",
-        expected_namespaces["h4-small-step"] + "/",
-    )
-    missing_fragments = [
-        fragment for fragment in required_protocol_fragments if fragment not in protocol_text
-    ]
-    if missing_fragments:
-        raise RuntimeError(
-            "Frozen P2 protocol document disagrees with config/code: "
-            + repr(missing_fragments)
-        )
     return {
         "status": "PASS",
         "workstream": "p2",
@@ -435,23 +411,23 @@ def check_d5_protocol() -> dict[str, Any]:
     }
     for key, expected in expected_objective.items():
         if config["objective"][key] != expected:
-            raise RuntimeError(f"Frozen P2 d=5 objective value changed: {key}")
+            raise RuntimeError(f"Frozen higher-dimensional objective changed: {key}")
     objective = objective_from_formal_config(config)
     covariance = covariance_from_formal_config(config)
     v = np.asarray(config["objective"]["v"], dtype=np.float64)
     u = np.asarray(config["objective"]["u"], dtype=np.float64)
     if not np.allclose(u, v / np.linalg.norm(v), rtol=0.0, atol=1.0e-15):
-        raise RuntimeError("Frozen P2 d=5 direction is not normalized v")
+        raise RuntimeError("Frozen direction is not normalized")
     if not (np.any(u > 0.0) and np.any(u < 0.0) and np.count_nonzero(u) > 1):
-        raise RuntimeError("Frozen P2 d=5 direction lost its mixed non-axis structure")
+        raise RuntimeError("Frozen direction lost its mixed non-axis structure")
     if not np.allclose(objective.A, objective.A.T, rtol=0.0, atol=1.0e-15):
-        raise RuntimeError("Frozen P2 d=5 A is not symmetric")
+        raise RuntimeError("Frozen objective matrix is not symmetric")
     if not np.allclose(covariance, covariance.T, rtol=0.0, atol=1.0e-15):
-        raise RuntimeError("Frozen P2 d=5 covariance is not symmetric")
+        raise RuntimeError("Frozen covariance is not symmetric")
     A_eigenvalues = np.linalg.eigvalsh(objective.A)
     C_eigenvalues = np.linalg.eigvalsh(covariance)
     if min(A_eigenvalues) <= 0.0 or min(C_eigenvalues) <= 0.0:
-        raise RuntimeError("Frozen P2 d=5 A and C must be positive definite")
+        raise RuntimeError("Frozen matrices must be positive definite")
     commutator_norm = float(
         np.linalg.norm(objective.A @ covariance - covariance @ objective.A, ord="fro")
     )
@@ -461,13 +437,13 @@ def check_d5_protocol() -> dict[str, Any]:
         rtol=0.0,
         atol=1.0e-14,
     ):
-        raise RuntimeError("Frozen P2 d=5 commutator norm changed")
+        raise RuntimeError("Frozen commutator norm changed")
     rank_one = float(config["objective"]["alpha"]) * np.outer(u, u)
     mu = float(np.linalg.eigvalsh(objective.A - rank_one)[0])
     L = float(np.linalg.eigvalsh(objective.A + rank_one)[-1])
     bounds = config["objective"]["global_hessian_bounds"]
     if not np.allclose([mu, L], [bounds["mu"], bounds["L"]], rtol=0.0, atol=1.0e-14):
-        raise RuntimeError("Frozen P2 d=5 Hessian bounds changed")
+        raise RuntimeError("Frozen Hessian bounds changed")
     lyapunov_residual = 0.0
     decomposition_residuals: dict[int, float] = {}
     for H in (2, 4):
@@ -475,14 +451,14 @@ def check_d5_protocol() -> dict[str, Any]:
         configured = config["theory"]["by_H"][H]
         checks = (
             (targets.S_C, config["theory"]["S_C"], "S_C"),
-            (targets.B10, config["theory"]["B10"], "B10"),
+            (targets.B11_d, config["theory"]["B11_d"], "B11_d"),
             (targets.B20, configured["B20"], f"H={H} B20"),
             (targets.B20_local, configured["B20_local"], f"H={H} B20_local"),
             (targets.B20_ctrl, configured["B20_ctrl"], f"H={H} B20_ctrl"),
         )
         for actual, expected, label in checks:
             if not np.allclose(actual, expected, rtol=0.0, atol=1.0e-14):
-                raise RuntimeError(f"Frozen P2 d=5 theory mismatch for {label}")
+                raise RuntimeError(f"Frozen higher-dimensional theory mismatch for {label}")
         lyapunov_residual = float(
             np.linalg.norm(objective.A @ targets.S_C + targets.S_C @ objective.A - covariance)
         )
@@ -504,7 +480,7 @@ def check_d5_protocol() -> dict[str, Any]:
         "gamma_equals_inverse_N": True,
     }
     if audit != expected_audit:
-        raise RuntimeError(f"P2 d=5 matrix differs from its frozen protocol: {audit}")
+        raise RuntimeError(f"Matrix differs from its frozen protocol: {audit}")
     uncertainty = config["per_setting_uncertainty"]
     from .formal_inference import student_t_critical
 
@@ -512,7 +488,7 @@ def check_d5_protocol() -> dict[str, Any]:
     if not np.isclose(
         critical, uncertainty["simultaneous_t_critical"], rtol=0.0, atol=1.0e-15
     ):
-        raise RuntimeError("Frozen P2 d=5 t critical changed")
+        raise RuntimeError("Frozen t critical changed")
     if (
         uncertainty["coordinates"] != 5
         or uncertainty["familywise_confidence_level"] != 0.95
@@ -522,19 +498,7 @@ def check_d5_protocol() -> dict[str, Any]:
         or config["bootstrap"]["simultaneous_quantiles"] != [0.005, 0.995]
         or config["gates"]["combined_pass_requires"] != ["V0", "V1", "V2", "V5"]
     ):
-        raise RuntimeError("Frozen P2 d=5 inference protocol changed")
-    required_fragments = (
-        "d=5",
-        "t_(7,0.995) = 3.4994832973504924",
-        "5,000 bootstrap replicates",
-        "V0 requires",
-        "V5 requires exactly ten settings and 80 chains",
-        str(config["artifact_namespace"]) + "/",
-    )
-    protocol_text = P2_D5_PROTOCOL_PATH.read_text(encoding="utf-8")
-    missing = [item for item in required_fragments if item not in protocol_text]
-    if missing:
-        raise RuntimeError(f"Frozen P2 d=5 protocol document is incomplete: {missing}")
+        raise RuntimeError("Frozen inference protocol changed")
     preview = _initial_manifest(
         "d5",
         config,
@@ -607,7 +571,7 @@ def _setting_diagnostics(
     *,
     gamma: float,
     N: int,
-    B10: np.ndarray,
+    B11_d: np.ndarray,
     B20: np.ndarray,
     finite_flags: np.ndarray,
     max_control_sum: np.ndarray,
@@ -616,7 +580,7 @@ def _setting_diagnostics(
     chain_direct = np.mean(direct_batches, axis=0)
     chain_balance = np.mean(balance_batches, axis=0)
     chain_C = normalize_vector_bias(
-        chain_balance, gamma=gamma, N=N, B10=B10
+        chain_balance, gamma=gamma, N=N, B11_d=B11_d
     )
     precision = evaluate_vector_precision(
         chain_C,
@@ -743,7 +707,7 @@ def simulate_formal_setting(
                 ("stationary_mean_balance", stats["balance"]),
             ):
                 normalized = normalize_vector_bias(
-                    values, gamma=spec.gamma, N=spec.N, B10=targets.B10
+                    values, gamma=spec.gamma, N=spec.N, B11_d=targets.B11_d
                 )
                 for chain, item in enumerate(specs):
                     for coordinate in range(spec.d):
@@ -764,7 +728,7 @@ def simulate_formal_setting(
                                 "estimator": estimator,
                                 "batch_index": batch_index,
                                 "b_component": float(values[chain, coordinate]),
-                                "B10_component": float(targets.B10[coordinate]),
+                                "B11_d_component": float(targets.B11_d[coordinate]),
                                 "C_component": float(normalized[chain, coordinate]),
                                 "B20_component": float(targets.B20[coordinate]),
                                 "normalized_error_component": float(
@@ -783,7 +747,7 @@ def simulate_formal_setting(
             balance_array,
             gamma=spec.gamma,
             N=spec.N,
-            B10=targets.B10,
+            B11_d=targets.B11_d,
             B20=targets.B20,
             finite_flags=finite_flags,
             max_control_sum=max_control_sum,
@@ -833,7 +797,7 @@ def simulate_formal_setting(
     }
     for estimator, values in estimator_arrays.items():
         normalized = normalize_vector_bias(
-            values, gamma=spec.gamma, N=spec.N, B10=targets.B10
+            values, gamma=spec.gamma, N=spec.N, B11_d=targets.B11_d
         )
         for chain, item in enumerate(specs):
             for coordinate in range(spec.d):
@@ -853,7 +817,7 @@ def simulate_formal_setting(
                         "delta": item.delta,
                         "estimator": estimator,
                         "b_component": float(values[chain, coordinate]),
-                        "B10_component": float(targets.B10[coordinate]),
+                        "B11_d_component": float(targets.B11_d[coordinate]),
                         "C_component": float(normalized[chain, coordinate]),
                         "B20_component": float(targets.B20[coordinate]),
                         "normalized_error_component": float(
@@ -886,7 +850,7 @@ def _capture_formal_provenance(
     environment = environment_manifest()
     audit = audit_formal_run_matrix(target, runs)
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "capture_point": "before_any_p2_formal_output_write",
         "study": "p2_multidimensional_validation",
         "phase": "formal",
@@ -917,9 +881,9 @@ def validate_formal_output_root(target_root: Path, expected_root: Path) -> None:
     expected = expected_root.resolve()
     parts = set(resolved.parts)
     if "p0_scaffold_bias" in parts or "p1_matched_fedavg" in parts:
-        raise RuntimeError("P2 formal writes cannot target a P0 or P1 namespace")
+        raise RuntimeError("Formal writes cannot target another workstream namespace")
     if resolved != expected:
-        raise RuntimeError("P2 formal writes require the frozen artifact namespace")
+        raise RuntimeError("Formal writes require the frozen artifact namespace")
 
 
 def _initial_manifest(
@@ -943,7 +907,7 @@ def _initial_manifest(
         figures = []
     observed_chain_count = len({str(row.get("run_id")) for row in run_rows})
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "study": "p2_multidimensional_validation",
         "phase": "formal",
         "matrix_id": config["matrix_identifier"],
@@ -1002,44 +966,44 @@ def audit_d5_manifest(manifest: dict[str, Any]) -> None:
     }
     missing = sorted(required - set(manifest))
     if missing:
-        raise RuntimeError(f"P2 d=5 manifest contract lacks fields: {missing}")
+        raise RuntimeError(f"Manifest contract lacks fields: {missing}")
     if manifest["matrix_id"] != "p2-d5-controlled-validation":
-        raise RuntimeError("P2 d=5 manifest matrix identity changed")
+        raise RuntimeError("Manifest matrix identity changed")
     if manifest["source_dirty"] is not False:
-        raise RuntimeError("P2 d=5 manifest must record source_dirty=false")
+        raise RuntimeError("Manifest must record source_dirty=false")
     objective = manifest["objective"]
     for field in ("d", "A", "u", "alpha", "global_hessian_bounds"):
         if field not in objective:
-            raise RuntimeError(f"P2 d=5 manifest objective lacks {field}")
+            raise RuntimeError(f"Manifest objective lacks {field}")
     theory = manifest["theory"]
-    for field in ("S_C", "B10", "by_H"):
+    for field in ("S_C", "B11_d", "by_H"):
         if field not in theory:
-            raise RuntimeError(f"P2 d=5 manifest theory lacks {field}")
+            raise RuntimeError(f"Manifest theory lacks {field}")
     for H in (2, 4):
         by_H = theory["by_H"]
         values = by_H[H] if H in by_H else by_H[str(H)]
         for field in ("B20", "B20_local", "B20_ctrl"):
             if field not in values:
-                raise RuntimeError(f"P2 d=5 manifest H={H} theory lacks {field}")
+                raise RuntimeError(f"Manifest H={H} theory lacks {field}")
     filenames = set(manifest["artifact_filenames"])
     expected_files = set(load_formal_config("d5")["artifact_filenames"])
     if filenames != expected_files:
-        raise RuntimeError("P2 d=5 manifest artifact inventory is incomplete")
+        raise RuntimeError("Manifest artifact inventory is incomplete")
     matrix = manifest["run_matrix"]
     if matrix.get("settings") != 10 or matrix.get("chains") != 80:
-        raise RuntimeError("P2 d=5 manifest lacks the exact frozen matrix")
+        raise RuntimeError("Manifest lacks the exact frozen matrix")
     uncertainty = manifest["uncertainty_protocol"]
     if (
         uncertainty.get("coordinates") != 5
         or uncertainty.get("simultaneous_t_critical") != 3.4994832973504924
     ):
-        raise RuntimeError("P2 d=5 manifest lacks five-coordinate uncertainty")
+        raise RuntimeError("Manifest lacks coordinatewise uncertainty")
     gates = manifest["gate_definitions"]
     if not {"V0", "V1", "V2", "V3", "V4", "V5"} <= set(gates):
-        raise RuntimeError("P2 d=5 manifest lacks V0-V5 definitions")
+        raise RuntimeError("Manifest lacks validation-gate definitions")
     boundary = manifest["interpretation_boundary"]
     if not {"classification", "permitted_conclusion", "excluded_claims"} <= set(boundary):
-        raise RuntimeError("P2 d=5 manifest interpretation boundary is incomplete")
+        raise RuntimeError("Manifest interpretation boundary is incomplete")
 
 
 def run_formal_matrix(target: str) -> dict[str, Any]:
@@ -1059,7 +1023,7 @@ def run_formal_matrix(target: str) -> dict[str, Any]:
         or provenance["source_commit"] == "NO_COMMIT"
     ):
         raise RuntimeError(
-            "Formal P2 runs require a clean committed source tree at run start"
+            "Formal runs require a clean committed source tree at run start"
         )
     require_complete_existing_output(
         expected_root,

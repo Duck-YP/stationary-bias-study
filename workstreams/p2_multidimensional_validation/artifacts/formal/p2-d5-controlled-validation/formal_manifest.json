@@ -19,7 +19,7 @@
   "bootstrap_seed": 3901,
   "combined_formal_pass": true,
   "config_path": "workstreams/p2_multidimensional_validation/configs/d5_controlled_validation.yaml",
-  "config_sha256": "c3381beec6214cf5286b66d657b9cc7ff614a48bd5fa5edfe2acd35f5cc36c7b",
+  "config_sha256": "d3371a99a0f7f67140937c0b5eda9a94b2aa431338ebf8561988ddd995ac6d4e",
   "covariance": [
     [
       1.0,
@@ -1281,7 +1281,7 @@
   },
   "phase": "formal",
   "protocol_path": "workstreams/p2_multidimensional_validation/d5_protocol.md",
-  "protocol_sha256": "33e45f5d9c3414725d26fb2987906faa9d22cca5969136d846c4fd434b713c76",
+  "protocol_sha256": "8051a343001388192009d608c17b497689450df83d9c7877580d2877e7c8c256",
   "run_matrix": {
     "H_values": [
       2,
@@ -1324,7 +1324,7 @@
     "target": "d5",
     "unique_run_ids": 80
   },
-  "schema_version": 1,
+  "schema_version": 2,
   "source_commit": "c90054942e4090908f60c8e2864e763e9bc42785",
   "source_dirty": false,
   "source_dirty_at_provenance_capture": false,
@@ -1342,14 +1342,14 @@
   },
   "study": "p2_multidimensional_validation",
   "theory": {
-    "B10": [
+    "B11_d": [
       -0.007741472935786256,
       -0.02515889035292379,
       0.01773415031499783,
       -0.01876602841108497,
       0.00880723010440575
     ],
-    "B10_sign_is_intrinsic": true,
+    "B11_d_sign_is_intrinsic": true,
     "S_C": [
       [
         0.35416473352098043,
@@ -1435,18 +1435,18 @@
         ]
       }
     },
-    "normalization": "C_hat = (b_hat - (gamma / N) * B10) / gamma^2",
+    "normalization": "C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2",
     "remainder": "O(1/N + gamma)"
   },
   "theory_targets": {
-    "B10": [
+    "B11_d": [
       -0.007741472935786256,
       -0.02515889035292379,
       0.01773415031499783,
       -0.01876602841108497,
       0.00880723010440575
     ],
-    "B10_sign_is_intrinsic": true,
+    "B11_d_sign_is_intrinsic": true,
     "S_C": [
       [
         0.35416473352098043,
@@ -1532,7 +1532,7 @@
         ]
       }
     },
-    "normalization": "C_hat = (b_hat - (gamma / N) * B10) / gamma^2",
+    "normalization": "C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2",
     "remainder": "O(1/N + gamma)"
   },
   "uncertainty_protocol": {

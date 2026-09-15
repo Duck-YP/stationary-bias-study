@@ -246,7 +246,7 @@ def adjudicate(setting_df: pd.DataFrame, config: dict[str, Any]) -> tuple[pd.Dat
                 "description": gate.replace("_", " "),
                 "required": "PASS for all four settings",
                 "observed": "PASS" if passed else "FAIL",
-                "threshold": "P0 validity protocol",
+                "threshold": "frozen validity protocol",
                 "status": "PASS" if passed else "FAIL",
                 "notes": "Core validity gate",
             }

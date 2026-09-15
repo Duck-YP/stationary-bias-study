@@ -1,2 +1,1 @@
-"""P2 multidimensional homogeneous SCAFFOLD engineering validation."""
-
+"""Multidimensional homogeneous SCAFFOLD engineering validation."""

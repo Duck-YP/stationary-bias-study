@@ -15,7 +15,7 @@ def test_p1_run_does_not_write_the_p0_manifest(monkeypatch) -> None:
         cli,
         "_write_p0_manifest",
         lambda *args, **kwargs: (_ for _ in ()).throw(
-            AssertionError("P1 attempted to write the P0 manifest")
+            AssertionError("One workstream attempted to write another manifest")
         ),
     )
     assert cli.main(["p1", "run"]) == 0

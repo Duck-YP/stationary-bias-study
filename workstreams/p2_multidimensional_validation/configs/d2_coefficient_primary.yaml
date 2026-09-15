@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 protocol_status: frozen_not_executed
 protocol_frozen_at: "2026-09-08"
 experiment: p2_d2_coefficient_primary
@@ -35,13 +35,13 @@ noise:
   fresh_across: [chain, communication_round, local_step, client]
 
 theory:
-  normalization: C_hat = (b_hat - (gamma / N) * B10) / gamma^2
-  B10_sign_is_intrinsic: true
+  normalization: C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2
+  B11_d_sign_is_intrinsic: true
   remainder: O(1/N + gamma)
   S_C:
     - [0.413009404388715, 0.021943573667712]
     - [0.021943573667712, 0.345611285266458]
-  B10: [-0.024459428167733, -0.030574285209666]
+  B11_d: [-0.024459428167733, -0.030574285209666]
   by_H:
     2:
       B20: [-0.048004016395207, -0.060005020494009]
@@ -148,4 +148,3 @@ artifact_namespace: workstreams/p2_multidimensional_validation/artifacts/formal/
 formal_source_policy: clean_commit
 formal_output_policy: controlled_staging_and_overwrite_if_raw_scientific_fields_match
 interpretation_boundary: consistency_test_not_proof
-

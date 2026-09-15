@@ -1,4 +1,4 @@
-# P2 d=2 fixed-gamma large-N plateau
+# Fixed-gamma large-client plateau, d=2
 
 Verdict: **PASS**
 

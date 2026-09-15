@@ -1,4 +1,4 @@
-"""Exactly two coordinate figures for the P2 fixed-gamma plateau."""
+"""Exactly two coordinate figures for the fixed-gamma plateau."""
 
 from __future__ import annotations
 
@@ -30,7 +30,7 @@ def _coordinate_figure(
         "inverse_N"
     )
     if len(settings) != 5 or len(fit) != 1 or len(curve) != 5:
-        raise ValueError(f"P2 plateau coordinate {coordinate + 1} figure data are incomplete")
+        raise ValueError(f"Plateau coordinate {coordinate + 1} data are incomplete")
     fit_row = fit.iloc[0]
     x = settings["inverse_N"].to_numpy(float)
     means = settings["C_mean"].to_numpy(float)
@@ -79,7 +79,7 @@ def _coordinate_figure(
         ax.axvline(0.0, color="black", linewidth=0.8, alpha=0.35)
         ax.set_xlabel(r"Inverse client count $1/N$")
         ax.set_ylabel(rf"Normalized residual $\widehat C_{{{coordinate + 1}}}$")
-        ax.set_title(f"P2 fixed-gamma plateau: coordinate {coordinate + 1}")
+        ax.set_title(f"Fixed-gamma plateau: coordinate {coordinate + 1}")
         ax.grid(alpha=0.25)
         ax.legend(fontsize=9)
         return finish_paper_figure(

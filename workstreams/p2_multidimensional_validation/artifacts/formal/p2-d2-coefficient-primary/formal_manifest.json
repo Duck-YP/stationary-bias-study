@@ -19,7 +19,7 @@
   "bootstrap_seed": 2901,
   "combined_formal_pass": "NOT_APPLICABLE",
   "config_path": "workstreams/p2_multidimensional_validation/configs/d2_coefficient_primary.yaml",
-  "config_sha256": "e6dd7f32288001b1e68edf019c002fc5fac1d2e3632bf7d08e4d62f8883ed47b",
+  "config_sha256": "9409e25e7a417794c61d94eadbedc8dd0a498a79968d7d206ede205db3b73197",
   "covariance": [
     [
       1.0,
@@ -379,7 +379,7 @@
   },
   "phase": "formal",
   "protocol_path": "workstreams/p2_multidimensional_validation/formal_protocol.md",
-  "protocol_sha256": "4cbc201977d3f5f554b3a43f32546dbcf4224fdd9018dcff65d6bf213d26fd26",
+  "protocol_sha256": "074024801908f47778772635b24cbf598c543afda65457b9c6906cd4c3f572fa",
   "run_matrix": {
     "H_values": [
       2,
@@ -422,7 +422,7 @@
     "target": "primary",
     "unique_run_ids": 80
   },
-  "schema_version": 1,
+  "schema_version": 2,
   "source_commit": "541342963f3dc936cc7bb458f117d7dca49babcf",
   "source_dirty": false,
   "source_dirty_at_provenance_capture": false,
@@ -440,11 +440,11 @@
   },
   "study": "p2_multidimensional_validation",
   "theory": {
-    "B10": [
+    "B11_d": [
       -0.024459428167733,
       -0.030574285209666
     ],
-    "B10_sign_is_intrinsic": true,
+    "B11_d_sign_is_intrinsic": true,
     "S_C": [
       [
         0.413009404388715,
@@ -485,15 +485,15 @@
         ]
       }
     },
-    "normalization": "C_hat = (b_hat - (gamma / N) * B10) / gamma^2",
+    "normalization": "C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2",
     "remainder": "O(1/N + gamma)"
   },
   "theory_targets": {
-    "B10": [
+    "B11_d": [
       -0.024459428167733,
       -0.030574285209666
     ],
-    "B10_sign_is_intrinsic": true,
+    "B11_d_sign_is_intrinsic": true,
     "S_C": [
       [
         0.413009404388715,
@@ -534,7 +534,7 @@
         ]
       }
     },
-    "normalization": "C_hat = (b_hat - (gamma / N) * B10) / gamma^2",
+    "normalization": "C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2",
     "remainder": "O(1/N + gamma)"
   },
   "uncertainty_protocol": {

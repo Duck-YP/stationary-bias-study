@@ -1,4 +1,4 @@
-"""Read-only integrity audit for committed P2 formal evidence."""
+"""Read-only integrity audit for committed formal evidence."""
 
 from __future__ import annotations
 
@@ -19,6 +19,7 @@ from .rotation import (
     rotation_artifact_root,
 )
 from .plateau import P2_PLATEAU_MANIFEST, plateau_artifact_root
+from .protocols import audit_protocol_archive, resolve_recorded_protocol_path
 
 
 def _reject_json_constant(value: str) -> None:
@@ -43,30 +44,35 @@ def _audit_directory(
     root: Path, *, provenance_name: str, manifest_name: str
 ) -> dict[str, Any]:
     if not root.is_dir():
-        raise FileNotFoundError(f"Missing P2 formal artifact directory: {root}")
+        raise FileNotFoundError(f"Missing formal artifact directory: {root}")
     provenance = load_strict_json(root / provenance_name)
     manifest = load_strict_json(root / manifest_name)
     if provenance.get("source_dirty_at_run_start") is not False:
-        raise RuntimeError(f"P2 evidence lacks clean-source provenance: {root}")
+        raise RuntimeError(f"Evidence lacks clean-source provenance: {root}")
     source_commit = provenance.get("source_commit")
     if source_commit in (None, "", "NO_COMMIT"):
-        raise RuntimeError(f"P2 evidence lacks a source commit: {root}")
+        raise RuntimeError(f"Evidence lacks a source commit: {root}")
     if manifest.get("source_commit") != source_commit:
-        raise RuntimeError(f"P2 manifest/provenance source mismatch: {root}")
+        raise RuntimeError(f"Manifest/provenance source mismatch: {root}")
     if manifest.get("matrix_id") != provenance.get("matrix_id"):
-        raise RuntimeError(f"P2 manifest/provenance matrix mismatch: {root}")
+        raise RuntimeError(f"Manifest/provenance matrix mismatch: {root}")
 
     for key in ("config", "protocol"):
-        path = _repository_path(str(provenance[f"{key}_path"]))
+        recorded_path = str(provenance[f"{key}_path"])
+        path = (
+            resolve_recorded_protocol_path(recorded_path)
+            if key == "protocol"
+            else _repository_path(recorded_path)
+        )
         observed = hashlib.sha256(path.read_bytes()).hexdigest()
         if observed != provenance.get(f"{key}_sha256"):
-            raise RuntimeError(f"P2 saved {key} hash differs from current source: {root}")
+            raise RuntimeError(f"Saved {key} hash differs from current source: {root}")
 
     inventory = [str(name) for name in manifest.get("artifact_filenames", [])]
     missing = [name for name in inventory if not (root / name).is_file()]
     if not inventory or missing:
         raise RuntimeError(
-            f"P2 manifest artifact inventory is incomplete at {root}: {missing}"
+            f"Manifest artifact inventory is incomplete at {root}: {missing}"
         )
     return {
         "matrix_id": provenance["matrix_id"],
@@ -106,4 +112,8 @@ def audit_saved_p2_artifacts() -> dict[str, Any]:
             "saved_artifact_status": "NOT_RUN",
         }
     )
-    return {"status": "PASS", "matrices": matrices}
+    return {
+        "status": "PASS",
+        "protocol_archive": audit_protocol_archive(),
+        "matrices": matrices,
+    }

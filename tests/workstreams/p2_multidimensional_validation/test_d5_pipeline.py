@@ -65,7 +65,7 @@ def test_d5_direction_theory_and_decomposition() -> None:
         targets = vector_theory_targets(objective, covariance, H)
         expected = config["theory"]["by_H"][H]
         np.testing.assert_allclose(targets.S_C, config["theory"]["S_C"], atol=1e-14)
-        np.testing.assert_allclose(targets.B10, config["theory"]["B10"], atol=1e-14)
+        np.testing.assert_allclose(targets.B11_d, config["theory"]["B11_d"], atol=1e-14)
         np.testing.assert_allclose(targets.B20, expected["B20"], atol=1e-14)
         np.testing.assert_allclose(targets.B20_local, expected["B20_local"], atol=1e-14)
         np.testing.assert_allclose(targets.B20_ctrl, expected["B20_ctrl"], atol=1e-14)
@@ -173,8 +173,8 @@ def _write_synthetic_d5_matrix(root: Path) -> None:
                     "delta": spec.delta,
                     "estimator": estimator,
                     "b_component": spec.gamma**2 * C_value
-                    + (spec.gamma / spec.N) * targets.B10[coordinate],
-                    "B10_component": targets.B10[coordinate],
+                    + (spec.gamma / spec.N) * targets.B11_d[coordinate],
+                    "B11_d_component": targets.B11_d[coordinate],
                     "C_component": C_value,
                     "B20_component": targets.B20[coordinate],
                     "normalized_error_component": C_value - targets.B20[coordinate],

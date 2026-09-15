@@ -1,4 +1,4 @@
-"""Coefficient-convergence figures rendered from saved P2 setting summaries."""
+"""Coefficient-convergence figures rendered from saved setting summaries."""
 
 from __future__ import annotations
 
@@ -80,14 +80,14 @@ def plot_saved_formal_summaries(
                 setting_summary,
                 H=2,
                 d=2,
-                title="P2 d=2 coefficient convergence, H=2",
+                title="Coefficient convergence, d=2, H=2",
                 path=output_root / "p2_d2_H2_coefficient_convergence.png",
             ),
             _plot_H(
                 setting_summary,
                 H=4,
                 d=2,
-                title="P2 d=2 coefficient convergence, H=4",
+                title="Coefficient convergence, d=2, H=4",
                 path=output_root / "p2_d2_H4_coefficient_convergence.png",
             ),
         ]
@@ -97,7 +97,7 @@ def plot_saved_formal_summaries(
                 setting_summary,
                 H=4,
                 d=2,
-                title="P2 d=2 H=4 smaller-step confirmation",
+                title="Smaller-step confirmation, d=2, H=4",
                 path=output_root / "p2_d2_H4_small_step_confirmation.png",
             )
         ]
@@ -107,15 +107,15 @@ def plot_saved_formal_summaries(
                 setting_summary,
                 H=2,
                 d=5,
-                title="P2 controlled d=5 coefficient convergence, H=2",
+                title="Controlled coefficient convergence, d=5, H=2",
                 path=output_root / "p2_d5_H2_coefficient_convergence.png",
             ),
             _plot_H(
                 setting_summary,
                 H=4,
                 d=5,
-                title="P2 controlled d=5 coefficient convergence, H=4",
+                title="Controlled coefficient convergence, d=5, H=4",
                 path=output_root / "p2_d5_H4_coefficient_convergence.png",
             ),
         ]
-    raise ValueError(f"Unknown P2 formal target: {target}")
+    raise ValueError(f"Unknown formal target: {target}")

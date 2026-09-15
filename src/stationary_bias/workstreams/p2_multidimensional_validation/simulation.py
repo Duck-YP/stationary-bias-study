@@ -1,4 +1,4 @@
-"""One controlled d=2 engineering smoke run for P2."""
+"""One controlled d=2 engineering smoke run."""
 
 from __future__ import annotations
 
@@ -97,25 +97,25 @@ def check_p2() -> dict[str, Any]:
     specs = build_smoke_specs(config)
     smoke = config["smoke"]
     if objective.dimension != 2 or not np.array_equal(objective.A, CONTROLLED_A):
-        raise RuntimeError("P2 smoke objective matrix differs from the controlled d=2 matrix")
+        raise RuntimeError("Smoke objective matrix differs from the controlled matrix")
     if not np.array_equal(objective.u, CONTROLLED_U):
-        raise RuntimeError("P2 smoke objective direction differs from the controlled direction")
+        raise RuntimeError("Smoke objective direction differs from the controlled direction")
     if objective.alpha != CONTROLLED_ALPHA:
-        raise RuntimeError("P2 smoke objective alpha differs from the controlled value")
+        raise RuntimeError("Smoke objective alpha differs from the controlled value")
     if not np.array_equal(covariance, CONTROLLED_COVARIANCE):
-        raise RuntimeError("P2 smoke covariance differs from the controlled covariance")
+        raise RuntimeError("Smoke covariance differs from the controlled covariance")
     if int(smoke["d"]) != 2 or int(smoke["H"]) != 2:
-        raise RuntimeError("P2 smoke must use d=2 and H=2")
+        raise RuntimeError("Smoke run must use d=2 and H=2")
     if any(item.x0.shape != (2,) for item in specs):
-        raise RuntimeError("Every P2 initial state must have shape [d]")
+        raise RuntimeError("Every initial state must have shape [d]")
     if len({item.seed for item in specs}) != len(specs):
-        raise RuntimeError("P2 smoke seeds must be unique")
+        raise RuntimeError("Smoke seeds must be unique")
     targets = vector_theory_targets(objective, covariance, specs[0].H)
     residual = float(
         np.linalg.norm(objective.A @ targets.S_C + targets.S_C @ objective.A - covariance)
     )
     if residual > 1.0e-12:
-        raise RuntimeError("P2 Lyapunov solution failed its residual check")
+        raise RuntimeError("Lyapunov solution failed its residual check")
     return {
         "status": "PASS",
         "workstream": "p2",
@@ -265,7 +265,7 @@ def simulate_p2_smoke(
             ("stationary_mean_balance", stats["balance"]),
         ):
             normalized = normalize_vector_bias(
-                values, gamma=spec.gamma, N=spec.N, B10=targets.B10
+                values, gamma=spec.gamma, N=spec.N, B11_d=targets.B11_d
             )
             for chain_index, item in enumerate(specs):
                 for coordinate in range(spec.d):
@@ -276,7 +276,7 @@ def simulate_p2_smoke(
                             coordinate=coordinate,
                             bias=values[chain_index],
                             normalized=normalized[chain_index],
-                            B10=targets.B10,
+                            B11_d=targets.B11_d,
                             B20=targets.B20,
                             batch_index=batch_index,
                         )
@@ -291,7 +291,7 @@ def simulate_p2_smoke(
         ("stationary_mean_balance", balance),
     ):
         normalized = normalize_vector_bias(
-            values, gamma=spec.gamma, N=spec.N, B10=targets.B10
+            values, gamma=spec.gamma, N=spec.N, B11_d=targets.B11_d
         )
         normalized_by_estimator[estimator] = normalized
         for chain_index, item in enumerate(specs):
@@ -303,7 +303,7 @@ def simulate_p2_smoke(
                         coordinate=coordinate,
                         bias=values[chain_index],
                         normalized=normalized[chain_index],
-                        B10=targets.B10,
+                        B11_d=targets.B11_d,
                         B20=targets.B20,
                     )
                 )
@@ -342,7 +342,7 @@ def simulate_p2_smoke(
         "batch_length": batch_length,
         "num_batches": num_batches,
         "S_C": targets.S_C,
-        "B10": targets.B10,
+        "B11_d": targets.B11_d,
         "B20": targets.B20,
         "B20_local": targets.B20_local,
         "B20_ctrl": targets.B20_ctrl,
@@ -362,7 +362,7 @@ def _coordinate_row(
     coordinate: int,
     bias: np.ndarray,
     normalized: np.ndarray,
-    B10: np.ndarray,
+    B11_d: np.ndarray,
     B20: np.ndarray,
     batch_index: int | None = None,
 ) -> dict[str, Any]:
@@ -379,7 +379,7 @@ def _coordinate_row(
         "gamma": spec.gamma,
         "estimator": estimator,
         "b_component": bias[coordinate],
-        "B10_component": B10[coordinate],
+        "B11_d_component": B11_d[coordinate],
         "C_component": normalized[coordinate],
         "B20_component": B20[coordinate],
         "normalized_error_component": normalized[coordinate] - B20[coordinate],
@@ -395,7 +395,7 @@ def run_p2_smoke(output_root: Path = P2_SMOKE_ARTIFACT_ROOT) -> dict[str, Any]:
     environment = environment_manifest()
     base = load_configs()["base"]
     provenance = {
-        "schema_version": 1,
+        "schema_version": 2,
         "capture_point": "before_any_p2_output_write",
         "environment": environment,
         "git_commit": environment["git_commit"],
@@ -430,7 +430,7 @@ def run_p2_smoke(output_root: Path = P2_SMOKE_ARTIFACT_ROOT) -> dict[str, Any]:
         },
         "theory": {
             key: np.asarray(metadata[key]).tolist()
-            for key in ("S_C", "B10", "B20", "B20_local", "B20_ctrl")
+            for key in ("S_C", "B11_d", "B20", "B20_local", "B20_ctrl")
         },
         "rows": {
             "coordinate_runs": len(outputs["run_rows"]),

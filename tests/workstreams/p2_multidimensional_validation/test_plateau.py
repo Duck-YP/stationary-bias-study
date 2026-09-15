@@ -63,7 +63,7 @@ def _synthetic_plateau(root: Path) -> None:
                 )
                 b_value = (
                     spec.gamma**2 * C_value
-                    + (spec.gamma / spec.N) * targets.B10[coordinate]
+                    + (spec.gamma / spec.N) * targets.B11_d[coordinate]
                 )
                 row = {
                     "study": "p2_multidimensional_validation",
@@ -80,7 +80,7 @@ def _synthetic_plateau(root: Path) -> None:
                     "delta": spec.delta,
                     "estimator": estimator,
                     "b_component": b_value,
-                    "B10_component": targets.B10[coordinate],
+                    "B11_d_component": targets.B11_d[coordinate],
                     "C_component": C_value,
                     "B20_component": targets.B20[coordinate],
                     "normalized_error_component": C_value - targets.B20[coordinate],
@@ -118,7 +118,7 @@ def _synthetic_plateau(root: Path) -> None:
                             "delta",
                             "estimator",
                             "b_component",
-                            "B10_component",
+                            "B11_d_component",
                             "C_component",
                             "B20_component",
                             "normalized_error_component",
@@ -134,7 +134,7 @@ def _synthetic_plateau(root: Path) -> None:
     snapshot = root / config["config_snapshot_filename"]
     snapshot.write_bytes(plateau.P2_PLATEAU_CONFIG_PATH.read_bytes())
     provenance = {
-        "schema_version": 1,
+        "schema_version": 2,
         "capture_point": "before_any_p2_plateau_output_write",
         "study": "p2_multidimensional_validation",
         "phase": "formal_fixed_gamma_large_N_plateau",
@@ -185,7 +185,7 @@ def test_plateau_normalization_and_inverse_N_intercept(tmp_path: Path) -> None:
     sample = run_df.iloc[0]
     expected = (
         sample["b_component"]
-        - (sample["gamma"] / sample["N"]) * sample["B10_component"]
+        - (sample["gamma"] / sample["N"]) * sample["B11_d_component"]
     ) / sample["gamma"] ** 2
     assert sample["C_component"] == pytest.approx(expected)
     fits, curve, bootstrap = build_plateau_fits(run_df, config)

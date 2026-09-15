@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 protocol_status: frozen_not_executed
 protocol_frozen_at: "2026-09-10"
 experiment: p2_d5_controlled_validation
@@ -61,8 +61,8 @@ noise:
   client_dependent_covariance: forbidden
 
 theory:
-  normalization: C_hat = (b_hat - (gamma / N) * B10) / gamma^2
-  B10_sign_is_intrinsic: true
+  normalization: C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2
+  B11_d_sign_is_intrinsic: true
   remainder: O(1/N + gamma)
   S_C:
     - [0.35416473352098043, 0.02779582047084913, 0.01806310274307949, -0.0014569479115977557, 0.000122751340053028]
@@ -70,7 +70,7 @@ theory:
     - [0.01806310274307949, 0.01101626317972773, 0.4049209090598549, 0.03265048452592303, 0.012196223305747204]
     - [-0.0014569479115977557, 0.014117526532011666, 0.03265048452592303, 0.28476945183498037, 0.01918330202416588]
     - [0.000122751340053028, -0.001186982554662978, 0.012196223305747204, 0.01918330202416588, 0.39846533583806676]
-  B10:
+  B11_d:
     - -0.007741472935786256
     - -0.02515889035292379
     - 0.01773415031499783

@@ -1,4 +1,4 @@
-"""Frozen run matrix and execution engine for the P0 original publication study."""
+"""Frozen run matrix and execution engine for the publication baseline."""
 
 from __future__ import annotations
 
@@ -507,7 +507,7 @@ def _group_settings(runs: Iterable[RunSpec]) -> list[list[RunSpec]]:
 
 def run_experiment(experiment: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     if experiment not in EXPERIMENT_CONFIG_FILES:
-        raise ValueError(f"Unknown P0 experiment: {experiment}")
+        raise ValueError(f"Unknown baseline experiment: {experiment}")
     assert_formal_configs_available()
     configs = load_configs()
     runs = [run for run in build_run_matrix(configs) if run.experiment == experiment]

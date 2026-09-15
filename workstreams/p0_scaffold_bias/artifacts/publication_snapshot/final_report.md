@@ -80,7 +80,7 @@ This audit was added after the frozen numerical protocol and is reported as a ro
 
 The balance estimator is structurally zero for the quadratic objective because q(x) is identically zero; therefore the independent direct stationary-mean estimator is used as the robustness check.
 
-For H=1, this is a boundary sanity check. The relevant quantity is the normalized residual after subtracting B10*gamma/N, not the raw stationary bias.
+For H=1, this is a boundary sanity check. The relevant quantity is the normalized residual after subtracting $B_{11}^{(1)}\gamma/N$, not the raw stationary bias.
 
 ## Research interpretation
 

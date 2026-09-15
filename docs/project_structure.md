@@ -59,3 +59,4 @@ Smoke output 是否忽略或覆寫由 workstream policy 決定。
 
 `docs/` 描述共用架構、數值原則與資料生命週期；`workstreams/<slug>/` 描述個別研究。
 文件只記錄可由程式、設定或 artifact 驗證的內容。
+執行邊界見 [reproducibility scope](reproducibility.md)。

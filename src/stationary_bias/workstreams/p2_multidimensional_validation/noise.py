@@ -1,4 +1,4 @@
-"""Bounded correlated vector noise for P2."""
+"""Bounded correlated vector noise."""
 
 from __future__ import annotations
 
@@ -42,4 +42,3 @@ def generate_vector_noise_block(
             "ij,...j->...i", factor, signs.astype(np.float64)
         )
     return block
-

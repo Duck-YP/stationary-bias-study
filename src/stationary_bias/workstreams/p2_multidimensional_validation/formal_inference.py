@@ -1,4 +1,4 @@
-"""Frozen coordinatewise inference primitives for the P2 formal study."""
+"""Frozen coordinatewise inference primitives for the formal study."""
 
 from __future__ import annotations
 
@@ -44,7 +44,7 @@ def student_t_critical(confidence_level: float, degrees_of_freedom: int) -> floa
         return _FORMAL_T_CRITICAL[key]
     except KeyError as exc:
         raise ValueError(
-            "P2 formal inference only defines df=7 at confidence 0.95, 0.975, or 0.99"
+            "Formal inference only defines df=7 at confidence 0.95, 0.975, or 0.99"
         ) from exc
 
 
@@ -53,9 +53,9 @@ def coordinate_interval(
 ) -> CoordinateInterval:
     array = np.asarray(values, dtype=np.float64)
     if array.ndim != 1 or array.size != 8:
-        raise ValueError("P2 formal coordinate inference requires eight chain estimates")
+        raise ValueError("Coordinate inference requires eight chain estimates")
     if not np.all(np.isfinite(array)):
-        raise ValueError("P2 formal coordinate estimates must be finite")
+        raise ValueError("Formal coordinate estimates must be finite")
     df = array.size - 1
     mean = float(np.mean(array))
     sd = float(np.std(array, ddof=1))

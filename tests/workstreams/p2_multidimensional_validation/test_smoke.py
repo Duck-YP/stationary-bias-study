@@ -18,7 +18,7 @@ REQUIRED_COORDINATE_COLUMNS = {
     "gamma",
     "estimator",
     "b_component",
-    "B10_component",
+    "B11_d_component",
     "C_component",
     "B20_component",
     "normalized_error_component",

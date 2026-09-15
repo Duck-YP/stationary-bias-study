@@ -1,4 +1,4 @@
-"""Externally specified theory targets for the isolated P1 comparison."""
+"""Externally specified theory targets for the isolated comparison."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ def b20_fedavg(
     tau: float = 0.5,
     sigma2: float = 1.0,
 ) -> float:
-    """FedAvg client-independent coefficient specified for P1."""
+    """Return the specified client-independent FedAvg coefficient."""
 
     if H < 1:
         raise ValueError("H must be at least one")

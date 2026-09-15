@@ -215,7 +215,7 @@ def _synthetic_rotation_outputs(root: Path) -> tuple[Path, list[dict], list[dict
         )
     theory_rows = rotation.theory_rotation_rows(config)
     provenance = {
-        "schema_version": 1,
+        "schema_version": 2,
         "capture_point": "before_any_p2_rotation_output_write",
         "study": "p2_multidimensional_validation",
         "phase": "rotation",
@@ -347,7 +347,7 @@ def test_clean_source_overwrite_and_namespace_guards(tmp_path: Path) -> None:
     expected = tmp_path / "isolated-rotation"
     with pytest.raises(RuntimeError, match="selected isolated namespace"):
         rotation.validate_rotation_output_root(tmp_path / "other", expected)
-    with pytest.raises(RuntimeError, match="prior P0/P1/P2 evidence"):
+    with pytest.raises(RuntimeError, match="another evidence namespace"):
         prior = tmp_path / "p2-d2-coefficient-primary"
         rotation.validate_rotation_output_root(prior, prior)
 

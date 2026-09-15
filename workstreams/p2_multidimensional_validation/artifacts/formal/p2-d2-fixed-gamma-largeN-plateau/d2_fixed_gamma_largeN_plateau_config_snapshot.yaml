@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 protocol_status: frozen_for_execution
 protocol_frozen_at: "2026-09-14"
 experiment: p2_d2_fixed_gamma_largeN_plateau
@@ -35,13 +35,13 @@ noise:
   fresh_across: [chain, communication_round, local_step, client]
 
 theory:
-  normalization: C_hat = (b_hat - (gamma / N) * B10) / gamma^2
+  normalization: C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2
   fixed_gamma_expansion: C_hat = B20(H) + O(1/N + gamma)
-  B10_sign_is_intrinsic: true
+  B11_d_sign_is_intrinsic: true
   S_C:
     - [0.413009404388715, 0.021943573667712]
     - [0.021943573667712, 0.345611285266458]
-  B10: [-0.024459428167733, -0.030574285209666]
+  B11_d: [-0.024459428167733, -0.030574285209666]
   B20:
     H: 2
     value: [-0.048004016395207, -0.060005020494009]

@@ -1,4 +1,4 @@
-"""Frozen d=2 fixed-gamma, large-N plateau experiment for P2."""
+"""Frozen d=2 fixed-gamma, large-client plateau experiment."""
 
 from __future__ import annotations
 
@@ -33,6 +33,7 @@ from .formal import (
     covariance_from_formal_config,
     simulate_formal_setting,
 )
+from .protocols import archived_protocol_path
 from .theory import vector_theory_targets
 
 
@@ -41,8 +42,8 @@ P2_PLATEAU_ROOT = REPO_ROOT / "workstreams" / "p2_multidimensional_validation"
 P2_PLATEAU_CONFIG_PATH = (
     P2_PLATEAU_ROOT / "configs" / "d2_fixed_gamma_largeN_plateau.yaml"
 )
-P2_PLATEAU_PROTOCOL_PATH = (
-    P2_PLATEAU_ROOT / "d2_fixed_gamma_largeN_plateau_protocol.md"
+P2_PLATEAU_PROTOCOL_PATH = archived_protocol_path(
+    "d2_fixed_gamma_largeN_plateau_protocol.md"
 )
 P2_PLATEAU_MANIFEST = "plateau_manifest.json"
 P2_PLATEAU_RAW_RESULT_FILES = ("run_summary.csv", "batch_summary.csv")
@@ -130,18 +131,18 @@ def expected_plateau_audit() -> dict[str, Any]:
 
 
 def check_plateau_protocol() -> dict[str, Any]:
-    """Verify that the new matrix reuses P2 d=2 science and changes only N."""
+    """Verify that the matrix reuses the frozen d=2 model and changes only N."""
 
     config = load_plateau_config()
     primary = load_formal_config("primary")
     if config["matrix_identifier"] != P2_PLATEAU_MATRIX_ID:
-        raise RuntimeError("P2 plateau matrix identifier changed")
+        raise RuntimeError("Plateau matrix identifier changed")
     audit = audit_plateau_run_matrix()
     if audit != expected_plateau_audit():
-        raise RuntimeError(f"P2 plateau matrix differs from its frozen protocol: {audit}")
+        raise RuntimeError(f"Plateau matrix differs from its frozen protocol: {audit}")
     for key in ("objective", "noise", "protocol", "per_setting_uncertainty", "precision_stopping"):
         if config[key] != primary[key]:
-            raise RuntimeError(f"P2 plateau does not reuse the primary d=2 {key}")
+            raise RuntimeError(f"Plateau does not reuse the primary d=2 {key}")
 
     targets = vector_theory_targets(
         objective_from_formal_config(config), covariance_from_formal_config(config), 2
@@ -149,14 +150,14 @@ def check_plateau_protocol() -> dict[str, Any]:
     theory = config["theory"]
     expected_theory = {
         "S_C": targets.S_C,
-        "B10": targets.B10,
+        "B11_d": targets.B11_d,
         "B20.value": targets.B20,
         "B20.local": targets.B20_local,
         "B20.control": targets.B20_ctrl,
     }
     configured_theory = {
         "S_C": theory["S_C"],
-        "B10": theory["B10"],
+        "B11_d": theory["B11_d"],
         "B20.value": theory["B20"]["value"],
         "B20.local": theory["B20"]["local"],
         "B20.control": theory["B20"]["control"],
@@ -165,9 +166,9 @@ def check_plateau_protocol() -> dict[str, Any]:
         if not np.allclose(
             configured_theory[name], expected, rtol=0.0, atol=1.0e-14
         ):
-            raise RuntimeError(f"P2 plateau theory value changed: {name}")
+            raise RuntimeError(f"Plateau theory value changed: {name}")
     if config["extrapolation"]["fit_variable"] != "inverse_N":
-        raise RuntimeError("P2 plateau regression variable must be inverse_N")
+        raise RuntimeError("Plateau regression variable must be inverse_N")
     if config["theory"]["exact_B20_CI_coverage_required"] is not False:
         raise RuntimeError("Exact B20 coverage cannot be a fixed-gamma plateau gate")
 
@@ -178,7 +179,7 @@ def check_plateau_protocol() -> dict[str, Any]:
     used_seeds.update(int(value) for value in rotation["paired_matrix"]["seeds"])
     plateau_seeds = set(audit["seeds"])
     if plateau_seeds & used_seeds:
-        raise RuntimeError("P2 plateau seed block overlaps a previous formal experiment")
+        raise RuntimeError("Plateau seed block overlaps a previous formal experiment")
 
     return {
         "status": "PASS",
@@ -199,7 +200,7 @@ def _capture_plateau_provenance(
 ) -> dict[str, Any]:
     environment = environment_manifest()
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "capture_point": "before_any_p2_plateau_output_write",
         "study": "p2_multidimensional_validation",
         "phase": "formal_fixed_gamma_large_N_plateau",
@@ -243,7 +244,7 @@ def run_plateau_experiment() -> dict[str, Any]:
         or provenance["source_commit"] == "NO_COMMIT"
     ):
         raise RuntimeError(
-            "Formal P2 plateau runs require a clean committed source tree at run start"
+            "Formal plateau runs require a clean committed source tree at run start"
         )
     require_complete_existing_output(
         target_root,

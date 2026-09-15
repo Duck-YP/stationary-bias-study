@@ -1,4 +1,4 @@
-"""Vector stationary mean-balance estimator for P2."""
+"""Vector stationary mean-balance estimator."""
 
 from __future__ import annotations
 
@@ -31,4 +31,3 @@ def vector_balance_round_value(
     flat_rhs = (-gamma * weighted).reshape(-1, dimension)
     flat_result = np.linalg.solve(stationary_operator, flat_rhs.T).T
     return flat_result.reshape(weighted.shape)
-
