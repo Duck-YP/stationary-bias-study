@@ -40,7 +40,7 @@
     ]
   ],
   "environment": {
-    "git_commit": "1347e99513d8b44dbec52f0a9f11ca2315935595",
+    "git_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
     "git_dirty": false,
     "packages": {
       "PyYAML": "6.0.3",
@@ -348,7 +348,7 @@
     "setting_summary": 16
   },
   "phase": "formal",
-  "protocol_path": "workstreams/p2_multidimensional_validation/formal_protocol.md",
+  "protocol_path": "workstreams/p2_multidimensional_validation/artifacts/archive/protocols/formal_protocol.md",
   "protocol_sha256": "074024801908f47778772635b24cbf598c543afda65457b9c6906cd4c3f572fa",
   "run_matrix": {
     "H_values": [
@@ -385,7 +385,7 @@
     "unique_run_ids": 32
   },
   "schema_version": 2,
-  "source_commit": "1347e99513d8b44dbec52f0a9f11ca2315935595",
+  "source_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
   "source_dirty": false,
   "source_dirty_at_provenance_capture": false,
   "stopping_protocol": {

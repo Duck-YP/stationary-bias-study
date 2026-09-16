@@ -13,7 +13,7 @@
   "config_sha256": "e11693b2b6966a029ae71f4819526a73b53c5e19581798470a9adc760b5bb148",
   "config_snapshot": "d2_fixed_gamma_largeN_plateau_config_snapshot.yaml",
   "environment": {
-    "git_commit": "c9c21e71710e4d8dc24b540e3c489f68debef73c",
+    "git_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
     "git_dirty": false,
     "packages": {
       "PyYAML": "6.0.3",
@@ -28,7 +28,7 @@
   "matrix_id": "p2-d2-fixed-gamma-largeN-plateau",
   "phase": "formal_fixed_gamma_large_N_plateau",
   "planned_coordinate_run_rows": 160,
-  "protocol_path": "workstreams/p2_multidimensional_validation/d2_fixed_gamma_largeN_plateau_protocol.md",
+  "protocol_path": "workstreams/p2_multidimensional_validation/artifacts/archive/protocols/d2_fixed_gamma_largeN_plateau_protocol.md",
   "protocol_sha256": "9debb9802ac3dbd990195fbc8da9e6b8268962328c53e656b6209636ad7a33b5",
   "run_matrix": {
     "H_values": [
@@ -82,7 +82,7 @@
     1307,
     1308
   ],
-  "source_commit": "c9c21e71710e4d8dc24b540e3c489f68debef73c",
+  "source_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
   "source_dirty_at_run_start": false,
   "study": "p2_multidimensional_validation"
 }

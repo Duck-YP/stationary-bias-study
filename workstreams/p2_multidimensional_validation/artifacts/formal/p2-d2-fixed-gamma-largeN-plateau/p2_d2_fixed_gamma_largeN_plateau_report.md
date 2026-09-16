@@ -2,7 +2,7 @@
 
 Verdict: **PASS**
 
-Source commit: `c9c21e71710e4d8dc24b540e3c489f68debef73c`
+Source commit: `85e97fa34e23084410c148b63d814c75d92dbc1e`
 Matrix: `p2-d2-fixed-gamma-largeN-plateau`
 Primary estimator: `stationary_mean_balance`; direct sample means are diagnostic only.
 

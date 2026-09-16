@@ -4,7 +4,7 @@
   "config_path": "workstreams/p2_multidimensional_validation/configs/d2_rotation_invariance.yaml",
   "config_sha256": "d82bf75525e66a7ea4d1da1e484f5c40633ca0d26745c5e5a4096a6fa01944fa",
   "environment": {
-    "git_commit": "2199e736b529c4cb0ca2c1ba33364fac6f7d04f1",
+    "git_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
     "git_dirty": false,
     "packages": {
       "PyYAML": "6.0.3",
@@ -147,7 +147,7 @@
     }
   ],
   "phase": "rotation",
-  "protocol_path": "workstreams/p2_multidimensional_validation/rotation_protocol.md",
+  "protocol_path": "workstreams/p2_multidimensional_validation/artifacts/archive/protocols/rotation_protocol.md",
   "protocol_sha256": "9360e34f2963b1c3ca6fae12c443195c55d0086bb55a2b50dd006af894c39301",
   "run_matrix": {
     "H_values": [
@@ -180,7 +180,7 @@
     "unique_pair_ids": 16
   },
   "schema_version": 2,
-  "source_commit": "2199e736b529c4cb0ca2c1ba33364fac6f7d04f1",
+  "source_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
   "source_dirty_at_run_start": false,
   "study": "p2_multidimensional_validation"
 }

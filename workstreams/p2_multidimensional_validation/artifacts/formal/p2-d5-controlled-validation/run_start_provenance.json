@@ -6,7 +6,7 @@
   "config_path": "workstreams/p2_multidimensional_validation/configs/d5_controlled_validation.yaml",
   "config_sha256": "d3371a99a0f7f67140937c0b5eda9a94b2aa431338ebf8561988ddd995ac6d4e",
   "environment": {
-    "git_commit": "c90054942e4090908f60c8e2864e763e9bc42785",
+    "git_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
     "git_dirty": false,
     "packages": {
       "PyYAML": "6.0.3",
@@ -21,7 +21,7 @@
   "matrix_id": "p2-d5-controlled-validation",
   "phase": "formal",
   "planned_coordinate_run_rows": 800,
-  "protocol_path": "workstreams/p2_multidimensional_validation/d5_protocol.md",
+  "protocol_path": "workstreams/p2_multidimensional_validation/artifacts/archive/protocols/d5_protocol.md",
   "protocol_sha256": "8051a343001388192009d608c17b497689450df83d9c7877580d2877e7c8c256",
   "run_matrix": {
     "H_values": [
@@ -76,7 +76,7 @@
     1207,
     1208
   ],
-  "source_commit": "c90054942e4090908f60c8e2864e763e9bc42785",
+  "source_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
   "source_dirty_at_run_start": false,
   "study": "p2_multidimensional_validation"
 }

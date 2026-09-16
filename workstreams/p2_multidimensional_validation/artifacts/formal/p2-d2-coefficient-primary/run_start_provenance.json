@@ -6,7 +6,7 @@
   "config_path": "workstreams/p2_multidimensional_validation/configs/d2_coefficient_primary.yaml",
   "config_sha256": "9409e25e7a417794c61d94eadbedc8dd0a498a79968d7d206ede205db3b73197",
   "environment": {
-    "git_commit": "541342963f3dc936cc7bb458f117d7dca49babcf",
+    "git_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
     "git_dirty": false,
     "packages": {
       "PyYAML": "6.0.3",
@@ -21,7 +21,7 @@
   "matrix_id": "p2-d2-coefficient-primary",
   "phase": "formal",
   "planned_coordinate_run_rows": 320,
-  "protocol_path": "workstreams/p2_multidimensional_validation/formal_protocol.md",
+  "protocol_path": "workstreams/p2_multidimensional_validation/artifacts/archive/protocols/formal_protocol.md",
   "protocol_sha256": "074024801908f47778772635b24cbf598c543afda65457b9c6906cd4c3f572fa",
   "run_matrix": {
     "H_values": [
@@ -76,7 +76,7 @@
     907,
     908
   ],
-  "source_commit": "541342963f3dc936cc7bb458f117d7dca49babcf",
+  "source_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
   "source_dirty_at_run_start": false,
   "study": "p2_multidimensional_validation"
 }
