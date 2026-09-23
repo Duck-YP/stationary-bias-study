@@ -3,7 +3,9 @@ from pathlib import Path
 
 import pytest
 
+from stationary_bias.core import artifacts as artifact_utils
 from stationary_bias.core.artifacts import (
+    create_staging_directory,
     replace_output_directory,
     validate_controlled_overwrite,
 )
@@ -109,6 +111,50 @@ def test_replace_output_directory_installs_staging(tmp_path: Path) -> None:
     replace_output_directory(staged, current)
     assert (current / "value").read_text(encoding="utf-8") == "new"
     assert not staged.exists()
+
+
+def test_replace_output_directory_retries_when_backup_child_disappears(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    current = tmp_path / "current"
+    staged = tmp_path / "staged"
+    current.mkdir()
+    staged.mkdir()
+    (current / "value").write_text("old", encoding="utf-8")
+    (staged / "value").write_text("new", encoding="utf-8")
+    original_rmtree = artifact_utils.shutil.rmtree
+    calls = 0
+
+    def transient_missing_child(path: Path) -> None:
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            raise FileNotFoundError("simulated child disappearance")
+        original_rmtree(path)
+
+    monkeypatch.setattr(artifact_utils.shutil, "rmtree", transient_missing_child)
+    replace_output_directory(staged, current)
+
+    assert calls == 2
+    assert (current / "value").read_text(encoding="utf-8") == "new"
+
+
+def test_staging_permissions_are_prepared_before_install(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    target = tmp_path / "formal" / "matrix"
+    observed: list[Path] = []
+
+    monkeypatch.setattr(
+        "stationary_bias.core.artifacts._reset_windows_inherited_acl",
+        lambda path: observed.append(path),
+    )
+    staged = create_staging_directory(target)
+    (staged / "raw.csv").write_text("value\n1\n", encoding="utf-8")
+    replace_output_directory(staged, target)
+
+    assert observed == [staged, staged]
+    assert (target / "raw.csv").read_text(encoding="utf-8") == "value\n1\n"
 
 
 def test_replace_output_directory_restores_current_when_install_fails(

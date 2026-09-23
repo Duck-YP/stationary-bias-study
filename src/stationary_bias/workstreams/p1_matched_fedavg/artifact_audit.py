@@ -18,7 +18,10 @@ NOTES_FILE = "ARCHIVE_NOTES.md"
 
 
 def _sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    payload = path.read_bytes()
+    if path.suffix in {".yaml", ".yml"}:
+        payload = payload.replace(b"\r\n", b"\n")
+    return hashlib.sha256(payload).hexdigest()
 
 
 def audit_archived_config_closure(root: Path = ARCHIVE_ROOT) -> dict[str, Any]:

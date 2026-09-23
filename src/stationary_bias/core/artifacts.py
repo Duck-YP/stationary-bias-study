@@ -5,7 +5,9 @@ from __future__ import annotations
 import csv
 import json
 import math
+import os
 import shutil
+import subprocess
 import tempfile
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
@@ -149,15 +151,53 @@ def create_staging_directory(target_root: Path) -> Path:
     """Create an ignored sibling staging directory for one canonical target."""
 
     target_root.parent.mkdir(parents=True, exist_ok=True)
-    return Path(
+    staged_root = Path(
         tempfile.mkdtemp(prefix=f".{target_root.name}.staging-", dir=target_root.parent)
     )
+    try:
+        _reset_windows_inherited_acl(staged_root)
+    except BaseException:
+        shutil.rmtree(staged_root)
+        raise
+    return staged_root
+
+
+def _reset_windows_inherited_acl(path: Path) -> None:
+    """Make a temporary artifact tree inherit its repository parent ACL on Windows."""
+
+    if os.name != "nt":
+        return
+    completed = subprocess.run(
+        ["icacls.exe", str(path), "/reset", "/T", "/C", "/Q"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if completed.returncode != 0:
+        detail = (completed.stderr or completed.stdout).strip()
+        raise RuntimeError(
+            f"Could not apply inherited Windows permissions to {path}: {detail}"
+        )
+
+
+def _remove_tree_tolerating_disappeared_child(path: Path) -> None:
+    """Remove a temporary tree, retrying only when a child vanished mid-walk."""
+
+    removal_path = path
+    if os.name == "nt":
+        removal_path = Path("\\\\?\\" + str(path.resolve()))
+    try:
+        shutil.rmtree(removal_path)
+    except FileNotFoundError:
+        if path.exists():
+            shutil.rmtree(removal_path)
 
 
 def replace_output_directory(staged_root: Path, target_root: Path) -> None:
     """Atomically replace a canonical directory, restoring it if the swap fails."""
 
     target_root.parent.mkdir(parents=True, exist_ok=True)
+    _reset_windows_inherited_acl(staged_root)
     backup_container: Path | None = None
     backup_root: Path | None = None
     if target_root.exists():
@@ -174,11 +214,11 @@ def replace_output_directory(staged_root: Path, target_root: Path) -> None:
         if backup_root is not None and backup_root.exists() and not target_root.exists():
             backup_root.replace(target_root)
         if backup_container is not None and backup_container.exists():
-            shutil.rmtree(backup_container)
+            _remove_tree_tolerating_disappeared_child(backup_container)
         raise
     else:
         if backup_container is not None and backup_container.exists():
-            shutil.rmtree(backup_container)
+            _remove_tree_tolerating_disappeared_child(backup_container)
 
 
 def stage_existing_directory(target_root: Path) -> Path:

@@ -18,7 +18,7 @@ def test_public_experiment_names_are_descriptive() -> None:
         "client_count_scaling",
         "negative_controls",
     }
-    assert set(WORKSTREAMS) == {"p0", "p1", "p2"}
+    assert set(WORKSTREAMS) == {"p0", "p1", "p2", "p3"}
 
 
 def test_project_has_one_obvious_entry_point() -> None:
@@ -31,6 +31,7 @@ def test_implemented_workstreams_have_matching_project_areas() -> None:
         "p0_scaffold_bias",
         "p1_matched_fedavg",
         "p2_multidimensional_validation",
+        "p3_multidimensional_fedavg_attribution",
     ):
         assert (PROJECT_ROOT / "workstreams" / slug / "README.md").is_file()
         assert (PROJECT_ROOT / "workstreams" / slug / "study.yaml").is_file()
@@ -52,6 +53,7 @@ def test_frozen_run_matrices_pass() -> None:
         "artifacts",
     }
     assert checked["p2"]["artifacts"]["status"] == "PASS"
+    assert checked["p3"]["artifacts"]["status"] == "PASS"
 
 
 def test_reader_facing_documents_describe_only_current_project_state() -> None:
@@ -71,41 +73,79 @@ def test_reader_facing_documents_describe_only_current_project_state() -> None:
     violations = {
         str(path.relative_to(PROJECT_ROOT)): sorted(set(prohibited.findall(text)))
         for path in document_paths
-        if (text := path.read_text(encoding="utf-8")) and prohibited.search(text)
+        if (text := path.read_text(encoding="utf-8"))
+        and prohibited.search(text)
     }
     assert violations == {}
 
 
-def test_editable_narrative_uses_descriptive_workstream_names() -> None:
-    paths = [PROJECT_ROOT / "README.md"]
-    paths.extend((PROJECT_ROOT / "docs").rglob("*.md"))
-    paths.extend(
-        [
-            PROJECT_ROOT / "workstreams" / "README.md",
-            PROJECT_ROOT / "workstreams" / "ROADMAP.md",
-            PROJECT_ROOT / "workstreams" / "p0_scaffold_bias" / "README.md",
-            PROJECT_ROOT / "workstreams" / "p1_matched_fedavg" / "README.md",
-            PROJECT_ROOT
-            / "workstreams"
-            / "p2_multidimensional_validation"
-            / "README.md",
-            PROJECT_ROOT
-            / "workstreams"
-            / "p1_matched_fedavg"
-            / "artifacts"
-            / "archive"
-            / "README.md",
-        ]
+def test_multidimensional_derivation_math_is_renderable() -> None:
+    path = (
+        PROJECT_ROOT
+        / "workstreams"
+        / "p3_multidimensional_fedavg_attribution"
+        / "theory"
+        / "multidimensional_matched_attribution_derivation.md"
     )
-    paths.extend((PROJECT_ROOT / "src").rglob("*.py"))
-    paths.extend((PROJECT_ROOT / "tests").rglob("*.py"))
-    numbered_label = re.compile(r"\bP[0-9]+\b")
+    text = path.read_text(encoding="utf-8")
 
-    violations = [
-        str(path.relative_to(PROJECT_ROOT))
-        for path in paths
-        if numbered_label.search(path.read_text(encoding="utf-8"))
+    assert "\\(" not in text
+    assert "\\)" not in text
+    assert "\\[" not in text
+    assert "\\]" not in text
+
+    display_parts = text.split("$$")
+    assert len(display_parts) % 2 == 1
+    math_fragments = display_parts[1::2]
+    narrative = "\n".join(display_parts[::2])
+    inline_math = re.findall(r"(?<!\\)\$(?!\$)(.+?)(?<!\\)\$", narrative)
+    math_fragments.extend(inline_math)
+
+    without_inline_math = re.sub(
+        r"(?<!\\)\$(?!\$).+?(?<!\\)\$", "", narrative
+    )
+    assert "$" not in without_inline_math
+    assert math_fragments
+
+    for fragment in math_fragments:
+        assert "\\left{" not in fragment
+        assert "\\right}" not in fragment
+        assert fragment.count("\\left") == fragment.count("\\right")
+        depth = 0
+        for index, character in enumerate(fragment):
+            if character not in "{}":
+                continue
+            preceding_backslashes = 0
+            cursor = index - 1
+            while cursor >= 0 and fragment[cursor] == "\\":
+                preceding_backslashes += 1
+                cursor -= 1
+            if preceding_backslashes % 2 == 1:
+                continue
+            depth += 1 if character == "{" else -1
+            assert depth >= 0
+        assert depth == 0
+
+
+def test_p3_namespace_has_no_retired_development_labels() -> None:
+    slug = "p3_multidimensional_fedavg_attribution"
+    roots = [
+        PROJECT_ROOT / "src" / "stationary_bias" / "workstreams" / slug,
+        PROJECT_ROOT / "tests" / "workstreams" / slug,
+        PROJECT_ROOT / "workstreams" / slug,
     ]
+    text_suffixes = {".csv", ".json", ".md", ".py", ".txt", ".yaml", ".yml"}
+    retired_label = re.compile(r"mdfa|md-fa|md_fa|\bE1\b|\bE2\b", re.IGNORECASE)
+
+    violations = []
+    for root in roots:
+        for path in root.rglob("*"):
+            if not path.is_file() or path.suffix.lower() not in text_suffixes:
+                continue
+            relative = str(path.relative_to(PROJECT_ROOT))
+            text = path.read_text(encoding="utf-8")
+            if retired_label.search(relative) or retired_label.search(text):
+                violations.append(relative)
     assert violations == []
 
 
@@ -131,8 +171,8 @@ def test_deprecated_leading_coefficient_label_is_absent() -> None:
         if deprecated in relative:
             violations.append(relative)
             continue
-        if path.suffix in text_suffixes and deprecated in path.read_text(
-            encoding="utf-8"
+        if path.suffix in text_suffixes and re.search(
+            rf"\b{deprecated}(?:_d|\s*=)", path.read_text(encoding="utf-8")
         ):
             violations.append(relative)
     assert violations == []

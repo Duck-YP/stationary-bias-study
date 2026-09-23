@@ -1,0 +1,189 @@
+{
+  "artifact_filenames": [
+    "run_start_provenance.json",
+    "p3_matched_primary_config_snapshot.yaml",
+    "paired_run_summary.csv",
+    "paired_batch_summary.csv",
+    "paired_setting_diagnostics.csv",
+    "paired_setting_summary.csv",
+    "paired_fit_summary.csv",
+    "paired_bootstrap_intercepts.csv",
+    "paired_falsification_summary.csv",
+    "p3_matched_formal_manifest.json",
+    "p3_matched_d2_attribution_primary_report.md",
+    "p3_matched_d2_H2_control_convergence.png",
+    "p3_matched_d2_H4_control_convergence.png"
+  ],
+  "bootstrap": {
+    "marginal_diagnostic_quantiles": [
+      0.025,
+      0.975
+    ],
+    "preserve_same_seed_across_settings": true,
+    "repetitions": 2000,
+    "seed": 4901,
+    "simultaneous_quantiles": [
+      0.0125,
+      0.9875
+    ],
+    "unit": "paired_seed_label_block"
+  },
+  "config_sha256": "5ad5e524c9a536d8ac49f1909199d357d780073de0b949411039ea1e6664956b",
+  "covariance": [
+    [
+      1.0,
+      0.2
+    ],
+    [
+      0.2,
+      0.7
+    ]
+  ],
+  "gate_definitions": {
+    "P3-F0": "every pair passes both finite-state and stationarity checks plus SCAFFOLD zero-sum control",
+    "P3-F1": "both H=2 targets lie within simultaneous paired-bootstrap intervals",
+    "P3-F2": "report H=4 primary intercepts and simultaneous intervals",
+    "P3-F3": "defer final H=4 coverage to the frozen smaller-step matrix",
+    "P3-F3_closeness": "report smaller-step versus primary H=4 closeness",
+    "P3-F4": "require the expected signed direction on sufficiently small path settings",
+    "P3-F5": "paired direct sample difference is diagnostic only",
+    "P3-F6": "include every frozen setting, pair seed, and algorithm member",
+    "P3-F7": "every pair records exact indexed-noise equality"
+  },
+  "interpretation_boundary": "paired_control_attribution_consistency_test_not_proof_or_performance_ranking",
+  "matrix_id": "p3-d2-matched-attribution-primary",
+  "objective": {
+    "A": [
+      [
+        1.2,
+        0.2
+      ],
+      [
+        0.2,
+        1.0
+      ]
+    ],
+    "alpha": 0.25,
+    "d": 2,
+    "global_hessian_bounds": {
+      "L": 1.565036762718386,
+      "mu": 0.85
+    },
+    "name": "rank_one_log_cosh",
+    "u": [
+      0.7071067811865475,
+      0.7071067811865475
+    ],
+    "x_star": [
+      0.0,
+      0.0
+    ]
+  },
+  "paired_seed_block": [
+    2101,
+    2102,
+    2103,
+    2104,
+    2105,
+    2106,
+    2107,
+    2108
+  ],
+  "phase": "formal",
+  "run_matrix": {
+    "H_values": [
+      2,
+      4
+    ],
+    "N_values": [
+      12,
+      16,
+      24,
+      32,
+      48
+    ],
+    "all_unique": true,
+    "gamma_equals_inverse_N": true,
+    "matrix_id": "p3-d2-matched-attribution-primary",
+    "paired_chains": 80,
+    "pairs_per_setting": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "seeds": [
+      2101,
+      2102,
+      2103,
+      2104,
+      2105,
+      2106,
+      2107,
+      2108
+    ],
+    "settings": 10,
+    "target": "primary",
+    "unique_run_ids": 80
+  },
+  "schema_version": 1,
+  "scientific_execution": "COMPLETED_RAW_AND_ANALYZED",
+  "source_commit": "f157e8fc870954a1d2a7c6c6b3ed90f62294d105",
+  "source_dirty_at_run_start": false,
+  "study": "p3_matched",
+  "theory": {
+    "B11_d": [
+      -0.024459428167733,
+      -0.030574285209666
+    ],
+    "S_C": [
+      [
+        0.413009404388715,
+        0.021943573667712
+      ],
+      [
+        0.021943573667712,
+        0.345611285266458
+      ]
+    ],
+    "by_H": {
+      "2": {
+        "B20_FA": [
+          -0.032002677596805,
+          -0.040003346996006
+        ],
+        "B20_SCAF": [
+          -0.0480040163952075,
+          -0.060005020494009
+        ],
+        "B20_ctrl": [
+          -0.0160013387984025,
+          -0.020001673498003
+        ]
+      },
+      "4": {
+        "B20_FA": [
+          -0.096008032790415,
+          -0.120010040988019
+        ],
+        "B20_SCAF": [
+          -0.152012718584824,
+          -0.19001589823103
+        ],
+        "B20_ctrl": [
+          -0.0560046857944088,
+          -0.0700058572430111
+        ]
+      }
+    },
+    "normalization": "C_hat_alg = (b_hat_alg - (gamma / N) * B11_d) / gamma^2",
+    "paired_cancellation": "D_hat = (b_hat_SCAF - b_hat_FA) / gamma^2",
+    "primary_representation": "paired_signed_coordinatewise_stationary_mean_balance"
+  }
+}

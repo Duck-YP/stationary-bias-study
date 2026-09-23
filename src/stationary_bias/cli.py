@@ -42,6 +42,10 @@ WORKSTREAMS = {
         "slug": "p2_multidimensional_validation",
         "question": "Multidimensional homogeneous SCAFFOLD validation.",
     },
+    "p3": {
+        "slug": "p3_multidimensional_fedavg_attribution",
+        "question": "Multidimensional matched FedAvg versus SCAFFOLD attribution.",
+    },
 }
 
 
@@ -146,6 +150,7 @@ def check_all() -> dict[str, Any]:
         "p0": check_p0(),
         "p1": check_p1(),
         "p2": check_p2_all(),
+        "p3": check_p3_all(),
     }
 
 
@@ -176,6 +181,40 @@ def check_p2_all() -> dict[str, Any]:
         "formal_d5": check_d5_protocol(),
         "fixed_gamma_large_N_d2": check_plateau_protocol(),
         "artifacts": audit_saved_p2_artifacts(),
+    }
+
+
+def check_p3_all() -> dict[str, Any]:
+    """Validate third-workstream protocols and formal evidence without simulation."""
+
+    from .workstreams.p3_multidimensional_fedavg_attribution.artifact_audit import (
+        audit_saved_p3_artifacts,
+    )
+    from .workstreams.p3_multidimensional_fedavg_attribution.formal import (
+        check_formal_protocol,
+    )
+    from .workstreams.p3_multidimensional_fedavg_attribution.simulation import (
+        check_smoke_protocol,
+    )
+    from .workstreams.p3_multidimensional_fedavg_attribution.matched_formal import (
+        check_matched_formal_protocol,
+    )
+    from .workstreams.p3_multidimensional_fedavg_attribution.matched_simulation import (
+        check_matched_smoke_protocol,
+    )
+
+    return {
+        "status": "PASS",
+        "workstream": "p3",
+        "fedavg_coefficient": {
+            "smoke": check_smoke_protocol(),
+            "formal": check_formal_protocol(),
+        },
+        "matched_attribution": {
+            "smoke": check_matched_smoke_protocol(),
+            "formal": check_matched_formal_protocol(),
+        },
+        "artifacts": audit_saved_p3_artifacts(),
     }
 
 
@@ -326,6 +365,54 @@ def _parser() -> argparse.ArgumentParser:
     p2_plateau_actions.add_parser("run")
     p2_plateau_actions.add_parser("analyze")
     p2_plateau_actions.add_parser("report")
+
+    p3 = root.add_parser(
+        "p3", help="Multidimensional matched FedAvg versus SCAFFOLD attribution."
+    )
+    p3_actions = p3.add_subparsers(dest="action", required=True)
+    p3_actions.add_parser("check")
+    p3_fedavg = p3_actions.add_parser(
+        "fedavg-coefficient", help="Multidimensional FedAvg coefficient pipeline."
+    )
+    p3_fedavg_actions = p3_fedavg.add_subparsers(
+        dest="fedavg_action", required=True
+    )
+    p3_fedavg_actions.add_parser("check")
+    p3_fedavg_actions.add_parser("smoke")
+    p3_fedavg_formal = p3_fedavg_actions.add_parser("formal")
+    p3_fedavg_formal_targets = p3_fedavg_formal.add_subparsers(
+        dest="formal_target", required=True
+    )
+    p3_fedavg_formal_targets.add_parser("check")
+    for target in ("primary", "h4-small-step"):
+        target_parser = p3_fedavg_formal_targets.add_parser(target)
+        target_actions = target_parser.add_subparsers(
+            dest="formal_action", required=True
+        )
+        target_actions.add_parser("run")
+        target_actions.add_parser("analyze")
+        target_actions.add_parser("report")
+    p3_matched = p3_actions.add_parser(
+        "matched-attribution", help="Matched SCAFFOLD-FedAvg control attribution."
+    )
+    p3_matched_actions = p3_matched.add_subparsers(
+        dest="matched_action", required=True
+    )
+    p3_matched_actions.add_parser("check")
+    p3_matched_actions.add_parser("smoke")
+    p3_matched_formal = p3_matched_actions.add_parser("formal")
+    p3_matched_targets = p3_matched_formal.add_subparsers(
+        dest="matched_formal_target", required=True
+    )
+    p3_matched_targets.add_parser("check")
+    for target in ("primary", "h4-small-step"):
+        target_parser = p3_matched_targets.add_parser(target)
+        target_actions = target_parser.add_subparsers(
+            dest="matched_formal_action", required=True
+        )
+        target_actions.add_parser("run")
+        target_actions.add_parser("analyze")
+        target_actions.add_parser("report")
     return parser
 
 
@@ -722,6 +809,228 @@ def _run_p2_plateau_action(args: argparse.Namespace) -> None:
     )
 
 
+def _run_p3_fedavg_formal_action(args: argparse.Namespace) -> None:
+    from .workstreams.p3_multidimensional_fedavg_attribution.formal import (
+        check_formal_protocol,
+        run_formal_matrix,
+    )
+
+    if args.formal_target == "check":
+        print(json.dumps(check_formal_protocol(), indent=2, sort_keys=True))
+        return
+    target = str(args.formal_target)
+    if args.formal_action == "run":
+        outputs = run_formal_matrix(target)
+        print(
+            json.dumps(
+                {
+                    "status": "FORMAL_OUTPUT_WRITTEN",
+                    "output_root": str(outputs["output_root"]),
+                    "run_rows": len(outputs["run_rows"]),
+                    "batch_rows": len(outputs["batch_rows"]),
+                    "report": str(outputs["report"]),
+                    "figures": [str(path) for path in outputs["figures"]],
+                    "overwrite_audit": outputs["overwrite_audit"],
+                },
+                indent=2,
+            )
+        )
+    elif args.formal_action == "analyze":
+        from .workstreams.p3_multidimensional_fedavg_attribution.formal_analysis import (
+            rebuild_formal_analysis,
+        )
+
+        outputs = rebuild_formal_analysis(target)
+        print(
+            json.dumps(
+                {
+                    "status": "ANALYSIS_WRITTEN",
+                    "output_root": str(outputs["output_root"]),
+                    "setting_rows": len(outputs["setting_summary"]),
+                    "fit_rows": len(outputs["fit_summary"]),
+                    "manifest": str(outputs["manifest"]),
+                },
+                indent=2,
+            )
+        )
+    elif args.formal_action == "report":
+        from .workstreams.p3_multidimensional_fedavg_attribution.formal_analysis import (
+            rebuild_formal_report,
+        )
+
+        outputs = rebuild_formal_report(target)
+        print(
+            json.dumps(
+                {
+                    "status": "REPORT_WRITTEN",
+                    "report": str(outputs["report"]),
+                    "figures": [str(path) for path in outputs["figures"]],
+                },
+                indent=2,
+            )
+        )
+
+
+def _run_p3_matched_action(args: argparse.Namespace) -> None:
+    from .workstreams.p3_multidimensional_fedavg_attribution.matched_formal import (
+        check_matched_formal_protocol,
+        formal_artifact_root,
+        run_formal_matrix,
+    )
+    from .workstreams.p3_multidimensional_fedavg_attribution.matched_simulation import (
+        check_matched_smoke_protocol,
+        run_matched_smoke,
+    )
+
+    if args.matched_action == "check":
+        print(
+            json.dumps(
+                {
+                    "status": "PASS",
+                    "workstream": "p3",
+                    "smoke": check_matched_smoke_protocol(),
+                    "formal": check_matched_formal_protocol(),
+                },
+                indent=2,
+                sort_keys=True,
+            )
+        )
+        return
+    if args.matched_action == "smoke":
+        outputs = run_matched_smoke()
+        diagnostics = outputs["diagnostic_rows"]
+        print(
+            json.dumps(
+                {
+                    "status": "PASS",
+                    "paired_coordinate_run_rows": len(outputs["run_rows"]),
+                    "paired_coordinate_batch_rows": len(outputs["batch_rows"]),
+                    "pair_diagnostics": len(diagnostics),
+                    "crn_integrity_pass": all(row["crn_integrity_pass"] for row in diagnostics),
+                    "zero_sum_control_pass": all(row["zero_sum_control_pass"] for row in diagnostics),
+                    "scientific_interpretation": "NOT_APPLICABLE_ENGINEERING_SMOKE",
+                    "output_root": str(outputs["output_root"]),
+                    "manifest": str(outputs["manifest"]),
+                },
+                indent=2,
+            )
+        )
+        return
+    if args.matched_formal_target == "check":
+        print(json.dumps(check_matched_formal_protocol(), indent=2, sort_keys=True))
+        return
+    target = str(args.matched_formal_target)
+    if args.matched_formal_action == "run":
+        outputs = run_formal_matrix(target)
+        print(
+            json.dumps(
+                {
+                    "status": "FORMAL_OUTPUT_WRITTEN",
+                    "output_root": str(formal_artifact_root(target)),
+                    "paired_run_rows": len(outputs["run_rows"]),
+                    "paired_batch_rows": len(outputs["batch_rows"]),
+                    "report": str(outputs["report"]),
+                    "overwrite_audit": outputs["overwrite_audit"],
+                },
+                indent=2,
+            )
+        )
+        return
+    from .workstreams.p3_multidimensional_fedavg_attribution.matched_formal_analysis import (
+        rebuild_formal_analysis,
+        rebuild_formal_report,
+    )
+
+    output_root = formal_artifact_root(target)
+    if args.matched_formal_action == "analyze":
+        outputs = rebuild_formal_analysis(target)
+        print(
+            json.dumps(
+                {
+                    "status": "ANALYSIS_WRITTEN",
+                    "output_root": str(output_root),
+                    "setting_rows": len(outputs["paired_setting_summary"]),
+                    "fit_rows": len(outputs["paired_fit_summary"]),
+                    "manifest": str(outputs["manifest"]),
+                    "overwrite_audit": outputs["overwrite_audit"],
+                },
+                indent=2,
+            )
+        )
+    else:
+        outputs = rebuild_formal_report(target)
+        print(
+            json.dumps(
+                {
+                    "status": "REPORT_WRITTEN",
+                    "report": str(outputs["report"]),
+                    "figures": [str(path) for path in outputs["figures"]],
+                    "overwrite_audit": outputs["overwrite_audit"],
+                },
+                indent=2,
+            )
+        )
+
+
+def _run_p3_action(args: argparse.Namespace) -> None:
+    if args.action == "matched-attribution":
+        _run_p3_matched_action(args)
+        return
+    if args.action == "check":
+        print(json.dumps(check_p3_all(), indent=2, sort_keys=True))
+        return
+    if args.fedavg_action == "formal":
+        _run_p3_fedavg_formal_action(args)
+        return
+    if args.fedavg_action == "check":
+        from .workstreams.p3_multidimensional_fedavg_attribution.formal import (
+            check_formal_protocol,
+        )
+        from .workstreams.p3_multidimensional_fedavg_attribution.simulation import (
+            check_smoke_protocol,
+        )
+
+        print(
+            json.dumps(
+                {
+                    "status": "PASS",
+                    "workstream": "p3",
+                    "smoke": check_smoke_protocol(),
+                    "formal": check_formal_protocol(),
+                },
+                indent=2,
+                sort_keys=True,
+            )
+        )
+        return
+    from .workstreams.p3_multidimensional_fedavg_attribution.simulation import (
+        run_smoke,
+    )
+
+    outputs = run_smoke()
+    diagnostics = outputs["diagnostic_rows"]
+    print(
+        json.dumps(
+            {
+                "status": "PASS",
+                "coordinate_run_rows": len(outputs["run_rows"]),
+                "coordinate_batch_rows": len(outputs["batch_rows"]),
+                "diagnostic_rows": len(diagnostics),
+                "finite_state_pass": all(
+                    row["finite_state_pass"] for row in diagnostics
+                ),
+                "no_control_state": all(
+                    row["no_control_state"] for row in diagnostics
+                ),
+                "scientific_interpretation": "NOT_APPLICABLE_ENGINEERING_SMOKE",
+                "output_root": str(outputs["output_root"]),
+                "manifest": str(outputs["manifest"]),
+            },
+            indent=2,
+        )
+    )
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     if args.command == "list":
@@ -771,4 +1080,6 @@ def main(argv: Sequence[str] | None = None) -> int:
                     indent=2,
                 )
             )
+    elif args.command == "p3":
+        _run_p3_action(args)
     return 0

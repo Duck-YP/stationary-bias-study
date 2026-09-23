@@ -40,6 +40,13 @@ def _repository_path(value: str) -> Path:
     return path if path.is_absolute() else REPO_ROOT / path
 
 
+def _sha256(path: Path) -> str:
+    payload = path.read_bytes()
+    if path.suffix in {".md", ".txt", ".yaml", ".yml"}:
+        payload = payload.replace(b"\r\n", b"\n")
+    return hashlib.sha256(payload).hexdigest()
+
+
 def _audit_directory(
     root: Path, *, provenance_name: str, manifest_name: str
 ) -> dict[str, Any]:
@@ -64,7 +71,7 @@ def _audit_directory(
             if key == "protocol"
             else _repository_path(recorded_path)
         )
-        observed = hashlib.sha256(path.read_bytes()).hexdigest()
+        observed = _sha256(path)
         if observed != provenance.get(f"{key}_sha256"):
             raise RuntimeError(f"Saved {key} hash differs from current source: {root}")
 

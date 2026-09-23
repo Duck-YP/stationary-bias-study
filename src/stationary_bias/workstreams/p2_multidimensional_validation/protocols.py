@@ -53,9 +53,10 @@ def audit_protocol_archive() -> dict[str, Any]:
     if set(files) != PROTOCOL_FILENAMES:
         raise RuntimeError("Protocol archive inventory is incomplete")
     for filename, expected_hash in files.items():
-        observed_hash = hashlib.sha256(
-            archived_protocol_path(filename).read_bytes()
-        ).hexdigest()
+        payload = archived_protocol_path(filename).read_bytes().replace(
+            b"\r\n", b"\n"
+        )
+        observed_hash = hashlib.sha256(payload).hexdigest()
         if observed_hash != expected_hash:
             raise RuntimeError(f"Protocol archive hash mismatch: {filename}")
     return {"status": "PASS", "files": len(files)}

@@ -224,6 +224,7 @@ __marimo__/
 workstreams/p0_scaffold_bias/artifacts/smoke/
 workstreams/p1_matched_fedavg/artifacts/smoke/
 workstreams/p2_multidimensional_validation/artifacts/smoke/
+workstreams/p3_multidimensional_fedavg_attribution/artifacts/smoke/
 
 # P1 formal-output transaction workspaces
 workstreams/p1_matched_fedavg/artifacts/formal/.*.staging-*/
@@ -232,3 +233,7 @@ workstreams/p1_matched_fedavg/artifacts/formal/.*.previous-*/
 # P2 formal-output transaction workspaces
 workstreams/p2_multidimensional_validation/artifacts/formal/.*.staging-*/
 workstreams/p2_multidimensional_validation/artifacts/formal/.*.previous-*/
+
+# P3 formal-output transaction workspaces
+workstreams/p3_multidimensional_fedavg_attribution/artifacts/formal/.*.staging-*/
+workstreams/p3_multidimensional_fedavg_attribution/artifacts/formal/.*.previous-*/

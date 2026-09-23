@@ -1,0 +1,37 @@
+schema_version: 1
+protocol_status: engineering_only
+experiment: p3_d2_matched_smoke
+setting_id: p3-d2-matched-smoke
+objective: &objective
+  name: rank_one_log_cosh
+  d: 2
+  A: [[1.2, 0.2], [0.2, 1.0]]
+  u: [0.7071067811865475, 0.7071067811865475]
+  alpha: 0.25
+  x_star: [0.0, 0.0]
+noise: &noise
+  name: indexed_cholesky_rademacher
+  covariance: [[1.0, 0.2], [0.2, 0.7]]
+  construction: epsilon(seed, round, client, local_step) = cholesky(C) @ z
+  rademacher_coordinates_independent: true
+  resulting_vector_coordinates_may_be_correlated: true
+  noncommuting_with_A: true
+smoke:
+  d: 2
+  H: 2
+  N: 4
+  gamma: 0.05
+  seeds: [2301, 2302, 2303]
+  initial_x:
+    2301: [-0.5, 0.25]
+    2302: [0.0, 0.0]
+    2303: [0.5, -0.25]
+  initial_control: zero
+  protocol:
+    burn_in_multiples: 5
+    batch_length_multiples: 2
+    num_batches: 4
+    max_abs_control_sum: 1.0e-10
+artifact_namespace: workstreams/p3_multidimensional_fedavg_attribution/artifacts/smoke/matched-attribution
+scientific_interpretation: NOT_APPLICABLE_ENGINEERING_SMOKE
+

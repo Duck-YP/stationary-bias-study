@@ -1,0 +1,84 @@
+{
+  "bootstrap_repetitions": 2000,
+  "bootstrap_seed": 3901,
+  "capture_point": "before_any_p3_formal_output_write",
+  "config_path": "workstreams\\p3\\configs\\d2_coefficient_primary.yaml",
+  "config_sha256": "f119bd20586a68d901ea38f7952429aff0ffc87c14cb84f6c647384cdccf2a03",
+  "metadata_namespace": "p3",
+  "metadata_normalization": "identifier_only",
+  "environment": {
+    "git_commit": "d50f47c5ffae26dff26b11c9895d86ac3c5d70fe",
+    "git_dirty": false,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    },
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.10"
+  },
+  "expected_chain_count": 80,
+  "matrix_id": "p3-d2-coefficient-primary",
+  "phase": "formal",
+  "protocol_path": "workstreams\\p3\\configs\\d2_coefficient_primary.yaml",
+  "protocol_sha256": "f119bd20586a68d901ea38f7952429aff0ffc87c14cb84f6c647384cdccf2a03",
+  "run_matrix": {
+    "H_values": [
+      2,
+      4
+    ],
+    "N_values": [
+      12,
+      16,
+      24,
+      32,
+      48
+    ],
+    "all_unique": true,
+    "chains": 80,
+    "chains_per_setting": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "gamma_equals_inverse_N": true,
+    "matrix_id": "p3-d2-coefficient-primary",
+    "seeds": [
+      1101,
+      1102,
+      1103,
+      1104,
+      1105,
+      1106,
+      1107,
+      1108
+    ],
+    "settings": 10,
+    "target": "primary",
+    "unique_run_ids": 80
+  },
+  "schema_version": 1,
+  "seeds": [
+    1101,
+    1102,
+    1103,
+    1104,
+    1105,
+    1106,
+    1107,
+    1108
+  ],
+  "source_commit": "d50f47c5ffae26dff26b11c9895d86ac3c5d70fe",
+  "source_config_blob": "ad3c76104df1772698153de3ec0f1a2175bdbbbd",
+  "source_config_sha256": "7e5a2488dd317e42eca63bdd1600dce6c5e929dd8c9f6199c2cedeb26894c5af",
+  "source_dirty_at_run_start": false,
+  "study": "p3"
+}

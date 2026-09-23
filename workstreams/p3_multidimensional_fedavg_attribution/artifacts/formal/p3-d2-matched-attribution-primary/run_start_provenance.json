@@ -1,0 +1,170 @@
+{
+  "bootstrap": {
+    "marginal_diagnostic_quantiles": [
+      0.025,
+      0.975
+    ],
+    "preserve_same_seed_across_settings": true,
+    "repetitions": 2000,
+    "seed": 4901,
+    "simultaneous_quantiles": [
+      0.0125,
+      0.9875
+    ],
+    "unit": "paired_seed_label_block"
+  },
+  "capture_point": "before_any_p3_matched_formal_output_write",
+  "config_path": "workstreams\\p3\\configs\\d2_matched_attribution_primary.yaml",
+  "config_sha256": "5ad5e524c9a536d8ac49f1909199d357d780073de0b949411039ea1e6664956b",
+  "metadata_namespace": "p3",
+  "metadata_normalization": "identifier_only",
+  "covariance": [
+    [
+      1.0,
+      0.2
+    ],
+    [
+      0.2,
+      0.7
+    ]
+  ],
+  "environment": {
+    "git_commit": "f157e8fc870954a1d2a7c6c6b3ed90f62294d105",
+    "git_dirty": false,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    },
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.10"
+  },
+  "gates": {
+    "P3-F0": "every pair passes both finite-state and stationarity checks plus SCAFFOLD zero-sum control",
+    "P3-F1": "both H=2 targets lie within simultaneous paired-bootstrap intervals",
+    "P3-F2": "report H=4 primary intercepts and simultaneous intervals",
+    "P3-F3": "defer final H=4 coverage to the frozen smaller-step matrix",
+    "P3-F3_closeness": "report smaller-step versus primary H=4 closeness",
+    "P3-F4": "require the expected signed direction on sufficiently small path settings",
+    "P3-F5": "paired direct sample difference is diagnostic only",
+    "P3-F6": "include every frozen setting, pair seed, and algorithm member",
+    "P3-F7": "every pair records exact indexed-noise equality"
+  },
+  "matrix_id": "p3-d2-matched-attribution-primary",
+  "objective": {
+    "A": [
+      [
+        1.2,
+        0.2
+      ],
+      [
+        0.2,
+        1.0
+      ]
+    ],
+    "alpha": 0.25,
+    "d": 2,
+    "global_hessian_bounds": {
+      "L": 1.565036762718386,
+      "mu": 0.85
+    },
+    "name": "rank_one_log_cosh",
+    "u": [
+      0.7071067811865475,
+      0.7071067811865475
+    ],
+    "x_star": [
+      0.0,
+      0.0
+    ]
+  },
+  "paired_seeds": [
+    2101,
+    2102,
+    2103,
+    2104,
+    2105,
+    2106,
+    2107,
+    2108
+  ],
+  "run_matrix": {
+    "H_values": [
+      2,
+      4
+    ],
+    "N_values": [
+      12,
+      16,
+      24,
+      32,
+      48
+    ],
+    "all_unique": true,
+    "gamma_equals_inverse_N": true,
+    "matrix_id": "p3-d2-matched-attribution-primary",
+    "paired_chains": 80,
+    "pairs_per_setting": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "seeds": [
+      2101,
+      2102,
+      2103,
+      2104,
+      2105,
+      2106,
+      2107,
+      2108
+    ],
+    "settings": 10,
+    "target": "primary",
+    "unique_run_ids": 80
+  },
+  "schema_version": 1,
+  "source_commit": "f157e8fc870954a1d2a7c6c6b3ed90f62294d105",
+  "source_config_blob": "9f69911017865dcbc34ac4c8335c1aaf468c5063",
+  "source_config_sha256": "888627ceb6400338c8b756f193c6810a0af9efd0882d380cda51ee7b755be8fd",
+  "source_dirty_at_run_start": false,
+  "study": "p3_matched",
+  "theory_targets": {
+    "2": {
+      "B20_FA": [
+        -0.032002677596804946,
+        -0.040003346996006175
+      ],
+      "B20_SCAF": [
+        -0.04800401639520742,
+        -0.06000502049400926
+      ],
+      "B20_ctrl": [
+        -0.016001338798402473,
+        -0.020001673498003088
+      ]
+    },
+    "4": {
+      "B20_FA": [
+        -0.09600803279041484,
+        -0.12001004098801853
+      ],
+      "B20_SCAF": [
+        -0.1520127185848235,
+        -0.19001589823102932
+      ],
+      "B20_ctrl": [
+        -0.05600468579440865,
+        -0.0700058572430108
+      ]
+    }
+  }
+}

@@ -1,0 +1,115 @@
+schema_version: 1
+protocol_status: frozen_not_executed
+protocol_frozen_at: "2026-09-18"
+experiment: p3_d2_matched_h4_small_step_confirmation
+matrix_identifier: p3-d2-matched-attribution-h4-small-step-confirmation
+study_role: preregistered_paired_smaller_step_control_attribution
+frozen_before_primary_results: true
+objective:
+  name: rank_one_log_cosh
+  d: 2
+  A: [[1.2, 0.2], [0.2, 1.0]]
+  u: [0.7071067811865475, 0.7071067811865475]
+  alpha: 0.25
+  x_star: [0.0, 0.0]
+  global_hessian_bounds: {mu: 0.85, L: 1.565036762718386}
+noise:
+  name: indexed_cholesky_rademacher
+  covariance: [[1.0, 0.2], [0.2, 0.7]]
+  covariance_eigenvalues: [0.6, 1.1]
+  noncommuting_with_A: true
+  A_C_minus_C_A: [[0.0, -0.02], [0.02, 0.0]]
+  construction: epsilon(seed, round, client, local_step) = cholesky(C) @ z
+  rademacher_coordinates_independent: true
+  resulting_vector_coordinates_may_be_correlated: true
+  fresh_across: [pair, communication_round, local_step, client]
+theory:
+  normalization: C_hat_alg = (b_hat_alg - (gamma / N) * B11_d) / gamma^2
+  paired_cancellation: D_hat = (b_hat_SCAF - b_hat_FA) / gamma^2
+  primary_representation: paired_signed_coordinatewise_stationary_mean_balance
+  S_C: [[0.413009404388715, 0.021943573667712], [0.021943573667712, 0.345611285266458]]
+  B11_d: [-0.024459428167733, -0.030574285209666]
+  H: 4
+  B20_FA: [-0.096008032790415, -0.120010040988019]
+  B20_SCAF: [-0.152012718584824, -0.190015898231030]
+  B20_ctrl: [-0.0560046857944088, -0.0700058572430111]
+smaller_step_path:
+  d: 2
+  H: 4
+  relation: gamma = 1/N
+  fit_variable: delta = gamma + 1/N
+  delta_relation_on_path: delta = 2 * gamma
+  forbid_separate_gamma_inverse_N_fit: true
+  path:
+    - {gamma_denominator: 64, N: 64, delta_numerator: 2, delta_denominator: 64}
+    - {gamma_denominator: 96, N: 96, delta_numerator: 2, delta_denominator: 96}
+    - {gamma_denominator: 128, N: 128, delta_numerator: 2, delta_denominator: 128}
+    - {gamma_denominator: 192, N: 192, delta_numerator: 2, delta_denominator: 192}
+pairs:
+  independent_unit: paired_chain_difference
+  count_per_setting: 8
+  seeds: [2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208]
+  initial_global_state_policy: objective_x_star
+  initial_global_state: [0.0, 0.0]
+  scaffold_initial_control: zero
+  preserve_pair_identity: true
+estimators:
+  primary: paired_signed_coordinatewise_stationary_mean_balance
+  secondary_diagnostic: paired_direct_stationary_sample_mean_difference
+  norm_only_primary_forbidden: true
+protocol:
+  mixing_mu: 0.85
+  burn_in_multiples: 100
+  batch_length_multiples: 20
+  min_batches: 100
+  max_batches: 400
+  extension_batches: 50
+  finite_state_required: true
+  max_abs_control_sum: 1.0e-10
+  stationarity_z: 3.0
+  stationarity_min_chains: 7
+per_setting_uncertainty:
+  source: eight_paired_chain_differences
+  method: student_t_coordinatewise
+  degrees_of_freedom: 7
+  familywise_confidence_level: 0.95
+  correction: bonferroni
+  coordinates: 2
+  simultaneous_coordinate_confidence_level: 0.975
+  marginal_diagnostic_confidence_level: 0.95
+  pool_coordinates: false
+precision_stopping:
+  statistic: paired_primary_normalized_difference
+  scope: every_coordinate
+  absolute_half_width: 0.0025
+  relative_half_width: 0.10
+  coordinate_rule: h_j <= max(0.0025, 0.10 * abs(B20_ctrl_j(H)))
+  check_after_batches: 100
+  extend_by_batches: 50
+  stop_at_batches: 400
+  stop_on_invalidity: true
+extrapolation:
+  per: [H, coordinate]
+  response: setting_mean_paired_D_hat_coordinate
+  model: D_hat_j = beta0_j + beta1_j * delta
+  delta: gamma + 1/N
+  coefficient_estimate: beta0_j
+bootstrap:
+  unit: paired_seed_label_block
+  repetitions: 2000
+  seed: 4902
+  preserve_same_seed_across_settings: true
+  simultaneous_quantiles: [0.0125, 0.9875]
+  marginal_diagnostic_quantiles: [0.025, 0.975]
+gates:
+  P3-F0: every pair passes both finite-state and stationarity checks plus SCAFFOLD zero-sum control
+  P3-F3: both H=4 targets lie within simultaneous smaller-step paired-bootstrap intervals
+  P3-F3_closeness: report whether each smaller-step intercept is closer than its primary counterpart
+  P3-F4: require the expected signed direction on sufficiently small path settings
+  P3-F5: paired direct sample difference is diagnostic only
+  P3-F6: include every frozen setting, pair seed, and algorithm member
+  P3-F7: every pair records exact indexed-noise equality
+artifact_namespace: workstreams/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-matched-attribution-h4-small-step-confirmation
+formal_source_policy: clean_commit
+formal_output_policy: controlled_staging_and_overwrite_if_raw_scientific_fields_match
+interpretation_boundary: paired_control_attribution_consistency_test_not_proof_or_performance_ranking

@@ -240,7 +240,9 @@ def test_d5_saved_analysis_gates_manifest_report_and_figures(
     )
     outputs = build_formal_report_and_plots("d5", root)
     assert outputs["report"].name == "p2_d5_controlled_validation_report.md"
-    assert "pre-registered controlled d=5 experiment" in outputs["report"].read_text()
+    assert "pre-registered controlled d=5 experiment" in outputs["report"].read_text(
+        encoding="utf-8"
+    )
     assert {item.name for item in outputs["figures"]} == {
         "p2_d5_H2_coefficient_convergence.png",
         "p2_d5_H4_coefficient_convergence.png",
