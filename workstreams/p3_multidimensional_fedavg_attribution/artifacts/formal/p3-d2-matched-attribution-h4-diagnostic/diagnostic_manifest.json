@@ -1,0 +1,166 @@
+{
+  "artifact_filenames": [
+    "pointwise_diagnostics.csv",
+    "scaling_summary.csv",
+    "nested_window_linear_summary.csv",
+    "linear_quadratic_comparison.csv",
+    "same_pair_attribution.csv",
+    "implementation_audit.csv",
+    "fixed_seed_reference_trace.csv",
+    "h4_residual_scaling.png",
+    "h4_scaled_residual.png",
+    "h4_loglog_residual.png",
+    "p3_h4_paired_diagnostic_report.md",
+    "p3_matched_h4_diagnostic_config_snapshot.yaml",
+    "rebuild_start_provenance.json",
+    "diagnostic_manifest.json"
+  ],
+  "artifact_sha256": {
+    "fixed_seed_reference_trace.csv": "2e1721c28bf9d0171dac3e770a5fec4ec6d636e53bc1e38157626c14e7168666",
+    "h4_loglog_residual.png": "6cd811a9bb794f6a7b6901e247425118f6284f9c5fc2e564aca596fc629c4023",
+    "h4_residual_scaling.png": "94154a945f3b35d3ab71574afab539e2af002850188551218bfe04c1b1695117",
+    "h4_scaled_residual.png": "f469d50c2980c9a5ebdef785e26cab588c726d141c522b8fc4dc9fc27f6dce74",
+    "implementation_audit.csv": "d5253422ccfa8ec10fadc624762d0e4453d0b287168f4c54d1b099cd55fc9d81",
+    "linear_quadratic_comparison.csv": "7b3d237c1b9bb8bb42d1ec2afe1f5605e44492a98bd420e53951694a5eb1e206",
+    "nested_window_linear_summary.csv": "e652cb257c42b84edab11465278057f1355171a69c64eb661fa058fc3354c9c6",
+    "p3_h4_paired_diagnostic_report.md": "4e0db839fd6793e63b6959a4adf580ae3fbe8d1ea6cc7fafeacf422689dad290",
+    "p3_matched_h4_diagnostic_config_snapshot.yaml": "156589dad3e8c497866c1984c0705b92af47260f49a8bfbc070a2bba92153c1b",
+    "pointwise_diagnostics.csv": "5e16386bd79454146ac725151317d3c72ec8e1a436303b4d53be784f2368185c",
+    "rebuild_start_provenance.json": "dc68e6a0fb51db37f83ebe662fce96827754a3598f6508c6c6ce9fe1a2c1e6af",
+    "same_pair_attribution.csv": "362f91e218cf0d4a166238883875198023a84632739d9409e3ded313b77141cd",
+    "scaling_summary.csv": "bdb34a24edb8ad6527f97fce54c17e82d0f607ccfac7bd8aec44a9c8c9e4a1e9"
+  },
+  "bootstrap": {
+    "base_seed": 7301,
+    "repetitions": 2000,
+    "role": "post_hoc_diagnostic_only",
+    "unit": "dataset_stratified_paired_seed_label_block"
+  },
+  "classification": {
+    "descriptive_only": true,
+    "label": "finite_grid_higher_order_curvature_consistent",
+    "observations": {
+      "absolute_paired_residual_is_monotone_with_delta": true,
+      "combined_nested_intercepts_move_toward_theory": true,
+      "combined_quadratic_improves_linear_rmse_and_theory_distance": true,
+      "implementation_audit_passes": true
+    }
+  },
+  "config_path": "workstreams/p3_multidimensional_fedavg_attribution/configs/d2_matched_attribution_h4_diagnostic.yaml",
+  "config_sha256": "156589dad3e8c497866c1984c0705b92af47260f49a8bfbc070a2bba92153c1b",
+  "config_snapshot": "p3_matched_h4_diagnostic_config_snapshot.yaml",
+  "controlled_overwrite": {
+    "previous_output": "replaced",
+    "protected_output_sha256": {
+      "fixed_seed_reference_trace.csv": "2e1721c28bf9d0171dac3e770a5fec4ec6d636e53bc1e38157626c14e7168666",
+      "h4_loglog_residual.png": "6cd811a9bb794f6a7b6901e247425118f6284f9c5fc2e564aca596fc629c4023",
+      "h4_residual_scaling.png": "94154a945f3b35d3ab71574afab539e2af002850188551218bfe04c1b1695117",
+      "h4_scaled_residual.png": "f469d50c2980c9a5ebdef785e26cab588c726d141c522b8fc4dc9fc27f6dce74",
+      "implementation_audit.csv": "d5253422ccfa8ec10fadc624762d0e4453d0b287168f4c54d1b099cd55fc9d81",
+      "linear_quadratic_comparison.csv": "7b3d237c1b9bb8bb42d1ec2afe1f5605e44492a98bd420e53951694a5eb1e206",
+      "nested_window_linear_summary.csv": "e652cb257c42b84edab11465278057f1355171a69c64eb661fa058fc3354c9c6",
+      "pointwise_diagnostics.csv": "5e16386bd79454146ac725151317d3c72ec8e1a436303b4d53be784f2368185c",
+      "same_pair_attribution.csv": "362f91e218cf0d4a166238883875198023a84632739d9409e3ded313b77141cd",
+      "scaling_summary.csv": "bdb34a24edb8ad6527f97fce54c17e82d0f607ccfac7bd8aec44a9c8c9e4a1e9"
+    },
+    "protected_outputs_match": true
+  },
+  "coordinate_equivariance_audit": {
+    "angle_degrees": 30.0,
+    "controls_residual": 3.3306690738754696e-16,
+    "difference_statistic_residual": 1.2559397966072083e-15,
+    "fedavg_state_residual": 6.938893903907228e-17,
+    "max_residual": 1.2559397966072083e-15,
+    "rounds": 3,
+    "scaffold_state_residual": 4.85722573273506e-17,
+    "seed": 2101,
+    "status": "PASS"
+  },
+  "fixed_seed_reference_audit": {
+    "H": 4,
+    "N": 12,
+    "controls_residual": 0.0,
+    "gamma": 0.08333333333333333,
+    "max_residual": 0.0,
+    "noise_block_index_residual": 0.0,
+    "q_fedavg_residual": 0.0,
+    "q_scaffold_residual": 0.0,
+    "rounds": 3,
+    "seed": 2101,
+    "status": "PASS",
+    "x_fedavg_residual": 0.0,
+    "x_scaffold_residual": 0.0
+  },
+  "gate_redefinition": false,
+  "historical_gate_status": {
+    "H4_primary": "FAIL_RETAINED",
+    "H4_smaller_step": "FAIL_RETAINED"
+  },
+  "interpretation_boundary": "post-hoc diagnostic evidence only; no theorem proof and no preregistered gate change",
+  "matrix_id": "p3-d2-matched-attribution-h4-diagnostic",
+  "nested_window_rule": {
+    "minimum_points": 3,
+    "rule": "drop_largest_delta_sequentially"
+  },
+  "new_production_simulation": false,
+  "phase": "post_hoc_h4_discrepancy_diagnostic",
+  "protected_output_sha256": {
+    "fixed_seed_reference_trace.csv": "2e1721c28bf9d0171dac3e770a5fec4ec6d636e53bc1e38157626c14e7168666",
+    "h4_loglog_residual.png": "6cd811a9bb794f6a7b6901e247425118f6284f9c5fc2e564aca596fc629c4023",
+    "h4_residual_scaling.png": "94154a945f3b35d3ab71574afab539e2af002850188551218bfe04c1b1695117",
+    "h4_scaled_residual.png": "f469d50c2980c9a5ebdef785e26cab588c726d141c522b8fc4dc9fc27f6dce74",
+    "implementation_audit.csv": "d5253422ccfa8ec10fadc624762d0e4453d0b287168f4c54d1b099cd55fc9d81",
+    "linear_quadratic_comparison.csv": "7b3d237c1b9bb8bb42d1ec2afe1f5605e44492a98bd420e53951694a5eb1e206",
+    "nested_window_linear_summary.csv": "e652cb257c42b84edab11465278057f1355171a69c64eb661fa058fc3354c9c6",
+    "pointwise_diagnostics.csv": "5e16386bd79454146ac725151317d3c72ec8e1a436303b4d53be784f2368185c",
+    "same_pair_attribution.csv": "362f91e218cf0d4a166238883875198023a84632739d9409e3ded313b77141cd",
+    "scaling_summary.csv": "bdb34a24edb8ad6527f97fce54c17e82d0f607ccfac7bd8aec44a9c8c9e4a1e9"
+  },
+  "rebuild_command": "python run.py p3 matched-attribution diagnostic",
+  "rebuild_start_provenance_file": "rebuild_start_provenance.json",
+  "rebuild_start_provenance_sha256": "dc68e6a0fb51db37f83ebe662fce96827754a3598f6508c6c6ce9fe1a2c1e6af",
+  "schema_version": 1,
+  "source_artifacts": {
+    "primary": {
+      "artifact_root": "workstreams/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-matched-attribution-primary",
+      "config_path": "workstreams\\p3\\configs\\d2_matched_attribution_primary.yaml",
+      "config_sha256": "5ad5e524c9a536d8ac49f1909199d357d780073de0b949411039ea1e6664956b",
+      "provenance_sha256": "9f3f09a05c76366124e81db53725ff0c128f95ca8168b948f855fa421c99dcde",
+      "raw_result": "paired_run_summary.csv",
+      "raw_sha256": "15240f405ca8ba4977fdac2d8f89e75272750f1d77ff2089bbfd14a00d942979",
+      "seeds": [
+        2101,
+        2102,
+        2103,
+        2104,
+        2105,
+        2106,
+        2107,
+        2108
+      ],
+      "source_commit": "f157e8fc870954a1d2a7c6c6b3ed90f62294d105",
+      "target": "primary"
+    },
+    "smaller_step": {
+      "artifact_root": "workstreams/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-matched-attribution-h4-small-step-confirmation",
+      "config_path": "workstreams\\p3\\configs\\d2_matched_h4_small_step_confirmation.yaml",
+      "config_sha256": "1006a8de4d2552194b9df0783598f2c69095f03f9a39b9c53160a41f9a724697",
+      "provenance_sha256": "738b1f6ab5b3a3386eccdd00b8edcc27f1f478d1a0174f96f1be530259ca6734",
+      "raw_result": "paired_run_summary.csv",
+      "raw_sha256": "cb1684d0e8a1cf6b026468e08ab3e2bfa8b8b424a4c1e887882da69dbaff3bee",
+      "seeds": [
+        2201,
+        2202,
+        2203,
+        2204,
+        2205,
+        2206,
+        2207,
+        2208
+      ],
+      "source_commit": "e6f574d0f8e3ad0e5078d7bc81fa78dc950b669f",
+      "target": "h4-small-step"
+    }
+  },
+  "study": "p3_matched"
+}

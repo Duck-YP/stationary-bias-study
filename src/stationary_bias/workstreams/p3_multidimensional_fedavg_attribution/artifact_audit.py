@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from ...core.io import REPO_ROOT
-from . import formal, matched_formal
+from . import formal, matched_diagnostic, matched_formal
 
 
 def _reject_json_constant(value: str) -> None:
@@ -55,6 +55,28 @@ def _source_blob_by_oid(blob_oid: str) -> bytes:
         check=True,
         capture_output=True,
     ).stdout
+
+
+def _latest_artifact_commit(path: Path) -> str | None:
+    relative = path.relative_to(REPO_ROOT).as_posix()
+    completed = subprocess.run(
+        [
+            "git",
+            "-c",
+            f"safe.directory={REPO_ROOT}",
+            "log",
+            "-1",
+            "--format=%H",
+            "--",
+            relative,
+        ],
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    commit = completed.stdout.strip()
+    return commit or None
 
 
 def _audit_directory(
@@ -119,6 +141,104 @@ def _audit_directory(
     }
 
 
+def _audit_diagnostic_directory(root: Path) -> dict[str, Any]:
+    if not root.is_dir():
+        raise FileNotFoundError(f"Missing diagnostic artifact directory: {root}")
+    manifest_path = root / "diagnostic_manifest.json"
+    manifest = _load_strict_json(manifest_path)
+    provenance_name = str(manifest.get("rebuild_start_provenance_file", ""))
+    provenance = _load_strict_json(root / provenance_name)
+    provenance_hash = hashlib.sha256((root / provenance_name).read_bytes()).hexdigest()
+    if manifest.get("rebuild_start_provenance_sha256") != provenance_hash:
+        raise RuntimeError("Diagnostic rebuild-start provenance hash mismatch")
+    if manifest.get("matrix_id") != matched_diagnostic.DIAGNOSTIC_MATRIX_ID:
+        raise RuntimeError("Diagnostic manifest matrix identifier is invalid")
+    if provenance.get("matrix_id") != manifest.get("matrix_id"):
+        raise RuntimeError("Diagnostic manifest/provenance matrix mismatch")
+
+    inventory = [str(name) for name in manifest.get("artifact_filenames", [])]
+    actual = sorted(path.name for path in root.iterdir() if path.is_file())
+    if not inventory or sorted(inventory) != actual:
+        raise RuntimeError("Diagnostic artifact inventory is incomplete or contains extras")
+
+    recorded_hashes = {
+        str(name): str(digest)
+        for name, digest in manifest.get("artifact_sha256", {}).items()
+    }
+    expected_hashed_files = sorted(name for name in inventory if name != manifest_path.name)
+    if sorted(recorded_hashes) != expected_hashed_files:
+        raise RuntimeError("Diagnostic artifact hash inventory is incomplete")
+    for name, expected in recorded_hashes.items():
+        if hashlib.sha256((root / name).read_bytes()).hexdigest() != expected:
+            raise RuntimeError(f"Diagnostic artifact hash mismatch: {name}")
+
+    expected_config_hash = str(provenance.get("config_sha256", ""))
+    snapshot_name = str(manifest.get("config_snapshot", ""))
+    if (
+        not expected_config_hash
+        or hashlib.sha256((root / snapshot_name).read_bytes()).hexdigest()
+        != expected_config_hash
+        or manifest.get("config_sha256") != expected_config_hash
+    ):
+        raise RuntimeError("Diagnostic config provenance closure failed")
+
+    source_snapshot = {
+        str(name): str(digest)
+        for name, digest in provenance.get("source_snapshot_sha256", {}).items()
+    }
+    if not source_snapshot:
+        raise RuntimeError("Diagnostic provenance lacks a source snapshot")
+    artifact_commit = _latest_artifact_commit(manifest_path)
+    for name, expected in source_snapshot.items():
+        observed_bytes = (
+            _source_blob(artifact_commit, name)
+            if artifact_commit is not None
+            else (REPO_ROOT / name).read_bytes()
+        )
+        if hashlib.sha256(observed_bytes).hexdigest() != expected:
+            raise RuntimeError(f"Diagnostic source snapshot mismatch: {name}")
+
+    protected = {
+        str(name): str(digest)
+        for name, digest in manifest.get("protected_output_sha256", {}).items()
+    }
+    snapshot_config = matched_diagnostic.load_yaml(root / snapshot_name)
+    snapshot_protected = {
+        str(name): str(digest)
+        for name, digest in snapshot_config.get("protected_output_sha256", {}).items()
+    }
+    if protected != snapshot_protected:
+        raise RuntimeError("Diagnostic protected-output policy differs from its snapshot")
+    for name, expected in protected.items():
+        if hashlib.sha256((root / name).read_bytes()).hexdigest() != expected:
+            raise RuntimeError(f"Protected diagnostic output changed: {name}")
+
+    for source in manifest.get("source_artifacts", {}).values():
+        source_root = REPO_ROOT / str(source["artifact_root"])
+        if hashlib.sha256(
+            (source_root / str(source["raw_result"])).read_bytes()
+        ).hexdigest() != str(source["raw_sha256"]):
+            raise RuntimeError("Diagnostic raw source artifact hash mismatch")
+        if hashlib.sha256(
+            (source_root / "run_start_provenance.json").read_bytes()
+        ).hexdigest() != str(source["provenance_sha256"]):
+            raise RuntimeError("Diagnostic source provenance hash mismatch")
+
+    return {
+        "present": True,
+        "matrix_id": manifest["matrix_id"],
+        "artifact_count": len(inventory),
+        "strict_json": True,
+        "config_sha256": expected_config_hash,
+        "source_snapshot_verified": True,
+        "source_snapshot_basis": artifact_commit or "current_worktree",
+        "source_dirty_at_rebuild_start": provenance.get(
+            "source_dirty_at_rebuild_start"
+        ),
+        "protected_outputs_verified": True,
+    }
+
+
 def audit_saved_p3_artifacts() -> dict[str, Any]:
     """Validate each available formal tree without changing artifacts."""
 
@@ -152,5 +272,14 @@ def audit_saved_p3_artifacts() -> dict[str, Any]:
         )
         if h4_root.is_dir() and any(h4_root.iterdir())
         else {"present": False, "matrix_id": "p3-d2-matched-attribution-h4-small-step-confirmation"}
+    )
+    diagnostic_root = matched_diagnostic.DIAGNOSTIC_ROOT
+    matrices["matched_attribution_h4_diagnostic"] = (
+        _audit_diagnostic_directory(diagnostic_root)
+        if diagnostic_root.is_dir() and any(diagnostic_root.iterdir())
+        else {
+            "present": False,
+            "matrix_id": matched_diagnostic.DIAGNOSTIC_MATRIX_ID,
+        }
     )
     return {"status": "PASS", "matrices": matrices}

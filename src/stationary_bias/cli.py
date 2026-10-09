@@ -400,6 +400,10 @@ def _parser() -> argparse.ArgumentParser:
     )
     p3_matched_actions.add_parser("check")
     p3_matched_actions.add_parser("smoke")
+    p3_matched_actions.add_parser(
+        "diagnostic",
+        help="Rebuild the post-hoc H=4 discrepancy diagnostic from saved artifacts.",
+    )
     p3_matched_formal = p3_matched_actions.add_parser("formal")
     p3_matched_targets = p3_matched_formal.add_subparsers(
         dest="matched_formal_target", required=True
@@ -911,6 +915,30 @@ def _run_p3_matched_action(args: argparse.Namespace) -> None:
                     "scientific_interpretation": "NOT_APPLICABLE_ENGINEERING_SMOKE",
                     "output_root": str(outputs["output_root"]),
                     "manifest": str(outputs["manifest"]),
+                },
+                indent=2,
+            )
+        )
+        return
+    if args.matched_action == "diagnostic":
+        from .workstreams.p3_multidimensional_fedavg_attribution.matched_diagnostic import (
+            rebuild_h4_diagnostic,
+        )
+
+        outputs = rebuild_h4_diagnostic()
+        print(
+            json.dumps(
+                {
+                    "status": "DIAGNOSTIC_WRITTEN",
+                    "classification": outputs["classification"],
+                    "new_production_simulation": False,
+                    "output_root": str(outputs["output_root"]),
+                    "pointwise_rows": len(outputs["pointwise_diagnostics"]),
+                    "nested_window_rows": len(outputs["nested_window_linear_summary"]),
+                    "model_comparison_rows": len(outputs["linear_quadratic_comparison"]),
+                    "report": str(outputs["report"]),
+                    "manifest": str(outputs["manifest"]),
+                    "controlled_overwrite": outputs["controlled_overwrite"],
                 },
                 indent=2,
             )

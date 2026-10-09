@@ -1,0 +1,58 @@
+schema_version: 1
+matrix_identifier: p3-d2-matched-attribution-h4-diagnostic
+study_role: post_hoc_derived_diagnostic_from_saved_formal_pairs
+new_production_simulation: false
+source_targets: [primary, h4-small-step]
+bootstrap:
+  unit: dataset_stratified_paired_seed_label_block
+  repetitions: 2000
+  seed: 7301
+uncertainty:
+  paired_chains_per_setting: 8
+  simultaneous_critical_value: 2.8412442485881835
+tolerances:
+  estimator_identity_atol: 1.0e-12
+  reference_kernel_atol: 1.0e-12
+  coordinate_equivariance_atol: 1.0e-10
+reference_audit:
+  seed: 2101
+  H: 4
+  N: 12
+  gamma_numerator: 1
+  gamma_denominator: 12
+  rounds: 3
+coordinate_equivariance_audit:
+  angle_degrees: 30
+  seed: 2101
+  H: 4
+  N: 12
+  gamma_numerator: 1
+  gamma_denominator: 12
+  rounds: 3
+nested_windows:
+  rule: drop_largest_delta_sequentially
+  minimum_points: 3
+models: [linear, quadratic]
+classification:
+  label_when_consistent: finite_grid_higher_order_curvature_consistent
+  label_otherwise: unresolved
+  descriptive_only: true
+  required_observations:
+    - implementation_audit_passes
+    - absolute_paired_residual_is_monotone_with_delta
+    - combined_nested_intercepts_move_toward_theory
+    - combined_quadratic_improves_linear_rmse_and_theory_distance
+protected_output_sha256:
+  pointwise_diagnostics.csv: 5e16386bd79454146ac725151317d3c72ec8e1a436303b4d53be784f2368185c
+  scaling_summary.csv: bdb34a24edb8ad6527f97fce54c17e82d0f607ccfac7bd8aec44a9c8c9e4a1e9
+  nested_window_linear_summary.csv: e652cb257c42b84edab11465278057f1355171a69c64eb661fa058fc3354c9c6
+  linear_quadratic_comparison.csv: 7b3d237c1b9bb8bb42d1ec2afe1f5605e44492a98bd420e53951694a5eb1e206
+  same_pair_attribution.csv: 362f91e218cf0d4a166238883875198023a84632739d9409e3ded313b77141cd
+  implementation_audit.csv: d5253422ccfa8ec10fadc624762d0e4453d0b287168f4c54d1b099cd55fc9d81
+  fixed_seed_reference_trace.csv: 2e1721c28bf9d0171dac3e770a5fec4ec6d636e53bc1e38157626c14e7168666
+  h4_residual_scaling.png: 94154a945f3b35d3ab71574afab539e2af002850188551218bfe04c1b1695117
+  h4_scaled_residual.png: f469d50c2980c9a5ebdef785e26cab588c726d141c522b8fc4dc9fc27f6dce74
+  h4_loglog_residual.png: 6cd811a9bb794f6a7b6901e247425118f6284f9c5fc2e564aca596fc629c4023
+formal_output_policy: controlled_staging_and_exact_protected_output_match
+provenance_policy: rebuild_start_environment_plus_source_snapshot_hash_closure
+interpretation_boundary: post_hoc_diagnostic_not_a_preregistered_gate_or_theorem_proof

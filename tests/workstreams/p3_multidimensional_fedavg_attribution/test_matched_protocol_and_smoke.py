@@ -97,8 +97,22 @@ def test_matched_formal_execution_refuses_dirty_source(monkeypatch) -> None:
 def test_saved_p3_artifacts_retain_source_provenance() -> None:
     audit = audit_saved_p3_artifacts()
     assert audit["status"] == "PASS"
-    assert len(audit["matrices"]) == 4
-    for matrix in audit["matrices"].values():
+    assert set(audit["matrices"]) == {
+        "fedavg_coefficient_primary",
+        "fedavg_coefficient_h4_small_step",
+        "matched_attribution_primary",
+        "matched_attribution_h4_small_step",
+        "matched_attribution_h4_diagnostic",
+    }
+    formal_matrices = {
+        name: matrix
+        for name, matrix in audit["matrices"].items()
+        if name != "matched_attribution_h4_diagnostic"
+    }
+    for matrix in formal_matrices.values():
         assert matrix["source_dirty_at_run_start"] is False
         assert matrix["source_config_verified"] is True
         assert matrix["snapshot_verified"] is True
+    diagnostic = audit["matrices"]["matched_attribution_h4_diagnostic"]
+    assert diagnostic["source_snapshot_verified"] is True
+    assert diagnostic["protected_outputs_verified"] is True
