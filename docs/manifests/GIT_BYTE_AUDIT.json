@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "examined_text_files": 1127,
+  "historical_CRLF_files": 728,
+  "representative_filter_checks": 9,
+  "samples": [
+    {
+      "path": "manuscript/main.bbl",
+      "contains_CRLF": false,
+      "git_blob_raw": "44b7d9a627e8ff4930d40734e3f418611ffd401f",
+      "git_blob_filtered": "44b7d9a627e8ff4930d40734e3f418611ffd401f",
+      "sha256": "022fe6918aaa460926a0cbfb1216bac1ffa682eb80be3a3d36d670e8a1563e23",
+      "matches": true
+    },
+    {
+      "path": "artifacts/canonical_paper_export/figure_redraw/inputs/p2_plateau/plateau_fit_curve.csv",
+      "contains_CRLF": true,
+      "git_blob_raw": "6f75e886cae2a7ae8764454b8ad7671409462ce8",
+      "git_blob_filtered": "6f75e886cae2a7ae8764454b8ad7671409462ce8",
+      "sha256": "3ca61f251e4f84bd69e0b918faa58fff2b10ba0fa2b3d8752ea3432331620866",
+      "matches": true
+    },
+    {
+      "path": "artifacts/canonical_paper_export/original/p0_scaffold_bias/artifacts/publication_snapshot/run_manifest.json",
+      "contains_CRLF": true,
+      "git_blob_raw": "c65b154ba4019f314d3030056bed9089b0cc3bb9",
+      "git_blob_filtered": "c65b154ba4019f314d3030056bed9089b0cc3bb9",
+      "sha256": "2c5d01178dc67943df89ac988f6bd918a9a2c3beed78d2dae1d44498ba878f37",
+      "matches": true
+    },
+    {
+      "path": "artifacts/canonical_paper_export/targeted_mechanism/requirements.lock",
+      "contains_CRLF": true,
+      "git_blob_raw": "cb6e0bb2b0eb91eb5d30c307d7f3783278ff1704",
+      "git_blob_filtered": "cb6e0bb2b0eb91eb5d30c307d7f3783278ff1704",
+      "sha256": "14529e74151152d857c0bd8eb11c1213552eecdcf553b4b1ac9cb796f84850f1",
+      "matches": true
+    },
+    {
+      "path": "artifacts/canonical_paper_export/supplementary/CLAIM_EVIDENCE_MAP.md",
+      "contains_CRLF": true,
+      "git_blob_raw": "e54afc2ee8c24ce3192941fef27b298d6abd9667",
+      "git_blob_filtered": "e54afc2ee8c24ce3192941fef27b298d6abd9667",
+      "sha256": "0b44e1815371d16ae96e2324b04e625c49cd7766e80a78e3271c54207967f9ad",
+      "matches": true
+    },
+    {
+      "path": "manuscript/supplementary_results/source_review_snapshot/legacy_repository/run.py",
+      "contains_CRLF": true,
+      "git_blob_raw": "4295d3759744116fda9c8e23ed0bf9fdc1f3dbd5",
+      "git_blob_filtered": "4295d3759744116fda9c8e23ed0bf9fdc1f3dbd5",
+      "sha256": "f3eecbf69f111f63b89f0d7bb0c068c21184be7452042c90ef4fe8de917ed2b2",
+      "matches": true
+    },
+    {
+      "path": "artifacts/canonical_paper_export/tables/table_02.tex",
+      "contains_CRLF": true,
+      "git_blob_raw": "d0633b8cd80600ab9c622a4bcc882bbec8f30940",
+      "git_blob_filtered": "d0633b8cd80600ab9c622a4bcc882bbec8f30940",
+      "sha256": "fd1ff4dad0b5830a2b502e566d789778199d69282dae10e38e650f58cd0093ae",
+      "matches": true
+    },
+    {
+      "path": "manuscript/supplementary_results/source_review_snapshot/legacy_repository/pyproject.toml",
+      "contains_CRLF": true,
+      "git_blob_raw": "54f25c8c96504494efffd0962032801eea0021fd",
+      "git_blob_filtered": "54f25c8c96504494efffd0962032801eea0021fd",
+      "sha256": "634c41a8fe968398d0381ee4672b6168a7ba021c5426d7ec323fd80cc1108ff2",
+      "matches": true
+    },
+    {
+      "path": "configs/original/p0_scaffold_bias/configs/client_count_scaling.yaml",
+      "contains_CRLF": true,
+      "git_blob_raw": "44234537ef2c216ebe3e8635219f02c864d3ffb7",
+      "git_blob_filtered": "44234537ef2c216ebe3e8635219f02c864d3ffb7",
+      "sha256": "0328c2e8a403aeafcb3962109c0ae8b51212449779e44f00265cf17af7b9b202",
+      "matches": true
+    }
+  ],
+  "attribute_policy": "* -text; only PDF/PNG/NPZ explicitly binary",
+  "method": "git hash-object with path filters compared against --no-filters; no index writes, staging or commit"
+}

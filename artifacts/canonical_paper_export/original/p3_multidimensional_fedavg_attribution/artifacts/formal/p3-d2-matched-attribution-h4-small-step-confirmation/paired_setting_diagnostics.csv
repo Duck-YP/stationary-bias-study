@@ -1,0 +1,5 @@
+setting_id,H,N,gamma,pair_count,algorithm_members_per_pair,scaffold_validity_pass,fedavg_validity_pass,scaffold_stationarity_pass,fedavg_stationarity_pass,zero_sum_control_pass,max_zero_sum_control_error,crn_integrity_pass,pair_validity_pass,paired_direct_difference_mean
+p3-d2-matched-attribution-h4-small-step-confirmation__H4__N128,4,128,0.0078125,8,2,True,True,True,True,True,3.760658451312793e-12,True,True,-0.06028825142232562
+p3-d2-matched-attribution-h4-small-step-confirmation__H4__N192,4,192,0.0052083333333333,8,2,True,True,True,True,True,7.2717352972428975e-12,True,True,-0.06117828391259865
+p3-d2-matched-attribution-h4-small-step-confirmation__H4__N64,4,64,0.015625,8,2,True,True,True,True,True,1.871780508366783e-12,True,True,-0.05769068344026185
+p3-d2-matched-attribution-h4-small-step-confirmation__H4__N96,4,96,0.0104166666666666,8,2,True,True,True,True,True,2.6207369607789133e-12,True,True,-0.059426868603187286

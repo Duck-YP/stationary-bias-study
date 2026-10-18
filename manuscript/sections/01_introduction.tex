@@ -1,0 +1,54 @@
+% Narrative refinement: identification, mechanism, and empirical interpretation.
+\section{Introduction}
+\label{sec:introduction}
+
+Federated learning enables multiple clients to collaboratively train a shared model while keeping their data distributed. To reduce communication costs, clients may perform several local stochastic-gradient updates before synchronizing their models with a central server. Although clients typically solve the same learning task using a common loss function, differences in their local data distributions can lead to different local optimization objectives and client drift. \Scaf{}, introduced by \citet{karimireddy2020scaffold}, uses control variates to mitigate this drift.
+
+Even when all clients optimize the same objective function, constant-step stochastic updates can produce a systematic parameter displacement. The global model continues to fluctuate, and its expected parameters under the stationary distribution may differ from the objective minimizer. This difference is the \emph{stationary mean bias}. Increasing the number of clients reduces the variance of independent gradient noise averaged at the server, but local updates also change where gradients are evaluated before aggregation. For nonlinear objectives, these local fluctuations can affect both the mean and the variance \citep{glasgow2022sharp}. Therefore, understanding stationary mean bias requires separating contributions that diminish as the number of clients increases from the client-independent effects of local stochastic updates and persistent controls. This distinction also matters for temporal model averaging, which combines successive global models across rounds. Under stationarity, temporal averaging preserves the expected parameter while potentially reducing variance; thus, a small squared-bias share of single-checkpoint error need not remain small for an averaged model.
+
+Recent stationary analyses provide a starting point. In the homogeneous setting, \citet[Theorem~5.3]{mangold2025scaffold} identify a leading \Scaf{} mean-bias contribution proportional to $\gamma/N$, where $\gamma$ is the step size and $N$ the number of clients, and point to higher-order bias not suppressed by client averaging. This expansion and the \FedAvg{} result of \citet[Theorem~3]{mangold2025fedavg} leave the client-independent $\gamma^2$ coefficient within the remainder. Consequently, these results do not identify the algorithm-dependent difference at this order or separate the contribution of ordinary local updates from that of persistent controls. We further compare their precise statements with ours in Section~\ref{sec:related}.
+
+
+This study compares \Scaf{} and \FedAvg{} under a common strongly convex and sufficiently smooth objective, full participation, and independent bounded additive gradient noise. Matching the objective, noise laws, step size, client count, and number of local updates isolates their algorithmic difference. Our analysis combines global stationary balance with the second moments of within-round local trajectories to identify the persistent-control contribution.
+
+Objective homogeneity also separates stochastic control effects from the correction of client drift. The controls can remain random under stochastic gradients even when all clients share the same objective, so this setting retains the mechanism of interest. Proposition~\ref{prop:affine-shift} further extends the \Scaf{} characterization to clients whose objectives differ by fixed linear terms: translating the controls absorbs these gradient offsets while preserving the global stationary law. In this class, correcting objective-induced drift and retaining stochastic mean bias coexist.
+
+The two algorithms share the same $\gamma/N$ contribution but have different formulas for the client-independent $\gamma^2$ coefficient. Let $B_{20}^{\mathcal A}(H)$ denote this coefficient for algorithm $\mathcal A$, where $H$ is the number of local updates per communication round. The subscript $20$ records the respective powers of $\gamma$ and $1/N$. We obtain the decomposition
+\begin{equation}
+\label{eq:intro-attribution}
+B_{20}^{\Scaf}(H)
+=
+B_{20}^{\FedAvg}(H)
++
+B_{20}^{\mathrm{ctrl}}(H),
+\end{equation}
+where the \FedAvg{} coefficient is the ordinary local-update contribution and $B_{20}^{\mathrm{ctrl}}(H)$ is the additional persistent-control contribution.
+
+Equation~\eqref{eq:intro-attribution} distinguishes mechanisms that the shared leading term does not resolve. Zero-sum controls cancel from the direct server increment but alter local second moments, whose interaction with third-order curvature produces an additional mean shift. The formulas quantify its curvature--noise geometry and local-step dependence, and the cancellation at aggregation does not imply identical stationary means.
+
+For fixed dimension $d$ and local-step count $H$, we bound the remainder by $O_{H,d}(\gamma^2/N+\gamma^3)$, uniformly in $N$ for sufficiently small $\gamma$. Subtracting the shared $\gamma/N$ term and dividing by $\gamma^2$ leaves an error $O_{H,d}(1/N+\gamma)$. It vanishes along any joint limit $\gamma\to0$, $N\to\infty$, without a relative-rate condition, separating the coefficient from the unresolved remainder.
+
+Our contributions are:
+\begin{itemize}
+    \item \textbf{Explicit stationary-bias expansions.}
+    We derive multidimensional expansions for \Scaf{} and matched
+    \FedAvg{}, with explicit $\gamma/N$ and client-independent $\gamma^2$
+    coefficients and an $N$-uniform remainder, allowing noncommuting
+    Hessian and noise covariance.
+
+    \item \textbf{Mechanism attribution and an exact extension.}
+    We separate local-update and persistent-control contributions through
+    matched coefficients and local second moments, and extend the
+    \Scaf{} result to affine objective shifts.
+
+    \item \textbf{Controlled tests and real-data interpretation.}
+    We assess coefficient predictions, contraction cancellation, and
+    covariance-matched noise laws in controlled experiments, and examine
+    minibatch allocation, model averaging, and post-hoc directional
+    agreement in real-data finite-tail studies.
+\end{itemize}
+
+
+\paragraph{Significance and scope.}
+The shared leading $\gamma/N$ term cannot distinguish \Scaf{} from matched \FedAvg{}, while existing stationary expansions leave their client-independent $\gamma^2$ coefficients unresolved. Our explicit coefficients and $N$-uniform remainder make this algorithm-dependent difference identifiable in joint small-step, large-client limits. The resulting decomposition quantifies the additional $H$-dependent contribution of persistent controls beyond ordinary local-update bias. By isolating this effect under homogeneous objectives and additive noise, the analysis provides a reference for examining additional interactions in more general federated settings.
+

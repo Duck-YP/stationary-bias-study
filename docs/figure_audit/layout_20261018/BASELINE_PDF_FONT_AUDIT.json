@@ -1,0 +1,406 @@
+{
+  "status": "PASS",
+  "pdf_sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0",
+  "pages": 41,
+  "method": "Font operator size multiplied by the full PDF text matrix scale, including nested form/inclusion transforms and rotated labels; TeX pt = PDF pt * 72.27/72.",
+  "panels": [
+    {
+      "panel": "hist_matched_H2",
+      "page": 12,
+      "source_sha256": "8aa74bd88655de9e5c753cc6dd4cd9a1187c4ae3ff604e2532f2a33ccd051047",
+      "source_box_PDF_pt": [
+        0.0,
+        0.0,
+        221.1250520548,
+        252.0
+      ],
+      "insertion_box_PDF_pt": [
+        72.0,
+        517.887,
+        293.12947455104097,
+        769.89204
+      ],
+      "scale": 1.0000199999782924,
+      "minimum_effective_TeX_pt": 9.700190948200088,
+      "glyph_count": 99,
+      "fonts": [
+        {
+          "font": "/NMSOOM+LMRoman10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSODC+LMMathItalic10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSOMS+LMRoman10-Regular",
+          "embedded": true
+        }
+      ],
+      "checks": {
+        "one_source_page": true,
+        "all_source_text_present_at_inclusion": true,
+        "effective_font_at_least_9_TeX_pt": true,
+        "text_matrix_matches_placement_scale": true,
+        "all_fonts_embedded": true,
+        "no_raster_images": true,
+        "no_text_clipped_by_canvas": true
+      },
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "page": 12,
+      "source_sha256": "12b3b3dba06463d5788e86661c1bf4ce71dbe0f92e7343dc1a3f0af97c8d30d3",
+      "source_box_PDF_pt": [
+        0.0,
+        0.0,
+        221.1250520548,
+        252.0
+      ],
+      "insertion_box_PDF_pt": [
+        302.148,
+        517.887,
+        523.277474551041,
+        769.89204
+      ],
+      "scale": 1.0000199999782924,
+      "minimum_effective_TeX_pt": 9.700190948200088,
+      "glyph_count": 99,
+      "fonts": [
+        {
+          "font": "/NMSPQQ+LMRoman10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSPQQ+LMMathItalic10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSIYP+LMRoman10-Regular",
+          "embedded": true
+        }
+      ],
+      "checks": {
+        "one_source_page": true,
+        "all_source_text_present_at_inclusion": true,
+        "effective_font_at_least_9_TeX_pt": true,
+        "text_matrix_matches_placement_scale": true,
+        "all_fonts_embedded": true,
+        "no_raster_images": true,
+        "no_text_clipped_by_canvas": true
+      },
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "page": 13,
+      "source_sha256": "cdac02c86faabeac2841f2098995a2e7d76300163630ccdcdf21895c5efeda17",
+      "source_box_PDF_pt": [
+        0.0,
+        0.0,
+        221.1250520548,
+        252.0
+      ],
+      "insertion_box_PDF_pt": [
+        72.0,
+        517.887,
+        293.12947455104097,
+        769.89204
+      ],
+      "scale": 1.0000199999782924,
+      "minimum_effective_TeX_pt": 9.700190948200088,
+      "glyph_count": 110,
+      "fonts": [
+        {
+          "font": "/NMSIZL+LMRoman10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSIZL+LMMathItalic10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSQPV+LMRoman10-Regular",
+          "embedded": true
+        }
+      ],
+      "checks": {
+        "one_source_page": true,
+        "all_source_text_present_at_inclusion": true,
+        "effective_font_at_least_9_TeX_pt": true,
+        "text_matrix_matches_placement_scale": true,
+        "all_fonts_embedded": true,
+        "no_raster_images": true,
+        "no_text_clipped_by_canvas": true
+      },
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "page": 13,
+      "source_sha256": "a105e588c4c35f74c839ab5ba48703d103985e20eb51de25f93df339ff9bfd27",
+      "source_box_PDF_pt": [
+        0.0,
+        0.0,
+        221.1250520548,
+        252.0
+      ],
+      "insertion_box_PDF_pt": [
+        302.148,
+        517.887,
+        523.277474551041,
+        769.89204
+      ],
+      "scale": 1.0000199999782924,
+      "minimum_effective_TeX_pt": 9.700190948200088,
+      "glyph_count": 110,
+      "fonts": [
+        {
+          "font": "/NMSREM+LMRoman10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSPSQ+LMMathItalic10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSIYQ+LMRoman10-Regular",
+          "embedded": true
+        }
+      ],
+      "checks": {
+        "one_source_page": true,
+        "all_source_text_present_at_inclusion": true,
+        "effective_font_at_least_9_TeX_pt": true,
+        "text_matrix_matches_placement_scale": true,
+        "all_fonts_embedded": true,
+        "no_raster_images": true,
+        "no_text_clipped_by_canvas": true
+      },
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "page": 15,
+      "source_sha256": "dfd992db8c79a34e9ac8aee9e61dcddbf976aa8f15f9fb62b8d070b97d6170a6",
+      "source_box_PDF_pt": [
+        0.0,
+        0.0,
+        261.7398575342,
+        234.0
+      ],
+      "insertion_box_PDF_pt": [
+        166.767,
+        535.89,
+        428.50685753,
+        769.89
+      ],
+      "scale": 0.9999999999839536,
+      "minimum_effective_TeX_pt": 9.699996948261125,
+      "glyph_count": 74,
+      "fonts": [
+        {
+          "font": "/NMSPRK+LMRoman10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSITJ+LMMathSymbols10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSRGJ+LMRoman10-Regular",
+          "embedded": true
+        }
+      ],
+      "checks": {
+        "one_source_page": true,
+        "all_source_text_present_at_inclusion": true,
+        "effective_font_at_least_9_TeX_pt": true,
+        "text_matrix_matches_placement_scale": true,
+        "all_fonts_embedded": true,
+        "no_raster_images": true,
+        "no_text_clipped_by_canvas": true
+      },
+      "pass": true
+    },
+    {
+      "panel": "e4_averaging_scaffold",
+      "page": 17,
+      "source_sha256": "f99ee0eda48e7869afeb053a94563fe23049020d08eee9aff0c3a6dc477180fd",
+      "source_box_PDF_pt": [
+        0.0,
+        0.0,
+        221.12505,
+        252.0
+      ],
+      "insertion_box_PDF_pt": [
+        72.0,
+        517.887,
+        293.129472501,
+        769.89204
+      ],
+      "scale": 1.0000200000000001,
+      "minimum_effective_TeX_pt": 9.900191896345051,
+      "glyph_count": 109,
+      "fonts": [
+        {
+          "font": "/CMMI10",
+          "embedded": true
+        },
+        {
+          "font": "/CMR10",
+          "embedded": true
+        },
+        {
+          "font": "/CMR9",
+          "embedded": true
+        }
+      ],
+      "checks": {
+        "one_source_page": true,
+        "all_source_text_present_at_inclusion": true,
+        "effective_font_at_least_9_TeX_pt": true,
+        "text_matrix_matches_placement_scale": true,
+        "all_fonts_embedded": true,
+        "no_raster_images": true,
+        "no_text_clipped_by_canvas": true
+      },
+      "pass": true
+    },
+    {
+      "panel": "e4_averaging_fedavg",
+      "page": 17,
+      "source_sha256": "45d9c0344a3edcf85a4e7e819fc0f60ca37ec169baea7b22ffa9809dd3912036",
+      "source_box_PDF_pt": [
+        0.0,
+        0.0,
+        221.12505,
+        252.0
+      ],
+      "insertion_box_PDF_pt": [
+        302.148,
+        517.887,
+        523.277472501,
+        769.89204
+      ],
+      "scale": 1.0000200000000001,
+      "minimum_effective_TeX_pt": 9.900191896345051,
+      "glyph_count": 109,
+      "fonts": [
+        {
+          "font": "/CMMI10",
+          "embedded": true
+        },
+        {
+          "font": "/CMR10",
+          "embedded": true
+        },
+        {
+          "font": "/CMR9",
+          "embedded": true
+        }
+      ],
+      "checks": {
+        "one_source_page": true,
+        "all_source_text_present_at_inclusion": true,
+        "effective_font_at_least_9_TeX_pt": true,
+        "text_matrix_matches_placement_scale": true,
+        "all_fonts_embedded": true,
+        "no_raster_images": true,
+        "no_text_clipped_by_canvas": true
+      },
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "page": 32,
+      "source_sha256": "2661d48e268de93f119067edeac98656b19d34ba87a6b3838e9f09b67314ede2",
+      "source_box_PDF_pt": [
+        0.0,
+        0.0,
+        221.1250520548,
+        252.0
+      ],
+      "insertion_box_PDF_pt": [
+        72.0,
+        220.706,
+        293.12947455104097,
+        472.71103999999997
+      ],
+      "scale": 1.0000199999782924,
+      "minimum_effective_TeX_pt": 9.700190948200088,
+      "glyph_count": 103,
+      "fonts": [
+        {
+          "font": "/NMSREG+LMRoman10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSRFL+LMMathItalic10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSPSE+LMRoman10-Regular",
+          "embedded": true
+        }
+      ],
+      "checks": {
+        "one_source_page": true,
+        "all_source_text_present_at_inclusion": true,
+        "effective_font_at_least_9_TeX_pt": true,
+        "text_matrix_matches_placement_scale": true,
+        "all_fonts_embedded": true,
+        "no_raster_images": true,
+        "no_text_clipped_by_canvas": true
+      },
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "page": 32,
+      "source_sha256": "3c4d48f40994c2447fc3c59496800e573032800cd12b7bd37ab15fa1a79f88c6",
+      "source_box_PDF_pt": [
+        0.0,
+        0.0,
+        221.1250520548,
+        252.0
+      ],
+      "insertion_box_PDF_pt": [
+        302.148,
+        220.706,
+        523.277474551041,
+        472.71103999999997
+      ],
+      "scale": 1.0000199999782924,
+      "minimum_effective_TeX_pt": 9.700190948200088,
+      "glyph_count": 77,
+      "fonts": [
+        {
+          "font": "/NMSREG+LMRoman10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSRWB+LMMathItalic10-Regular",
+          "embedded": true
+        },
+        {
+          "font": "/NMSRUL+LMRoman10-Regular",
+          "embedded": true
+        }
+      ],
+      "checks": {
+        "one_source_page": true,
+        "all_source_text_present_at_inclusion": true,
+        "effective_font_at_least_9_TeX_pt": true,
+        "text_matrix_matches_placement_scale": true,
+        "all_fonts_embedded": true,
+        "no_raster_images": true,
+        "no_text_clipped_by_canvas": true
+      },
+      "pass": true
+    }
+  ],
+  "failures": [],
+  "limits": "Text canvas clipping, embedding and raster absence are automated checks. Axis endpoint visibility, overlaps, grayscale distinction and page layout require the separate visual/geometry review."
+}

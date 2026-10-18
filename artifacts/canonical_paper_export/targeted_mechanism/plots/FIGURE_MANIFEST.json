@@ -1,0 +1,306 @@
+{
+  "mock": false,
+  "panel_count": 32,
+  "main_panel_count": 8,
+  "supplementary_panel_count": 24,
+  "protocol_sha256": "450b187da1f91f939745f3c42e8d579c66b70deb048bf2de3ba718e860e69618",
+  "script_sha256": "dfd2060512c7bbdae795aabc31ed379d73daf922130025f44e2a19f91b7a8e6e",
+  "input_sha256": {
+    "primary_family_36.csv": "e2fe3437cd86e8512d62c994409bb3282b0a36aa65af646b377f3027e9cb78bd",
+    "intercepts_and_contrasts.csv": "6e1f4341641be2a9f565d3389b5b5c83fa926e641ee024ffc7d5ab6e87dbee09",
+    "full_grid.csv": "1af58d6cf13c0fbe8e21827d93f192447bb511fb5ce0b19f4755242eb1443288"
+  },
+  "fonts": "DejaVu Sans embedded as TrueType; minimum 10 pt at native 3.2-inch width",
+  "integration": "Keep panels at natural width, or at least 95% of natural width to retain minimum 9.5-point text. LaTeX handles side-by-side composition.",
+  "selection": "All three symmetric covariance conditions, both coordinates, all three observables; all law contrasts; all balance grid cells. No selection by outcome.",
+  "panels": [
+    {
+      "file": "main\\covariance_controls_scaffold_coordinate_1.pdf",
+      "caption": "SCAFFOLD, coordinate 1: unconstrained intercepts of the normalized balance observable under symmetric noise at the three covariance interventions. Filled circles use the full frozen grid; open squares omit only the largest step size. Whiskers are approximate 95% simultaneous sampling intervals for each analysis's 36-summary family; crosses are analytical targets. The intervals do not cover finite-grid remainder or burn-in error. The null is a normalized coefficient null, not a zero mean.",
+      "sha256": "162dfd71fc087cbf4113c8cfb58101753620c513f71f945b355fbd69d666dd87",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "main\\covariance_controls_scaffold_coordinate_2.pdf",
+      "caption": "SCAFFOLD, coordinate 2: unconstrained intercepts of the normalized balance observable under symmetric noise at the three covariance interventions. Filled circles use the full frozen grid; open squares omit only the largest step size. Whiskers are approximate 95% simultaneous sampling intervals for each analysis's 36-summary family; crosses are analytical targets. The intervals do not cover finite-grid remainder or burn-in error. The null is a normalized coefficient null, not a zero mean.",
+      "sha256": "e702ae1f518a047fad0c16ec7504cb9c561ab354e3d7c0b6444212f94c14c6a3",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "main\\covariance_controls_fedavg_coordinate_1.pdf",
+      "caption": "FedAvg, coordinate 1: unconstrained intercepts of the normalized balance observable under symmetric noise at the three covariance interventions. Filled circles use the full frozen grid; open squares omit only the largest step size. Whiskers are approximate 95% simultaneous sampling intervals for each analysis's 36-summary family; crosses are analytical targets. The intervals do not cover finite-grid remainder or burn-in error. The null is a normalized coefficient null, not a zero mean.",
+      "sha256": "2e73936c174b31bb01b9d9ed2f638220eb197d9d9b2699563f6021b4024a1542",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "main\\covariance_controls_fedavg_coordinate_2.pdf",
+      "caption": "FedAvg, coordinate 2: unconstrained intercepts of the normalized balance observable under symmetric noise at the three covariance interventions. Filled circles use the full frozen grid; open squares omit only the largest step size. Whiskers are approximate 95% simultaneous sampling intervals for each analysis's 36-summary family; crosses are analytical targets. The intervals do not cover finite-grid remainder or burn-in error. The null is a normalized coefficient null, not a zero mean.",
+      "sha256": "b2877a43717671fd4355b16f5a0c28127e50dde17eed84506d6492bdf24aac60",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "main\\covariance_controls_difference_coordinate_1.pdf",
+      "caption": "SCAFFOLD - FedAvg, coordinate 1: unconstrained intercepts of the normalized balance observable under symmetric noise at the three covariance interventions. Filled circles use the full frozen grid; open squares omit only the largest step size. Whiskers are approximate 95% simultaneous sampling intervals for each analysis's 36-summary family; crosses are analytical targets. The intervals do not cover finite-grid remainder or burn-in error. The null is a normalized coefficient null, not a zero mean.",
+      "sha256": "8fe8e0c751b672f2c0550f5f09430a15a01b4af49a547d6b02a939cde2597284",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "main\\covariance_controls_difference_coordinate_2.pdf",
+      "caption": "SCAFFOLD - FedAvg, coordinate 2: unconstrained intercepts of the normalized balance observable under symmetric noise at the three covariance interventions. Filled circles use the full frozen grid; open squares omit only the largest step size. Whiskers are approximate 95% simultaneous sampling intervals for each analysis's 36-summary family; crosses are analytical targets. The intervals do not cover finite-grid remainder or burn-in error. The null is a normalized coefficient null, not a zero mean.",
+      "sha256": "6fbbe28a1a490a5152c57263b8800068333b00566e437f51827626094873e71c",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "main\\covariance_matched_laws_coordinate_1.pdf",
+      "caption": "Coordinate 1: symmetric-minus-asymmetric fitted coefficient differences at rho=+1/4, where the two noise laws have identical population mean and covariance. Difference denotes the matched SCAFFOLD-minus-FedAvg observable. Whiskers are approximate 95% simultaneous intervals across the 36-summary family. Full and prespecified restricted grids are both shown. Green bands mark the frozen practical resolution margins (0.011875, 0.0075, 0.004375); crosses mark zero joint-limit targets. Sampling intervals do not include deterministic grid remainder or burn-in error. This comparison is not an equivalence proof and does not rule out finite-N law dependence.",
+      "sha256": "fb545901ba21be9e510f42efae1b44e40f5871d2494ec84f1c808ce1a26a5ee3",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "main\\covariance_matched_laws_coordinate_2.pdf",
+      "caption": "Coordinate 2: symmetric-minus-asymmetric fitted coefficient differences at rho=+1/4, where the two noise laws have identical population mean and covariance. Difference denotes the matched SCAFFOLD-minus-FedAvg observable. Whiskers are approximate 95% simultaneous intervals across the 36-summary family. Full and prespecified restricted grids are both shown. Green bands mark the frozen practical resolution margins (0.011875, 0.0075, 0.004375); crosses mark zero joint-limit targets. Sampling intervals do not include deterministic grid remainder or burn-in error. This comparison is not an equivalence proof and does not rule out finite-N law dependence.",
+      "sha256": "c268d6bf69b9e6573d000e6bc711babd9dfc249827e781586befa4b95eed4aec",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_minus_symmetric_scaffold_coordinate_1.pdf",
+      "caption": "SCAFFOLD, coordinate 1, symmetric noise, rho=-1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "232cbd73365b2f019687899fba77d465e33408c03fa42632a0b326e3fb24d49d",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_zero_symmetric_scaffold_coordinate_1.pdf",
+      "caption": "SCAFFOLD, coordinate 1, symmetric noise, rho=0: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "a89084b7c8ecdd071c4be273bd0329d3588c6027b143384a052d8d0d41121579",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_symmetric_scaffold_coordinate_1.pdf",
+      "caption": "SCAFFOLD, coordinate 1, symmetric noise, rho=+1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "c0ca542eeab88fc33e8d8565a7e48860e3a46de9d264c7910477692c05273b31",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_asymmetric_scaffold_coordinate_1.pdf",
+      "caption": "SCAFFOLD, coordinate 1, asymmetric noise, rho=+1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "7df6fe1aa9a4d85c85bfbc74a6d2b7d5ec690bb9d904972748e2f618f2c46cbc",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_minus_symmetric_scaffold_coordinate_2.pdf",
+      "caption": "SCAFFOLD, coordinate 2, symmetric noise, rho=-1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "593b7dbec6289d664501a0b0fff267b0f222599ffe0c7bc5d1c47ada79b62cf0",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_zero_symmetric_scaffold_coordinate_2.pdf",
+      "caption": "SCAFFOLD, coordinate 2, symmetric noise, rho=0: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "4fcb030384699b0d0ac1ebb80c729fba2da66c233cbbb05253216a9760475a69",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_symmetric_scaffold_coordinate_2.pdf",
+      "caption": "SCAFFOLD, coordinate 2, symmetric noise, rho=+1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "d62f6c67c190f54b85b630c3928868d7bb6a15ca74762313db98167c16f0c1a9",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_asymmetric_scaffold_coordinate_2.pdf",
+      "caption": "SCAFFOLD, coordinate 2, asymmetric noise, rho=+1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "77e96f63db3466c8992344dfec6135d5e7b4fc487b10151719fb20deb7919d68",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_minus_symmetric_fedavg_coordinate_1.pdf",
+      "caption": "FedAvg, coordinate 1, symmetric noise, rho=-1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "1571e815c112deff9fd10fb70a08ebd88beaa5b91c3d7a57791f958ce50e099c",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_zero_symmetric_fedavg_coordinate_1.pdf",
+      "caption": "FedAvg, coordinate 1, symmetric noise, rho=0: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "256544362e2fa7aa863dd7c63b8b10c89ccfca06e09ed8b4b6af0fb87b40400d",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_symmetric_fedavg_coordinate_1.pdf",
+      "caption": "FedAvg, coordinate 1, symmetric noise, rho=+1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "709a29af581ddccdc771d03451f9057c9ee10460eaebce3ec3b1f39c1364f464",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_asymmetric_fedavg_coordinate_1.pdf",
+      "caption": "FedAvg, coordinate 1, asymmetric noise, rho=+1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "89463f3452a7d721894c7d542fb529ca24533942968ca0faec2eec2e0b4bae48",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_minus_symmetric_fedavg_coordinate_2.pdf",
+      "caption": "FedAvg, coordinate 2, symmetric noise, rho=-1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "b796d352118d21ec21a4aabe66275c5e0d6c98b5f6a5ac85869b8182fae2ea47",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_zero_symmetric_fedavg_coordinate_2.pdf",
+      "caption": "FedAvg, coordinate 2, symmetric noise, rho=0: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "21f2e92dbef2f21da2cc5dffa19c5d7fa66efa8b0c80e5667918bd84391ff464",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_symmetric_fedavg_coordinate_2.pdf",
+      "caption": "FedAvg, coordinate 2, symmetric noise, rho=+1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "3749c6f55c483380e931a57297f460ec4109f2222294c13466bd5b227ac94c62",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_asymmetric_fedavg_coordinate_2.pdf",
+      "caption": "FedAvg, coordinate 2, asymmetric noise, rho=+1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "1d03d9b0fb21e4f73e00bf4319d031a74f3dbae235c7e72bc7efb218e8fad36f",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_minus_symmetric_difference_coordinate_1.pdf",
+      "caption": "SCAFFOLD - FedAvg, coordinate 1, symmetric noise, rho=-1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "96cbacb747a035f86512d7f1094693cd1c16e270aa2bde3bf8692a3422f64cf5",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_zero_symmetric_difference_coordinate_1.pdf",
+      "caption": "SCAFFOLD - FedAvg, coordinate 1, symmetric noise, rho=0: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "8e73b6990c829c369b8cec10d2fc0169cf8cbb0b7bbf11a28eb584dd272e494a",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_symmetric_difference_coordinate_1.pdf",
+      "caption": "SCAFFOLD - FedAvg, coordinate 1, symmetric noise, rho=+1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "f68b28b1d68b26881e629bc6fe7134fc76b3315191c2df4032ddcdaac3afa36e",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_asymmetric_difference_coordinate_1.pdf",
+      "caption": "SCAFFOLD - FedAvg, coordinate 1, asymmetric noise, rho=+1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "0d0d01a1139d6ecd63c5fe2a78139fba9600ef03d5a54baf660367c764b8d175",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_minus_symmetric_difference_coordinate_2.pdf",
+      "caption": "SCAFFOLD - FedAvg, coordinate 2, symmetric noise, rho=-1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "b349f9dd8837eae933f219b3d630f142f449c2c1bd4559b56bd6c39d089ee9cf",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_zero_symmetric_difference_coordinate_2.pdf",
+      "caption": "SCAFFOLD - FedAvg, coordinate 2, symmetric noise, rho=0: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "af892e30d88887f78d54dfe31104587f8c3e149cb075dd34ce002ce87b8eeb6e",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_symmetric_difference_coordinate_2.pdf",
+      "caption": "SCAFFOLD - FedAvg, coordinate 2, symmetric noise, rho=+1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "10ad7bda48ed62d7c535e90f88d2f230cd027630f8682f0158ab47bc78708ebc",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_asymmetric_difference_coordinate_2.pdf",
+      "caption": "SCAFFOLD - FedAvg, coordinate 2, asymmetric noise, rho=+1/4: all six frozen grid cells are shown, with N=64 and N=128 separated visually. Whiskers are ordinary 95% marginal Student-t intervals from 12 independent paired runs, not simultaneous intervals. The horizontal dashed line is the joint-limit coefficient target. Y limits are shared across all four conditions for each observable/coordinate. Connecting lines are visual guides, not fitted rates. Two N values do not identify a convergence rate.",
+      "sha256": "901cbf1a27826b2e34fa5ca8256a6934159909d14ab626564b30d3e2d7115ff9",
+      "single_axes": true,
+      "native_width_inches": 3.2,
+      "minimum_font_pt": 10,
+      "mock": false
+    }
+  ]
+}

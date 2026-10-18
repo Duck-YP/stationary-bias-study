@@ -1,0 +1,2248 @@
+{
+  "source_baseline": "manuscript(2).zip",
+  "changed_active_sources": [
+    "references.bib",
+    "sections/01_introduction.tex",
+    "sections/02_related_work.tex",
+    "sections/05_mechanism.tex",
+    "sections/07_numerical_study.tex",
+    "appendix/C_numerical_details.tex"
+  ],
+  "checks": 436,
+  "failures": 0,
+  "old_table_bodies_preserved": 14,
+  "old_display_environments_preserved": 78,
+  "old_data_and_figure_files_preserved": 164,
+  "primary_family_entries_presented": 36,
+  "page_count": 40,
+  "rendered_new_figures": false,
+  "training": false,
+  "bootstrap_recomputed_this_round": false,
+  "proof_audit_this_round": false,
+  "figure_fonts": [
+    {
+      "file": "figures/redrawn/hist_matched_H2.pdf",
+      "source_min_font": 9.663758277893066,
+      "final_scale": 0.9999999698072772,
+      "min_final_pt": 9.663757986117892
+    },
+    {
+      "file": "figures/redrawn/hist_matched_H4.pdf",
+      "source_min_font": 9.663758277893066,
+      "final_scale": 0.9999999698072772,
+      "min_final_pt": 9.663757986117892
+    },
+    {
+      "file": "figures/redrawn/hist_fixed_gamma_coord1.pdf",
+      "source_min_font": 9.663758277893066,
+      "final_scale": 0.9999999698072772,
+      "min_final_pt": 9.663757986117892
+    },
+    {
+      "file": "figures/redrawn/hist_fixed_gamma_coord2.pdf",
+      "source_min_font": 9.663758277893066,
+      "final_scale": 0.9999999698072772,
+      "min_final_pt": 9.663757986117892
+    },
+    {
+      "file": "figures/redrawn/real_R0_allocation.pdf",
+      "source_min_font": 9.663758277893066,
+      "final_scale": 1.0,
+      "min_final_pt": 9.663758277893066
+    },
+    {
+      "file": "figures/redrawn/e4_averaging_scaffold.pdf",
+      "source_min_font": 9.863007545471191,
+      "final_scale": 0.9999999698072772,
+      "min_final_pt": 9.86300724768014
+    },
+    {
+      "file": "figures/redrawn/e4_averaging_fedavg.pdf",
+      "source_min_font": 9.863007545471191,
+      "final_scale": 0.9999999698072772,
+      "min_final_pt": 9.86300724768014
+    },
+    {
+      "file": "figures/redrawn/hist_H4_smallstep.pdf",
+      "source_min_font": 9.663758277893066,
+      "final_scale": 0.9999999698072772,
+      "min_final_pt": 9.663757986117892
+    },
+    {
+      "file": "figures/redrawn/hist_H4_loglog_residual.pdf",
+      "source_min_font": 9.663758277893066,
+      "final_scale": 0.9999999698072772,
+      "min_final_pt": 9.663757986117892
+    }
+  ],
+  "details": [
+    {
+      "check": "allowed-source-edit:main.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:macros.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:references.bib",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:sections/01_introduction.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:sections/02_related_work.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:sections/03_setting_preliminaries.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:sections/04_main_results.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:sections/05_mechanism.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:sections/07_numerical_study.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:sections/08_discussion_limitations.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:sections/09_conclusion.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:sections/10_code_availability.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:appendix/A_scaffold_proof.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:appendix/B_fedavg_proof.tex",
+      "pass": true
+    },
+    {
+      "check": "allowed-source-edit:appendix/C_numerical_details.tex",
+      "pass": true
+    },
+    {
+      "check": "old-table-body:1",
+      "pass": true,
+      "file": "sections/02_related_work.tex"
+    },
+    {
+      "check": "old-table-body:2",
+      "pass": true,
+      "file": "sections/07_numerical_study.tex"
+    },
+    {
+      "check": "old-table-body:3",
+      "pass": true,
+      "file": "sections/07_numerical_study.tex"
+    },
+    {
+      "check": "old-table-body:4",
+      "pass": true,
+      "file": "sections/07_numerical_study.tex"
+    },
+    {
+      "check": "old-table-body:5",
+      "pass": true,
+      "file": "sections/07_numerical_study.tex"
+    },
+    {
+      "check": "old-table-body:6",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-table-body:7",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-table-body:8",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-table-body:9",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-table-body:10",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-table-body:11",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-table-body:12",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-table-body:13",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-table-body:14",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-display-equation:1",
+      "pass": true,
+      "file": "sections/01_introduction.tex"
+    },
+    {
+      "check": "old-display-equation:2",
+      "pass": true,
+      "file": "sections/03_setting_preliminaries.tex"
+    },
+    {
+      "check": "old-display-equation:3",
+      "pass": true,
+      "file": "sections/03_setting_preliminaries.tex"
+    },
+    {
+      "check": "old-display-equation:4",
+      "pass": true,
+      "file": "sections/03_setting_preliminaries.tex"
+    },
+    {
+      "check": "old-display-equation:5",
+      "pass": true,
+      "file": "sections/03_setting_preliminaries.tex"
+    },
+    {
+      "check": "old-display-equation:6",
+      "pass": true,
+      "file": "sections/03_setting_preliminaries.tex"
+    },
+    {
+      "check": "old-display-equation:7",
+      "pass": true,
+      "file": "sections/03_setting_preliminaries.tex"
+    },
+    {
+      "check": "old-display-equation:8",
+      "pass": true,
+      "file": "sections/03_setting_preliminaries.tex"
+    },
+    {
+      "check": "old-display-equation:9",
+      "pass": true,
+      "file": "sections/03_setting_preliminaries.tex"
+    },
+    {
+      "check": "old-display-equation:10",
+      "pass": true,
+      "file": "sections/03_setting_preliminaries.tex"
+    },
+    {
+      "check": "old-display-equation:11",
+      "pass": true,
+      "file": "sections/03_setting_preliminaries.tex"
+    },
+    {
+      "check": "old-display-equation:12",
+      "pass": true,
+      "file": "sections/03_setting_preliminaries.tex"
+    },
+    {
+      "check": "old-display-equation:13",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:14",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:15",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:16",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:17",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:18",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:19",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:20",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:21",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:22",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:23",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:24",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:25",
+      "pass": true,
+      "file": "sections/04_main_results.tex"
+    },
+    {
+      "check": "old-display-equation:26",
+      "pass": true,
+      "file": "sections/05_mechanism.tex"
+    },
+    {
+      "check": "old-display-equation:27",
+      "pass": true,
+      "file": "sections/05_mechanism.tex"
+    },
+    {
+      "check": "old-display-equation:28",
+      "pass": true,
+      "file": "sections/05_mechanism.tex"
+    },
+    {
+      "check": "old-display-equation:29",
+      "pass": true,
+      "file": "sections/05_mechanism.tex"
+    },
+    {
+      "check": "old-display-equation:30",
+      "pass": true,
+      "file": "sections/05_mechanism.tex"
+    },
+    {
+      "check": "old-display-equation:31",
+      "pass": true,
+      "file": "sections/07_numerical_study.tex"
+    },
+    {
+      "check": "old-display-equation:32",
+      "pass": true,
+      "file": "sections/07_numerical_study.tex"
+    },
+    {
+      "check": "old-display-equation:33",
+      "pass": true,
+      "file": "sections/07_numerical_study.tex"
+    },
+    {
+      "check": "old-display-equation:34",
+      "pass": true,
+      "file": "sections/07_numerical_study.tex"
+    },
+    {
+      "check": "old-display-equation:35",
+      "pass": true,
+      "file": "sections/07_numerical_study.tex"
+    },
+    {
+      "check": "old-display-equation:36",
+      "pass": true,
+      "file": "sections/07_numerical_study.tex"
+    },
+    {
+      "check": "old-display-equation:37",
+      "pass": true,
+      "file": "sections/08_discussion_limitations.tex"
+    },
+    {
+      "check": "old-display-equation:38",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:39",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:40",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:41",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:42",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:43",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:44",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:45",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:46",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:47",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:48",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:49",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:50",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:51",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:52",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:53",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:54",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:55",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:56",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:57",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:58",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:59",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:60",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:61",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:62",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:63",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:64",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:65",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:66",
+      "pass": true,
+      "file": "appendix/A_scaffold_proof.tex"
+    },
+    {
+      "check": "old-display-equation:67",
+      "pass": true,
+      "file": "appendix/B_fedavg_proof.tex"
+    },
+    {
+      "check": "old-display-equation:68",
+      "pass": true,
+      "file": "appendix/B_fedavg_proof.tex"
+    },
+    {
+      "check": "old-display-equation:69",
+      "pass": true,
+      "file": "appendix/B_fedavg_proof.tex"
+    },
+    {
+      "check": "old-display-equation:70",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-display-equation:71",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-display-equation:72",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-display-equation:73",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-display-equation:74",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-display-equation:75",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-display-equation:76",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-display-equation:77",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "old-display-equation:78",
+      "pass": true,
+      "file": "appendix/C_numerical_details.tex"
+    },
+    {
+      "check": "saved-data:figures/redrawn/real_R0_allocation.png",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/hist_matched_H2.png",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/hist_matched_H2.pdf",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/real_R0_allocation.pdf",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/hist_H4_smallstep.png",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/hist_fixed_gamma_coord1.png",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/hist_fixed_gamma_coord1.pdf",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/hist_fixed_gamma_coord2.pdf",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/e4_averaging_fedavg.pdf",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/hist_matched_H4.pdf",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/hist_H4_loglog_residual.png",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/e4_averaging_scaffold.png",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/hist_H4_smallstep.pdf",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/hist_fixed_gamma_coord2.png",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/e4_averaging_scaffold.pdf",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/hist_matched_H4.png",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/e4_averaging_fedavg.png",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/hist_H4_loglog_residual.pdf",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/supplement/E1_leading_intercepts.pdf",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/supplement/E1_control_kappa.pdf",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/supplement/E3_allocation_signed_projection.pdf",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/data/hist_H4_smallstep.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/data/hist_H4_loglog_residual.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/data/hist_matched_H4.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/data/hist_matched_H2.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/data/e4_averaging_fedavg.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/data/hist_fixed_gamma_coord1.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/data/provenance.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/data/e4_provenance.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/data/hist_fixed_gamma_coord2.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/data/e4_averaging_scaffold.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:figures/redrawn/data/real_R0_allocation.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/SOURCE_REVIEW.zip",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/per_run_estimates.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/DATA_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/PROTOCOL_FROZEN.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/SOURCE_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/fitted_coefficients.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/RUN_COMMANDS.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/THEORY_SCOPE.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/METRIC_DEFINITIONS.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/MISSING_ITEMS.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/SCIENTIFIC_SUMMARY.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/CLAIM_EVIDENCE_MAP.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/optimizer_certificates.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/EXPERIMENT_REGISTRY.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/SENSITIVITY_SCOPE.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/reference_optimizers.npz",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/full_results.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/diagnostics/stationarity_and_estimator_checks.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/diagnostics/window_sensitivity_runs.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/diagnostics/window_sensitivity_summary.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/diagnostics/retained_objective_gradient_agreement.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/diagnostics/stable_arithmetic_roundoff_audit.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/diagnostics/E3_H1_actual_data_checks.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/diagnostics/pilot_batch_sensitivity.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/PAIRED_BOOTSTRAP_SENSITIVITY.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/NEGATIVE_CONTROLS.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/INTEGRATION_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/SCOPE_AND_LIMITATIONS.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/E5_POSTHOC_ANALYSIS_SPEC.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/SOURCE_SHA256.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/PAIRED_SEED_RESULTS.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/INPUT_SHA256.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/README_INTEGRATION.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/EARLY_LATE_PAIRED_DIAGNOSTICS.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/SOURCE_VERSION.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/SCIENTIFIC_SUMMARY.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/STATISTICAL_METHOD_RECEIPT.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/CLAIM_EVIDENCE_MAP.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/ALL_CELLS_ALL_WINDOWS.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/SCALING_COMPARISONS.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/FINAL_AUDIT.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/REVIEWER_RISK_DECISION.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/NUMERICAL_CROSSCHECKS.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/IMPLEMENTATION_NOTES.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/FULL_VECTOR_ALIGNMENT.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/PROTOCOL_AND_POSTHOC_STATUS.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/VECTORS.npz",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/presentation_source/README.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/presentation_source/original_table_cells.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/presentation_source/historical_coefficient_intercepts.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/E4_v2_PROTOCOL_FROZEN.sha256",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/inference_arrays.npz",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/INTEGRATION_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/REPRODUCE.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/SOURCE_SHA256.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.sha256",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/WINDOW_RESULTS.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/PRACTICAL_IMPLICATIONS.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/models.npz",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/DIAGNOSTICS.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/MISSING_ITEMS.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/TEMPORAL_DIAGNOSTICS.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/README_INTEGRATION.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/SCIENTIFIC_SUMMARY.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/STATISTICAL_METHOD_RECEIPT.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/CLAIM_EVIDENCE_MAP.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/ENVIRONMENT.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/E4_v2_PROTOCOL_FROZEN.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/AUTOCORRELATION_PROXIES.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/PILOT_AND_BUDGET.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/E2_exact_checks.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/full_vector_means.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/fitted_coefficients.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/E3_across_partition_sensitivity.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/E3_reference_covariance_projections.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/E3_policy_allocation_contrasts.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/E2_zero_initialization.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/E3_conditional_partition_estimates.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/partition_diagnostics.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/E1_intercept_contrasts.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/E3_noise_associated_displacements.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/deterministic_baselines.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/tables/full_results.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E3_allocation_raw_variance_trace.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E1_leading_intercepts.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E3_allocation_bias_squared_U.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E3_policy_signed_projection.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E2_zero_initialization_transient.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E2_affine_path_residuals.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E1_normalized_control_grid.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E3_policy_heldout_log_loss.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E3_allocation_total_parameter_MSE.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E3_allocation_heldout_log_loss.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E3_allocation_signed_projection.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E3_policy_mean_model_training_objective_gap.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E1_H4_complete_diagnostic.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E1_control_kappa.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/figure_data/E1_perpendicular_residuals.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/batch_audit/reconstructed_H_contrasts.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/batch_audit/reconstructed_full_results.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/batch_audit/input_integrity.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/batch_audit/SUMMARY.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/batch_audit/cell_diagnostics.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/batch_audit/R0_reference_matrices.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/batch_audit/BATCH_AUDIT_REPORT.md",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/batch_audit/R0_posthoc_within_tail_endpoint_sensitivity.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/batch_audit/reconstructed_R0_policy_contrasts.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/batch_audit/reconstructed_coefficients.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/batch_audit/R0_H1_identity_recomputed.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/pilots/PILOT_TEMPORAL_DIAGNOSTICS.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/pilots/PILOT_WINDOW_RESULTS.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/pilots/PILOT_BIAS_VARIANCE_MSE.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/pilots/PILOT_RUN_MANIFEST.csv",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/pilots/PILOT_EXECUTION_RECEIPT.json",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/source_snapshot/pilot_analysis.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/source_snapshot/replay.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/source_snapshot/freeze.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/source_snapshot/v2.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/source_snapshot/figures.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/source_snapshot/prepare.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/source_snapshot/audit_fonts.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E4/source_snapshot/package.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/source_snapshot/final_audit.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/source_snapshot/test_bridge.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/source_snapshot/prepare.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/source_snapshot/delivery.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/source_snapshot/reports.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/source_snapshot/bridge.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/source_snapshot/compare_replay.py",
+      "pass": true
+    },
+    {
+      "check": "saved-data:supplementary_results/E5/source_snapshot/package.py",
+      "pass": true
+    },
+    {
+      "check": "new-numeric:0:estimate",
+      "pass": true,
+      "display": "0.02187858",
+      "source": 0.0218785845260496,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:0:lower",
+      "pass": true,
+      "display": "0.02184128",
+      "source": 0.021841281807879,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:0:upper",
+      "pass": true,
+      "display": "0.02191589",
+      "source": 0.0219158872442203,
+      "scale": 1
+    },
+    {
+      "check": "new-target:0",
+      "pass": true,
+      "display": "0.021875"
+    },
+    {
+      "check": "new-numeric:1:estimate",
+      "pass": true,
+      "display": "-0.00002056",
+      "source": -2.0558374143068495e-05,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:1:lower",
+      "pass": true,
+      "display": "-0.00006150",
+      "source": -6.150364224434183e-05,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:1:upper",
+      "pass": true,
+      "display": "0.00002039",
+      "source": 2.038689395820483e-05,
+      "scale": 1
+    },
+    {
+      "check": "new-target:1",
+      "pass": true,
+      "display": "0.000000"
+    },
+    {
+      "check": "new-numeric:2:estimate",
+      "pass": true,
+      "display": "-0.02185115",
+      "source": -0.0218511480941364,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:2:lower",
+      "pass": true,
+      "display": "-0.02189536",
+      "source": -0.0218953617343291,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:2:upper",
+      "pass": true,
+      "display": "-0.02180693",
+      "source": -0.0218069344539437,
+      "scale": 1
+    },
+    {
+      "check": "new-target:2",
+      "pass": true,
+      "display": "-0.021875"
+    },
+    {
+      "check": "new-numeric:3:estimate",
+      "pass": true,
+      "display": "-0.02188179",
+      "source": -0.0218817911286398,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:3:lower",
+      "pass": true,
+      "display": "-0.02193153",
+      "source": -0.0219315282962457,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:3:upper",
+      "pass": true,
+      "display": "-0.02183205",
+      "source": -0.0218320539610338,
+      "scale": 1
+    },
+    {
+      "check": "new-target:3",
+      "pass": true,
+      "display": "-0.021875"
+    },
+    {
+      "check": "new-numeric:4:estimate",
+      "pass": true,
+      "display": "0.00003064",
+      "source": 3.064303450335884e-05,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:4:lower",
+      "pass": true,
+      "display": "-0.00003564",
+      "source": -3.563705442925948e-05,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:4:upper",
+      "pass": true,
+      "display": "0.00009692",
+      "source": 9.692312343597716e-05,
+      "scale": 1
+    },
+    {
+      "check": "new-target:4",
+      "pass": true,
+      "display": "0.000000"
+    },
+    {
+      "check": "new-numeric:5:estimate",
+      "pass": true,
+      "display": "56.0908",
+      "source": 0.0560907830156465,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:5:lower",
+      "pass": true,
+      "display": "42.4573",
+      "source": 0.042457262277926,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:5:upper",
+      "pass": true,
+      "display": "69.7243",
+      "source": 0.069724303753367,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:6:estimate",
+      "pass": true,
+      "display": "2.6156",
+      "source": 0.0026155994001101,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:6:lower",
+      "pass": true,
+      "display": "-4.5559",
+      "source": -0.0045558919471066,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:6:upper",
+      "pass": true,
+      "display": "9.7871",
+      "source": 0.009787090747327,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:7:estimate",
+      "pass": true,
+      "display": "34.2122",
+      "source": 0.0342121984895968,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:7:lower",
+      "pass": true,
+      "display": "20.5757",
+      "source": 0.0205756599377319,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:7:upper",
+      "pass": true,
+      "display": "47.8487",
+      "source": 0.0478487370414618,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:8:estimate",
+      "pass": true,
+      "display": "2.6118",
+      "source": 0.0026117660930437,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:8:lower",
+      "pass": true,
+      "display": "-4.5609",
+      "source": -0.0045608878581875,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:8:upper",
+      "pass": true,
+      "display": "9.7844",
+      "source": 0.0097844200442751,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:9:estimate",
+      "pass": true,
+      "display": "4.6861",
+      "source": 0.0046860640086843,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:9:lower",
+      "pass": true,
+      "display": "-18.0942",
+      "source": -0.0180941722263874,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:9:upper",
+      "pass": true,
+      "display": "27.4663",
+      "source": 0.0274663002437561,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:10:estimate",
+      "pass": true,
+      "display": "2.4973",
+      "source": 0.0024973403394527,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:10:lower",
+      "pass": true,
+      "display": "-6.0117",
+      "source": -0.00601173631868,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:10:upper",
+      "pass": true,
+      "display": "11.0064",
+      "source": 0.0110064169975855,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:11:estimate",
+      "pass": true,
+      "display": "4.7066",
+      "source": 0.0047066223828274,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:11:lower",
+      "pass": true,
+      "display": "-18.0689",
+      "source": -0.0180689409085684,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:11:upper",
+      "pass": true,
+      "display": "27.4822",
+      "source": 0.0274821856742233,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:12:estimate",
+      "pass": true,
+      "display": "2.5118",
+      "source": 0.0025118084201012,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:12:lower",
+      "pass": true,
+      "display": "-5.9994",
+      "source": -0.0059993715982969,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:12:upper",
+      "pass": true,
+      "display": "11.0230",
+      "source": 0.0110229884384994,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:13:estimate",
+      "pass": true,
+      "display": "-46.8325",
+      "source": -0.0468324806186676,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:13:lower",
+      "pass": true,
+      "display": "-67.9207",
+      "source": -0.067920662581868,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:13:upper",
+      "pass": true,
+      "display": "-25.7443",
+      "source": -0.0257442986554671,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:14:estimate",
+      "pass": true,
+      "display": "2.2185",
+      "source": 0.0022184515548135,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:14:lower",
+      "pass": true,
+      "display": "-4.0669",
+      "source": -0.004066901748644,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:14:upper",
+      "pass": true,
+      "display": "8.5038",
+      "source": 0.0085038048582711,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:15:estimate",
+      "pass": true,
+      "display": "-24.9813",
+      "source": -0.0249813325245311,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:15:lower",
+      "pass": true,
+      "display": "-46.0714",
+      "source": -0.0460713764027906,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:15:upper",
+      "pass": true,
+      "display": "-3.8913",
+      "source": -0.0038912886462716,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:16:estimate",
+      "pass": true,
+      "display": "2.2414",
+      "source": 0.0022413797636093,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:16:lower",
+      "pass": true,
+      "display": "-4.0463",
+      "source": -0.0040462939899842,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:16:upper",
+      "pass": true,
+      "display": "8.5291",
+      "source": 0.0085290535172029,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:17:estimate",
+      "pass": true,
+      "display": "-58.1461",
+      "source": -0.0581461078517617,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:17:lower",
+      "pass": true,
+      "display": "-81.4153",
+      "source": -0.0814153340678235,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:17:upper",
+      "pass": true,
+      "display": "-34.8769",
+      "source": -0.0348768816356999,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:18:estimate",
+      "pass": true,
+      "display": "2.7156",
+      "source": 0.0027155570046291,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:18:lower",
+      "pass": true,
+      "display": "-4.1149",
+      "source": -0.0041148861193346,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:18:upper",
+      "pass": true,
+      "display": "9.5460",
+      "source": 0.0095460001285928,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:19:estimate",
+      "pass": true,
+      "display": "-36.2643",
+      "source": -0.0362643167231219,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:19:lower",
+      "pass": true,
+      "display": "-59.5301",
+      "source": -0.0595300614391509,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:19:upper",
+      "pass": true,
+      "display": "-12.9986",
+      "source": -0.0129985720070928,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:20:estimate",
+      "pass": true,
+      "display": "2.7160",
+      "source": 0.0027160392830324,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:20:lower",
+      "pass": true,
+      "display": "-4.1137",
+      "source": -0.004113667848015,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:20:upper",
+      "pass": true,
+      "display": "9.5457",
+      "source": 0.00954574641408,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:21:estimate",
+      "pass": true,
+      "display": "11.3136",
+      "source": 0.0113136272330941,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:21:lower",
+      "pass": true,
+      "display": "-20.1352",
+      "source": -0.020135155718049,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:21:upper",
+      "pass": true,
+      "display": "42.7624",
+      "source": 0.0427624101842372,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:22:estimate",
+      "pass": true,
+      "display": "-0.4971",
+      "source": -0.0004971054498155,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:22:lower",
+      "pass": true,
+      "display": "-9.8863",
+      "source": -0.0098863298809239,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:22:upper",
+      "pass": true,
+      "display": "8.8921",
+      "source": 0.0088921189812928,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:23:estimate",
+      "pass": true,
+      "display": "11.2830",
+      "source": 0.0112829841985907,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:23:lower",
+      "pass": true,
+      "display": "-20.1627",
+      "source": -0.020162740149244,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:23:upper",
+      "pass": true,
+      "display": "42.7287",
+      "source": 0.0427287085464255,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:24:estimate",
+      "pass": true,
+      "display": "-0.4747",
+      "source": -0.0004746595194231,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:24:lower",
+      "pass": true,
+      "display": "-9.8649",
+      "source": -0.0098649071189131,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:24:upper",
+      "pass": true,
+      "display": "8.9156",
+      "source": 0.0089155880800668,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:25:estimate",
+      "pass": true,
+      "display": "-102.9233",
+      "source": -0.1029232636343142,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:25:lower",
+      "pass": true,
+      "display": "-127.9666",
+      "source": -0.1279666230933453,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:25:upper",
+      "pass": true,
+      "display": "-77.8799",
+      "source": -0.077879904175283,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:26:estimate",
+      "pass": true,
+      "display": "-0.3971",
+      "source": -0.0003971478452966,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:26:lower",
+      "pass": true,
+      "display": "-9.8315",
+      "source": -0.0098314960043395,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:26:upper",
+      "pass": true,
+      "display": "9.0372",
+      "source": 0.0090372003137462,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:27:estimate",
+      "pass": true,
+      "display": "-59.1935",
+      "source": -0.059193531014128,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:27:lower",
+      "pass": true,
+      "display": "-84.2420",
+      "source": -0.0842419525571903,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:27:upper",
+      "pass": true,
+      "display": "-34.1451",
+      "source": -0.0341451094710657,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:28:estimate",
+      "pass": true,
+      "display": "-0.3704",
+      "source": -0.0003703863294344,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:28:lower",
+      "pass": true,
+      "display": "-9.8073",
+      "source": -0.0098072861323985,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:28:upper",
+      "pass": true,
+      "display": "9.0665",
+      "source": 0.0090665134735296,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:29:estimate",
+      "pass": true,
+      "display": "0.0038",
+      "source": 3.833307066390489e-06,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:29:lower",
+      "pass": true,
+      "display": "-0.0175",
+      "source": -1.745296978013794e-05,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:29:upper",
+      "pass": true,
+      "display": "0.0251",
+      "source": 2.511958391291892e-05,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:30:estimate",
+      "pass": true,
+      "display": "-0.0145",
+      "source": -1.446808064847806e-05,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:30:lower",
+      "pass": true,
+      "display": "-0.0349",
+      "source": -3.4876857793789094e-05,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:30:upper",
+      "pass": true,
+      "display": "0.0059",
+      "source": 5.940696496832977e-06,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:31:estimate",
+      "pass": true,
+      "display": "-0.0229",
+      "source": -2.292820879578879e-05,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:31:lower",
+      "pass": true,
+      "display": "-0.0423",
+      "source": -4.234090067606759e-05,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:31:upper",
+      "pass": true,
+      "display": "-0.0035",
+      "source": -3.5155169155099957e-06,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:32:estimate",
+      "pass": true,
+      "display": "-0.0005",
+      "source": -4.822784033823616e-07,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:32:lower",
+      "pass": true,
+      "display": "-0.0213",
+      "source": -2.1324070890492798e-05,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:32:upper",
+      "pass": true,
+      "display": "0.0204",
+      "source": 2.035951408372807e-05,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:33:estimate",
+      "pass": true,
+      "display": "-0.0224",
+      "source": -2.2445930392406427e-05,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:33:lower",
+      "pass": true,
+      "display": "-0.0511",
+      "source": -5.1052337738441575e-05,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:33:upper",
+      "pass": true,
+      "display": "0.0062",
+      "source": 6.160476953628721e-06,
+      "scale": 1000
+    },
+    {
+      "check": "new-numeric:34:estimate",
+      "pass": true,
+      "display": "-0.04372973",
+      "source": -0.0437297326201861,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:34:lower",
+      "pass": true,
+      "display": "-0.04378778",
+      "source": -0.0437877810191137,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:34:upper",
+      "pass": true,
+      "display": "-0.04367168",
+      "source": -0.0436716842212585,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:35:estimate",
+      "pass": true,
+      "display": "-0.00002676",
+      "source": -2.676151586217928e-05,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:35:lower",
+      "pass": true,
+      "display": "-0.00005541",
+      "source": -5.540525197227638e-05,
+      "scale": 1
+    },
+    {
+      "check": "new-numeric:35:upper",
+      "pass": true,
+      "display": "0.00000188",
+      "source": 1.882220247917828e-06,
+      "scale": 1
+    },
+    {
+      "check": "all-36-primary-entries-present",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_minus_symmetricSCAFFOLD1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_minus_symmetricSCAFFOLD2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_minus_symmetricFedAvg1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_minus_symmetricFedAvg2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_minus_symmetricdifference1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_minus_symmetricdifference2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_zero_symmetricSCAFFOLD1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_zero_symmetricSCAFFOLD2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_zero_symmetricFedAvg1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_zero_symmetricFedAvg2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_zero_symmetricdifference1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_zero_symmetricdifference2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetricSCAFFOLD1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetricSCAFFOLD2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetricFedAvg1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetricFedAvg2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetricdifference1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetricdifference2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_asymmetricSCAFFOLD1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_asymmetricSCAFFOLD2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_asymmetricFedAvg1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_asymmetricFedAvg2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_asymmetricdifference1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_asymmetricdifference2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetric minus rho_plus_asymmetricSCAFFOLD1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetric minus rho_plus_asymmetricSCAFFOLD2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetric minus rho_plus_asymmetricFedAvg1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetric minus rho_plus_asymmetricFedAvg2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetric minus rho_plus_asymmetricdifference1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetric minus rho_plus_asymmetricdifference2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetric minus rho_minus_symmetricSCAFFOLD1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetric minus rho_minus_symmetricSCAFFOLD2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetric minus rho_minus_symmetricFedAvg1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetric minus rho_minus_symmetricFedAvg2",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetric minus rho_minus_symmetricdifference1",
+      "pass": true
+    },
+    {
+      "check": "analytic-target:rho_plus_symmetric minus rho_minus_symmetricdifference2",
+      "pass": true
+    },
+    {
+      "check": "active-labels-unique",
+      "pass": true,
+      "duplicates": []
+    },
+    {
+      "check": "active-references-resolved",
+      "pass": true,
+      "missing": []
+    },
+    {
+      "check": "final-tex-log-clean",
+      "pass": true,
+      "issues": []
+    },
+    {
+      "check": "no-internal-codes-in-paper",
+      "pass": true
+    },
+    {
+      "check": "new-citation-typeset",
+      "pass": true
+    },
+    {
+      "check": "new-main-section-typeset",
+      "pass": true
+    },
+    {
+      "check": "figure-present:figures/redrawn/hist_matched_H2.pdf",
+      "pass": true
+    },
+    {
+      "check": "figure-present:figures/redrawn/hist_matched_H4.pdf",
+      "pass": true
+    },
+    {
+      "check": "figure-present:figures/redrawn/hist_fixed_gamma_coord1.pdf",
+      "pass": true
+    },
+    {
+      "check": "figure-present:figures/redrawn/hist_fixed_gamma_coord2.pdf",
+      "pass": true
+    },
+    {
+      "check": "figure-present:figures/redrawn/real_R0_allocation.pdf",
+      "pass": true
+    },
+    {
+      "check": "figure-present:figures/redrawn/e4_averaging_scaffold.pdf",
+      "pass": true
+    },
+    {
+      "check": "figure-present:figures/redrawn/e4_averaging_fedavg.pdf",
+      "pass": true
+    },
+    {
+      "check": "figure-present:figures/redrawn/hist_H4_smallstep.pdf",
+      "pass": true
+    },
+    {
+      "check": "figure-present:figures/redrawn/hist_H4_loglog_residual.pdf",
+      "pass": true
+    }
+  ]
+}

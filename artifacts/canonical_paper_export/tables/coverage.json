@@ -1,0 +1,3533 @@
+{
+  "figures": [
+    {
+      "label": "fig:num-matched-primary",
+      "number": 1,
+      "page": 11,
+      "panels": [
+        "hist_matched_H2",
+        "hist_matched_H4"
+      ],
+      "section": "6.2.2"
+    },
+    {
+      "label": "fig:E-p2-plateau",
+      "number": 2,
+      "page": 12,
+      "panels": [
+        "hist_fixed_gamma_coord1",
+        "hist_fixed_gamma_coord2"
+      ],
+      "section": "6.2.3"
+    },
+    {
+      "label": "fig:real-allocation",
+      "number": 3,
+      "page": 15,
+      "panels": [
+        "real_R0_allocation"
+      ],
+      "section": "6.3"
+    },
+    {
+      "label": "fig:e4-averaging",
+      "number": 4,
+      "page": 16,
+      "panels": [
+        "e4_averaging_scaffold",
+        "e4_averaging_fedavg"
+      ],
+      "section": "6.4"
+    },
+    {
+      "label": "fig:E-control-h4",
+      "number": 5,
+      "page": 32,
+      "panels": [
+        "hist_H4_smallstep",
+        "hist_H4_loglog_residual"
+      ],
+      "section": "C.2.2"
+    }
+  ],
+  "manuscript_pdf_sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c",
+  "tables": [
+    {
+      "active": true,
+      "label": "tab:prior-bias-resolution",
+      "manuscript_source": "manuscript/sections/02_related_work.tex",
+      "notes": "Analytical literature comparison, including asymptotic orders. Requires theorem/source review, not numerical regeneration.",
+      "number": 1,
+      "outputs": [],
+      "page": 3,
+      "section": "2",
+      "sources": [
+        "manuscript/sections/02_related_work.tex",
+        "manuscript/references.bib"
+      ],
+      "status": "not_computational",
+      "title": "Prior analytical resolution"
+    },
+    {
+      "active": true,
+      "label": "tab:num-attribution-summary",
+      "manuscript_source": "manuscript/sections/07_numerical_study.tex",
+      "notes": "Saved intercepts/targets; seven decimals. No regression is executed.",
+      "number": 2,
+      "outputs": [
+        "table_02.csv",
+        "table_02.md",
+        "table_02.tex"
+      ],
+      "page": 11,
+      "rows": 9,
+      "section": "6.2.1",
+      "source_rows": [],
+      "sources": [
+        "artifacts/canonical_paper_export/original/p2_multidimensional_validation/artifacts/formal/p2-d2-coefficient-primary/fit_summary.csv",
+        "artifacts/canonical_paper_export/original/p2_multidimensional_validation/artifacts/formal/p2-d2-h4-small-step-confirmation/fit_summary.csv",
+        "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-coefficient-primary/fit_summary.csv",
+        "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-h4-small-step-confirmation/fit_summary.csv",
+        "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-matched-attribution-primary/paired_fit_summary.csv",
+        "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-matched-attribution-h4-small-step-confirmation/paired_fit_summary.csv"
+      ],
+      "status": "supported",
+      "title": "Analytical vectors and finite-grid intercepts",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:supp-control",
+      "manuscript_source": "manuscript/sections/07_numerical_study.tex",
+      "notes": "Primary E1b intercepts; nominal stored intervals (not adjusted or bootstrap alternatives).",
+      "number": 3,
+      "outputs": [
+        "table_03.csv",
+        "table_03.md",
+        "table_03.tex"
+      ],
+      "page": 13,
+      "rows": 6,
+      "section": "6.2.5",
+      "source_rows": [],
+      "sources": [
+        "artifacts/canonical_paper_export/supplementary/fitted_coefficients.csv"
+      ],
+      "status": "supported",
+      "title": "Cartesian-grid control coefficients",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:mechanism-controls",
+      "manuscript_source": "manuscript/sections/07_numerical_study.tex",
+      "notes": "tab:mechanism-controls; five fixed primary balance/full-grid selections. Targets use six decimals; estimates and saved simultaneous endpoints use eight.",
+      "number": 4,
+      "outputs": [
+        "table_04.csv",
+        "table_04.md",
+        "table_04.tex"
+      ],
+      "page": 14,
+      "rows": 5,
+      "section": "6.2.7",
+      "source_rows": [
+        {
+          "json_keys": [
+            "cells[0].rho",
+            "cells[0].asymmetric"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "selector": {
+            "condition": "rho_minus_symmetric"
+          }
+        },
+        {
+          "json_keys": [
+            "cells[6].rho",
+            "cells[6].asymmetric"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "selector": {
+            "condition": "rho_zero_symmetric"
+          }
+        },
+        {
+          "json_keys": [
+            "cells[12].rho",
+            "cells[12].asymmetric"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "selector": {
+            "condition": "rho_plus_symmetric"
+          }
+        },
+        {
+          "json_keys": [
+            "cells[18].rho",
+            "cells[18].asymmetric"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "selector": {
+            "condition": "rho_plus_asymmetric"
+          }
+        },
+        {
+          "digits": {
+            "estimate": 8,
+            "simultaneous_lower": 8,
+            "simultaneous_upper": 8,
+            "target": 6
+          },
+          "fields": [
+            "target",
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 5,
+          "scale": 1,
+          "selector": {
+            "comparison": "rho_minus_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "difference"
+          }
+        },
+        {
+          "digits": {
+            "estimate": 8,
+            "simultaneous_lower": 8,
+            "simultaneous_upper": 8,
+            "target": 6
+          },
+          "fields": [
+            "target",
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 11,
+          "scale": 1,
+          "selector": {
+            "comparison": "rho_zero_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "difference"
+          }
+        },
+        {
+          "digits": {
+            "estimate": 8,
+            "simultaneous_lower": 8,
+            "simultaneous_upper": 8,
+            "target": 6
+          },
+          "fields": [
+            "target",
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 17,
+          "scale": 1,
+          "selector": {
+            "comparison": "rho_plus_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "difference"
+          }
+        },
+        {
+          "digits": {
+            "estimate": 8,
+            "simultaneous_lower": 8,
+            "simultaneous_upper": 8,
+            "target": 6
+          },
+          "fields": [
+            "target",
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 23,
+          "scale": 1,
+          "selector": {
+            "comparison": "rho_plus_asymmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "difference"
+          }
+        },
+        {
+          "digits": {
+            "estimate": 8,
+            "simultaneous_lower": 8,
+            "simultaneous_upper": 8,
+            "target": 6
+          },
+          "fields": [
+            "target",
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 29,
+          "scale": 1,
+          "selector": {
+            "comparison": "rho_plus_symmetric minus rho_plus_asymmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "difference"
+          }
+        }
+      ],
+      "sources": [
+        "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+        "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json"
+      ],
+      "status": "supported",
+      "title": "Contraction and matched-noise first coordinate",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:supp-policy",
+      "manuscript_source": "manuscript/sections/07_numerical_study.tex",
+      "notes": "",
+      "number": 5,
+      "outputs": [
+        "table_05.csv",
+        "table_05.md",
+        "table_05.tex"
+      ],
+      "page": 15,
+      "rows": 4,
+      "section": "6.3",
+      "source_rows": [],
+      "sources": [
+        "artifacts/canonical_paper_export/supplementary/full_results.csv"
+      ],
+      "status": "supported",
+      "title": "Step-size and local-step policies",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:e5-bridge",
+      "manuscript_source": "manuscript/sections/07_numerical_study.tex",
+      "notes": "tab:e5-bridge; all six nonzero-proxy configurations at the saved primary K; three alignment statistics use six decimals. Saved point estimates only.",
+      "number": 6,
+      "outputs": [
+        "table_06.csv",
+        "table_06.md",
+        "table_06.tex"
+      ],
+      "page": 17,
+      "rows": 6,
+      "section": "6.5",
+      "source_rows": [
+        {
+          "json_keys": [
+            "primary_K"
+          ],
+          "path": "manuscript/supplementary_results/E5/E5_POSTHOC_ANALYSIS_SPEC.json"
+        },
+        {
+          "digits": {
+            "cosine": 6,
+            "projection_ratio": 6,
+            "relative_residual": 6
+          },
+          "fields": [
+            "H",
+            "N",
+            "m",
+            "gamma",
+            "cosine",
+            "projection_ratio",
+            "relative_residual"
+          ],
+          "gamma_display": "gamma / maximum gamma among the six saved selected rows; rational denominator <= 1024, checked within 1e-12",
+          "path": "manuscript/supplementary_results/E5/FULL_VECTOR_ALIGNMENT.csv",
+          "row": 28,
+          "scale": 1,
+          "selector": {
+            "K": 64,
+            "cell_id": "E3_R0_p0_H2_N32_g0.196078431373"
+          }
+        },
+        {
+          "digits": {
+            "cosine": 6,
+            "projection_ratio": 6,
+            "relative_residual": 6
+          },
+          "fields": [
+            "H",
+            "N",
+            "m",
+            "gamma",
+            "cosine",
+            "projection_ratio",
+            "relative_residual"
+          ],
+          "gamma_display": "gamma / maximum gamma among the six saved selected rows; rational denominator <= 1024, checked within 1e-12",
+          "path": "manuscript/supplementary_results/E5/FULL_VECTOR_ALIGNMENT.csv",
+          "row": 63,
+          "scale": 1,
+          "selector": {
+            "K": 64,
+            "cell_id": "E3_R0_p0_H4_N8_g0.196078431373"
+          }
+        },
+        {
+          "digits": {
+            "cosine": 6,
+            "projection_ratio": 6,
+            "relative_residual": 6
+          },
+          "fields": [
+            "H",
+            "N",
+            "m",
+            "gamma",
+            "cosine",
+            "projection_ratio",
+            "relative_residual"
+          ],
+          "gamma_display": "gamma / maximum gamma among the six saved selected rows; rational denominator <= 1024, checked within 1e-12",
+          "path": "manuscript/supplementary_results/E5/FULL_VECTOR_ALIGNMENT.csv",
+          "row": 42,
+          "scale": 1,
+          "selector": {
+            "K": 64,
+            "cell_id": "E3_R0_p0_H4_N32_g0.0490196078431"
+          }
+        },
+        {
+          "digits": {
+            "cosine": 6,
+            "projection_ratio": 6,
+            "relative_residual": 6
+          },
+          "fields": [
+            "H",
+            "N",
+            "m",
+            "gamma",
+            "cosine",
+            "projection_ratio",
+            "relative_residual"
+          ],
+          "gamma_display": "gamma / maximum gamma among the six saved selected rows; rational denominator <= 1024, checked within 1e-12",
+          "path": "manuscript/supplementary_results/E5/FULL_VECTOR_ALIGNMENT.csv",
+          "row": 49,
+          "scale": 1,
+          "selector": {
+            "K": 64,
+            "cell_id": "E3_R0_p0_H4_N32_g0.0980392156863"
+          }
+        },
+        {
+          "digits": {
+            "cosine": 6,
+            "projection_ratio": 6,
+            "relative_residual": 6
+          },
+          "fields": [
+            "H",
+            "N",
+            "m",
+            "gamma",
+            "cosine",
+            "projection_ratio",
+            "relative_residual"
+          ],
+          "gamma_display": "gamma / maximum gamma among the six saved selected rows; rational denominator <= 1024, checked within 1e-12",
+          "path": "manuscript/supplementary_results/E5/FULL_VECTOR_ALIGNMENT.csv",
+          "row": 56,
+          "scale": 1,
+          "selector": {
+            "K": 64,
+            "cell_id": "E3_R0_p0_H4_N32_g0.196078431373"
+          }
+        },
+        {
+          "digits": {
+            "cosine": 6,
+            "projection_ratio": 6,
+            "relative_residual": 6
+          },
+          "fields": [
+            "H",
+            "N",
+            "m",
+            "gamma",
+            "cosine",
+            "projection_ratio",
+            "relative_residual"
+          ],
+          "gamma_display": "gamma / maximum gamma among the six saved selected rows; rational denominator <= 1024, checked within 1e-12",
+          "path": "manuscript/supplementary_results/E5/FULL_VECTOR_ALIGNMENT.csv",
+          "row": 35,
+          "scale": 1,
+          "selector": {
+            "K": 64,
+            "cell_id": "E3_R0_p0_H4_N128_g0.196078431373"
+          }
+        }
+      ],
+      "sources": [
+        "manuscript/supplementary_results/E5/FULL_VECTOR_ALIGNMENT.csv",
+        "manuscript/supplementary_results/E5/E5_POSTHOC_ANALYSIS_SPEC.json"
+      ],
+      "status": "supported",
+      "title": "Post-hoc full-vector alignment",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:num-controlled-settings",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "tab:num-controlled-settings; all seven numerical designs. Joint-path N and gamma lists are paired in source order; supplementary unique sets summarize Cartesian designs. Supplementary dimension is derived from saved coordinate indices, not imported from manuscript prose.",
+      "number": 7,
+      "outputs": [
+        "table_07.csv",
+        "table_07.md",
+        "table_07.tex"
+      ],
+      "page": 28,
+      "rows": 7,
+      "section": "C.1.1",
+      "source_rows": [
+        {
+          "fields": [
+            "objective.d",
+            "primary_joint_path",
+            "chains.count_per_setting"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d2_coefficient_primary.yaml",
+          "transformation": "gamma is exact reciprocal of saved gamma_denominator; retain path pairing"
+        },
+        {
+          "fields": [
+            "objective.d",
+            "smaller_step_path",
+            "chains.count_per_setting"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d2_h4_small_step_confirmation.yaml",
+          "transformation": "gamma is exact reciprocal of saved gamma_denominator; retain path pairing"
+        },
+        {
+          "fields": [
+            "objective.d",
+            "fixed_gamma_large_N",
+            "chains.count_per_setting"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d2_fixed_gamma_largeN_plateau.yaml",
+          "transformation": "gamma is exact reciprocal of saved gamma_denominator; retain path pairing"
+        },
+        {
+          "fields": [
+            "objective.d",
+            "primary_joint_path",
+            "chains.count_per_setting"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d5_controlled_validation.yaml",
+          "transformation": "gamma is exact reciprocal of saved gamma_denominator; retain path pairing"
+        },
+        {
+          "fields": [
+            "cells",
+            "production_seeds"
+          ],
+          "json_keys": [
+            "cells[0]",
+            "cells[1]",
+            "cells[2]",
+            "cells[3]",
+            "cells[4]",
+            "cells[5]",
+            "cells[6]",
+            "cells[7]",
+            "cells[8]",
+            "cells[9]",
+            "cells[10]",
+            "cells[11]",
+            "cells[12]",
+            "cells[13]",
+            "cells[14]",
+            "cells[15]"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "selector": {
+            "role": "E1a"
+          },
+          "transformation": "unique H,N,gamma; seed count"
+        },
+        {
+          "fields": [
+            "experiment",
+            "window",
+            "coordinate"
+          ],
+          "path": "manuscript/supplementary_results/fitted_coefficients.csv",
+          "rows": [
+            1,
+            2,
+            3,
+            4,
+            9,
+            10,
+            11,
+            12,
+            17,
+            18,
+            19,
+            20,
+            25,
+            26,
+            27,
+            28,
+            33,
+            34,
+            35,
+            36,
+            41,
+            42,
+            43,
+            44,
+            49,
+            50,
+            51,
+            52,
+            57,
+            58,
+            59,
+            60
+          ],
+          "selector": {
+            "experiment": "E1a",
+            "window": "primary"
+          },
+          "transformation": "dimension = count of contiguous saved coordinate indices"
+        },
+        {
+          "fields": [
+            "cells",
+            "production_seeds"
+          ],
+          "json_keys": [
+            "cells[5]",
+            "cells[6]",
+            "cells[7]",
+            "cells[9]",
+            "cells[10]",
+            "cells[11]",
+            "cells[13]",
+            "cells[14]",
+            "cells[15]",
+            "cells[16]",
+            "cells[17]",
+            "cells[18]",
+            "cells[19]",
+            "cells[20]",
+            "cells[21]",
+            "cells[22]",
+            "cells[23]",
+            "cells[24]",
+            "cells[25]",
+            "cells[26]",
+            "cells[27]",
+            "cells[28]",
+            "cells[29]",
+            "cells[30]",
+            "cells[31]",
+            "cells[32]",
+            "cells[33]"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "selector": {
+            "role": "E1b"
+          },
+          "transformation": "unique H,N,gamma; seed count"
+        },
+        {
+          "fields": [
+            "experiment",
+            "window",
+            "coordinate"
+          ],
+          "path": "manuscript/supplementary_results/fitted_coefficients.csv",
+          "rows": [
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106
+          ],
+          "selector": {
+            "experiment": "E1b",
+            "window": "primary"
+          },
+          "transformation": "dimension = count of contiguous saved coordinate indices"
+        },
+        {
+          "fields": [
+            "H",
+            "cells",
+            "production_seeds"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "third_tensor_at_zero_exact"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/certificate/independent_model_checks.json",
+          "transformation": "dimension = tensor first-axis length"
+        }
+      ],
+      "sources": [
+        "configs/original/p2_multidimensional_validation/configs/d2_coefficient_primary.yaml",
+        "configs/original/p2_multidimensional_validation/configs/d2_h4_small_step_confirmation.yaml",
+        "configs/original/p2_multidimensional_validation/configs/d2_fixed_gamma_largeN_plateau.yaml",
+        "configs/original/p2_multidimensional_validation/configs/d5_controlled_validation.yaml",
+        "configs/supplementary/PROTOCOL_FROZEN.json",
+        "manuscript/supplementary_results/fitted_coefficients.csv",
+        "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+        "artifacts/canonical_paper_export/targeted_mechanism/certificate/independent_model_checks.json"
+      ],
+      "status": "supported",
+      "title": "Controlled experimental settings",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:num-run-schedules",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "tab:num-run-schedules; normalized source-backed protocol inventory, not verbatim manuscript layout. Not covered: the heuristic ceiling formulas are not stored as structured formula fields for supplementary/targeted cells; actual tau/tau0, burn, batch length and batch counts are preserved; original YAML min/max batch policy is a planned policy; this inventory alone does not establish each run's realized stopping batch",
+      "number": 8,
+      "outputs": [
+        "table_08.csv",
+        "table_08.md",
+        "table_08.tex"
+      ],
+      "page": 29,
+      "rows": 99,
+      "section": "C.1.2",
+      "source_rows": [
+        {
+          "fields": [
+            "protocol.mixing_mu",
+            "protocol.burn_in_multiples",
+            "protocol.batch_length_multiples",
+            "protocol.min_batches",
+            "protocol.max_batches",
+            "protocol.extension_batches"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d2_coefficient_primary.yaml"
+        },
+        {
+          "fields": [
+            "protocol.mixing_mu",
+            "protocol.burn_in_multiples",
+            "protocol.batch_length_multiples",
+            "protocol.min_batches",
+            "protocol.max_batches",
+            "protocol.extension_batches"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d2_h4_small_step_confirmation.yaml"
+        },
+        {
+          "fields": [
+            "protocol.mixing_mu",
+            "protocol.burn_in_multiples",
+            "protocol.batch_length_multiples",
+            "protocol.min_batches",
+            "protocol.max_batches",
+            "protocol.extension_batches"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d2_fixed_gamma_largeN_plateau.yaml"
+        },
+        {
+          "fields": [
+            "protocol.mixing_mu",
+            "protocol.burn_in_multiples",
+            "protocol.batch_length_multiples",
+            "protocol.min_batches",
+            "protocol.max_batches",
+            "protocol.extension_batches"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d5_controlled_validation.yaml"
+        },
+        {
+          "fields": [
+            "cells[0].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 0
+          }
+        },
+        {
+          "fields": [
+            "cells[1].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 1
+          }
+        },
+        {
+          "fields": [
+            "cells[2].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 2
+          }
+        },
+        {
+          "fields": [
+            "cells[3].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 3
+          }
+        },
+        {
+          "fields": [
+            "cells[4].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 4
+          }
+        },
+        {
+          "fields": [
+            "cells[5].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 5
+          }
+        },
+        {
+          "fields": [
+            "cells[6].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 6
+          }
+        },
+        {
+          "fields": [
+            "cells[7].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 7
+          }
+        },
+        {
+          "fields": [
+            "cells[8].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 8
+          }
+        },
+        {
+          "fields": [
+            "cells[9].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 9
+          }
+        },
+        {
+          "fields": [
+            "cells[10].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 10
+          }
+        },
+        {
+          "fields": [
+            "cells[11].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 11
+          }
+        },
+        {
+          "fields": [
+            "cells[12].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 12
+          }
+        },
+        {
+          "fields": [
+            "cells[13].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 13
+          }
+        },
+        {
+          "fields": [
+            "cells[14].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 14
+          }
+        },
+        {
+          "fields": [
+            "cells[15].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 15
+          }
+        },
+        {
+          "fields": [
+            "cells[16].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 16
+          }
+        },
+        {
+          "fields": [
+            "cells[17].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 17
+          }
+        },
+        {
+          "fields": [
+            "cells[18].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 18
+          }
+        },
+        {
+          "fields": [
+            "cells[19].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 19
+          }
+        },
+        {
+          "fields": [
+            "cells[20].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 20
+          }
+        },
+        {
+          "fields": [
+            "cells[21].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 21
+          }
+        },
+        {
+          "fields": [
+            "cells[22].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 22
+          }
+        },
+        {
+          "fields": [
+            "cells[23].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 23
+          }
+        },
+        {
+          "fields": [
+            "cells[24].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 24
+          }
+        },
+        {
+          "fields": [
+            "cells[25].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 25
+          }
+        },
+        {
+          "fields": [
+            "cells[26].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 26
+          }
+        },
+        {
+          "fields": [
+            "cells[27].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 27
+          }
+        },
+        {
+          "fields": [
+            "cells[28].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 28
+          }
+        },
+        {
+          "fields": [
+            "cells[29].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 29
+          }
+        },
+        {
+          "fields": [
+            "cells[30].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 30
+          }
+        },
+        {
+          "fields": [
+            "cells[31].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 31
+          }
+        },
+        {
+          "fields": [
+            "cells[32].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 32
+          }
+        },
+        {
+          "fields": [
+            "cells[33].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 33
+          }
+        },
+        {
+          "fields": [
+            "cells[34].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 34
+          }
+        },
+        {
+          "fields": [
+            "cells[35].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 35
+          }
+        },
+        {
+          "fields": [
+            "cells[36].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 36
+          }
+        },
+        {
+          "fields": [
+            "cells[37].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 37
+          }
+        },
+        {
+          "fields": [
+            "cells[38].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 38
+          }
+        },
+        {
+          "fields": [
+            "cells[39].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 39
+          }
+        },
+        {
+          "fields": [
+            "cells[40].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 40
+          }
+        },
+        {
+          "fields": [
+            "cells[41].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 41
+          }
+        },
+        {
+          "fields": [
+            "cells[42].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 42
+          }
+        },
+        {
+          "fields": [
+            "cells[43].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 43
+          }
+        },
+        {
+          "fields": [
+            "cells[44].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 44
+          }
+        },
+        {
+          "fields": [
+            "cells[45].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 45
+          }
+        },
+        {
+          "fields": [
+            "cells[46].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 46
+          }
+        },
+        {
+          "fields": [
+            "cells[47].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 47
+          }
+        },
+        {
+          "fields": [
+            "cells[48].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 48
+          }
+        },
+        {
+          "fields": [
+            "cells[49].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 49
+          }
+        },
+        {
+          "fields": [
+            "cells[50].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 50
+          }
+        },
+        {
+          "fields": [
+            "cells[51].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 51
+          }
+        },
+        {
+          "fields": [
+            "cells[52].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 52
+          }
+        },
+        {
+          "fields": [
+            "cells[53].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 53
+          }
+        },
+        {
+          "fields": [
+            "cells[54].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 54
+          }
+        },
+        {
+          "fields": [
+            "cells[55].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 55
+          }
+        },
+        {
+          "fields": [
+            "cells[56].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 56
+          }
+        },
+        {
+          "fields": [
+            "cells[57].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 57
+          }
+        },
+        {
+          "fields": [
+            "cells[58].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 58
+          }
+        },
+        {
+          "fields": [
+            "cells[59].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 59
+          }
+        },
+        {
+          "fields": [
+            "cells[60].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 60
+          }
+        },
+        {
+          "fields": [
+            "cells[61].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 61
+          }
+        },
+        {
+          "fields": [
+            "cells[62].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 62
+          }
+        },
+        {
+          "fields": [
+            "cells[63].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 63
+          }
+        },
+        {
+          "fields": [
+            "cells[64].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 64
+          }
+        },
+        {
+          "fields": [
+            "cells[65].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 65
+          }
+        },
+        {
+          "fields": [
+            "cells[66].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 66
+          }
+        },
+        {
+          "fields": [
+            "cells[67].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 67
+          }
+        },
+        {
+          "fields": [
+            "cells[68].schedule"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 68
+          }
+        },
+        {
+          "fields": [
+            "cells[0].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 0
+          }
+        },
+        {
+          "fields": [
+            "cells[1].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 1
+          }
+        },
+        {
+          "fields": [
+            "cells[2].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 2
+          }
+        },
+        {
+          "fields": [
+            "cells[3].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 3
+          }
+        },
+        {
+          "fields": [
+            "cells[4].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 4
+          }
+        },
+        {
+          "fields": [
+            "cells[5].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 5
+          }
+        },
+        {
+          "fields": [
+            "cells[6].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 6
+          }
+        },
+        {
+          "fields": [
+            "cells[7].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 7
+          }
+        },
+        {
+          "fields": [
+            "cells[8].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 8
+          }
+        },
+        {
+          "fields": [
+            "cells[9].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 9
+          }
+        },
+        {
+          "fields": [
+            "cells[10].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 10
+          }
+        },
+        {
+          "fields": [
+            "cells[11].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 11
+          }
+        },
+        {
+          "fields": [
+            "cells[12].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 12
+          }
+        },
+        {
+          "fields": [
+            "cells[13].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 13
+          }
+        },
+        {
+          "fields": [
+            "cells[14].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 14
+          }
+        },
+        {
+          "fields": [
+            "cells[15].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 15
+          }
+        },
+        {
+          "fields": [
+            "cells[16].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 16
+          }
+        },
+        {
+          "fields": [
+            "cells[17].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 17
+          }
+        },
+        {
+          "fields": [
+            "cells[18].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 18
+          }
+        },
+        {
+          "fields": [
+            "cells[19].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 19
+          }
+        },
+        {
+          "fields": [
+            "cells[20].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 20
+          }
+        },
+        {
+          "fields": [
+            "cells[21].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 21
+          }
+        },
+        {
+          "fields": [
+            "cells[22].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 22
+          }
+        },
+        {
+          "fields": [
+            "cells[23].schedule"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "scope": "primary_batches, when present, distinguishes primary analysis from longer recorded tails",
+          "selector": {
+            "cell_index": 23
+          }
+        },
+        {
+          "fields": [
+            "global_bounds.mu_exact"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/certificate/independent_model_checks.json"
+        },
+        {
+          "fields": [
+            "objective.lambda"
+          ],
+          "path": "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json"
+        }
+      ],
+      "sources": [
+        "configs/original/p2_multidimensional_validation/configs/d2_coefficient_primary.yaml",
+        "configs/original/p2_multidimensional_validation/configs/d2_h4_small_step_confirmation.yaml",
+        "configs/original/p2_multidimensional_validation/configs/d2_fixed_gamma_largeN_plateau.yaml",
+        "configs/original/p2_multidimensional_validation/configs/d5_controlled_validation.yaml",
+        "configs/supplementary/PROTOCOL_FROZEN.json",
+        "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+        "artifacts/canonical_paper_export/targeted_mechanism/certificate/independent_model_checks.json",
+        "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json"
+      ],
+      "status": "partial",
+      "title": "Run schedules",
+      "uncovered_fields": [
+        "the heuristic ceiling formulas are not stored as structured formula fields for supplementary/targeted cells; actual tau/tau0, burn, batch length and batch counts are preserved",
+        "original YAML min/max batch policy is a planned policy; this inventory alone does not establish each run's realized stopping batch"
+      ]
+    },
+    {
+      "active": true,
+      "label": "tab:num-inference",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "tab:num-inference; normalized source-backed protocol inventory, not verbatim manuscript layout. All listed manuscript settings are represented by saved fields or explicit counts.",
+      "number": 9,
+      "outputs": [
+        "table_09.csv",
+        "table_09.md",
+        "table_09.tex"
+      ],
+      "page": 30,
+      "rows": 33,
+      "section": "C.1.2",
+      "source_rows": [
+        {
+          "fields": [
+            "per_setting_uncertainty"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d2_coefficient_primary.yaml"
+        },
+        {
+          "fields": [
+            "bootstrap"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d2_coefficient_primary.yaml"
+        },
+        {
+          "fields": [
+            "per_setting_uncertainty"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d5_controlled_validation.yaml"
+        },
+        {
+          "fields": [
+            "bootstrap"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d5_controlled_validation.yaml"
+        },
+        {
+          "fields": [
+            "resampling"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "ci"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "multiplicity"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "E1a_primary_fit"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "E1b_primary_fit"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "E1b_contrast"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "production_seeds"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "transformation": "len(production_seeds)-1"
+        },
+        {
+          "fields": [
+            "kind"
+          ],
+          "path": "manuscript/supplementary_results/tables/E1_intercept_contrasts.csv",
+          "rows": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "transformation": "row count grouped by kind"
+        },
+        {
+          "fields": [
+            "bootstrap_draws"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "resampling"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "intervals"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "primary_family"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "ci"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "U_statistic"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "E3_primary_estimator"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "multiplicity.E3_signed_projections"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "cell_id",
+            "baseline_cell_id",
+            "algorithm"
+          ],
+          "path": "manuscript/supplementary_results/tables/E3_policy_allocation_contrasts.csv",
+          "transformation": "number of saved contrast rows"
+        },
+        {
+          "fields": [
+            "draws"
+          ],
+          "path": "manuscript/supplementary_results/E4/STATISTICAL_METHOD_RECEIPT.json"
+        },
+        {
+          "fields": [
+            "families"
+          ],
+          "path": "manuscript/supplementary_results/E4/STATISTICAL_METHOD_RECEIPT.json"
+        },
+        {
+          "fields": [
+            "bootstrap_bias_center_corrected"
+          ],
+          "path": "manuscript/supplementary_results/E4/STATISTICAL_METHOD_RECEIPT.json"
+        },
+        {
+          "fields": [
+            "bootstrap"
+          ],
+          "path": "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "sensitivity"
+          ],
+          "path": "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "draws"
+          ],
+          "path": "manuscript/supplementary_results/E5/STATISTICAL_METHOD_RECEIPT.json"
+        },
+        {
+          "fields": [
+            "scalar_family_size"
+          ],
+          "path": "manuscript/supplementary_results/E5/STATISTICAL_METHOD_RECEIPT.json"
+        },
+        {
+          "fields": [
+            "vector_family_size"
+          ],
+          "path": "manuscript/supplementary_results/E5/STATISTICAL_METHOD_RECEIPT.json"
+        },
+        {
+          "fields": [
+            "scalar_and_vector_families_separately_95_percent_not_joint"
+          ],
+          "path": "manuscript/supplementary_results/E5/STATISTICAL_METHOD_RECEIPT.json"
+        },
+        {
+          "fields": [
+            "bootstrap"
+          ],
+          "path": "manuscript/supplementary_results/E5/E5_POSTHOC_ANALYSIS_SPEC.json"
+        },
+        {
+          "fields": [
+            "intervals"
+          ],
+          "path": "manuscript/supplementary_results/E5/E5_POSTHOC_ANALYSIS_SPEC.json"
+        },
+        {
+          "fields": [
+            "alpha"
+          ],
+          "path": "manuscript/supplementary_results/E5/E5_POSTHOC_ANALYSIS_SPEC.json"
+        }
+      ],
+      "sources": [
+        "configs/original/p2_multidimensional_validation/configs/d2_coefficient_primary.yaml",
+        "configs/original/p2_multidimensional_validation/configs/d5_controlled_validation.yaml",
+        "configs/supplementary/PROTOCOL_FROZEN.json",
+        "manuscript/supplementary_results/tables/E1_intercept_contrasts.csv",
+        "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+        "manuscript/supplementary_results/tables/E3_policy_allocation_contrasts.csv",
+        "manuscript/supplementary_results/E4/STATISTICAL_METHOD_RECEIPT.json",
+        "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json",
+        "manuscript/supplementary_results/E5/STATISTICAL_METHOD_RECEIPT.json",
+        "manuscript/supplementary_results/E5/E5_POSTHOC_ANALYSIS_SPEC.json"
+      ],
+      "status": "supported",
+      "title": "Sampling-uncertainty procedures",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:num-noise-laws",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "tab:num-noise-laws; exact certificate expressions are preserved, e.g. sqrt(2)/2 is algebraically the manuscript's 1/sqrt(2). No decimal approximation.",
+      "number": 10,
+      "outputs": [
+        "table_10.csv",
+        "table_10.md",
+        "table_10.tex"
+      ],
+      "page": 30,
+      "rows": 2,
+      "section": "C.1.4",
+      "source_rows": [
+        {
+          "json_keys": [
+            "noise_laws.symmetric_rademacher.vector_laws[1].support_and_probabilities",
+            "noise_laws.symmetric_rademacher.moments_exact[\"3\"]",
+            "noise_laws.symmetric_rademacher.moments_exact[\"4\"]"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/certificate/independent_model_checks.json",
+          "selector": {
+            "law": "symmetric_rademacher",
+            "rho": 0
+          },
+          "transformation": "first-coordinate marginal; sum exact rational atom probabilities; retain exact symbolic strings"
+        },
+        {
+          "json_keys": [
+            "noise_laws.asymmetric_two_point.vector_laws[1].support_and_probabilities",
+            "noise_laws.asymmetric_two_point.moments_exact[\"3\"]",
+            "noise_laws.asymmetric_two_point.moments_exact[\"4\"]"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/certificate/independent_model_checks.json",
+          "selector": {
+            "law": "asymmetric_two_point",
+            "rho": 0
+          },
+          "transformation": "first-coordinate marginal; sum exact rational atom probabilities; retain exact symbolic strings"
+        }
+      ],
+      "sources": [
+        "artifacts/canonical_paper_export/targeted_mechanism/certificate/independent_model_checks.json"
+      ],
+      "status": "supported",
+      "title": "Exact scalar noise laws",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:num-core",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "Saved simultaneous interval endpoints; SCAFFOLD seven decimals, FedAvg/difference ten decimals.",
+      "number": 11,
+      "outputs": [
+        "table_11.csv",
+        "table_11.md",
+        "table_11.tex"
+      ],
+      "page": 31,
+      "rows": 9,
+      "section": "C.2.1",
+      "source_rows": [],
+      "sources": [
+        "artifacts/canonical_paper_export/original/p2_multidimensional_validation/artifacts/formal/p2-d2-coefficient-primary/fit_summary.csv",
+        "artifacts/canonical_paper_export/original/p2_multidimensional_validation/artifacts/formal/p2-d2-h4-small-step-confirmation/fit_summary.csv",
+        "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-coefficient-primary/fit_summary.csv",
+        "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-h4-small-step-confirmation/fit_summary.csv",
+        "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-matched-attribution-primary/paired_fit_summary.csv",
+        "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-matched-attribution-h4-small-step-confirmation/paired_fit_summary.csv"
+      ],
+      "status": "supported",
+      "title": "Joint-grid simultaneous intervals",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:E-h4diag",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "All values, including slopes, are read from the saved diagnostic; no trend is fitted.",
+      "number": 12,
+      "outputs": [
+        "table_12.csv",
+        "table_12.md",
+        "table_12.tex"
+      ],
+      "page": 32,
+      "rows": 2,
+      "section": "C.2.2",
+      "source_rows": [],
+      "sources": [
+        "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-matched-attribution-h4-diagnostic/scaling_summary.csv"
+      ],
+      "status": "supported",
+      "title": "H=4 finite-grid residual diagnostics",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:E-plateau",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "",
+      "number": 13,
+      "outputs": [
+        "table_13.csv",
+        "table_13.md",
+        "table_13.tex"
+      ],
+      "page": 32,
+      "rows": 2,
+      "section": "C.2.3",
+      "source_rows": [],
+      "sources": [
+        "artifacts/canonical_paper_export/original/p2_multidimensional_validation/artifacts/formal/p2-d2-fixed-gamma-largeN-plateau/plateau_fit_summary.csv"
+      ],
+      "status": "supported",
+      "title": "Fixed-step intercept intervals",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:E-d5",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "Intercepts and targets use raw saved fits at ten decimals. CI endpoints preserve the archived report's documented .9g precision, then display ten decimals; each formatted endpoint is verified in the saved report. No fitting or manuscript-number substitution.",
+      "number": 14,
+      "outputs": [
+        "table_14.csv",
+        "table_14.md",
+        "table_14.tex"
+      ],
+      "page": 33,
+      "rows": 10,
+      "section": "C.2.3",
+      "source_rows": [],
+      "sources": [
+        "artifacts/canonical_paper_export/original/p2_multidimensional_validation/artifacts/formal/p2-d5-controlled-validation/fit_summary.csv",
+        "docs/original/p2_multidimensional_validation/artifacts/formal/p2-d5-controlled-validation/p2_d5_controlled_validation_report.md",
+        "src/stationary_bias/workstreams/p2_multidimensional_validation/formal_analysis.py"
+      ],
+      "status": "supported",
+      "title": "Five-dimensional coefficients",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:supp-leading",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "Primary E1a term 0; both algorithms and every H retained.",
+      "number": 15,
+      "outputs": [
+        "table_15.csv",
+        "table_15.md",
+        "table_15.tex"
+      ],
+      "page": 33,
+      "rows": 8,
+      "section": "C.2.4",
+      "source_rows": [],
+      "sources": [
+        "artifacts/canonical_paper_export/supplementary/fitted_coefficients.csv"
+      ],
+      "status": "supported",
+      "title": "Client-dependent leading coefficient",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:mechanism-complement",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "tab:mechanism-complement; 17 display rows, 29 saved scalar selections. All numerical estimates and simultaneous endpoints are multiplied by 1000 and shown to four decimals. Blank first-coordinate cells in paired rows are display placeholders.",
+      "number": 16,
+      "outputs": [
+        "table_16.csv",
+        "table_16.md",
+        "table_16.tex"
+      ],
+      "page": 34,
+      "rows": 17,
+      "section": "C.2.5",
+      "source_rows": [
+        {
+          "json_keys": [
+            "cells[0].rho",
+            "cells[0].asymmetric"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "selector": {
+            "condition": "rho_minus_symmetric"
+          }
+        },
+        {
+          "json_keys": [
+            "cells[6].rho",
+            "cells[6].asymmetric"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "selector": {
+            "condition": "rho_zero_symmetric"
+          }
+        },
+        {
+          "json_keys": [
+            "cells[12].rho",
+            "cells[12].asymmetric"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "selector": {
+            "condition": "rho_plus_symmetric"
+          }
+        },
+        {
+          "json_keys": [
+            "cells[18].rho",
+            "cells[18].asymmetric"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json",
+          "selector": {
+            "condition": "rho_plus_asymmetric"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 1,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_minus_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 2,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_minus_symmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 3,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_minus_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 4,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_minus_symmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 7,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_zero_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 8,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_zero_symmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 9,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_zero_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 10,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_zero_symmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 13,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 14,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 15,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 16,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 19,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_asymmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 20,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_asymmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 21,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_asymmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 22,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_asymmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 25,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric minus rho_plus_asymmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 26,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric minus rho_plus_asymmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 27,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric minus rho_plus_asymmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 28,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric minus rho_plus_asymmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 31,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric minus rho_minus_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 32,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric minus rho_minus_symmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 33,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric minus rho_minus_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 34,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric minus rho_minus_symmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 6,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_minus_symmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "difference"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 12,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_zero_symmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "difference"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 18,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "difference"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 24,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_asymmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "difference"
+          }
+        },
+        {
+          "digits": 4,
+          "fields": [
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+          "row": 30,
+          "scale": 1000,
+          "selector": {
+            "comparison": "rho_plus_symmetric minus rho_plus_asymmetric",
+            "coordinate": 2,
+            "estimator": "balance",
+            "grid": "full",
+            "observable": "difference"
+          }
+        }
+      ],
+      "sources": [
+        "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv",
+        "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json"
+      ],
+      "status": "supported",
+      "title": "Contraction and noise-law complementary results",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:num-restricted-mechanism",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "tab:num-restricted-mechanism; three fixed balance/omit_largest_gamma/coordinate-1 selections. No filtering by target inclusion, significance or result status.",
+      "number": 17,
+      "outputs": [
+        "table_17.csv",
+        "table_17.md",
+        "table_17.tex"
+      ],
+      "page": 35,
+      "rows": 3,
+      "section": "C.2.5",
+      "source_rows": [
+        {
+          "digits": {
+            "estimate": 8,
+            "simultaneous_lower": 8,
+            "simultaneous_upper": 8,
+            "target": 6
+          },
+          "fields": [
+            "target",
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/intercepts_and_contrasts.csv",
+          "row": 49,
+          "scale": 1,
+          "selector": {
+            "comparison": "rho_plus_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "omit_largest_gamma",
+            "observable": "SCAFFOLD"
+          }
+        },
+        {
+          "digits": {
+            "estimate": 8,
+            "simultaneous_lower": 8,
+            "simultaneous_upper": 8,
+            "target": 4
+          },
+          "fields": [
+            "target",
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/intercepts_and_contrasts.csv",
+          "row": 51,
+          "scale": 1,
+          "selector": {
+            "comparison": "rho_plus_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "omit_largest_gamma",
+            "observable": "FedAvg"
+          }
+        },
+        {
+          "digits": {
+            "estimate": 8,
+            "simultaneous_lower": 8,
+            "simultaneous_upper": 8,
+            "target": 5
+          },
+          "fields": [
+            "target",
+            "estimate",
+            "simultaneous_lower",
+            "simultaneous_upper"
+          ],
+          "path": "artifacts/canonical_paper_export/targeted_mechanism/results/intercepts_and_contrasts.csv",
+          "row": 67,
+          "scale": 1,
+          "selector": {
+            "comparison": "rho_plus_symmetric minus rho_minus_symmetric",
+            "coordinate": 1,
+            "estimator": "balance",
+            "grid": "omit_largest_gamma",
+            "observable": "SCAFFOLD"
+          }
+        }
+      ],
+      "sources": [
+        "artifacts/canonical_paper_export/targeted_mechanism/results/intercepts_and_contrasts.csv"
+      ],
+      "status": "supported",
+      "title": "Restricted-grid first-coordinate sensitivity",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:E-direct-balance",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "Partial: saved per-run summaries supply coefficients and means, but not the original per-run combined-SE threshold. No uncertainty is recomputed. H=4,N=16,j=2 formats to -0.1080237 from the saved value; the paper displays -0.1080240, consistent with six-place rounding followed by a trailing zero, but no saved formatting rule establishes that history.",
+      "number": 18,
+      "outputs": [
+        "table_18.csv",
+        "table_18.md",
+        "table_18.tex"
+      ],
+      "page": 35,
+      "rows": 4,
+      "section": "C.3.1",
+      "source_rows": [],
+      "sources": [
+        "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-coefficient-primary/run_summary.csv"
+      ],
+      "status": "partial",
+      "title": "Direct versus balance discrepancies",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:num-structural-settings",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "tab:num-structural-settings; normalized source-backed protocol inventory, not verbatim manuscript layout. Not covered: affine gamma is absent from E2_exact_checks.csv; affine offset construction a_c=+/-rho*u, translated initialization and matched-noise semantics are not fields in the selected structured affine evidence",
+      "number": 19,
+      "outputs": [
+        "table_19.csv",
+        "table_19.md",
+        "table_19.tex"
+      ],
+      "page": 36,
+      "rows": 9,
+      "section": "C.3.2",
+      "source_rows": [
+        {
+          "fields": [
+            "coordinate_transform"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d2_rotation_invariance.yaml"
+        },
+        {
+          "fields": [
+            "paired_matrix"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d2_rotation_invariance.yaml"
+        },
+        {
+          "fields": [
+            "noise_coupling"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d2_rotation_invariance.yaml"
+        },
+        {
+          "fields": [
+            "initialization"
+          ],
+          "path": "configs/original/p2_multidimensional_validation/configs/d2_rotation_invariance.yaml"
+        },
+        {
+          "fields": [
+            "N"
+          ],
+          "path": "manuscript/supplementary_results/tables/E2_exact_checks.csv",
+          "rows": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "transformation": "sorted distinct saved values"
+        },
+        {
+          "fields": [
+            "H"
+          ],
+          "path": "manuscript/supplementary_results/tables/E2_exact_checks.csv",
+          "rows": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "transformation": "sorted distinct saved values"
+        },
+        {
+          "fields": [
+            "rho"
+          ],
+          "path": "manuscript/supplementary_results/tables/E2_exact_checks.csv",
+          "rows": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "transformation": "sorted distinct saved values"
+        },
+        {
+          "fields": [
+            "rounds"
+          ],
+          "path": "manuscript/supplementary_results/tables/E2_exact_checks.csv",
+          "rows": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "transformation": "sorted distinct saved values"
+        },
+        {
+          "fields": [
+            "N",
+            "H",
+            "rho"
+          ],
+          "path": "manuscript/supplementary_results/tables/E2_exact_checks.csv",
+          "transformation": "count saved exact-check rows"
+        }
+      ],
+      "sources": [
+        "configs/original/p2_multidimensional_validation/configs/d2_rotation_invariance.yaml",
+        "manuscript/supplementary_results/tables/E2_exact_checks.csv"
+      ],
+      "status": "partial",
+      "title": "Structural consistency settings",
+      "uncovered_fields": [
+        "affine gamma is absent from E2_exact_checks.csv",
+        "affine offset construction a_c=+/-rho*u, translated initialization and matched-noise semantics are not fields in the selected structured affine evidence"
+      ]
+    },
+    {
+      "active": true,
+      "label": "tab:num-real-settings",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "tab:num-real-settings; normalized source-backed protocol inventory, not verbatim manuscript layout. Not covered: sampling-with-replacement rule and L_sample/base-step formula are not structured fields in the selected protocols (actual gamma values are saved); the label conversion to {0,1}, equal-client weighting, random-IID and two-label-shards construction are not regenerated from regime identifiers alone; the prose distinction between one primary and two alternative partitions is not inferred solely from the saved partition-seed set",
+      "number": 20,
+      "outputs": [
+        "table_20.csv",
+        "table_20.md",
+        "table_20.tex"
+      ],
+      "page": 37,
+      "rows": 20,
+      "section": "C.4.1",
+      "source_rows": [
+        {
+          "fields": [
+            "retained_count"
+          ],
+          "path": "manuscript/supplementary_results/DATA_MANIFEST.json"
+        },
+        {
+          "fields": [
+            "excluded_count"
+          ],
+          "path": "manuscript/supplementary_results/DATA_MANIFEST.json"
+        },
+        {
+          "fields": [
+            "subset_seed"
+          ],
+          "path": "manuscript/supplementary_results/DATA_MANIFEST.json"
+        },
+        {
+          "fields": [
+            "preprocessing"
+          ],
+          "path": "manuscript/supplementary_results/DATA_MANIFEST.json"
+        },
+        {
+          "fields": [
+            "files[0].validation"
+          ],
+          "path": "manuscript/supplementary_results/DATA_MANIFEST.json"
+        },
+        {
+          "fields": [
+            "files[1].validation"
+          ],
+          "path": "manuscript/supplementary_results/DATA_MANIFEST.json"
+        },
+        {
+          "fields": [
+            "objective"
+          ],
+          "path": "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "production_seeds"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "transformation": "number of production seed labels"
+        },
+        {
+          "fields": [
+            "cells[34].regime",
+            "cells[35].regime",
+            "cells[36].regime",
+            "cells[37].regime",
+            "cells[38].regime",
+            "cells[39].regime",
+            "cells[40].regime",
+            "cells[41].regime",
+            "cells[42].regime",
+            "cells[43].regime",
+            "cells[44].regime",
+            "cells[45].regime",
+            "cells[46].regime",
+            "cells[47].regime",
+            "cells[48].regime",
+            "cells[49].regime",
+            "cells[50].regime",
+            "cells[51].regime",
+            "cells[52].regime",
+            "cells[53].regime",
+            "cells[54].regime",
+            "cells[55].regime",
+            "cells[56].regime",
+            "cells[57].regime",
+            "cells[58].regime",
+            "cells[59].regime",
+            "cells[60].regime",
+            "cells[61].regime",
+            "cells[62].regime",
+            "cells[63].regime",
+            "cells[64].regime",
+            "cells[65].regime",
+            "cells[66].regime",
+            "cells[67].regime",
+            "cells[68].regime"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "transformation": "sorted distinct saved values"
+        },
+        {
+          "fields": [
+            "cells[34].partition_seed",
+            "cells[35].partition_seed",
+            "cells[36].partition_seed",
+            "cells[37].partition_seed",
+            "cells[38].partition_seed",
+            "cells[39].partition_seed",
+            "cells[40].partition_seed",
+            "cells[41].partition_seed",
+            "cells[42].partition_seed",
+            "cells[43].partition_seed",
+            "cells[44].partition_seed",
+            "cells[45].partition_seed",
+            "cells[46].partition_seed",
+            "cells[47].partition_seed",
+            "cells[48].partition_seed",
+            "cells[49].partition_seed",
+            "cells[50].partition_seed",
+            "cells[51].partition_seed",
+            "cells[52].partition_seed",
+            "cells[53].partition_seed",
+            "cells[54].partition_seed",
+            "cells[55].partition_seed",
+            "cells[56].partition_seed",
+            "cells[57].partition_seed",
+            "cells[58].partition_seed",
+            "cells[59].partition_seed",
+            "cells[60].partition_seed",
+            "cells[61].partition_seed",
+            "cells[62].partition_seed",
+            "cells[63].partition_seed",
+            "cells[64].partition_seed",
+            "cells[65].partition_seed",
+            "cells[66].partition_seed",
+            "cells[67].partition_seed",
+            "cells[68].partition_seed"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "transformation": "sorted distinct saved values"
+        },
+        {
+          "fields": [
+            "cells[34]",
+            "cells[35]",
+            "cells[36]"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "transformation": "retain saved allocation-role cells; budget=N*m"
+        },
+        {
+          "fields": [
+            "cells[34]",
+            "cells[35]",
+            "cells[36]",
+            "cells[37]",
+            "cells[38]",
+            "cells[39]",
+            "cells[40]",
+            "cells[41]",
+            "cells[42]"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "cells"
+          ],
+          "path": "configs/supplementary/PROTOCOL_FROZEN.json",
+          "selector": {
+            "family": "E3",
+            "regime": "R0"
+          },
+          "transformation": "count selected cells"
+        },
+        {
+          "fields": [
+            "K"
+          ],
+          "path": "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "primary_cell"
+          ],
+          "path": "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "same_end_batch"
+          ],
+          "path": "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "algorithms"
+          ],
+          "path": "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "cells[4].schedule"
+          ],
+          "path": "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json"
+        },
+        {
+          "fields": [
+            "K",
+            "cells[4].schedule",
+            "cells[4].H",
+            "cells[4].N",
+            "cells[4].m"
+          ],
+          "path": "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json",
+          "transformation": "tail=max(K)*batch_length; end=burn+tail; evaluations=end*H*N*m"
+        },
+        {
+          "fields": [
+            "pilot_seeds",
+            "pilot_schedule"
+          ],
+          "path": "manuscript/supplementary_results/E4/E4_v2_PROTOCOL_FROZEN.json",
+          "transformation": "pilot count=len(pilot_seeds); total=burn+batches*batch_length"
+        }
+      ],
+      "sources": [
+        "manuscript/supplementary_results/DATA_MANIFEST.json",
+        "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json",
+        "configs/supplementary/PROTOCOL_FROZEN.json",
+        "manuscript/supplementary_results/E4/E4_v2_PROTOCOL_FROZEN.json"
+      ],
+      "status": "partial",
+      "title": "Real-data settings",
+      "uncovered_fields": [
+        "sampling-with-replacement rule and L_sample/base-step formula are not structured fields in the selected protocols (actual gamma values are saved)",
+        "the label conversion to {0,1}, equal-client weighting, random-IID and two-label-shards construction are not regenerated from regime identifiers alone",
+        "the prose distinction between one primary and two alternative partitions is not inferred solely from the saved partition-seed set"
+      ]
+    },
+    {
+      "active": true,
+      "label": "tab:supp-real-full",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "Same cells as the two paper subtables, in normalized long form. R0 projections are deliberately blank because this table reports only R0 MSE/loss.",
+      "number": 21,
+      "outputs": [
+        "table_21.csv",
+        "table_21.md",
+        "table_21.tex"
+      ],
+      "page": 38,
+      "rows": 18,
+      "section": "C.4.1",
+      "source_rows": [],
+      "sources": [
+        "artifacts/canonical_paper_export/supplementary/full_results.csv"
+      ],
+      "status": "supported",
+      "title": "Allocation and partition results",
+      "uncovered_fields": []
+    },
+    {
+      "active": true,
+      "label": "tab:e4-primary",
+      "manuscript_source": "manuscript/appendix/C_numerical_details.tex",
+      "notes": "tab:e4-primary; seven display rows. Errors and training gaps use scale 1e6 and three decimals; individual test losses use six decimals, paired test-loss endpoints eight. All intervals are saved primary-family simultaneous intervals. Paired fields are read directly and checked for equality across their two duplicated algorithm records.",
+      "number": 22,
+      "outputs": [
+        "table_22.csv",
+        "table_22.md",
+        "table_22.tex"
+      ],
+      "page": 39,
+      "rows": 7,
+      "section": "C.4.3",
+      "source_rows": [
+        {
+          "json_keys": [
+            "primary_cell",
+            "K"
+          ],
+          "path": "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json",
+          "transformation": "designated primary cell and maximum saved K"
+        },
+        {
+          "digits": 3,
+          "fields": [
+            "MSE",
+            "MSE_lower_simultaneous",
+            "MSE_upper_simultaneous"
+          ],
+          "path": "manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+          "row": 69,
+          "scale": 1000000.0,
+          "selector": {
+            "K": 64,
+            "algorithm": "SCAFFOLD",
+            "cell_id": "E3_R0_p0_H4_N128_g0.196078431373"
+          }
+        },
+        {
+          "digits": 3,
+          "fields": [
+            "MSE",
+            "MSE_lower_simultaneous",
+            "MSE_upper_simultaneous"
+          ],
+          "path": "manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+          "row": 70,
+          "scale": 1000000.0,
+          "selector": {
+            "K": 64,
+            "algorithm": "FedAvg",
+            "cell_id": "E3_R0_p0_H4_N128_g0.196078431373"
+          }
+        },
+        {
+          "digits": 3,
+          "fields": [
+            "train_gap",
+            "train_gap_lower_simultaneous",
+            "train_gap_upper_simultaneous"
+          ],
+          "path": "manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+          "row": 69,
+          "scale": 1000000.0,
+          "selector": {
+            "K": 64,
+            "algorithm": "SCAFFOLD",
+            "cell_id": "E3_R0_p0_H4_N128_g0.196078431373"
+          }
+        },
+        {
+          "digits": 3,
+          "fields": [
+            "train_gap",
+            "train_gap_lower_simultaneous",
+            "train_gap_upper_simultaneous"
+          ],
+          "path": "manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+          "row": 70,
+          "scale": 1000000.0,
+          "selector": {
+            "K": 64,
+            "algorithm": "FedAvg",
+            "cell_id": "E3_R0_p0_H4_N128_g0.196078431373"
+          }
+        },
+        {
+          "digits": 6,
+          "fields": [
+            "test_loss",
+            "test_loss_lower_simultaneous",
+            "test_loss_upper_simultaneous"
+          ],
+          "path": "manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+          "row": 69,
+          "scale": 1,
+          "selector": {
+            "K": 64,
+            "algorithm": "SCAFFOLD",
+            "cell_id": "E3_R0_p0_H4_N128_g0.196078431373"
+          }
+        },
+        {
+          "digits": 6,
+          "fields": [
+            "test_loss",
+            "test_loss_lower_simultaneous",
+            "test_loss_upper_simultaneous"
+          ],
+          "path": "manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+          "row": 70,
+          "scale": 1,
+          "selector": {
+            "K": 64,
+            "algorithm": "FedAvg",
+            "cell_id": "E3_R0_p0_H4_N128_g0.196078431373"
+          }
+        },
+        {
+          "digits": 3,
+          "fields": [
+            "delta_U",
+            "delta_U_lower_simultaneous",
+            "delta_U_upper_simultaneous"
+          ],
+          "path": "manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+          "row": 69,
+          "scale": 1000000.0,
+          "selector": {
+            "K": 64,
+            "algorithm": "SCAFFOLD",
+            "cell_id": "E3_R0_p0_H4_N128_g0.196078431373"
+          }
+        },
+        {
+          "digits": 3,
+          "fields": [
+            "delta_V",
+            "delta_V_lower_simultaneous",
+            "delta_V_upper_simultaneous"
+          ],
+          "path": "manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+          "row": 69,
+          "scale": 1000000.0,
+          "selector": {
+            "K": 64,
+            "algorithm": "SCAFFOLD",
+            "cell_id": "E3_R0_p0_H4_N128_g0.196078431373"
+          }
+        },
+        {
+          "digits": 3,
+          "fields": [
+            "delta_train_lower_simultaneous",
+            "delta_train_upper_simultaneous"
+          ],
+          "path": "manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+          "row": 69,
+          "scale": 1000000.0,
+          "selector": {
+            "K": 64,
+            "algorithm": "SCAFFOLD",
+            "cell_id": "E3_R0_p0_H4_N128_g0.196078431373"
+          }
+        },
+        {
+          "digits": 8,
+          "fields": [
+            "delta_test_lower_simultaneous",
+            "delta_test_upper_simultaneous"
+          ],
+          "path": "manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+          "row": 69,
+          "scale": 1,
+          "selector": {
+            "K": 64,
+            "algorithm": "SCAFFOLD",
+            "cell_id": "E3_R0_p0_H4_N128_g0.196078431373"
+          }
+        }
+      ],
+      "sources": [
+        "manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+        "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json"
+      ],
+      "status": "supported",
+      "title": "Longest-window averaging statistics",
+      "uncovered_fields": []
+    },
+    {
+      "active": false,
+      "label": "tab:F-artifacts",
+      "manuscript_source": "manuscript/appendix/D_reproducibility.tex",
+      "notes": "Source table is in an appendix not input by main.tex. It has no number/page in the active 40-page manuscript; not regenerated as an active result.",
+      "number": null,
+      "outputs": [],
+      "page": null,
+      "section": "inactive appendix D",
+      "sources": [
+        "manuscript/appendix/D_reproducibility.tex"
+      ],
+      "status": "archive",
+      "title": "Historical artifact map"
+    }
+  ]
+}

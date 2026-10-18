@@ -1,0 +1,492 @@
+\section{Common moment estimates and the SCAFFOLD proof}
+\label{app:scaf-proof}
+
+The proof separates the moment estimates shared by both algorithms from the
+additional contribution of SCAFFOLD controls. We first bound local fluctuations,
+then obtain the sharp global raw second moment and a stationary mean-balance identity
+with a uniform remainder. The SCAFFOLD control covariance completes
+Theorem~\ref{thm:scaf-main}; Appendix~\ref{app:fa-proof} uses the same
+estimates for FedAvg and the matched attribution.
+
+\subsection{Notation and stationary inputs}
+\label{app:proof-notation}
+\label{app:common-inputs}
+
+The three scales used to track errors uniformly in $N$ are
+\begin{equation}
+\label{eq:scales}
+ s:=s_{\gamma,N}=\frac{\gamma}{N}+\gamma^2,\qquad
+ r:=r_{\gamma,N}=\frac{\gamma^2}{N}+\gamma^3=\gamma s,\qquad
+ v:=v_{\gamma,N}=\frac{\gamma^2}{N^2}+\gamma^3.
+\end{equation}
+Constants denoted by $K$ may change between occurrences and depend on fixed
+$H,d$ and the objective/noise regularity constants, but not on $N$ or $\gamma$.
+All $O(\cdot)$ terms in these proofs have this same uniform meaning.
+We use Euclidean norms for vectors and tensors, induced norms for linear
+maps, and $\|\cdot\|_F$ for the Frobenius matrix norm. In particular,
+$\|P^h\|$ is an operator norm and operators on matrices use the
+Frobenius-induced norm. We use repeatedly, for
+$\gamma\le1$ and $N\ge2$,
+\begin{equation}
+\label{eq:common-scale-comparisons}
+ v\le r,\qquad \gamma^2\sqrt{s}\le r,\qquad
+ \gamma^2(s+N^{-1})\le2r,\qquad \gamma^4\le\gamma v.
+\end{equation}
+For example, $\sqrt{s}\le\gamma+N^{-1}$ follows by squaring both sides.
+For vectors $u,v$, set $(T[u,v])_i=\sum_{j,k}T_{ijk}u_jv_k$.
+In cubic identities, $\Sym$ is the unnormalized sum of three placements:
+\[
+ [\Sym(u\otimes M)]_{ijk}=u_iM_{jk}+u_jM_{ik}+u_kM_{ij},\qquad
+ [\Sym(u^{\otimes2}\otimes v)]_{ijk}
+ =u_iu_jv_k+u_iv_ju_k+v_iu_ju_k,
+\]
+with $M$ symmetric. This convention extends linearly under expectation.
+
+We use stationary moment bounds from \citet[Corollary~B.4 and
+Lemma~B.5]{mangold2025scaffold} and \citet[Proposition~3 and
+Lemmas~5--6]{mangold2025fedavg}. These results apply here because the
+noise laws are fixed across rounds, $F_\eps(y)=f(y)+\langle\eps,y\rangle$
+has the same Hessian as $f$, and bounded additive noise has the required
+moments without state-dependent growth. Identical client objectives remove
+the heterogeneity term. A common sufficient step-size threshold is
+\begin{equation}
+\label{eq:imported-step-threshold}
+ 0<\gamma\le\gamma_{\mathrm{imp}}
+ :=\min\left\{1,\frac1{48L},\frac1{24H(L+\mu)}\right\}.
+\end{equation}
+It also implies the FedAvg higher-moment restrictions $\gamma\le1/(9L)$
+and $\gamma\mu H\le1$. The additional SCAFFOLD variance-growth restrictions
+are vacuous because their parameter $\beta$ is zero here. We decrease
+$\gamma_0\le\gamma_{\mathrm{imp}}$, independently of $N$, for subsequent
+contraction and absorption inequalities.
+
+For each algorithm under its own stationary law, the imported estimates give
+\begin{equation}
+\label{eq:A-coarse-even}
+ \E\|x\|^{2p}+\frac1N\sum_c\E\|\theta_{c,h}\|^{2p}
+ =O(\gamma^p),\qquad p=1,2,3,\quad 0\le h\le H.
+\end{equation}
+For SCAFFOLD, additionally, we have
+\begin{equation}
+\label{eq:A-control-sixth}
+ \sup_c\E\|\xi_c\|^6\le K,\qquad \sum_c\xi_c=0\quad\text{pathwise}.
+\end{equation}
+In the common lemmas below, write $\xi_c=0$ for FedAvg. This notation
+unifies only the within-round local recursions; it does not impose the
+SCAFFOLD control-refresh rule on FedAvg. In either case, controls are fixed
+during a round, and fresh noise is independent of the complete round-start state.
+
+We set $\delta_{c,h}=\theta_{c,h}-x$, $\bar\delta_h=N^{-1}\sum_c\delta_{c,h}$,
+$\bar\eps_j=N^{-1}\sum_c\eps_{c,j}$, and
+\begin{equation}
+\label{eq:A-qP}
+ \begin{aligned}
+ q(y)&=\nabla f(y)-Ay,\qquad P=I-\gamma A,\qquad b=\E[x],\\
+ m_h&=\frac1N\sum_c\E[\theta_{c,h}],\qquad
+ \nu_h=\frac1N\sum_c\E[q(\theta_{c,h})].
+ \end{aligned}
+\end{equation}
+Also, we write
+\begin{equation}
+\label{eq:A-MU}
+ M_x=\E[xx^\top],\qquad M_h=\frac1N\sum_c\E[\theta_{c,h}\theta_{c,h}^\top],
+ \qquad U_h=M_h-M_x,\qquad Q_\xi=\frac1N\sum_c\E[\xi_c\xi_c^\top].
+\end{equation}
+These are raw second moments, evaluated under each algorithm's own
+stationary law. In particular, $U_h$ measures the additional second moment
+accumulated during the $h$ local steps.
+
+\subsection{Common coarse and local second-moment estimates}
+\label{app:common-coarse}
+
+\begin{lemma}[Coarse scales and local second moments]
+\label{lem:common-coarse}
+For either algorithm and $0\le h\le H$,
+\begin{align}
+ \frac1N\sum_c\E\|\delta_{c,h}\|^{2p}&=O(\gamma^{2p}),\quad p=1,2,3,
+ \label{eq:A-delta-moments}\\
+ \E\|x\|^2+\|b\|&=O(s),\qquad m_h-b=O(r),
+ \label{eq:A-mean-bootstrap}\\
+ \E\|\bar\delta_h\|^2&=O\bigl(\gamma^2(s+N^{-1})\bigr),
+ \label{eq:A-deltabar}\\
+ U_h&=\gamma^2(hC+h^2Q_\xi)+O(r).
+ \label{eq:A-U-pre}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Unrolling the fixed-$H$ local recursion and using Equations~\eqref{eq:A-coarse-even}
+and~\eqref{eq:A-control-sixth} gives Equation~\eqref{eq:A-delta-moments}
+(the control bound is automatic for FedAvg).
+At the server, the client control corrections cancel by the zero-sum
+condition. The resulting round increment and stationary balance are
+\begin{align}
+ x^+-x&=-\gamma\sum_{h=0}^{H-1}\frac1N\sum_c\nabla f(\theta_{c,h})
+         -\gamma\sum_{j=1}^H\bar\eps_j,
+ \label{eq:A-global-increment}\\
+ 0&=\sum_{h=0}^{H-1}\frac1N\sum_c\E[\nabla f(\theta_{c,h})].
+ \label{eq:A-balance}
+\end{align}
+\emph{Coarse global moment and mean.}
+Write $x^+=\Phi(x)+\zeta+E_{\mathrm{traj}}$, where
+$\Phi(x)=x-\gamma H\nabla f(x)$, $\zeta=-\gamma\sum_{j=1}^H\bar\eps_j$,
+and $E_{\mathrm{traj}}=-\gamma\sum_hN^{-1}\sum_c
+\{\nabla f(\theta_{c,h})-\nabla f(x)\}$.
+Strong convexity gives $\|\Phi(x)\|^2\le(1-c\gamma)\|x\|^2$ for some $c>0$,
+while $\E\|\zeta\|^2=O(\gamma^2/N)$ and
+$\E\|E_{\mathrm{traj}}\|^2=O(\gamma^4)$.
+First, we use $\E\langle\Phi(x),\zeta\rangle=0$, then apply Young's inequality
+only to $E_{\mathrm{traj}}$. For fixed sufficiently small $a>0$, we derive
+\[
+ \E\|x\|^2\le(1+a\gamma)
+ \{(1-c\gamma)\E\|x\|^2+K\gamma^2/N\}
+ +K_a\gamma^{-1}\E\|E_{\mathrm{traj}}\|^2.
+\]
+Absorption gives $\E\|x\|^2=O(s)$ and hence
+$N^{-1}\sum_c\E\|\theta_{c,h}\|^2=O(s)$.
+Since $\|q(y)\|\le K\|y\|^2$, we have $\nu_h=O(s)$.
+The averaged recursion $m_{h+1}=Pm_h-\gamma\nu_h$, with $m_0=m_H=b$, gives
+\[
+ (I-P^H)b=-\gamma\sum_{j=0}^{H-1}P^{H-1-j}\nu_j,\qquad
+ m_h-b=(P^h-I)b-\gamma\sum_{j=0}^{h-1}P^{h-1-j}\nu_j.
+\]
+Using $\|(I-P^H)^{-1}\|=O(\gamma^{-1})$ and $\|P^h-I\|=O(\gamma)$
+proves Equation~\eqref{eq:A-mean-bootstrap}. For the client-averaged displacement, the controls again cancel. Its
+gradient part has second moment
+$O(\gamma^2s)$ and the averaged-noise part has second moment $O(\gamma^2/N)$.
+Their sum gives Equation~\eqref{eq:A-deltabar} without assuming the two parts
+are independent.
+
+\emph{Local second moments.}
+To isolate the effect of fresh noise and persistent controls, write
+$\theta_{c,h}=x+D_{c,h}+R_{c,h}$ with
+\begin{equation}
+\label{eq:A-DR}
+ D_{c,h}=-\gamma\left(h\xi_c+\sum_{j=1}^h\eps_{c,j}\right),\qquad
+ R_{c,h}=-\gamma\sum_{\ell=0}^{h-1}\nabla f(\theta_{c,\ell}).
+\end{equation}
+Zero-sum cancellation and freshness imply
+\begin{equation}
+\label{eq:A-DD}
+ \frac1N\sum_c\E[xD_{c,h}^\top]=0,\qquad
+ \frac1N\sum_c\E[D_{c,h}D_{c,h}^\top]=\gamma^2(hC+h^2Q_\xi).
+\end{equation}
+Only the client-averaged first identity is needed; $x$ and individual controls
+need not be uncorrelated. Furthermore,
+$N^{-1}\sum_c\E\|D_{c,h}\|^2=O(\gamma^2)$ and
+$N^{-1}\sum_c\E\|R_{c,h}\|^2=O(\gamma^2s)$.
+Cauchy--Schwarz bounds the averaged $xR^\top$, $DR^\top$, and $RR^\top$
+terms by $O(\gamma s)$, $O(\gamma^2\sqrt{s})$, and $O(\gamma^2s)$,
+respectively. All are $O(r)$ by Equation~\eqref{eq:common-scale-comparisons},
+which proves Equation~\eqref{eq:A-U-pre}.
+\end{proof}
+
+\subsection{Common higher-moment bootstrap}
+\label{app:common-higher}
+
+The signed third moment is needed to control the cubic term in the
+stationary Taylor expansion. We obtain it after a fourth-moment estimate.
+
+\begin{lemma}[Fourth and signed third moments]
+\label{lem:common-higher}
+For either algorithm,
+\begin{equation}
+\label{eq:A-higher-moments}
+ \E\|x\|^4=O(v),\qquad \|\E[x^{\otimes3}]\|=O(v).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Unrolling the averaged local recursion gives
+\begin{equation}
+\label{eq:A-round-exact}
+ x^+=P^Hx+\eta+\Delta,\qquad
+ \eta=-\gamma\sum_{j=1}^HP^{H-j}\bar\eps_j,\quad
+ \Delta=-\gamma\sum_{h=0}^{H-1}P^{H-1-h}\bar q_h,
+ \quad \bar q_h=\frac1N\sum_c q(\theta_{c,h}).
+\end{equation}
+The centered fresh term $\eta$ is independent of the round-start state.
+Expansion of sums of independent centered vector blocks gives
+\begin{equation}
+\label{eq:A-eta-moments}
+ \E\|\eta\|^2=O(\gamma^2/N),\qquad
+ \E\|\eta\|^4=O(\gamma^4/N^2),\qquad
+ \|\E[\eta^{\otimes3}]\|=O(\gamma^3/N^2).
+\end{equation}
+No symmetry of the noise law is used. Global Lipschitzness of $\nabla f$
+and bounded $\nabla^3f$ imply $\|q(y)\|\le K\min\{\|y\|,\|y\|^2\}$.
+Thus $\|q(y)\|^2\le K\|y\|^4$ and $\|q(y)\|^4\le K\|y\|^6$;
+Jensen's inequality and Equation~\eqref{eq:A-coarse-even} yield
+\begin{equation}
+\label{eq:A-Delta-moments}
+ \E\|\Delta\|^2=O(\gamma^4),\qquad \E\|\Delta\|^4=O(\gamma^7).
+\end{equation}
+In particular, an eighth-moment assumption is unnecessary.
+
+\emph{Fourth moment.}
+Let $Y=P^Hx+\eta$ and $M_4=\E\|x\|^4$.
+Independence and centeredness of $\eta$ give
+\[
+ \E\|Y\|^4\le\|P^H\|^4M_4+
+ K\left\{\E\|x\|^2\E\|\eta\|^2
+ +\|b\|\sqrt{\E\|\eta\|^2\E\|\eta\|^4}+\E\|\eta\|^4\right\}
+ \le\|P^H\|^4M_4+K\gamma v.
+\]
+Use $\|y+z\|^4\le(1+a\gamma)\|y\|^4+K_a\gamma^{-3}\|z\|^4$
+and $\|P^H\|^4\le1-c\gamma$. For fixed sufficiently small $a>0$,
+stationarity implies
+\[
+ M_4\le(1+a\gamma)\{(1-c\gamma)M_4+K\gamma v\}
+      +K_a\gamma^{-3}\E\|\Delta\|^4.
+\]
+The last term is $O(\gamma^4)\subset O(\gamma v)$; absorption proves
+$M_4=O(v)$ and also $\E\|Y\|^4=O(v)$.
+
+\emph{Signed third moment.}
+For $T_3=\E[x^{\otimes3}]$, the linear part satisfies
+\[
+ \E[Y^{\otimes3}]=(P^H)^{\otimes3}T_3
+ +\Sym\{P^Hb\otimes\E[\eta\eta^\top]\}+\E[\eta^{\otimes3}].
+\]
+The two forcing terms are $O(\gamma v)$ by the coarse mean bound and
+Equation~\eqref{eq:A-eta-moments}.
+Set $a_h=N^{-1}\sum_c\|\theta_{c,h}\|^2$. By the fourth-moment bound
+just proved and Equation~\eqref{eq:A-delta-moments},
+\[
+ \E[a_h^2]\le\frac1N\sum_c\E\|\theta_{c,h}\|^4
+ \le K(v+\gamma^4)=O(v),\qquad
+ \E[\|Y\|^2a_h]\le\sqrt{\E\|Y\|^4\E[a_h^2]}=O(v).
+\]
+Since $\|\Delta\|\le K\gamma\sum_ha_h$, it follows that
+$\|\E[Y^{\otimes2}\otimes\Delta]\|=O(\gamma v)$.
+The other terms in the cubic expansion obey
+\[
+ \E[\|Y\|\|\Delta\|^2]\le
+ \sqrt{\E\|Y\|^2\E\|\Delta\|^4}=O(\gamma^4),\qquad
+ \E\|\Delta\|^3\le(\E\|\Delta\|^4)^{3/4}=O(\gamma^{21/4}),
+\]
+both $O(\gamma v)$. Hence,
+$(I-(P^H)^{\otimes3})T_3=O(\gamma v)$; its inverse has norm
+$O(\gamma^{-1})$, proving $T_3=O(v)$. The sharp global second moment can
+therefore be established using these higher-moment bounds.
+\end{proof}
+
+\subsection{Common sharp global second moment}
+\label{app:common-covariance}
+
+We now compare the nonlinear stationary chain with its linear counterpart.
+The leading global second moment comes from server-averaged noise; the
+higher-moment bounds control the nonlinear correction.
+
+\begin{lemma}[Sharp stationary raw second moment]
+\label{lem:A-sharp-second-moment}
+For either algorithm, the nonlinear forcing in the stationary second-moment
+equation is $O(\gamma r)$, and
+\begin{equation}
+\label{eq:A-sharp-Mx}
+ M_x=\frac{\gamma}{N}S_C+O(r).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+\emph{Linear chain.}
+For the linear chain $x_{\rm lin}^+=P^Hx_{\rm lin}+\eta$,
+$\E[\eta\eta^\top]=(\gamma^2/N)\sum_{k=0}^{H-1}P^kC(P^k)^\top$.
+Its stationary second-moment equation is the $H$-fold iteration of
+$M_{\rm lin}=PM_{\rm lin}P^\top+\gamma^2C/N$.
+Both equations have unique solutions because $P$ is contractive.
+In an eigenbasis of $A$, with eigenvalues $a_i$,
+\begin{equation}
+\label{eq:A-Mlin-coord}
+ (M_{\rm lin})_{ij}=\frac{\gamma}{N}
+ \frac{C_{ij}}{a_i+a_j-\gamma a_ia_j},\qquad
+ (S_C)_{ij}=\frac{C_{ij}}{a_i+a_j}.
+\end{equation}
+Consequently $M_{\rm lin}=(\gamma/N)S_C+O(\gamma^2/N)$ without
+assuming $AC=CA$.
+
+\emph{Nonlinear state correction.}
+To control $\E[x\Delta^\top]$, expand
+$\bar q_h=q(x)+Dq(x)\bar\delta_h+\bar\rho_h$,
+where $\|Dq(x)\|\le K\|x\|$ and
+$\|\bar\rho_h\|\le K N^{-1}\sum_c\|\delta_{c,h}\|^2$.
+The expansion $q(x)=\frac12T[x,x]+O(\|x\|^3)$ and the preceding lemmas give
+\begin{align*}
+ \|\E[xq(x)^\top]\|_F&\le K\{\|\E[x^{\otimes3}]\|+\E\|x\|^4\}=O(r),\\
+ \E[\|x\|^2\|\bar\delta_h\|]&\le
+ \sqrt{\E\|x\|^4\E\|\bar\delta_h\|^2}
+ =O\bigl(\sqrt{v\gamma^2(s+N^{-1})}\bigr)=O(r),\\
+ \E[\|x\|\|\bar\rho_h\|]&=O(\gamma^2\sqrt{s})=O(r).
+\end{align*}
+The outer factor $\gamma$ in $\Delta$ therefore yields
+\begin{equation}
+\label{eq:A-xDelta}
+ \|\E[x\Delta^\top]\|_F=O(\gamma r).
+\end{equation}
+
+\emph{Fresh-noise/nonlinear correlation.}
+To control $\E[\eta\Delta^\top]$, hold the complete round-start state fixed.
+Index the $NH$ fresh blocks by $i=(c,j)$ and write
+$\eta=\sum_iB_i\eps_i$, with $\|B_i\|\le K\gamma/N$.
+Let $\Delta^{(i,0)}$ replace block $\eps_i$ by zero.
+Only client $c$ changes before aggregation. Lipschitz propagation gives a
+path change of at most $K\gamma\|\eps_i\|$ and hence
+\[
+ \|\Delta-\Delta^{(i,0)}\|\le K\frac{\gamma^2}{N}\|\eps_i\|,\qquad
+ \E[\eps_i(\Delta^{(i,0)})^\top\mid\text{round-start state}]=0.
+\]
+Each term $\E[B_i\eps_i(\Delta-\Delta^{(i,0)})^\top]$ is
+$O(\gamma^3/N^2)$; summing the $NH$ terms gives
+\begin{equation}
+\label{eq:A-etaDelta}
+ \|\E[\eta\Delta^\top]\|_F=O(\gamma^3/N).
+\end{equation}
+Replacing one noise block at a time handles the dependence between
+$\eta$ and $\Delta$. Finally,
+$\|\E[\Delta\Delta^\top]\|_F=O(\gamma^4)$ by
+Equation~\eqref{eq:A-Delta-moments}.
+
+\emph{Stationary covariance equation.}
+For $\mathcal S_\gamma(X)=X-P^HX(P^H)^\top$, stationarity gives
+\begin{align}
+\label{eq:A-second-moment-difference}
+ \mathcal S_\gamma(M_x-M_{\rm lin})
+ ={}&P^H\E[x\Delta^\top]+\E[\Delta x^\top](P^H)^\top\notag\\
+ &+\E[\eta\Delta^\top]+\E[\Delta\eta^\top]+\E[\Delta\Delta^\top].
+\end{align}
+The right-hand side is $O(\gamma r)$, since both $\gamma^3/N$ and
+$\gamma^4$ are bounded by $\gamma r$. Moreover,
+$\|\mathcal S_\gamma^{-1}\|\le(1-\|P^H\|^2)^{-1}=O(\gamma^{-1})$.
+Thus $M_x-M_{\rm lin}=O(r)$, proving Equation~\eqref{eq:A-sharp-Mx}.
+\end{proof}
+
+\subsection{Common signed Taylor closure}
+\label{app:common-taylor}
+
+The global raw second moment determines one part of the mean bias. Stationary
+gradient balance also involves the second moments along the local
+trajectories. The following lemma combines both through a Taylor expansion.
+
+\begin{lemma}[Local Taylor tail and stationary mean balance]
+\label{lem:common-taylor}
+For either algorithm,
+\begin{align}
+ \left\|\frac1N\sum_c\E[\theta_{c,h}^{\otimes3}]\right\|&=O(r),\qquad
+ \frac1N\sum_c\E\|\theta_{c,h}\|^4=O(v),
+ \label{eq:A-local-moments}\\
+ b&=-\frac12A^{-1}T[M_x]
+     -\frac1{2H}A^{-1}T\!\left[\sum_{h=0}^{H-1}U_h\right]+O(r).
+ \label{eq:A-master}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Expanding $\theta_{c,h}=x+\delta_{c,h}$ gives
+\begin{align*}
+ \frac1N\sum_c\E[\theta_{c,h}^{\otimes3}]
+ ={}&\E[x^{\otimes3}]+\Sym\{\E[x^{\otimes2}\otimes\bar\delta_h]\}\\
+ &+\Sym\!\left\{\frac1N\sum_c\E[x\otimes\delta_{c,h}^{\otimes2}]\right\}
+ +\frac1N\sum_c\E[\delta_{c,h}^{\otimes3}].
+\end{align*}
+The four terms have norms bounded respectively by
+\[
+ O(v),\qquad O\bigl(\sqrt{v\gamma^2(s+N^{-1})}\bigr),\qquad
+ O(\gamma^2\sqrt{s}),\qquad O(\gamma^3),
+\]
+using Cauchy--Schwarz and Lemmas~\ref{lem:common-coarse}
+and~\ref{lem:common-higher}. All are $O(r)$.
+Also $N^{-1}\sum_c\E\|\theta_{c,h}\|^4
+\le K\{\E\|x\|^4+N^{-1}\sum_c\E\|\delta_{c,h}\|^4\}
+=O(v+\gamma^4)=O(v)$.
+The signed cubic and absolute fourth-moment bounds now control the
+higher-order terms in the gradient expansion. With
+$D_4=\nabla^4f(0)$, Taylor's theorem gives
+\begin{equation}
+\label{eq:A-Taylor}
+ \nabla f(u)=Au+\frac12T[u,u]+\frac16D_4[u,u,u]+\rho_5(u),\qquad
+ \|\rho_5(u)\|\le K\|u\|^4.
+\end{equation}
+Here $D_4[u,u,u]$ contracts the fourth derivative against three vectors.
+Equation~\eqref{eq:A-local-moments} controls the signed cubic term and
+absolute fourth-order remainder, giving
+\begin{equation}
+\label{eq:A-Taylor-tail}
+ \left\|\sum_{h=0}^{H-1}\frac1N\sum_c
+ \E\!\left[\nabla f(\theta_{c,h})-A\theta_{c,h}
+             -\frac12T[\theta_{c,h},\theta_{c,h}]\right]\right\|=O(r).
+\end{equation}
+Substitute into Equation~\eqref{eq:A-balance}, use
+$\sum_hm_h=Hb+O(r)$ from Lemma~\ref{lem:common-coarse}, and write
+$M_h=M_x+U_h$. This gives
+$0=HAb+\frac12T[\sum_hM_h]+O(r)$ and proves
+Equation~\eqref{eq:A-master}.
+\end{proof}
+
+\subsection{SCAFFOLD control moment and coefficient assembly}
+\label{app:scaf-assembly}
+
+The common lemmas reduce the algorithm-specific calculation to the
+stationary covariance $Q_\xi$ of the persistent controls. Define
+\begin{equation}
+\label{eq:A-GE}
+ G_c=\frac1H\sum_{h=0}^{H-1}
+ \left\{\nabla f(\theta_{c,h})-\frac1N\sum_k\nabla f(\theta_{k,h})\right\},
+ \qquad E_c=\frac1H\sum_{j=1}^H(\eps_{c,j}-\bar\eps_j).
+\end{equation}
+The control update in Equation~\eqref{eq:scaf-server} gives
+$\xi_c^+=-G_c-E_c$ exactly. Independence across clients and local steps yields
+$\E[E_cE_c^\top]=(1-1/N)C/H$. Smoothness and
+Equation~\eqref{eq:A-delta-moments} give
+$N^{-1}\sum_c\E\|G_c\|^2=O(\gamma^2)$, while
+$N^{-1}\sum_c\E\|E_c\|^2=O(1)$.
+The $GE^\top$ and $EG^\top$ terms are therefore $O(\gamma)$ by
+Cauchy--Schwarz, not by independence. Control stationarity implies
+\begin{equation}
+\label{eq:A-Q}
+ Q_\xi=Q_{\gamma,N,H}=\frac1H\left(1-\frac1N\right)C+O(\gamma).
+\end{equation}
+Inserting this covariance into the local second-moment expansion adds
+the $h^2$ contribution specific to persistent controls:
+\begin{equation}
+\label{eq:A-U}
+ U_h=\gamma^2\left(h+\frac{h^2}{H}\right)C+O(r),
+\end{equation}
+because the omitted pieces are $O(\gamma^2/N+\gamma^3)$.
+Finally,
+\begin{equation}
+\label{eq:A-U-sum}
+ \sum_{h=0}^{H-1}U_h
+ =\gamma^2\frac{(H-1)(5H-1)}6C+O(r).
+\end{equation}
+Combining Equations~\eqref{eq:A-sharp-Mx}, \eqref{eq:A-master},
+and~\eqref{eq:A-U-sum} yields
+\[
+ b^{\Scaf}_{\gamma,N,H}
+ =-\frac{\gamma}{2N}A^{-1}T[S_C]
+ -\gamma^2\frac{(H-1)(5H-1)}{12H}A^{-1}T[C]+O(r).
+\]
+This proves Theorem~\ref{thm:scaf-main}, including the stated uniform remainder.
+
+
+\subsection{Proof of the affine-control translation}
+\label{app:affine-proof}
+\begin{proof}[Proof of Proposition~\ref{prop:affine-shift}]
+The gradient is $\nabla f_c(y)=\nabla f(y)+a_c$. With the translation in Equation~\eqref{eq:affine-objectives}, the heterogeneous local step becomes
+\[
+\theta_{c,h+1}=\theta_{c,h}-\gamma\{\nabla f(\theta_{c,h})+\widetilde\xi_c+\eps_{c,h+1}\}.
+\]
+The zero-sum constraint is preserved because $\sum_ca_c=0$, and the refreshed state satisfies
+\[
+\widetilde\xi_c^+=\xi_c^++a_c
+=\widetilde\xi_c+\frac{\theta_{c,H}-x^+}{\gamma H}.
+\]
+Thus the translated controls give exactly the homogeneous round map,
+with the global model $x$ unchanged. Induction yields pathwise equality
+for corresponding initial states driven by the same noise blocks.
+
+The translation is invertible and carries invariant laws between the
+two chains. Uniqueness of the homogeneous invariant law establishes
+equality of their global stationary marginals. Since
+$N^{-1}\sum_cf_c=f$, both biases are measured from the same minimizer,
+and Theorem~\ref{thm:scaf-main} gives the expansion and uniform remainder.
+\end{proof}

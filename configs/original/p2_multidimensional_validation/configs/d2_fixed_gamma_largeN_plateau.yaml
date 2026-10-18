@@ -1,0 +1,169 @@
+schema_version: 2
+protocol_status: frozen_for_execution
+protocol_frozen_at: "2026-09-14"
+experiment: p2_d2_fixed_gamma_largeN_plateau
+matrix_identifier: p2-d2-fixed-gamma-largeN-plateau
+study_role: formal_multidimensional_fixed_gamma_large_N_plateau
+scientific_question: Does the normalized d=2 stationary-bias residual approach a finite nonzero plateau as N increases at fixed gamma?
+
+objective:
+  name: rank_one_log_cosh
+  d: 2
+  A:
+    - [1.2, 0.2]
+    - [0.2, 1.0]
+  u: [0.7071067811865475, 0.7071067811865475]
+  alpha: 0.25
+  x_star: [0.0, 0.0]
+  hessian: A + alpha * outer(u, u) * tanh(dot(u, x))
+  global_hessian_bounds:
+    mu: 0.85
+    L: 1.565036762718386
+
+noise:
+  name: cholesky_rademacher
+  covariance:
+    - [1.0, 0.2]
+    - [0.2, 0.7]
+  covariance_eigenvalues: [0.6, 1.1]
+  noncommuting_with_A: true
+  A_C_minus_C_A:
+    - [0.0, -0.02]
+    - [0.02, 0.0]
+  construction: epsilon = cholesky(C) @ z
+  rademacher_coordinates_independent: true
+  fresh_across: [chain, communication_round, local_step, client]
+
+theory:
+  normalization: C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2
+  fixed_gamma_expansion: C_hat = B20(H) + O(1/N + gamma)
+  B11_d_sign_is_intrinsic: true
+  S_C:
+    - [0.413009404388715, 0.021943573667712]
+    - [0.021943573667712, 0.345611285266458]
+  B11_d: [-0.024459428167733, -0.030574285209666]
+  B20:
+    H: 2
+    value: [-0.048004016395207, -0.060005020494009]
+    local: [-0.032002677596805, -0.040003346996006]
+    control: [-0.016001338798402, -0.020001673498003]
+  exact_B20_CI_coverage_required: false
+  finite_gamma_discrepancy_scale: O(gamma)
+
+fixed_gamma_large_N:
+  d: 2
+  H: 2
+  gamma_denominator: 24
+  gamma: 0.041666666666666664
+  N_values: [8, 16, 32, 64, 128]
+  only_scientific_change_across_settings: N
+
+chains:
+  independent_unit: chain
+  count_per_setting: 8
+  seeds: [1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308]
+  initial_control: zero
+
+estimators:
+  primary: stationary_mean_balance
+  secondary_diagnostic: direct_stationary_sample_mean
+  primary_representation: signed_coordinatewise
+  norm_only_primary_forbidden: true
+
+protocol:
+  source: shared/configs/simulation_defaults.yaml
+  mixing_mu: 0.85
+  burn_in_multiples: 100
+  batch_length_multiples: 20
+  min_batches: 100
+  max_batches: 400
+  extension_batches: 50
+  finite_state_required: true
+  max_abs_control_sum: 1.0e-10
+  estimator_agreement_z: 3.0
+  stationarity_z: 3.0
+  stationarity_min_chains: 7
+
+per_setting_uncertainty:
+  source: eight_independent_chain_estimates
+  method: student_t_coordinatewise
+  degrees_of_freedom: 7
+  familywise_confidence_level: 0.95
+  correction: bonferroni
+  coordinates: 2
+  simultaneous_coordinate_confidence_level: 0.975
+  marginal_diagnostic_confidence_level: 0.95
+  pool_coordinates: false
+
+precision_stopping:
+  statistic: primary_balance_normalized_coefficient
+  scope: every_coordinate
+  simultaneous_interval: bonferroni_familywise_95_percent
+  absolute_half_width: 0.0025
+  relative_half_width: 0.10
+  coordinate_rule: h_j <= max(0.0025, 0.10 * abs(B20_j(H)))
+  check_after_batches: 100
+  extend_by_batches: 50
+  stop_at_batches: 400
+  stop_on_invalidity: true
+
+extrapolation:
+  per: coordinate
+  response: setting_mean_balance_C_hat_coordinate
+  model: C_hat_j = beta0_j + beta1_j / N
+  fit_variable: inverse_N
+  fit_variable_formula: 1/N
+  plateau_estimate: beta0_j
+
+bootstrap:
+  unit: seed_label_block
+  repetitions: 2000
+  seed: 3901
+  preserve_same_seed_across_settings: true
+  simultaneous_familywise_confidence_level: 0.95
+  correction: bonferroni
+  simultaneous_coordinate_percentile_level: 0.975
+  simultaneous_quantiles: [0.0125, 0.9875]
+  marginal_diagnostic_percentile_level: 0.95
+  marginal_diagnostic_quantiles: [0.025, 0.975]
+
+gates:
+  F0: every N setting passes finite-state, zero-sum-control, and stationarity validity
+  F1: all five frozen N settings and all eight frozen seeds are present without exclusion
+  F2: both coordinate intercept estimates and bootstrap intervals are finite
+  F3: each coordinate has a simultaneous intercept interval excluding zero, consistent per-N sign, and the N=128 mean is closer to beta0 than the N=8 mean
+  F4: beta0 minus B20 and that discrepancy divided by gamma are explicitly finite and reported
+  F5: exact B20 confidence-interval coverage is diagnostic only and is not a PASS requirement
+  F6: flag a scientific warning for a near-zero or theory-sign-reversed intercept, repeated per-N sign changes, or an N=128 magnitude exceeding three times abs(B20)
+
+warning_thresholds:
+  near_zero_relative_to_B20: 0.25
+  repeated_sign_changes: 2
+  large_N_magnitude_multiple_of_B20: 3.0
+
+commands:
+  check: .venv/bin/python run.py p2 plateau check
+  run: .venv/bin/python run.py p2 plateau run
+  analyze: .venv/bin/python run.py p2 plateau analyze
+  report: .venv/bin/python run.py p2 plateau report
+
+artifact_namespace: workstreams/p2_multidimensional_validation/artifacts/formal/p2-d2-fixed-gamma-largeN-plateau
+config_snapshot_filename: d2_fixed_gamma_largeN_plateau_config_snapshot.yaml
+artifact_filenames:
+  - run_start_provenance.json
+  - d2_fixed_gamma_largeN_plateau_config_snapshot.yaml
+  - run_summary.csv
+  - batch_summary.csv
+  - setting_summary.csv
+  - setting_diagnostics.csv
+  - plateau_fit_summary.csv
+  - plateau_fit_curve.csv
+  - bootstrap_intercepts.csv
+  - falsification_summary.csv
+  - p2_d2_fixed_gamma_largeN_coordinate_1.png
+  - p2_d2_fixed_gamma_largeN_coordinate_2.png
+  - p2_d2_fixed_gamma_largeN_plateau_report.md
+  - plateau_manifest.json
+formal_source_policy: clean_commit
+formal_output_policy: controlled_staging_and_overwrite_if_raw_scientific_fields_match
+interpretation_boundary: fixed_gamma_empirical_consistency_test_not_exact_B20_test_or_proof

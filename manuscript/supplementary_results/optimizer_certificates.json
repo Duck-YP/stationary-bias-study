@@ -1,0 +1,46 @@
+{
+  "lambda_value": 0.01,
+  "gradient_norm": 1.2529209586142593e-16,
+  "parameter_error_bound": 1.2529209586142593e-14,
+  "objective": 0.4758412871936301,
+  "crosscheck_distance": 8.428290248448661e-15,
+  "second_solver": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+  "second_refined_gradient_norm": 1.3494928599180526e-17,
+  "history": [
+    {
+      "iteration": 0,
+      "objective": 0.6931471805599454,
+      "gradient_norm": 0.31625085502666406
+    },
+    {
+      "iteration": 1,
+      "objective": 0.4806106754584408,
+      "gradient_norm": 0.03920147518039497
+    },
+    {
+      "iteration": 2,
+      "objective": 0.4758614280267913,
+      "gradient_norm": 0.0024609196585701587
+    },
+    {
+      "iteration": 3,
+      "objective": 0.4758412876465789,
+      "gradient_norm": 1.1725753419071934e-05
+    },
+    {
+      "iteration": 4,
+      "objective": 0.47584128719363017,
+      "gradient_norm": 2.6649662009132524e-10
+    },
+    {
+      "iteration": 5,
+      "objective": 0.4758412871936301,
+      "gradient_norm": 1.2529209586142593e-16
+    }
+  ],
+  "eigmin_A_ref": 0.009999999999999981,
+  "L_sample": 0.5100000000000001,
+  "gamma_base": 0.196078431372549,
+  "direction_scope": "Frozen descriptive -A_ref^{-1}T[Sigma_ref], not a coefficient prediction for E3",
+  "direction_fallback": false
+}

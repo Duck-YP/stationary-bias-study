@@ -1,0 +1,27 @@
+\section{Conclusion and future directions}
+\label{sec:conclusion}
+
+Client averaging and control correction act on different parts of stationary mean bias. We made this distinction explicit for \Scaf{} and matched \FedAvg{}: the algorithms share a $\gamma/N$ term, while their client-independent $\gamma^2$ coefficients separate ordinary local-update and persistent-control contributions. Local second moments coupled with third-order curvature explain the additional control effect, and a uniform remainder identifies the coefficients along arbitrary joint small-step, large-client limits. An exact control translation extends the \Scaf{} result to affine objective shifts.
+
+Controlled experiments examine these quantitative predictions. Real-data model
+averaging illustrates that finite-tail mean displacement can be an important
+component of parameter error, and a post-hoc full-vector comparison finds
+close directional agreement with the derived curvature--noise structure despite
+magnitude and local-step discrepancies. The analysis and experiments in this study explain an aspect of federated optimization that leading-order bias and
+variance alone do not distinguish.
+
+Several directions follow from this coefficient-level characterization:
+\begin{itemize}
+    \item \textbf{Nonlinear client heterogeneity:} Characterize how client-specific
+    curvature and its interaction with local noise modify stationary bias
+    beyond affine objective shifts.
+    \item \textbf{Partial participation:} Determine how client subsampling and
+    delayed control updates affect the stationary coefficients.
+    \item \textbf{State-dependent noise:} Extend the analysis to gradient noise
+    whose distribution varies with the local model.
+    \item \textbf{Growing local-step counts:} Establish regimes in which $H$
+    varies jointly with $N$ and $\gamma$.
+    \item \textbf{Bias-aware control design:} Investigate whether alternative
+    control updates can mitigate second-order bias while accounting for
+    drift correction, variance, and computational cost.
+\end{itemize}

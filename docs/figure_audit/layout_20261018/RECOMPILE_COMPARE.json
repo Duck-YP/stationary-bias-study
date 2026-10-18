@@ -1,0 +1,170 @@
+{
+  "status": "PASS",
+  "pages": 40,
+  "supplied_sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c",
+  "rebuilt_sha256": "1de1512123a497845b2717c37a1d8fbcd364e8b07446c4a8ec8b792cfd1525bb",
+  "all_text_equal": true,
+  "page_checks": [
+    {
+      "page": 1,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 2,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 3,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 4,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 5,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 6,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 7,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 8,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 9,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 10,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 11,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 12,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 13,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 14,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 15,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 16,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 17,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 18,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 19,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 20,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 21,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 22,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 23,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 24,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 25,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 26,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 27,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 28,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 29,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 30,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 31,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 32,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 33,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 34,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 35,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 36,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 37,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 38,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 39,
+      "pixels_equal_120dpi": true
+    },
+    {
+      "page": 40,
+      "pixels_equal_120dpi": true
+    }
+  ],
+  "scope": "Clean public manuscript build; PDF bytes may differ through metadata but each rendered page and extracted text must match."
+}

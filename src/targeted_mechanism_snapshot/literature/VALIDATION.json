@@ -1,0 +1,41 @@
+{
+  "baseline_files": [
+    {
+      "path": "manuscript/main.tex",
+      "unchanged": true,
+      "sha256": "b1ca5c0ff081d4c231464e3a7ac088d9c75f3c6329be3bafbb51ff188e45653b"
+    },
+    {
+      "path": "manuscript/sections/02_related_work.tex",
+      "unchanged": true,
+      "sha256": "0afdbe904229c778a5661638bc63ca7945e33321567643a7d5bfdae984c971f2"
+    },
+    {
+      "path": "manuscript/sections/03_setting_preliminaries.tex",
+      "unchanged": true,
+      "sha256": "5f050f14e48d40e3128cb0080d5f14c9f3357f1db718f5e9584b00bf78a24af0"
+    },
+    {
+      "path": "manuscript/sections/04_main_results.tex",
+      "unchanged": true,
+      "sha256": "8e5b34f99c35ed600adacea44d6859a1091bc357a7cef88448acf5f0b42f44fa"
+    },
+    {
+      "path": "manuscript/references.bib",
+      "unchanged": true,
+      "sha256": "e6994eb9f3977fcfd22dfb24b3c1785cb0ebf32a26073681937bb6fca0c769ce"
+    }
+  ],
+  "all_baseline_hashes_unchanged": true,
+  "patch_check_exit_code": 0,
+  "patch_check_stdout": "",
+  "patch_check_stderr": "",
+  "master_manuscript_modified": false,
+  "new_experiments_run_by_literature_task": false,
+  "source_pdf_pages_visually_checked": [
+    "glasgow p6",
+    "DDB arxiv v2 p13",
+    "SCAFFOLD v1 p42",
+    "SCAFFOLD v1 p44"
+  ]
+}

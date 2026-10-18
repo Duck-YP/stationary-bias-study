@@ -1,0 +1,35 @@
+schema_version: 2
+experiment: p2_multidimensional_validation
+setting_id: d2-controlled-smoke
+description: Controlled two-dimensional SCAFFOLD engineering smoke setting.
+study_role: engineering_smoke
+
+objective:
+  name: rank_one_log_cosh
+  d: 2
+  A:
+    - [1.2, 0.2]
+    - [0.2, 1.0]
+  u: [0.7071067811865475, 0.7071067811865475]
+  alpha: 0.25
+
+noise:
+  name: cholesky_rademacher
+  covariance:
+    - [1.0, 0.3]
+    - [0.3, 0.7]
+
+smoke:
+  d: 2
+  H: 2
+  N: 4
+  gamma: 0.05
+  seeds: [801, 802, 803]
+  initial_x:
+    801: [-0.5, 0.25]
+    802: [0.0, 0.0]
+    803: [0.5, -0.25]
+  protocol:
+    burn_in_multiples: 5
+    batch_length_multiples: 2
+    num_batches: 4

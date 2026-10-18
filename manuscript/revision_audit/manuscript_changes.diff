@@ -1,0 +1,479 @@
+--- before/appendix/C_numerical_details.tex
++++ after/appendix/C_numerical_details.tex
+@@ -205,7 +205,7 @@
+ \paragraph{What the saved grids do not separate.}
+ Both coefficient grids in Equations~\eqref{eq:num-primary-grid} and~\eqref{eq:num-small-grid} satisfy $\gamma=1/N$, so $\gamma$ and $1/N$ are identical regressors on the saved design. The residual trends therefore do not separately identify finite-step and finite-client effects. The theorem bounds their combined scale, not the coefficients or functional form of the next-order correction. The quadratic fit above is consequently descriptive, not a resolution of the remaining discrepancy.
+ 
+-The implementation checks recorded in Appendix~\ref{app:reproducibility} test specific update identities; they do not quantify all possible finite-burn-in or finite-run bias. Separating these sources would require additional designs varying $N$ and $\gamma$ independently, together with simulation-length checks. No such additional runs are reported here, and both matched $H=4$ target exclusions remain part of the evidence.
++The implementation checks recorded in Appendix~\ref{app:reproducibility} test specific update identities; they do not quantify all possible finite-burn-in or finite-run bias. Separating these sources would require additional designs varying $N$ and $\gamma$ independently, together with simulation-length checks. No such reruns of this historical cohort are reported here, and both matched $H=4$ target exclusions remain part of the evidence. The independent supplementary study and later real-data diagnostics are reported separately below.
+ 
+ \subsection{Fixed-step and five-dimensional results}
+ \label{app:num-supporting-results}
+@@ -396,7 +396,8 @@
+ 
+ Minibatches are sampled with replacement. The largest single-example smoothness bound is $L_{\rm sample}=0.51$, giving $\gamma_b=0.1/L_{\rm sample}$. The reference Newton solve reports gradient norm $1.253\times10^{-16}$ and a strong-convexity parameter-error bound $1.253\times10^{-14}$; a separately initialized solver differs by $8.43\times10^{-15}$. These are floating-point residual checks rather than interval-arithmetic certificates. Let $A_{\rm ref}=\nabla^2 f(x_{\rm ref})$ and $T_{\rm ref}=\nabla^3 f(x_{\rm ref})$. The fixed projection direction is the normalized vector $-A_{\rm ref}^{-1}T_{\rm ref}[\Sigma_{\rm ref}]$, calculated before production; it is not a real-data coefficient target.
+ 
+-Each real-data configuration has twelve independent paired runs. The schedule uses $\tau_0=\lceil(\lambda H\gamma)^{-1}\rceil$, burn-in $50\tau_0$ and batch length $10\tau_0$. R0 collected 64 batches for all nine configurations: three allocations, three additional $\gamma/H$ policies and three $H=1$ checks. Its primary signed means and comparisons in Section~\ref{sec:num-real} are therefore finite-tail quantities. No 133-batch R0 extension was collected. Changing $\gamma$ or $H$ changes the horizon; sample-gradient and communication costs are stored separately.
++Each real-data configuration has twelve independent paired runs. The schedule uses $\tau_0=\lceil(\lambda H\gamma)^{-1}\rceil$, burn-in $50\tau_0$ and batch length $10\tau_0$. R0 collected 64 batches for all nine configurations: three allocations, three additional $\gamma/H$ policies and three $H=1$ checks. Its primary signed means and comparisons in Section~\ref{sec:num-real} are therefore finite-tail quantities. No 133-batch extension belongs to this original R0 production cohort; the two later, separately seeded pilots in Appendix~
++ef{app:e4-averaging} do not replace it. Changing $\gamma$ or $H$ changes the horizon; sample-gradient and communication costs are stored separately.
+ 
+ For the $R=12$ independent run-tail mean displacements $\widehat b_r$, the unclipped cross-run statistic
+ \[
+@@ -443,3 +444,177 @@
+ No first/last-half projected contrast in this audit excludes zero under the original $2\times69$ family adjustment. Batch autocorrelation proxies are retained, not interpreted as certified effective sample sizes. Four of the 68 E1 algorithm-cell raw-versus-balance projected differences have nominal intervals excluding zero; the stored balance estimator remains primary. In R0, direct and primary observables are identical by construction, so their agreement is not a separate estimator validation. R0 first- and last-half endpoint allocation contrasts are respectively $0.003098$ and $0.003129$ for SCAFFOLD, and $0.002053$ and $0.002092$ for FedAvg. These post-hoc subdivisions of the same 64 batches support within-tail consistency; they are not extended-burn or extended-tail runs.
+ 
+ The original fourteen short implementation checks and the affine checks pass. The separate full-horizon $H=1$ audit retains 48 strict $10^{-10}$ failures among 132 checks across all regimes; the R0 subset has 24 among 60, independently reproduced here. The maximum R0 coordinate discrepancy is $4.33\times10^{-10}$, whereas the reported all-regime maximum vector discrepancy is about $7.54\times10^{-10}$; these are different norms. A stable endpoint-increment kernel was separately checked on two long R0 $H=1$ paths and reduced their vector discrepancies to about $10^{-12}$. These post-hoc checks neither replace frozen production outputs nor amount to a full-grid stable-kernel rerun. The numerical-identity and precision flags remain in the registry and companion tables.
++
++\subsection{Finite-tail model averaging: protocol, estimators, and diagnostics}
++\label{app:e4-averaging}
++
++The saved-data analysis, E4, reuses the nine R0 configurations and twelve paired
++seeds in Appendix~\ref{app:supp-real}; it is not an independent replication of
++those training runs. It reconstructs 1,512 individual models over seven nested
++windows ending at the same final round. For run $r$, let $Y_{r,K}^{\mathcal A}$
++be its mean over the last $K$ batches and set
++$e_{r,K}^{\mathcal A}=Y_{r,K}^{\mathcal A}-x_{\rm ref}$.
++With $R=12$ and $\bar e_K=R^{-1}\sum_r e_{r,K}$, suppressing the algorithm
++superscript, the estimators are
++\begin{equation}
++\label{eq:e4-estimators}
++\widehat U_K=\frac{\sum_{r\ne s}e_{r,K}^{\top}e_{s,K}}{R(R-1)},\qquad
++\widehat V_K=\frac{\sum_r\|e_{r,K}-\bar e_K\|^2}{R-1},\qquad
++\widehat M_K=\frac1R\sum_r\|e_{r,K}\|^2=\widehat U_K+\widehat V_K.
++\end{equation}
++Independent runs justify the cross-run estimator of squared mean displacement
++for this finite-tail protocol. $\widehat U_K$ is not clipped at zero, and
++$\widehat V_K$ is the variance of the time-averaged outputs, not raw-checkpoint
++variance. Losses are evaluated at each $Y_{r,K}$ before averaging over runs;
++no ensemble-mean model is substituted.
++
++The primary configuration is $H=4,N=128,m=2,\gamma_b$. The $N=8,32$
++allocations are secondary, and the other six cells are diagnostics. All cells
++and all $K$ are retained. Primary windows contain $1{,}280K$ rounds and end at
++round 88,320. Across cells, batch lengths follow the original schedules, so
++equal $K$ need not mean equal compute. Costs, start/end rounds and window
++lengths are recorded in \texttt{WINDOW\_RESULTS.csv} and
++\texttt{PRACTICAL\_IMPLICATIONS.csv} in \texttt{supplementary\_results/E4/}.
++
++Intervals use 19,999 paired-seed bootstrap draws (seed 202610094), preserving
++one resampled seed index vector across algorithms, cells and windows. The
++maximum standardized, empirical-population-centered deviation gives approximate
++simultaneous 95\% intervals within the separately specified primary (196
++statistics), secondary (392), and diagnostic (1,176) families. A delete-one-seed
++jackknife with Bonferroni-$t$ intervals is retained as a sensitivity analysis.
++With twelve seeds, these are approximate sampling intervals; they exclude
++burn-in, stationary-approximation, and dataset uncertainty. Table~\ref{tab:e4-primary}
++reports the primary longest-window results using the original intervals.
++
++\begin{table}[t]
++\centering\small
++\caption{E4 primary longest-window results ($K=64$). Intervals are the approximate simultaneous 95\% primary-family intervals. $\Delta$ denotes SCAFFOLD minus FedAvg. Parameter-error terms and training gaps are scaled by $10^6$; shares are percentages and test loss is unscaled.}
++\label{tab:e4-primary}
++\begin{tabular}{@{}lrr@{}}
++\toprule
++Quantity & SCAFFOLD & FedAvg \\
++\midrule
++$\widehat U_K$ & $11.764\ [10.052, 13.476]$ & $5.386\ [4.125, 6.647]$ \\
++$\widehat V_K$ & $5.503\ [4.435, 6.570]$ & $5.492\ [4.431, 6.553]$ \\
++$\widehat M_K$ & $17.267\ [15.383, 19.151]$ & $10.878\ [9.459, 12.297]$ \\
++$100\widehat U_K/\widehat M_K$ & $68.13\ [62.56, 73.70]$ & $49.51\ [41.13, 57.89]$ \\
++Train objective gap & $0.725\ [0.630, 0.819]$ & $0.361\ [0.295, 0.426]$ \\
++Held-out log loss & $0.424889\ [0.424879, 0.424899]$ & $0.424922\ [0.424912, 0.424932]$ \\
++\midrule
++Paired difference & \multicolumn{2}{c}{Estimate [simultaneous interval]} \\
++$\Delta\widehat U_K$ & \multicolumn{2}{c}{$6.378\ [5.848, 6.908]$} \\
++$\Delta\widehat V_K$ & \multicolumn{2}{c}{$0.011\ [-0.036, 0.058]$} \\
++$\Delta\widehat M_K$ & \multicolumn{2}{c}{$6.389\ [5.830, 6.948]$} \\
++$\Delta$ train gap & \multicolumn{2}{c}{$0.364\ [0.336, 0.393]$} \\
++$\Delta$ held-out log loss & \multicolumn{2}{c}{$-0.00003269\ [-0.00003308, -0.00003231]$} \\
++\bottomrule
++\end{tabular}
++\end{table}
++
++At the primary longest window, the MSE difference is not the squared paired
++mean difference. For $b_S=b_F+\delta$, the population identity is
++$\|b_S\|^2-\|b_F\|^2=2b_F^{\top}\delta+\|\delta\|^2$.
++The sampling-corrected version gives
++$\Delta\widehat U=2(2.57965\times10^{-6})+1.21856\times10^{-6}$.
++Relative to FedAvg, the parameter-MSE point estimate is 58.7\% larger, but the
++absolute training-gap difference is $3.64\times10^{-7}$ against
++$f(x_{\rm ref})=0.4758413$. The held-out log-loss difference is negative,
++about $0.00769\%$ of the reference test loss in magnitude. Seed intervals
++condition on the fixed test set. At $N=32$ and $8$, the longest-window
++SCAFFOLD/FedAvg share estimates are $14.97\%/7.77\%$ and $1.61\%/0.97\%$;
++weaker identification in those cells remains in the full tables.
++
++\paragraph{Temporal uncertainty and crossover.}
++None of the 144 predeclared temporal-equivalence checks meets both the
++$10^{-3}$ vector-norm and $10^{-4}$ projected-drift margins. For primary
++SCAFFOLD, the first/last-32-batch mean-drift norm is $0.0013633$ with upper
++bound $0.0054372$; the projected interval is
++$[-0.0005438,0.0007484]$. Failure to establish equivalence does not establish
++nonstationarity. There is no distinct equal-length 64-batch anchor, so that
++window inherits the 32-batch check. SCAFFOLD has point estimates
++$\widehat U_K\geq\widehat V_K$ at $K=32,64$, but only $K=64$ has a positive
++lower bound for $U-V$ under both inference methods. The requirement of two
++consecutive supported windows plus temporal equivalence is therefore unmet;
++FedAvg has no point-estimate crossover on this grid. The protocol's 10\%
++parameter-MSE share is a researcher-chosen reference, not a predictive-loss
++threshold. All results remain finite-tail, with no certified stationary floor.
++
++Two later diagnostic pilots, seeds 30001 and 30002, separately used 25,600
++burn-in rounds and 128 batches of 1,280 rounds (189,440 rounds per run).
++They were not pooled with the original twelve seeds. These two-run pilots
++cannot settle stationarity or practical significance; the proposed 48-seed
++extension was not executed. Their finite states and maximum control-sum
++residual $6.50\times10^{-11}$ do not replace the historical $H=1$ arithmetic
++diagnostics in Appendix~\ref{app:supp-audit}.
++
++
++\subsection{Exploratory reference-point coefficient comparison}
++\label{app:e5-bridge}
++
++The post-hoc E5 analysis asks whether the coefficient suggests a useful
++reference direction and magnitude for the real-data paired displacement.
++Using the training-objective quantities from Appendix~\ref{app:supp-real}, define
++\begin{equation}
++\label{eq:e5-proxy}
++p_{\gamma,H,m}
++=-\frac{\gamma^2}{m}\,\kappa(H)\,A_{\rm ref}^{-1}T_{\rm ref}[\Sigma_{\rm ref}],
++\qquad \kappa(H)=\frac{(H-1)(2H-1)}{12H}.
++\end{equation}
++This substitutes reference-point covariance $\Sigma_{\rm ref}/m$ into the
++additive-noise coefficient; no fitted scale is used. It is a proxy, not a
++proved expansion for state-dependent minibatch noise. The observed vector is
++$\widehat\Delta_K=R^{-1}\sum_r(Y_{r,K}^{\Scaf}-Y_{r,K}^{\FedAvg})$.
++Table~\ref{tab:e5-bridge} gives every nonzero-proxy configuration at the
++preselected $K=64$: $a=p^\top\widehat\Delta_K/\|p\|^2$ is the projected
++observed/proxy ratio, $c$ is their cosine, and
++$e=\|\widehat\Delta_K-p\|/\|p\|$ is the relative vector residual. None is
++an explained fraction of MSE.
++
++\begin{table}[t]
++\centering\small
++\caption{Post-hoc E5 comparison at $K=64$, with no amplitude fitting. All six nonzero-proxy settings are retained. The three $H=1$ settings have zero proxy, so ratios and cosines are undefined.}
++\label{tab:e5-bridge}
++\begin{tabular}{@{}rrrrrrr@{}}
++\toprule
++$H$ & $N$ & $m$ & $\gamma/\gamma_b$ & $a$ & $c$ & $e$ \\
++\midrule
++2 & 32 & 8 & $1$ & $0.938327$ & $0.997719$ & $0.088505$ \\
++4 & 8 & 32 & $1$ & $0.715730$ & $0.996500$ & $0.290542$ \\
++4 & 32 & 8 & $1/4$ & $0.935781$ & $0.997252$ & $0.094644$ \\
++4 & 32 & 8 & $1/2$ & $0.867499$ & $0.998972$ & $0.138225$ \\
++4 & 32 & 8 & $1$ & $0.784711$ & $0.998994$ & $0.218151$ \\
++4 & 128 & 2 & $1$ & $0.796703$ & $0.999254$ & $0.205615$ \\
++\bottomrule
++\end{tabular}
++\end{table}
++
++All six magnitudes are overpredicted. At $H=4,N=32,m=8$, $a$ increases from
++$0.784711$ to $0.867499$ to $0.935781$ as the step size is halved twice.
++The corresponding adjacent log slopes are $1.8553$ and $1.8907$, a descriptive
++three-point trend rather than an identified asymptotic rate. Across allocations,
++$N$ and $m$ change together, so this is not a fixed-covariance client-count test.
++All seven windows and 124 coordinates remain in the companion tables; over
++all nonzero-proxy windows, cosine ranges down to $0.872197$.
++
++Directional agreement does not identify the control prefactor: the homogeneous
++FedAvg and SCAFFOLD second-order terms share the same
++$-A^{-1}T[C]$ direction. At the base step size with $N=32,m=8$, the observed
++$H=4$ to $H=2$ projected ratio is $2.9270$, rather than $3.5$.
++Its exploratory simultaneous interval $[2.7415,3.1125]$, jackknife interval
++$[2.7101,3.1439]$, and conservative projection-band transform
++$[2.6928,3.1919]$ all exclude $3.5$. They include the ordinary local-update
++ratio $3$, but do not validate that alternative for the paired difference.
++The $H=1$ residuals are approximately $10^{-11}$--$10^{-10}$; their zero-proxy
++structure is an implementation check, not exclusive coefficient identification.
++
++The analysis uses 19,999 paired-seed resamples (seed 202610096), with separately
++95\% scalar (1,068 statistics) and vector (117 comparisons) families and
++jackknife sensitivities. These exploratory intervals exclude proxy approximation,
++asymptotic remainder, and dataset uncertainty; the two families are not jointly
++95\%. All 54 early/late paired contrasts are retained without replacing E4's
++algorithm-specific temporal checks. This single shared-objective dataset therefore
++provides descriptive directional and scale information, not a test or extension
++of the stationary theorem, an isolated real-data control coefficient, a certified
++crossover, or evidence of predictive harm. The frozen E4 and historical $H=4$
++and $H=8$ outcomes are unchanged.
++
+--- before/appendix/D_reproducibility.tex
++++ after/appendix/D_reproducibility.tex
+@@ -1,4 +1,3 @@
+-\clearpage
+ \section{Computational provenance and reproducibility}
+ \label{app:reproducibility}
+ 
+@@ -62,3 +61,22 @@
+ The local \nolinkurl{supplementary_results/} directory supplies recorded tables, frozen settings, diagnostic summaries, manifests and the source-review snapshot. Data hashes and source URLs identify a9a from \url{https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html}. Full production arrays, restart states and examples remain in the experiment archive.
+ 
+ The source manifest lists \url{https://github.com/Duck-YP/stationary-bias-study} at commit \texttt{7f6de2c}, with the supplementary directory untracked. That commit is therefore not a verified supplementary-code release. Reproduction requires the recorded source, environment, commands and experiment arrays. The analysis-only batch audit covers E1 and R0, not R1/R2 batches or raw-example task-loss regeneration. Historical studies remain separate, and all discrepancy records are preserved.
++
++\paragraph{Model-averaging and reference-point analyses.}
++The \texttt{E4/} and \texttt{E5/} subdirectories of
++\texttt{supplementary\_results/} retain the exact submitted analysis tables,
++protocols, source receipts, and scope decisions used in
++Appendices~\ref{app:e4-averaging} and~\ref{app:e5-bridge}.
++E4 reuses the nine R0 cells and seeds 20001--20012; its separately recorded
++pilots use seeds 30001--30002. E5 is a post-hoc reanalysis of those saved
++production models, not new training. Windows, algorithms and reanalyses are
++not independent repetitions of the original experiment.
++The included E4 model vectors and E5 reference/paired vectors permit the
++point estimates and plotted values to be checked; the analysis source snapshots
++and input hashes identify the full external inputs. The manuscript package
++is not a replacement for the production arrays, data and restart archive,
++and does not establish a public supplementary-code release.
++The new figure panels are separately generated from saved E4 interval columns;
++LaTeX composes them at the audited final size. No estimates, interval rules,
++or original figure data were refitted during manuscript integration.
++
+--- before/figures_gallery.tex
++++ after/figures_gallery.tex
+@@ -60,4 +60,24 @@
+ intervals continue to exclude their targets. The residual panel retains
+ the complete combined nine-point saved grid.}
+ \end{figure}
++
++\clearpage
++\begin{figure}[p]
++\centering
++\begin{subfigure}[t]{0.49\textwidth}
++\centering
++\includegraphics[width=\linewidth]{figures/redrawn/e4_averaging_scaffold.pdf}
++\caption{SCAFFOLD}
++\end{subfigure}\hfill
++\begin{subfigure}[t]{0.49\textwidth}
++\centering
++\includegraphics[width=\linewidth]{figures/redrawn/e4_averaging_fedavg.pdf}
++\caption{FedAvg}
++\end{subfigure}
++\caption{E4 finite-tail averaging. The symmetric-log scale preserves negative
++squared-mean estimates. Each $K$ is a count of 1,280-round batches; all windows
++use the same end time and twelve paired seeds. Bars are the original
++simultaneous primary-family intervals, not stationarity certificates.}
++\end{figure}
++
+ \end{document}
+--- before/main.tex
++++ after/main.tex
+@@ -25,37 +25,15 @@
+ \begin{document}
+ \maketitle
+ \begin{abstract}
+-Even when all clients optimize the same strongly convex objective $f$, the global model parameters produced by constant-step federated learning may have a stationary mean that differs from the minimizer $x^\star$. Does increasing the number of clients eliminate this bias, or can some components persist? Answering this question clarifies the limits of client averaging. We study \Scaf{} and matched \FedAvg{} under full participation with independent bounded additive gradient noise. We analyze the long-run global model and within-round local fluctuations to derive multidimensional bias expansions in the step size $\gamma$ and inverse client count $1/N$. Both algorithms share a $\gamma/N$ coefficient, but their client-independent $\gamma^2$ coefficients differ. The \Scaf{} coefficient combines the local-update contribution found in \FedAvg{} with an additional contribution from persistent controls. These controls cancel in the server average but change local second moments, which interact with third-order curvature to shift the stationary mean. We establish explicit coefficient formulas with a remainder of $O_{H,d}(\gamma^2/N+\gamma^3)$, uniform in $N$ for fixed $H,d$ and sufficiently small $\gamma$. This bound permits identification of the client-independent coefficients along any joint limit $\gamma\to0$, $N\to\infty$, without a relative-rate condition. Controlled experiments examine coefficient predictions and local-step dependence; real-data experiments assess minibatch-allocation effects on finite-tail mean displacement.
++Even when all clients optimize the same strongly convex objective $f$, the global model parameters produced by constant-step federated learning may have a stationary mean that differs from the minimizer $x^\star$. Does increasing the number of clients eliminate this bias, or can some components persist? Answering this question clarifies the limits of client averaging. We study \Scaf{} and matched \FedAvg{} under full participation with independent bounded additive gradient noise. We analyze the long-run global model and within-round local fluctuations to derive multidimensional bias expansions in the step size $\gamma$ and inverse client count $1/N$. Both algorithms share a $\gamma/N$ coefficient, but their client-independent $\gamma^2$ coefficients differ. The \Scaf{} coefficient combines the local-update contribution found in \FedAvg{} with an additional contribution from persistent controls. These controls cancel in the server average but change local second moments, which interact with third-order curvature to shift the stationary mean. We establish explicit coefficient formulas with a remainder of $O_{H,d}(\gamma^2/N+\gamma^3)$, uniform in $N$ for fixed $H,d$ and sufficiently small $\gamma$. This bound permits identification of the client-independent coefficients along any joint limit $\gamma\to0$, $N\to\infty$, without a relative-rate condition. Controlled experiments examine coefficient predictions and local-step dependence. Real-data experiments show how minibatch allocation and model averaging change the contributions of finite-tail mean displacement and variance to parameter error, without implying a predictive penalty.
+ \end{abstract}
+ 
+-% \begin{abstract}
+-% Even when all clients optimize the same strongly convex objective \(f\), the global model \(x\) generated by a constant-step federated learning algorithm may have a stationary mean that differs from the unique minimizer \(x^\star = \arg\min_x f(x)\).
+-
+-% This raises a fundamental question: does increasing the number of clients eliminate this stationary-mean bias, or can certain components persist regardless of client count?
+-
+-% Understanding this distinction helps clarify the limitations of client averaging and how different update mechanisms in federated learning may affect the remaining stationary mean bias.
+-
+-
+-% To answer this question, we study two federated learning algorithms, \Scaf{} and \FedAvg{}, under the same stochastic setting, where all clients participate, optimize a common strongly convex and sufficiently smooth objective, and use stochastic gradients with independent bounded additive noise.
+-
+-% We analyze how stationary mean bias depends on the step size $\gamma$ and the number of clients $N$ by examining the long-run behavior of the global model and the fluctuations of local models within each communication round.
+-
+-% Our analysis reveals two distinct contributions to stationary mean bias: a leading term proportional to $\gamma/N$, which decreases as the number of clients increases, and a higher-order term proportional to $\gamma^2$, whose coefficient is independent of the client count.
+-
+-% By comparing \Scaf{} with \FedAvg{}, we show that the higher-order coefficient in \Scaf{} includes a contribution shared with ordinary local stochastic updates in \FedAvg{} and an additional contribution from its persistent control variates. Although these controls cancel when the server averages client updates, they still affect the second moments of local models, which interact with variations in the objective's curvature to shift the stationary mean.
+-
+-% We derive explicit multidimensional formulas for these contributions. For fixed dimension $d$ and local-step count $H$, the remainder is $O_{H,d}(\gamma^2/N+\gamma^3)$, uniformly over $N\geq 2$ for sufficiently small $\gamma$. The uniform remainder further ensures that the client-independent coefficients can be identified along any joint limit $\gamma\to0$ and $N\to\infty$, without imposing a relative-rate condition.
+-
+-
+-% Numerical experiments examine whether the derived coefficients accurately describe the observed stationary bias and whether comparisons between \Scaf{} and \FedAvg{} reveal the predicted additional contribution of persistent controls. We further investigate whether the client-independent bias component remains evident as the number of clients increases, and assess the consistency of the multidimensional predictions under coordinate transformations.
+-% \end{abstract}
+ 
+ \input{sections/01_introduction}
+ \input{sections/02_related_work}
+ \input{sections/03_setting_preliminaries}
+ \input{sections/04_main_results}
+ \input{sections/05_mechanism}
+-% \input{sections/06_proof_overview}
+ \input{sections/07_numerical_study}
+ \input{sections/08_discussion_limitations}
+ \input{sections/09_conclusion}
+@@ -71,8 +49,6 @@
+ \appendix
+ \input{appendix/A_scaffold_proof}
+ \input{appendix/B_fedavg_proof}
+-% \input{appendix/C_scalar_specialization}
+-% \input{appendix/D_coordinate_equivariance}
+ \input{appendix/C_numerical_details}
+ \input{appendix/D_reproducibility}
+ 
+--- before/sections/01_introduction.tex
++++ after/sections/01_introduction.tex
+@@ -8,7 +8,7 @@
+ 
+ Increasing the number of clients reduces the stochastic variation in the gradients aggregated at the server. Therefore, it is natural to expect that averaging over more clients will also reduce stationary mean bias. However, local stochastic updates introduce additional fluctuations within each communication round. When these fluctuations interact with the objective function's nonlinear structure, they can produce higher-order bias contributions whose coefficients do not necessarily decrease with the number of clients. This raises two fundamental questions: Can increasing the number of clients eliminate stationary mean bias, and how do different federated learning update mechanisms affect the remaining bias?
+ 
+-Understanding these questions helps clarify the limitations of client averaging and provides insight into the long-run behavior of federated learning algorithms. In particular, it allows us to distinguish the effects of averaging stochastic gradients from those associated with the algorithms' local-update and correction mechanisms.
++Understanding these questions distinguishes the effect of averaging stochastic gradients from that of changing local trajectories. It also matters when interpreting model averaging: averaging stationary iterates preserves their mean, even when it reduces fluctuations around that mean. Characterizing the mean shift therefore identifies an error component that further averaging alone does not remove; its importance for parameter error and predictive loss must be assessed separately.
+ 
+ Recent work by \citet{mangold2025scaffold} investigates the stationary behavior of stochastic \Scaf{} under a constant step size. In the homogeneous setting, their analysis identifies a leading stationary mean-bias contribution proportional to $\gamma/N$, where $\gamma$ is the step size and $N$ is the number of clients, and points to higher-order bias not suppressed by client averaging. Their Theorem~5.3 and the \FedAvg{} expansion of \citet[Theorem~3]{mangold2025fedavg} leave the client-independent $\gamma^2$ coefficient within the remainder. The question is therefore not whether higher-order bias can occur, but how large its client-independent coefficient is and how much is shared with ordinary local stochastic updates rather than additionally induced by persistent controls. Section~\ref{sec:related} compares the precise theorem statements and explains the extra remainder resolution needed for this attribution.
+ 
+@@ -44,7 +44,7 @@
+     We separate the client-independent bias contribution shared with ordinary local stochastic updates from the additional contribution associated with persistent SCAFFOLD controls. We also identify the local second-moment mechanism responsible for this difference.
+ 
+     \item \textbf{Numerical evaluation of theoretical predictions.}
+-    Controlled experiments examine the coefficients, their local-step dependence, and matched attribution. Experiments on regularized logistic regression with real data then compare allocations of a fixed minibatch budget and changes in step size and local training length, separating finite-tail parameter displacement from variance and predictive loss.
++    Controlled experiments examine the coefficients, their local-step dependence, and matched attribution. Real-data regularized logistic regression experiments examine fixed-budget minibatch allocation, step size, local training length, and temporal model averaging. They distinguish finite-tail mean displacement from variance and predictive loss, rather than treating parameter bias as a proxy for prediction error.
+ \end{itemize}
+ 
+ % The remainder of this paper reviews related work and introduces the mathematical setting, presents the stationary-bias expansions and their underlying mechanism, outlines the proof strategy, and evaluates the theoretical predictions through numerical experiments. Detailed proofs and supporting numerical analyses are provided in the appendices.
+--- before/sections/07_numerical_study.tex
++++ after/sections/07_numerical_study.tex
+@@ -5,8 +5,10 @@
+ coefficients describe the observed behavior of \Scaf{} and \FedAvg{}, whether a
+ matched comparison reveals the additional contribution of persistent controls,
+ and whether a client-independent component remains visible as the number of
+-clients increases. The experiments are finite-step checks of these predictions,
+-not proofs of the asymptotic expansions.
++clients increases. These controlled experiments are followed by real-data
++studies of minibatch allocation and temporal model averaging. The former check
++coefficient predictions at finite steps; the latter examine how the choice of
++training and averaging protocol changes the interpretation of parameter error.
+ 
+ \subsection{Experimental design and estimation}
+ \label{sec:num-protocol}
+@@ -225,9 +227,10 @@
+ \label{fig:real-allocation}
+ \end{figure}
+ 
+-Displacement increases as more clients receive smaller batches (Figure~\ref{fig:real-allocation}). The $N=128$ minus $N=8$ contrasts are $0.003114$ for SCAFFOLD and $0.002072$ for FedAvg, with adjusted intervals $[0.002749,0.003478]$ and $[0.001713,0.002431]$. Raw variance estimates stay near $0.00235$--$0.00236$. The allocation difference remains in post-hoc first- and last-half checks; no separately extended R0 burn/tail run was collected, so these remain finite-tail findings.
+-
+-At $N=32,m=8$, lowering $\gamma$ reduces both displacement and variance, whereas lowering $H$ changes displacement with much less change in variance (Table~\ref{tab:supp-policy}). The horizons differ, so this is not a fixed-cost efficiency ranking. At $N=128$, squared mean displacement accounts for about $0.50\%$ and $0.23\%$ of parameter MSE for SCAFFOLD and FedAvg. Variance dominates, and held-out loss can improve slightly while displacement increases: the measurable mean-shift effect is not a large demonstrated predictive penalty.
++Displacement increases as more clients receive smaller batches (Figure~\ref{fig:real-allocation}). The $N=128$ minus $N=8$ contrasts are $0.003114$ for SCAFFOLD and $0.002072$ for FedAvg, with adjusted intervals $[0.002749,0.003478]$ and $[0.001713,0.002431]$. Raw variance estimates stay near $0.00235$--$0.00236$. The allocation difference remains in post-hoc first- and last-half checks of the original R0 tails. These are finite-tail findings; Section~
++ef{sec:num-averaging} examines averaging within the same runs and reports the remaining temporal uncertainty.
++
++At $N=32,m=8$, lowering $\gamma$ reduces both displacement and variance, whereas lowering $H$ changes displacement with much less change in variance (Table~\ref{tab:supp-policy}). The horizons differ, so this is not a fixed-cost efficiency ranking. At $N=128$, squared mean displacement accounts for about $0.50\%$ and $0.23\%$ of the \emph{raw-checkpoint} parameter MSE for SCAFFOLD and FedAvg. This variance-dominated decomposition concerns individual checkpoints, not time-averaged models. Held-out loss can improve slightly while displacement increases.
+ 
+ \begin{table}[t]
+ \centering\small
+@@ -244,3 +247,60 @@
+ \end{table}
+ 
+ \FloatBarrier
++
++\subsection{Model averaging changes the error decomposition}
++\label{sec:num-averaging}
++
++Does the small mean-displacement share of raw-checkpoint error persist after
++model averaging? We reconstruct time-averaged models from all nine frozen R0
++configurations and their twelve paired seeds, without new production training.
++Each model averages the last $K\in\{1,2,4,8,16,32,64\}$ stored batches of its
++own run, with a common end time. The primary configuration is
++$H=4,N=128,m=2,\gamma=\gamma_b$. Its batch contains 1,280 rounds, so even
++$K=1$ is an averaged model. The longest window contains 81,920 rounds after
++6,400 burn-in rounds; the full trajectory uses 90,439,680 example-gradient
++evaluations per algorithm. The analysis concerns these recorded long horizons.
++
++Figure~\ref{fig:e4-averaging} separates the cross-run estimate $\widehat U_K$
++of squared finite-tail mean displacement from the between-run variance
++$\widehat V_K$ of these averaged models. Their sum equals the estimated
++averaged-model MSE; Appendix~\ref{app:e4-averaging} defines the estimators and
++preserved seed-level inference. From $K=1$ to $64$, variance decreases about
++57-fold for both algorithms. At $K=64$, the estimated mean-displacement shares
++are $68.1\%$ for SCAFFOLD and $49.5\%$ for FedAvg, with simultaneous intervals
++$[62.6\%,73.7\%]$ and $[41.1\%,57.9\%]$. Thus the raw-checkpoint fractions do
++not describe the error composition of the averaged outputs.
++
++\begin{figure}[t]
++\centering
++\captionsetup[subfigure]{font=small}
++\begin{subfigure}[t]{0.49\textwidth}
++\centering
++\includegraphics[width=\linewidth]{figures/redrawn/e4_averaging_scaffold.pdf}
++\caption{SCAFFOLD}
++\end{subfigure}\hfill
++\begin{subfigure}[t]{0.49\textwidth}
++\centering
++\includegraphics[width=\linewidth]{figures/redrawn/e4_averaging_fedavg.pdf}
++\caption{FedAvg}
++\end{subfigure}
++\caption{Finite-tail error components of time-averaged R0 models at
++$H=4,N=128,m=2,\gamma_b$. Each batch contains
++1,280 rounds. Bars retain the approximate simultaneous 95\% primary-family
++intervals across twelve independent runs; overlapping windows are not
++independent replicates. The symmetric-log ordinate retains negative
++squared-mean estimates and intervals crossing zero without clipping.}
++\label{fig:e4-averaging}
++\end{figure}
++
++At the longest window, the paired SCAFFOLD-minus-FedAvg parameter-MSE difference
++is $6.39\times10^{-6}$, with interval $[5.83,6.95]\times10^{-6}$, and is mainly
++associated with squared mean displacement rather than a resolved variance
++difference. Its training-objective gap difference is only
++$3.64\times10^{-7}$; SCAFFOLD's held-out log loss is slightly lower, by
++$3.27\times10^{-5}$. These distinguish parameter error from predictive harm.
++The predeclared temporal-equivalence and crossover requirements are not met,
++so the findings concern finite-tail averages, not certified stationary bias.
++The full windows, absolute loss values, diagnostics, and two separate
++longer-run pilots are retained in Appendix~\ref{app:e4-averaging}.
++
+--- before/sections/08_discussion_limitations.tex
++++ after/sections/08_discussion_limitations.tex
+@@ -1,13 +1,30 @@
+ \section{Discussion}
+ \label{sec:discussion}
+ 
+-Client averaging and local update rules affect stationary mean bias differently: the former suppresses the resolved $\gamma/N$ term, whereas the latter changes the client-independent $\gamma^2$ coefficient. Controls can therefore shift the long-run mean through local trajectories even though they cancel from the direct server increment. The affine translation separates this stochastic effect from correction of fixed gradient offsets.
++Client averaging suppresses the resolved $\gamma/N$ bias term, whereas local
++update rules change the client-independent $\gamma^2$ coefficient. The affine
++translation separates the stochastic control effect from correction of fixed
++gradient offsets.
+ 
+-For either algorithm's invariant law $\pi$ and $b=\E_\pi[x]-x^\star$, parameter error decomposes as
++For either algorithm's invariant law $\pi$ and $b=\E_\pi[x]-x^\star$,
++parameter error decomposes as
+ \begin{equation}
+ \label{eq:stationary-bias-variance}
+ \E_\pi\|x-x^\star\|^2
+-=\underbrace{\|b\|^2}_{\text{squared mean bias}}
+-+\underbrace{\tr\!\bigl(\Cov_\pi(x)\bigr)}_{\text{stationary variance}}.
++=
++\underbrace{\|b\|^2}_{\text{squared mean bias}}
+++
++\underbrace{\operatorname{tr}\Cov_\pi(x)}_{\text{stationary variance}}.
+ \end{equation}
+-Equation~\eqref{eq:stationary-bias-variance} prevents a mean-shift coefficient from being interpreted as an increase of the same order in total MSE. The real-data study illustrates this distinction: allocation changes the finite-tail mean, but variance dominates MSE and held-out loss need not worsen. Label-skew results also show that drift-correction benefits can dominate the algorithm difference. The coefficients clarify one mechanism; assessing training decisions requires considering variance, predictive loss and finite-time cost as well.
++Averaging stationary iterates preserves $b$; temporal dependence determines the
++variance reduction. In the real-data study, raw-checkpoint error is variance
++dominated, but mean displacement is substantial relative to parameter error
++after long-window averaging. Absolute objective differences remain small, and
++a stationary floor or predictive harm is not established. Under label skew,
++drift-correction benefits can instead dominate the algorithm difference.
++
++The theoretical contribution is a quantitative source decomposition, not an
++algorithm ranking. A post-hoc reference-point comparison, including its amplitude
++and local-step-scaling mismatches, is reported in
++Appendix~\ref{app:e5-bridge}. It is descriptive evidence, not validation of the
++additive-noise control coefficient on real data.
+--- before/sections/09_conclusion.tex
++++ after/sections/09_conclusion.tex
+@@ -1,8 +1,19 @@
+-
+-
+ \section{Conclusion and future directions}
+ \label{sec:conclusion}
+ 
+-We characterized the stationary mean bias of \Scaf{} and matched \FedAvg{} under a common homogeneous stochastic model. Both algorithms share a leading $\gamma/N$ contribution, but their client-independent $\gamma^2$ coefficients differ. The matched comparison identifies the additional contribution of persistent SCAFFOLD controls and traces it to changes in within-round local second moments that interact with third-order curvature. Our uniform remainder bounds allow these coefficients to be identified along joint small-step and large-client limits. An exact control translation extends the SCAFFOLD characterization to affine objective shifts. Controlled experiments examine coefficient and local-step predictions, while real-data experiments show how fixed-budget minibatch allocation affects finite-tail parameter displacement.
++We derived explicit stationary mean-bias coefficients for \Scaf{} and matched
++\FedAvg{} under a common homogeneous stochastic model. Their shared
++$\gamma/N$ term and distinct client-independent $\gamma^2$ coefficients separate
++ordinary local-update and persistent-control contributions. The latter arises
++through local second moments coupled with third-order curvature. A uniform
++remainder identifies these coefficients along arbitrary joint small-step and
++large-client limits, and an exact control translation extends the SCAFFOLD
++result to affine objective shifts. Controlled experiments examine coefficient
++predictions; real-data studies show how minibatch allocation and temporal
++averaging change finite-tail parameter-error composition without establishing
++predictive harm.
+ 
+-An important next step is to investigate how unequal client curvature and partial participation affect the coefficient decomposition, particularly because control variates are designed to address client drift. State-dependent gradient noise may introduce further interactions between the controls and local fluctuations. The explicit control-associated coefficient also suggests studying whether alternative control updates can reduce stationary bias while preserving their convergence benefits, and how the stationary characterization relates to finite-time bias and variance.+Future work can examine unequal client curvature, partial participation, and
++state-dependent gradient noise. The explicit control-associated coefficient
++also motivates studying bias-reducing control updates together with their
++finite-time convergence, variance, and computational cost.

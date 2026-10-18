@@ -1,0 +1,14 @@
+{
+  "spec_sha256": "697ee7337def280b2182ddf4e435a3fe08810615c8089c81e5d0ce8d400a4712",
+  "draws": 19999,
+  "seed": 202610096,
+  "scalar_family_size": 1068,
+  "scalar_critical": 5.773375528160122,
+  "jackknife_Bonferroni_t": 6.459337090821677,
+  "vector_family_size": 117,
+  "vector_critical": 1.6723716884814939,
+  "scalar_and_vector_families_separately_95_percent_not_joint": true,
+  "undefined_scaling_draws": 0,
+  "fitted_parameters": 0,
+  "new_training": false
+}

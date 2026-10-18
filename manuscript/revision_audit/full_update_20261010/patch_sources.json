@@ -1,0 +1,26 @@
+[
+  {
+    "path": "sections/02_related_work.tex",
+    "patch_archive": "SCAFFOLD_Numerical_Grouping_20261010.zip",
+    "sha256": "0afdbe904229c778a5661638bc63ca7945e33321567643a7d5bfdae984c971f2",
+    "baseline_sha256": "a1ed6d0083ec2aa36d773cf6e250e9c1c88b43fe2c52f4e0e4bcc2de582c2d77"
+  },
+  {
+    "path": "sections/07_numerical_study.tex",
+    "patch_archive": "SCAFFOLD_Numerical_Grouping_20261010.zip",
+    "sha256": "028c97f2b766e050b020822822089ca47f8c5d7eedd759ebbf3903f51f8786f2",
+    "baseline_sha256": "bf8c51de83e26f035df07137c141474844d2d81543815d1122231e1b7cb99afe"
+  },
+  {
+    "path": "sections/01_introduction.tex",
+    "patch_archive": "SCAFFOLD_Significance_Framing_20261010.zip",
+    "sha256": "0368415117c7371e118a8665caec74cd9a0b6396b883a07b87c397ef79941211",
+    "baseline_sha256": "66994d087565efc108be0f2e0f46876fc195486d2840c3f47f4a29451b9008b8"
+  },
+  {
+    "path": "sections/08_discussion_limitations.tex",
+    "patch_archive": "SCAFFOLD_Significance_Framing_20261010.zip",
+    "sha256": "1e07fb1b88925794989ebda8b6be16eb740e7b2ac67ff0d016e71de0fe8ca920",
+    "baseline_sha256": "c88a0dc91a143de6d3763dc8a60af043dd29794747d9f4978d48a8d1fb2fffbb"
+  }
+]

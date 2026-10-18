@@ -1,0 +1,18 @@
+# Table 4: Contraction and matched-noise first coordinate
+
+Status: **supported**. Section 6.2.7, page 14.
+
+tab:mechanism-controls; five fixed primary balance/full-grid selections. Targets use six decimals; estimates and saved simultaneous endpoints use eight.
+
+| rho / contrast | noise law | target | estimate | simultaneous lower | simultaneous upper |
+| --- | --- | --- | --- | --- | --- |
+| -1/4 | Symmetric | 0.021875 | 0.02187858 | 0.02184128 | 0.02191589 |
+| 0 | Symmetric | 0.000000 | -0.00002056 | -0.00006150 | 0.00002039 |
+| +1/4 | Symmetric | -0.021875 | -0.02185115 | -0.02189536 | -0.02180693 |
+| +1/4 | Asymmetric | -0.021875 | -0.02188179 | -0.02193153 | -0.02183205 |
+| Symmetric minus asymmetric (rho=+1/4) |  | 0.000000 | 0.00003064 | -0.00003564 | 0.00009692 |
+
+Sources:
+
+- `artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv`
+- `artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json`

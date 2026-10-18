@@ -1,0 +1,321 @@
+{
+  "version": "E4_v1_existing_run_replay",
+  "frozen_utc": "2026-10-09T14:17:23.152918+00:00",
+  "no_training": true,
+  "no_manuscript_changes": true,
+  "cells": [
+    {
+      "id": "E3_R0_p0_H1_N128_g0.196078431373",
+      "family": "E3",
+      "H": 1,
+      "N": 128,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 2,
+      "roles": [
+        "negative_control"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R0_p0_H1_N32_g0.196078431373",
+      "family": "E3",
+      "H": 1,
+      "N": 32,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 8,
+      "roles": [
+        "negative_control"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R0_p0_H1_N8_g0.196078431373",
+      "family": "E3",
+      "H": 1,
+      "N": 8,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 32,
+      "roles": [
+        "negative_control"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R0_p0_H2_N32_g0.196078431373",
+      "family": "E3",
+      "H": 2,
+      "N": 32,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 8,
+      "roles": [
+        "policy"
+      ],
+      "schedule": {
+        "tau0": 256,
+        "burn": 12800,
+        "batch_length": 2560,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 37.41133328427707
+    },
+    {
+      "id": "E3_R0_p0_H4_N128_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 128,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 2,
+      "roles": [
+        "allocation"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R0_p0_H4_N32_g0.0490196078431",
+      "family": "E3",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.04901960784313725,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 8,
+      "roles": [
+        "policy"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R0_p0_H4_N32_g0.0980392156863",
+      "family": "E3",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.0980392156862745,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 8,
+      "roles": [
+        "policy"
+      ],
+      "schedule": {
+        "tau0": 256,
+        "burn": 12800,
+        "batch_length": 2560,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 37.41133328427707
+    },
+    {
+      "id": "E3_R0_p0_H4_N32_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 8,
+      "roles": [
+        "allocation"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R0_p0_H4_N8_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 8,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 32,
+      "roles": [
+        "allocation"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    }
+  ],
+  "seeds": [
+    20001,
+    20002,
+    20003,
+    20004,
+    20005,
+    20006,
+    20007,
+    20008,
+    20009,
+    20010,
+    20011,
+    20012
+  ],
+  "K": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "same_end_batch": 64,
+  "model_source": "batch_raw_sum of actual post-update global iterates / batch_count",
+  "algorithms": [
+    "SCAFFOLD",
+    "FedAvg"
+  ],
+  "primary_cell": "E3_R0_p0_H4_N128_g0.196078431373",
+  "secondary_cells": [
+    "E3_R0_p0_H4_N8_g0.196078431373",
+    "E3_R0_p0_H4_N32_g0.196078431373"
+  ],
+  "families": {
+    "primary": [
+      "E3_R0_p0_H4_N128_g0.196078431373"
+    ],
+    "secondary": [
+      "E3_R0_p0_H4_N8_g0.196078431373",
+      "E3_R0_p0_H4_N32_g0.196078431373"
+    ],
+    "diagnostic": [
+      "E3_R0_p0_H1_N128_g0.196078431373",
+      "E3_R0_p0_H1_N32_g0.196078431373",
+      "E3_R0_p0_H1_N8_g0.196078431373",
+      "E3_R0_p0_H2_N32_g0.196078431373",
+      "E3_R0_p0_H4_N32_g0.0490196078431",
+      "E3_R0_p0_H4_N32_g0.0980392156863"
+    ]
+  },
+  "bootstrap": {
+    "draws": 19999,
+    "seed": 202610094,
+    "coverage": 0.95,
+    "unit": "paired independent seed label; one multinomial count vector across all cells/algorithms/K",
+    "method": "standardized max absolute empirical-population-centered bootstrap deviation",
+    "centering": "U0=||b_hat||^2; V0=(R-1)/R V_hat; MSE0=MSE_hat; all derived functionals use these centers",
+    "scalar_family_per_cell": [
+      "both algorithms all K: U,V,MSE,U_minus_V,U_minus_0.1MSE,projection,train_gap,test_loss,share,V_minus_K1",
+      "all K: delta_U,delta_V,delta_MSE,delta_projection,delta_train,delta_test,U_delta,C_cross"
+    ],
+    "limits": "Approximate finite-R bootstrap, not exact coverage or a stationary-law certificate"
+  },
+  "sensitivity": {
+    "method": "delete-one seed jackknife-t; Bonferroni within same scalar family",
+    "decision": "positive crossover/materiality needs both max-bootstrap and nondegenerate jackknife sensitivity lower bounds >0",
+    "degeneracy": "jackknife SE <1e-3 bootstrap SD is weak precision, never strong evidence"
+  },
+  "materiality": {
+    "MSE_share": 0.1,
+    "scope": "researcher-chosen parameter-error benchmark, not predictive-harm threshold"
+  },
+  "temporal": {
+    "contrasts": "first vs last K batches for K=1,2,4,8,16,32; middle vs last at K=8,16; K64 inherits first/last32 only",
+    "projection_equivalence_margin": 0.0001,
+    "vector_norm_equivalence_margin": 0.001,
+    "family": "all R0 cells, both algorithms, all declared temporal contrasts",
+    "vector_bound": "||mean paired drift|| + q95 * sqrt(trace(sample covariance)/R); q95 from paired bootstrap max standardized norm deviation",
+    "projection_bound": "simultaneous standardized absolute bootstrap deviations",
+    "gate": "both vector and frozen-projection equivalence pass for own first/last K (K64 uses K32)",
+    "interpretation": "operational finite-tail equivalence only; no non-rejection-as-stability; no stationary certificate"
+  },
+  "crossover": {
+    "descriptive": "signed U>=V",
+    "uncertainty_supported": "U-V lower bounds >0 under primary/secondary family bootstrap AND jackknife; temporal gate; >=2 consecutive declared K",
+    "stationary_behavior": "NOT_CERTIFIED, irrespective of finite-tail crossover"
+  },
+  "objective": {
+    "lambda": 0.01,
+    "all_124_coordinates_regularized": true,
+    "train": "frozen retained32512 uniform rows",
+    "test": "frozen a9a.t16281 rows with same row normalization and intercept",
+    "evaluate": "each individual run model Y, not mean checkpoint losses",
+    "prediction_claim": "no claim of consequential predictive harm from parameter share alone; report absolute and baseline-relative test change"
+  },
+  "raw_checkpoint_baseline": "batch_sumsq/count estimates mean ||x-x_ref||^2; raw variance = rawMSE - signed full-tail U, not averaged-model V",
+  "controlled_bridge": "NOT_EXECUTED; CONTROL_COEFFICIENT_NOT_ISOLATED_IN_REAL_DATA",
+  "phase4_trigger": "missing reconstructible averages OR insufficient evidence for a stationary interpretation; cost and separate v2 before any training",
+  "inputs_sha256": {
+    "inputs\\ARTIFACT_MANIFEST.json": "be15492f0960b9afe218d1ef43970dc00b78c6f1da8ec13cd486ba7c5416aff9",
+    "inputs\\batches.npz": "9312ad23f55b6b57e56c2d193cde68fd00fffa6d26e90992486bfeb713bcdd06",
+    "inputs\\DATA_MANIFEST.json": "9789fbb223e068d9c3fc97f5a8c3a73f0bf77be609d7e369618311c7721173e6",
+    "inputs\\E4_USER_BRIEF.md": "011ac719e33acb0008daee6bae68511a7989215b2a273a880d48704b1db5c24e",
+    "inputs\\EXPERIMENT_REGISTRY.csv": "45d1e68480715c20ec8fbeeff63d08f14b0c9a3bd801f9ed60be6dc50ea19738",
+    "inputs\\full_results.csv": "170aa8de897e57c16b1fb25de1ee874ea19d62a1470c93d54ccd2bf1391750d9",
+    "inputs\\membership.npz": "e8ab826501e53efdd3780cfe1fddc38dd7ddf20d1bcca1f41134d2b0df053536",
+    "inputs\\optimizer_certificates.json": "87dce8585c772c9ea68755728afefc5b5d564d85ee8be1078a4340d8cfa6b642",
+    "inputs\\per_run_estimates.csv": "cce2ef4ca9f0b6965c295823ad055e62622ad9c68b616be994a54e77cb7f70ed",
+    "inputs\\PROTOCOL_FROZEN.json": "fd0f9ca205355f0bd4a3101985aa9fbaf4da938321bb56c529c2164b646153ec",
+    "inputs\\R0_CONFIGS.json": "f8d7cbeca42460ec3f61dac49554ea6d41809bf0a750533bae9a783d50f29a53",
+    "inputs\\reference_optimizers.npz": "4aaa72d4f957f4874fb22f4176f3bbdd68c5c4baabd1e4bf44ac234c347b512e",
+    "inputs\\SOURCE_MANIFEST.json": "0b9c463e8a1dbe6d0400ad5417820894c4d477e16873b5fee81e55039599c546",
+    "inputs\\training_csr.npz": "5bab537d3c034a00afd29942e5f4ac436f40849ea8b82f925af3eb90a1430b6d"
+  }
+}

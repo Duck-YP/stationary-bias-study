@@ -1,0 +1,70 @@
+[
+  {
+    "panel": "e4_averaging_scaffold",
+    "algorithm": "SCAFFOLD",
+    "points_per_curve": 7,
+    "curves": [
+      "U",
+      "V"
+    ],
+    "source": "supplementary_results\\E4\\BIAS_VARIANCE_MSE.csv",
+    "source_sha256": "0a403edf7cb6f0b32b5fba70896c186f7aece60f51af8ed11a5c4ab6a0b93c66",
+    "uncertainty": "saved approximate simultaneous 95% E4 primary-family intervals, 196 statistics",
+    "native_width_inches": 3.07118125,
+    "native_height_inches": 3.25,
+    "intended_width": "0.49\\textwidth",
+    "signed_U_not_clipped": true,
+    "refitting": false,
+    "yscale": "symlog",
+    "linthresh": 1e-05,
+    "linscale": 0.75,
+    "ylim": [
+      -5.5e-05,
+      0.0005
+    ],
+    "xlim": [
+      0.8,
+      80
+    ],
+    "all_interval_endpoints_within_display": true,
+    "typography": "T1 Latin Modern; full-size tick exponents",
+    "markers": {
+      "U": "filled circle, solid line",
+      "V": "open square, dashed line"
+    }
+  },
+  {
+    "panel": "e4_averaging_fedavg",
+    "algorithm": "FedAvg",
+    "points_per_curve": 7,
+    "curves": [
+      "U",
+      "V"
+    ],
+    "source": "supplementary_results\\E4\\BIAS_VARIANCE_MSE.csv",
+    "source_sha256": "0a403edf7cb6f0b32b5fba70896c186f7aece60f51af8ed11a5c4ab6a0b93c66",
+    "uncertainty": "saved approximate simultaneous 95% E4 primary-family intervals, 196 statistics",
+    "native_width_inches": 3.07118125,
+    "native_height_inches": 3.25,
+    "intended_width": "0.49\\textwidth",
+    "signed_U_not_clipped": true,
+    "refitting": false,
+    "yscale": "symlog",
+    "linthresh": 1e-05,
+    "linscale": 0.75,
+    "ylim": [
+      -5.5e-05,
+      0.0005
+    ],
+    "xlim": [
+      0.8,
+      80
+    ],
+    "all_interval_endpoints_within_display": true,
+    "typography": "T1 Latin Modern; full-size tick exponents",
+    "markers": {
+      "U": "filled circle, solid line",
+      "V": "open square, dashed line"
+    }
+  }
+]

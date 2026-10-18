@@ -1,0 +1,135 @@
+--- baseline/sections/02_related_work.tex
++++ updated/sections/02_related_work.tex
+@@ -4,15 +4,17 @@
+ \paragraph{Federated optimization and stationary-bias characterization.}
+ \Scaf{} uses control variates to mitigate client drift caused by objective heterogeneity \citep{karimireddy2020scaffold}. Subsequent finite-time analyses refine the convergence theory of local-update methods. For example, \citet{luo2025revisiting} analyze LocalSGD and \Scaf{} under gradient and Hessian similarity, weak convexity, and higher-order smoothness conditions, while \citet{mangold2025sharper} establish sharper convergence guarantees for \Scaf{} on quadratic objectives.
+ 
+-Beyond finite-time convergence, constant-step stochastic optimization can be studied through the stationary distribution of its underlying Markov chain \citep{dieuleveut2020bridging,chen2022stationary}. \citet{mangold2025fedavg} derive stationary bias and variance expansions for \FedAvg{}, while \citet{mangold2025scaffold} analyze the joint global-model/control process of \Scaf{}. Table~\ref{tab:prior-bias-resolution} compares their mean-bias theorems after specialization to a common objective and bounded additive noise. The common leading coefficient is $B_{11}$ from Equation~\eqref{eq:scaf-B}. For the \FedAvg{} Theorem~3 comparison, the client noise laws are additionally taken identical, as required by its Assumption~A6; its Theorem~4, specialized to $f_c=f$, also covers distinct client noise laws and has zero heterogeneity contribution.
++Beyond finite-time convergence, constant-step stochastic optimization can be studied through the stationary distribution of its underlying Markov chain \citep{dieuleveut2020bridging,chen2022stationary}. \citet{mangold2025fedavg} derive stationary bias and variance expansions for \FedAvg{}, while \citet{mangold2025scaffold} analyze the joint global-model/control process of \Scaf{}. Table~\ref{tab:prior-bias-resolution} compares the analytical resolution of these results with ours for the same algorithms: the updates and their stationary biases are unchanged, but the analyses differ in how precisely they characterize the bias beyond the shared leading term.
++
++The comparison specializes the prior results to a common objective and bounded additive noise, with the shared coefficient $B_{11}$ given in Equation~\eqref{eq:scaf-B}. For the \FedAvg{} Theorem~3 comparison, the client noise laws are additionally taken identical, as required by its Assumption~A6; its Theorem~4, specialized to $f_c=f$, also covers distinct client noise laws and has zero heterogeneity contribution.
+ 
+ \begin{table}[htbp]
+ \centering\small
+-\caption{Theorem-to-theorem comparison of stationary mean bias. Each entry gives the terms remaining after subtracting $(\gamma/N)B_{11}$ in the common-objective, additive-noise setting. The source theorem numbers refer to the author versions specified in the bibliography.}
++\caption{Analytical resolution beyond the shared leading bias term. Each entry characterizes $b^{\mathcal A}_{\gamma,N,H}-(\gamma/N)B_{11}$ in the common-objective, additive-noise setting. Prior bounds leave the client-independent second-order coefficient unresolved; the last row identifies it explicitly and bounds the residual. Source theorem numbers refer to the author versions specified in the bibliography.}
+ \label{tab:prior-bias-resolution}
+ \begin{tabularx}{\linewidth}{@{}p{0.46\linewidth}X@{}}
+ \toprule
+-Result & Remaining stationary mean bias \\
++Analysis & Characterization beyond the shared leading term \\
+ \midrule
+ \Scaf{}, \citet[Theorem~5.3]{mangold2025scaffold}
+ & $O(\gamma^2H+\gamma^{3/2})$ \\
+@@ -27,10 +29,9 @@
+ \end{tabularx}
+ \end{table}
+ 
+-\begingroup
+-\clubpenalty=10000
+-Dividing the cited remainder bounds by $\gamma^2$ gives $O(H+\gamma^{-1/2})$, or $O(H^2+H\gamma^{-1/2})$. These bounds alone therefore do not identify the $\gamma^2$ coefficient. Under the additional regularity and noise assumptions of Section~\ref{sec:setting}, our remainder about the explicit second-order term instead becomes $O_{H,d}(1/N+\gamma)$ after normalization, uniformly in $N$ for fixed $d,H$. It vanishes along every joint small-step, large-client limit. The additional resolution determines an algorithm-dependent mean shift that the shared leading term leaves indistinguishable, enabling the local-update/control attribution. This comparison concerns coefficient identification on the shared submodel; the cited results retain their broader coverage of heterogeneous objectives and state-dependent noise.
+-\par\endgroup
++Dividing the cited remainder bounds by $\gamma^2$ gives $O(H+\gamma^{-1/2})$, or $O(H^2+H\gamma^{-1/2})$, neither of which guarantees identification of the second-order coefficient. Under the additional regularity and noise assumptions of Section~\ref{sec:setting}, subtracting both explicit bias terms from our expansion and dividing by $\gamma^2$ instead leaves $O_{H,d}(1/N+\gamma)$, uniformly in $N$ for fixed $d,H$. This residual vanishes along every joint limit $\gamma\to0$, $N\to\infty$. The resulting formulas specify the direction, magnitude, and local-step dependence of the client-independent second-order contribution, and separate the part shared with ordinary local updates from the additional persistent-control contribution. This sharper characterization concerns the shared submodel; the prior results retain their broader coverage of heterogeneous objectives and state-dependent noise.
++
++The controlled experiments in Section~\ref{sec:num-controlled} assess these newly resolved quantitative predictions: the algorithm-specific coefficients, their matched difference, and its local-step dependence. The earlier upper bounds remain compatible with the observations but do not specify these coefficient targets. Thus, the experiments examine the additional information supplied by the analysis, not a reduction in bias obtained by modifying either algorithm.
+ 
+ \paragraph{Mechanisms and attribution of stationary bias.}
+ Previous studies of stochastic approximation have examined how different mechanisms contribute to stationary bias. \citet{allmeier2024bias} characterize the bias of constant-step stochastic approximation with Markovian noise and derive a first-order expression for the time-averaged bias through a Lyapunov equation. \citet{huo2024collusion} analyze nonlinear stochastic approximation with Markovian data, distinguishing contributions from memory, nonlinearity, and their interaction. Similarly, \citet{versini2026dsgd} investigate stationary bias in decentralized SGD and distinguish contributions associated with stochasticity and decentralization. These decompositions distinguish effects of memory, nonlinearity, and network structure. Here the fresh gradient noise is independent, while dependence is introduced by the algorithm's persistent controls. The matched \Scaf{}--\FedAvg{} comparison resolves the effect of this internal state through its contribution to local second moments.
+
+--- baseline/sections/07_numerical_study.tex
++++ updated/sections/07_numerical_study.tex
+@@ -46,7 +46,16 @@
+ target inclusion is a diagnostic rather than a formal hypothesis test of the
+ theorems.
+ 
+-\subsection{Individual stationary-bias coefficients}
++\subsection{Controlled tests of analytical predictions}
++\label{sec:num-controlled}
++
++We examine the quantitative predictions resolved by the analysis in
++Table~\ref{tab:prior-bias-resolution}: the algorithm-specific coefficients,
++their matched difference, and their client-count and local-step dependence.
++Multidimensional and affine-shift checks additionally assess the representation
++consistency and exact control translation.
++
++\subsubsection{Individual stationary-bias coefficients}
+ \label{sec:num-coefficients}
+ 
+ We first check the two algorithms separately. For $H=2$, the theoretical
+@@ -62,7 +71,7 @@
+ but do not isolate the source of the SCAFFOLD contribution. We therefore turn
+ to a separately generated matched comparison.
+ 
+-\subsection{Matched contribution of persistent controls}
++\subsubsection{Matched contribution of persistent controls}
+ \label{sec:num-attribution}
+ 
+ To assess Corollary~\ref{cor:attribution}, we run matched SCAFFOLD--FedAvg
+@@ -132,7 +141,7 @@
+ diagnostic interpretation and unresolved sources; the full intervals are
+ in Appendix~\ref{app:num-coefficients}.
+ 
+-\subsection{Client-count behavior and multidimensional checks}
++\subsubsection{Client-count behavior and multidimensional checks}
+ \label{sec:num-supporting}
+ 
+ The preceding experiments vary $N$ and $\gamma$ together. To examine the
+@@ -179,7 +188,7 @@
+ 
+ 
+ 
+-\subsection{Independent local-step and affine-shift checks}
++\subsubsection{Independent local-step and affine-shift checks}
+ \label{sec:num-supp-theory}
+ 
+ A separate implementation uses twelve paired runs per configuration. At $N=32$, it fits $(N/\gamma)\widehat b$ against $\gamma\in\{1/64,1/128,1/256,1/512\}$ separately for each algorithm and $H\in\{1,2,4,8\}$, without subtracting $B_{11}$ or imposing a shared intercept. The $H=1,2,4$ primary nominal intervals include their targets, but both algorithms show offsets at $H=8$. SCAFFOLD's adjusted $H=8$ versus $H=2$ intercept contrasts exclude zero. Omitting the largest step moves estimates toward the target; it does not replace the primary fits (Appendix~\ref{app:supp-controlled}).
+
+--- baseline/sections/01_introduction.tex
++++ updated/sections/01_introduction.tex
+@@ -40,6 +40,21 @@
+     \item \textbf{Numerical characterization and empirical interpretation.}
+     Controlled experiments assess the coefficients and their local-step dependence. On real data, minibatch allocation changes finite-tail mean displacement, and model averaging can make it a substantial component of parameter error. A post-hoc full-vector comparison finds directional agreement with the derived curvature--noise structure while retaining its magnitude and local-step discrepancies.
+ \end{itemize}
++
++\paragraph{Significance and scope.}
++Our contribution is a precise characterization of stationary mean bias in
++existing federated algorithms, rather than a new optimization method.
++Its significance lies in distinguishing the effects of client averaging,
++ordinary local updates, and persistent controls beyond the shared leading
++term. Resolving the $\gamma^2$ coefficients in a homogeneous additive-noise
++model provides an explicit reference for studying which effects are already
++generated by local stochastic dynamics and which additional interactions
++arise in more general settings. The \Scaf{} characterization already
++extends to affine objective shifts through
++Proposition~\ref{prop:affine-shift}, where correction of fixed gradient
++offsets coexists with the same stochastic mean-bias mechanism.
++Extensions to unequal client curvature, partial participation, and
++state-dependent noise remain natural directions for further analysis.
+ 
+ % The remainder of this paper reviews related work and introduces the mathematical setting, presents the stationary-bias expansions and their underlying mechanism, outlines the proof strategy, and evaluates the theoretical predictions through numerical experiments. Detailed proofs and supporting numerical analyses are provided in the appendices.
+ 
+
+--- baseline/sections/08_discussion_limitations.tex
++++ updated/sections/08_discussion_limitations.tex
+@@ -28,10 +28,14 @@
+ algorithmic displacement direction, even though the plug-in amplitude and
+ local-step scaling remain approximate.
+ 
+-The formulas identify how client count, step size, local training length,
+-objective geometry, and noise enter the resolved mean shift. This explains an
+-aspect of algorithmic behavior rather than an overall performance ranking:
+-parameter MSE also depends on variance and averaging, while predictive loss
+-depends on the prediction problem. Their different responses in the recorded
+-experiments are reasons to distinguish these quantities, not to evaluate
+-stationary mean bias through predictive loss alone.
++These formulas make the roles of client count, step size, local training
++length, objective geometry, and noise explicit at the resolved orders.
++The homogeneous additive-noise setting thus provides a reference for
++studying additional interactions rather than treating the entire
++higher-order bias as an unspecified remainder. The contribution is an
++interpretable account of existing algorithms, not an overall performance
++ranking. Parameter MSE also depends on fluctuations and averaging, while
++predictive loss depends on the learning problem. The experiments illustrate
++why these quantities should be distinguished rather than using
++predictive-loss changes alone to assess the value of a mean-bias
++characterization.

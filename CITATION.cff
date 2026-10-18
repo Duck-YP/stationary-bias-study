@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying revised manuscript; the arXiv record currently hosts an earlier version."
+title: "Characterizing Client-Independent Stationary Bias for SCAFFOLD and FedAvg in Federated Learning"
+type: software
+authors:
+  - family-names: Tang
+    given-names: Yi-Ping
+  - family-names: Peng
+    given-names: Guan-Ju
+repository-code: "https://github.com/Duck-YP/stationary-bias-study"
+url: "https://github.com/Duck-YP/stationary-bias-study"
+preferred-citation:
+  type: article
+  title: "Characterizing Client-Independent Stationary Bias for SCAFFOLD and FedAvg in Federated Learning"
+  authors:
+    - family-names: Tang
+      given-names: Yi-Ping
+    - family-names: Peng
+      given-names: Guan-Ju
+  year: 2026
+  journal: "arXiv preprint"
+  url: "https://arxiv.org/abs/2608.26765"
+  identifiers:
+    - type: other
+      value: "arXiv:2608.26765"
+      description: "Existing arXiv identifier; its current version predates the bundled revised manuscript."
+  notes: "Revised manuscript accompanies this repository. The arXiv record currently hosts an earlier version; the authors will upload the update separately."

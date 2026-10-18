@@ -1,0 +1,783 @@
+--- /dev/null
++++ b/manuscript/FIGURE_LAYOUT_CHANGELOG.md
+@@ -0,0 +1,54 @@
++# 圖形與版面修訂紀錄 — 2026-10-18
++
++本次僅修訂五張圖的呈現、圖說與 LaTeX 浮動位置。科學正文、定理、證明、公式、實驗設定、表格、估計值、擬合係數、理論目標與信賴區間均保持原樣。未執行實驗、抽樣、重新擬合或重新估計區間。
++
++## 基準與交付版本
++
++- 比較基準：從最新 V2 原始碼乾淨編譯的 **41 頁** PDF，位於 `../figure_layout_revision_20261018/baseline/manuscript/main.pdf`，SHA-256 `9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0`。
++- V2 壓縮檔隨附的 PDF 是較舊的 40 頁成品，另存為 `../figure_layout_revision_20261018/baseline/SUPPLIED_OLDER_main.pdf`，沒有拿它作為此次版面比較基準。
++- 交付版本：本資料夾的 `main.pdf`，**40 頁**，SHA-256 `81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c`。完整編譯副本及紀錄位於 `../figure_layout_revision_20261018/final/`。
++
++## 各圖修改
++
++全部五張圖、九個面板均已重新輸出向量 PDF；圖 3 僅作必要的標籤及字型一致化。
++
++| 圖 | 基準 → 新版頁碼 | 呈現修改 |
++|---|---|---|
++| 1：matched H=2/H=4 | 12 → 11 | `Saved fit` 改為 `Finite-grid fit`；圓點／空心方塊表示觀測值，點線表示既有線性擬合，虛線表示理論目標，空心菱形表示擬合截距。保留全部誤差棒及原有座標範圍。 |
++| 2：fixed-step client count | 13 → 12 | 縱軸改為 `Normalized mean-bias remainder`；圖說明確連結式 (33) 的統計量及固定步長與 joint-limit target 的區別；採用與圖 1 相同的觀測、擬合、目標及截距標示。 |
++| 3：real-data allocation | 15 → 15 | 明示 signed projected mean displacement 的 ×1000 比例與橫軸 `(N,m)` 配置；保留三個配置、六個估計值、誤差棒及既有分類座標位移。 |
++| 4：temporal averaging | 17 → 16 | 明示 squared mean displacement (U) 與 averaged variance (V)，以圓點／空心方塊及實／虛線區分；保留相同的 symmetric-log 軸、線性區間、座標範圍、負估計值與跨零區間。 |
++| 5：H=4 diagnostics | 32 → 32 | smaller-step 面板統一觀測／點線擬合／虛線目標／菱形截距；log–log 面板強化座標及標記可讀性，仍連接原有殘差觀測值，沒有新擬合趨勢線。既有斜率保留在未修改的表 12。 |
++
++九個面板使用嵌入字型及向量文字、標記與線條。最終論文內面板文字的有效最小字級約為 9.7 pt；E4 為 10.0 pt。這是從 PDF 文字及縮放矩陣量測的結果。主文、圖說及其數學上下標沿用既有 LaTeX 字型設定。
++
++## 浮動位置與留白
++
++- 保留 11 pt 主文及所有表格內容、字級和間距。
++- 在數值研究章節起設定 `topnumber=3`、`bottomnumber=2`、`totalnumber=4`，以及 `topfraction=0.90`、`bottomfraction=0.80`、`textfraction=0.08`、`floatpagefraction=0.75`。讓相關圖表與文字共享頁面，減少稀疏的獨立浮動頁。
++- 圖 1、2、3、5 採用 `[!htbp]`；圖 4 原本即使用該設定。移除 contraction/noise 小節之前的一處 `\FloatBarrier`，保留進入 real-data、E4、E5 各實驗區段的界線。
++- 七個歷史面板高度由 3.50／3.25 in 統一至 3.12 in；兩個 E4 面板由 3.50 in 改為 3.25 in。保留論文中的面板寬度及可讀字級，以調整圖內空間改善排版。
++- 圖 2 現位於第 12 頁，與自己的實驗設計、解讀及後續小節連續排版。圖 5 第 32 頁現在緊接相關表格與文字，原先浮動頁的大幅留白已消除。
++- 圖 1 第 11 頁及圖 4 第 16 頁更接近對應討論；附錄後段的圖表流動也因相同浮動設定改善。頁數減少是重新排版的結果。
++- 未使用負 `\vspace`、縮小全域字型或強制定位套件。
++
++## 數值與內容保全
++
++- 九個繪圖 CSV sidecar 與基準逐位元組一致：歷史圖 124 筆、E4 14 筆來源紀錄。
++- 歷史來源獨立驗證器 2,646 項檢查全部通過；另有 226 項數值核對、190 項實際繪圖物件幾何核對全部通過。
++- 檢查內容涵蓋觀測座標、理論目標、擬合截距、保存的擬合曲線、信賴區間端點、原有縮放與分類位移；E4 的負值及跨零區間均保留。
++- 所有 23 個完整表格環境保持原樣。排除圖說與明確的浮動控制後，科學正文一致；定理、證明、公式與原始實驗結果檔保持原樣。
++- 1,705 個原有檔案的雜湊清單用於變更範圍核對，其中 `release/` 的 1,435 個登錄檔案全部未變。沒有 push 或上傳。
++- 詳細獨立檢查見 `../figure_layout_revision_20261018/qa/INDEPENDENT_QA_REVIEW.md` 與同資料夾 JSON；來源與命令見 `FIGURE_PROVENANCE.md`。
++
++## 編譯與視覺核查
++
++遵循既有 `pdflatex → bibtex → pdflatex → pdflatex` 流程，從乾淨的完整稿件副本編譯，使用 `-halt-on-error -file-line-error -no-shell-escape`。沒有未解引用、重複標籤、overfull box 或缺圖。唯一警告是基準即存在的 `epstopdf` 提示：shell escape 未啟用；沒有新增警告。
++
++基準全部 41 頁與新版全部 40 頁均已渲染。已檢查全稿 contact sheets、五張圖所在整頁、九個面板彩色及灰階預覽；未見圖說分離、圖文重疊、裁切或孤立小節標題。PDF 字型嵌入、向量路徑、畫布界線及誤差棒位於座標範圍內的檢查均通過。
++
++前後比較位於 `../figure_layout_revision_20261018/comparisons/BEFORE_AFTER.pdf`，附來源索引。基準與新版每頁 PNG 分別保留在 `baseline/rendered/` 與 `final/rendered/`。文字差異及檔案雜湊清單見 `../figure_layout_revision_20261018/FIGURE_LAYOUT_REVISION.patch`、`CHANGE_MANIFEST.json`。
++
++## 剩餘作者判斷
++
++第 18 頁的結論尾段、第 20 頁的參考文獻尾段及第 40 頁的附錄末頁仍有自然的章末留白。既有參考文獻／附錄分頁界線保留；此次沒有為追求頁數而壓縮文字或改動科學內容。沒有待補繪圖資料或阻止編譯的問題。是否進一步改採期刊專用模板，留待作者另行決定。
+--- /dev/null
++++ b/manuscript/FIGURE_PROVENANCE.md
+@@ -0,0 +1,130 @@
++# 圖形來源與重現紀錄
++
++日期：2026-10-18。本文追溯本次定稿的 5 張圖、9 個獨立 panel；所有路徑除另註外均相對於專案根目錄。
++
++本次排版基準是由 V2 原始碼乾淨編譯的 **41 頁** PDF，不是 V2 ZIP 內較舊的 PDF。最終檢查對象為 `figure_layout_revision_20261018/final/manuscript/main.pdf`，共 **40 頁**，SHA-256：
++
++```text
++81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c
++```
++
++這次只調整繪圖呈現、caption 與 LaTeX 版面。未重跑 simulation、training、optimizer、bootstrap 或 regression；未重新估計係數、信賴區間或理論目標。原始研究資料與研究程式未修改。
++
++## 一、繪圖程式與執行方式
++
++| 圖形 | 繪圖程式 | 數值來源根目錄 |
++| --- | --- | --- |
++| Figures 1、2、3、5，共 7 panels | `manuscript/tools/figure_layout/redraw_figures.py`；共用樣式 `figure_style.py` | **本次實際使用** `figure_redraws/20261009/pipeline`，其中含 10 個 `inputs/*.csv` |
++| Figure 4，共 2 panels | `manuscript/tools/plot_e4_for_manuscript.py` | `manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv` |
++
++以下命令從專案根目錄執行。`python` 應指向能載入本專案 NumPy、pandas、Matplotlib 相依套件的 Python 3.12 環境；繪圖另需 TeX 的 `latex`、`dvipng`、T1 font encoding 與 Latin Modern。兩個 renderer 均使用 TeX 文字，不以其他字型靜默替代。
++
++```powershell
++python manuscript/tools/figure_layout/redraw_figures.py --input-root figure_redraws/20261009/pipeline --output manuscript/figures/redrawn
++python manuscript/tools/plot_e4_for_manuscript.py
++```
++
++第一個命令產生 7 組 PDF、PNG、CSV sidecar、幾何紀錄與 `data/provenance.json`；第二個產生 2 組 PDF、PNG、CSV sidecar 與 `data/e4_provenance.json`。E4 程式的輸出路徑由其所在 manuscript 目錄決定，沒有另外的 `--output` 參數。若要保留現有檔案，應在工作副本重現；僅複製 `manuscript/` 並不包含第一個命令所需的外部 frozen input 目錄。
++
++這裡的「fit」是讀取已保存的係數或曲線；例如計算 `beta0 + beta1 * delta` 只是將保存的直線畫出，並未再次擬合。
++
++| 程式 | SHA-256 |
++| --- | --- |
++| `manuscript/tools/figure_layout/redraw_figures.py` | `3a9eb7e7683059c18b90ff69c58b4ccda0db07449f0353d3cab0415b2b295ed2` |
++| `manuscript/tools/figure_layout/figure_style.py` | `e34844f6238a834ff8f27bf7d3232b03b7a173f22ac7b52571364eaa92f798e0` |
++| `manuscript/tools/plot_e4_for_manuscript.py` | `2a348071a7b16578ab4ee223c1a607ac79927ea05a9652c7f7bf0b412ebb9b19` |
++
++## 二、9 個 panel 的輸出及論文位置
++
++下表每個名稱均對應 `manuscript/figures/redrawn/<名稱>.pdf` 與同名 PNG；其逐筆繪圖資料為 `manuscript/figures/redrawn/data/<名稱>.csv`。頁碼適用於上述指定 SHA-256 的最終 PDF。
++
++| 圖／panel 名稱 | 內容 | LaTeX 位置及 figure label | 最終頁碼 |
++| --- | --- | --- | ---: |
++| 1(a) `hist_matched_H2` | Matched coefficient，H=2，兩座標 | `sections/07_numerical_study.tex`：`fig:num-matched-primary` | 11 |
++| 1(b) `hist_matched_H4` | Matched coefficient，H=4，兩座標 | 同上 | 11 |
++| 2(a) `hist_fixed_gamma_coord1` | 固定步長、座標 1 | `sections/07_numerical_study.tex`：`fig:E-p2-plateau` | 12 |
++| 2(b) `hist_fixed_gamma_coord2` | 固定步長、座標 2 | 同上 | 12 |
++| 3 `real_R0_allocation` | R0 client/minibatch allocation | `sections/07_numerical_study.tex`：`fig:real-allocation` | 15 |
++| 4(a) `e4_averaging_scaffold` | SCAFFOLD 時間平均後的 U、V | `sections/07_numerical_study.tex`：`fig:e4-averaging` | 16 |
++| 4(b) `e4_averaging_fedavg` | FedAvg 時間平均後的 U、V | 同上 | 16 |
++| 5(a) `hist_H4_smallstep` | H=4 smaller-step path，兩座標 | `appendix/C_numerical_details.tex`：`fig:E-control-h4`／`fig:E-h4diag` | 32 |
++| 5(b) `hist_H4_loglog_residual` | H=4 全部九個 grid points 的絕對殘差 | 同上 | 32 |
++
++LaTeX 檔案路徑在本表相對於 `manuscript/`。配對 panels 使用 `0.49\textwidth`；Figure 3 使用 `0.58\textwidth`。每個 PDF 均只有一個 scientific axes。
++
++## 三、精確來源欄位與選取規則
++
++下列 `inputs/...` 路徑均位於 `figure_redraws/20261009/pipeline/`。歷史 CSV 的 `coordinate=0,1` 對應圖中的座標 1、2。
++
++### Figure 1：matched H=2／H=4
++
++- 觀測值：`inputs/p3_primary/paired_setting_summary.csv`，分別篩選 `H=2` 或 `H=4`，每個座標保留全部 5 點。橫軸讀 `delta`，縱軸讀 `D_mean`；誤差棒直接使用 `simultaneous_ci_low`、`simultaneous_ci_high`。
++- 擬合及截距：`inputs/p3_primary/paired_fit_summary.csv` 的同一 H／座標列。開放菱形位於 `x=0, y=beta0`，截距區間讀該列的 `simultaneous_ci_low/high`。點線在 `0` 與所有保存的 `delta` 上畫出 `beta0 + beta1 * delta`。
++- 水平理論線：fit summary 中的 `B20_ctrl_component`。原始 observation summary 亦保存同名目標欄位，sidecar 保留其逐列來源。
++- 圖上 pointwise bars 與 fitted-intercept bars 沿用各自保存的 simultaneous Student-t／seed-block-bootstrap 區間；沒有互換或重新計算。
++
++### Figure 2：固定步長的 client-count 比較
++
++- 觀測值：`inputs/p2_plateau/setting_summary.csv`，只取 `estimator=stationary_mean_balance` 與該 panel 的座標，保留全部 5 點。橫軸 `inverse_N`；縱軸 `C_mean`；區間 `simultaneous_ci_low/high`。
++- 擬合截距與理論線：`inputs/p2_plateau/plateau_fit_summary.csv` 的 `beta0`、截距 `simultaneous_ci_low/high`、`B20_component`。
++- 已存曲線：`inputs/p2_plateau/plateau_fit_curve.csv` 的 `inverse_N`、`fitted_value`；另接上 `x=0, y=beta0`。沒有將 observation 重新回歸。
++- `C_mean` 是扣除共享一階項後、除以步長平方的 normalized mean-bias remainder。水平線是 joint-limit reference；固定步長資料不被重新標成該極限的精確實現。
++
++### Figure 3：R0 allocation
++
++- 來源：`inputs/supplement/E3_allocation_signed_projection.csv`。保留 `regime=R0`、`roles` 包含 `allocation`、`H=4`、`gamma=0.1/0.51` 的兩演算法六列，allocation 為 `(N,m)=(8,32),(32,8),(128,2)`。
++- 縱軸：`signed_projection * 1000`；誤差棒：**`ci_lower/ci_upper`** 同乘 1000，沒有改用 `adjusted_ci_lower/adjusted_ci_upper`。這是原圖既有的 nominal 區間選擇。
++- 橫軸是三個 allocation 類別。SCAFFOLD／FedAvg 圖形位置使用既有的 `-0.045/+0.045` category offset，僅用於分開標記，不代表新的 N 值。
++- 此 panel 沒有擬合線或理論 target。
++
++### Figure 4：E4 temporal averaging
++
++- 來源：`manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv`，只取 `cell_id=E3_R0_p0_H4_N128_g0.196078431373`，依 `algorithm=SCAFFOLD/FedAvg` 分為兩圖。
++- 每圖原樣保留 `K=1,2,4,8,16,32,64`；橫軸直接讀 `K`。兩條曲線讀 `U`、`V`，區間直接讀 `U_lower_simultaneous`、`U_upper_simultaneous`、`V_lower_simultaneous`、`V_upper_simultaneous`。這些是保存的 E4 196-statistic primary family 的 approximate simultaneous 95% 區間。
++- 無 fit、target 或新估計量。連線只連接保存的點。兩圖共用 `xscale=log(base=2)`、`xlim=[0.8,80]`、`yscale=symlog(base=10,linthresh=1e-5,linscale=0.75)`、`ylim=[-5.5e-5,5e-4]`，皆與原圖相同。
++- 負的 sampling-corrected U 不截成零。SCAFFOLD 有 3 個 U 區間跨零；FedAvg 有 4 個，且 K=1 的 U 點估計為負。全部保留。兩圖共 28 個觀測點、56 個區間端點，均在顯示範圍內。
++
++### Figure 5：H=4 finite-grid diagnostics
++
++- (a) 觀測值：`inputs/p3_smallstep/paired_setting_summary.csv`，`H=4`，每個座標全部 4 點；讀 `delta`、`D_mean` 與 `simultaneous_ci_low/high`。
++- (a) 擬合、截距及 target：`inputs/p3_smallstep/paired_fit_summary.csv` 的 `beta0`、`beta1`、截距 `simultaneous_ci_low/high` 與 `B20_ctrl_component`；繪製方式同 Figure 1。
++- (b) 來源：`inputs/p3_diagnostic/pointwise_diagnostics.csv`，每座標全部 9 點。橫軸 `delta`，縱軸 `abs(e_Delta)`，使用 log–log 座標。來源已存 `D`、`B_ctrl` 與 `e_Delta`；renderer 直接讀取既有殘差，不重新估計 target。
++- (b) 連線只連接既有殘差觀測，**不是新增的擬合趨勢線**，此 panel 沒有新增 CI。程式另讀 `inputs/p3_diagnostic/scaling_summary.csv` 並記錄其 hash；`loglog_slope`、`loglog_intercept` 等保存的 scaling summary 未用來重估或新增圖上趨勢。論文中的既有 slope 表值保持不變。
++
++## 四、來源檔案 SHA-256
++
++下列 10 個 input hash 已與本次實際輸入檔案及 `manuscript/figures/redrawn/data/provenance.json` 核對一致。E4 另列完整來源路徑。
++
++| 來源檔案 | SHA-256 |
++| --- | --- |
++| `inputs/p3_primary/paired_setting_summary.csv` | `00e0a848340f2f50b27909aa6b6d2252941cdccc7273b02e4463c670f99195b5` |
++| `inputs/p3_primary/paired_fit_summary.csv` | `91be94dbfaeb6c6d280f38e00a76353153ba665211ee3ffa3fbb4b858382b52d` |
++| `inputs/p2_plateau/setting_summary.csv` | `f88ff5580373c123862718a18e6e1fa72a258b02a73e43c4e3d4c14f2608a0a2` |
++| `inputs/p2_plateau/plateau_fit_summary.csv` | `baafa9b4ff2e6168bbe74b3632029e416ea68e3af61b30b12bb0fccbd2553f5f` |
++| `inputs/p2_plateau/plateau_fit_curve.csv` | `3ca61f251e4f84bd69e0b918faa58fff2b10ba0fa2b3d8752ea3432331620866` |
++| `inputs/supplement/E3_allocation_signed_projection.csv` | `23b5f53672035f3b9ee0742b44490887db283a2ff66047c4336320e35d8b9cdf` |
++| `inputs/p3_smallstep/paired_setting_summary.csv` | `4c85af50d46a86091d03c55707279d34b982900ffefc18b534271733082cda82` |
++| `inputs/p3_smallstep/paired_fit_summary.csv` | `12c4bd2184506078742d211d8f3ae70bbf9399651323b9140a09a0e816080e21` |
++| `inputs/p3_diagnostic/pointwise_diagnostics.csv` | `044d61e6a93b5bcfa8aabc4028b59242aab1dca28829f8817503ba33a050b546` |
++| `inputs/p3_diagnostic/scaling_summary.csv` | `4a5f47c8b260279c9f440114a5700b2938d0f4f1bac3ee8244a969629a70c6d0` |
++| `manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv` | `0a403edf7cb6f0b32b5fba70896c186f7aece60f51af8ed11a5c4ab6a0b93c66` |
++
++歷史 7-panel sidecar 記錄 `source_file`、`source_sha256`、`source_row`、原始／顯示值、CI 欄位、target 欄位與保存的 `beta0/beta1`；因此可追溯至 CSV 的實際資料列，而非從圖像反推數字。E4 sidecar 保留完整選取條件、K、U/V 與區間端點，來源 hash 另載於 `data/e4_provenance.json`。
++
++## 五、數值保全與最終 PDF 檢查
++
++本次 QA 的基準、逐項結果與限制在 `figure_layout_revision_20261018/qa/INDEPENDENT_QA_REVIEW.md`。主要可機讀紀錄如下：
++
++| 紀錄 | 已核對的範圍 |
++| --- | --- |
++| `qa/NUMERIC_INVARIANCE.json` | 226 項檢查通過；9 份 sidecar 與乾淨 V2 基準逐位元組相同，含歷史 124 筆繪圖 records 與 E4 14 列 |
++| `qa/historical_authority/NUMERICAL_AUDIT_SUMMARY.json` | 既有獨立 verifier 對 10 個 frozen input CSV 重核 2,646 項，無失敗 |
++| `qa/ARTIST_GEOMETRY_CHECKS.json` | 190 項 actual-artist 檢查通過；歷史 7 panels 的觀測、fit、target 與 CI 端點符合 immutable sidecars，並位於 axes 內 |
++| `e4_qa/E4_PANEL_QA.json` | E4 來源 hash 不變；兩 sidecar byte-identical；負值、跨零區間、完整顯示範圍均保留 |
++| `qa/SOURCE_HASH_GUARD.json` | 原始 1,705 檔 registry 的保全檢查；23 個完整 table environments 不變，研究 source／公式與 figure 外科學文字受保護 |
++| `qa/FINAL_PDF_FONT_AUDIT.json` | 適用於本文開頭 SHA-256 的 40 頁 PDF；9 個實際嵌入 panel 全數通過文字、字型、vector 與裁切檢查 |
++| `qa/VECTOR_DRAWING_BOUNDS.json` | 包含 stroke padding 的 vector 路徑均位於 panel canvas 範圍內 |
++
++本表 `qa/`、`e4_qa/` 均相對於 `figure_layout_revision_20261018/`。最終實際嵌入文字最小為約 **9.7000 TeX pt**，E4 約 **10.0002 TeX pt**；測量包含文字矩陣、旋轉與 LaTeX inclusion scaling，不是只讀 plotting script 的字級設定。所有 9 個 PDF panel 都有嵌入字型、保留向量路徑，沒有 raster image layer。
++
++CI 的方法、端點、截距、target、座標與既有 display scaling 均未修改。數值保全與版面檢查證明本次呈現忠於保存資料，不另構成理論正確性、stationarity 或 target inclusion 的新證明。本次沒有修改 `release/`，也沒有上傳或 push GitHub。
+--- a/manuscript/appendix/C_numerical_details.tex
++++ b/manuscript/appendix/C_numerical_details.tex
+@@ -379,7 +379,7 @@
+ \end{tabular}
+ \end{table}
+ 
+-\begin{figure}[tbp]
++\begin{figure}[!htbp]
+ \centering
+ \captionsetup[subfigure]{font=small}
+ \begin{subfigure}[t]{0.49\textwidth}
+@@ -393,8 +393,11 @@
+ \caption{Absolute residuals}
+ \end{subfigure}
+ \caption{Matched $H=4$ finite-grid sensitivity.
+-(a) Smaller-step estimates and their linear extrapolations.
+-(b) Absolute residuals versus $\delta=\gamma+1/N$ across all nine points.
++(a) Smaller-step estimates (circles and squares), finite-grid linear fits
++(dotted), and analytical targets (dashed). Open diamonds at $\delta=0$
++mark the fitted intercepts.
++(b) Absolute residuals versus $\delta=\gamma+1/N$ across all nine points
++on logarithmic axes; lines connect the observed residuals.
+ The scaled residuals and log--log slopes are given in
+ Table~\ref{tab:E-h4diag}. Pointwise bars in (a) use simultaneous
+ Student-$t$ intervals; intercept bars use seed-block-bootstrap intervals.}
+--- a/manuscript/sections/07_numerical_study.tex
++++ b/manuscript/sections/07_numerical_study.tex
+@@ -1,5 +1,15 @@
+ \section{Numerical study}
+ \label{sec:numerics}
++
++% Permit related floats to share text pages instead of forcing sparse float pages.
++% Keep the 11 pt document text and all table contents unchanged.
++\setcounter{topnumber}{3}
++\setcounter{bottomnumber}{2}
++\setcounter{totalnumber}{4}
++\renewcommand{\topfraction}{0.90}
++\renewcommand{\bottomfraction}{0.80}
++\renewcommand{\textfraction}{0.08}
++\renewcommand{\floatpagefraction}{0.75}
+ 
+ We examine the coefficient formulas, their underlying mechanism, and their
+ implications for averaged models. Controlled additive-noise experiments
+@@ -119,7 +129,7 @@
+ the grid-point residuals scale approximately with $\gamma+1/N$, and their
+ finite-step, finite-client, and finite-run sources remain unresolved.
+ 
+-\begin{figure}[t]
++\begin{figure}[!htbp]
+ \centering
+ \captionsetup[subfigure]{font=small}
+ \begin{subfigure}[t]{0.49\textwidth}
+@@ -134,8 +144,10 @@
+ \end{subfigure}
+ \caption{Matched \Scaf{}--\FedAvg{} coefficient estimates for (a) $H=2$
+ and (b) $H=4$ on the primary joint grids. The ordinate is
+-$\widehat D_j$ from Equation~\eqref{eq:num-D}; dashed lines give the
+-analytical targets and dotted curves give linear extrapolations.
++$\widehat D_j$ from Equation~\eqref{eq:num-D}. Circles and squares show
++the two coordinates, dotted lines show finite-grid linear fits, and
++dashed horizontal lines give the analytical targets. Open diamonds at
++$\delta=0$ mark the fitted intercepts.
+ Pointwise bars use simultaneous Student-$t$ intervals; intercept bars
+ use simultaneous seed-block-bootstrap intervals.}
+ \label{fig:num-matched-primary}
+@@ -160,7 +172,7 @@
+ increasing the client count and reducing the step size: additional clients
+ suppress the client-dependent term while leaving a residual mean shift.
+ 
+-\begin{figure}[t]
++\begin{figure}[!htbp]
+ \centering
+ \captionsetup[subfigure]{font=small}
+ \begin{subfigure}[t]{0.49\textwidth}
+@@ -173,11 +185,15 @@
+ \includegraphics[width=\linewidth]{figures/redrawn/hist_fixed_gamma_coord2.pdf}
+ \caption{Coordinate 2}
+ \end{subfigure}
+-\caption{Client-count dependence of the normalized \Scaf{} mean bias at
+-fixed step size, shown by coordinate. Horizontal references give
+-$B_{20}^{\Scaf}(2)$; the fixed-step expansion also permits an
+-$O(\gamma)$ offset. Bars show simultaneous Student-$t$ intervals at
+-grid points and seed-block-bootstrap intervals for fitted intercepts.}
++\caption{Client-count dependence at fixed step size, shown by coordinate.
++The ordinate is $\widehat{\mathcal C}^{\Scaf}_j$ from
++Equation~\eqref{eq:num-C}: the mean-bias estimate after subtracting the
++shared $\gamma/N$ term and dividing by $\gamma^2$. Dotted lines give
++finite-grid fits and open diamonds their intercepts at $1/N=0$.
++Dashed horizontal lines give the joint-limit references
++$B_{20}^{\Scaf}(2)$; a fixed step size permits an $O(\gamma)$ offset.
++Bars show simultaneous Student-$t$ intervals at grid points and
++seed-block-bootstrap intervals for fitted intercepts.}
+ \label{fig:E-p2-plateau}
+ \end{figure}
+ 
+@@ -258,8 +274,6 @@
+ reproduce the predicted state translation to floating-point accuracy.
+ This illustrates how correction of affine gradient offsets can coexist
+ with the same stochastic stationary-bias mechanism.
+-
+-\FloatBarrier
+ 
+ \subsubsection{Contraction cancellation and covariance-matched noise}
+ \label{sec:num-mechanism-controls}
+@@ -354,7 +368,7 @@
+ the local allocation carries information that server-level covariance
+ alone does not capture.
+ 
+-\begin{figure}[t]
++\begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=.58\textwidth]{figures/redrawn/real_R0_allocation.pdf}
+ \caption{Finite-tail mean displacement under a fixed sampling budget.
+@@ -452,8 +466,8 @@
+ with averaged-output variance $\widehat V_K$ over windows of $K$ batches
+ in the primary shared-objective configuration. Each batch contains 1,280
+ rounds. Bars are approximate simultaneous 95\% primary-family intervals.
+-The symmetric-log axis retains negative sampling-corrected estimates and
+-intervals crossing zero.}
++The symmetric-log axis is linear between $-10^{-5}$ and $10^{-5}$ and
++retains negative sampling-corrected estimates and intervals crossing zero.}
+ \label{fig:e4-averaging}
+ \end{figure}
+ 
+--- /dev/null
++++ b/manuscript/tools/figure_layout/figure_style.py
+@@ -0,0 +1,112 @@
++"""Fixed physical canvases; TeX-backed font requests are measured in final PDFs."""
++
++import json
++
++import matplotlib
++
++matplotlib.use("Agg")
++import matplotlib.pyplot as plt
++from matplotlib.lines import Line2D
++
++TEX_PT_PER_INCH = 72.27
++PDF_PT_PER_INCH = 72.0
++TEXTWIDTH_TEX_PT = 452.9679
++BODY_TEX_PT = 10.95
++HALF_WIDTH_INCH = 0.49 * TEXTWIDTH_TEX_PT / TEX_PT_PER_INCH
++R0_WIDTH_INCH = 0.58 * TEXTWIDTH_TEX_PT / TEX_PT_PER_INCH
++TICK_FONT = 9.7
++LEGEND_FONT = 9.7
++LABEL_FONT = 10.5
++COORDINATES = [
++    {"color": "#1769aa", "marker": "o", "linestyle": "-", "markerfacecolor": "#1769aa"},
++    {"color": "#8e3b46", "marker": "s", "linestyle": "-.", "markerfacecolor": "white"},
++]
++ALGORITHMS = {
++    "scaffold": {"color": "#1769aa", "marker": "o", "linestyle": "-"},
++    "fedavg": {"color": "#8e3b46", "marker": "s", "linestyle": "--"},
++}
++RC = {
++    "font.family": "serif",
++    "font.serif": ["Computer Modern Roman"],
++    "text.usetex": True,
++    "text.latex.preamble": r"\usepackage[T1]{fontenc}\usepackage{lmodern}",
++    "font.size": TICK_FONT,
++    "axes.labelsize": LABEL_FONT,
++    "xtick.labelsize": TICK_FONT,
++    "ytick.labelsize": TICK_FONT,
++    "legend.fontsize": LEGEND_FONT,
++    "axes.linewidth": 0.65,
++    "lines.linewidth": 1.3,
++    "lines.markersize": 4.6,
++    "savefig.facecolor": "white",
++    "axes.facecolor": "white",
++    "pdf.fonttype": 42,
++    "ps.fonttype": 42,
++    "axes.unicode_minus": False,
++}
++
++
++def make_axes(*, real=False, legend_rows=3):
++    width = R0_WIDTH_INCH if real else HALF_WIDTH_INCH
++    height = 3.12
++    fig = plt.figure(figsize=(width, height))
++    top = 0.88 if legend_rows == 1 else (0.82 if legend_rows == 2 else 0.75)
++    ax = fig.add_axes((0.225 if not real else 0.21, 0.18, 0.73 if not real else 0.74, top - 0.18))
++    ax.spines[["top", "right"]].set_visible(False)
++    ax.tick_params(width=0.65, length=3, pad=3)
++    ax.grid(axis="y", color="#dddddd", linewidth=0.45, alpha=0.6)
++    ax.set_axisbelow(True)
++    return fig, ax
++
++
++def coordinate_legend(fig, *, with_fit=True):
++    handles = [Line2D([], [], **{**item, "linestyle": "none" if with_fit else item["linestyle"]},
++                      label=f"Coord. {j+1} obs." if with_fit else f"Coord. {j+1}")
++               for j, item in enumerate(COORDINATES)]
++    if with_fit:
++        handles += [
++            Line2D([], [], color="#444444", linestyle=":", label="Finite-grid fit"),
++            Line2D([], [], color="#444444", marker="D", markerfacecolor="white", linestyle="none", label="Fitted intercept"),
++            Line2D([], [], color="#444444", linestyle="--", label="Theory target"),
++        ]
++    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.52, 0.985), ncol=2,
++               frameon=False, handlelength=1.5, columnspacing=0.7, handletextpad=0.45,
++               borderaxespad=0.1, labelspacing=0.4)
++
++
++def save_panel(fig, path):
++    if len(fig.axes) != 1:
++        raise AssertionError("Each panel must have exactly one scientific axes")
++    ax = fig.axes[0]
++    def coordinate_system(transform):
++        if transform == ax.transData:
++            return "data"
++        if transform == ax.get_xaxis_transform():
++            return "data_x_axes_y"
++        if transform == ax.get_yaxis_transform():
++            return "axes_x_data_y"
++        return "other"
++    geometry = {
++        "panel_id": path.name,
++        "canvas_inches": fig.get_size_inches().tolist(),
++        "axes_bounds_fraction": list(ax.get_position().bounds),
++        "xlim": list(ax.get_xlim()), "ylim": list(ax.get_ylim()),
++        "xscale": ax.get_xscale(), "yscale": ax.get_yscale(),
++        "lines": [{"coordinates": coordinate_system(line.get_transform()),
++                   "x": [float(x) for x in line.get_xdata()],
++                   "y": [float(y) for y in line.get_ydata()],
++                   "marker": line.get_marker(), "linestyle": line.get_linestyle()}
++                  for line in ax.lines],
++        "interval_collections": [{"coordinates": coordinate_system(collection.get_transform()),
++                                  "segments": [segment.tolist() for segment in collection.get_segments()]}
++                                 for collection in ax.collections if hasattr(collection, "get_segments")],
++    }
++    geometry_path = path.parent / "data" / (path.name + "_geometry.json")
++    geometry_path.parent.mkdir(parents=True, exist_ok=True)
++    geometry_path.write_text(json.dumps(geometry, indent=2) + "\n", encoding="utf-8")
++    fig.savefig(path.with_suffix(".pdf"), bbox_inches=None, metadata={
++        "Title": path.name, "Creator": "Frozen-data SCAFFOLD figure layout revision",
++        "CreationDate": None, "ModDate": None,
++    })
++    fig.savefig(path.with_suffix(".png"), dpi=200, bbox_inches=None)
++    plt.close(fig)
+--- /dev/null
++++ b/manuscript/tools/figure_layout/redraw_figures.py
+@@ -0,0 +1,252 @@
++"""Redraw seven active panels from immutable saved CSVs, never simulate or fit."""
++
++from __future__ import annotations
++
++import argparse
++import csv
++import hashlib
++import json
++import math
++from pathlib import Path
++
++import numpy as np
++import matplotlib.pyplot as plt
++from matplotlib.lines import Line2D
++from matplotlib.ticker import FixedLocator, FormatStrFormatter, NullLocator, MaxNLocator
++
++import figure_style as style
++
++FIELDS = [
++    "panel_id", "record_type", "source_file", "source_sha256", "source_row", "row_id",
++    "coordinate", "display_coordinate", "algorithm", "H", "N", "m", "gamma",
++    "x_column", "y_column", "ci_low_column", "ci_high_column", "target_column",
++    "x_original", "y_original", "ci_low_original", "ci_high_original", "target_original",
++    "x_display", "y_display", "ci_low_display", "ci_high_display", "target_display",
++    "x_scale", "y_scale", "x_transform", "y_transform", "beta0", "beta1",
++]
++
++
++def sha(path):
++    return hashlib.sha256(path.read_bytes()).hexdigest()
++
++
++class Records:
++    def __init__(self, root, out):
++        self.root = root
++        self.out = out
++        self.rows = {}
++        self.inputs = {}
++
++    def read(self, relative):
++        path = self.root / relative
++        self.inputs[relative] = {"sha256": sha(path), "bytes": path.stat().st_size}
++        with path.open(encoding="utf-8-sig", newline="") as handle:
++            return [{**r, "_source_file": relative, "_source_row": i} for i, r in enumerate(csv.DictReader(handle), 1)]
++
++    def add(self, panel, kind, row, *, x, y_column, x_column="", low="", high="", target="", y=None,
++            scale=1, transform="identity", display_x=None, beta=False):
++        val = lambda col: float(row[col]) if col and row.get(col, "") != "" else ""
++        raw_y = val(y_column) if y is None else y
++        disp = lambda v: "" if v == "" else (abs(v) if transform == "abs" else v) * scale
++        rec = {"panel_id": panel, "record_type": kind, "source_file": row["_source_file"],
++               "source_sha256": self.inputs[row["_source_file"]]["sha256"], "source_row": row["_source_row"],
++               "row_id": row.get("setting_id", row.get("cell_id", f"H={row.get('H','4')};coordinate={row.get('coordinate','')}")),
++               "coordinate": row.get("coordinate", ""),
++               "display_coordinate": int(row["coordinate"])+1 if "coordinate" in row else "",
++               "algorithm": row.get("algorithm", "matched"), "H": row.get("H", ""),
++               "N": row.get("N", ""), "m": row.get("m", ""), "gamma": row.get("gamma", ""),
++               "x_column": x_column, "y_column": y_column, "ci_low_column": low, "ci_high_column": high,
++               "target_column": target, "x_original": x, "y_original": raw_y,
++               "ci_low_original": val(low), "ci_high_original": val(high), "target_original": val(target),
++               "x_display": x if display_x is None else display_x, "y_display": disp(raw_y),
++               "ci_low_display": disp(val(low)), "ci_high_display": disp(val(high)), "target_display": disp(val(target)),
++               "x_scale": 1, "y_scale": scale, "x_transform": "identity" if display_x is None else "categorical",
++               "y_transform": transform if scale == 1 else "scale", "beta0": val("beta0") if beta else "",
++               "beta1": val("beta1") if beta else ""}
++        self.rows.setdefault(panel, []).append(rec)
++        return rec
++
++    def write(self):
++        data = self.out / "data"
++        data.mkdir(parents=True, exist_ok=True)
++        for panel, rows in self.rows.items():
++            with (data / f"{panel}.csv").open("w", encoding="utf-8", newline="") as handle:
++                writer = csv.DictWriter(handle, fieldnames=FIELDS)
++                writer.writeheader()
++                writer.writerows(rows)
++        provenance = {"inputs": self.inputs, "panels": {p: len(r) for p, r in self.rows.items()},
++                      "method": "Read saved records and saved fit coefficients only; no simulations, bootstrap or regression.",
++                      "display": {"R0_y": "signed_projection * 1000, including nominal CI endpoints",
++                                  "R0_x": "Categorical index for N=8,32,128; fixed +/-0.045 marker dodge only",
++                                  "log_y": "abs(saved e_Delta); nine saved points per coordinate; no new fit"},
++                      "font": {"text": "Latin Modern Roman via TeX T1/lmodern; no fallback permitted",
++                               "requested_tick_TeX_pt": style.TICK_FONT,
++                               "requested_legend_TeX_pt": style.LEGEND_FONT,
++                               "requested_label_TeX_pt": style.LABEL_FONT,
++                               "units_note": "usetex converts these TeX point requests to PDF points; FINAL_FONT_AUDIT measures actual sizes"},
++                      "physical": {"textwidth_TeX_pt": style.TEXTWIDTH_TEX_PT,
++                                   "paired_width_inch": style.HALF_WIDTH_INCH, "R0_width_inch": style.R0_WIDTH_INCH,
++                                   "TeX_pt_per_inch": 72.27, "PDF_pt_per_inch": 72},
++                      "single_axes_asserted": True}
++        (data / "provenance.json").write_text(json.dumps(provenance, indent=2)+"\n", encoding="utf-8")
++
++
++def errors(ax, records, **kwargs):
++    x = [r["x_display"] for r in records]
++    y = np.array([r["y_display"] for r in records])
++    lo = np.array([r["ci_low_display"] for r in records])
++    hi = np.array([r["ci_high_display"] for r in records])
++    if np.any(lo > y) or np.any(hi < y):
++        raise AssertionError("Source CI does not contain its saved estimate")
++    return ax.errorbar(x, y, yerr=np.vstack((y-lo, hi-y)), capsize=2.7, capthick=1.0,
++                       elinewidth=1.1, **kwargs)
++
++
++def matched(db, group, H, panel):
++    settings = db.read(f"inputs/{group}/paired_setting_summary.csv")
++    fits = db.read(f"inputs/{group}/paired_fit_summary.csv")
++    fig, ax = style.make_axes()
++    for coord in (0, 1):
++        rows = sorted((r for r in settings if int(r["H"]) == H and int(r["coordinate"]) == coord), key=lambda r: float(r["delta"]))
++        fit, = [r for r in fits if int(r["H"]) == H and int(r["coordinate"]) == coord]
++        expected = 4 if group == "p3_smallstep" else 5
++        assert len(rows) == expected
++        coords = style.COORDINATES[coord]
++        points = [db.add(panel, "point", r, x=float(r["delta"]), x_column="delta", y_column="D_mean",
++                         low="simultaneous_ci_low", high="simultaneous_ci_high", target="B20_ctrl_component") for r in rows]
++        errors(ax, points, **{**coords, "linestyle": "none"}, markersize=4.6, zorder=4)
++        intercept = db.add(panel, "intercept", fit, x=0., y_column="beta0", low="simultaneous_ci_low",
++                           high="simultaneous_ci_high", target="B20_ctrl_component", beta=True)
++        errors(ax, [intercept], color=coords["color"], marker="D", markerfacecolor="white",
++               markeredgewidth=1.1, linestyle="none", markersize=4.8, zorder=5)
++        fitpoints = [db.add(panel, "fit_curve", fit, x=x, y_column="beta0+beta1*x",
++                            y=float(fit["beta0"])+float(fit["beta1"])*x, beta=True)
++                     for x in [0., *[float(r["delta"]) for r in rows]]]
++        ax.plot([r["x_display"] for r in fitpoints], [r["y_display"] for r in fitpoints],
++                color=coords["color"], linestyle=":", linewidth=1.35, zorder=2)
++        target = db.add(panel, "target", fit, x=0., y_column="B20_ctrl_component", target="B20_ctrl_component", beta=True)
++        ax.axhline(target["y_display"], color=coords["color"], linestyle="--", linewidth=1.2, zorder=1)
++    ax.axvline(0, color="#aaaaaa", linewidth=0.6)
++    ax.set_xlim(-max(float(r["delta"]) for r in rows)*0.065, max(float(r["delta"]) for r in rows)*1.055)
++    ax.xaxis.set_major_locator(MaxNLocator(4, steps=[1, 2, 2.5, 5, 10]))
++    ax.yaxis.set_major_locator(MaxNLocator(5, steps=[1, 2, 5, 10]))
++    ax.xaxis.set_major_formatter(FormatStrFormatter("%.2f" if group != "p3_smallstep" else "%.3f"))
++    ax.yaxis.set_major_formatter(FormatStrFormatter("%.3f"))
++    ax.set_xlabel(r"$\delta = \gamma + 1/N$")
++    ax.set_ylabel("Matched coefficient estimate")
++    style.coordinate_legend(fig)
++    style.save_panel(fig, db.out / panel)
++
++
++def plateau(db, coord, panel):
++    settings = db.read("inputs/p2_plateau/setting_summary.csv")
++    fits = db.read("inputs/p2_plateau/plateau_fit_summary.csv")
++    curves = db.read("inputs/p2_plateau/plateau_fit_curve.csv")
++    rows = sorted((r for r in settings if r["estimator"] == "stationary_mean_balance" and int(r["coordinate"]) == coord), key=lambda r: float(r["inverse_N"]))
++    fit, = [r for r in fits if int(r["coordinate"]) == coord]
++    curve = sorted((r for r in curves if int(r["coordinate"]) == coord), key=lambda r: float(r["inverse_N"]))
++    assert len(rows) == len(curve) == 5
++    fig, ax = style.make_axes(legend_rows=2)
++    coords = style.COORDINATES[coord]
++    points = [db.add(panel, "point", r, x=float(r["inverse_N"]), x_column="inverse_N", y_column="C_mean",
++                     low="simultaneous_ci_low", high="simultaneous_ci_high", target="B20_component") for r in rows]
++    errors(ax, points, color=coords["color"], marker=coords["marker"], markerfacecolor=coords["markerfacecolor"],
++           linestyle="none", label="Observations", zorder=4)
++    intercept = db.add(panel, "intercept", fit, x=0., y_column="beta0", low="simultaneous_ci_low",
++                       high="simultaneous_ci_high", target="B20_component", beta=True)
++    errors(ax, [intercept], color=coords["color"], marker="D", markerfacecolor="white", markeredgewidth=1.1,
++           linestyle="none", label="Fitted intercept", zorder=5)
++    fitpoints = [db.add(panel, "fit_curve", fit, x=0., y_column="beta0", beta=True)]
++    fitpoints += [db.add(panel, "fit_curve", r, x=float(r["inverse_N"]), x_column="inverse_N", y_column="fitted_value") for r in curve]
++    ax.plot([r["x_display"] for r in fitpoints], [r["y_display"] for r in fitpoints],
++            color=coords["color"], linestyle=":", linewidth=1.35, label="Finite-grid fit", zorder=2)
++    target = db.add(panel, "target", fit, x=0., y_column="B20_component", target="B20_component", beta=True)
++    ax.axhline(target["y_display"], color="#444444", linestyle="--", linewidth=1.2, label="Joint-limit target", zorder=1)
++    ax.axvline(0, color="#aaaaaa", linewidth=0.6)
++    ax.set_xlim(-0.008, .132)
++    ax.set_xticks([0, .04, .08, .12])
++    ax.xaxis.set_major_formatter(FormatStrFormatter("%.2f"))
++    # Shared physical range relative to each coordinate's theory reference.
++    ax.set_ylim(target["y_display"]-.0018, target["y_display"]+.0072)
++    ax.yaxis.set_major_locator(MaxNLocator(5))
++    ax.yaxis.set_major_formatter(FormatStrFormatter("%.3f"))
++    ax.set_xlabel(r"Inverse client count $1/N$")
++    ax.set_ylabel("Normalized mean-bias remainder")
++    handles, labels = ax.get_legend_handles_labels()
++    fig.legend(handles, labels, loc="upper center", bbox_to_anchor=(0.52, .985), ncol=2, frameon=False,
++               handlelength=1.5, columnspacing=.7, handletextpad=.45, labelspacing=.4)
++    style.save_panel(fig, db.out / panel)
++
++
++def residual(db, panel):
++    rows = db.read("inputs/p3_diagnostic/pointwise_diagnostics.csv")
++    db.read("inputs/p3_diagnostic/scaling_summary.csv")
++    fig, ax = style.make_axes(legend_rows=1)
++    for coord in (0, 1):
++        selected = sorted((r for r in rows if int(r["coordinate"]) == coord), key=lambda r: float(r["delta"]))
++        assert len(selected) == 9
++        points = [db.add(panel, "point", r, x=float(r["delta"]), x_column="delta", y_column="e_Delta", transform="abs") for r in selected]
++        ax.plot([r["x_display"] for r in points], [r["y_display"] for r in points], **style.COORDINATES[coord])
++    ax.set_xscale("log")
++    ax.set_yscale("log")
++    ax.set_xlim(.0085, .195)
++    ax.set_ylim(.00125, .034)
++    for axis in (ax.xaxis, ax.yaxis):
++        axis.set_minor_locator(NullLocator())
++        axis.set_major_formatter(FormatStrFormatter("%.3g"))
++    ax.xaxis.set_major_locator(FixedLocator([.01, .02, .05, .1]))
++    ax.yaxis.set_major_locator(FixedLocator([.002, .005, .01, .02]))
++    ax.set_xlabel(r"$\delta = \gamma + 1/N$")
++    ax.set_ylabel("Absolute matched residual")
++    style.coordinate_legend(fig, with_fit=False)
++    style.save_panel(fig, db.out / panel)
++
++
++def real_allocation(db, panel):
++    allrows = db.read("inputs/supplement/E3_allocation_signed_projection.csv")
++    rows = [r for r in allrows if r["regime"] == "R0" and "allocation" in r["roles"].split(";")
++            and int(r["H"]) == 4 and int(r["N"]) in (8, 32, 128)
++            and math.isclose(float(r["gamma"]), .1/.51, rel_tol=0, abs_tol=1e-15)]
++    assert len(rows) == 6
++    assert {(int(r["N"]), int(r["m"])) for r in rows} == {(8, 32), (32, 8), (128, 2)}
++    fig, ax = style.make_axes(real=True, legend_rows=1)
++    for algo in ("scaffold", "fedavg"):
++        ordered = sorted((r for r in rows if r["algorithm"] == algo), key=lambda r: int(r["N"]))
++        points = [db.add(panel, "point", r, x=int(r["N"]), x_column="N", y_column="signed_projection",
++                         low="ci_lower", high="ci_upper", scale=1000., display_x=i) for i, r in enumerate(ordered)]
++        # Dodge is a visual separation at categorical locations, not another N value.
++        shifted = [{**r, "x_display": r["x_display"]+(-.045 if algo == "scaffold" else .045)} for r in points]
++        errors(ax, shifted, **style.ALGORITHMS[algo], label="SCAFFOLD" if algo == "scaffold" else "FedAvg")
++    ax.set_xlim(-.22, 2.22)
++    ax.set_xticks([0, 1, 2], ["(8, 32)", "(32, 8)", "(128, 2)"])
++    ax.set_ylim(0., 3.9)
++    ax.set_yticks([0., 1., 2., 3.])
++    ax.set_xlabel(r"Client/minibatch allocation $(N,m)$")
++    ax.set_ylabel("Signed projected mean displacement\n" + r"($\times 1000$)")
++    fig.legend(*ax.get_legend_handles_labels(), loc="upper center", bbox_to_anchor=(.54, .985),
++               ncol=2, frameon=False, handlelength=1.6, handletextpad=.5, columnspacing=1.2)
++    style.save_panel(fig, db.out / panel)
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--input-root", type=Path, required=True,
++                        help="Frozen plotting snapshot root containing the ten inputs/*.csv files")
++    parser.add_argument("--output", type=Path, required=True)
++    args = parser.parse_args()
++    args.output.mkdir(parents=True, exist_ok=True)
++    db = Records(args.input_root, args.output)
++    with plt.rc_context(style.RC):
++        matched(db, "p3_primary", 2, "hist_matched_H2")
++        matched(db, "p3_primary", 4, "hist_matched_H4")
++        plateau(db, 0, "hist_fixed_gamma_coord1")
++        plateau(db, 1, "hist_fixed_gamma_coord2")
++        real_allocation(db, "real_R0_allocation")
++        matched(db, "p3_smallstep", 4, "hist_H4_smallstep")
++        residual(db, "hist_H4_loglog_residual")
++    db.write()
++    print(json.dumps({"status": "DRAWN_FROM_SAVED_RECORDS", "panels": len(db.rows), "output": str(args.output)}))
++
++
++if __name__ == "__main__":
++    main()
+--- a/manuscript/tools/plot_e4_for_manuscript.py
++++ b/manuscript/tools/plot_e4_for_manuscript.py
+@@ -17,19 +17,20 @@
+ DATA.mkdir(parents=True, exist_ok=True)
+ # Exact native width of the user's existing 0.49-textwidth standalone panels.
+ WIDTH = 221.12505 / 72.0
+-HEIGHT = 3.50
++HEIGHT = 3.25
+ plt.rcParams.update({
+     'text.usetex': True,
+     'font.family': 'serif',
+     'font.serif': ['Computer Modern Roman'],
++    'text.latex.preamble': r'\usepackage[T1]{fontenc}\usepackage{lmodern}',
+     'font.size': 10.0,
+     'axes.labelsize': 10.5,
+     'xtick.labelsize': 10.0,
+     'ytick.labelsize': 10.0,
+-    'legend.fontsize': 9.9,
++    'legend.fontsize': 10.0,
+     'axes.linewidth': 0.65,
+-    'lines.linewidth': 1.25,
+-    'lines.markersize': 3.5,
++    'lines.linewidth': 1.35,
++    'lines.markersize': 4.4,
+     'pdf.fonttype': 42,
+     'ps.fonttype': 42,
+     'axes.unicode_minus': False,
+@@ -40,27 +41,33 @@
+     rows = table[(table['cell_id'] == 'E3_R0_p0_H4_N128_g0.196078431373')].copy()
+     assert len(rows) == 14 and set(rows.K) == {1,2,4,8,16,32,64}
+     reports = []
+-    for algorithm, slug, color in [('SCAFFOLD','scaffold','#2F6B9A'),('FedAvg','fedavg','#8E3B46')]:
++    for algorithm, slug, color in [('SCAFFOLD','scaffold','#1769AA'),('FedAvg','fedavg','#8E3B46')]:
+         d = rows[rows.algorithm == algorithm].sort_values('K')
+         fig, ax = plt.subplots(figsize=(WIDTH, HEIGHT))
+-        fig.subplots_adjust(left=.23, right=.985, bottom=.19, top=.775)
++        fig.subplots_adjust(left=.29, right=.975, bottom=.19, top=.81)
+         ax.set_xscale('log', base=2)
+         ax.set_yscale('symlog', linthresh=1e-5, linscale=.75, base=10)
+         handles = []
+-        for key, label, marker, ls, c in [('U','Squared mean (U)','o','-',color),
+-                                        ('V','Averaged variance (V)','s','--','#4F5965')]:
++        for key, label, marker, ls, c in [('U',r'Squared mean displacement ($U$)','o','-',color),
++                                        ('V',r'Averaged variance ($V$)','s','--','#4F5965')]:
+             y=d[key].to_numpy()
+             low=d[key+'_lower_simultaneous'].to_numpy()
+             high=d[key+'_upper_simultaneous'].to_numpy()
+             assert np.all(low <= y) and np.all(y <= high)
++            assert np.all(low >= -5.5e-5) and np.all(high <= 5e-4), 'Interval outside frozen display range'
+             e=ax.errorbar(d.K,y,yerr=np.vstack([y-low,high-y]),marker=marker,
+-                         linestyle=ls,color=c,capsize=2.0,elinewidth=.8,capthick=.7,label=label)
++                         linestyle=ls,color=c,capsize=2.3,elinewidth=.95,capthick=.85,
++                         markerfacecolor=c if key == 'U' else 'white',
++                         markeredgewidth=.95,markersize=4.2 if key == 'U' else 4.8,
++                         zorder=4 if key == 'U' else 3,label=label)
+             handles.append(e)
+-        ax.axhline(0,color='#999999',linewidth=.65,zorder=0)
++        ax.axhline(0,color='#929292',linewidth=.8,zorder=0)
+         ax.set_ylim(-5.5e-5,5e-4)
+         ax.set_xlim(.80,80)
+         ax.set_xticks([1,2,4,8,16,32,64], labels=['1','2','4','8','16','32','64'])
+-        ax.set_yticks([-1e-5,0,1e-5,1e-4], labels=['-1e-5','0','1e-5','1e-4'])
++        # Full-size exponents keep the smallest embedded tick glyphs >= 9 pt.
++        ax.set_yticks([-1e-5,0,1e-5,1e-4],
++                     labels=[r'$-10^{\textstyle -5}$','0',r'$10^{\textstyle -5}$',r'$10^{\textstyle -4}$'])
+         ax.xaxis.set_minor_locator(NullLocator())
+         ax.yaxis.set_minor_locator(NullLocator())
+         ax.set_xlabel(r'Averaging window $K$ (batches)',labelpad=5)
+@@ -70,20 +77,27 @@
+         ax.spines[['top','right']].set_visible(False)
+         ax.tick_params(direction='out',width=.65,length=3)
+         fig.legend(handles=handles,loc='upper left',bbox_to_anchor=(.18,.985),
+-                   frameon=False,handlelength=2.0,labelspacing=.40,borderaxespad=0)
++                   frameon=False,handlelength=1.7,handletextpad=.55,labelspacing=.40,borderaxespad=0)
+         name=f'e4_averaging_{slug}'
+         # Do not use bbox_inches='tight': final-size geometry and font audit rely on the native canvas.
+         fig.savefig(DEST/f'{name}.pdf',metadata={'Title':f'E4 finite-tail averaging: {algorithm}',
+                      'Author':'Manuscript integration from saved E4 results','CreationDate':None,'ModDate':None})
++        fig.savefig(DEST/f'{name}.png',dpi=200)
+         plt.close(fig)
+         cols=['cell_id','algorithm','H','N','m','gamma','K','checkpoint_count','independent_seeds',
+               'U','U_lower_simultaneous','U_upper_simultaneous','V','V_lower_simultaneous','V_upper_simultaneous']
+-        d[cols].to_csv(DATA/f'{name}.csv',index=False,float_format='%.17g')
++        # The frozen plotted sidecars use LF, including on Windows.
++        d[cols].to_csv(DATA/f'{name}.csv',index=False,float_format='%.17g',lineterminator='\n')
+         reports.append({'panel':name,'algorithm':algorithm,'points_per_curve':7,'curves':['U','V'],
+              'source':str(SOURCE.relative_to(ROOT)), 'source_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
+              'uncertainty':'saved approximate simultaneous 95% E4 primary-family intervals, 196 statistics',
+              'native_width_inches':WIDTH,'native_height_inches':HEIGHT,'intended_width':'0.49\\textwidth',
+-             'signed_U_not_clipped':True,'refitting':False})
++             'signed_U_not_clipped':True,'refitting':False,
++             'yscale':'symlog','linthresh':1e-5,'linscale':.75,
++             'ylim':[-5.5e-5,5e-4],'xlim':[.8,80],
++             'all_interval_endpoints_within_display':True,
++             'typography':'T1 Latin Modern; full-size tick exponents',
++             'markers':{'U':'filled circle, solid line','V':'open square, dashed line'}})
+     (DATA/'e4_provenance.json').write_text(json.dumps(reports,indent=2)+'\n')
+     print('Rendered two standalone E4 PDFs; saved plotted values and provenance.')
+ 

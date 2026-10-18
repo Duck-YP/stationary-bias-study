@@ -1,0 +1,74 @@
+{
+  "artifact_namespace": "workstreams/p2_multidimensional_validation/artifacts/formal/p2-d2-h4-small-step-confirmation",
+  "bootstrap_repetitions": 2000,
+  "bootstrap_seed": 2902,
+  "capture_point": "before_any_p2_formal_output_write",
+  "config_path": "workstreams/p2_multidimensional_validation/configs/d2_h4_small_step_confirmation.yaml",
+  "config_sha256": "f977860d1299ee9b3b94de0470dbe00fe486b3238c7df20ed9a09fd442cdb826",
+  "environment": {
+    "git_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
+    "git_dirty": false,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.14"
+  },
+  "expected_chain_count": 32,
+  "matrix_id": "p2-d2-h4-small-step-confirmation",
+  "phase": "formal",
+  "planned_coordinate_run_rows": 128,
+  "protocol_path": "workstreams/p2_multidimensional_validation/artifacts/archive/protocols/formal_protocol.md",
+  "protocol_sha256": "074024801908f47778772635b24cbf598c543afda65457b9c6906cd4c3f572fa",
+  "run_matrix": {
+    "H_values": [
+      4
+    ],
+    "N_values": [
+      64,
+      96,
+      128,
+      192
+    ],
+    "all_unique": true,
+    "chains": 32,
+    "chains_per_setting": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "gamma_equals_inverse_N": true,
+    "matrix_id": "p2-d2-h4-small-step-confirmation",
+    "seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008
+    ],
+    "settings": 4,
+    "target": "h4-small-step",
+    "unique_run_ids": 32
+  },
+  "schema_version": 2,
+  "seeds": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008
+  ],
+  "source_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
+  "source_dirty_at_run_start": false,
+  "study": "p2_multidimensional_validation"
+}

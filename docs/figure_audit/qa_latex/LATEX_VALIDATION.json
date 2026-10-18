@@ -1,0 +1,66 @@
+{
+  "active_graph": [
+    "main.tex",
+    "macros.tex",
+    "sections/01_introduction.tex",
+    "sections/02_related_work.tex",
+    "sections/03_setting_preliminaries.tex",
+    "sections/04_main_results.tex",
+    "sections/05_mechanism.tex",
+    "sections/07_numerical_study.tex",
+    "sections/08_discussion_limitations.tex",
+    "sections/09_conclusion.tex",
+    "appendix/A_scaffold_proof.tex",
+    "appendix/B_fedavg_proof.tex",
+    "appendix/C_numerical_details.tex",
+    "appendix/D_reproducibility.tex"
+  ],
+  "figure_environments": 4,
+  "active_panels": 7,
+  "new_panel_paths": [
+    "figures/redrawn/hist_matched_H2.pdf",
+    "figures/redrawn/hist_matched_H4.pdf",
+    "figures/redrawn/hist_fixed_gamma_coord1.pdf",
+    "figures/redrawn/hist_fixed_gamma_coord2.pdf",
+    "figures/redrawn/real_R0_allocation.pdf",
+    "figures/redrawn/hist_H4_smallstep.pdf",
+    "figures/redrawn/hist_H4_loglog_residual.pdf"
+  ],
+  "preserved_parent_labels": [
+    [
+      "fig:num-matched-primary"
+    ],
+    [
+      "fig:E-p2-plateau"
+    ],
+    [
+      "fig:real-allocation"
+    ],
+    [
+      "fig:E-control-h4",
+      "fig:E-h4diag"
+    ]
+  ],
+  "subfigure_blocks": 6,
+  "scientific_scope": "all non-figure text, all tables, theorem/proof/assumption files unchanged",
+  "supplementary_files_preserved": 63,
+  "baseline_compile_warnings": [
+    "pdfTeX warning: pdflatex.exe (file ./figures/supplement/E3_R0_allocation_panel. pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed"
+  ],
+  "checks_passed": true,
+  "updated_compile_warnings": [],
+  "compiled_manuscript": {
+    "path": "manuscript/main.pdf",
+    "pages": 33,
+    "bytes": 592577,
+    "sha256": "9ecdbd9f8e4df1dc0f2649d3d90f17034342c82dc1fdec8892b32c7bc5ac9ef3",
+    "bibliography_regenerated_exactly": true
+  },
+  "gallery_compile_warnings": [],
+  "compiled_gallery": {
+    "path": "manuscript/figures_gallery.pdf",
+    "pages": 4,
+    "bytes": 65955,
+    "sha256": "3407f8138cfa7b16a23fb59f2620beb7fac0f102e71b43bc2844bfb388e8421a"
+  }
+}

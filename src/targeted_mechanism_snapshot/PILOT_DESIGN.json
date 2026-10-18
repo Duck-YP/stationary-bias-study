@@ -1,0 +1,40 @@
+{
+  "conditions": [
+    [
+      "rho_minus_symmetric",
+      -0.25,
+      false
+    ],
+    [
+      "rho_zero_symmetric",
+      0.0,
+      false
+    ],
+    [
+      "rho_plus_symmetric",
+      0.25,
+      false
+    ],
+    [
+      "rho_plus_asymmetric",
+      0.25,
+      true
+    ]
+  ],
+  "N": 64,
+  "gamma": 0.0009765625,
+  "seeds": [
+    100101,
+    100102,
+    100103,
+    100104
+  ],
+  "schedule": {
+    "tau": 427,
+    "burn": 21350,
+    "batch_length": 4270,
+    "batches": 64
+  },
+  "purpose": "Performance, precision, autocorrelation, implementation; not hypothesis selection",
+  "cross_condition_coupling": "independent indexed streams; algorithms paired within run"
+}

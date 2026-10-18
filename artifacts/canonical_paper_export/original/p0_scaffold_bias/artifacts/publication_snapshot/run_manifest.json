@@ -1,0 +1,75 @@
+{
+  "action": "reproduce",
+  "created_at_utc": "2026-08-23T11:45:10.404779+00:00",
+  "details": {
+    "confirmation_figures": [
+      "results/small-step-confirmation/coefficient_vs_step_size.png",
+      "results/small-step-confirmation/error_vs_step_size.png",
+      "results/small-step-confirmation/scaled_error_vs_step_size.png",
+      "results/small-step-confirmation/estimator_agreement.png"
+    ],
+    "confirmation_report": "results/small-step-confirmation/confirmation_report.md",
+    "final_report": "results/final_report.md",
+    "original_figures": [
+      "results/coefficient-convergence/coefficient_convergence_H2.png",
+      "results/coefficient-convergence/coefficient_convergence_H4.png",
+      "results/client-count-scaling/client_count_scaling.png",
+      "results/negative-controls/negative_controls.png",
+      "results/estimator_agreement.png"
+    ]
+  },
+  "environment": {
+    "git_commit": "ec3917fa33cf0fd2fcb814ec2f7cba7bafc01418",
+    "git_dirty": true,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    },
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.10"
+  },
+  "schema_version": 1,
+  "study": "stationary-bias-study",
+  "validation": {
+    "config_sha256": {
+      "configs\\experiments\\client_count_scaling.yaml": "8778d7fb33a5d6a1dc0508747e5e192a672db2dcb2b979472bf844dbc5548531",
+      "configs\\experiments\\coefficient_convergence.yaml": "f5c0b99419d266ad8cc64e0df08a9feb3d1c6805ef0d2d6662f246e874841973",
+      "configs\\experiments\\negative_controls.yaml": "3b982a2c5b07e7d847fdfb7cb0017e95cbde13e418ce194b2968decac32ba06c",
+      "configs\\experiments\\small_step_confirmation.yaml": "9f498bb40bb2595df51c5d0813b52e6e4859a87532df575f18d013a85ba54c5f",
+      "configs\\simulation_defaults.yaml": "a06e030d45724813136d6b180a319bbd5e04cf50c6fd485ccaa48215d33b8285"
+    },
+    "original_experiments": {
+      "all_unique": true,
+      "client_count_scaling": 40,
+      "coefficient_convergence": 80,
+      "controls": {
+        "h1_boundary_sanity": 16,
+        "no_nonlinear_conversion": 16,
+        "no_stochastic_noise": 16
+      },
+      "negative_controls": 48,
+      "total": 168,
+      "unique_run_keys": 168
+    },
+    "small_step_confirmation": {
+      "actual_runs": 32,
+      "all_unique": true,
+      "expected_runs": 32,
+      "seeds": [
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208
+      ],
+      "settings": 4,
+      "unique_run_keys": 32
+    },
+    "status": "PASS"
+  }
+}

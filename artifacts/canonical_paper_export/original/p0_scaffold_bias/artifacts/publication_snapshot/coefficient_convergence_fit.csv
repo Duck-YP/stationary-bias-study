@@ -1,0 +1,3 @@
+H,beta0,beta0_ci_low,beta0_ci_high,beta1,B_theory,intercept_contains_theory,intercept_sign_matches_theory,smallest_two_precision_reached,validity_gates_pass,bootstrap_repetitions,bootstrap_seed,p3a_status
+2,-0.18721386277562885,-0.18925031919741545,-0.1851753728121499,0.11104870255304732,-0.1875,True,True,True,True,2000,20260819,SUPPORT
+4,-0.5886330345846623,-0.590775753524215,-0.5865135197015574,1.2843720293067609,-0.59375,False,True,True,True,2000,20260819,CONTRADICTION_CANDIDATE

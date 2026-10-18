@@ -1,0 +1,226 @@
+[
+  {
+    "estimator": "balance",
+    "grid": "full",
+    "condition": "rho_minus_symmetric",
+    "scaled_condition_number": 9.059265130177792,
+    "weights": [
+      -0.7500000000000012,
+      -0.2499999999999996,
+      1.193645785445695e-16,
+      0.2500000000000009,
+      0.7500000000000002,
+      0.9999999999999999
+    ],
+    "weight_squares_sum": 2.250000000000002
+  },
+  {
+    "estimator": "balance",
+    "grid": "full",
+    "condition": "rho_zero_symmetric",
+    "scaled_condition_number": 9.059265130177792,
+    "weights": [
+      -0.7500000000000012,
+      -0.2499999999999996,
+      1.193645785445695e-16,
+      0.2500000000000009,
+      0.7500000000000002,
+      0.9999999999999999
+    ],
+    "weight_squares_sum": 2.250000000000002
+  },
+  {
+    "estimator": "balance",
+    "grid": "full",
+    "condition": "rho_plus_symmetric",
+    "scaled_condition_number": 9.059265130177792,
+    "weights": [
+      -0.7500000000000012,
+      -0.2499999999999996,
+      1.193645785445695e-16,
+      0.2500000000000009,
+      0.7500000000000002,
+      0.9999999999999999
+    ],
+    "weight_squares_sum": 2.250000000000002
+  },
+  {
+    "estimator": "balance",
+    "grid": "full",
+    "condition": "rho_plus_asymmetric",
+    "scaled_condition_number": 9.059265130177792,
+    "weights": [
+      -0.7500000000000012,
+      -0.2499999999999996,
+      1.193645785445695e-16,
+      0.2500000000000009,
+      0.7500000000000002,
+      0.9999999999999999
+    ],
+    "weight_squares_sum": 2.250000000000002
+  },
+  {
+    "estimator": "balance",
+    "grid": "omit_largest_gamma",
+    "condition": "rho_minus_symmetric",
+    "scaled_condition_number": 10.985636887721366,
+    "weights": [
+      -1.2499999999999996,
+      0.24999999999999922,
+      0.250000000000001,
+      1.7499999999999993
+    ],
+    "weight_squares_sum": 4.7499999999999964
+  },
+  {
+    "estimator": "balance",
+    "grid": "omit_largest_gamma",
+    "condition": "rho_zero_symmetric",
+    "scaled_condition_number": 10.985636887721366,
+    "weights": [
+      -1.2499999999999996,
+      0.24999999999999922,
+      0.250000000000001,
+      1.7499999999999993
+    ],
+    "weight_squares_sum": 4.7499999999999964
+  },
+  {
+    "estimator": "balance",
+    "grid": "omit_largest_gamma",
+    "condition": "rho_plus_symmetric",
+    "scaled_condition_number": 10.985636887721366,
+    "weights": [
+      -1.2499999999999996,
+      0.24999999999999922,
+      0.250000000000001,
+      1.7499999999999993
+    ],
+    "weight_squares_sum": 4.7499999999999964
+  },
+  {
+    "estimator": "balance",
+    "grid": "omit_largest_gamma",
+    "condition": "rho_plus_asymmetric",
+    "scaled_condition_number": 10.985636887721366,
+    "weights": [
+      -1.2499999999999996,
+      0.24999999999999922,
+      0.250000000000001,
+      1.7499999999999993
+    ],
+    "weight_squares_sum": 4.7499999999999964
+  },
+  {
+    "estimator": "raw",
+    "grid": "full",
+    "condition": "rho_minus_symmetric",
+    "scaled_condition_number": 9.059265130177792,
+    "weights": [
+      -0.7500000000000012,
+      -0.2499999999999996,
+      1.193645785445695e-16,
+      0.2500000000000009,
+      0.7500000000000002,
+      0.9999999999999999
+    ],
+    "weight_squares_sum": 2.250000000000002
+  },
+  {
+    "estimator": "raw",
+    "grid": "full",
+    "condition": "rho_zero_symmetric",
+    "scaled_condition_number": 9.059265130177792,
+    "weights": [
+      -0.7500000000000012,
+      -0.2499999999999996,
+      1.193645785445695e-16,
+      0.2500000000000009,
+      0.7500000000000002,
+      0.9999999999999999
+    ],
+    "weight_squares_sum": 2.250000000000002
+  },
+  {
+    "estimator": "raw",
+    "grid": "full",
+    "condition": "rho_plus_symmetric",
+    "scaled_condition_number": 9.059265130177792,
+    "weights": [
+      -0.7500000000000012,
+      -0.2499999999999996,
+      1.193645785445695e-16,
+      0.2500000000000009,
+      0.7500000000000002,
+      0.9999999999999999
+    ],
+    "weight_squares_sum": 2.250000000000002
+  },
+  {
+    "estimator": "raw",
+    "grid": "full",
+    "condition": "rho_plus_asymmetric",
+    "scaled_condition_number": 9.059265130177792,
+    "weights": [
+      -0.7500000000000012,
+      -0.2499999999999996,
+      1.193645785445695e-16,
+      0.2500000000000009,
+      0.7500000000000002,
+      0.9999999999999999
+    ],
+    "weight_squares_sum": 2.250000000000002
+  },
+  {
+    "estimator": "raw",
+    "grid": "omit_largest_gamma",
+    "condition": "rho_minus_symmetric",
+    "scaled_condition_number": 10.985636887721366,
+    "weights": [
+      -1.2499999999999996,
+      0.24999999999999922,
+      0.250000000000001,
+      1.7499999999999993
+    ],
+    "weight_squares_sum": 4.7499999999999964
+  },
+  {
+    "estimator": "raw",
+    "grid": "omit_largest_gamma",
+    "condition": "rho_zero_symmetric",
+    "scaled_condition_number": 10.985636887721366,
+    "weights": [
+      -1.2499999999999996,
+      0.24999999999999922,
+      0.250000000000001,
+      1.7499999999999993
+    ],
+    "weight_squares_sum": 4.7499999999999964
+  },
+  {
+    "estimator": "raw",
+    "grid": "omit_largest_gamma",
+    "condition": "rho_plus_symmetric",
+    "scaled_condition_number": 10.985636887721366,
+    "weights": [
+      -1.2499999999999996,
+      0.24999999999999922,
+      0.250000000000001,
+      1.7499999999999993
+    ],
+    "weight_squares_sum": 4.7499999999999964
+  },
+  {
+    "estimator": "raw",
+    "grid": "omit_largest_gamma",
+    "condition": "rho_plus_asymmetric",
+    "scaled_condition_number": 10.985636887721366,
+    "weights": [
+      -1.2499999999999996,
+      0.24999999999999922,
+      0.250000000000001,
+      1.7499999999999993
+    ],
+    "weight_squares_sum": 4.7499999999999964
+  }
+]

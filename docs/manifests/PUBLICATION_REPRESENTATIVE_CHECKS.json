@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "fixed tiny implementation examples; no stationary estimates, fitting, or production run",
+  "limits": {
+    "clients": 3,
+    "coordinates": 2,
+    "local_steps_max": 4,
+    "rounds_per_call_max": 17
+  },
+  "noise_scope": "exact finite-support moments and indexed mapping; no claim of PRNG independence from this check",
+  "checks": {
+    "scalar_update_arithmetic": {
+      "fedavg": 2.7755575615628914e-17,
+      "scaffold_control": 2.220446049250313e-16,
+      "scaffold": 2.7755575615628914e-17
+    },
+    "vector_and_compiled_arithmetic": {
+      "fedavg_vector": 3.230922474006803e-17,
+      "fedavg_compiled": 5.551115123125783e-17,
+      "fedavg_reference": 0.0,
+      "scaffold_vector": 3.230922474006803e-17,
+      "vector_control": 0.0,
+      "scaffold_compiled": 2.3592239273284576e-16,
+      "scaffold_reference": 0.0
+    },
+    "targeted_reference_and_controls": {
+      "zero_mean": {
+        "state": 5.551115123125783e-17,
+        "control": 1.2351231148954867e-15,
+        "mean_control": 9.020562075079397e-17,
+        "balance": 4.336808689942018e-19
+      },
+      "nonzero_mean": {
+        "state": 5.551115123125783e-17,
+        "control": 8.604228440844963e-16,
+        "mean_control": 8.326672684688674e-17,
+        "balance": 4.336808689942018e-19
+      },
+      "gradient_decomposition": 1.1102230246251565e-16
+    },
+    "deterministic_and_quadratic_boundaries": {
+      "quadratic_affine_recursion": 2.7755575615628914e-17,
+      "quadratic_balance_zero": 0.0,
+      "deterministic_equal_paths": 0.0,
+      "origin_exact": true,
+      "H1_equal_server_paths": 0.0
+    },
+    "exact_noise_moments_and_indexing": {
+      "correlated_mean": 0.0,
+      "correlated_covariance": 1.1102230246251565e-16,
+      "symmetric": {
+        "mean": 0.0,
+        "variance": 1.0,
+        "third_moment": 0.0,
+        "indexed_values_checked": 24
+      },
+      "asymmetric": {
+        "mean": 5.551115123125783e-17,
+        "variance": 1.0,
+        "third_moment": 0.7071067811865478,
+        "indexed_values_checked": 24
+      }
+    },
+    "tensor_lyapunov_and_formulas": {
+      "lyapunov": 1.1102230246251565e-16,
+      "tensor_contraction": 2.7755575615628914e-17,
+      "nontrivial_null_tensor_norm": 0.2
+    },
+    "affine_translation": {
+      "scaffold_server": 5.551115123125783e-17,
+      "scaffold_controls": 3.3306690738754696e-16,
+      "scaffold_local": 6.938893903907228e-17,
+      "fedavg_H1_server": 0.0
+    },
+    "orthogonal_equivariance": {
+      "orthogonality": 1.1102230246251565e-16,
+      "fedavg": 5.551115123125783e-17,
+      "fedavg_compiled": 5.551115123125783e-17,
+      "scaffold": 3.469446951953614e-17,
+      "scaffold_compiled": 1.5959455978986625e-16,
+      "lyapunov_rotation": 1.1102230246251565e-16,
+      "B11_d": 2.7755575615628914e-17,
+      "B20": 5.551115123125783e-17,
+      "B20_local": 2.7755575615628914e-17,
+      "B20_ctrl": 1.3877787807814457e-17
+    },
+    "finite_window_and_resume": {
+      "symmetric": {
+        "pre_identity": 5.102127870520021e-18,
+        "post_identity": 8.367489707652835e-18,
+        "paired_identity": 6.5052130349130266e-18,
+        "round_residual": 5.551115123125783e-17,
+        "mean_controls": 1.249000902703301e-16,
+        "endpoint_maximum": 0.014046372547700088,
+        "resume_bitwise_exact": true
+      },
+      "asymmetric": {
+        "pre_identity": 3.3546490748669137e-18,
+        "post_identity": 2.142893705618409e-18,
+        "paired_identity": 1.734723475976807e-18,
+        "round_residual": 5.551115123125783e-17,
+        "mean_controls": 2.7755575615628914e-16,
+        "endpoint_maximum": 0.015989500078007347,
+        "resume_bitwise_exact": true
+      }
+    }
+  }
+}

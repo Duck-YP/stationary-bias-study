@@ -1,0 +1,43 @@
+schema_version: 1
+experiment: p3_d2_smoke
+setting_id: p3-d2-smoke
+description: Two-dimensional homogeneous FedAvg engineering smoke setting.
+study_role: engineering_smoke
+
+objective:
+  name: rank_one_log_cosh
+  d: 2
+  A:
+    - [1.2, 0.2]
+    - [0.2, 1.0]
+  u: [0.7071067811865475, 0.7071067811865475]
+  alpha: 0.25
+  x_star: [0.0, 0.0]
+
+noise:
+  name: cholesky_rademacher
+  covariance:
+    - [1.0, 0.2]
+    - [0.2, 0.7]
+  construction: epsilon = cholesky(C) @ z
+  rademacher_coordinates_independent: true
+  resulting_vector_coordinates_may_be_correlated: true
+  fresh_across: [chain, communication_round, local_step, client]
+
+smoke:
+  d: 2
+  H: 2
+  N: 4
+  gamma: 0.05
+  seeds: [1301, 1302, 1303]
+  initial_x:
+    1301: [-0.5, 0.25]
+    1302: [0.0, 0.0]
+    1303: [0.5, -0.25]
+  protocol:
+    burn_in_multiples: 5
+    batch_length_multiples: 2
+    num_batches: 4
+
+artifact_namespace: workstreams/p3_multidimensional_fedavg_attribution/artifacts/smoke
+interpretation_boundary: engineering_smoke_no_scientific_interpretation

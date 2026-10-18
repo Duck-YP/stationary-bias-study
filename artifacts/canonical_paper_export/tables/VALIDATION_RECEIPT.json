@@ -1,0 +1,648 @@
+{
+  "active_numbered_tables": 22,
+  "author_attention": [
+    "Partial: saved per-run summaries supply coefficients and means, but not the original per-run combined-SE threshold. No uncertainty is recomputed. H=4,N=16,j=2 formats to -0.1080237 from the saved value; the paper displays -0.1080240, consistent with six-place rounding followed by a trailing zero, but no saved formatting rule establishes that history."
+  ],
+  "coverage_counts": {
+    "archive": 1,
+    "not_computational": 1,
+    "partial": 4,
+    "supported": 17
+  },
+  "data_exports": 21,
+  "display_validation": {
+    "10": {
+      "scope": "Normalized source records; no claim of literal manuscript prose/LaTeX equality.",
+      "status": "EXACT_SYMBOLIC_CERTIFICATE"
+    },
+    "11": {
+      "displayed_decimal_cells": 36,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 36,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "12": {
+      "displayed_decimal_cells": 10,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 10,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "13": {
+      "displayed_decimal_cells": 6,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 6,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "14": {
+      "displayed_decimal_cells": 40,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 40,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "15": {
+      "displayed_decimal_cells": 48,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 48,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "16": {
+      "displayed_decimal_cells": 87,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 87,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "17": {
+      "displayed_decimal_cells": 12,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 12,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "18": {
+      "displayed_decimal_cells": 16,
+      "displayed_not_regenerated": {
+        "-0.1080240": 1,
+        "0.00110953": 1,
+        "0.00115744": 1,
+        "0.00331567": 1,
+        "0.00334677": 1
+      },
+      "regenerated_decimal_cells": 12,
+      "regenerated_not_displayed": {
+        "-0.1080237": 1
+      },
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "DISCLOSED_PARTIAL"
+    },
+    "19": {
+      "scope": "Normalized source records; no claim of literal manuscript prose/LaTeX equality.",
+      "status": "SOURCE_BACKED_METADATA"
+    },
+    "2": {
+      "displayed_decimal_cells": 36,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 36,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "20": {
+      "scope": "Normalized source records; no claim of literal manuscript prose/LaTeX equality.",
+      "status": "SOURCE_BACKED_METADATA"
+    },
+    "21": {
+      "displayed_decimal_cells": 72,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 72,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "22": {
+      "displayed_decimal_cells": 28,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 28,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "3": {
+      "displayed_decimal_cells": 24,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 24,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "4": {
+      "displayed_decimal_cells": 20,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 20,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "5": {
+      "displayed_decimal_cells": 16,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 16,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "6": {
+      "displayed_decimal_cells": 18,
+      "displayed_not_regenerated": {},
+      "regenerated_decimal_cells": 18,
+      "regenerated_not_displayed": {},
+      "scope": "Exact multiset of decimal display strings in table body; row selectors are recorded in source modules.",
+      "status": "PASS"
+    },
+    "7": {
+      "scope": "Normalized source records; no claim of literal manuscript prose/LaTeX equality.",
+      "status": "SOURCE_BACKED_METADATA"
+    },
+    "8": {
+      "scope": "Normalized source records; no claim of literal manuscript prose/LaTeX equality.",
+      "status": "SOURCE_BACKED_METADATA"
+    },
+    "9": {
+      "scope": "Normalized source records; no claim of literal manuscript prose/LaTeX equality.",
+      "status": "SOURCE_BACKED_METADATA"
+    }
+  },
+  "exact_decimal_cells": 453,
+  "exact_decimal_tables": 14,
+  "inputs": {
+    "artifacts/canonical_paper_export/original/p2_multidimensional_validation/artifacts/formal/p2-d2-coefficient-primary/fit_summary.csv": {
+      "bytes": 7009,
+      "role": "saved_input",
+      "sha256": "5b1c7137b42f42286928c2939113fd3a67c057d7cf2f408aa1efc904deb275ea"
+    },
+    "artifacts/canonical_paper_export/original/p2_multidimensional_validation/artifacts/formal/p2-d2-fixed-gamma-largeN-plateau/plateau_fit_summary.csv": {
+      "bytes": 748,
+      "role": "saved_input",
+      "sha256": "baafa9b4ff2e6168bbe74b3632029e416ea68e3af61b30b12bb0fccbd2553f5f"
+    },
+    "artifacts/canonical_paper_export/original/p2_multidimensional_validation/artifacts/formal/p2-d2-h4-small-step-confirmation/fit_summary.csv": {
+      "bytes": 3002,
+      "role": "saved_input",
+      "sha256": "c16d46cf172996649dca885eebb40b3c63c95119d8108031841c0c43b3a32404"
+    },
+    "artifacts/canonical_paper_export/original/p2_multidimensional_validation/artifacts/formal/p2-d5-controlled-validation/fit_summary.csv": {
+      "bytes": 16989,
+      "role": "saved_input",
+      "sha256": "218a612b23de67bf888f3e199505075e07022f50752b574636fa44574436b1ac"
+    },
+    "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-coefficient-primary/fit_summary.csv": {
+      "bytes": 885,
+      "role": "saved_input",
+      "sha256": "1f17ecd7cd4101a1948373fe82f40fa3777064c49eacf627782e12a8f7345db8"
+    },
+    "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-coefficient-primary/run_summary.csv": {
+      "bytes": 139464,
+      "role": "saved_input",
+      "sha256": "c9a38d02b2626e324eed55ef0f4c9717baf11d18a9608d6bbd6a4da3197f0d13"
+    },
+    "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-h4-small-step-confirmation/fit_summary.csv": {
+      "bytes": 521,
+      "role": "saved_input",
+      "sha256": "39f26f86a038d20693041537a2725d3ca9d2e79885bc6184e70861400660fb4a"
+    },
+    "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-matched-attribution-h4-diagnostic/scaling_summary.csv": {
+      "bytes": 870,
+      "role": "saved_input",
+      "sha256": "4a5f47c8b260279c9f440114a5700b2938d0f4f1bac3ee8244a969629a70c6d0"
+    },
+    "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-matched-attribution-h4-small-step-confirmation/paired_fit_summary.csv": {
+      "bytes": 527,
+      "role": "saved_input",
+      "sha256": "12c4bd2184506078742d211d8f3ae70bbf9399651323b9140a09a0e816080e21"
+    },
+    "artifacts/canonical_paper_export/original/p3_multidimensional_fedavg_attribution/artifacts/formal/p3-d2-matched-attribution-primary/paired_fit_summary.csv": {
+      "bytes": 892,
+      "role": "saved_input",
+      "sha256": "91be94dbfaeb6c6d280f38e00a76353153ba665211ee3ffa3fbb4b858382b52d"
+    },
+    "artifacts/canonical_paper_export/supplementary/fitted_coefficients.csv": {
+      "bytes": 31129,
+      "role": "saved_input",
+      "sha256": "c1dd3ef05a8c764c534600a3a466c5d2ec557bedfd5366ef1e8e3a8debc40c0c"
+    },
+    "artifacts/canonical_paper_export/supplementary/full_results.csv": {
+      "bytes": 651576,
+      "role": "saved_input",
+      "sha256": "170aa8de897e57c16b1fb25de1ee874ea19d62a1470c93d54ccd2bf1391750d9"
+    },
+    "artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json": {
+      "bytes": 9751,
+      "role": "saved_input",
+      "sha256": "450b187da1f91f939745f3c42e8d579c66b70deb048bf2de3ba718e860e69618"
+    },
+    "artifacts/canonical_paper_export/targeted_mechanism/certificate/independent_model_checks.json": {
+      "bytes": 28984,
+      "role": "saved_input",
+      "sha256": "9a6c3e50e6a9367ebe3f58d665623f4ee481e7808c4157d9650a198ca7a7ed76"
+    },
+    "artifacts/canonical_paper_export/targeted_mechanism/results/intercepts_and_contrasts.csv": {
+      "bytes": 58588,
+      "role": "saved_input",
+      "sha256": "6e1f4341641be2a9f565d3389b5b5c83fa926e641ee024ffc7d5ab6e87dbee09"
+    },
+    "artifacts/canonical_paper_export/targeted_mechanism/results/primary_family_36.csv": {
+      "bytes": 15229,
+      "role": "saved_input",
+      "sha256": "e2fe3437cd86e8512d62c994409bb3282b0a36aa65af646b377f3027e9cb78bd"
+    },
+    "configs/original/p2_multidimensional_validation/configs/d2_coefficient_primary.yaml": {
+      "bytes": 5173,
+      "role": "saved_input",
+      "sha256": "f644347ac24bc4def17aa3a3c7451fb9ff7da620b68eade0a260082ab4e00a5c"
+    },
+    "configs/original/p2_multidimensional_validation/configs/d2_fixed_gamma_largeN_plateau.yaml": {
+      "bytes": 5856,
+      "role": "saved_input",
+      "sha256": "0ad9fb8fb4edb7cc50fea15da54ce35a8d2a5bde9a090343066268c0f3d0dd0c"
+    },
+    "configs/original/p2_multidimensional_validation/configs/d2_h4_small_step_confirmation.yaml": {
+      "bytes": 4749,
+      "role": "saved_input",
+      "sha256": "ea22f7764bdb423e87a4604b8b1e5053b2cc8da667ad156f899f345412f5d2e4"
+    },
+    "configs/original/p2_multidimensional_validation/configs/d2_rotation_invariance.yaml": {
+      "bytes": 6063,
+      "role": "saved_input",
+      "sha256": "60992090cf48cd403f2316e4fd7bbdbfcb1d5bc43ad0da16447d7c2b81e4b99e"
+    },
+    "configs/original/p2_multidimensional_validation/configs/d5_controlled_validation.yaml": {
+      "bytes": 8555,
+      "role": "saved_input",
+      "sha256": "0b0aaf856883d0ea3d89b3d84b9c92a7062ac3fa18f59539342513a3b6e69166"
+    },
+    "configs/supplementary/PROTOCOL_FROZEN.json": {
+      "bytes": 45163,
+      "role": "saved_input",
+      "sha256": "fd0f9ca205355f0bd4a3101985aa9fbaf4da938321bb56c529c2164b646153ec"
+    },
+    "docs/original/p2_multidimensional_validation/artifacts/formal/p2-d5-controlled-validation/p2_d5_controlled_validation_report.md": {
+      "bytes": 30117,
+      "role": "saved_input",
+      "sha256": "ed7cf5035a831c7347478bde196422edf3428f5357cbede1f59a62b0aca6e0a8"
+    },
+    "manuscript/appendix/C_numerical_details.tex": {
+      "bytes": 47045,
+      "role": "display_validation_only",
+      "sha256": "902f700d6cfb77f03784fb2be9fdaac6a656f30481fb3033ceaa16dead0e3196"
+    },
+    "manuscript/main.pdf": {
+      "bytes": 651222,
+      "role": "numbering_reference",
+      "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+    },
+    "manuscript/sections/07_numerical_study.tex": {
+      "bytes": 26646,
+      "role": "display_validation_only",
+      "sha256": "431f087597a4800578115662b05a15fbf103ef1389e8320fcaf25f64b49bd474"
+    },
+    "manuscript/supplementary_results/DATA_MANIFEST.json": {
+      "bytes": 1440,
+      "role": "saved_input",
+      "sha256": "9789fbb223e068d9c3fc97f5a8c3a73f0bf77be609d7e369618311c7721173e6"
+    },
+    "manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv": {
+      "bytes": 1051923,
+      "role": "saved_input",
+      "sha256": "0a403edf7cb6f0b32b5fba70896c186f7aece60f51af8ed11a5c4ab6a0b93c66"
+    },
+    "manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json": {
+      "bytes": 10538,
+      "role": "saved_input",
+      "sha256": "2e0dc23de0a7d9061cb66b983ba088205f8c9d41e6f3cb52da44a5459dd856c9"
+    },
+    "manuscript/supplementary_results/E4/E4_v2_PROTOCOL_FROZEN.json": {
+      "bytes": 4178,
+      "role": "saved_input",
+      "sha256": "499860213025a7f07df09a1629e2b9e7eb62a5a1ff062477f203234a1b8c3e77"
+    },
+    "manuscript/supplementary_results/E4/STATISTICAL_METHOD_RECEIPT.json": {
+      "bytes": 729,
+      "role": "saved_input",
+      "sha256": "c13bc9b589b82ce1ad33e73dbea919312b3d7e725bed702f16526b5d27d3c2c7"
+    },
+    "manuscript/supplementary_results/E5/E5_POSTHOC_ANALYSIS_SPEC.json": {
+      "bytes": 1552,
+      "role": "saved_input",
+      "sha256": "697ee7337def280b2182ddf4e435a3fe08810615c8089c81e5d0ce8d400a4712"
+    },
+    "manuscript/supplementary_results/E5/FULL_VECTOR_ALIGNMENT.csv": {
+      "bytes": 74551,
+      "role": "saved_input",
+      "sha256": "76a9afdbe3a09d86440f8debd4906c7ca61943d5297d904a2258395dc8daf83a"
+    },
+    "manuscript/supplementary_results/E5/STATISTICAL_METHOD_RECEIPT.json": {
+      "bytes": 481,
+      "role": "saved_input",
+      "sha256": "c810a60d55519cae6b746fd4b938f3d0644fd26de2a55760738bc4691bd6568c"
+    },
+    "manuscript/supplementary_results/fitted_coefficients.csv": {
+      "bytes": 31129,
+      "role": "saved_input",
+      "sha256": "c1dd3ef05a8c764c534600a3a466c5d2ec557bedfd5366ef1e8e3a8debc40c0c"
+    },
+    "manuscript/supplementary_results/tables/E1_intercept_contrasts.csv": {
+      "bytes": 1708,
+      "role": "saved_input",
+      "sha256": "7a1d413e9573800b6532d9bb1df8671bd4388b2c286b0afdc7e286757b08adeb"
+    },
+    "manuscript/supplementary_results/tables/E2_exact_checks.csv": {
+      "bytes": 2410,
+      "role": "saved_input",
+      "sha256": "667dd99d1400003e49a53255933ae6e52693f990c064d6fcff1015f1e79e9963"
+    },
+    "manuscript/supplementary_results/tables/E3_policy_allocation_contrasts.csv": {
+      "bytes": 12905,
+      "role": "saved_input",
+      "sha256": "e470169173cd6eab0085ecd89bfde82af8f06006cb96123646a9a0176a14251a"
+    },
+    "src/stationary_bias/workstreams/p2_multidimensional_validation/formal_analysis.py": {
+      "bytes": 38397,
+      "role": "saved_input",
+      "sha256": "a7c11eb42b7830e474111ef3addd71ae31da5c4beb6b80408e5c06cdaa1cfa70"
+    }
+  },
+  "outputs": {
+    "README.md": {
+      "bytes": 941,
+      "sha256": "53e4ebb1f68ccd72155cc13a2397eeebf519d32b80b33894ad737b6e7567e212"
+    },
+    "coverage.csv": {
+      "bytes": 5497,
+      "sha256": "fc78eb070689efb1b3c5d7cc3e225421d40fff3866cd5f1c324e227294d495e4"
+    },
+    "coverage.json": {
+      "bytes": 117098,
+      "sha256": "70d57e893446ad3778a4b5f4fd63c1435df67ed5160768c9e8748fd2377119c0"
+    },
+    "table_02.csv": {
+      "bytes": 678,
+      "sha256": "88c8ed24e17e6a0bd68ef6c8dadd6c36f922b91290001b650de3bd1e7ba80a86"
+    },
+    "table_02.md": {
+      "bytes": 1918,
+      "sha256": "84aea0e733efc2ba82adff158258a96f4df605bf0e38ea943353220958abe249"
+    },
+    "table_02.tex": {
+      "bytes": 915,
+      "sha256": "fd1ff4dad0b5830a2b502e566d789778199d69282dae10e38e650f58cd0093ae"
+    },
+    "table_03.csv": {
+      "bytes": 388,
+      "sha256": "1a74734c7312f6a3f261f82c43dda1ab28e3d3cf4d55f1ae768c1901d1a506f7"
+    },
+    "table_03.md": {
+      "bytes": 784,
+      "sha256": "96523927da1ee84393011bb1aff3f1af4e5104de3dd65dd17c5b14d9343793dc"
+    },
+    "table_03.tex": {
+      "bytes": 602,
+      "sha256": "1b603034795e507708a61d874df9a4d23242e0a8009b36998ae031bf77059343"
+    },
+    "table_04.csv": {
+      "bytes": 397,
+      "sha256": "a6037a9746e80a67f8a6684976db7bdac8c4032f29e863057ce31c8a7370f159"
+    },
+    "table_04.md": {
+      "bytes": 972,
+      "sha256": "dd2135055c0ca956d73e6ae8d790b9eb3481e7ad38bdfa41cf443f4ef621382e"
+    },
+    "table_04.tex": {
+      "bytes": 630,
+      "sha256": "c879f4c9307d5a2d207ce30b8d4010edaaf1b212545b0432fd608324e67f29fe"
+    },
+    "table_05.csv": {
+      "bytes": 290,
+      "sha256": "305bc7633900f32b0fea23bfed75fac8dc3e33acf03764ff36c4790ccc35b984"
+    },
+    "table_05.md": {
+      "bytes": 571,
+      "sha256": "786bcc03a5c2b51168ebcd26f35be355378c6f11dce802ede5a91a6d67e021b7"
+    },
+    "table_05.tex": {
+      "bytes": 491,
+      "sha256": "de177cb318e853cba271c81edb5cd86b2515b983860df3ac8563f9e48b0adc3e"
+    },
+    "table_06.csv": {
+      "bytes": 285,
+      "sha256": "c3140d963fa2df4e3a5c2b5a3d66f7244763e9793b337a492d6b5d5244a402c2"
+    },
+    "table_06.md": {
+      "bytes": 846,
+      "sha256": "b1e4c7836f01ecfed206c4b410995d7f613c0b44f45ef72a710a3be5acb62cc4"
+    },
+    "table_06.tex": {
+      "bytes": 539,
+      "sha256": "6e79fc203bee11672f4e82f2394859363b79cfa9a94866ce06fdb27aa1d54c7f"
+    },
+    "table_07.csv": {
+      "bytes": 732,
+      "sha256": "c798ee8e4d952e7414fcdc8ced14e741f1feb85b9f9729fe0e9020da5d51e5e6"
+    },
+    "table_07.md": {
+      "bytes": 1852,
+      "sha256": "4b5a0170041e1f1f17b2ad1b5f38c62708cf35f52a6ea93dfee68a1406983925"
+    },
+    "table_07.tex": {
+      "bytes": 914,
+      "sha256": "252684298f7462fefe6882a3f653bdced4519fba24f3e73f3602e484b3e7d85c"
+    },
+    "table_08.csv": {
+      "bytes": 18749,
+      "sha256": "de1e999e4c48bdbbebd9af220b410958d28a22725d2872f40d1b857a9c6c4e53"
+    },
+    "table_08.md": {
+      "bytes": 19449,
+      "sha256": "f845e7b611586610b10ddffd78c6f563621f559ace3491970e872067bf3a655b"
+    },
+    "table_08.tex": {
+      "bytes": 19073,
+      "sha256": "2c851d63fa846a0bb7223a3a6a917fa413be48b1da2c98509f10e25e6052af3f"
+    },
+    "table_09.csv": {
+      "bytes": 6033,
+      "sha256": "1999bbd2784a34e6dd4642fadc3ecae012e29c7e1690cbc1cf19351e6a92aca0"
+    },
+    "table_09.md": {
+      "bytes": 7191,
+      "sha256": "a3ecab64895d60f75b07f20ec0db7f757e487f1804b7515e4dc36bfee60a571d"
+    },
+    "table_09.tex": {
+      "bytes": 6434,
+      "sha256": "f8d61c4179dc82823350259d070122b34bf97a27a42f06534a6d74bb8dcdac92"
+    },
+    "table_10.csv": {
+      "bytes": 139,
+      "sha256": "d5ed265d064fa091f4f9278e8c2c04596f789e63cd493d5813da80513ebb5daf"
+    },
+    "table_10.md": {
+      "bytes": 559,
+      "sha256": "18d8d4753e343092fcba72d94b2e2c7ac202eb0d27cdbb5721e0ffb281a037e2"
+    },
+    "table_10.tex": {
+      "bytes": 345,
+      "sha256": "6161342487068d1db929bfd608dd9745c6e1d44a3d53d0d6bef98c82fdc056ba"
+    },
+    "table_11.csv": {
+      "bytes": 753,
+      "sha256": "ce1e6902bc9269862ce14c9eb5db071cc03d6e126673661d5f694aba524a6ab1"
+    },
+    "table_11.md": {
+      "bytes": 2009,
+      "sha256": "c2a1a36f95dcbbe6e80a96c014283bfa53bbccf55cdd4472fde11d2ba5f8d43e"
+    },
+    "table_11.tex": {
+      "bytes": 975,
+      "sha256": "864a99f903c1e2ff707382b04cfafa8418a2649281c5eee7c8df067b7794cbc4"
+    },
+    "table_12.csv": {
+      "bytes": 208,
+      "sha256": "da3c21c81a3e81ac70852508dce9d02f5b9755cacad66cf9071859eeeb1e02e1"
+    },
+    "table_12.md": {
+      "bytes": 644,
+      "sha256": "24ae73b092dc7704373212ddf03b4c7e52d3b1ba8bbfe0c5d1987ed3dc105edb"
+    },
+    "table_12.tex": {
+      "bytes": 378,
+      "sha256": "ec0f1d443fbf4376585e17552672fecc13707119fbc4477ac641b3d83f1eb8e9"
+    },
+    "table_13.csv": {
+      "bytes": 136,
+      "sha256": "49de624c96035484a3f275477a64ce5c9bb092e9fbc81c84d23364865aafeec7"
+    },
+    "table_13.md": {
+      "bytes": 446,
+      "sha256": "40535b28dfdc7e9248de4fb23981690ed1c4b61fdbc77db4af3abf683c085abf"
+    },
+    "table_13.tex": {
+      "bytes": 293,
+      "sha256": "f19a9cfad5dc68262d2ad025e4f012b66244df808bc3b87d323509f9e8338fb1"
+    },
+    "table_14.csv": {
+      "bytes": 686,
+      "sha256": "99ad0bc355d5d45129c9fa2f1122984bf48ad2eeff7f574f22e094e4b46662ae"
+    },
+    "table_14.md": {
+      "bytes": 1572,
+      "sha256": "add75e7dd04651b298d3e98e56f99ed482f478afae84d32aa6d2eb0fd5496ccc"
+    },
+    "table_14.tex": {
+      "bytes": 932,
+      "sha256": "c68b8e2872120daca22a7c3ae5815af27838ef116380e79bccf035a18481c681"
+    },
+    "table_15.csv": {
+      "bytes": 696,
+      "sha256": "50773167a81828fd2bb344dbcee04b95fa049817fd59a11c6c5b00fe106bc605"
+    },
+    "table_15.md": {
+      "bytes": 1091,
+      "sha256": "5c442f1064f5c6a7688b13c13e04e5789b787d01ec1fe26ac4503409c0a65240"
+    },
+    "table_15.tex": {
+      "bytes": 933,
+      "sha256": "d8dbf31233153c986666683d5a4c57ef6ab1493c1f1c0bfe374cbc6b762baa82"
+    },
+    "table_16.csv": {
+      "bytes": 1123,
+      "sha256": "a4bad4ea76f17d1fa52ee23b6d3a8bdedc8897a627acca39b2f316c0c06cc4ee"
+    },
+    "table_16.md": {
+      "bytes": 2030,
+      "sha256": "28b0122a500d97c9e62b27c13acfafb8723dd5be5020575811fc651f3eab204c"
+    },
+    "table_16.tex": {
+      "bytes": 1576,
+      "sha256": "11d644b09d88815d104ec2c3fce2eee85c2e533456dc3c0155766cf8cf4badb1"
+    },
+    "table_17.csv": {
+      "bytes": 264,
+      "sha256": "1169dfb8a019e187d9ac912c64a824f39cf721c31250d67f7553d0604cf644a3"
+    },
+    "table_17.md": {
+      "bytes": 729,
+      "sha256": "aa93305ed14c2317ad29e96c495859195a9e9f15cde9fa72c1cadb06b6ee14fb"
+    },
+    "table_17.tex": {
+      "bytes": 466,
+      "sha256": "8c0c257102351714892229ea4c15e441b37b7101aa8663a6d3d6d1cc8e22da11"
+    },
+    "table_18.csv": {
+      "bytes": 327,
+      "sha256": "4c357b840e9afae2fa3bfa21dcdb36fd368a1341076d86fecea844a251719503"
+    },
+    "table_18.md": {
+      "bytes": 1087,
+      "sha256": "84c3f334924052b83e7e321da68b32c9b3c8875da843c4f75a055095b7966b5c"
+    },
+    "table_18.tex": {
+      "bytes": 564,
+      "sha256": "34872b860205559d217709da6bf6d922d83048587cc4e4e7b083578c0626087f"
+    },
+    "table_19.csv": {
+      "bytes": 1988,
+      "sha256": "5ea434e0d3c3caaaaae3ddb5791bf12092791febbac87e9e6d1a316b6771fc9a"
+    },
+    "table_19.md": {
+      "bytes": 2548,
+      "sha256": "1755833da0809991083a744521c9a8fbf566d76fe6b57cc9606a308f92eb2eeb"
+    },
+    "table_19.tex": {
+      "bytes": 2147,
+      "sha256": "2ccd7d0fd2b93595f33b86512908319ccb73a1a432dae31475d5c3e847a7a7f9"
+    },
+    "table_20.csv": {
+      "bytes": 3754,
+      "sha256": "b80e5426c86d92445eb14944a86356f7c0921ca2d438ac60f7c4056203a51403"
+    },
+    "table_20.md": {
+      "bytes": 4557,
+      "sha256": "779a66b2683fc74f6de633bb1fcccfed8019e7b67bffdb074786f84e78ea512c"
+    },
+    "table_20.tex": {
+      "bytes": 3898,
+      "sha256": "b4151ef6c12002ebd01a9d8fbf6d4103636a8d6ab953c6b3b349883176e00511"
+    },
+    "table_21.csv": {
+      "bytes": 1024,
+      "sha256": "60d7b961c1f7ecf028a4ce56b4a05b8a5aa5feaeac8203aabec176d427ee9e0c"
+    },
+    "table_21.md": {
+      "bytes": 1699,
+      "sha256": "76c46675ec460fe38c600fc785e9cee95bef9d665a32da1fa83d5899826869e0"
+    },
+    "table_21.tex": {
+      "bytes": 1450,
+      "sha256": "41a71f8005d905efd04b6297d9c261213ccb00bc6e9c733ce105e005c6126e91"
+    },
+    "table_22.csv": {
+      "bytes": 404,
+      "sha256": "01f4292d7b6b8ddd3cc3f33004fd7abff6dce8e5aa05eca9d3b7f7278042cb3c"
+    },
+    "table_22.md": {
+      "bytes": 1085,
+      "sha256": "501869c4568f339eb98a2884d98b3906bf6cd4a1607a6ce96db38c472787c08d"
+    },
+    "table_22.tex": {
+      "bytes": 603,
+      "sha256": "6bc1a1023f01b299c9b059e542dc4185c9387138c858c00cb4adac2ebba369b8"
+    }
+  },
+  "schema_version": 1,
+  "scientific_recomputation": {
+    "operations": "saved-row selection, equality checks, rational marginalization/ratios, scaling and display formatting",
+    "refit": false,
+    "resampling": false,
+    "simulation": false
+  },
+  "source_code": {
+    "scripts/regenerate_paper_tables.py": "c47795a1b80c35e67f3a629040776625525e7bcd6b757423df09ee4cd4266ea4",
+    "scripts/table_regeneration/catalog.py": "d8a652db15e8e3b3fb0a89c82f539a2ec2a0433b45391b956bca610f408e1243",
+    "scripts/table_regeneration/config_tables.py": "83d28889ef6178032f5877ff398abfcd73eaa70de5f5748cfa9da30977b1747e",
+    "scripts/table_regeneration/historical_tables.py": "58cc5ab4d1ddb70897da52e6f694a5d86325acdfce4138d5d58d684a9fe57d26",
+    "scripts/table_regeneration/recent_tables.py": "7de0fcbbd9200aaaa1a4b9a8ab12f6131a585be6e1a7e0bc1f01ec3892c43164"
+  },
+  "source_table_environments": 23,
+  "status": "PASS_WITH_DISCLOSED_GAPS"
+}

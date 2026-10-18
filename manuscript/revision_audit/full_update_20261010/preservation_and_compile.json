@@ -1,0 +1,306 @@
+{
+  "baseline": "SCAFFOLD_Narrative_Refined_20261010.zip",
+  "layout": {
+    "pages": 38,
+    "main_pages": 17,
+    "reference_pages": 2,
+    "appendix_pages": 19
+  },
+  "checks": [
+    {
+      "check": "exactly_four_agreed_manuscript_files_changed",
+      "passed": true,
+      "files": [
+        "sections/01_introduction.tex",
+        "sections/02_related_work.tex",
+        "sections/07_numerical_study.tex",
+        "sections/08_discussion_limitations.tex"
+      ]
+    },
+    {
+      "check": "byte_preservation_appendix/",
+      "passed": true,
+      "count": 4,
+      "changed": []
+    },
+    {
+      "check": "byte_preservation_figures/",
+      "passed": true,
+      "count": 32,
+      "changed": []
+    },
+    {
+      "check": "byte_preservation_supplementary_results/",
+      "passed": true,
+      "count": 129,
+      "changed": []
+    },
+    {
+      "check": "byte_preservation_main.tex",
+      "passed": true
+    },
+    {
+      "check": "byte_preservation_macros.tex",
+      "passed": true
+    },
+    {
+      "check": "byte_preservation_references.bib",
+      "passed": true
+    },
+    {
+      "check": "byte_preservation_main.bbl",
+      "passed": true
+    },
+    {
+      "check": "byte_preservation_build.sh",
+      "passed": true
+    },
+    {
+      "check": "byte_preservation_sections/03_setting_preliminaries.tex",
+      "passed": true
+    },
+    {
+      "check": "byte_preservation_sections/04_main_results.tex",
+      "passed": true
+    },
+    {
+      "check": "byte_preservation_sections/05_mechanism.tex",
+      "passed": true
+    },
+    {
+      "check": "byte_preservation_sections/09_conclusion.tex",
+      "passed": true
+    },
+    {
+      "check": "preserved_theorem",
+      "passed": true,
+      "count": 2,
+      "new_count": 2
+    },
+    {
+      "check": "preserved_corollary",
+      "passed": true,
+      "count": 1,
+      "new_count": 1
+    },
+    {
+      "check": "preserved_proposition",
+      "passed": true,
+      "count": 1,
+      "new_count": 1
+    },
+    {
+      "check": "preserved_lemma",
+      "passed": true,
+      "count": 4,
+      "new_count": 4
+    },
+    {
+      "check": "preserved_proof",
+      "passed": true,
+      "count": 5,
+      "new_count": 5
+    },
+    {
+      "check": "preserved_equation",
+      "passed": true,
+      "count": 67,
+      "new_count": 67
+    },
+    {
+      "check": "preserved_align",
+      "passed": true,
+      "count": 8,
+      "new_count": 8
+    },
+    {
+      "check": "preserved_figure",
+      "passed": true,
+      "count": 5,
+      "new_count": 5
+    },
+    {
+      "check": "unnumbered_display_math_preserved",
+      "passed": true
+    },
+    {
+      "check": "tables_other_than_Table1_preserved",
+      "passed": true,
+      "total": 14,
+      "table1_changed": true
+    },
+    {
+      "check": "no_duplicate_active_labels",
+      "passed": true,
+      "count": 157
+    },
+    {
+      "check": "old_labels_preserved",
+      "passed": true,
+      "added": [
+        "sec:num-controlled"
+      ]
+    },
+    {
+      "check": "all_source_references_resolve",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "check": "citation_key_set_preserved",
+      "passed": true,
+      "keys": [
+        "allmeier2024bias",
+        "chen2022stationary",
+        "dieuleveut2020bridging",
+        "huo2024collusion",
+        "karimireddy2020scaffold",
+        "luo2025revisiting",
+        "mangold2025fedavg",
+        "mangold2025scaffold",
+        "mangold2025sharper",
+        "versini2026dsgd"
+      ]
+    },
+    {
+      "check": "all_numerical_section_inline_math_preserved",
+      "passed": true
+    },
+    {
+      "check": "single_significance_paragraph",
+      "passed": true
+    },
+    {
+      "check": "controlled_group_has_four_subsubsections",
+      "passed": true,
+      "headings": [
+        [
+          "subsection",
+          "Experimental design and estimation"
+        ],
+        [
+          "subsection",
+          "Controlled tests of analytical predictions"
+        ],
+        [
+          "subsubsection",
+          "Individual stationary-bias coefficients"
+        ],
+        [
+          "subsubsection",
+          "Matched contribution of persistent controls"
+        ],
+        [
+          "subsubsection",
+          "Client-count behavior and multidimensional checks"
+        ],
+        [
+          "subsubsection",
+          "Independent local-step and affine-shift checks"
+        ],
+        [
+          "subsection",
+          "Real-data implications of a fixed sampling budget"
+        ],
+        [
+          "subsection",
+          "Model averaging changes the error decomposition"
+        ],
+        [
+          "subsection",
+          "Directional agreement beyond the additive-noise model"
+        ]
+      ]
+    },
+    {
+      "check": "final_latex_log_clean",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "check": "bibtex_no_errors",
+      "passed": true
+    },
+    {
+      "check": "compiled_new_sections_present",
+      "passed": true
+    },
+    {
+      "check": "compiled_no_unresolved_placeholders",
+      "passed": true
+    },
+    {
+      "check": "nine_final_figure_panels_meet_9pt",
+      "passed": true,
+      "placements": [
+        {
+          "page": 11,
+          "xobject": "/Im1",
+          "minimum_final_font_pdf_pt": 9.663951873779297,
+          "text_spans": 19,
+          "placement_width_pdf_pt": 221.12945556640625
+        },
+        {
+          "page": 11,
+          "xobject": "/Im2",
+          "minimum_final_font_pdf_pt": 9.663951873779297,
+          "text_spans": 19,
+          "placement_width_pdf_pt": 221.12945556640625
+        },
+        {
+          "page": 12,
+          "xobject": "/Im3",
+          "minimum_final_font_pdf_pt": 9.663951873779297,
+          "text_spans": 15,
+          "placement_width_pdf_pt": 221.12945556640625
+        },
+        {
+          "page": 12,
+          "xobject": "/Im4",
+          "minimum_final_font_pdf_pt": 9.663951873779297,
+          "text_spans": 15,
+          "placement_width_pdf_pt": 221.12945556640625
+        },
+        {
+          "page": 14,
+          "xobject": "/Im5",
+          "minimum_final_font_pdf_pt": 9.663758277893066,
+          "text_spans": 13,
+          "placement_width_pdf_pt": 261.7398681640625
+        },
+        {
+          "page": 16,
+          "xobject": "/Im6",
+          "minimum_final_font_pdf_pt": 9.863204956054688,
+          "text_spans": 17,
+          "placement_width_pdf_pt": 221.12945556640625
+        },
+        {
+          "page": 16,
+          "xobject": "/Im7",
+          "minimum_final_font_pdf_pt": 9.863204956054688,
+          "text_spans": 17,
+          "placement_width_pdf_pt": 221.12945556640625
+        },
+        {
+          "page": 29,
+          "xobject": "/Im8",
+          "minimum_final_font_pdf_pt": 9.663951873779297,
+          "text_spans": 19,
+          "placement_width_pdf_pt": 221.12945556640625
+        },
+        {
+          "page": 29,
+          "xobject": "/Im9",
+          "minimum_final_font_pdf_pt": 9.663951873779297,
+          "text_spans": 16,
+          "placement_width_pdf_pt": 221.12945556640625
+        }
+      ]
+    }
+  ],
+  "failed_checks": [],
+  "new_training": false,
+  "new_resampling": false,
+  "new_proof_audit": false
+}

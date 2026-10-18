@@ -1,0 +1,17 @@
+{
+  "attempts": [
+    {
+      "test": "Initial pointwise relative-tolerance check of supplied q against 80-digit symbolic derivative",
+      "status": "FAILED_OVERSTRICT_RELATIVE_TOLERANCE",
+      "point": [0.01, 0.01],
+      "coordinate": 1,
+      "reference_value": 2.499958333648431e-10,
+      "independent_value": 2.499958333645832e-10,
+      "absolute_difference": 2.59889809e-22,
+      "relative_difference": 1.03957656e-12,
+      "original_relative_tolerance": 3e-15,
+      "explanation": "Along x1=x2, q1 is quartic while the supplied stable expression subtracts quadratic terms. Relative precision against the quartic result is not uniform. The discrepancy fits machine roundoff on the quadratic operands and is not a model/coefficient discrepancy.",
+      "resolution": "Retain the point; assess supplied expression against absolute operation scale 64*eps*alpha*(x1^2+x2^2). Separately derive and symbolically verify a factored equivalent which retains the diagonal quartic term, and check it at the original relative tolerance. No simulation, coefficient estimate or target inclusion was consulted."
+    }
+  ]
+}

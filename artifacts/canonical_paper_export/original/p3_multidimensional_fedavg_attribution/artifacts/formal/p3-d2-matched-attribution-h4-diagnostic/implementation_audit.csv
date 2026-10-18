@@ -1,0 +1,16 @@
+check,status,evidence
+paired_noise_indexing,PASS,index-keyed block/vector residual=0.000e+00; raw CRN flags all true=True
+initial_state,PASS,both algorithms are initialized from the same configured x_star; SCAFFOLD controls start at zero
+estimator_normalization,PASS,maximum reconstructed raw-row identity error=1.017e-13
+B11_subtraction,PASS,the same coordinate-ordered B11_d is subtracted from both algorithms before differencing
+D_identity,PASS,max_abs_D_minus_C_difference=1.180e-16
+residual_identity,PASS,max_abs_residual_identity_error=9.714e-17
+local_update_timing,PASS,"reference loop uses pre-update q, then gradient+control+noise, endpoint average, then control refresh"
+mean_balance_pre_update_state,PASS,reference/production qbar max residual=0.000e+00
+zero_sum_controls,PASS,saved maximum control-sum error=7.272e-12
+burn_in_alignment,PASS,one shared paired block advances both states through the same configured burn-in cursor
+batch_alignment,PASS,one shared paired block collects both algorithms over identical batch boundaries
+stopping_rule_alignment,PASS,stopping is evaluated once on the paired difference and applies to the whole paired setting
+seed_alignment,PASS,every saved setting contains both coordinates for each of all eight paired seeds
+fixed_seed_reference_kernel,PASS,"seed 2101, H=4, N=12, 3 rounds; max residual=0.000e+00"
+coordinate_equivariance,PASS,30-degree paired SCAFFOLD/FedAvg/difference smoke max residual=1.256e-15

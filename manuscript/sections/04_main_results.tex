@@ -1,0 +1,144 @@
+\section{Main results}
+\label{sec:main-results}
+
+The main results resolve two contributions to stationary mean bias: a client-averaged term proportional to $\gamma/N$ and a client-independent term proportional to $\gamma^2$. We first establish the \Scaf{} expansion, then compare it with matched \FedAvg{} to separate the effect of local stochastic updates from that of persistent controls. Throughout this section, $d$ and $H\geq2$ are fixed, and the assumptions of Section~\ref{sec:setting} hold. The proof details for the theorems, corollaries, and propositions in this section are provided in Appendix \ref{app:scaf-proof} and \ref{app:fa-proof}.
+
+\subsection{Two bias scales in SCAFFOLD}
+
+Server averaging reduces fluctuations across independent clients, but nonlinear effects accumulated within local trajectories need not vanish as $N$ increases. The following theorem makes the two resolved bias scales explicit.
+
+\begin{theorem}[Stationary mean-bias expansion for SCAFFOLD]
+\label{thm:scaf-main}
+Under the assumptions of Section~\ref{sec:setting} and the \Scaf{} updates in Equations~\eqref{eq:scaf-local} and~\eqref{eq:scaf-server}, there exist constants $\gamma_0>0$ and $C^{\Scaf}_{H,d}<\infty$, independent of $N$, such that for every $N\geq2$ and $0<\gamma\leq\gamma_0$,
+\begin{equation}
+\label{eq:scaf-main-expansion}
+b^{\Scaf}_{\gamma,N,H}
+=-\frac{\gamma}{2N}A^{-1}T[S_C]
+-\gamma^2\frac{(H-1)(5H-1)}{12H}A^{-1}T[C]
++R^{\Scaf}_{\gamma,N,H},
+\end{equation}
+where
+\begin{equation}
+\label{eq:scaf-main-rem}
+\bigl\|R^{\Scaf}_{\gamma,N,H}\bigr\|
+\leq C^{\Scaf}_{H,d}\left(\frac{\gamma^2}{N}+\gamma^3\right).
+\end{equation}
+\end{theorem}
+
+The expansion distinguishes a term proportional to $\gamma/N$ from one proportional to $\gamma^2$ with an $N$-independent coefficient:
+\begin{equation}
+\label{eq:scaf-B}
+B_{11}=-\frac12A^{-1}T[S_C],\qquad
+B_{20}^{\Scaf}(H)
+=-\frac{(H-1)(5H-1)}{12H}A^{-1}T[C].
+\end{equation}
+Here, $B_{11}$ multiplies $\gamma/N$, whereas $B_{20}^{\Scaf}(H)$ multiplies $\gamma^2$ without a factor $1/N$. The latter is governed by $A^{-1}T[C]$: the noise covariance $C$ interacts with the third derivative $T$, and $A^{-1}$ maps the resulting vector to a parameter displacement. In particular, $T[C]=0$ eliminates this coefficient even when the gradient noise is nonzero.
+
+At these resolved orders, increasing $N$ suppresses the $\gamma/N$ term but not the explicit $\gamma^2$ term; reducing $\gamma$ affects them linearly and quadratically, respectively. For either algorithm $\mathcal A\in\{\Scaf,\FedAvg\}$ with $B_{11}\ne0$, the ratio of their magnitudes is
+\begin{equation}
+\label{eq:bias-scale-ratio}
+\frac{\|\gamma^2B_{20}^{\mathcal A}(H)\|}
+     {\|(\gamma/N)B_{11}\|}
+=\gamma N\,\frac{\|B_{20}^{\mathcal A}(H)\|}{\|B_{11}\|}.
+\end{equation}
+Equation~\eqref{eq:bias-scale-ratio} shows that the second-order contribution need not be smaller when $N$ is large. The full stationary bias is the sum of both vectors and the remainder, so cancellation is possible. Their relative magnitudes also do not, by themselves, determine the squared-bias share of parameter mean-squared error.
+
+\subsection{Local-update bias without controls: matched FedAvg}
+
+The \Scaf{} coefficient alone does not reveal which part of the $\gamma^2$ term arises from local updates common to both algorithms. Matched \FedAvg{} provides the corresponding expansion without a persistent control state.
+
+\begin{theorem}[Stationary mean-bias expansion for matched FedAvg]
+\label{thm:fa-main}
+Under the assumptions of Section~\ref{sec:setting} and the matched \FedAvg{} updates in Equations~\eqref{eq:fa-local} and~\eqref{eq:fa-server}, the step-size threshold $\gamma_0$ can be chosen jointly with Theorem~\ref{thm:scaf-main}. There exists $C^{\FedAvg}_{H,d}<\infty$, independent of $N$ and $\gamma$, such that for $N\geq2$ and $0<\gamma\leq\gamma_0$,
+\begin{equation}
+\label{eq:fa-main-expansion}
+b^{\FedAvg}_{\gamma,N,H}
+=-\frac{\gamma}{2N}A^{-1}T[S_C]
+-\gamma^2\frac{H-1}{4}A^{-1}T[C]
++R^{\FedAvg}_{\gamma,N,H},
+\end{equation}
+where
+\begin{equation}
+\label{eq:fa-main-rem}
+\bigl\|R^{\FedAvg}_{\gamma,N,H}\bigr\|
+\leq C^{\FedAvg}_{H,d}\left(\frac{\gamma^2}{N}+\gamma^3\right).
+\end{equation}
+In particular,
+\begin{equation}
+\label{eq:fa-B}
+B_{20}^{\FedAvg}(H)=-\frac{H-1}{4}A^{-1}T[C].
+\end{equation}
+\end{theorem}
+
+The two expansions share $B_{11}$ but have different $\gamma^2$ coefficients. Thus, when $T[C]\ne0$, local stochastic updates produce a client-independent second-order mean shift even without controls. Subtracting the coefficients then identifies the additional contribution associated with \Scaf{} controls.
+
+\subsection{The additional contribution of persistent controls}
+
+Define the difference between the two second-order coefficients as
+\begin{equation}
+\label{eq:ctrl-def}
+B_{20}^{\mathrm{ctrl}}(H)
+:=-\frac{(H-1)(2H-1)}{12H}A^{-1}T[C].
+\end{equation}
+
+\begin{corollary}[Matched SCAFFOLD--FedAvg attribution]
+\label{cor:attribution}
+Under the assumptions of Theorems~\ref{thm:scaf-main} and~\ref{thm:fa-main}, we derive
+\begin{equation}
+\label{eq:matched-control}
+\boxed{B_{20}^{\Scaf}(H)
+=B_{20}^{\FedAvg}(H)+B_{20}^{\mathrm{ctrl}}(H).}
+\end{equation}
+Consequently, the following equation holds:
+\begin{equation}
+\label{eq:matched-bias-difference}
+b^{\Scaf}_{\gamma,N,H}-b^{\FedAvg}_{\gamma,N,H}
+=\gamma^2B_{20}^{\mathrm{ctrl}}(H)
++O_{H,d}\!\left(\frac{\gamma^2}{N}+\gamma^3\right).
+\end{equation}
+\end{corollary}
+
+For $H\geq2$, the \FedAvg{} and control coefficients are positive scalar multiples of the same vector $-A^{-1}T[C]$ and therefore point in the same direction whenever nonzero. Specifically,
+$B_{20}^{\mathrm{ctrl}}(H)=\frac{2H-1}{3H}B_{20}^{\FedAvg}(H)$,
+so at $H=2$ the control coefficient equals half the \FedAvg{} coefficient. Equation~\eqref{eq:ctrl-def} also yields
+$B_{20}^{\mathrm{ctrl}}(4)=\tfrac72 B_{20}^{\mathrm{ctrl}}(2)$,
+a factor of $3.5$ between these two fixed-$H$ cases.
+
+The leading coefficient $B_{11}$ has no $H$ dependence, whereas the second-order prefactors depend on $H$ and the remainder constants and admissible step-size threshold may also depend on it. These are comparisons of fixed local-step counts, not a uniform growing-$H$ regime. Section~\ref{sec:mechanism} explains the underlying control-state mechanism.
+
+\subsection{Identifying the second-order coefficients}
+
+Identifying a $\gamma^2$ coefficient requires a remainder that vanishes after normalization by $\gamma^2$. For \Scaf{}, we subtract the shared leading term and define
+\begin{equation}
+\label{eq:scaf-normalized}
+\mathcal C^{\Scaf}_{\gamma,N,H}
+:=\frac{b^{\Scaf}_{\gamma,N,H}-(\gamma/N)B_{11}}{\gamma^2}.
+\end{equation}
+Theorem~\ref{thm:scaf-main} implies
+\begin{equation}
+\label{eq:scaf-normalized-limit}
+\mathcal C^{\Scaf}_{\gamma,N,H}
+=B_{20}^{\Scaf}(H)+O_{H,d}\!\left(\frac1N+\gamma\right).
+\end{equation}
+Because the remainder bound is uniform in $N$, the normalized error vanishes along \emph{any} joint limit $\gamma\to0$, $N\to\infty$, without a condition relating their rates. The same holds for \FedAvg{} and the normalized matched difference. This identifies both algorithm-specific coefficients and the additional control contribution at a common asymptotic resolution.
+
+
+\subsection{An exact extension to affine objective heterogeneity}
+\label{sec:affine-extension}
+
+The homogeneous result extends exactly to a restricted form of objective heterogeneity: clients may have different local minimizers while sharing the same curvature. The key is to absorb constant gradient offsets into the \Scaf{} control state.
+
+\begin{samepage}
+\begin{proposition}[Control translation for affine objective shifts]
+\label{prop:affine-shift}
+Let $f$ and the additive-noise laws satisfy Section~\ref{sec:setting}, and fix $N\ge2$, $H\ge2$ and $0<\gamma\le\gamma_0$. For deterministic vectors $a_c\in\R^d$ with $\sum_ca_c=0$, we set
+\begin{equation}
+\label{eq:affine-objectives}
+f_c(x)=f(x)+a_c^\top x,\qquad \widetilde\xi_c=\xi_c+a_c.
+\end{equation}
+We run SCAFFOLD on the zero-sum control state space, with $\nabla f_c$ in Equation~\eqref{eq:scaf-local} and the same server/control updates in Equation~\eqref{eq:scaf-server}. The transformed state $(x,\widetilde\xi)$ follows exactly the homogeneous SCAFFOLD recursion for $f$. Its global invariant distribution therefore coincides with that of the homogeneous chain. In particular, the expansion and remainder in Theorem~\ref{thm:scaf-main} remain valid for its global stationary mean bias.
+\end{proposition}
+\end{samepage}
+
+
+Although individual clients may have different minimizers, their average objective remains $N^{-1}\sum_c f_c=f$. With translated initial controls and shared noise realizations, the affine and homogeneous \Scaf{} recursions coincide pathwise, although unrelated control initializations need not yield identical transients. The state translation therefore preserves the global stationary distribution and its mean-bias expansion, even in the presence of these client-specific affine shifts.

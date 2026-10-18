@@ -1,0 +1,15 @@
+% Saved-input data export; no simulation, refit or resampling.
+% tab:num-structural-settings: partial
+\begin{tabular}{lll}
+study / component & saved field / derivation & value \\
+\hline
+Orthogonal rotation & coordinate\_transform & \{"dimension": 2, "angle": "pi / 6", "angle\_degrees": 30, "angle\_radians": 0.5235987755982988, "Q": [[0.8660254037844386, -0.5], [0.5, 0.8660254037844386]], "convention": \{"forward": "y = Q @ x", "inverse": "x = Q.T @ y", "objective\_identity": "f\_rot(y) = f(Q.T @ y)", "gradient\_identity": "grad\_f\_rot(y) = Q @ grad\_f(Q.T @ y)"\}, "orthogonality\_identity": "Q.T @ Q = I"\} \\
+Orthogonal rotation & paired\_matrix & \{"dimension": 2, "communication\_rounds": 200, "H\_values": [2, 4], "settings": [\{"N": 16, "gamma\_numerator": 1, "gamma\_denominator": 16\}, \{"N": 64, "gamma\_numerator": 1, "gamma\_denominator": 64\}], "seeds": [1101, 1102, 1103, 1104], "paired\_run\_count": 16, "systems\_per\_pair": ["original", "rotated"], "pair\_definition": "one original-coordinate run and one rotated-coordinate run with matched noise blocks"\} \\
+Orthogonal rotation & noise\_coupling & \{"original\_construction": "epsilon = cholesky(C) @ z", "base\_coordinates": "independent Rademacher", "generate\_original\_epsilon\_once": true, "rotated\_construction": "epsilon\_rot = Q @ epsilon", "covariance\_identity": "Cov(epsilon\_rot) = Q @ C @ Q.T = C\_rot", "same\_realization\_across\_each\_pair": ["seed", "communication\_round", "local\_step", "client"], "independently\_generate\_from\_C\_rot": "forbidden", "fresh\_rotated\_draw": "forbidden", "rationale": "Rademacher noise is not rotationally invariant"\} \\
+Orthogonal rotation & initialization & \{"x0": [0.2, -0.1], "x0\_rot\_construction": "x0\_rot = Q @ x0", "x0\_rot": [0.223205080756888, 0.013397459621556], "xi\_by\_client": "zero", "xi\_rot\_by\_client": "zero"\} \\
+Affine translation & N values & [8, 32] \\
+Affine translation & H values & [2, 4, 8] \\
+Affine translation & rho values & [0.0, 0.25, 0.5, 1.0] \\
+Affine translation & rounds values & [2000] \\
+Affine translation & saved configuration count & 24 \\
+\end{tabular}

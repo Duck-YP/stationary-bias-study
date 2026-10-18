@@ -1,0 +1,21 @@
+\documentclass[11pt]{article}
+\input{macros}
+\geometry{a4paper,margin=1in}
+\begin{document}
+\makeatletter
+\typeout{REDRAW_BODY_TEX_PT=\f@size}
+\typeout{REDRAW_TEXTWIDTH_TEX_PT=\the\textwidth}
+\typeout{REDRAW_COLUMNWIDTH_TEX_PT=\the\columnwidth}
+\typeout{REDRAW_LINEWIDTH_TEX_PT=\the\linewidth}
+\typeout{REDRAW_FONT=\fontname\font}
+{\small\typeout{REDRAW_SMALL_TEX_PT=\f@size}}
+{\footnotesize\typeout{REDRAW_FOOTNOTE_TEX_PT=\f@size}}
+\newdimen\redrawpaired
+\redrawpaired=0.49\textwidth
+\typeout{REDRAW_PAIRED_WIDTH_TEX_PT=\the\redrawpaired}
+\newdimen\redrawsingle
+\redrawsingle=0.58\textwidth
+\typeout{REDRAW_SINGLE_WIDTH_TEX_PT=\the\redrawsingle}
+\makeatother
+Typography measurement probe.
+\end{document}

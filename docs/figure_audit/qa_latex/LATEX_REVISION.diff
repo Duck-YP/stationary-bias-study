@@ -1,0 +1,114 @@
+--- baseline/sections/07_numerical_study.tex
++++ manuscript/sections/07_numerical_study.tex
+@@ -99,17 +99,23 @@
+ 
+ \begin{figure}[t]
+ \centering
+-\begin{minipage}[t]{0.49\linewidth}
+-\centering
+-\includegraphics[width=\linewidth]{figures/p3_matched_d2_H2_control_convergence.png}
+-\end{minipage}\hfill
+-\begin{minipage}[t]{0.49\linewidth}
+-\centering
+-\includegraphics[width=\linewidth]{figures/p3_matched_d2_H4_control_convergence.png}
+-\end{minipage}
++\captionsetup[subfigure]{font=small}
++\begin{subfigure}[t]{0.49\textwidth}
++\centering
++\includegraphics[width=\linewidth]{figures/redrawn/hist_matched_H2.pdf}
++\caption{Two local steps}
++\end{subfigure}\hfill
++\begin{subfigure}[t]{0.49\textwidth}
++\centering
++\includegraphics[width=\linewidth]{figures/redrawn/hist_matched_H4.pdf}
++\caption{Four local steps}
++\end{subfigure}
+ \caption{Normalized matched SCAFFOLD--FedAvg differences on the primary
+-finite grids, for $H=2$ (left) and $H=4$ (right). The curves and fitted
+-intercepts are compared with the theoretical control-associated coefficient.}
++finite grids, for $H=2$ in (a) and $H=4$ in (b). The curves and fitted
++intercepts are compared with the theoretical control-associated coefficient.
++Pointwise bars are simultaneous Student-$t$ intervals; fitted-intercept
++bars are simultaneous seed-block-bootstrap intervals. The plotted lines
++use the saved descriptive linear fits.}
+ \label{fig:num-matched-primary}
+ \end{figure}
+ 
+@@ -139,18 +145,24 @@
+ 
+ \begin{figure}[t]
+ \centering
+-\begin{minipage}[t]{0.49\linewidth}
+-\centering
+-\includegraphics[width=\linewidth]{figures/p2_d2_fixed_gamma_largeN_coordinate_1.png}
+-\end{minipage}\hfill
+-\begin{minipage}[t]{0.49\linewidth}
+-\centering
+-\includegraphics[width=\linewidth]{figures/p2_d2_fixed_gamma_largeN_coordinate_2.png}
+-\end{minipage}
++\captionsetup[subfigure]{font=small}
++\begin{subfigure}[t]{0.49\textwidth}
++\centering
++\includegraphics[width=\linewidth]{figures/redrawn/hist_fixed_gamma_coord1.pdf}
++\caption{Coordinate 1}
++\end{subfigure}\hfill
++\begin{subfigure}[t]{0.49\textwidth}
++\centering
++\includegraphics[width=\linewidth]{figures/redrawn/hist_fixed_gamma_coord2.pdf}
++\caption{Coordinate 2}
++\end{subfigure}
+ \caption{Fixed-$\gamma$ large-client \Scaf{} check, coordinatewise. The
+ theoretical asymptotic coefficients are shown as reference lines. At fixed
+ $\gamma$, an $O(\gamma)$ displacement is permitted, so the fitted intercepts
+-are not interpreted as exact fixed-$\gamma$, $N\to\infty$ limits.}
++are not interpreted as exact fixed-$\gamma$, $N\to\infty$ limits.
++Pointwise bars are simultaneous Student-$t$ intervals; fitted-intercept
++bars are simultaneous seed-block-bootstrap intervals. The plotted lines
++use the saved descriptive linear fits.}
+ \label{fig:E-p2-plateau}
+ \end{figure}
+ 
+@@ -208,8 +220,8 @@
+ 
+ \begin{figure}[t]
+ \centering
+-\includegraphics[width=.58\linewidth]{figures/supplement/E3_R0_allocation_panel.pdf}
+-\caption{Fixed-budget real-data allocation experiment in R0. Each client uses $m=256/N$ samples per local step, with $H=4$ and fixed $\gamma_b$. Bars are nominal 95\% intervals over twelve independent run seeds. The ordinate is the signed displacement in Equation~\eqref{eq:real-projection}, not total MSE. The full R0/R1/R2 figure is retained in the companion artifacts.}
++\includegraphics[width=.58\textwidth]{figures/redrawn/real_R0_allocation.pdf}
++\caption{Fixed-budget real-data allocation experiment in R0. Each client uses $m=256/N$ samples per local step, with $H=4$ and the fixed base step size. Bars are nominal 95\% intervals over twelve independent run seeds. The ordinate is the signed displacement in Equation~\eqref{eq:real-projection}, not total MSE. Categorical horizontal positions show $(N,m)$; the ordinate and interval endpoints are multiplied by 1000 for display. Small horizontal offsets distinguish the two algorithms at the same allocation. The full R0/R1/R2 figure is retained in the companion artifacts.}
+ \label{fig:real-allocation}
+ \end{figure}
+ 
+--- baseline/appendix/C_numerical_details.tex
++++ manuscript/appendix/C_numerical_details.tex
+@@ -179,13 +179,25 @@
+ 
+ \begin{figure}[tbp]
+ \centering
+-\includegraphics[width=0.49\linewidth]{figures/p3_matched_d2_H4_small_step_confirmation.png}\hfill
+-\includegraphics[width=0.49\linewidth]{figures/h4_loglog_residual.png}
+-\caption{Matched $H=4$ diagnostics. Left: the smaller-step paired path;
++\captionsetup[subfigure]{font=small}
++\begin{subfigure}[t]{0.49\textwidth}
++\centering
++\includegraphics[width=\linewidth]{figures/redrawn/hist_H4_smallstep.pdf}
++\caption{Smaller-step path}
++\end{subfigure}\hfill
++\begin{subfigure}[t]{0.49\textwidth}
++\centering
++\includegraphics[width=\linewidth]{figures/redrawn/hist_H4_loglog_residual.pdf}
++\caption{Absolute residuals}
++\end{subfigure}
++\caption{Matched $H=4$ diagnostics. (a): the smaller-step paired path;
+ its extrapolated intercept intervals still exclude the targets.
+-Right: absolute residuals on the combined saved grid; the log--log slopes
++(b): absolute residuals on the combined saved grid; the log--log slopes
+ and scaled ranges in Table~\ref{tab:E-h4diag} are compatible with the
+-allowed $O(\gamma+1/N)$ normalized remainder.}
++allowed $O(\gamma+1/N)$ normalized remainder. Pointwise bars in (a) are
++simultaneous Student-$t$ intervals; its fitted-intercept bars are
++simultaneous seed-block-bootstrap intervals. The path uses the saved
++descriptive linear fit, and (b) retains all nine saved grid points.}
+ \label{fig:E-control-h4}
+ \label{fig:E-h4diag}
+ \end{figure}

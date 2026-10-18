@@ -1,0 +1,128 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsfonts,amssymb,mathtools,bm,mathrsfs}
+\usepackage{amsthm}
+\usepackage{aliascnt}
+\usepackage{geometry}
+\usepackage{iftex,ifpdf}
+\usepackage[font=footnotesize]{subcaption}
+\usepackage[colorlinks=true,allcolors=blue!45!black]{hyperref}
+\usepackage[nameinlink,capitalise,noabbrev]{cleveref}
+\usepackage{booktabs,array,longtable,tabularx}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{xcolor}
+\definecolor{clientblue}{HTML}{2F6B9A}
+\definecolor{controlorange}{HTML}{B45F06}
+\definecolor{biasred}{HTML}{8E3B46}
+\definecolor{inkgray}{HTML}{4F5965}
+\definecolor{softgray}{HTML}{F2F4F7}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\usepackage{fancyvrb}
+\usepackage{url}
+
+\ifpdf
+  \DeclareGraphicsExtensions{.pdf,.png,.jpg,.eps}
+\else
+  \DeclareGraphicsExtensions{.eps}
+\fi
+
+\setlist[itemize]{topsep=3pt,itemsep=2pt,parsep=1pt}
+\setlist[enumerate]{topsep=3pt,itemsep=2pt,parsep=1pt}
+\renewcommand{\arraystretch}{1.12}
+\providecommand{\creflastconjunction}{, and~}
+\newcommand{\email}[1]{\href{mailto:#1}{#1}}
+\allowdisplaybreaks
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{theorem}{Theorem}[section]
+
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+
+\theoremstyle{definition}
+
+\newaliascnt{definition}{theorem}
+\newtheorem{definition}[definition]{Definition}
+\aliascntresetthe{definition}
+
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+
+\newaliascnt{proofnote}{theorem}
+\newtheorem{proofnote}[proofnote]{Proof note}
+\aliascntresetthe{proofnote}
+
+\AddToHook{env/theorem/begin}{\crefalias{section}{theorem}}
+\AddToHook{env/proposition/begin}{\crefalias{section}{proposition}}
+\AddToHook{env/lemma/begin}{\crefalias{section}{lemma}}
+\AddToHook{env/corollary/begin}{\crefalias{section}{corollary}}
+\AddToHook{env/definition/begin}{\crefalias{section}{definition}}
+\AddToHook{env/remark/begin}{\crefalias{section}{remark}}
+\AddToHook{env/proofnote/begin}{\crefalias{section}{proofnote}}
+
+\crefname{assumption}{Assumption}{Assumptions}
+\Crefname{assumption}{Assumption}{Assumptions}
+\crefname{theorem}{Theorem}{Theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{proposition}{Proposition}{Propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{lemma}{Lemma}{Lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{Corollary}{Corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{remark}{Remark}{Remarks}
+\Crefname{remark}{Remark}{Remarks}
+\crefname{proofnote}{Proof note}{Proof notes}
+\Crefname{proofnote}{Proof note}{Proof notes}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Scaf}{\textnormal{\textsc{SCAFFOLD}}}
+\newcommand{\Oh}{O_H}
+\newcommand{\smallscale}{s_{\gamma,N}}
+\newcommand{\remscale}{r_{\gamma,N}}
+\newcommand{\fourthscale}{v_{\gamma,N}}
+\newcommand{\bstat}{b_{\gamma,N,H}}
+\newcommand{\QH}{Q_{\gamma,N,H}}
+\newcommand{\Ubar}{\bar U}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\barq}{\overline{q}}
+\newcommand{\barf}{\overline{f'}}
+\newcommand{\bareps}{\bar\varepsilon}
+\newcommand{\delt}{\delta}
+\newcommand{\law}{\mathcal{L}}
+\newcommand{\statezero}{\mathcal{X}_0}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  citecolor=blue!50!black,
+  urlcolor=blue!50!black
+}
+
+\newcommand{\FedAvg}{\textnormal{\textsc{FedAvg}}}
+\newcommand{\odh}{O_H}
+\newcommand{\odhd}{O_{H,d}}
+\newcommand{\SC}{S_C}
+% Unnormalized three-placement tensor sum; defined in the setting section.
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\tr}{\operatorname{tr}}

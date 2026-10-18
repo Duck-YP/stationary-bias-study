@@ -1,2 +1,0 @@
-H,B_theory,bootstrap_repetitions,bootstrap_seed,linear_beta0,linear_beta0_ci_low,linear_beta0_ci_high,linear_beta1,linear_intercept_contains_theory,quadratic_beta0,quadratic_beta0_ci_low,quadratic_beta0_ci_high,quadratic_beta1,quadratic_beta2,quadratic_intercept_contains_theory,role,protocol_commit
-4,-0.59375,5000,20260820,-0.5929531087077421,-0.5955262665616873,-0.5902364647589111,1.3270348716539047,True,-0.5921599756782085,-0.599106026836685,-0.5852159691174486,1.153433914149622,8.186655680201952,True,SECONDARY_DIAGNOSTIC_ONLY,ec3917fa33cf0fd2fcb814ec2f7cba7bafc01418

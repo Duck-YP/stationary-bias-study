@@ -1,0 +1,3 @@
+source,bytes,sha256,reason
+manuscript/supplementary_results/RUN_COMMANDS.md,2197,2805ea270cf2b790c55b39d7859a19fb87f61e89c6c3744377caa5f44208a0b2,Machine-local study commands; public portable workflows documented separately
+manuscript/supplementary_results/SOURCE_REVIEW.zip,542429,0f26743d91095fa7c1cb6b8cc0d3c9b06dc5ab7dc6bc32f93359eaca4c392818,Archive/build output not part of public tree

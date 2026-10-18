@@ -1,0 +1,1771 @@
+{
+  "version": "independent-supplement-v1",
+  "frozen_date": "2026-10-09",
+  "source_hashes": {
+    "study/__init__.py": "2a3bd6231c22e5555cb723fc4ff0be33ddc8462b3d9e762a993391d239deba73",
+    "study/analysis.py": "bfd53c3b5196f7df35c9266f5bdd8c06909a7b34027d280714c6e60f121d51c5",
+    "study/checks.py": "03378ca213164fd92c697c655a2d68bd4a2b2801b03af472347521851cf66781",
+    "study/cli.py": "4cfcd06ebe5b423c2b2093312b23504a8f47abd1fda75a50da74962657fbf472",
+    "study/data.py": "6b2a9e45784d4dec2079cb40d1e94fe438885b19fb4dda9a8c74aac0d647a906",
+    "study/engine.py": "9ec145e08f943e09fb40d86e5b73e4007361aab204633a2687c969aaecb6f575",
+    "study/kernels.py": "e73789e425b139d0dfe55354b82a0ccc37bece48f51861dffe92afe09721e12e",
+    "study/model.py": "dd57091945ea11f6cb7914c3b98299d07c39fdf87dc5550b679516506322dc3f",
+    "study/protocol.py": "5c6a5b67841f59bc450ab26859c1e5e0d0c5521208d755098cc27892389b8e6c",
+    "study/tests.py": "e234a5647c417a436a8f5dbb73a628d4055ef1dd081b7f1c0e51fb59a98a95fd",
+    "run.py": "80a6868cdffa6f952e1d667a61fe15eb62a3b9ad8df04644a8d4524e74399188",
+    "requirements.lock": "aa443028f86cfa058478ddc3f47f32718c7bb72ef6bae66b3db11bcd6944bce9"
+  },
+  "brief_sha256": "698069f0bfa517190d755f10b0e33dc395a2c01dd838b3d88a6059cc719229bb",
+  "objective_hash": "5bab537d3c034a00afd29942e5f4ac436f40849ea8b82f925af3eb90a1430b6d",
+  "reference_hash": "4aaa72d4f957f4874fb22f4176f3bbdd68c5c4baabd1e4bf44ac234c347b512e",
+  "production_seeds": [
+    20001,
+    20002,
+    20003,
+    20004,
+    20005,
+    20006,
+    20007,
+    20008,
+    20009,
+    20010,
+    20011,
+    20012
+  ],
+  "pilot_seeds": [
+    10001,
+    10002,
+    10003,
+    10004
+  ],
+  "data_seed": 20261009,
+  "partition_seeds": [
+    4101,
+    4102,
+    4103
+  ],
+  "cells": [
+    {
+      "id": "E1_controlled_p0_H1_N32_g0.015625",
+      "family": "E1",
+      "H": 1,
+      "N": 32,
+      "gamma": 0.015625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a"
+      ],
+      "schedule": {
+        "tau0": 76,
+        "burn": 3800,
+        "batch_length": 760,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 1.1418791290486474,
+      "gamma_over_gamma_imp": 1.1737775720387895
+    },
+    {
+      "id": "E1_controlled_p0_H1_N32_g0.0078125",
+      "family": "E1",
+      "H": 1,
+      "N": 32,
+      "gamma": 0.0078125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a"
+      ],
+      "schedule": {
+        "tau0": 151,
+        "burn": 7550,
+        "batch_length": 1510,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 2.2687335327150757,
+      "gamma_over_gamma_imp": 0.5868887860193948
+    },
+    {
+      "id": "E1_controlled_p0_H1_N32_g0.00390625",
+      "family": "E1",
+      "H": 1,
+      "N": 32,
+      "gamma": 0.00390625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a"
+      ],
+      "schedule": {
+        "tau0": 302,
+        "burn": 15100,
+        "batch_length": 3020,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 4.537467065430151,
+      "gamma_over_gamma_imp": 0.2934443930096974
+    },
+    {
+      "id": "E1_controlled_p0_H1_N32_g0.001953125",
+      "family": "E1",
+      "H": 1,
+      "N": 32,
+      "gamma": 0.001953125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a"
+      ],
+      "schedule": {
+        "tau0": 603,
+        "burn": 30150,
+        "batch_length": 6030,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 9.059909405478084,
+      "gamma_over_gamma_imp": 0.1467221965048487
+    },
+    {
+      "id": "E1_controlled_p0_H2_N32_g0.015625",
+      "family": "E1",
+      "H": 2,
+      "N": 32,
+      "gamma": 0.015625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a"
+      ],
+      "schedule": {
+        "tau0": 38,
+        "burn": 1900,
+        "batch_length": 380,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 0.5709395645243237,
+      "gamma_over_gamma_imp": 1.8112775720387897
+    },
+    {
+      "id": "E1_controlled_p0_H2_N32_g0.0078125",
+      "family": "E1",
+      "H": 2,
+      "N": 32,
+      "gamma": 0.0078125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a",
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 76,
+        "burn": 3800,
+        "batch_length": 760,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 1.1418791290486474,
+      "gamma_over_gamma_imp": 0.9056387860193948
+    },
+    {
+      "id": "E1_controlled_p0_H2_N32_g0.00390625",
+      "family": "E1",
+      "H": 2,
+      "N": 32,
+      "gamma": 0.00390625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a",
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 151,
+        "burn": 7550,
+        "batch_length": 1510,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 2.2687335327150757,
+      "gamma_over_gamma_imp": 0.4528193930096974
+    },
+    {
+      "id": "E1_controlled_p0_H2_N32_g0.001953125",
+      "family": "E1",
+      "H": 2,
+      "N": 32,
+      "gamma": 0.001953125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a",
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 302,
+        "burn": 15100,
+        "batch_length": 3020,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 4.537467065430151,
+      "gamma_over_gamma_imp": 0.2264096965048487
+    },
+    {
+      "id": "E1_controlled_p0_H4_N32_g0.015625",
+      "family": "E1",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.015625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a"
+      ],
+      "schedule": {
+        "tau0": 19,
+        "burn": 950,
+        "batch_length": 190,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 0.28546978226216185,
+      "gamma_over_gamma_imp": 3.6225551440775794
+    },
+    {
+      "id": "E1_controlled_p0_H4_N32_g0.0078125",
+      "family": "E1",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.0078125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a",
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 38,
+        "burn": 1900,
+        "batch_length": 380,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 0.5709395645243237,
+      "gamma_over_gamma_imp": 1.8112775720387897
+    },
+    {
+      "id": "E1_controlled_p0_H4_N32_g0.00390625",
+      "family": "E1",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.00390625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a",
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 76,
+        "burn": 3800,
+        "batch_length": 760,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 1.1418791290486474,
+      "gamma_over_gamma_imp": 0.9056387860193948
+    },
+    {
+      "id": "E1_controlled_p0_H4_N32_g0.001953125",
+      "family": "E1",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.001953125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a",
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 151,
+        "burn": 7550,
+        "batch_length": 1510,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 2.2687335327150757,
+      "gamma_over_gamma_imp": 0.4528193930096974
+    },
+    {
+      "id": "E1_controlled_p0_H8_N32_g0.015625",
+      "family": "E1",
+      "H": 8,
+      "N": 32,
+      "gamma": 0.015625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a"
+      ],
+      "schedule": {
+        "tau0": 10,
+        "burn": 500,
+        "batch_length": 100,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 0.15024725382219045,
+      "gamma_over_gamma_imp": 7.245110288155159
+    },
+    {
+      "id": "E1_controlled_p0_H8_N32_g0.0078125",
+      "family": "E1",
+      "H": 8,
+      "N": 32,
+      "gamma": 0.0078125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a",
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 19,
+        "burn": 950,
+        "batch_length": 190,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 0.28546978226216185,
+      "gamma_over_gamma_imp": 3.6225551440775794
+    },
+    {
+      "id": "E1_controlled_p0_H8_N32_g0.00390625",
+      "family": "E1",
+      "H": 8,
+      "N": 32,
+      "gamma": 0.00390625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a",
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 38,
+        "burn": 1900,
+        "batch_length": 380,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 0.5709395645243237,
+      "gamma_over_gamma_imp": 1.8112775720387897
+    },
+    {
+      "id": "E1_controlled_p0_H8_N32_g0.001953125",
+      "family": "E1",
+      "H": 8,
+      "N": 32,
+      "gamma": 0.001953125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1a",
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 76,
+        "burn": 3800,
+        "batch_length": 760,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 1.1418791290486474,
+      "gamma_over_gamma_imp": 0.9056387860193948
+    },
+    {
+      "id": "E1_controlled_p0_H2_N64_g0.0078125",
+      "family": "E1",
+      "H": 2,
+      "N": 64,
+      "gamma": 0.0078125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 76,
+        "burn": 3800,
+        "batch_length": 760,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 1.1418791290486474,
+      "gamma_over_gamma_imp": 0.9056387860193948
+    },
+    {
+      "id": "E1_controlled_p0_H2_N64_g0.00390625",
+      "family": "E1",
+      "H": 2,
+      "N": 64,
+      "gamma": 0.00390625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 151,
+        "burn": 7550,
+        "batch_length": 1510,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 2.2687335327150757,
+      "gamma_over_gamma_imp": 0.4528193930096974
+    },
+    {
+      "id": "E1_controlled_p0_H2_N64_g0.001953125",
+      "family": "E1",
+      "H": 2,
+      "N": 64,
+      "gamma": 0.001953125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 302,
+        "burn": 15100,
+        "batch_length": 3020,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 4.537467065430151,
+      "gamma_over_gamma_imp": 0.2264096965048487
+    },
+    {
+      "id": "E1_controlled_p0_H2_N128_g0.0078125",
+      "family": "E1",
+      "H": 2,
+      "N": 128,
+      "gamma": 0.0078125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 76,
+        "burn": 3800,
+        "batch_length": 760,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 1.1418791290486474,
+      "gamma_over_gamma_imp": 0.9056387860193948
+    },
+    {
+      "id": "E1_controlled_p0_H2_N128_g0.00390625",
+      "family": "E1",
+      "H": 2,
+      "N": 128,
+      "gamma": 0.00390625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 151,
+        "burn": 7550,
+        "batch_length": 1510,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 2.2687335327150757,
+      "gamma_over_gamma_imp": 0.4528193930096974
+    },
+    {
+      "id": "E1_controlled_p0_H2_N128_g0.001953125",
+      "family": "E1",
+      "H": 2,
+      "N": 128,
+      "gamma": 0.001953125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 302,
+        "burn": 15100,
+        "batch_length": 3020,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 4.537467065430151,
+      "gamma_over_gamma_imp": 0.2264096965048487
+    },
+    {
+      "id": "E1_controlled_p0_H4_N64_g0.0078125",
+      "family": "E1",
+      "H": 4,
+      "N": 64,
+      "gamma": 0.0078125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 38,
+        "burn": 1900,
+        "batch_length": 380,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 0.5709395645243237,
+      "gamma_over_gamma_imp": 1.8112775720387897
+    },
+    {
+      "id": "E1_controlled_p0_H4_N64_g0.00390625",
+      "family": "E1",
+      "H": 4,
+      "N": 64,
+      "gamma": 0.00390625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 76,
+        "burn": 3800,
+        "batch_length": 760,
+        "batches": 133,
+        "primary_batches": 64,
+        "sensitivity": "primary first64; burn2x batches5:69; tail2x first128; combined batches5:133"
+      },
+      "estimated_single_run_seconds": 2.283758258097295,
+      "gamma_over_gamma_imp": 0.9056387860193948
+    },
+    {
+      "id": "E1_controlled_p0_H4_N64_g0.001953125",
+      "family": "E1",
+      "H": 4,
+      "N": 64,
+      "gamma": 0.001953125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 151,
+        "burn": 7550,
+        "batch_length": 1510,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 2.2687335327150757,
+      "gamma_over_gamma_imp": 0.4528193930096974
+    },
+    {
+      "id": "E1_controlled_p0_H4_N128_g0.0078125",
+      "family": "E1",
+      "H": 4,
+      "N": 128,
+      "gamma": 0.0078125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 38,
+        "burn": 1900,
+        "batch_length": 380,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 0.5709395645243237,
+      "gamma_over_gamma_imp": 1.8112775720387897
+    },
+    {
+      "id": "E1_controlled_p0_H4_N128_g0.00390625",
+      "family": "E1",
+      "H": 4,
+      "N": 128,
+      "gamma": 0.00390625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 76,
+        "burn": 3800,
+        "batch_length": 760,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 1.1418791290486474,
+      "gamma_over_gamma_imp": 0.9056387860193948
+    },
+    {
+      "id": "E1_controlled_p0_H4_N128_g0.001953125",
+      "family": "E1",
+      "H": 4,
+      "N": 128,
+      "gamma": 0.001953125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 151,
+        "burn": 7550,
+        "batch_length": 1510,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 2.2687335327150757,
+      "gamma_over_gamma_imp": 0.4528193930096974
+    },
+    {
+      "id": "E1_controlled_p0_H8_N64_g0.0078125",
+      "family": "E1",
+      "H": 8,
+      "N": 64,
+      "gamma": 0.0078125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 19,
+        "burn": 950,
+        "batch_length": 190,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 0.28546978226216185,
+      "gamma_over_gamma_imp": 3.6225551440775794
+    },
+    {
+      "id": "E1_controlled_p0_H8_N64_g0.00390625",
+      "family": "E1",
+      "H": 8,
+      "N": 64,
+      "gamma": 0.00390625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 38,
+        "burn": 1900,
+        "batch_length": 380,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 0.5709395645243237,
+      "gamma_over_gamma_imp": 1.8112775720387897
+    },
+    {
+      "id": "E1_controlled_p0_H8_N64_g0.001953125",
+      "family": "E1",
+      "H": 8,
+      "N": 64,
+      "gamma": 0.001953125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 76,
+        "burn": 3800,
+        "batch_length": 760,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 1.1418791290486474,
+      "gamma_over_gamma_imp": 0.9056387860193948
+    },
+    {
+      "id": "E1_controlled_p0_H8_N128_g0.0078125",
+      "family": "E1",
+      "H": 8,
+      "N": 128,
+      "gamma": 0.0078125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 19,
+        "burn": 950,
+        "batch_length": 190,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 0.28546978226216185,
+      "gamma_over_gamma_imp": 3.6225551440775794
+    },
+    {
+      "id": "E1_controlled_p0_H8_N128_g0.00390625",
+      "family": "E1",
+      "H": 8,
+      "N": 128,
+      "gamma": 0.00390625,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 38,
+        "burn": 1900,
+        "batch_length": 380,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 0.5709395645243237,
+      "gamma_over_gamma_imp": 1.8112775720387897
+    },
+    {
+      "id": "E1_controlled_p0_H8_N128_g0.001953125",
+      "family": "E1",
+      "H": 8,
+      "N": 128,
+      "gamma": 0.001953125,
+      "regime": "",
+      "partition_seed": 0,
+      "m": 1,
+      "roles": [
+        "E1b"
+      ],
+      "schedule": {
+        "tau0": 76,
+        "burn": 3800,
+        "batch_length": 760,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 1.1418791290486474,
+      "gamma_over_gamma_imp": 0.9056387860193948
+    },
+    {
+      "id": "E3_R0_p0_H4_N8_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 8,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 32,
+      "roles": [
+        "allocation"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R0_p0_H4_N32_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 8,
+      "roles": [
+        "allocation"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R0_p0_H4_N128_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 128,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 2,
+      "roles": [
+        "allocation"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R0_p0_H4_N32_g0.0980392156863",
+      "family": "E3",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.0980392156862745,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 8,
+      "roles": [
+        "policy"
+      ],
+      "schedule": {
+        "tau0": 256,
+        "burn": 12800,
+        "batch_length": 2560,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 37.41133328427707
+    },
+    {
+      "id": "E3_R0_p0_H4_N32_g0.0490196078431",
+      "family": "E3",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.04901960784313725,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 8,
+      "roles": [
+        "policy"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R0_p0_H2_N32_g0.196078431373",
+      "family": "E3",
+      "H": 2,
+      "N": 32,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 8,
+      "roles": [
+        "policy"
+      ],
+      "schedule": {
+        "tau0": 256,
+        "burn": 12800,
+        "batch_length": 2560,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 37.41133328427707
+    },
+    {
+      "id": "E3_R0_p0_H1_N8_g0.196078431373",
+      "family": "E3",
+      "H": 1,
+      "N": 8,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 32,
+      "roles": [
+        "negative_control"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R0_p0_H1_N32_g0.196078431373",
+      "family": "E3",
+      "H": 1,
+      "N": 32,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 8,
+      "roles": [
+        "negative_control"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R0_p0_H1_N128_g0.196078431373",
+      "family": "E3",
+      "H": 1,
+      "N": 128,
+      "gamma": 0.196078431372549,
+      "regime": "R0",
+      "partition_seed": 0,
+      "m": 2,
+      "roles": [
+        "negative_control"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R1_p4101_H4_N8_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 8,
+      "gamma": 0.196078431372549,
+      "regime": "R1",
+      "partition_seed": 4101,
+      "m": 32,
+      "roles": [
+        "allocation"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R1_p4101_H4_N32_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.196078431372549,
+      "regime": "R1",
+      "partition_seed": 4101,
+      "m": 8,
+      "roles": [
+        "allocation"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R1_p4101_H4_N128_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 128,
+      "gamma": 0.196078431372549,
+      "regime": "R1",
+      "partition_seed": 4101,
+      "m": 2,
+      "roles": [
+        "allocation"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R1_p4101_H4_N32_g0.0980392156863",
+      "family": "E3",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.0980392156862745,
+      "regime": "R1",
+      "partition_seed": 4101,
+      "m": 8,
+      "roles": [
+        "policy"
+      ],
+      "schedule": {
+        "tau0": 256,
+        "burn": 12800,
+        "batch_length": 2560,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 37.41133328427707
+    },
+    {
+      "id": "E3_R1_p4101_H4_N32_g0.0490196078431",
+      "family": "E3",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.04901960784313725,
+      "regime": "R1",
+      "partition_seed": 4101,
+      "m": 8,
+      "roles": [
+        "policy"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R1_p4101_H2_N32_g0.196078431373",
+      "family": "E3",
+      "H": 2,
+      "N": 32,
+      "gamma": 0.196078431372549,
+      "regime": "R1",
+      "partition_seed": 4101,
+      "m": 8,
+      "roles": [
+        "policy"
+      ],
+      "schedule": {
+        "tau0": 256,
+        "burn": 12800,
+        "batch_length": 2560,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 37.41133328427707
+    },
+    {
+      "id": "E3_R1_p4101_H1_N8_g0.196078431373",
+      "family": "E3",
+      "H": 1,
+      "N": 8,
+      "gamma": 0.196078431372549,
+      "regime": "R1",
+      "partition_seed": 4101,
+      "m": 32,
+      "roles": [
+        "negative_control"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R1_p4101_H1_N32_g0.196078431373",
+      "family": "E3",
+      "H": 1,
+      "N": 32,
+      "gamma": 0.196078431372549,
+      "regime": "R1",
+      "partition_seed": 4101,
+      "m": 8,
+      "roles": [
+        "negative_control"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R1_p4101_H1_N128_g0.196078431373",
+      "family": "E3",
+      "H": 1,
+      "N": 128,
+      "gamma": 0.196078431372549,
+      "regime": "R1",
+      "partition_seed": 4101,
+      "m": 2,
+      "roles": [
+        "negative_control"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R1_p4102_H4_N8_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 8,
+      "gamma": 0.196078431372549,
+      "regime": "R1",
+      "partition_seed": 4102,
+      "m": 32,
+      "roles": [
+        "partition_sensitivity"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R1_p4102_H4_N128_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 128,
+      "gamma": 0.196078431372549,
+      "regime": "R1",
+      "partition_seed": 4102,
+      "m": 2,
+      "roles": [
+        "partition_sensitivity"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R1_p4103_H4_N8_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 8,
+      "gamma": 0.196078431372549,
+      "regime": "R1",
+      "partition_seed": 4103,
+      "m": 32,
+      "roles": [
+        "partition_sensitivity"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R1_p4103_H4_N128_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 128,
+      "gamma": 0.196078431372549,
+      "regime": "R1",
+      "partition_seed": 4103,
+      "m": 2,
+      "roles": [
+        "partition_sensitivity"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R2_p4101_H4_N8_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 8,
+      "gamma": 0.196078431372549,
+      "regime": "R2",
+      "partition_seed": 4101,
+      "m": 32,
+      "roles": [
+        "allocation"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R2_p4101_H4_N32_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.196078431372549,
+      "regime": "R2",
+      "partition_seed": 4101,
+      "m": 8,
+      "roles": [
+        "allocation"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R2_p4101_H4_N128_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 128,
+      "gamma": 0.196078431372549,
+      "regime": "R2",
+      "partition_seed": 4101,
+      "m": 2,
+      "roles": [
+        "allocation"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R2_p4101_H4_N32_g0.0980392156863",
+      "family": "E3",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.0980392156862745,
+      "regime": "R2",
+      "partition_seed": 4101,
+      "m": 8,
+      "roles": [
+        "policy"
+      ],
+      "schedule": {
+        "tau0": 256,
+        "burn": 12800,
+        "batch_length": 2560,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 37.41133328427707
+    },
+    {
+      "id": "E3_R2_p4101_H4_N32_g0.0490196078431",
+      "family": "E3",
+      "H": 4,
+      "N": 32,
+      "gamma": 0.04901960784313725,
+      "regime": "R2",
+      "partition_seed": 4101,
+      "m": 8,
+      "roles": [
+        "policy"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 133,
+        "primary_batches": 64,
+        "sensitivity": "primary first64; burn2x batches5:69; tail2x first128; combined batches5:133"
+      },
+      "estimated_single_run_seconds": 149.35305709582485
+    },
+    {
+      "id": "E3_R2_p4101_H2_N32_g0.196078431373",
+      "family": "E3",
+      "H": 2,
+      "N": 32,
+      "gamma": 0.196078431372549,
+      "regime": "R2",
+      "partition_seed": 4101,
+      "m": 8,
+      "roles": [
+        "policy"
+      ],
+      "schedule": {
+        "tau0": 256,
+        "burn": 12800,
+        "batch_length": 2560,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 37.41133328427707
+    },
+    {
+      "id": "E3_R2_p4101_H1_N8_g0.196078431373",
+      "family": "E3",
+      "H": 1,
+      "N": 8,
+      "gamma": 0.196078431372549,
+      "regime": "R2",
+      "partition_seed": 4101,
+      "m": 32,
+      "roles": [
+        "negative_control"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R2_p4101_H1_N32_g0.196078431373",
+      "family": "E3",
+      "H": 1,
+      "N": 32,
+      "gamma": 0.196078431372549,
+      "regime": "R2",
+      "partition_seed": 4101,
+      "m": 8,
+      "roles": [
+        "negative_control"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R2_p4101_H1_N128_g0.196078431373",
+      "family": "E3",
+      "H": 1,
+      "N": 128,
+      "gamma": 0.196078431372549,
+      "regime": "R2",
+      "partition_seed": 4101,
+      "m": 2,
+      "roles": [
+        "negative_control"
+      ],
+      "schedule": {
+        "tau0": 511,
+        "burn": 25550,
+        "batch_length": 5110,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 74.67652854791243
+    },
+    {
+      "id": "E3_R2_p4102_H4_N8_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 8,
+      "gamma": 0.196078431372549,
+      "regime": "R2",
+      "partition_seed": 4102,
+      "m": 32,
+      "roles": [
+        "partition_sensitivity"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R2_p4102_H4_N128_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 128,
+      "gamma": 0.196078431372549,
+      "regime": "R2",
+      "partition_seed": 4102,
+      "m": 2,
+      "roles": [
+        "partition_sensitivity"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R2_p4103_H4_N8_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 8,
+      "gamma": 0.196078431372549,
+      "regime": "R2",
+      "partition_seed": 4103,
+      "m": 32,
+      "roles": [
+        "partition_sensitivity"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    },
+    {
+      "id": "E3_R2_p4103_H4_N128_g0.196078431373",
+      "family": "E3",
+      "H": 4,
+      "N": 128,
+      "gamma": 0.196078431372549,
+      "regime": "R2",
+      "partition_seed": 4103,
+      "m": 2,
+      "roles": [
+        "partition_sensitivity"
+      ],
+      "schedule": {
+        "tau0": 128,
+        "burn": 6400,
+        "batch_length": 1280,
+        "batches": 64,
+        "primary_batches": 64,
+        "sensitivity": "none"
+      },
+      "estimated_single_run_seconds": 18.705666642138535
+    }
+  ],
+  "optional_gamma_1024_extension_enabled": false,
+  "E3_shadow_enabled": false,
+  "E3_primary_estimator": "direct mean; no pilot-validated shadow process",
+  "E1_primary_estimator": "exact nonlinear balance, raw mean cross-check",
+  "E1a_primary_fit": "separate algorithm/H linear intercept against gamma; all four points; no B11 subtraction",
+  "E1a_secondary_fit": "omit largest gamma nested window",
+  "E1b_primary_fit": "separate H coordinate OLS [1,gamma,1/N], all Cartesian points",
+  "E1b_secondary_fit": "omit largest gamma or omit N=32, explicitly nested sensitivity",
+  "E1b_contrast": "beta0(H4)-3.5*beta0(H2); exact kappa(4)/kappa(2)=3.5",
+  "resampling": "independent paired seed vectors as bootstrap units; all cells resampled together; 2000 bootstrap draws seed=61009",
+  "ci": "pointwise nominal Student-t 95%; coordinate families Bonferroni; bootstrap fits; no deterministic error coverage",
+  "multiplicity": {
+    "E1a_intercepts_coordinates": 16,
+    "E1b_intercepts_coordinates": 6,
+    "E3_signed_projections": 105
+  },
+  "E3_projection": [
+    -0.1453952446936786,
+    -0.0852304111833987,
+    -0.0005997534824289274,
+    0.06365986098165996,
+    0.028294847834216253,
+    -0.1928108561450081,
+    0.015230204611567297,
+    0.039406150043515616,
+    0.006466840968555435,
+    0.010420586817266313,
+    0.005907189816215721,
+    -0.0001631359549702653,
+    -0.00015890338705767723,
+    -0.031088689834590556,
+    -0.0130153002397863,
+    -0.021047387362840002,
+    -0.03932895419322694,
+    -0.03479036891319222,
+    0.11218805328942583,
+    -0.08522965137729585,
+    -0.024010760298488174,
+    -0.18654325719523437,
+    0.029938136502017754,
+    -0.005378257834179951,
+    -0.005498079047965542,
+    -0.00951295317786351,
+    -0.010528035031721809,
+    -0.008199148574814583,
+    0.06089406841649816,
+    -0.0024909878736136815,
+    -0.018190674720883027,
+    0.01933466204835976,
+    -0.005199806635334239,
+    -0.0008440090325528579,
+    -0.07897637534527086,
+    -0.18654325719523446,
+    -0.08522965137729574,
+    -0.010876336882145067,
+    0.22235492025630327,
+    0.24251216468229633,
+    -0.09012768895267113,
+    -0.24588183660351629,
+    -0.0195886294723249,
+    -0.018848704691969646,
+    -0.0070000285812800555,
+    -0.0003359769241737908,
+    -0.00596201754456442,
+    -0.05348873607498818,
+    -0.06529173833130303,
+    -0.008499693390519867,
+    0.09212441604707029,
+    0.0835399537838933,
+    -0.029189301330554508,
+    -0.03587152542770006,
+    -0.05848264133564783,
+    -0.009589455858312024,
+    -0.020950158081277696,
+    -0.0025433701691427693,
+    -0.001246234237013292,
+    -9.25178927756616e-05,
+    -0.0029780100904779135,
+    -0.11795141293390214,
+    0.24911238888342221,
+    -0.1820535398353492,
+    -0.019686068692173368,
+    -0.06571405787515448,
+    -0.10577418225827157,
+    0.007259071063070505,
+    -0.0029197789042333536,
+    -0.0019035582285292884,
+    -0.03593225221568984,
+    -0.17557605464319465,
+    0.036305354099532415,
+    -0.2559117822403643,
+    0.11664108169669506,
+    -0.17923403639093455,
+    0.03996333584725486,
+    -0.09401288132593733,
+    -0.02074969105015995,
+    -0.16229758151700852,
+    0.014532832645196597,
+    0.12325662070426378,
+    -0.14026811036124984,
+    -7.63323231169383e-06,
+    0.0004934087932874182,
+    -0.000828028880098721,
+    0.000770571594499426,
+    0.0008620926160078921,
+    -0.00018721182511794197,
+    0.0028852841378850013,
+    0.0011471246095767385,
+    0.0006017133860019254,
+    0.0009187678174170171,
+    0.0010956028324178922,
+    -7.27130070968425e-05,
+    0.0009724380354082662,
+    -0.00014534205189899882,
+    0.0013366027932086599,
+    0.00034243988090530957,
+    -0.00015250937640261703,
+    -0.0003614776854145068,
+    -0.0001224608296877902,
+    -0.009562433489789596,
+    -0.0004023010547825585,
+    -0.00019168460378530725,
+    0.0003098986216782588,
+    -0.0008214391462490465,
+    -0.0001160490468995802,
+    -9.025013506185304e-05,
+    0.0010186349488285908,
+    -0.0003032704703916396,
+    -0.0004727855888746213,
+    -1.351702662070677e-06,
+    -0.001051135774237637,
+    -0.0003264778911577804,
+    -3.129763036282395e-05,
+    1.917531177796665e-05,
+    0.00018710753069976248,
+    -0.000992403513329777,
+    -0.00011308098714081135,
+    -0.00034345289539096483,
+    0.00016638282312761288,
+    -8.200749487799684e-06,
+    -0.5151615656903858
+  ],
+  "E3_projection_scope": "objective-derived descriptive direction; not homogeneous additive theorem target",
+  "precision_targets": {
+    "E1_B11_absolute_coordinate_halfwidth": 0.005,
+    "E1_control_relative_direction_halfwidth": 0.1,
+    "E3_signed_projection_absolute_halfwidth": 0.0001
+  },
+  "stationarity": "paired run first-half/last-half contrasts; adjusted nominal CI; representative2x burn/tail; absence of significance is not a mixing certificate",
+  "U_statistic": "unclipped cross-run squared displacement, jackknife-t CI; near-zero inference unresolved; Gaussian quadratic zero-bias calibration",
+  "pilot": {
+    "cells": 7,
+    "runs": 28,
+    "median_rounds_per_second": {
+      "E1": 45924.3002748375,
+      "E3": 4721.563881665688
+    },
+    "horizon_rationale": "baseline global-curvature proxy retained; pilot too short to justify reducing 50*tau burn or 64*10*tau tail"
+  },
+  "run_budget_rule": "fixed horizons; wall-clock checkpoints preserve status RESOURCE_LIMITED, never scientific rejection",
+  "estimated_cpu_hours": 5.247331632983865
+}

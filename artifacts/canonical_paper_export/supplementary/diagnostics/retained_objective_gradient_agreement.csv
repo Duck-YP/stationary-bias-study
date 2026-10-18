@@ -1,0 +1,52 @@
+regime,N,partition_seed,test_vector,gradient_residual,membership_scope
+R0,8,0,0,0.0,replicated shared pool
+R0,8,0,1,0.0,replicated shared pool
+R0,8,0,2,0.0,replicated shared pool
+R0,32,0,0,0.0,replicated shared pool
+R0,32,0,1,0.0,replicated shared pool
+R0,32,0,2,0.0,replicated shared pool
+R0,128,0,0,0.0,replicated shared pool
+R0,128,0,1,0.0,replicated shared pool
+R0,128,0,2,0.0,replicated shared pool
+R1,8,4101,0,1.78794619362188e-15,all retained rows exactly once
+R1,8,4101,1,3.233264620535604e-15,all retained rows exactly once
+R1,8,4101,2,8.831986665949864e-16,all retained rows exactly once
+R1,8,4102,0,1.649608801478721e-15,all retained rows exactly once
+R1,8,4102,1,2.8818437552586056e-15,all retained rows exactly once
+R1,8,4102,2,1.3947259932826244e-15,all retained rows exactly once
+R1,8,4103,0,1.7988762098135074e-15,all retained rows exactly once
+R1,8,4103,1,3.3027141814785336e-15,all retained rows exactly once
+R1,8,4103,2,1.184933229990715e-15,all retained rows exactly once
+R1,32,4101,0,1.847518587994617e-15,all retained rows exactly once
+R1,32,4101,1,3.2441354804782823e-15,all retained rows exactly once
+R1,32,4101,2,1.1478261880125459e-15,all retained rows exactly once
+R1,128,4101,0,1.8439482405960265e-15,all retained rows exactly once
+R1,128,4101,1,3.326384082878335e-15,all retained rows exactly once
+R1,128,4101,2,1.2089799219797504e-15,all retained rows exactly once
+R1,128,4102,0,1.8459677889100087e-15,all retained rows exactly once
+R1,128,4102,1,3.2082664751469835e-15,all retained rows exactly once
+R1,128,4102,2,1.1473457333252666e-15,all retained rows exactly once
+R1,128,4103,0,1.794262723291134e-15,all retained rows exactly once
+R1,128,4103,1,3.1783776381012834e-15,all retained rows exactly once
+R1,128,4103,2,1.1230011290279515e-15,all retained rows exactly once
+R2,8,4101,0,1.5116551171137448e-15,all retained rows exactly once
+R2,8,4101,1,3.4078411720088978e-15,all retained rows exactly once
+R2,8,4101,2,1.2785280535181396e-15,all retained rows exactly once
+R2,8,4102,0,1.5699531337450363e-15,all retained rows exactly once
+R2,8,4102,1,2.9555205459840577e-15,all retained rows exactly once
+R2,8,4102,2,1.5754374522356372e-15,all retained rows exactly once
+R2,8,4103,0,1.7423882288962836e-15,all retained rows exactly once
+R2,8,4103,1,3.4525334704133488e-15,all retained rows exactly once
+R2,8,4103,2,1.6024131687599128e-15,all retained rows exactly once
+R2,32,4101,0,1.925814158066088e-15,all retained rows exactly once
+R2,32,4101,1,3.359181744669236e-15,all retained rows exactly once
+R2,32,4101,2,1.1096006349868006e-15,all retained rows exactly once
+R2,128,4101,0,1.873130229049724e-15,all retained rows exactly once
+R2,128,4101,1,3.22883986402842e-15,all retained rows exactly once
+R2,128,4101,2,1.0784442933130951e-15,all retained rows exactly once
+R2,128,4102,0,1.8767749381003297e-15,all retained rows exactly once
+R2,128,4102,1,3.2853931015210037e-15,all retained rows exactly once
+R2,128,4102,2,1.1686695697254303e-15,all retained rows exactly once
+R2,128,4103,0,1.847273319995068e-15,all retained rows exactly once
+R2,128,4103,1,3.066142978445169e-15,all retained rows exactly once
+R2,128,4103,2,1.0783408271049506e-15,all retained rows exactly once

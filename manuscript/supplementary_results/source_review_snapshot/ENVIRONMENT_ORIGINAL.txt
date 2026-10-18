@@ -1,0 +1,20 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "python",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cpu_count": 28,
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "memory_gb": 63.747066497802734,
+  "free_disk_gb": 1244.6209182739258,
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "numba": "0.68.0",
+    "llvmlite": "0.50.0",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1",
+    "psutil": "7.2.2",
+    "threadpoolctl": "3.7.0"
+  },
+  "backend": "Numba float64 CPU; no fastmath; BLAS threads=1; no GPU used"
+}

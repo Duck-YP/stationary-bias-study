@@ -1,0 +1,15 @@
+# Metric definitions
+
+All means refer to the frozen finite-tail protocol. Stationary interpretation needs burn/tail diagnostics; no CI covers deterministic truncation, burn-in, or optimizer error.
+
+- E1 primary: exact nonlinear stationary balance mean; direct raw mean always saved. B11 fits use (N/gamma)*mean without subtraction of B11.
+- E1 matched D: paired (balance_scaffold-balance_fedavg)/gamma^2. Z=D/kappa(H), when H>=2. Coordinates, fixed theory-direction projection, and perpendicular residual are all saved.
+- E3 primary: direct mean minus x_ref in all 124 parameters; direction frozen from the training objective before production. It is descriptive, not an exact minibatch coefficient target.
+- Plug-in squared norm and unclipped cross-run U-statistic are both reported. Jackknife-t uncertainty is nominal and can be unreliable at degeneracy; near-zero squared-bias identification stays unresolved. Gaussian zero-bias calibration is in E0; it is not a coverage guarantee for these chains.
+- Raw second moment about x_ref is the parameter MSE. Raw variance = raw second moment minus cross-run U of raw means. No negative variance or U is clipped. Decomposition residual is saved.
+- E3 held-out log loss is evaluated for each independent run's own tail-averaged model, then averaged across runs. It is never the loss of a freely deployable pooled model. Accuracy is secondary.
+- Training mean-model objective gap is f(estimated ensemble mean)-f(x_ref), distinct from the average objective at raw stochastic checkpoints and from per-run mean-model gaps.
+- Batch means diagnose dependence and sensitivity; they are not independent replicate units. Monte Carlo CIs use independent paired run seeds. Joint seed-label bootstrap resamples whole grid vectors.
+- Coordinate-family Bonferroni counts are 16 for primary B11 intercept coordinates, 6 for primary control intercept coordinates, 12 for H-intercept contrasts, and 2 for the H4-minus-3.5-H2 contrast. E3 signed cell projections use the frozen 105-member cell/algorithm family. The descriptive allocation/policy contrast table has its own 36-member family (30 contrasts against N32/H4/gamma_base and 6 N128-minus-N8 endpoints). These descriptive contrasts do not establish asymptotic expansions.
+- Counts include both paired algorithms, including repeated regularization coordinate operations separately from sample-gradient evaluations. Communication estimates count float64 parameter/control payloads; protocol costs are not interchangeable with gradient budgets.
+- The raw field communication_parameter_scalars=2*N*d*rounds is the round-trip payload per algorithm; the pair uses twice that. communication_control_scalars=N*d*rounds is a potential additional explicit-control payload for a conventional implementation, not measured traffic. This zero-sum full-participation implementation updates controls locally from endpoints and the global average; it requires no explicit extra control message. Control storage and local arithmetic still differ.

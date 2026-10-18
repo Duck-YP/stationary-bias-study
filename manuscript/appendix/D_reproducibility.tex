@@ -1,0 +1,64 @@
+\clearpage
+\section{Computational provenance and reproducibility}
+\label{app:reproducibility}
+
+The reported numerical results come from recorded experiment artifacts.
+Production artifacts retain configuration snapshots, source-commit identifiers,
+seed blocks, raw run/batch summaries, fitted coefficients, bootstrap outputs,
+validity checks, and target-inclusion outcomes. Diagnostic artifacts retain
+the corresponding audits and provenance records.
+Table~\ref{tab:F-artifacts} identifies the studies and their seed blocks.
+Artifact names are reproduced verbatim; terms such as \texttt{confirmation}
+and \texttt{validation} are bookkeeping labels, not assessments of evidence.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Experiment artifacts and seed blocks. The $d=5$ seed block belongs
+to a separate workstream; the rotation study uses four paired seeds per setting.}
+\label{tab:F-artifacts}
+\begin{tabular}{@{}p{0.33\linewidth}p{0.63\linewidth}@{}}
+\toprule
+Study and seeds & Repository artifact identifier \\
+\midrule
+SCAFFOLD $d=2$ primary; 901--908 &
+\nolinkurl{p2-d2-coefficient-primary} \\
+SCAFFOLD smaller step; 1001--1008 &
+\nolinkurl{p2-d2-h4-small-step-confirmation} \\
+Fixed-$\gamma$ check; 1301--1308 &
+\nolinkurl{p2-d2-fixed-gamma-largeN-plateau} \\
+Orthogonal equivariance &
+\nolinkurl{p2-d2-rotation-invariance} \\
+SCAFFOLD $d=5$; 1201--1208 &
+\nolinkurl{p2-d5-controlled-validation} \\
+FedAvg $d=2$ primary; 1101--1108 &
+\nolinkurl{p3-d2-coefficient-primary} \\
+FedAvg smaller step; 1201--1208 &
+\nolinkurl{p3-d2-h4-small-step-confirmation} \\
+Matched primary; 2101--2108 &
+\nolinkurl{p3-d2-matched-attribution-primary} \\
+Matched smaller step; 2201--2208 &
+\nolinkurl{p3-d2-matched-attribution-h4-small-step-confirmation} \\
+Matched saved-data diagnostic &
+\nolinkurl{p3-d2-matched-attribution-h4-diagnostic} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Matched pairs receive identical noise blocks keyed by seed, round, client,
+and local-step index, regardless of differences in their state trajectories.
+The $H=4$ diagnostic reads saved primary and smaller-step paired artifacts;
+it generates no new stationary production chains.
+Saved audits verify the identity
+$\widehat D=\widehat{\mathcal C}^{\Scaf}-\widehat{\mathcal C}^{\FedAvg}$
+and the residual decomposition to machine precision.
+The largest recorded control-sum error is $7.27\times10^{-12}$,
+below $10^{-10}$; the fixed-seed reference-kernel audit reports zero discrepancy.
+The four secondary direct--balance failures are retained in
+\texttt{p3-d2-coefficient-primary} and Table~\ref{tab:E-direct-balance}.
+
+\paragraph{Supplementary provenance.}
+The supplementary study was frozen on 9 October 2026 under the identifier \nolinkurl{independent-supplement-v1}. It records 69 production configurations and 828 paired runs (seeds 20001--20012); pilot and affine checks are separate. Numerical kernels, objective, data-processing code and engine match retained frozen hashes. The source manifest distinguishes reporting/scheduling changes; four complete freeze-time files are unavailable, so the current source is not represented as a complete historical checkout.
+
+The local \nolinkurl{supplementary_results/} directory supplies recorded tables, frozen settings, diagnostic summaries, manifests and the source-review snapshot. Data hashes and source URLs identify a9a from \url{https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html}. Full production arrays, restart states and examples remain in the experiment archive.
+
+The source manifest lists \url{https://github.com/Duck-YP/stationary-bias-study} at commit \texttt{7f6de2c}, with the supplementary directory untracked. That commit is therefore not a verified supplementary-code release. Reproduction requires the recorded source, environment, commands and experiment arrays. The analysis-only batch audit covers E1 and R0, not R1/R2 batches or raw-example task-loss regeneration. Historical studies remain separate, and all discrepancy records are preserved.

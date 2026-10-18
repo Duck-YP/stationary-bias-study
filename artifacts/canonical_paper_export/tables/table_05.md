@@ -1,0 +1,16 @@
+# Table 5: Step-size and local-step policies
+
+Status: **supported**. Section 6.3, page 15.
+
+
+
+| Setting | Signed projection S x1000 | Signed projection F x1000 | Raw variance S x1000 | Raw variance F x1000 |
+| --- | --- | --- | --- | --- |
+| H=4; gamma/base=1 | 0.9567 | 0.6851 | 2.3621 | 2.3613 |
+| H=4; gamma/base=1/2 | 0.3547 | 0.2796 | 1.1723 | 1.1722 |
+| H=4; gamma/base=1/4 | 0.0622 | 0.0420 | 0.5860 | 0.5860 |
+| H=2; gamma/base=1 | 0.3402 | 0.2474 | 2.3601 | 2.3599 |
+
+Sources:
+
+- `artifacts/canonical_paper_export/supplementary/full_results.csv`

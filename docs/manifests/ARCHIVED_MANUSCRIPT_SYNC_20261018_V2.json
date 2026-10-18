@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "manuscript_version": "20261018_V2",
+  "source_archive": {
+    "name": "Characterizing_Client_Independent_Stationary_Bias_for_SCAFFOLD_and_FedAvg_in_Federated_Learning_V2.zip",
+    "sha256": "bf0ddf18830e323bdabb57e12effb959d21d8c9f76f93fc3b2d68df16f9f8f70"
+  },
+  "main_pdf": {
+    "path": "manuscript/main.pdf",
+    "sha256": "1bea9883e8f828f3a4c7029ed26fdcced6808d3420470a09ccbcdd346232be1f",
+    "bytes": 748160,
+    "pages": 40,
+    "unchanged_from_previous": true,
+    "source_tex_correspondence_verified": false,
+    "matches_current_tex": false,
+    "note": "Supplied PDF is the unchanged October 15 build and does not reflect V2 TeX edits; no recompilation."
+  },
+  "main_tex": {
+    "path": "manuscript/main.tex",
+    "sha256": "7af8c39fcd4590eb713271d927823770de7f7fcabf38531f51175e377f9a007f",
+    "bytes": 3315
+  },
+  "active_graphics": [
+    "figures/redrawn/e4_averaging_fedavg.pdf",
+    "figures/redrawn/e4_averaging_scaffold.pdf",
+    "figures/redrawn/hist_H4_loglog_residual.pdf",
+    "figures/redrawn/hist_H4_smallstep.pdf",
+    "figures/redrawn/hist_fixed_gamma_coord1.pdf",
+    "figures/redrawn/hist_fixed_gamma_coord2.pdf",
+    "figures/redrawn/hist_matched_H2.pdf",
+    "figures/redrawn/hist_matched_H4.pdf",
+    "figures/redrawn/real_R0_allocation.pdf"
+  ],
+  "publication_manifest": "docs/manifests/PUBLICATION_COPY_MANIFEST.csv",
+  "historical_receipt_scope": "October 9 and October 15 build/integration receipts are historical. The supplied 40-page PDF remains the October 15 version and does not reflect the V2 TeX edits. No V2 compilation was performed.",
+  "scientific_recomputation": false,
+  "retained_local_files": [
+    {
+      "path": "manuscript/main.bbl",
+      "sha256": "022fe6918aaa460926a0cbfb1216bac1ffa682eb80be3a3d36d670e8a1563e23",
+      "reason": "Existing generated bibliography retained; absent from the V2 ZIP, references.bib unchanged; not a V2 build product."
+    }
+  ]
+}

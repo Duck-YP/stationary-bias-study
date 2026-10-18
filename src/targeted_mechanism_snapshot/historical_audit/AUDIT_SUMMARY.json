@@ -1,0 +1,84 @@
+{
+  "status": "ANALYSIS_ONLY_COMPLETED",
+  "new_old_objective_simulations": 0,
+  "configurations": 9,
+  "paired_runs": 108,
+  "primary_batch_total": 6912,
+  "source_archive": {
+    "zip_path": "manuscript\\supplementary_results\\SOURCE_REVIEW.zip",
+    "sha256": "0f26743d91095fa7c1cb6b8cc0d3c9b06dc5ab7dc6bc32f93359eaca4c392818",
+    "member_count": 216,
+    "available_prefixes": [
+      "SOURCE_REVIEW/ENVIRONMENT_ORIGINAL.txt",
+      "SOURCE_REVIEW/EXPORT_LOG.md",
+      "SOURCE_REVIEW/EXPORT_REPRODUCTION.md",
+      "SOURCE_REVIEW/EXPORT_SOURCE_MANIFEST.json",
+      "SOURCE_REVIEW/EXPORT_TASK_SPEC_ORIGINAL.md",
+      "SOURCE_REVIEW/FROZEN_SOURCE_AVAILABILITY.csv",
+      "SOURCE_REVIEW/LEGACY_SOURCE_PATH_MAP.csv",
+      "SOURCE_REVIEW/PRODUCTION_SOURCE_STATUS.md",
+      "SOURCE_REVIEW/PROTOCOL_FROZEN.json",
+      "SOURCE_REVIEW/README_REVIEW.md",
+      "SOURCE_REVIEW/SOURCE_MANIFEST_ORIGINAL.json",
+      "SOURCE_REVIEW/VERSION.json",
+      "SOURCE_REVIEW/available_frozen_source",
+      "SOURCE_REVIEW/delivered_source_snapshot",
+      "SOURCE_REVIEW/legacy_repository",
+      "SOURCE_REVIEW/supplementary_study",
+      "SOURCE_REVIEW/tools"
+    ],
+    "available_frozen_files": [
+      "SOURCE_REVIEW/available_frozen_source/requirements.lock",
+      "SOURCE_REVIEW/available_frozen_source/study/__init__.py",
+      "SOURCE_REVIEW/available_frozen_source/study/checks.py",
+      "SOURCE_REVIEW/available_frozen_source/study/data.py",
+      "SOURCE_REVIEW/available_frozen_source/study/engine.py",
+      "SOURCE_REVIEW/available_frozen_source/study/kernels.py",
+      "SOURCE_REVIEW/available_frozen_source/study/model.py",
+      "SOURCE_REVIEW/available_frozen_source/study/protocol.py"
+    ],
+    "archive_crc_error": null,
+    "historical_commit_verified": false,
+    "historical_commit_note": "SOURCE_MANIFEST imported_repository_base_commit is a legacy import label, not a recovered supplementary production commit."
+  },
+  "source_frozen_expected_files": 12,
+  "frozen_snapshot_matches": 8,
+  "archive_shared_array_mismatches": [],
+  "archive_repackaged_runs": 108,
+  "all_manuscript_source_hashes_match": true,
+  "max_reconstructed_primary_difference": 0.0,
+  "max_historical_fit_replay_difference": 1.3877787807814457e-17,
+  "paired_identity_evaluable_scalar_rows": 480,
+  "paired_identity_missing_window_rows": 228,
+  "paired_identity_max_abs_residual": 7.687364647247812e-16,
+  "paired_identity_max_abs_normalized_mean_residual": 1.2895187294651939e-08,
+  "paired_identity_control_bound_exceedances": 0,
+  "max_control_sum_norm": 9.9352848258973e-12,
+  "rng_coupling": "Within each cell SCAFFOLD/FedAvg share indexed noise. Across cells the SHA256 key contains cell ID; coincident numeric seed labels do not imply cross-cell common noise.",
+  "inference": "Independent paired run is the sampling unit. Same-run raw/balance and window contrasts formed before SE/CI. Historical joint seed-label fits reproduced; new independent-cell bootstrap keeps full within-run vector together, 2000 draws seed 26101404. Nominal intervals do not cover deterministic grid error or burn-in.",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "numpy": "2.5.3",
+  "original_targets": {
+    "scaffold": [
+      -0.1520127185848235,
+      -0.19001589823102932
+    ],
+    "fedavg": [
+      -0.09600803279041484,
+      -0.12001004098801853
+    ],
+    "matched_difference": [
+      -0.056004685794408655,
+      -0.07000585724301081
+    ],
+    "raw_minus_balance": [
+      0.0,
+      0.0
+    ]
+  },
+  "B11": [
+    -0.02445942816773269,
+    -0.03057428520966586
+  ]
+}

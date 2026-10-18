@@ -1,0 +1,16 @@
+{
+  "review_manifest_files": 439,
+  "manuscript_baseline_matching_files": 243,
+  "manuscript_baseline_mismatches": [],
+  "production_runs": 288,
+  "paired_batches": 18432,
+  "production_cpu_hours": 1.2622829861111111,
+  "max_window_identity_residual": 1.2722304226854471e-20,
+  "max_normalized_identity_residual": 6.8840435821253955e-12,
+  "max_control_mean": 4.5793230318835754e-14,
+  "comparison_groups": 29,
+  "scalar_comparisons": 18576,
+  "numerical_comparison_failures": 0,
+  "fitted_scalar_summaries": 144,
+  "bootstrap_draws_replayed_per_family": 4000
+}

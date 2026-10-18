@@ -1,0 +1,192 @@
+{
+  "fresh_archive_extract_build": true,
+  "build_return_code": 0,
+  "pages": 36,
+  "all_page_text_identical": true,
+  "all_page_renders_identical": true,
+  "render_scale": 1.25,
+  "warnings": [],
+  "comparison": [
+    {
+      "page": 1,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 2,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 3,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 4,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 5,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 6,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 7,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 8,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 9,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 10,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 11,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 12,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 13,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 14,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 15,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 16,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 17,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 18,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 19,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 20,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 21,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 22,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 23,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 24,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 25,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 26,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 27,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 28,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 29,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 30,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 31,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 32,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 33,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 34,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 35,
+      "text_identical": true,
+      "render_identical": true
+    },
+    {
+      "page": 36,
+      "text_identical": true,
+      "render_identical": true
+    }
+  ],
+  "note": "Only audit-report metadata was added after this build; active sources and assets remain identical."
+}

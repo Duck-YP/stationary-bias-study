@@ -1,8 +1,0 @@
-experiment: client_count_scaling
-description: Test whether the normalized coefficient persists as the client count grows.
-study_role: original_preregistered_experiment
-objective: nonlinear_main
-noise: rademacher
-H: 2
-gamma_denominator: 24
-N_values: [8, 16, 32, 64, 128]

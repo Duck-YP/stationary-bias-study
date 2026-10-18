@@ -1,0 +1,1141 @@
+{
+  "status": "PASS",
+  "checks": 190,
+  "results": [
+    {
+      "panel": "hist_matched_H2",
+      "row": 1,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 1,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 2,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 2,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 3,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 3,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 4,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 4,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 5,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 5,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 6,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 6,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 7,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 8,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 9,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 10,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 11,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 12,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 13,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 14,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 14,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 15,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 15,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 16,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 16,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 17,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 17,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 18,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 18,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 19,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 19,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 20,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 21,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 22,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 23,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 24,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 25,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "row": 26,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "check": "all_data_and_interval_endpoints_inside_axes",
+      "vertices": 72,
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H2",
+      "check": "all_horizontal_targets_inside_y_range",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 1,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 1,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 2,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 2,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 3,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 3,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 4,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 4,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 5,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 5,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 6,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 6,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 7,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 8,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 9,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 10,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 11,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 12,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 13,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 14,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 14,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 15,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 15,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 16,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 16,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 17,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 17,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 18,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 18,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 19,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 19,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 20,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 21,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 22,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 23,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 24,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 25,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "row": 26,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "check": "all_data_and_interval_endpoints_inside_axes",
+      "vertices": 72,
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "check": "all_horizontal_targets_inside_y_range",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 1,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 1,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 2,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 2,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 3,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 3,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 4,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 4,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 5,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 5,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 6,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 6,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 7,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 8,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 9,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 10,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 11,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 12,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "row": 13,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "check": "all_data_and_interval_endpoints_inside_axes",
+      "vertices": 36,
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "check": "all_horizontal_targets_inside_y_range",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 1,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 1,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 2,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 2,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 3,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 3,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 4,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 4,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 5,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 5,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 6,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 6,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 7,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 8,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 9,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 10,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 11,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 12,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "row": 13,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "check": "all_data_and_interval_endpoints_inside_axes",
+      "vertices": 36,
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "check": "all_horizontal_targets_inside_y_range",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "row": 1,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "row": 1,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "row": 2,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "row": 2,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "row": 3,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "row": 3,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "row": 4,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "row": 4,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "row": 5,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "row": 5,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "row": 6,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "row": 6,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "check": "all_data_and_interval_endpoints_inside_axes",
+      "vertices": 30,
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "check": "all_horizontal_targets_inside_y_range",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 1,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 1,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 2,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 2,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 3,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 3,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 4,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 4,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 5,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 5,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 6,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 7,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 8,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 9,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 10,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 11,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 12,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 12,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 13,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 13,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 14,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 14,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 15,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 15,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 16,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 16,
+      "check": "saved_interval_present_in_errorbar_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 17,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 18,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 19,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 20,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 21,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "row": 22,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "check": "all_data_and_interval_endpoints_inside_axes",
+      "vertices": 60,
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "check": "all_horizontal_targets_inside_y_range",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 1,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 2,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 3,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 4,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 5,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 6,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 7,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 8,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 9,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 10,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 11,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 12,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 13,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 14,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 15,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 16,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 17,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "row": 18,
+      "check": "saved_vertex_present_in_actual_artist",
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "check": "all_data_and_interval_endpoints_inside_axes",
+      "vertices": 18,
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "check": "all_horizontal_targets_inside_y_range",
+      "pass": true
+    }
+  ],
+  "tolerance": "At most four float ULPs for reconstructed errorbar endpoints; baseline sidecar equality remains exact.",
+  "limits": "Geometry JSON is renderer instrumentation, checked against immutable sidecars and separately visually against PDFs. E4 endpoints checked directly against fixed limits in NUMERIC_INVARIANCE.json."
+}

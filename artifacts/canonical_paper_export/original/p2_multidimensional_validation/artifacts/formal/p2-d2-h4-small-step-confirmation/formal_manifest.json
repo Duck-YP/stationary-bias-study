@@ -1,0 +1,479 @@
+{
+  "artifact_filenames": [
+    "run_summary.csv",
+    "batch_summary.csv",
+    "setting_summary.csv",
+    "setting_diagnostics.csv",
+    "fit_summary.csv",
+    "bootstrap_intercepts.csv",
+    "falsification_summary.csv",
+    "p2_d2_h4_small_step_report.md",
+    "p2_d2_H4_small_step_confirmation.png",
+    "formal_manifest.json",
+    "run_start_provenance.json"
+  ],
+  "artifact_namespace": "workstreams/p2_multidimensional_validation/artifacts/formal/p2-d2-h4-small-step-confirmation",
+  "bootstrap_repetitions": 2000,
+  "bootstrap_replicate_count": 2000,
+  "bootstrap_seed": 2902,
+  "combined_formal_pass": "NOT_APPLICABLE",
+  "config_path": "workstreams/p2_multidimensional_validation/configs/d2_h4_small_step_confirmation.yaml",
+  "config_sha256": "f977860d1299ee9b3b94de0470dbe00fe486b3238c7df20ed9a09fd442cdb826",
+  "covariance": [
+    [
+      1.0,
+      0.2
+    ],
+    [
+      0.2,
+      0.7
+    ]
+  ],
+  "covariance_C": [
+    [
+      1.0,
+      0.2
+    ],
+    [
+      0.2,
+      0.7
+    ]
+  ],
+  "environment": {
+    "git_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
+    "git_dirty": false,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.14"
+  },
+  "expected_chain_count": 32,
+  "fit_model": {
+    "coefficient_estimate": "beta0_j",
+    "delta": "gamma + 1/N",
+    "model": "C_hat_j = beta0_j + beta1_j * delta",
+    "per": [
+      "H",
+      "coordinate"
+    ],
+    "response": "setting_mean_balance_C_hat_coordinate"
+  },
+  "formal_seed_group": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008
+  ],
+  "gate_definitions": {
+    "F0": "every setting passes finite-state, zero-sum-control, and stationarity validity",
+    "F3": "both H=4 coordinate targets lie within simultaneous smaller-step bootstrap intervals",
+    "F3_closeness": "report whether each smaller-step intercept is closer to theory than its primary-path counterpart",
+    "F4": "all sufficiently small-path balance coordinates have the corresponding theory sign",
+    "F5": "report direct-versus-balance agreement coordinatewise as diagnostic only",
+    "F6": "include every frozen setting and seed without result-dependent exclusion"
+  },
+  "gate_results": [
+    {
+      "closer_to_theory": null,
+      "detail": "run_validity",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F0",
+      "passed": true,
+      "scope": "all_settings"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "not_applicable",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F1",
+      "passed": "",
+      "scope": "H2"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "reported_in_primary_output",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F2",
+      "passed": "",
+      "scope": "H4_primary"
+    },
+    {
+      "closer_to_theory": true,
+      "detail": "small_step_coverage",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F3",
+      "passed": true,
+      "scope": "H4_coordinate_0"
+    },
+    {
+      "closer_to_theory": true,
+      "detail": "small_step_coverage",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F3",
+      "passed": true,
+      "scope": "H4_coordinate_1"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "small_step_direction_sign",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F4",
+      "passed": true,
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N64__g0p0156250000__coordinate_0"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "small_step_direction_sign",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F4",
+      "passed": true,
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N64__g0p0156250000__coordinate_1"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "small_step_direction_sign",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F4",
+      "passed": true,
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N96__g0p0104166667__coordinate_0"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "small_step_direction_sign",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F4",
+      "passed": true,
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N96__g0p0104166667__coordinate_1"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "small_step_direction_sign",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F4",
+      "passed": true,
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N128__g0p0078125000__coordinate_0"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "small_step_direction_sign",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F4",
+      "passed": true,
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N128__g0p0078125000__coordinate_1"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "small_step_direction_sign",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F4",
+      "passed": true,
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N192__g0p0052083333__coordinate_0"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "small_step_direction_sign",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F4",
+      "passed": true,
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N192__g0p0052083333__coordinate_1"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "diagnostic_only",
+      "direct_balance_C_difference_max_abs": 2.5344728503903635,
+      "direct_balance_C_difference_mean": 0.21872312897870427,
+      "gate": "F5",
+      "passed": "",
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N64__g0p0156250000__coordinate_0"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "diagnostic_only",
+      "direct_balance_C_difference_max_abs": 1.0560119717334588,
+      "direct_balance_C_difference_mean": 0.136987721193256,
+      "gate": "F5",
+      "passed": "",
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N64__g0p0156250000__coordinate_1"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "diagnostic_only",
+      "direct_balance_C_difference_max_abs": 5.016555128404898,
+      "direct_balance_C_difference_mean": 0.8325349504379069,
+      "gate": "F5",
+      "passed": "",
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N96__g0p0104166667__coordinate_0"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "diagnostic_only",
+      "direct_balance_C_difference_max_abs": 3.505184718454843,
+      "direct_balance_C_difference_mean": 0.4490616691799434,
+      "gate": "F5",
+      "passed": "",
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N96__g0p0104166667__coordinate_1"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "diagnostic_only",
+      "direct_balance_C_difference_max_abs": 5.789767090697751,
+      "direct_balance_C_difference_mean": 0.7142658484387779,
+      "gate": "F5",
+      "passed": "",
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N128__g0p0078125000__coordinate_0"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "diagnostic_only",
+      "direct_balance_C_difference_max_abs": 4.260197578660229,
+      "direct_balance_C_difference_mean": 1.2129632460758044,
+      "gate": "F5",
+      "passed": "",
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N128__g0p0078125000__coordinate_1"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "diagnostic_only",
+      "direct_balance_C_difference_max_abs": 4.350471399754605,
+      "direct_balance_C_difference_mean": 1.3656696682817895,
+      "gate": "F5",
+      "passed": "",
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N192__g0p0052083333__coordinate_0"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "diagnostic_only",
+      "direct_balance_C_difference_max_abs": 4.03077612964229,
+      "direct_balance_C_difference_mean": 0.2989651598042121,
+      "gate": "F5",
+      "passed": "",
+      "scope": "p2-d2-h4-small-step-confirmation__H4__N192__g0p0052083333__coordinate_1"
+    },
+    {
+      "closer_to_theory": null,
+      "detail": "all_settings_and_seeds_present",
+      "direct_balance_C_difference_max_abs": null,
+      "direct_balance_C_difference_mean": null,
+      "gate": "F6",
+      "passed": true,
+      "scope": "frozen_matrix"
+    }
+  ],
+  "interpretation_boundary": "consistency_test_not_proof",
+  "matrix_id": "p2-d2-h4-small-step-confirmation",
+  "numerical_outcomes_label": "EMPIRICAL",
+  "objective": {
+    "A": [
+      [
+        1.2,
+        0.2
+      ],
+      [
+        0.2,
+        1.0
+      ]
+    ],
+    "alpha": 0.25,
+    "d": 2,
+    "global_hessian_bounds": {
+      "L": 1.565036762718386,
+      "mu": 0.85
+    },
+    "name": "rank_one_log_cosh",
+    "u": [
+      0.7071067811865475,
+      0.7071067811865475
+    ],
+    "x_star": [
+      0.0,
+      0.0
+    ]
+  },
+  "objective_parameters": {
+    "A": [
+      [
+        1.2,
+        0.2
+      ],
+      [
+        0.2,
+        1.0
+      ]
+    ],
+    "alpha": 0.25,
+    "d": 2,
+    "global_hessian_bounds": {
+      "L": 1.565036762718386,
+      "mu": 0.85
+    },
+    "name": "rank_one_log_cosh",
+    "u": [
+      0.7071067811865475,
+      0.7071067811865475
+    ],
+    "x_star": [
+      0.0,
+      0.0
+    ]
+  },
+  "observed_chain_count": 32,
+  "observed_row_counts": {
+    "batch_summary": 12800,
+    "bootstrap_intercepts": 4000,
+    "falsification_summary": 22,
+    "fit_summary": 8,
+    "run_summary": 128,
+    "setting_diagnostics": 8,
+    "setting_summary": 16
+  },
+  "phase": "formal",
+  "protocol_path": "workstreams/p2_multidimensional_validation/artifacts/archive/protocols/formal_protocol.md",
+  "protocol_sha256": "074024801908f47778772635b24cbf598c543afda65457b9c6906cd4c3f572fa",
+  "run_matrix": {
+    "H_values": [
+      4
+    ],
+    "N_values": [
+      64,
+      96,
+      128,
+      192
+    ],
+    "all_unique": true,
+    "chains": 32,
+    "chains_per_setting": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "gamma_equals_inverse_N": true,
+    "matrix_id": "p2-d2-h4-small-step-confirmation",
+    "seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008
+    ],
+    "settings": 4,
+    "target": "h4-small-step",
+    "unique_run_ids": 32
+  },
+  "schema_version": 2,
+  "source_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
+  "source_dirty": false,
+  "source_dirty_at_provenance_capture": false,
+  "stopping_protocol": {
+    "absolute_half_width": 0.0025,
+    "check_after_batches": 100,
+    "coordinate_rule": "h_j <= max(0.0025, 0.10 * abs(B20_j(H)))",
+    "extend_by_batches": 50,
+    "relative_half_width": 0.1,
+    "scope": "every_coordinate",
+    "simultaneous_interval": "bonferroni_familywise_95_percent",
+    "statistic": "primary_balance_normalized_coefficient",
+    "stop_at_batches": 400,
+    "stop_on_invalidity": true
+  },
+  "study": "p2_multidimensional_validation",
+  "theory": {
+    "B11_d": [
+      -0.024459428167733,
+      -0.030574285209666
+    ],
+    "B11_d_sign_is_intrinsic": true,
+    "B20": [
+      -0.152012718584823,
+      -0.190015898231029
+    ],
+    "B20_ctrl": [
+      -0.056004685794409,
+      -0.070005857243011
+    ],
+    "B20_local": [
+      -0.096008032790415,
+      -0.120010040988019
+    ],
+    "H": 4,
+    "S_C": [
+      [
+        0.413009404388715,
+        0.021943573667712
+      ],
+      [
+        0.021943573667712,
+        0.345611285266458
+      ]
+    ],
+    "normalization": "C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2",
+    "remainder": "O(1/N + gamma)"
+  },
+  "theory_targets": {
+    "B11_d": [
+      -0.024459428167733,
+      -0.030574285209666
+    ],
+    "B11_d_sign_is_intrinsic": true,
+    "B20": [
+      -0.152012718584823,
+      -0.190015898231029
+    ],
+    "B20_ctrl": [
+      -0.056004685794409,
+      -0.070005857243011
+    ],
+    "B20_local": [
+      -0.096008032790415,
+      -0.120010040988019
+    ],
+    "H": 4,
+    "S_C": [
+      [
+        0.413009404388715,
+        0.021943573667712
+      ],
+      [
+        0.021943573667712,
+        0.345611285266458
+      ]
+    ],
+    "normalization": "C_hat = (b_hat - (gamma / N) * B11_d) / gamma^2",
+    "remainder": "O(1/N + gamma)"
+  },
+  "uncertainty_protocol": {
+    "coordinates": 2,
+    "correction": "bonferroni",
+    "degrees_of_freedom": 7,
+    "familywise_confidence_level": 0.95,
+    "marginal_diagnostic_confidence_level": 0.95,
+    "method": "student_t_coordinatewise",
+    "pool_coordinates": false,
+    "simultaneous_coordinate_confidence_level": 0.975,
+    "source": "eight_independent_chain_estimates"
+  }
+}

@@ -1,0 +1,26 @@
+id: p2
+slug: p2_multidimensional_validation
+title: Multidimensional homogeneous SCAFFOLD validation
+entrypoint: python run.py p2
+config: workstreams/p2_multidimensional_validation/configs/d2_smoke.yaml
+smoke_artifacts: workstreams/p2_multidimensional_validation/artifacts/smoke
+formal_source_policy: clean_commit
+formal_output_policy: controlled_overwrite_if_raw_scientific_fields_match
+d2_primary_matrix_id: p2-d2-coefficient-primary
+d2_primary_config: workstreams/p2_multidimensional_validation/configs/d2_coefficient_primary.yaml
+d2_primary_artifacts: workstreams/p2_multidimensional_validation/artifacts/formal/p2-d2-coefficient-primary
+d2_h4_small_step_matrix_id: p2-d2-h4-small-step-confirmation
+d2_h4_small_step_config: workstreams/p2_multidimensional_validation/configs/d2_h4_small_step_confirmation.yaml
+d2_h4_small_step_artifacts: workstreams/p2_multidimensional_validation/artifacts/formal/p2-d2-h4-small-step-confirmation
+d2_rotation_matrix_id: p2-d2-rotation-invariance
+d2_rotation_config: workstreams/p2_multidimensional_validation/configs/d2_rotation_invariance.yaml
+d2_rotation_artifacts: workstreams/p2_multidimensional_validation/artifacts/formal/p2-d2-rotation-invariance
+d5_matrix_id: p2-d5-controlled-validation
+d5_config: workstreams/p2_multidimensional_validation/configs/d5_controlled_validation.yaml
+d5_artifacts: workstreams/p2_multidimensional_validation/artifacts/formal/p2-d5-controlled-validation
+fixed_gamma_large_N_matrix_id: p2-d2-fixed-gamma-largeN-plateau
+fixed_gamma_large_N_config: workstreams/p2_multidimensional_validation/configs/d2_fixed_gamma_largeN_plateau.yaml
+fixed_gamma_large_N_artifacts: workstreams/p2_multidimensional_validation/artifacts/formal/p2-d2-fixed-gamma-largeN-plateau
+archive_output_policy: not_used
+implementation_package: stationary_bias.workstreams.p2_multidimensional_validation
+test_directory: tests/workstreams/p2_multidimensional_validation

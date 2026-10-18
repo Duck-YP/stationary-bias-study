@@ -1,0 +1,114 @@
+{
+  "scope": "Derived additive forecast from the unchanged pre-production pilot forecasts; no production outcomes read; no protocol/horizon change.",
+  "variance_rule": "Independent condition streams: SE contrast = sqrt(SE_left^2+SE_right^2). Same four-pilot-seed heuristic limitations apply.",
+  "forecasts": [
+    {
+      "kind": "law_contrast",
+      "observable": "SCAFFOLD",
+      "coordinate": 1,
+      "forecast_se": 0.014707922754167142,
+      "marginal_95_halfwidth": 0.03237191971769602,
+      "bonferroni_36_halfwidth": 0.06236149494031514,
+      "resolution_margin": 0.011875
+    },
+    {
+      "kind": "law_contrast",
+      "observable": "SCAFFOLD",
+      "coordinate": 2,
+      "forecast_se": 0.0058197746385972105,
+      "marginal_95_halfwidth": 0.01280923761463014,
+      "bonferroni_36_halfwidth": 0.02467580587311874,
+      "resolution_margin": 0.011875
+    },
+    {
+      "kind": "law_contrast",
+      "observable": "FedAvg",
+      "coordinate": 1,
+      "forecast_se": 0.014728860988585751,
+      "marginal_95_halfwidth": 0.032418004460929906,
+      "bonferroni_36_halfwidth": 0.062450272915395635,
+      "resolution_margin": 0.0075
+    },
+    {
+      "kind": "law_contrast",
+      "observable": "FedAvg",
+      "coordinate": 2,
+      "forecast_se": 0.005817456758913181,
+      "marginal_95_halfwidth": 0.012804135995842715,
+      "bonferroni_36_halfwidth": 0.024665978078629757,
+      "resolution_margin": 0.0075
+    },
+    {
+      "kind": "law_contrast",
+      "observable": "difference",
+      "coordinate": 1,
+      "forecast_se": 2.4810802524889707e-05,
+      "marginal_95_halfwidth": 5.460820816724641e-05,
+      "bonferroni_36_halfwidth": 0.00010519763816972007,
+      "resolution_margin": 0.004375
+    },
+    {
+      "kind": "law_contrast",
+      "observable": "difference",
+      "coordinate": 2,
+      "forecast_se": 1.1763745364682851e-05,
+      "marginal_95_halfwidth": 2.5891828974763756e-05,
+      "bonferroni_36_halfwidth": 4.987820233356718e-05,
+      "resolution_margin": 0.004375
+    },
+    {
+      "kind": "signed_covariance_contrast",
+      "observable": "SCAFFOLD",
+      "coordinate": 1,
+      "forecast_se": 0.01567165215463749,
+      "marginal_95_halfwidth": 0.03449307382647527,
+      "bonferroni_36_halfwidth": 0.06644770120722233,
+      "resolution_margin": 0.011875
+    },
+    {
+      "kind": "signed_covariance_contrast",
+      "observable": "SCAFFOLD",
+      "coordinate": 2,
+      "forecast_se": 0.0042124436991781795,
+      "marginal_95_halfwidth": 0.009271526069612701,
+      "bonferroni_36_halfwidth": 0.01786073334918993,
+      "resolution_margin": 0.011875
+    },
+    {
+      "kind": "signed_covariance_contrast",
+      "observable": "FedAvg",
+      "coordinate": 1,
+      "forecast_se": 0.015671077901126904,
+      "marginal_95_halfwidth": 0.03449180990302034,
+      "bonferroni_36_halfwidth": 0.06644526637614567,
+      "resolution_margin": 0.0075
+    },
+    {
+      "kind": "signed_covariance_contrast",
+      "observable": "FedAvg",
+      "coordinate": 2,
+      "forecast_se": 0.0042050027979288395,
+      "marginal_95_halfwidth": 0.009255148756385197,
+      "bonferroni_36_halfwidth": 0.017829183977237956,
+      "resolution_margin": 0.0075
+    },
+    {
+      "kind": "signed_covariance_contrast",
+      "observable": "difference",
+      "coordinate": 1,
+      "forecast_se": 2.654851358569739e-05,
+      "marginal_95_halfwidth": 5.843288442461122e-05,
+      "bonferroni_36_halfwidth": 0.00011256552154370536,
+      "resolution_margin": 0.004375
+    },
+    {
+      "kind": "signed_covariance_contrast",
+      "observable": "difference",
+      "coordinate": 2,
+      "forecast_se": 1.7483180626371887e-05,
+      "marginal_95_halfwidth": 3.848022110984616e-05,
+      "bonferroni_36_halfwidth": 7.412856991400787e-05,
+      "resolution_margin": 0.004375
+    }
+  ]
+}

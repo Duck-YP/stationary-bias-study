@@ -1,0 +1,272 @@
+{
+  "panel_count": 32,
+  "all_input_hashes_current": true,
+  "input_sha256": {
+    "primary_family_36.csv": "e2fe3437cd86e8512d62c994409bb3282b0a36aa65af646b377f3027e9cb78bd",
+    "intercepts_and_contrasts.csv": "6e1f4341641be2a9f565d3389b5b5c83fa926e641ee024ffc7d5ab6e87dbee09",
+    "full_grid.csv": "1af58d6cf13c0fbe8e21827d93f192447bb511fb5ce0b19f4755242eb1443288"
+  },
+  "all_pdf_hashes_match": true,
+  "all_single_page_vector": true,
+  "all_fonts_embedded_truetype": true,
+  "all_pdf_text_within_page": true,
+  "results": [
+    {
+      "file": "main\\covariance_controls_scaffold_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\covariance_controls_scaffold_coordinate_1-1.png"
+    },
+    {
+      "file": "main\\covariance_controls_scaffold_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\covariance_controls_scaffold_coordinate_2-1.png"
+    },
+    {
+      "file": "main\\covariance_controls_fedavg_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\covariance_controls_fedavg_coordinate_1-1.png"
+    },
+    {
+      "file": "main\\covariance_controls_fedavg_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\covariance_controls_fedavg_coordinate_2-1.png"
+    },
+    {
+      "file": "main\\covariance_controls_difference_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\covariance_controls_difference_coordinate_1-1.png"
+    },
+    {
+      "file": "main\\covariance_controls_difference_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\covariance_controls_difference_coordinate_2-1.png"
+    },
+    {
+      "file": "main\\covariance_matched_laws_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\covariance_matched_laws_coordinate_1-1.png"
+    },
+    {
+      "file": "main\\covariance_matched_laws_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\covariance_matched_laws_coordinate_2-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_minus_symmetric_scaffold_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_minus_symmetric_scaffold_coordinate_1-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_zero_symmetric_scaffold_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_zero_symmetric_scaffold_coordinate_1-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_symmetric_scaffold_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_plus_symmetric_scaffold_coordinate_1-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_asymmetric_scaffold_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_plus_asymmetric_scaffold_coordinate_1-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_minus_symmetric_scaffold_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_minus_symmetric_scaffold_coordinate_2-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_zero_symmetric_scaffold_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_zero_symmetric_scaffold_coordinate_2-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_symmetric_scaffold_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_plus_symmetric_scaffold_coordinate_2-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_asymmetric_scaffold_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_plus_asymmetric_scaffold_coordinate_2-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_minus_symmetric_fedavg_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_minus_symmetric_fedavg_coordinate_1-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_zero_symmetric_fedavg_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_zero_symmetric_fedavg_coordinate_1-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_symmetric_fedavg_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_plus_symmetric_fedavg_coordinate_1-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_asymmetric_fedavg_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_plus_asymmetric_fedavg_coordinate_1-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_minus_symmetric_fedavg_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_minus_symmetric_fedavg_coordinate_2-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_zero_symmetric_fedavg_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_zero_symmetric_fedavg_coordinate_2-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_symmetric_fedavg_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_plus_symmetric_fedavg_coordinate_2-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_asymmetric_fedavg_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_plus_asymmetric_fedavg_coordinate_2-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_minus_symmetric_difference_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_minus_symmetric_difference_coordinate_1-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_zero_symmetric_difference_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_zero_symmetric_difference_coordinate_1-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_symmetric_difference_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_plus_symmetric_difference_coordinate_1-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_asymmetric_difference_coordinate_1.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_plus_asymmetric_difference_coordinate_1-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_minus_symmetric_difference_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_minus_symmetric_difference_coordinate_2-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_zero_symmetric_difference_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_zero_symmetric_difference_coordinate_2-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_symmetric_difference_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_plus_symmetric_difference_coordinate_2-1.png"
+    },
+    {
+      "file": "supplementary\\grid_rho_plus_asymmetric_difference_coordinate_2.pdf",
+      "pages": 1,
+      "text_outside_page": [],
+      "embedded_truetype": true,
+      "raster_images": 0,
+      "rendered_png": "scratch\\final_pdf_qa\\grid_rho_plus_asymmetric_difference_coordinate_2-1.png"
+    }
+  ],
+  "visual_review_note": "Rendered PNGs are retained in scratch/final_pdf_qa; main panels and supplementary layout cases reviewed separately."
+}

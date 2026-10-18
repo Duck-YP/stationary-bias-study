@@ -1,0 +1,12 @@
+{
+  "gradient_symbolic_identity": true,
+  "hessian_symbolic_identity": true,
+  "T111_T112_T122_T222": [
+    "2*a",
+    "0",
+    "-2*a",
+    "0"
+  ],
+  "analytical_bounds": "||Hess(f)-diag(1,2)|| <= 8 alpha; mu>=0.6, L<=2.4 at alpha=0.05; proof in MODEL_DESIGN.md",
+  "new_stationary_simulations": 0
+}

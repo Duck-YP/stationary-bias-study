@@ -1,0 +1,16 @@
+{"phase": "pilot", "condition": "rho_minus_symmetric", "N": 64, "gamma": 0.0009765625, "seed": 100101, "cpu_seconds": 9.71875, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_minus_symmetric", "N": 64, "gamma": 0.0009765625, "seed": 100104, "cpu_seconds": 9.828125, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_minus_symmetric", "N": 64, "gamma": 0.0009765625, "seed": 100103, "cpu_seconds": 9.90625, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_minus_symmetric", "N": 64, "gamma": 0.0009765625, "seed": 100102, "cpu_seconds": 9.96875, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_zero_symmetric", "N": 64, "gamma": 0.0009765625, "seed": 100104, "cpu_seconds": 9.390625, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_zero_symmetric", "N": 64, "gamma": 0.0009765625, "seed": 100101, "cpu_seconds": 9.984375, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_zero_symmetric", "N": 64, "gamma": 0.0009765625, "seed": 100103, "cpu_seconds": 9.875, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_zero_symmetric", "N": 64, "gamma": 0.0009765625, "seed": 100102, "cpu_seconds": 10.265625, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_plus_symmetric", "N": 64, "gamma": 0.0009765625, "seed": 100101, "cpu_seconds": 9.890625, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_plus_symmetric", "N": 64, "gamma": 0.0009765625, "seed": 100102, "cpu_seconds": 9.71875, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_plus_symmetric", "N": 64, "gamma": 0.0009765625, "seed": 100103, "cpu_seconds": 9.703125, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_plus_symmetric", "N": 64, "gamma": 0.0009765625, "seed": 100104, "cpu_seconds": 9.859375, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_plus_asymmetric", "N": 64, "gamma": 0.0009765625, "seed": 100101, "cpu_seconds": 9.765625, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_plus_asymmetric", "N": 64, "gamma": 0.0009765625, "seed": 100102, "cpu_seconds": 9.9375, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_plus_asymmetric", "N": 64, "gamma": 0.0009765625, "seed": 100103, "cpu_seconds": 9.96875, "rounds": 294630}
+{"phase": "pilot", "condition": "rho_plus_asymmetric", "N": 64, "gamma": 0.0009765625, "seed": 100104, "cpu_seconds": 9.75, "rounds": 294630}

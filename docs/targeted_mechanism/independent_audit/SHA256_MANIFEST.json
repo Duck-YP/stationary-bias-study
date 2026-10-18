@@ -1,0 +1,21 @@
+{
+  "REVIEW.md": "a87fe97f346ded3f42887ac2c4256978e68c3661cbe406954752f9a4b06012a5",
+  "README.md": "0de57b2d12333c73988600c3b1f3a8d514e69150b108e0e1512d40ef39dc1b4a",
+  "audit/audit_summary.json": "b3dd2e36eaed77805de6fa5816663f641547f4e8c08a4cad57d933b9bd975102",
+  "audit/comparison_checks.csv": "6d5093d38f26c5d1b0b97433407b4f24dcffa8268e7ebaffacaafbabee513e42",
+  "audit/design_checks.json": "89b585349941263935ba2b967e8e88b8dd9dc8123b6393d9a2f48c6d5d675a92",
+  "audit/historical_fit_audit.json": "4a57de3196280576d605946024ce721e55a0fb08c925d87d32e111f84abc5260",
+  "audit/historical_saved_tables_check.py": "5b0c33ae5492b8033d84e72ba46d91a70f47c73f987dc5580631d8d45c077fc0",
+  "audit/historical_seedwise_fit_replay.csv": "58b7dd5e0f3f487dfda7916580dc6e33693caa7fd83b54bccbf572875d5e4f59",
+  "audit/independent_fits_and_intervals.csv": "155d089436a722ef271d4fc548a14e6b23d1284918949060b8f265b51f69119b",
+  "audit/independent_model_kernel.json": "2d0dd9ccb8f4f696f51aa141344356d4dbc45963892cef3790b4fe7a0236a053",
+  "audit/independent_recompute.py": "51ee6ee0c0e7739b4109719cf473faf24963cae68102e48b3fee5c5baf5be035",
+  "audit/inference_comparison_details.csv": "5a05263a2e53bf373c3e24fc362bb6e5241b5595a2e6f72e97ca70d23c1f2ca9",
+  "audit/model_kernel_crosscheck.py": "6797e674c7af0424680448ec2e8603436f25b570e89cf8858cf5c8b179b997d6",
+  "audit/new_tests.txt": "3c06aaa16f7eea5d39f8d0e62b9b38db391394a790f2f7a6a23fad2a180feae3",
+  "audit/old_tests.txt": "7e92f8861af40cdc583f8c9a7be99477b2cf771c036e39783807914b66d2ecee",
+  "audit/primary_resolution_readout.csv": "fd757cd10ae0fbaf261ad016c36e806867ace239acad2f3e3f2f7b42872aad95",
+  "audit/primary_verified_results.csv": "8e6ecdde9e44cfb286f8a61864c4b5006fdce48e1edbecc64b2aa5adf33e1b49",
+  "audit/reconstructed_per_run.csv": "0e9bf1f12e18e6f8b1b757b7974288b1d089a9e47a9dbcb97964107aa4739265",
+  "audit/plots_render/all_main_contact.jpg": "ae15cc1077b915fedcac6f31c2623e87fda0aae7ce16dabac639d11ba57327de"
+}

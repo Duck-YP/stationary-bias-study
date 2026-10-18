@@ -1,0 +1,10 @@
+panel,source_width_pdf_pt,minimum_text_pdf_pt,nominal_final_scale,passes_9pt
+e4_averaging_fedavg.pdf,221.1250457763672,9.863007545471191,1.0,True
+e4_averaging_scaffold.pdf,221.1250457763672,9.863007545471191,1.0,True
+hist_H4_loglog_residual.pdf,221.1250457763672,9.663758277893066,1.0,True
+hist_H4_smallstep.pdf,221.1250457763672,9.663758277893066,1.0,True
+hist_fixed_gamma_coord1.pdf,221.1250457763672,9.663758277893066,1.0,True
+hist_fixed_gamma_coord2.pdf,221.1250457763672,9.663758277893066,1.0,True
+hist_matched_H2.pdf,221.1250457763672,9.663758277893066,1.0,True
+hist_matched_H4.pdf,221.1250457763672,9.663758277893066,1.0,True
+real_R0_allocation.pdf,261.7398681640625,9.663758277893066,1.0,True

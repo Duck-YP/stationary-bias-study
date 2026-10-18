@@ -1,2 +1,4 @@
-.gitattributes text eol=lf
-workstreams/p3_multidimensional_fedavg_attribution/**/*.yaml text eol=lf
+* -text
+*.npz binary
+*.pdf binary
+*.png binary

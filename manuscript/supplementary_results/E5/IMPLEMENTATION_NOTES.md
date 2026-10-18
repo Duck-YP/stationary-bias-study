@@ -1,0 +1,17 @@
+# Execution issues and corrections retained
+
+No numerical production result, E4 protocol, estimator, training run, or manuscript was altered.
+
+1. The independent finite-difference audit's first diagnostic envelope was too uniform for both large-step truncation and small-step cancellation. Its 21 initial failed checks are retained in `independent_formula/qa_initial_strict/`. The independent audit documents explicit step-dependent truncation/roundoff tolerances, then passed all 132 finite-difference comparisons. The analytic formulas, proxy and historical data did not change.
+2. The independent output reader initially used the wrong E4 CSV field name (`equivalence_gate` instead of `temporal_equivalence`). The original error log remains in `independent_audit/`; the corrected reader reran the complete audit successfully.
+3. The supplied exploratory script parsed rounded gamma from cell IDs. E5 intentionally uses the exact frozen JSON gamma, with relative squared-factor differences of order 1e-12 documented in the crosschecks. Its original CSV and code are retained unchanged. Different E5 interval families and bootstrap seed are explicitly post-hoc and are not changes to E4's original analysis.
+4. A draft figure caption overgeneralized collinearity to all leading coefficients. The final wording is restricted to the homogeneous second-order FedAvg and SCAFFOLD coefficients. All plotted values are unchanged; the corrected gallery was recompiled, rendered and visually inspected.
+5. The first external portable-replay logging command used a relative `Tee-Object` output path while the runner temporarily changed its working directory. PowerShell could not resolve that log destination; this was a logging failure, not a scientific result. The attempted extraction is retained locally as `deliverables/20261010_e5/qa_extracted/source_replay_v1`. Later attempts use an absolute log path.
+6. The second fresh source extraction found a portability bug after the independent numerical checks: `audit_outputs.py --root .` attempted to make an absolute `__file__` path relative to the literal relative path `.` when recording source hashes. The reader's root is now resolved to an absolute path. This changes only path normalization, not any coefficient, data or statistical calculation. The initial stdout log is retained as `PORTABLE_REPLAY_ATTEMPT2.log`; the failed extraction remains locally as `source_replay_v2`. The successful fresh replay and exact numerical comparisons are recorded separately in `PORTABLE_REPLAY_QA.json`.
+7. The third fresh replay completed the numerical, figure and font pipeline. Review of its printed figure captions caught a factual caption error: the all-window caption said every batch has 1280 rounds. Frozen configurations actually use 1280, 2560 or 5110 rounds per batch. The caption was corrected, the gallery regenerated and re-inspected, and the final audit now checks all actual batch lengths against that caption. No plotted data or analysis changed. A fourth fresh replay verifies the corrected complete source snapshot.
+
+Initial logging error: `Could not find a part of the path .../source_replay_v1/deliverables/20261010_e5/PORTABLE_REPLAY.log`.
+
+Second attempt error: `ValueError: .../independent_audit/audit_outputs.py is not in the subpath of '.'`.
+
+These issues are disclosed to distinguish corrected audit plumbing and numerical-test tolerances from unresolved scientific limitations. See `MISSING_ITEMS.md` for the latter. No unsuccessful setting or H4 result was removed.

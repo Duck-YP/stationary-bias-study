@@ -1,0 +1,382 @@
+{
+  "version": "targeted-trigonometric-v1",
+  "frozen_utc": "2026-10-14T08:22:48Z",
+  "objective": "A=diag(1,2), alpha=1/20, three sine ridges; separate explicitly selected trigonometric_chunk",
+  "H": 4,
+  "cells": [
+    {
+      "condition": "rho_minus_symmetric",
+      "rho": -0.25,
+      "asymmetric": false,
+      "N": 64,
+      "gamma": 0.001953125,
+      "schedule": {
+        "tau": 214,
+        "burn": 10700,
+        "batch_length": 2140,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_minus_symmetric",
+      "rho": -0.25,
+      "asymmetric": false,
+      "N": 64,
+      "gamma": 0.0009765625,
+      "schedule": {
+        "tau": 427,
+        "burn": 21350,
+        "batch_length": 4270,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_minus_symmetric",
+      "rho": -0.25,
+      "asymmetric": false,
+      "N": 64,
+      "gamma": 0.00048828125,
+      "schedule": {
+        "tau": 854,
+        "burn": 42700,
+        "batch_length": 8540,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_minus_symmetric",
+      "rho": -0.25,
+      "asymmetric": false,
+      "N": 128,
+      "gamma": 0.001953125,
+      "schedule": {
+        "tau": 214,
+        "burn": 10700,
+        "batch_length": 2140,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_minus_symmetric",
+      "rho": -0.25,
+      "asymmetric": false,
+      "N": 128,
+      "gamma": 0.0009765625,
+      "schedule": {
+        "tau": 427,
+        "burn": 21350,
+        "batch_length": 4270,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_minus_symmetric",
+      "rho": -0.25,
+      "asymmetric": false,
+      "N": 128,
+      "gamma": 0.00048828125,
+      "schedule": {
+        "tau": 854,
+        "burn": 42700,
+        "batch_length": 8540,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_zero_symmetric",
+      "rho": 0.0,
+      "asymmetric": false,
+      "N": 64,
+      "gamma": 0.001953125,
+      "schedule": {
+        "tau": 214,
+        "burn": 10700,
+        "batch_length": 2140,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_zero_symmetric",
+      "rho": 0.0,
+      "asymmetric": false,
+      "N": 64,
+      "gamma": 0.0009765625,
+      "schedule": {
+        "tau": 427,
+        "burn": 21350,
+        "batch_length": 4270,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_zero_symmetric",
+      "rho": 0.0,
+      "asymmetric": false,
+      "N": 64,
+      "gamma": 0.00048828125,
+      "schedule": {
+        "tau": 854,
+        "burn": 42700,
+        "batch_length": 8540,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_zero_symmetric",
+      "rho": 0.0,
+      "asymmetric": false,
+      "N": 128,
+      "gamma": 0.001953125,
+      "schedule": {
+        "tau": 214,
+        "burn": 10700,
+        "batch_length": 2140,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_zero_symmetric",
+      "rho": 0.0,
+      "asymmetric": false,
+      "N": 128,
+      "gamma": 0.0009765625,
+      "schedule": {
+        "tau": 427,
+        "burn": 21350,
+        "batch_length": 4270,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_zero_symmetric",
+      "rho": 0.0,
+      "asymmetric": false,
+      "N": 128,
+      "gamma": 0.00048828125,
+      "schedule": {
+        "tau": 854,
+        "burn": 42700,
+        "batch_length": 8540,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_plus_symmetric",
+      "rho": 0.25,
+      "asymmetric": false,
+      "N": 64,
+      "gamma": 0.001953125,
+      "schedule": {
+        "tau": 214,
+        "burn": 10700,
+        "batch_length": 2140,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_plus_symmetric",
+      "rho": 0.25,
+      "asymmetric": false,
+      "N": 64,
+      "gamma": 0.0009765625,
+      "schedule": {
+        "tau": 427,
+        "burn": 21350,
+        "batch_length": 4270,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_plus_symmetric",
+      "rho": 0.25,
+      "asymmetric": false,
+      "N": 64,
+      "gamma": 0.00048828125,
+      "schedule": {
+        "tau": 854,
+        "burn": 42700,
+        "batch_length": 8540,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_plus_symmetric",
+      "rho": 0.25,
+      "asymmetric": false,
+      "N": 128,
+      "gamma": 0.001953125,
+      "schedule": {
+        "tau": 214,
+        "burn": 10700,
+        "batch_length": 2140,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_plus_symmetric",
+      "rho": 0.25,
+      "asymmetric": false,
+      "N": 128,
+      "gamma": 0.0009765625,
+      "schedule": {
+        "tau": 427,
+        "burn": 21350,
+        "batch_length": 4270,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_plus_symmetric",
+      "rho": 0.25,
+      "asymmetric": false,
+      "N": 128,
+      "gamma": 0.00048828125,
+      "schedule": {
+        "tau": 854,
+        "burn": 42700,
+        "batch_length": 8540,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_plus_asymmetric",
+      "rho": 0.25,
+      "asymmetric": true,
+      "N": 64,
+      "gamma": 0.001953125,
+      "schedule": {
+        "tau": 214,
+        "burn": 10700,
+        "batch_length": 2140,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_plus_asymmetric",
+      "rho": 0.25,
+      "asymmetric": true,
+      "N": 64,
+      "gamma": 0.0009765625,
+      "schedule": {
+        "tau": 427,
+        "burn": 21350,
+        "batch_length": 4270,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_plus_asymmetric",
+      "rho": 0.25,
+      "asymmetric": true,
+      "N": 64,
+      "gamma": 0.00048828125,
+      "schedule": {
+        "tau": 854,
+        "burn": 42700,
+        "batch_length": 8540,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_plus_asymmetric",
+      "rho": 0.25,
+      "asymmetric": true,
+      "N": 128,
+      "gamma": 0.001953125,
+      "schedule": {
+        "tau": 214,
+        "burn": 10700,
+        "batch_length": 2140,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_plus_asymmetric",
+      "rho": 0.25,
+      "asymmetric": true,
+      "N": 128,
+      "gamma": 0.0009765625,
+      "schedule": {
+        "tau": 427,
+        "burn": 21350,
+        "batch_length": 4270,
+        "batches": 64
+      }
+    },
+    {
+      "condition": "rho_plus_asymmetric",
+      "rho": 0.25,
+      "asymmetric": true,
+      "N": 128,
+      "gamma": 0.00048828125,
+      "schedule": {
+        "tau": 854,
+        "burn": 42700,
+        "batch_length": 8540,
+        "batches": 64
+      }
+    }
+  ],
+  "production_seeds": [
+    200101,
+    200102,
+    200103,
+    200104,
+    200105,
+    200106,
+    200107,
+    200108,
+    200109,
+    200110,
+    200111,
+    200112
+  ],
+  "pilot_seeds": [
+    100101,
+    100102,
+    100103,
+    100104
+  ],
+  "pilot_schedule": {
+    "tau": 427,
+    "burn": 21350,
+    "batch_length": 4270,
+    "batches": 64
+  },
+  "primary_estimator": "Nonlinear balance; raw POST-round global means as same-run cross-check",
+  "observable_order": [
+    "SCAFFOLD",
+    "FedAvg",
+    "difference"
+  ],
+  "coordinates": [
+    1,
+    2
+  ],
+  "estimands": "C=(balance-(gamma/N)B11)/gamma^2; D=(balance_S-balance_F)/gamma^2; law and signed-covariance contrasts after separate fits",
+  "fit": "Unweighted OLS intercept per condition/observable/coordinate on (1,gamma,1/N); no constraints",
+  "sensitivity": "Omit largest gamma only; preserve primary full grid",
+  "coupling": "Independent keyed streams across condition, grid cell, phase and seed; same indexed noises within SCAFFOLD/FedAvg pair. Seed labels alone do not create cross-cell dependence.",
+  "resampling": "Resample each independent cell run vector jointly across algorithms/coordinates/raw/balance/windows; independently across cells. Fixed bootstrap seed 2026101401, 4000 draws.",
+  "primary_family": "24 condition x observable x coordinate intercepts + 6 symmetric-minus-asymmetric law contrasts + 6 rho-plus-minus-rho-minus contrasts = 36 scalars",
+  "bootstrap_draws": 4000,
+  "bootstrap_seed": 2026101401,
+  "intervals": "Marginal Student t (df=11 conservative) and bootstrap percentile; approximate simultaneous centered bootstrap max-|standardized error| family of 36; Bonferroni t df11 sensitivity.",
+  "practical_margins": {
+    "SCAFFOLD": 0.011875,
+    "FedAvg": 0.0075,
+    "difference": 0.004375
+  },
+  "windows": "Primary all 64 batches; diagnostic equal-length first32 and last32, same runs; not stationarity certification",
+  "precision_caveat": "Sampling intervals exclude burn-in and deterministic grid remainder. Two N levels do not identify an N rate.",
+  "freeze_rule": "No extension, outcome-dependent exclusion or estimator replacement. Keep all results.",
+  "simulation_source_hashes": {
+    "targeted/kernels.py": "3ea86b1c51a32ddb86777a0bf507fcfc1ede19875e638a84acbae2fce662f8c3",
+    "targeted/model.py": "586abd970744ec9f6bf86174632e3fb921ce7c4d03235f547c4251ca8571f62c",
+    "targeted/workflow.py": "d7c70a4ac1c81733fb46e28320f3039d648cf4d4aa810ea92f6df0f5fadd50eb"
+  },
+  "production_authorized_by_cost_gate": true,
+  "cpu_cap_seconds": 21600.0,
+  "cost_forecast": "COST_PRECISION_FORECAST.json",
+  "checkpoints": "Every burn-in and sampling batch; indexed-noise restart, saved states/controls/time/endpoints"
+}

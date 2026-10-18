@@ -1,0 +1,32 @@
+[
+  {
+    "file": "REVIEW_CORE.zip",
+    "bytes": 52903599,
+    "sha256": "0f57ece1ad5939e379d7742f05a69899c14d27b70549e410e0a87c4c63cb091d",
+    "crc_bad": null
+  },
+  {
+    "file": "SOURCE_REVIEW.zip",
+    "bytes": 542429,
+    "sha256": "0f26743d91095fa7c1cb6b8cc0d3c9b06dc5ab7dc6bc32f93359eaca4c392818",
+    "crc_bad": null
+  },
+  {
+    "file": "AUDIT_BATCHES_E1(1).zip",
+    "bytes": 10714964,
+    "sha256": "b5bf3ca442093f992452c7f8e58c299119ee70ac751c6603dc0e6fe8e881e4c9",
+    "crc_bad": null
+  },
+  {
+    "file": "AUDIT_BATCHES_E3_R0.zip",
+    "bytes": 84970637,
+    "sha256": "ba21ea02320be1981bad19f3850ae505ef4c62346ef7f8d4d802f9c57e44de1a",
+    "crc_bad": null
+  },
+  {
+    "file": "REVIEW_CORE_E3_DIAGNOSTICS_R0.zip",
+    "bytes": 27362913,
+    "sha256": "b9fa259d72ed92845d47a7ba6ca0fcec018d70130b357cba5e51543c0b30c700",
+    "crc_bad": null
+  }
+]

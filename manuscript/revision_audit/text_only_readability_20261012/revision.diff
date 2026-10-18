@@ -1,0 +1,192 @@
+--- BEFORE/manuscript/appendix/C_numerical_details.tex
++++ AFTER/manuscript/appendix/C_numerical_details.tex
+@@ -448,7 +448,7 @@
+ For the saved-data analysis in Section~\ref{sec:num-averaging}, the 1,512
+ reconstructed models reuse the original training runs, not independent
+ replications. With $Y_{r,K}^{\mathcal A}$ as defined in
+-Section~\ref{sec:num-directional}, set
++Section~\ref{sec:num-averaging}, set
+ $e_{r,K}^{\mathcal A}=Y_{r,K}^{\mathcal A}-x_{\rm ref}$.
+ With $R=12$ and $\bar e_K=R^{-1}\sum_r e_{r,K}$, suppressing the algorithm
+ superscript, the estimators are
+--- BEFORE/manuscript/sections/01_introduction.tex
++++ AFTER/manuscript/sections/01_introduction.tex
+@@ -6,7 +6,7 @@
+ 
+ Even when all clients optimize the same objective function, constant-step stochastic updates can produce a systematic parameter displacement. The global model continues to fluctuate, and its expected parameters under the stationary distribution may differ from the objective minimizer. This difference is the \emph{stationary mean bias}. Increasing the number of clients reduces the variance of independent gradient noise averaged at the server, but local updates also change where gradients are evaluated before aggregation. For nonlinear objectives, these local fluctuations can affect the mean as well as the variance. Which bias contributions are reduced by client averaging, and how do local updates and persistent controls shape those that remain?
+ 
+-This distinction matters for averaged models. Averaging stationary iterates preserves their expected parameters even when it reduces variance. A small squared-bias share of single-checkpoint error therefore need not remain small after averaging. Understanding this error requires identifying how the mean shift is generated, not only the fluctuations around it.
++Client averaging at the server is distinct from temporal averaging of successive global models across communication rounds. Temporal averaging preserves the expected parameter under stationarity even as it reduces variance. Thus a small squared-bias share of single-checkpoint error need not remain small for an averaged output. Understanding this difference requires identifying how the systematic mean shift is generated, not only the fluctuations around it.
+ 
+ Recent stationary analyses provide a starting point. In the homogeneous setting, \citet[Theorem~5.3]{mangold2025scaffold} identify a leading \Scaf{} mean-bias contribution proportional to $\gamma/N$, where $\gamma$ is the step size and $N$ the number of clients, and point to higher-order bias not suppressed by client averaging. This expansion and the \FedAvg{} result of \citet[Theorem~3]{mangold2025fedavg} leave the client-independent $\gamma^2$ coefficient within the remainder. They therefore do not determine whether the two algorithms have the same coefficient at this order, or how much is associated with persistent controls. Section~\ref{sec:related} compares their precise statements with ours.
+ 
+--- BEFORE/manuscript/sections/07_numerical_study.tex
++++ AFTER/manuscript/sections/07_numerical_study.tex
+@@ -30,6 +30,9 @@
+ \end{equation}
+ Theorems~\ref{thm:scaf-main} and~\ref{thm:fa-main} predict that this quantity
+ approaches $B_{20}^{\mathcal A}(H)$ as $\gamma\to0$ and $N\to\infty$.
++The normalization exposes the second-order scale; a fitted intercept at
++$\gamma+1/N=0$ estimates the joint-limit coefficient, although a finite-grid
++linear fit is only descriptive.
+ We use $H\in\{2,4\}$ and the primary grid
+ \begin{equation}
+ \label{eq:num-primary-grid}
+@@ -53,11 +56,17 @@
+ \subsection{Controlled tests of analytical predictions}
+ \label{sec:num-controlled}
+ 
+-We examine the quantitative predictions resolved by the analysis in
+-Table~\ref{tab:prior-bias-resolution}: the algorithm-specific coefficients,
+-their matched difference, and their client-count and local-step dependence.
+-Multidimensional and affine-shift checks additionally assess the representation
+-consistency and exact control translation.
++We examine the coefficient predictions resolved in
++Table~\ref{tab:prior-bias-resolution} using two complementary designs.
++The first varies step size and client count jointly along $\gamma=1/N$,
++estimating algorithm-specific coefficients and a separately simulated matched
++difference; it cannot disentangle finite-step and finite-client remainder
++contributions. A second, independently implemented study varies $\gamma$
++and $1/N$ on a Cartesian grid for control-coefficient fits and estimates the
++leading coefficient without imposing its theoretical value. Together these
++designs examine local-step dependence; multidimensional and affine-shift
++checks address coordinate consistency and the exact control translation.
++The separate studies retain their original grids and inference procedures.
+ 
+ \subsubsection{Individual stationary-bias coefficients}
+ \label{sec:num-coefficients}
+@@ -75,8 +84,8 @@
+ \begin{table}[!htbp]
+ \centering\small
+ \setlength{\tabcolsep}{3pt}
+-\caption{Historical two-dimensional coefficient summary for the individual
+-algorithms and the separately simulated paired difference.
++\caption{Coefficient estimates on the joint step-size/client-count grids
++for the individual algorithms and a separately simulated paired difference.
+ P: primary grid; S: smaller-step grid. For the algorithm rows the target is
+ $B_{20}^{\mathcal A}(H)$; for the paired rows it is $B_{20}^{\rm ctrl}(H)$.
+ The coordinates are displayed as vectors, rounded to seven decimal places.
+@@ -237,14 +246,14 @@
+ 
+ Does equal server-average gradient noise make client allocations interchangeable? We use a9a regularized logistic regression with 123 features and a regularized intercept. The primary real-data regime, R0, replicates one empirical objective across clients to isolate allocation effects. Natural minibatch noise is state dependent, so this tests an implication, not the exact additive-noise coefficients. Appendix~\ref{app:supp-real} gives data preparation and the disjoint IID/label-skew regimes R1/R2.
+ 
+-We fix $H=4$, $\gamma_b=0.1960784314$, and $Nm=256$, where $m$ is each client's batch size. The allocations $(N,m)=(8,32),(32,8),(128,2)$ use equal total example gradients per local-step level. At a common evaluation point, their R0 server-average noise covariance is $\Sigma/(Nm)$. Substituting $C=\Sigma/m$ in the additive-model coefficient of Equation~\eqref{eq:ctrl-def} instead gives a control-induced mean-shift term proportional to $\gamma^2/m$. This motivates a testable distinction: equal reference aggregate noise need not imply equal effects along the local trajectories.
+-
+-Twelve independent paired runs per allocation provide means over the frozen post-burn-in tail. With a unit direction $v$ computed from the training objective before production, we report
++We fix $H=4$, $\gamma_b=0.1960784314$, and $Nm=256$, where $m$ is each client's batch size. The allocations $(N,m)=(8,32),(32,8),(128,2)$ use equal total example gradients per local-step level. Let $x_{\rm ref}$ be the optimizer of the shared empirical objective and $\Sigma_{\rm ref}$ the single-example gradient-noise covariance evaluated there. At this common reference point, the R0 server-averaged minibatch noise has covariance $\Sigma_{\rm ref}/(Nm)$ in all three allocations. Inserting the local covariance $C=\Sigma_{\rm ref}/m$ into the additive-noise expression in Equation~\eqref{eq:ctrl-def} suggests a mean-shift term proportional to $\gamma^2/m$. This motivates a distinction between identical reference aggregate noise and different local trajectory effects; it is not an exact coefficient prediction under state-dependent minibatch noise.
++
++Twelve independent paired runs per allocation provide means over the frozen post-burn-in tail. The projection direction $v$ was fixed before production as the normalized vector $-A_{\rm ref}^{-1}T_{\rm ref}[\Sigma_{\rm ref}]$, where $A_{\rm ref}=\nabla^2f(x_{\rm ref})$ and $T_{\rm ref}=\nabla^3f(x_{\rm ref})$. We report
+ \begin{equation}
+ \label{eq:real-projection}
+ \widehat\delta_v^{\mathcal A}=v^\top(\overline x^{\mathcal A}-x_{\rm ref}),
+ \end{equation}
+-where $x_{\rm ref}$ is the reference optimizer and $\overline x^{\mathcal A}$ averages run-tail means. This is signed parameter displacement, not a bias norm or prediction error.
++where $\overline x^{\mathcal A}$ averages the run-tail means \emph{across independent runs}. This is an estimator of signed finite-tail parameter displacement, not an averaged-model output, bias norm, or prediction error.
+ 
+ \begin{figure}[t]
+ \centering
+@@ -284,21 +293,33 @@
+ \label{sec:num-averaging}
+ 
+ Does the small mean-displacement share of raw-checkpoint error persist after
+-model averaging? We reconstruct time-averaged models from all nine frozen R0
+-configurations and their twelve paired seeds, without new production training.
+-Each model averages the last $K\in\{1,2,4,8,16,32,64\}$ stored batches of its
+-own run, with a common end time. The primary configuration is
+-$H=4,N=128,m=2,\gamma=\gamma_b$. Its batch contains 1,280 rounds, so even
+-$K=1$ is an averaged model. The longest window contains 81,920 rounds after
+-6,400 burn-in rounds; the full trajectory uses 90,439,680 example-gradient
+-evaluations per algorithm. The analysis concerns these recorded long horizons.
+-
+-Figure~\ref{fig:e4-averaging} separates the cross-run estimate $\widehat U_K$
+-of squared finite-tail mean displacement from the between-run variance
+-$\widehat V_K$ of these averaged models. Their sum equals the estimated
+-averaged-model MSE; Appendix~\ref{app:e4-averaging} defines the estimators and
+-preserved seed-level inference. From $K=1$ to $64$, variance decreases about
+-57-fold for both algorithms. At $K=64$, the estimated mean-displacement shares
++temporal model averaging? We reconstruct time-averaged models from all nine
++frozen R0 configurations and their twelve paired seeds, without new production
++training. Let $Y_{r,K}^{\mathcal A}$ denote the global model obtained by averaging
++the last $K\in\{1,2,4,8,16,32,64\}$ equal-length batches of rounds \emph{within}
++run $r$ of algorithm $\mathcal A$, with a common end time. Each run supplies
++its own averaged output; independent runs, not batches, are the inferential
++units. The primary configuration is $H=4,N=128,m=2,\gamma=\gamma_b$. Each batch
++contains 1,280 rounds, so even $K=1$ averages 1,280 rounds. The longest window
++contains 81,920 rounds after 6,400 burn-in rounds; the full trajectory uses
++90,439,680 example-gradient evaluations per algorithm.
++
++For a random run output $Y_K^{\mathcal A}$ from this fixed-window protocol,
++the parameter-error decomposition holds without a stationarity assumption:
++\begin{equation}
++\label{eq:e4-finite-window-mse}
++\mathbb E\|Y_K^{\mathcal A}-x_{\rm ref}\|^2
++=\|\mathbb E[Y_K^{\mathcal A}]-x_{\rm ref}\|^2
+++\operatorname{tr}\operatorname{Cov}(Y_K^{\mathcal A}).
++\end{equation}
++Figure~\ref{fig:e4-averaging} estimates the squared mean displacement by the
++sampling-corrected cross-run statistic $\widehat U_K$ and the variance of
++\emph{averaged-model outputs}, not raw checkpoints, by $\widehat V_K$.
++Although the true squared displacement is nonnegative, $\widehat U_K$ can
++be negative with finitely many runs; these values are retained rather than
++clipped. The estimators and seed-level inference are detailed in
++Appendix~\ref{app:e4-averaging}. From $K=1$ to $64$, the estimated variance
++decreases about 57-fold for both algorithms. At $K=64$, the estimated mean-displacement shares
+ are $68.1\%$ for SCAFFOLD and $49.5\%$ for FedAvg, with simultaneous intervals
+ $[62.6\%,73.7\%]$ and $[41.1\%,57.9\%]$. Thus the raw-checkpoint fractions do
+ not describe the error composition of the averaged outputs: systematic mean
+@@ -342,10 +363,10 @@
+ \label{sec:num-directional}
+ 
+ Does the derived curvature--noise geometry describe the real-data algorithm
+-difference? The post-hoc E5 comparison evaluates the Hessian
+-$A_{\rm ref}$, third derivative $T_{\rm ref}$, and single-example gradient-noise
+-covariance $\Sigma_{\rm ref}$ at the reference optimizer. Substituting
+-$\Sigma_{\rm ref}/m$ into the control coefficient gives the plug-in vector
++difference? The post-hoc E5 analysis substitutes the reference-point
++quantities $A_{\rm ref}$, $T_{\rm ref}$, and $\Sigma_{\rm ref}$ defined
++in Section~\ref{sec:num-real} into the additive-noise control coefficient,
++yielding the plug-in vector
+ \begin{equation}
+ \label{eq:e5-proxy}
+ p_{\gamma,H,m}
+@@ -353,12 +374,14 @@
+ \qquad \kappa(H)=\frac{(H-1)(2H-1)}{12H}.
+ \end{equation}
+ No observed displacement is used to fit its direction or amplitude.
+-Let $Y_{r,K}^{\mathcal A}$ denote run $r$'s time-averaged model.
+-The observed vector is
++Using the per-run averaged models defined in Section~\ref{sec:num-averaging},
++the observed vector is
+ $\widehat\Delta_K=R^{-1}\sum_r(Y_{r,K}^{\Scaf}-Y_{r,K}^{\FedAvg})$,
+-averaged over $R=12$ paired runs.
+-Table~\ref{tab:e5-bridge} reports the full-vector comparison and defines its
+-three summary measures.
++from $R=12$ paired runs. The fixed projection $v$ of
++Equation~\eqref{eq:real-projection} uses the same curvature--noise
++direction; E5 evaluates the full 124-dimensional difference rather than
++agreement along that single projection. Table~\ref{tab:e5-bridge} reports
++the three full-vector summary measures.
+ 
+ \begin{table}[!htbp]
+ \centering\small
+@@ -389,13 +412,13 @@
+ 
+ 
+ Across all six nonzero-proxy configurations at the designated $K=64$ window,
+-this vector aligns closely with the full 124-dimensional paired mean difference:
+-cosine point estimates range from $0.9965$ to $0.9993$. This comparison uses all
+-coordinates, not only the projection in Equation~\eqref{eq:real-projection}.
+-Observed-to-proxy norm ratios range from $0.718$ to $0.940$, with all six
+-magnitudes overpredicted. At fixed $H=4,N=32,m=8$, halving the step size
+-twice moves the projection ratio toward one and reduces the relative vector
+-residual (Table~\ref{tab:e5-bridge}). The frozen reference-parameter and unpreconditioned
++cosine point estimates range from $0.9965$ to $0.9993$, projection ratios from
++$0.716$ to $0.938$, and relative vector residuals from $0.089$ to $0.291$
++(Table~\ref{tab:e5-bridge}). Thus the 124-dimensional mean-shift direction is
++captured more closely than its amplitude; all six proxy magnitudes exceed the
++observed norms (Appendix~\ref{app:e5-bridge}). At fixed $H=4,N=32,m=8$,
++halving the step size twice moves the projection ratio toward one and reduces
++the relative residual. The frozen reference-parameter and unpreconditioned
+ curvature--noise directions have lower cosine point estimates
+ (Appendix~\ref{app:e5-bridge}).
+ 

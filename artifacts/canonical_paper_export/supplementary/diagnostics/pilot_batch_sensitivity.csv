@@ -1,0 +1,257 @@
+cell_id,seed,algorithm,observable,batch_multiple,batch_length,batches,iact_proxy,naive_batch_mean_se,scope
+E1_controlled_p0_H2_N32_g0.0078125,10001,scaffold,primary_projection,1,152,16,2.285892608985843,2.374691111063833e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10001,scaffold,primary_projection,2,304,8,1.8955248470252548,2.605156936525384e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10001,scaffold,primary_projection,4,608,4,1.4115974053203653,3.2823760248741087e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10001,scaffold,control_second_moment,,,,1.0,,
+E1_controlled_p0_H2_N32_g0.0078125,10001,fedavg,primary_projection,1,152,16,2.2819787812065866,2.370217516017926e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10001,fedavg,primary_projection,2,304,8,1.8933588847055112,2.5997620507267156e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10001,fedavg,primary_projection,4,608,4,1.4102677505357228,3.275573640647226e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10001,fedavg,control_second_moment,,,,1.0,,
+E1_controlled_p0_H2_N32_g0.0078125,10002,scaffold,primary_projection,1,152,16,1.0,2.7617977646055438e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10002,scaffold,primary_projection,2,304,8,1.0,2.6039206550783453e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10002,scaffold,primary_projection,4,608,4,1.0,4.6807961828745353e-07,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10002,scaffold,control_second_moment,,,,1.0,,
+E1_controlled_p0_H2_N32_g0.0078125,10002,fedavg,primary_projection,1,152,16,1.0,2.7650050150915552e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10002,fedavg,primary_projection,2,304,8,1.0,2.6047586560240252e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10002,fedavg,primary_projection,4,608,4,1.0,4.749343171745147e-07,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10002,fedavg,control_second_moment,,,,1.0,,
+E1_controlled_p0_H2_N32_g0.0078125,10003,scaffold,primary_projection,1,152,16,1.9087053464546075,1.6853312838440443e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10003,scaffold,primary_projection,2,304,8,1.3100705902897807,1.953734633818847e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10003,scaffold,primary_projection,4,608,4,1.3763605244569603,1.8067311663676216e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10003,scaffold,control_second_moment,,,,1.0,,
+E1_controlled_p0_H2_N32_g0.0078125,10003,fedavg,primary_projection,1,152,16,1.9009227769272095,1.6876994379546954e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10003,fedavg,primary_projection,2,304,8,1.303333602473565,1.9578071468345634e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10003,fedavg,primary_projection,4,608,4,1.371560372842886,1.8082813455465983e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10003,fedavg,control_second_moment,,,,1.0,,
+E1_controlled_p0_H2_N32_g0.0078125,10004,scaffold,primary_projection,1,152,16,1.0,2.27078036367459e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10004,scaffold,primary_projection,2,304,8,1.0,2.1471766550753454e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10004,scaffold,primary_projection,4,608,4,1.0,1.9093346813227822e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10004,scaffold,control_second_moment,,,,1.0,,
+E1_controlled_p0_H2_N32_g0.0078125,10004,fedavg,primary_projection,1,152,16,1.0,2.2693630311571844e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10004,fedavg,primary_projection,2,304,8,1.0,2.1428546042550814e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10004,fedavg,primary_projection,4,608,4,1.0,1.9177213594281395e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H2_N32_g0.0078125,10004,fedavg,control_second_moment,,,,1.0,,
+E1_controlled_p0_H4_N32_g0.0078125,10001,scaffold,primary_projection,1,76,16,1.8795618261358886,2.0256039641847664e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10001,scaffold,primary_projection,2,152,8,1.324003689401656,2.4027968559263125e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10001,scaffold,primary_projection,4,304,4,1.0,2.9149493669862233e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10001,scaffold,control_second_moment,,,,1.7976048685673627,,
+E1_controlled_p0_H4_N32_g0.0078125,10001,fedavg,primary_projection,1,76,16,1.8706445970481156,1.9819832100233443e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10001,fedavg,primary_projection,2,152,8,1.330821212179111,2.3403294093527356e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10001,fedavg,primary_projection,4,304,4,1.0,2.8487788075622486e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10001,fedavg,control_second_moment,,,,1.7976048685673627,,
+E1_controlled_p0_H4_N32_g0.0078125,10002,scaffold,primary_projection,1,76,16,1.1736580150641838,1.876641292700478e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10002,scaffold,primary_projection,2,152,8,1.1842705509307545,2.0003949000832774e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10002,scaffold,primary_projection,4,304,4,1.0,2.1663691046339392e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10002,scaffold,control_second_moment,,,,1.0,,
+E1_controlled_p0_H4_N32_g0.0078125,10002,fedavg,primary_projection,1,76,16,1.2048368615903295,1.8366506497795549e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10002,fedavg,primary_projection,2,152,8,1.2011889838286145,1.968940680245009e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10002,fedavg,primary_projection,4,304,4,1.0,2.1407464898004064e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10002,fedavg,control_second_moment,,,,1.0,,
+E1_controlled_p0_H4_N32_g0.0078125,10003,scaffold,primary_projection,1,76,16,1.0,1.7831616095318451e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10003,scaffold,primary_projection,2,152,8,1.0,2.0747853143989274e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10003,scaffold,primary_projection,4,304,4,1.0,6.283896405313242e-07,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10003,scaffold,control_second_moment,,,,1.0,,
+E1_controlled_p0_H4_N32_g0.0078125,10003,fedavg,primary_projection,1,76,16,1.0,1.7681464759575049e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10003,fedavg,primary_projection,2,152,8,1.0,2.0731201054982545e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10003,fedavg,primary_projection,4,304,4,1.0,5.971486661230266e-07,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10003,fedavg,control_second_moment,,,,1.0,,
+E1_controlled_p0_H4_N32_g0.0078125,10004,scaffold,primary_projection,1,76,16,1.0,1.364280747967849e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10004,scaffold,primary_projection,2,152,8,1.0,1.0647317679608334e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10004,scaffold,primary_projection,4,304,4,1.0,4.1869948070221676e-07,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10004,scaffold,control_second_moment,,,,1.0,,
+E1_controlled_p0_H4_N32_g0.0078125,10004,fedavg,primary_projection,1,76,16,1.0,1.3794070840570637e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10004,fedavg,primary_projection,2,152,8,1.0,1.0934560283808382e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10004,fedavg,primary_projection,4,304,4,1.0,4.476934374751948e-07,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H4_N32_g0.0078125,10004,fedavg,control_second_moment,,,,1.0,,
+E1_controlled_p0_H8_N32_g0.0078125,10001,scaffold,primary_projection,1,38,16,1.0,2.192514415284708e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10001,scaffold,primary_projection,2,76,8,1.3751101001577215,1.8778076462857256e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10001,scaffold,primary_projection,4,152,4,1.1955847910434243,2.0923715494375244e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10001,scaffold,control_second_moment,,,,1.0,,
+E1_controlled_p0_H8_N32_g0.0078125,10001,fedavg,primary_projection,1,38,16,1.0,2.207571655326422e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10001,fedavg,primary_projection,2,76,8,1.6340153880320205,1.8738404082167485e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10001,fedavg,primary_projection,4,152,4,1.2983009567783594,2.192697042269037e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10001,fedavg,control_second_moment,,,,1.0,,
+E1_controlled_p0_H8_N32_g0.0078125,10002,scaffold,primary_projection,1,38,16,2.0445812663548626,1.357829616113115e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10002,scaffold,primary_projection,2,76,8,1.5996475547626885,1.5643569833759762e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10002,scaffold,primary_projection,4,152,4,1.0,2.0936631287286678e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10002,scaffold,control_second_moment,,,,1.006948621522512,,
+E1_controlled_p0_H8_N32_g0.0078125,10002,fedavg,primary_projection,1,38,16,1.5822624858242877,1.3340926569591504e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10002,fedavg,primary_projection,2,76,8,1.6622029149587751,1.5225525260916337e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10002,fedavg,primary_projection,4,152,4,1.0,1.9063762802359173e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10002,fedavg,control_second_moment,,,,1.006948621522512,,
+E1_controlled_p0_H8_N32_g0.0078125,10003,scaffold,primary_projection,1,38,16,1.45475754221875,2.7212698650419493e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10003,scaffold,primary_projection,2,76,8,1.028708022379657,3.4562352010392178e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10003,scaffold,primary_projection,4,152,4,1.0,3.337277310209014e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10003,scaffold,control_second_moment,,,,1.0,,
+E1_controlled_p0_H8_N32_g0.0078125,10003,fedavg,primary_projection,1,38,16,1.3467879799592293,2.7119923068593444e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10003,fedavg,primary_projection,2,76,8,1.0,3.3767119090292837e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10003,fedavg,primary_projection,4,152,4,1.0,2.9936013303226276e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10003,fedavg,control_second_moment,,,,1.0,,
+E1_controlled_p0_H8_N32_g0.0078125,10004,scaffold,primary_projection,1,38,16,1.030535903158504,1.9192771845587595e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10004,scaffold,primary_projection,2,76,8,1.0,2.329319017996035e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10004,scaffold,primary_projection,4,152,4,1.0,2.2395659329481795e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10004,scaffold,control_second_moment,,,,1.0,,
+E1_controlled_p0_H8_N32_g0.0078125,10004,fedavg,primary_projection,1,38,16,1.0,1.8320845107361575e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10004,fedavg,primary_projection,2,76,8,1.0,2.1834867872748757e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10004,fedavg,primary_projection,4,152,4,1.0,2.0589915703997723e-06,engineering pilot diagnostic only; not final inference
+E1_controlled_p0_H8_N32_g0.0078125,10004,fedavg,control_second_moment,,,,1.0,,
+E3_R0_p0_H4_N32_g0.196078431373,10001,scaffold,primary_projection,1,256,16,1.0,0.0009405284189567016,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10001,scaffold,primary_projection,2,512,8,1.0,0.0006185469763823194,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10001,scaffold,primary_projection,4,1024,4,1.0,0.0002072827532308669,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10001,scaffold,control_second_moment,,,,1.056357744628083,,
+E3_R0_p0_H4_N32_g0.196078431373,10001,scaffold,global_training_objective_snapshot,,,,1.3002028624731174,,
+E3_R0_p0_H4_N32_g0.196078431373,10001,fedavg,primary_projection,1,256,16,1.0,0.0009425175983323071,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10001,fedavg,primary_projection,2,512,8,1.0,0.0006259211810367121,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10001,fedavg,primary_projection,4,1024,4,1.0,0.0002006224875149323,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10001,fedavg,control_second_moment,,,,1.056357744628083,,
+E3_R0_p0_H4_N32_g0.196078431373,10001,fedavg,global_training_objective_snapshot,,,,1.3050485115724508,,
+E3_R0_p0_H4_N32_g0.196078431373,10002,scaffold,primary_projection,1,256,16,1.0,0.0009641539386215698,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10002,scaffold,primary_projection,2,512,8,1.0,0.0010781748491926527,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10002,scaffold,primary_projection,4,1024,4,1.0,0.0012954800132642245,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10002,scaffold,control_second_moment,,,,1.0,,
+E3_R0_p0_H4_N32_g0.196078431373,10002,scaffold,global_training_objective_snapshot,,,,1.2781416149566236,,
+E3_R0_p0_H4_N32_g0.196078431373,10002,fedavg,primary_projection,1,256,16,1.0,0.0009631679293537254,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10002,fedavg,primary_projection,2,512,8,1.0,0.0010793131468501622,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10002,fedavg,primary_projection,4,1024,4,1.0,0.0012855314723556415,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10002,fedavg,control_second_moment,,,,1.0,,
+E3_R0_p0_H4_N32_g0.196078431373,10002,fedavg,global_training_objective_snapshot,,,,1.2741801324772044,,
+E3_R0_p0_H4_N32_g0.196078431373,10003,scaffold,primary_projection,1,256,16,1.0,0.0014922107883473875,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10003,scaffold,primary_projection,2,512,8,1.787601806508151,0.0007429887911102622,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10003,scaffold,primary_projection,4,1024,4,1.0,0.0008133342934548807,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10003,scaffold,control_second_moment,,,,1.0,,
+E3_R0_p0_H4_N32_g0.196078431373,10003,scaffold,global_training_objective_snapshot,,,,1.0,,
+E3_R0_p0_H4_N32_g0.196078431373,10003,fedavg,primary_projection,1,256,16,1.0,0.0014980759349279287,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10003,fedavg,primary_projection,2,512,8,1.8310817308736547,0.0007553975120115103,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10003,fedavg,primary_projection,4,1024,4,1.0,0.0008443774349523789,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10003,fedavg,control_second_moment,,,,1.0,,
+E3_R0_p0_H4_N32_g0.196078431373,10003,fedavg,global_training_objective_snapshot,,,,1.0,,
+E3_R0_p0_H4_N32_g0.196078431373,10004,scaffold,primary_projection,1,256,16,1.0319298751411037,0.0013522490902364804,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10004,scaffold,primary_projection,2,512,8,1.0,0.001279730230795309,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10004,scaffold,primary_projection,4,1024,4,1.0607377778792042,0.0010313815733318,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10004,scaffold,control_second_moment,,,,1.4030517605968256,,
+E3_R0_p0_H4_N32_g0.196078431373,10004,scaffold,global_training_objective_snapshot,,,,1.062630173361814,,
+E3_R0_p0_H4_N32_g0.196078431373,10004,fedavg,primary_projection,1,256,16,1.0231894667723636,0.00135819044874852,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10004,fedavg,primary_projection,2,512,8,1.0,0.0012823645181191526,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10004,fedavg,primary_projection,4,1024,4,1.037246506956931,0.0010072481367721323,engineering pilot diagnostic only; not final inference
+E3_R0_p0_H4_N32_g0.196078431373,10004,fedavg,control_second_moment,,,,1.4030517605968256,,
+E3_R0_p0_H4_N32_g0.196078431373,10004,fedavg,global_training_objective_snapshot,,,,1.0731603209030205,,
+E3_R1_p4101_H4_N32_g0.196078431373,10001,scaffold,primary_projection,1,256,16,1.1214515122469788,0.0010169793756105252,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10001,scaffold,primary_projection,2,512,8,1.2690796665140474,0.001100652269965881,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10001,scaffold,primary_projection,4,1024,4,1.0,0.0013067061799747503,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10001,scaffold,control_second_moment,,,,1.0,,
+E3_R1_p4101_H4_N32_g0.196078431373,10001,scaffold,global_training_objective_snapshot,,,,1.0,,
+E3_R1_p4101_H4_N32_g0.196078431373,10001,fedavg,primary_projection,1,256,16,1.110800704335684,0.0010080707293172928,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10001,fedavg,primary_projection,2,512,8,1.2468269856326022,0.0010904057483143187,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10001,fedavg,primary_projection,4,1024,4,1.0,0.001290495481808323,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10001,fedavg,control_second_moment,,,,1.0,,
+E3_R1_p4101_H4_N32_g0.196078431373,10001,fedavg,global_training_objective_snapshot,,,,1.0,,
+E3_R1_p4101_H4_N32_g0.196078431373,10002,scaffold,primary_projection,1,256,16,1.5576468720952892,0.0008693836097673639,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10002,scaffold,primary_projection,2,512,8,1.8176762602102499,0.0009295885018878085,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10002,scaffold,primary_projection,4,1024,4,1.0,0.0012286714230921418,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10002,scaffold,control_second_moment,,,,1.0,,
+E3_R1_p4101_H4_N32_g0.196078431373,10002,scaffold,global_training_objective_snapshot,,,,1.0,,
+E3_R1_p4101_H4_N32_g0.196078431373,10002,fedavg,primary_projection,1,256,16,1.5486287154294534,0.0008637448689880072,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10002,fedavg,primary_projection,2,512,8,1.8022600064768395,0.0009269662484013622,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10002,fedavg,primary_projection,4,1024,4,1.0,0.0012149769079077266,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10002,fedavg,control_second_moment,,,,1.0,,
+E3_R1_p4101_H4_N32_g0.196078431373,10002,fedavg,global_training_objective_snapshot,,,,1.0,,
+E3_R1_p4101_H4_N32_g0.196078431373,10003,scaffold,primary_projection,1,256,16,1.0,0.0011310830707392141,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10003,scaffold,primary_projection,2,512,8,1.0,0.0011769253375910566,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10003,scaffold,primary_projection,4,1024,4,1.0,0.000894385944615059,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10003,scaffold,control_second_moment,,,,1.0,,
+E3_R1_p4101_H4_N32_g0.196078431373,10003,scaffold,global_training_objective_snapshot,,,,1.0,,
+E3_R1_p4101_H4_N32_g0.196078431373,10003,fedavg,primary_projection,1,256,16,1.0,0.0011242026765182233,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10003,fedavg,primary_projection,2,512,8,1.0,0.001169592160014373,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10003,fedavg,primary_projection,4,1024,4,1.0,0.0008711446451082227,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10003,fedavg,control_second_moment,,,,1.0,,
+E3_R1_p4101_H4_N32_g0.196078431373,10003,fedavg,global_training_objective_snapshot,,,,1.0,,
+E3_R1_p4101_H4_N32_g0.196078431373,10004,scaffold,primary_projection,1,256,16,1.3616183013538286,0.0011606875423446367,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10004,scaffold,primary_projection,2,512,8,1.0,0.0013997186130531962,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10004,scaffold,primary_projection,4,1024,4,1.0,0.0006659924303823642,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10004,scaffold,control_second_moment,,,,2.062915384217557,,
+E3_R1_p4101_H4_N32_g0.196078431373,10004,scaffold,global_training_objective_snapshot,,,,1.0926473303465127,,
+E3_R1_p4101_H4_N32_g0.196078431373,10004,fedavg,primary_projection,1,256,16,1.3539454991915787,0.0011625418775476739,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10004,fedavg,primary_projection,2,512,8,1.0,0.0013926245736398167,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10004,fedavg,primary_projection,4,1024,4,1.0,0.0006566584350656758,engineering pilot diagnostic only; not final inference
+E3_R1_p4101_H4_N32_g0.196078431373,10004,fedavg,control_second_moment,,,,2.062915384217557,,
+E3_R1_p4101_H4_N32_g0.196078431373,10004,fedavg,global_training_objective_snapshot,,,,1.0946556051533203,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10001,scaffold,primary_projection,1,1022,16,1.6642430825299943,0.0005445890350377985,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10001,scaffold,primary_projection,2,2044,8,1.0,0.0006505518862672935,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10001,scaffold,primary_projection,4,4088,4,1.0,0.0006757146591659459,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10001,scaffold,control_second_moment,,,,2.0146463101515133,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10001,scaffold,global_training_objective_snapshot,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10001,fedavg,primary_projection,1,1022,16,1.669849340620193,0.0005438732394596477,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10001,fedavg,primary_projection,2,2044,8,1.0062879822156054,0.0006520411568128735,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10001,fedavg,primary_projection,4,4088,4,1.0,0.0006787441904214861,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10001,fedavg,control_second_moment,,,,2.0146463101515133,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10001,fedavg,global_training_objective_snapshot,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10002,scaffold,primary_projection,1,1022,16,1.9611689246681463,0.0005527830188198869,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10002,scaffold,primary_projection,2,2044,8,1.7119078238313503,0.0006261766040438507,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10002,scaffold,primary_projection,4,4088,4,1.3312608431632034,0.0006609315896689674,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10002,scaffold,control_second_moment,,,,2.6431419896475963,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10002,scaffold,global_training_objective_snapshot,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10002,fedavg,primary_projection,1,1022,16,1.977995260788493,0.0005489005141576451,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10002,fedavg,primary_projection,2,2044,8,1.7275078908899715,0.0006224410283019964,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10002,fedavg,primary_projection,4,4088,4,1.33003777566503,0.0006629864962391947,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10002,fedavg,control_second_moment,,,,2.6431419896475963,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10002,fedavg,global_training_objective_snapshot,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10003,scaffold,primary_projection,1,1022,16,1.6319510561290342,0.0003852249645484111,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10003,scaffold,primary_projection,2,2044,8,1.0,0.00045253600270144656,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10003,scaffold,primary_projection,4,4088,4,1.0,0.0002511388478868716,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10003,scaffold,control_second_moment,,,,1.1914261585575947,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10003,scaffold,global_training_objective_snapshot,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10003,fedavg,primary_projection,1,1022,16,1.640587548299238,0.0003820979474962187,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10003,fedavg,primary_projection,2,2044,8,1.0,0.0004499622375460218,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10003,fedavg,primary_projection,4,4088,4,1.0,0.00025221701764829217,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10003,fedavg,control_second_moment,,,,1.1914261585575947,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10003,fedavg,global_training_objective_snapshot,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10004,scaffold,primary_projection,1,1022,16,1.0,0.000659450534562383,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10004,scaffold,primary_projection,2,2044,8,1.0,0.0008232749015305556,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10004,scaffold,primary_projection,4,4088,4,1.0,0.0008033824985564042,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10004,scaffold,control_second_moment,,,,1.244992290024963,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10004,scaffold,global_training_objective_snapshot,,,,1.5068484833008822,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10004,fedavg,primary_projection,1,1022,16,1.0,0.0006545237879069852,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10004,fedavg,primary_projection,2,2044,8,1.0,0.0008194510620883509,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10004,fedavg,primary_projection,4,4088,4,1.0,0.0008095217171985942,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.0490196078431,10004,fedavg,control_second_moment,,,,1.244992290024963,,
+E3_R2_p4101_H4_N32_g0.0490196078431,10004,fedavg,global_training_objective_snapshot,,,,1.7761765034386152,,
+E3_R2_p4101_H4_N32_g0.196078431373,10001,scaffold,primary_projection,1,256,16,1.0326118373366502,0.0013866399910424313,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10001,scaffold,primary_projection,2,512,8,1.0,0.0016893706131724227,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10001,scaffold,primary_projection,4,1024,4,1.0,0.0008348213221417531,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10001,scaffold,control_second_moment,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.196078431373,10001,scaffold,global_training_objective_snapshot,,,,1.638499371349088,,
+E3_R2_p4101_H4_N32_g0.196078431373,10001,fedavg,primary_projection,1,256,16,1.0392729511599772,0.0013319791010903313,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10001,fedavg,primary_projection,2,512,8,1.0,0.0016243782362139068,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10001,fedavg,primary_projection,4,1024,4,1.0,0.0008369430813683053,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10001,fedavg,control_second_moment,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.196078431373,10001,fedavg,global_training_objective_snapshot,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.196078431373,10002,scaffold,primary_projection,1,256,16,1.0,0.0009918638418432955,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10002,scaffold,primary_projection,2,512,8,1.7698829694816838,0.0009963208490207367,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10002,scaffold,primary_projection,4,1024,4,1.0,0.0013961724215242645,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10002,scaffold,control_second_moment,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.196078431373,10002,scaffold,global_training_objective_snapshot,,,,1.195630446222865,,
+E3_R2_p4101_H4_N32_g0.196078431373,10002,fedavg,primary_projection,1,256,16,1.0,0.000984283920741877,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10002,fedavg,primary_projection,2,512,8,1.8041217733158401,0.0009943152404616059,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10002,fedavg,primary_projection,4,1024,4,1.0,0.0013961372353608768,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10002,fedavg,control_second_moment,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.196078431373,10002,fedavg,global_training_objective_snapshot,,,,1.1838011232433303,,
+E3_R2_p4101_H4_N32_g0.196078431373,10003,scaffold,primary_projection,1,256,16,1.0,0.0009182759115186667,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10003,scaffold,primary_projection,2,512,8,1.6903292292545626,0.0007343038902556438,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10003,scaffold,primary_projection,4,1024,4,1.0,0.001112488784081191,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10003,scaffold,control_second_moment,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.196078431373,10003,scaffold,global_training_objective_snapshot,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.196078431373,10003,fedavg,primary_projection,1,256,16,1.0,0.0008753400377660874,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10003,fedavg,primary_projection,2,512,8,1.652762079934145,0.0007055065699613724,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10003,fedavg,primary_projection,4,1024,4,1.0,0.0010721454984780247,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10003,fedavg,control_second_moment,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.196078431373,10003,fedavg,global_training_objective_snapshot,,,,1.8183531857300888,,
+E3_R2_p4101_H4_N32_g0.196078431373,10004,scaffold,primary_projection,1,256,16,2.293111987637765,0.001099102004362993,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10004,scaffold,primary_projection,2,512,8,1.7143308678683018,0.0012593640589829167,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10004,scaffold,primary_projection,4,1024,4,1.0992439620373053,0.0014533085899764986,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10004,scaffold,control_second_moment,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.196078431373,10004,scaffold,global_training_objective_snapshot,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.196078431373,10004,fedavg,primary_projection,1,256,16,2.2619529512143752,0.0010449345613731031,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10004,fedavg,primary_projection,2,512,8,1.706793784627292,0.0011892326146122115,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10004,fedavg,primary_projection,4,1024,4,1.091993425952633,0.0013631421515111345,engineering pilot diagnostic only; not final inference
+E3_R2_p4101_H4_N32_g0.196078431373,10004,fedavg,control_second_moment,,,,1.0,,
+E3_R2_p4101_H4_N32_g0.196078431373,10004,fedavg,global_training_objective_snapshot,,,,1.0,,

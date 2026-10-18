@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "comparison_pdf_pages": 26,
+  "comparison_pdf_bytes": 3637455,
+  "figure_group_pages": 5,
+  "source_panels_per_version": 9,
+  "first_five_pages_raster_image_xobjects": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "changed_same_index_pages": 17,
+  "all_changed_same_index_pages_covered": true,
+  "unchanged_pages_omitted": 23,
+  "baseline_page_41_explicitly_unpaired": true,
+  "rendered_and_visually_checked_comparison_pages": [
+    1,
+    3,
+    4,
+    6,
+    26
+  ],
+  "visual_result": "Labels remain outside source figures/pages; no overlap or cropping observed.",
+  "source_pdfs_unchanged": true,
+  "scientific_recomputation": false
+}

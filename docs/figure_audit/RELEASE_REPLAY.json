@@ -1,0 +1,140 @@
+{
+  "status": "PASS_RENDER_EQUIVALENT",
+  "panels": 7,
+  "all_pdf_bytes_identical": false,
+  "pdf_byte_mismatches": 7,
+  "canonical_provenance_identical": true,
+  "comparisons": [
+    {
+      "panel_id": "hist_matched_H2",
+      "pdf_byte_identical": false,
+      "pdf_sha256": "8aa74bd88655de9e5c753cc6dd4cd9a1187c4ae3ff604e2532f2a33ccd051047",
+      "png_byte_identical": true,
+      "png_sha256": "96fad92460ef622232620fa7b718ef969dcf6f038b9249c99ffbc4872dfd5b74",
+      "sidecar_byte_identical": true,
+      "sidecar_sha256": "03e8f0183ba3102e4019e40be55ab18801546ecf5370fde0b69eaeed4480f822",
+      "raster_size": [
+        614,
+        700
+      ],
+      "raster_pixels_identical": true,
+      "pdf_content_operators_identical": true,
+      "pdf_font_names_equal_ignoring_subset_prefix": true,
+      "pdf_media_box_identical": true,
+      "pdf_raster_pixels_identical_216dpi": true
+    },
+    {
+      "panel_id": "hist_matched_H4",
+      "pdf_byte_identical": false,
+      "pdf_sha256": "12b3b3dba06463d5788e86661c1bf4ce71dbe0f92e7343dc1a3f0af97c8d30d3",
+      "png_byte_identical": true,
+      "png_sha256": "8a55346a96313182b1c28cd898534336b78c5437eeba9a368ac54ac1846f601c",
+      "sidecar_byte_identical": true,
+      "sidecar_sha256": "ba8d89b1a0b99e318bb97fcaf0183ec44c3a8c997feb1e48c68df8e1d1d708e4",
+      "raster_size": [
+        614,
+        700
+      ],
+      "raster_pixels_identical": true,
+      "pdf_content_operators_identical": true,
+      "pdf_font_names_equal_ignoring_subset_prefix": true,
+      "pdf_media_box_identical": true,
+      "pdf_raster_pixels_identical_216dpi": true
+    },
+    {
+      "panel_id": "hist_fixed_gamma_coord1",
+      "pdf_byte_identical": false,
+      "pdf_sha256": "cdac02c86faabeac2841f2098995a2e7d76300163630ccdcdf21895c5efeda17",
+      "png_byte_identical": true,
+      "png_sha256": "7c9f3bb4e2cfd846c9ee2e2497a2be7cc5a33aabee11f28dbc287b7baaabc5fe",
+      "sidecar_byte_identical": true,
+      "sidecar_sha256": "358011a4292558f12298e74096786499001c416b5014c4a76c925fb9b2e09fc3",
+      "raster_size": [
+        614,
+        700
+      ],
+      "raster_pixels_identical": true,
+      "pdf_content_operators_identical": true,
+      "pdf_font_names_equal_ignoring_subset_prefix": true,
+      "pdf_media_box_identical": true,
+      "pdf_raster_pixels_identical_216dpi": true
+    },
+    {
+      "panel_id": "hist_fixed_gamma_coord2",
+      "pdf_byte_identical": false,
+      "pdf_sha256": "a105e588c4c35f74c839ab5ba48703d103985e20eb51de25f93df339ff9bfd27",
+      "png_byte_identical": true,
+      "png_sha256": "af7563ff57be2d3f9d2e9f434e75c8ea4d51f20d9f43c814931c619a69360d6b",
+      "sidecar_byte_identical": true,
+      "sidecar_sha256": "91bcd78223a3badc059086c5b00ab5c29d21bafc8b613453f18a9b08f06d2fac",
+      "raster_size": [
+        614,
+        700
+      ],
+      "raster_pixels_identical": true,
+      "pdf_content_operators_identical": true,
+      "pdf_font_names_equal_ignoring_subset_prefix": true,
+      "pdf_media_box_identical": true,
+      "pdf_raster_pixels_identical_216dpi": true
+    },
+    {
+      "panel_id": "real_R0_allocation",
+      "pdf_byte_identical": false,
+      "pdf_sha256": "dfd992db8c79a34e9ac8aee9e61dcddbf976aa8f15f9fb62b8d070b97d6170a6",
+      "png_byte_identical": true,
+      "png_sha256": "a56511be6dfaa66e5a86937bca0eccd22353182745791e36a0b7ec8ab0dd5a46",
+      "sidecar_byte_identical": true,
+      "sidecar_sha256": "6c32333bef008af0e5dc91675c1dc12ab11dd23a84c317928bde24826f0111d7",
+      "raster_size": [
+        727,
+        650
+      ],
+      "raster_pixels_identical": true,
+      "pdf_content_operators_identical": true,
+      "pdf_font_names_equal_ignoring_subset_prefix": true,
+      "pdf_media_box_identical": true,
+      "pdf_raster_pixels_identical_216dpi": true
+    },
+    {
+      "panel_id": "hist_H4_smallstep",
+      "pdf_byte_identical": false,
+      "pdf_sha256": "2661d48e268de93f119067edeac98656b19d34ba87a6b3838e9f09b67314ede2",
+      "png_byte_identical": true,
+      "png_sha256": "12f8ca18834c47754ca07c84fcfc5b7cb46edee1c4d78c45135fb04b70aa64b5",
+      "sidecar_byte_identical": true,
+      "sidecar_sha256": "9749866d0d6af4f7a4eadb473ef984fecb65e12383342eaa3e259e5dbd2375e3",
+      "raster_size": [
+        614,
+        700
+      ],
+      "raster_pixels_identical": true,
+      "pdf_content_operators_identical": true,
+      "pdf_font_names_equal_ignoring_subset_prefix": true,
+      "pdf_media_box_identical": true,
+      "pdf_raster_pixels_identical_216dpi": true
+    },
+    {
+      "panel_id": "hist_H4_loglog_residual",
+      "pdf_byte_identical": false,
+      "pdf_sha256": "3c4d48f40994c2447fc3c59496800e573032800cd12b7bd37ab15fa1a79f88c6",
+      "png_byte_identical": true,
+      "png_sha256": "a3e48f1e64b4862337b3de41a73c89a5d5f1ae64defe7d63fbef2479e227bfc1",
+      "sidecar_byte_identical": true,
+      "sidecar_sha256": "d0c78c25b0967ae0fcba39a3f30537b4099176cc353c186035b8c85c27e39142",
+      "raster_size": [
+        614,
+        700
+      ],
+      "raster_pixels_identical": true,
+      "pdf_content_operators_identical": true,
+      "pdf_font_names_equal_ignoring_subset_prefix": true,
+      "pdf_media_box_identical": true,
+      "pdf_raster_pixels_identical_216dpi": true
+    }
+  ],
+  "method": "Isolated saved-record render, exact bytes and PNG pixels; no experimental recomputation",
+  "no_simulation": true,
+  "no_refit": true,
+  "no_resampling": true,
+  "scope": "CSV/provenance and PNG bytes are exact; all PDF operator streams, media boxes, normalized font names and 216-dpi pixels match. TeX subset prefixes vary, so PDF byte identity is not claimed."
+}

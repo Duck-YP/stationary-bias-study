@@ -1,0 +1,18 @@
+id: p1
+slug: p1_matched_fedavg
+title: Matched FedAvg versus SCAFFOLD coefficient attribution
+matrix_id: p1-matched-fedavg-112-pairs
+entrypoint: python run.py p1
+config: workstreams/p1_matched_fedavg/configs/matched_fedavg.yaml
+smoke_artifacts: workstreams/p1_matched_fedavg/artifacts/smoke
+formal_artifacts: workstreams/p1_matched_fedavg/artifacts/formal/p1-matched-fedavg-112-pairs
+archived_formal_snapshot: workstreams/p1_matched_fedavg/artifacts/archive/original_formal_snapshot
+formal_output_policy: controlled_overwrite_if_raw_scientific_fields_match
+formal_source_policy: clean_commit
+archive_output_policy: excluded_from_overwrite
+plateau_matrix_id: p1-fixed-gamma-large-n-h2-gamma-1over24
+plateau_config: workstreams/p1_matched_fedavg/configs/fixed_gamma_large_n.yaml
+plateau_smoke_artifacts: workstreams/p1_matched_fedavg/artifacts/smoke/fixed-gamma-large-n
+plateau_formal_artifacts: workstreams/p1_matched_fedavg/artifacts/formal/p1-fixed-gamma-large-n-h2-gamma-1over24
+implementation_package: stationary_bias.workstreams.p1_matched_fedavg
+test_directory: tests/workstreams/p1_matched_fedavg

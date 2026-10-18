@@ -1,0 +1,62 @@
+\section{Why persistent controls affect stationary bias}
+\label{sec:mechanism}
+
+Corollary~\ref{cor:attribution} identifies an additional client-independent bias coefficient in \Scaf{} relative to matched \FedAvg{}. The effect is indirect: zero-sum controls cancel from the server update, but they change the local trajectories before aggregation. We trace this effect through the server increment, local second moments, and stationary mean balance.
+
+\subsection{Server-level cancellation does not imply identical local trajectories}
+
+Let $\bar\eps_{h+1}:=N^{-1}\sum_c\eps_{c,h+1}$. Summing the local updates in Equation~\eqref{eq:scaf-local} and averaging over clients, with the zero-sum condition in Equation~\eqref{eq:zero-sum}, gives
+\begin{equation}
+\label{eq:mechanism-global-increment}
+x^+-x
+=-\gamma\sum_{h=0}^{H-1}\frac1N\sum_{c=1}^N\nabla f(\theta_{c,h})
+-\gamma\sum_{h=0}^{H-1}\bar\eps_{h+1}.
+\end{equation}
+The controls disappear explicitly from this expression, but they still determine the local iterates $\theta_{c,h}$ at which the gradients are evaluated. Matched \FedAvg{} has the same form of server increment, with different local trajectories because it has no control state.
+
+\subsection{Controls create an additional local second-moment contribution}
+
+To measure the effect on local trajectories, define the stationary \emph{raw} second moments $M_x^{\mathcal A}=\E[xx^\top]$ and
+$M_h^{\mathcal A}=N^{-1}\sum_c\E[\theta_{c,h}\theta_{c,h}^\top]$ for algorithm $\mathcal A$. Their within-round difference is
+\begin{equation}
+\label{eq:mechanism-moments}
+U_h^{\mathcal A}:=M_h^{\mathcal A}-M_x^{\mathcal A},
+\qquad \mathcal A\in\{\Scaf,\FedAvg\}.
+\end{equation}
+For $h=0,\ldots,H-1$, the moment estimates are
+\begin{align}
+\label{eq:mechanism-U-fa}
+U_h^{\FedAvg}
+&=\gamma^2hC+O_{H,d}\!\left(\frac{\gamma^2}{N}+\gamma^3\right),\\
+\label{eq:mechanism-U-scaf}
+U_h^{\Scaf}
+&=\gamma^2\left(h+\frac{h^2}{H}\right)C
+  +O_{H,d}\!\left(\frac{\gamma^2}{N}+\gamma^3\right).
+\end{align}
+The shared $hC$ term reflects fresh gradient noise accumulated over local steps. In \Scaf{}, the same round-start control acts throughout those steps, adding the $h^2C/H$ term. Its quadratic dependence on $h$ reflects this persistence; the $1/H$ factor comes from the leading stationary control covariance established by \citet[Lemma~5.1]{mangold2025scaffold}.
+
+\subsection{Local fluctuations are converted into a mean shift by curvature}
+
+Taking expectations of the server increment under stationarity yields the balance equation
+\begin{equation}
+\label{eq:mechanism-balance}
+0=\sum_{h=0}^{H-1}\frac1N\sum_{c=1}^N\E[\nabla f(\theta_{c,h})].
+\end{equation}
+Because $f$ is nonlinear, these expected gradients depend not only on the mean parameter but also on local fluctuations. A Taylor expansion around the minimizer makes the role of the second moments explicit:
+\begin{equation}
+\label{eq:mechanism-master}
+b^{\mathcal A}_{\gamma,N,H}
+=-\frac12A^{-1}T[M_x^{\mathcal A}]
+-\frac1{2H}A^{-1}T\!\left[\sum_{h=0}^{H-1}U_h^{\mathcal A}\right]
++O_{H,d}\!\left(\frac{\gamma^2}{N}+\gamma^3\right).
+\end{equation}
+Both algorithms have the same leading global second moment,
+$M_x^{\mathcal A}=(\gamma/N)S_C+O_{H,d}(\gamma^2/N+\gamma^3)$.
+Their additional client-independent difference therefore comes from the local moments in Equations~\eqref{eq:mechanism-U-fa} and~\eqref{eq:mechanism-U-scaf}. Inserting the extra $\gamma^2h^2C/H$ term into Equation~\eqref{eq:mechanism-master} gives
+\[
+-\frac{\gamma^2}{2H}A^{-1}T\!\left[\sum_{h=0}^{H-1}\frac{h^2}{H}C\right]
+=\gamma^2B_{20}^{\mathrm{ctrl}}(H),
+\]
+which recovers the additional coefficient in Corollary~\ref{cor:attribution}.
+
+Thus the controls affect the stationary mean through their influence on local fluctuations, even though their direct contribution cancels at the server. The nonlinear curvature converts the difference in local second moments into the matched bias difference.

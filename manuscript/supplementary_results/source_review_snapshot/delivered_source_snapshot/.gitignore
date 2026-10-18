@@ -1,0 +1,8 @@
+.deps/
+.mplconfig/
+__pycache__/
+*.pyc
+*.nbc
+*.nbi
+results/
+data/

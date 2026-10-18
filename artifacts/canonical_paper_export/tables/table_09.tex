@@ -1,0 +1,39 @@
+% Saved-input data export; no simulation, refit or resampling.
+% tab:num-inference: supported
+\begin{tabular}{lll}
+study / component & saved field / derivation & value \\
+\hline
+Joint grid and fixed step, d=2 & per\_setting\_uncertainty & \{"source": "eight\_independent\_chain\_estimates", "method": "student\_t\_coordinatewise", "degrees\_of\_freedom": 7, "familywise\_confidence\_level": 0.95, "correction": "bonferroni", "coordinates": 2, "simultaneous\_coordinate\_confidence\_level": 0.975, "marginal\_diagnostic\_confidence\_level": 0.95, "pool\_coordinates": false\} \\
+Joint grid and fixed step, d=2 & bootstrap & \{"unit": "seed\_label\_block", "repetitions": 2000, "seed": 2901, "preserve\_same\_seed\_across\_settings": true, "simultaneous\_familywise\_confidence\_level": 0.95, "correction": "bonferroni", "simultaneous\_coordinate\_percentile\_level": 0.975, "simultaneous\_quantiles": [0.0125, 0.9875], "marginal\_diagnostic\_percentile\_level": 0.95, "marginal\_diagnostic\_quantiles": [0.025, 0.975]\} \\
+Five-dimensional & per\_setting\_uncertainty & \{"source": "eight\_independent\_chain\_estimates", "method": "student\_t\_coordinatewise", "degrees\_of\_freedom": 7, "familywise\_confidence\_level": 0.95, "correction": "bonferroni", "coordinates": 5, "simultaneous\_coordinate\_confidence\_level": 0.99, "simultaneous\_t\_critical": 3.4994832973504924, "marginal\_diagnostic\_confidence\_level": 0.95, "pool\_coordinates": false\} \\
+Five-dimensional & bootstrap & \{"unit": "seed\_label\_block", "repetitions": 5000, "seed": 3901, "preserve\_same\_seed\_across\_settings": true, "simultaneous\_familywise\_confidence\_level": 0.95, "correction": "bonferroni", "simultaneous\_coordinate\_percentile\_level": 0.99, "simultaneous\_quantiles": [0.005, 0.995], "marginal\_diagnostic\_percentile\_level": 0.95, "marginal\_diagnostic\_quantiles": [0.025, 0.975]\} \\
+Cartesian/local step & resampling & independent paired seed vectors as bootstrap units; all cells resampled together; 2000 bootstrap draws seed=61009 \\
+Cartesian/local step & ci & pointwise nominal Student-t 95\%; coordinate families Bonferroni; bootstrap fits; no deterministic error coverage \\
+Cartesian/local step & multiplicity & \{"E1a\_intercepts\_coordinates": 16, "E1b\_intercepts\_coordinates": 6, "E3\_signed\_projections": 105\} \\
+Cartesian/local step & E1a\_primary\_fit & separate algorithm/H linear intercept against gamma; all four points; no B11 subtraction \\
+Cartesian/local step & E1b\_primary\_fit & separate H coordinate OLS [1,gamma,1/N], all Cartesian points \\
+Cartesian/local step & E1b\_contrast & beta0(H4)-3.5*beta0(H2); exact kappa(4)/kappa(2)=3.5 \\
+Cartesian/local step & Student-t degrees of freedom from independent run count & 11 \\
+Cartesian/local step & saved contrast scalar counts by kind & \{"E1a\_H\_intercept\_difference": 12, "E1b\_H4\_minus\_3point5\_H2": 2\} \\
+Contraction/noise law & bootstrap\_draws & 4000 \\
+Contraction/noise law & resampling & Resample each independent cell run vector jointly across algorithms/coordinates/raw/balance/windows; independently across cells. Fixed bootstrap seed 2026101401, 4000 draws. \\
+Contraction/noise law & intervals & Marginal Student t (df=11 conservative) and bootstrap percentile; approximate simultaneous centered bootstrap max-|standardized error| family of 36; Bonferroni t df11 sensitivity. \\
+Contraction/noise law & primary\_family & 24 condition x observable x coordinate intercepts + 6 symmetric-minus-asymmetric law contrasts + 6 rho-plus-minus-rho-minus contrasts = 36 scalars \\
+Real-data allocation & ci & pointwise nominal Student-t 95\%; coordinate families Bonferroni; bootstrap fits; no deterministic error coverage \\
+Real-data allocation & U\_statistic & unclipped cross-run squared displacement, jackknife-t CI; near-zero inference unresolved; Gaussian quadratic zero-bias calibration \\
+Real-data allocation & E3\_primary\_estimator & direct mean; no pilot-validated shadow process \\
+Real-data allocation & cellwise projection family & 105 \\
+Real-data allocation & saved allocation/configuration contrast count & 36 \\
+Model averaging & draws & 19999 \\
+Model averaging & families & \{"primary": \{"coordinates": 196, "bootstrap\_max\_critical": 3.3208875490656267, "jackknife\_Bonferroni\_t": 5.293090119215704\}, "secondary": \{"coordinates": 392, "bootstrap\_max\_critical": 3.6238890929436316, "jackknife\_Bonferroni\_t": 5.754356046266111\}, "diagnostic": \{"coordinates": 1176, "bootstrap\_max\_critical": 3.9982655949320476, "jackknife\_Bonferroni\_t": 6.52967570634147\}\} \\
+Model averaging & bootstrap\_bias\_center\_corrected & true \\
+Model averaging & bootstrap & \{"draws": 19999, "seed": 202610094, "coverage": 0.95, "unit": "paired independent seed label; one multinomial count vector across all cells/algorithms/K", "method": "standardized max absolute empirical-population-centered bootstrap deviation", "centering": "U0=||b\_hat||\textasciicircum{}2; V0=(R-1)/R V\_hat; MSE0=MSE\_hat; all derived functionals use these centers", "scalar\_family\_per\_cell": ["both algorithms all K: U,V,MSE,U\_minus\_V,U\_minus\_0.1MSE,projection,train\_gap,test\_loss,share,V\_minus\_K1", "all K: delta\_U,delta\_V,delta\_MSE,delta\_projection,delta\_train,delta\_test,U\_delta,C\_cross"], "limits": "Approximate finite-R bootstrap, not exact coverage or a stationary-law certificate"\} \\
+Model averaging & sensitivity & \{"method": "delete-one seed jackknife-t; Bonferroni within same scalar family", "decision": "positive crossover/materiality needs both max-bootstrap and nondegenerate jackknife sensitivity lower bounds >0", "degeneracy": "jackknife SE <1e-3 bootstrap SD is weak precision, never strong evidence"\} \\
+Directional comparison & draws & 19999 \\
+Directional comparison & scalar\_family\_size & 1068 \\
+Directional comparison & vector\_family\_size & 117 \\
+Directional comparison & scalar\_and\_vector\_families\_separately\_95\_percent\_not\_joint & true \\
+Directional comparison & bootstrap & \{"draws": 19999, "seed": 202610096, "cluster": "paired\_seed\_shared\_across\_all\_cells\_and\_K"\} \\
+Directional comparison & intervals & functional-centered bootstrap max-standardized deviations; delete-one paired jackknife Bonferroni t sensitivity; full-vector balls and denominator-safe scaling transformations \\
+Directional comparison & alpha & 0.05 \\
+\end{tabular}

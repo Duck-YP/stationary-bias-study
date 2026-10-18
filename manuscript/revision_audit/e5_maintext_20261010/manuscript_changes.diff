@@ -1,0 +1,229 @@
+--- before/main.tex
++++ after/main.tex
+@@ -25,7 +25,7 @@
+ \begin{document}
+ \maketitle
+ \begin{abstract}
+-Even when all clients optimize the same strongly convex objective $f$, the global model parameters produced by constant-step federated learning may have a stationary mean that differs from the minimizer $x^\star$. Does increasing the number of clients eliminate this bias, or can some components persist? Answering this question clarifies the limits of client averaging. We study \Scaf{} and matched \FedAvg{} under full participation with independent bounded additive gradient noise. We analyze the long-run global model and within-round local fluctuations to derive multidimensional bias expansions in the step size $\gamma$ and inverse client count $1/N$. Both algorithms share a $\gamma/N$ coefficient, but their client-independent $\gamma^2$ coefficients differ. The \Scaf{} coefficient combines the local-update contribution found in \FedAvg{} with an additional contribution from persistent controls. These controls cancel in the server average but change local second moments, which interact with third-order curvature to shift the stationary mean. We establish explicit coefficient formulas with a remainder of $O_{H,d}(\gamma^2/N+\gamma^3)$, uniform in $N$ for fixed $H,d$ and sufficiently small $\gamma$. This bound permits identification of the client-independent coefficients along any joint limit $\gamma\to0$, $N\to\infty$, without a relative-rate condition. Controlled experiments examine coefficient predictions and local-step dependence. Real-data experiments show how minibatch allocation and model averaging change the contributions of finite-tail mean displacement and variance to parameter error, without implying a predictive penalty.
++Even when all clients optimize the same strongly convex objective $f$, the global model parameters produced by constant-step federated learning may have a stationary mean that differs from the minimizer $x^\star$. Does increasing the number of clients eliminate this bias, or can some components persist? Answering this question clarifies the limits of client averaging. We study \Scaf{} and matched \FedAvg{} under full participation with independent bounded additive gradient noise. We analyze the long-run global model and within-round local fluctuations to derive multidimensional bias expansions in the step size $\gamma$ and inverse client count $1/N$. Both algorithms share a $\gamma/N$ coefficient, but their client-independent $\gamma^2$ coefficients differ. The \Scaf{} coefficient combines the local-update contribution found in \FedAvg{} with an additional contribution from persistent controls. These controls cancel in the server average but change local second moments, which interact with third-order curvature to shift the stationary mean. We establish explicit coefficient formulas with a remainder of $O_{H,d}(\gamma^2/N+\gamma^3)$, uniform in $N$ for fixed $H,d$ and sufficiently small $\gamma$. This bound permits identification of the client-independent coefficients along any joint limit $\gamma\to0$, $N\to\infty$, without a relative-rate condition. Controlled experiments examine coefficient predictions and local-step dependence. Real-data model averaging shows that systematic finite-tail mean displacement can become a substantial component of parameter error. A post-hoc comparison further finds close agreement between the observed algorithmic mean-shift direction and the derived curvature--noise structure, while its magnitude and local-step scaling remain approximate.
+ \end{abstract}
+ 
+ 
+--- before/sections/01_introduction.tex
++++ after/sections/01_introduction.tex
+@@ -8,7 +8,7 @@
+ 
+ Increasing the number of clients reduces the stochastic variation in the gradients aggregated at the server. Therefore, it is natural to expect that averaging over more clients will also reduce stationary mean bias. However, local stochastic updates introduce additional fluctuations within each communication round. When these fluctuations interact with the objective function's nonlinear structure, they can produce higher-order bias contributions whose coefficients do not necessarily decrease with the number of clients. This raises two fundamental questions: Can increasing the number of clients eliminate stationary mean bias, and how do different federated learning update mechanisms affect the remaining bias?
+ 
+-Understanding these questions distinguishes the effect of averaging stochastic gradients from that of changing local trajectories. It also matters when interpreting model averaging: averaging stationary iterates preserves their mean, even when it reduces fluctuations around that mean. Characterizing the mean shift therefore identifies an error component that further averaging alone does not remove; its importance for parameter error and predictive loss must be assessed separately.
++Understanding these questions distinguishes the effect of averaging stochastic gradients from that of changing local trajectories. It also matters when interpreting model averaging: averaging stationary iterates preserves their mean, even when it reduces fluctuations around that mean. Characterizing the mean shift therefore identifies an error component that further averaging alone does not remove. Its relative importance depends on the averaging regime and the quantity used to evaluate the model.
+ 
+ Recent work by \citet{mangold2025scaffold} investigates the stationary behavior of stochastic \Scaf{} under a constant step size. In the homogeneous setting, their analysis identifies a leading stationary mean-bias contribution proportional to $\gamma/N$, where $\gamma$ is the step size and $N$ is the number of clients, and points to higher-order bias not suppressed by client averaging. Their Theorem~5.3 and the \FedAvg{} expansion of \citet[Theorem~3]{mangold2025fedavg} leave the client-independent $\gamma^2$ coefficient within the remainder. The question is therefore not whether higher-order bias can occur, but how large its client-independent coefficient is and how much is shared with ordinary local stochastic updates rather than additionally induced by persistent controls. Section~\ref{sec:related} compares the precise theorem statements and explains the extra remainder resolution needed for this attribution.
+ 
+@@ -43,8 +43,8 @@
+     \item \textbf{Attribution of local-update and control-variate contributions.}
+     We separate the client-independent bias contribution shared with ordinary local stochastic updates from the additional contribution associated with persistent SCAFFOLD controls. We also identify the local second-moment mechanism responsible for this difference.
+ 
+-    \item \textbf{Numerical evaluation of theoretical predictions.}
+-    Controlled experiments examine the coefficients, their local-step dependence, and matched attribution. Real-data regularized logistic regression experiments examine fixed-budget minibatch allocation, step size, local training length, and temporal model averaging. They distinguish finite-tail mean displacement from variance and predictive loss, rather than treating parameter bias as a proxy for prediction error.
++    \item \textbf{Numerical evaluation and real-data interpretation.}
++    Controlled experiments examine the coefficients, their local-step dependence, and matched attribution. Real-data experiments show how minibatch allocation and temporal averaging affect parameter error, with finite-tail mean displacement becoming a substantial component after averaging. A post-hoc comparison further finds high-dimensional directional agreement with the derived curvature--noise structure, while distinguishing this explanatory link from exact coefficient validation.
+ \end{itemize}
+ 
+ % The remainder of this paper reviews related work and introduces the mathematical setting, presents the stationary-bias expansions and their underlying mechanism, outlines the proof strategy, and evaluates the theoretical predictions through numerical experiments. Detailed proofs and supporting numerical analyses are provided in the appendices.
+--- before/sections/07_numerical_study.tex
++++ after/sections/07_numerical_study.tex
+@@ -1,14 +1,13 @@
+ \section{Numerical study}
+ \label{sec:numerics}
+ 
+-We evaluate three predictions of our analysis: whether the explicit stationary-bias
+-coefficients describe the observed behavior of \Scaf{} and \FedAvg{}, whether a
+-matched comparison reveals the additional contribution of persistent controls,
+-and whether a client-independent component remains visible as the number of
+-clients increases. These controlled experiments are followed by real-data
+-studies of minibatch allocation and temporal model averaging. The former check
+-coefficient predictions at finite steps; the latter examine how the choice of
+-training and averaging protocol changes the interpretation of parameter error.
++The numerical study separates three roles. Controlled experiments assess the
++predicted coefficients, their local-step dependence, and matched attribution.
++Real-data minibatch-allocation and model-averaging experiments examine how mean
++displacement contributes to parameter error. Finally, a post-hoc comparison asks
++whether the derived curvature--noise structure describes the direction of the
++real-data algorithm difference. These real-data studies provide empirical
++interpretation beyond the additive-noise model.
+ 
+ \subsection{Experimental design and estimation}
+ \label{sec:num-protocol}
+@@ -227,8 +226,7 @@
+ \label{fig:real-allocation}
+ \end{figure}
+ 
+-Displacement increases as more clients receive smaller batches (Figure~\ref{fig:real-allocation}). The $N=128$ minus $N=8$ contrasts are $0.003114$ for SCAFFOLD and $0.002072$ for FedAvg, with adjusted intervals $[0.002749,0.003478]$ and $[0.001713,0.002431]$. Raw variance estimates stay near $0.00235$--$0.00236$. The allocation difference remains in post-hoc first- and last-half checks of the original R0 tails. These are finite-tail findings; Section~
+-ef{sec:num-averaging} examines averaging within the same runs and reports the remaining temporal uncertainty.
++Displacement increases as more clients receive smaller batches (Figure~\ref{fig:real-allocation}). The $N=128$ minus $N=8$ contrasts are $0.003114$ for SCAFFOLD and $0.002072$ for FedAvg, with adjusted intervals $[0.002749,0.003478]$ and $[0.001713,0.002431]$. Raw variance estimates stay near $0.00235$--$0.00236$. The allocation difference remains in post-hoc first- and last-half checks of the original R0 tails. These are finite-tail findings; Section~\ref{sec:num-averaging} examines averaging within the same runs and reports the remaining temporal uncertainty.
+ 
+ At $N=32,m=8$, lowering $\gamma$ reduces both displacement and variance, whereas lowering $H$ changes displacement with much less change in variance (Table~\ref{tab:supp-policy}). The horizons differ, so this is not a fixed-cost efficiency ranking. At $N=128$, squared mean displacement accounts for about $0.50\%$ and $0.23\%$ of the \emph{raw-checkpoint} parameter MSE for SCAFFOLD and FedAvg. This variance-dominated decomposition concerns individual checkpoints, not time-averaged models. Held-out loss can improve slightly while displacement increases.
+ 
+@@ -269,7 +267,8 @@
+ 57-fold for both algorithms. At $K=64$, the estimated mean-displacement shares
+ are $68.1\%$ for SCAFFOLD and $49.5\%$ for FedAvg, with simultaneous intervals
+ $[62.6\%,73.7\%]$ and $[41.1\%,57.9\%]$. Thus the raw-checkpoint fractions do
+-not describe the error composition of the averaged outputs.
++not describe the error composition of the averaged outputs: systematic mean
++displacement need not remain negligible when averaging reduces fluctuations.
+ 
+ \begin{figure}[t]
+ \centering
+@@ -296,11 +295,44 @@
+ At the longest window, the paired SCAFFOLD-minus-FedAvg parameter-MSE difference
+ is $6.39\times10^{-6}$, with interval $[5.83,6.95]\times10^{-6}$, and is mainly
+ associated with squared mean displacement rather than a resolved variance
+-difference. Its training-objective gap difference is only
+-$3.64\times10^{-7}$; SCAFFOLD's held-out log loss is slightly lower, by
+-$3.27\times10^{-5}$. These distinguish parameter error from predictive harm.
++difference. The training-objective gap difference is $3.64\times10^{-7}$,
++while SCAFFOLD's held-out log loss is lower by $3.27\times10^{-5}$. Thus the
++size of the effect on parameter error does not translate directly into a
++corresponding change in predictive loss.
+ The predeclared temporal-equivalence and crossover requirements are not met,
+ so the findings concern finite-tail averages, not certified stationary bias.
+ The full windows, absolute loss values, diagnostics, and two separate
+ longer-run pilots are retained in Appendix~\ref{app:e4-averaging}.
+ 
++\subsection{Directional agreement beyond the additive-noise model}
++\label{sec:num-directional}
++
++Does the curvature--noise structure also describe the direction of the real-data
++algorithm difference? In the post-hoc E5 comparison, we evaluate the Hessian
++$A_{\rm ref}$, third derivative $T_{\rm ref}$, and single-example gradient-noise
++covariance $\Sigma_{\rm ref}$ at the reference optimizer. Substituting
++$\Sigma_{\rm ref}/m$ into the control coefficient gives the plug-in vector
++\begin{equation}
++\label{eq:e5-proxy}
++p_{\gamma,H,m}
++=-\frac{\gamma^2}{m}\,\kappa(H)\,A_{\rm ref}^{-1}T_{\rm ref}[\Sigma_{\rm ref}],
++\qquad \kappa(H)=\frac{(H-1)(2H-1)}{12H}.
++\end{equation}
++No observed displacement is used to fit its direction or amplitude.
++
++Across all six nonzero-proxy configurations at the designated $K=64$ window,
++this vector aligns closely with the full 124-dimensional paired mean difference:
++cosine point estimates range from $0.9965$ to $0.9993$. This comparison uses all
++coordinates, not only the projection in Equation~\eqref{eq:real-projection}.
++Observed-to-proxy norm ratios range from $0.718$ to $0.940$: the proxy captures
++the direction more accurately than the magnitude and overpredicts all six
++magnitudes.
++
++This agreement supports a directional explanation based on curvature--noise
++interaction. It does not uniquely identify the control prefactor, since both
++algorithms' second-order coefficients share the same direction. At the base step
++size with $N=32,m=8$, the observed $H=4/H=2$ projected ratio is $2.927$, rather
++than $3.5$. Thus the comparison is informative beyond the idealized model
++without establishing its exact coefficient under state-dependent noise or
++certifying stationarity. Appendix~\ref{app:e5-bridge} retains all configurations,
++windows, reference-direction comparisons, and uncertainty diagnostics.
+--- before/sections/08_discussion_limitations.tex
++++ after/sections/08_discussion_limitations.tex
+@@ -16,15 +16,20 @@
+ +
+ \underbrace{\operatorname{tr}\Cov_\pi(x)}_{\text{stationary variance}}.
+ \end{equation}
+-Averaging stationary iterates preserves $b$; temporal dependence determines the
+-variance reduction. In the real-data study, raw-checkpoint error is variance
+-dominated, but mean displacement is substantial relative to parameter error
+-after long-window averaging. Absolute objective differences remain small, and
+-a stationary floor or predictive harm is not established. Under label skew,
+-drift-correction benefits can instead dominate the algorithm difference.
++Averaging stationary iterates preserves $b$, while temporal dependence governs
++the variance reduction. A small mean-bias contribution to raw-checkpoint MSE
++therefore need not remain small for an averaged model. The real-data averaging
++study observes this change in finite-tail parameter-error composition. The
++post-hoc comparison in Section~\ref{sec:num-directional} adds a complementary
++link: the curvature--noise vector closely describes the direction of the paired
++mean displacement, while its magnitude and local-step scaling remain approximate.
+ 
+-The theoretical contribution is a quantitative source decomposition, not an
+-algorithm ranking. A post-hoc reference-point comparison, including its amplitude
+-and local-step-scaling mismatches, is reported in
+-Appendix~\ref{app:e5-bridge}. It is descriptive evidence, not validation of the
+-additive-noise control coefficient on real data.
++The value of the coefficient characterization is to distinguish systematic
++mean shifts from fluctuations and identify their local-update sources. Their
++relative importance depends on objective geometry, noise, step size, client
++count, local training length, and averaging window. In the tested real-data
++configuration, the absolute objective difference is small and held-out loss does
++not worsen with the larger displacement; predictive impact is a separate,
++setting-dependent quantity. The theory establishes a source decomposition within
++its assumptions, while the real-data studies provide empirical interpretation
++rather than an overall algorithm ranking.
+--- before/sections/09_conclusion.tex
++++ after/sections/09_conclusion.tex
+@@ -9,9 +9,11 @@
+ remainder identifies these coefficients along arbitrary joint small-step and
+ large-client limits, and an exact control translation extends the SCAFFOLD
+ result to affine objective shifts. Controlled experiments examine coefficient
+-predictions; real-data studies show how minibatch allocation and temporal
+-averaging change finite-tail parameter-error composition without establishing
+-predictive harm.
++predictions. Real-data averaging experiments show that systematic finite-tail
++mean displacement can account for a substantial part of averaged-model parameter
++error. A post-hoc comparison further finds strong directional agreement between
++the observed algorithm difference and a reference-point curvature--noise vector,
++while its magnitude and local-step scaling remain approximate.
+ 
+ Future work can examine unequal client curvature, partial participation, and
+ state-dependent gradient noise. The explicit control-associated coefficient
+--- before/appendix/C_numerical_details.tex
++++ after/appendix/C_numerical_details.tex
+@@ -396,8 +396,7 @@
+ 
+ Minibatches are sampled with replacement. The largest single-example smoothness bound is $L_{\rm sample}=0.51$, giving $\gamma_b=0.1/L_{\rm sample}$. The reference Newton solve reports gradient norm $1.253\times10^{-16}$ and a strong-convexity parameter-error bound $1.253\times10^{-14}$; a separately initialized solver differs by $8.43\times10^{-15}$. These are floating-point residual checks rather than interval-arithmetic certificates. Let $A_{\rm ref}=\nabla^2 f(x_{\rm ref})$ and $T_{\rm ref}=\nabla^3 f(x_{\rm ref})$. The fixed projection direction is the normalized vector $-A_{\rm ref}^{-1}T_{\rm ref}[\Sigma_{\rm ref}]$, calculated before production; it is not a real-data coefficient target.
+ 
+-Each real-data configuration has twelve independent paired runs. The schedule uses $\tau_0=\lceil(\lambda H\gamma)^{-1}\rceil$, burn-in $50\tau_0$ and batch length $10\tau_0$. R0 collected 64 batches for all nine configurations: three allocations, three additional $\gamma/H$ policies and three $H=1$ checks. Its primary signed means and comparisons in Section~\ref{sec:num-real} are therefore finite-tail quantities. No 133-batch extension belongs to this original R0 production cohort; the two later, separately seeded pilots in Appendix~
+-ef{app:e4-averaging} do not replace it. Changing $\gamma$ or $H$ changes the horizon; sample-gradient and communication costs are stored separately.
++Each real-data configuration has twelve independent paired runs. The schedule uses $\tau_0=\lceil(\lambda H\gamma)^{-1}\rceil$, burn-in $50\tau_0$ and batch length $10\tau_0$. R0 collected 64 batches for all nine configurations: three allocations, three additional $\gamma/H$ policies and three $H=1$ checks. Its primary signed means and comparisons in Section~\ref{sec:num-real} are therefore finite-tail quantities. No 133-batch extension belongs to this original R0 production cohort; the two later, separately seeded pilots in Appendix~\ref{app:e4-averaging} do not replace it. Changing $\gamma$ or $H$ changes the horizon; sample-gradient and communication costs are stored separately.
+ 
+ For the $R=12$ independent run-tail mean displacements $\widehat b_r$, the unclipped cross-run statistic
+ \[
+@@ -551,18 +550,13 @@
+ \subsection{Exploratory reference-point coefficient comparison}
+ \label{app:e5-bridge}
+ 
+-The post-hoc E5 analysis asks whether the coefficient suggests a useful
+-reference direction and magnitude for the real-data paired displacement.
+-Using the training-objective quantities from Appendix~\ref{app:supp-real}, define
+-\begin{equation}
+-\label{eq:e5-proxy}
+-p_{\gamma,H,m}
+-=-\frac{\gamma^2}{m}\,\kappa(H)\,A_{\rm ref}^{-1}T_{\rm ref}[\Sigma_{\rm ref}],
+-\qquad \kappa(H)=\frac{(H-1)(2H-1)}{12H}.
+-\end{equation}
+-This substitutes reference-point covariance $\Sigma_{\rm ref}/m$ into the
+-additive-noise coefficient; no fitted scale is used. It is a proxy, not a
+-proved expansion for state-dependent minibatch noise. The observed vector is
++This appendix details the post-hoc directional comparison in
++Section~\ref{sec:num-directional}. The plug-in vector $p_{\gamma,H,m}$ is defined
++in Equation~\eqref{eq:e5-proxy}, using the training-objective quantities from
++Appendix~\ref{app:supp-real} and no fitted direction or amplitude. It substitutes
++reference-point covariance into the additive-noise coefficient rather than
++establishing an expansion for state-dependent minibatch noise. The observed
++vector is
+ $\widehat\Delta_K=R^{-1}\sum_r(Y_{r,K}^{\Scaf}-Y_{r,K}^{\FedAvg})$.
+ Table~\ref{tab:e5-bridge} gives every nonzero-proxy configuration at the
+ preselected $K=64$: $a=p^\top\widehat\Delta_K/\|p\|^2$ is the projected
+@@ -587,6 +581,14 @@
+ \bottomrule
+ \end{tabular}
+ \end{table}
++
++For context, the frozen reference-parameter direction has cosine point estimates
++$0.8953$--$0.9087$, and the unpreconditioned direction
++$-T_{\rm ref}[\Sigma_{\rm ref}]$ has $0.6590$--$0.6929$, over the same six
++$K=64$ configurations. The direction of the plug-in vector is therefore more
++closely aligned in these point comparisons. The zero-vector amplitude null also
++has a larger residual in each case. These fixed comparators provide context for
++the directional result, not exclusive identification of a bias mechanism.
+ 
+ All six magnitudes are overpredicted. At $H=4,N=32,m=8$, $a$ increases from
+ $0.784711$ to $0.867499$ to $0.935781$ as the step size is halved twice.

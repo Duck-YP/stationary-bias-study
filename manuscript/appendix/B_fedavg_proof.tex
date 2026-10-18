@@ -1,0 +1,71 @@
+\section{FedAvg proof and matched attribution}
+\label{app:fa-proof}
+
+For FedAvg, persistent controls are absent, so the common estimates of
+Appendix~\ref{app:scaf-proof} apply with $\xi_c=0$. We verify their
+inputs and then compute the local second moment that determines the FedAvg
+coefficient. All expectations are under the FedAvg invariant law, with
+$s,r,v$ defined in Equation~\eqref{eq:scales}.
+
+\subsection{Application of the common estimates}
+
+The stationary moment estimates of \citet[Proposition~3 and
+Lemmas~5--6]{mangold2025fedavg} give
+Equation~\eqref{eq:A-coarse-even} under the step-size threshold in
+Appendix~\ref{app:common-inputs}. Equation~\eqref{eq:fa-local} is the
+common local recursion with $\xi_c=0$, and the independent fresh noise
+satisfies the assumptions of the common lemmas. The two round identities
+used there become
+\begin{align}
+ x^+-x&=-\gamma\sum_{h=0}^{H-1}\frac1N\sum_c\nabla f(\theta_{c,h})
+         -\gamma\sum_{j=1}^H\bar\eps_j,
+ \label{eq:B-global-increment}\\
+ x^+&=P^Hx-\gamma\sum_{j=1}^HP^{H-j}\bar\eps_j
+             -\gamma\sum_{h=0}^{H-1}P^{H-1-h}\bar q_h.
+ \label{eq:B-round-exact}
+\end{align}
+These identities establish the same stationary balance and nonlinear
+round decomposition used in Appendix~\ref{app:scaf-proof}. Applying
+Lemmas~\ref{lem:common-coarse} and~\ref{lem:common-higher} first gives
+the required local and higher-moment bounds. Lemma~\ref{lem:A-sharp-second-moment}
+then identifies the global raw second moment in Equation~\eqref{eq:A-sharp-Mx},
+and Lemma~\ref{lem:common-taylor} supplies the stationary mean-balance
+identity in Equation~\eqref{eq:A-master}. Only the local second-moment
+increment remains to be evaluated.
+
+\subsection{Local coefficient and completion of the proof}
+
+Without persistent controls, $Q_\xi=0$ and the stochastic part of the
+local displacement contains only fresh noise. Equations~\eqref{eq:A-DR}
+and~\eqref{eq:A-DD} therefore reduce to
+\[
+ D_{c,h}=-\gamma\sum_{j=1}^h\eps_{c,j},\qquad
+ \frac1N\sum_c\E[xD_{c,h}^\top]=0,\qquad
+ \frac1N\sum_c\E[D_{c,h}D_{c,h}^\top]=\gamma^2hC.
+\]
+The already proved remainder estimate in Lemma~\ref{lem:common-coarse} yields
+\begin{equation}
+\label{eq:B-U}
+ U_h=\gamma^2hC+O(r),\qquad
+ \sum_{h=0}^{H-1}U_h=\gamma^2\frac{H(H-1)}2C+O(r).
+\end{equation}
+Substituting this and $M_x=(\gamma/N)S_C+O(r)$ into
+Equation~\eqref{eq:A-master} gives
+\begin{equation}
+\label{eq:B-final-expansion}
+ b^{\FedAvg}_{\gamma,N,H}
+ =-\frac{\gamma}{2N}A^{-1}T[S_C]
+ -\gamma^2\frac{H-1}{4}A^{-1}T[C]
+ +O_{H,d}\!\left(\frac{\gamma^2}{N}+\gamma^3\right),
+\end{equation}
+proving Theorem~\ref{thm:fa-main}.
+Subtracting the two explicit second-order coefficients gives
+\[
+ B_{20}^{\Scaf}(H)-B_{20}^{\FedAvg}(H)
+ =-\frac{(H-1)(2H-1)}{12H}A^{-1}T[C]
+ =B_{20}^{\mathrm{ctrl}}(H).
+\]
+The common $\gamma/N$ term cancels in the matched comparison, while
+the difference of the two uniform remainders remains
+$O_{H,d}(\gamma^2/N+\gamma^3)$. This completes
+Corollary~\ref{cor:attribution}.

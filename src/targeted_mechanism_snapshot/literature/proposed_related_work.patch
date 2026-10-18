@@ -1,0 +1,55 @@
+--- a/manuscript/sections/02_related_work.tex
++++ b/manuscript/sections/02_related_work.tex
+@@ -3,6 +3,17 @@
+ 
+ \paragraph{Federated optimization and stationary-bias characterization.}
+ \Scaf{} uses control variates to mitigate client drift caused by objective heterogeneity \citep{karimireddy2020scaffold}. Subsequent finite-time analyses refine the convergence theory of local-update methods. For example, \citet{luo2025revisiting} analyze LocalSGD and \Scaf{} under gradient and Hessian similarity, weak convexity, and higher-order smoothness conditions, while \citet{mangold2025sharper} establish sharper convergence guarantees for \Scaf{} on quadratic objectives.
++
++Stochastic local updates can introduce bias even without objective
++heterogeneity. \citet{glasgow2022sharp} study \emph{iterate bias}, the
++deviation of the expected SGD trajectory from deterministic gradient
++descent with the same initialization, and obtain sharp finite-step bounds
++under second- and third-order smoothness. Their infinite-client round-map
++viewpoint and continuous analysis already connect local stochastic bias
++to nonlinearity and noise. Our estimand is the invariant-law global mean
++relative to the minimizer. Building on these mechanisms, our analysis
++resolves matched stationary coefficients and their joint small-step,
++large-client remainder.
+ 
+ Beyond finite-time convergence, constant-step stochastic optimization can be studied through the stationary distribution of its underlying Markov chain \citep{dieuleveut2020bridging,chen2022stationary}. \citet{mangold2025fedavg} derive stationary bias and variance expansions for \FedAvg{}, while \citet{mangold2025scaffold} analyze the joint global-model/control process of \Scaf{}. Table~\ref{tab:prior-bias-resolution} compares the analytical resolution of these results with ours for the same algorithms: the updates and their stationary biases are unchanged, but the analyses differ in how precisely they characterize the bias beyond the shared leading term.
+ 
+@@ -31,6 +42,14 @@
+ 
+ Dividing the cited remainder bounds by $\gamma^2$ gives $O(H+\gamma^{-1/2})$, or $O(H^2+H\gamma^{-1/2})$, neither of which guarantees identification of the second-order coefficient. Under the additional regularity and noise assumptions of Section~\ref{sec:setting}, subtracting both explicit bias terms from our expansion and dividing by $\gamma^2$ instead leaves $O_{H,d}(1/N+\gamma)$, uniformly in $N$ for fixed $d,H$. This residual vanishes along every joint limit $\gamma\to0$, $N\to\infty$. The resulting formulas specify the direction, magnitude, and local-step dependence of the client-independent second-order contribution, and separate the part shared with ordinary local updates from the additional persistent-control contribution. This sharper characterization concerns the shared submodel; the prior results retain their broader coverage of heterogeneous objectives and state-dependent noise.
+ 
++The leading stationary covariance of the persistent controls is also
++already explicit in \citet[Lemma~5.1]{mangold2025scaffold}; on the shared
++submodel it equals $(1-1/N)C/H+O_H(\gamma)$. Its contribution to
++within-round second moments provides a direct precursor to the additional
++coefficient isolated here. The claimed refinement is the explicit
++matched stationary increment together with the $N$-uniform remainder,
++which requires resolving terms absorbed into the earlier error bounds.
++
+ The controlled experiments in Section~\ref{sec:num-controlled} assess these newly resolved quantitative predictions: the algorithm-specific coefficients, their matched difference, and its local-step dependence. The earlier upper bounds remain compatible with the observations but do not specify these coefficient targets. Thus, the experiments examine the additional information supplied by the analysis, not a reduction in bias obtained by modifying either algorithm.
+ 
+ \paragraph{Mechanisms and attribution of stationary bias.}
+--- a/manuscript/references.bib
++++ b/manuscript/references.bib
+@@ -199,3 +199,17 @@
+   doi = {10.1561/2200000083},
+   url = {https://doi.org/10.1561/2200000083}
+ }
++
++@InProceedings{glasgow2022sharp,
++  title = {Sharp Bounds for Federated Averaging ({Local SGD}) and Continuous Perspective},
++  author = {Glasgow, Margalit R. and Yuan, Honglin and Ma, Tengyu},
++  booktitle = {Proceedings of The 25th International Conference on Artificial Intelligence and Statistics},
++  pages = {9050--9090},
++  year = {2022},
++  editor = {Camps-Valls, Gustau and Ruiz, Francisco J. R. and Valera, Isabel},
++  volume = {151},
++  series = {Proceedings of Machine Learning Research},
++  month = {28--30 Mar},
++  publisher = {PMLR},
++  url = {https://proceedings.mlr.press/v151/glasgow22a.html}
++}

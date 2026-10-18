@@ -1,0 +1,177 @@
+{
+  "baseline": "SCAFFOLD_E5_MainText_Revised_20261010.zip",
+  "changed_manuscript_files": [
+    "main.tex",
+    "sections/01_introduction.tex",
+    "sections/02_related_work.tex",
+    "sections/04_main_results.tex",
+    "sections/05_mechanism.tex",
+    "sections/07_numerical_study.tex",
+    "sections/08_discussion_limitations.tex",
+    "sections/09_conclusion.tex"
+  ],
+  "checks": [
+    {
+      "check": "byte_preservation_appendix",
+      "passed": true,
+      "count": 4,
+      "changed": []
+    },
+    {
+      "check": "byte_preservation_figures",
+      "passed": true,
+      "count": 32,
+      "changed": []
+    },
+    {
+      "check": "byte_preservation_supplementary_results",
+      "passed": true,
+      "count": 129,
+      "changed": []
+    },
+    {
+      "check": "byte_preservation_sections/03_setting_preliminaries.tex",
+      "passed": true
+    },
+    {
+      "check": "byte_preservation_macros.tex",
+      "passed": true
+    },
+    {
+      "check": "byte_preservation_references.bib",
+      "passed": true
+    },
+    {
+      "check": "byte_preservation_main.bbl",
+      "passed": true
+    },
+    {
+      "check": "byte_preservation_build.sh",
+      "passed": true
+    },
+    {
+      "check": "environment_theorem",
+      "passed": true,
+      "count": 2,
+      "new_count": 2
+    },
+    {
+      "check": "environment_corollary",
+      "passed": true,
+      "count": 1,
+      "new_count": 1
+    },
+    {
+      "check": "environment_proposition",
+      "passed": true,
+      "count": 1,
+      "new_count": 1
+    },
+    {
+      "check": "environment_lemma",
+      "passed": true,
+      "count": 4,
+      "new_count": 4
+    },
+    {
+      "check": "environment_proof",
+      "passed": true,
+      "count": 5,
+      "new_count": 5
+    },
+    {
+      "check": "environment_equation",
+      "passed": true,
+      "count": 67,
+      "new_count": 67
+    },
+    {
+      "check": "environment_align",
+      "passed": true,
+      "count": 8,
+      "new_count": 8
+    },
+    {
+      "check": "environment_table",
+      "passed": true,
+      "count": 14,
+      "new_count": 14
+    },
+    {
+      "check": "environment_figure",
+      "passed": true,
+      "count": 5,
+      "new_count": 5
+    },
+    {
+      "check": "unnumbered_display_math",
+      "passed": true,
+      "count": 21
+    },
+    {
+      "check": "active_labels_preserved",
+      "passed": true,
+      "count": 156
+    },
+    {
+      "check": "no_duplicate_active_labels",
+      "passed": true
+    },
+    {
+      "check": "all_source_references_resolve",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "check": "numerical_inline_math_preserved",
+      "passed": true
+    },
+    {
+      "check": "citation_key_set_preserved",
+      "passed": true,
+      "keys": [
+        "allmeier2024bias",
+        "chen2022stationary",
+        "dieuleveut2020bridging",
+        "huo2024collusion",
+        "karimireddy2020scaffold",
+        "luo2025revisiting",
+        "mangold2025fedavg",
+        "mangold2025scaffold",
+        "mangold2025sharper",
+        "versini2026dsgd"
+      ]
+    },
+    {
+      "check": "main_text_Equation_prefix",
+      "passed": true,
+      "unprefixed": []
+    },
+    {
+      "check": "final_compile_log_clean",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "check": "pdf_layout_readable",
+      "passed": true,
+      "pages": 37,
+      "main_pages": 16,
+      "references_pages": 2,
+      "appendix_pages": 19
+    },
+    {
+      "check": "figure_font_sizes",
+      "passed": true,
+      "count": 9,
+      "minimum_pdf_pt": 9.663758277893066
+    }
+  ],
+  "failed_checks": [],
+  "scientific_work": {
+    "new_training": false,
+    "resampling": false,
+    "new_proof_audit": false,
+    "new_literature_search": false
+  }
+}

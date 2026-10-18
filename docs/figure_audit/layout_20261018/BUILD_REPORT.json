@@ -1,0 +1,12 @@
+{
+  "pages": 40,
+  "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c",
+  "bytes": 651222,
+  "warnings": [
+    "Package epstopdf Warning: Shell escape feature is not enabled."
+  ],
+  "unresolved_references": false,
+  "duplicate_labels": false,
+  "overfull_boxes": 0,
+  "build_sequence": "pdflatex, bibtex, pdflatex, pdflatex; shell escape disabled"
+}

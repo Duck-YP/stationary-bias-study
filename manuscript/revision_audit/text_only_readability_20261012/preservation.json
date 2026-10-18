@@ -1,0 +1,13 @@
+{
+  "baseline_zip_sha256": "72d2d80a51d40761ca964dbc1736671fd4b9d4b2d14aa43400a6cf29dd0f982c",
+  "changed_tex_files": [
+    "manuscript/sections/01_introduction.tex",
+    "manuscript/sections/07_numerical_study.tex",
+    "manuscript/appendix/C_numerical_details.tex"
+  ],
+  "number_of_figure_files_unchanged": 21,
+  "proof_sources_unchanged": true,
+  "pdf_pages_old": 36,
+  "pdf_pages_new": 37,
+  "main_pdf_sha256": "4e235035e24e70ad9abb913fa1815569dec958b555314c0bafe819ef3007d6b9"
+}

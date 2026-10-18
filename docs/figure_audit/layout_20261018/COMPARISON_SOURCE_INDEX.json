@@ -1,0 +1,1004 @@
+{
+  "schema_version": 1,
+  "comparison_pdf": "BEFORE_AFTER.pdf",
+  "comparison_pdf_sha256": "05c93a982355baad5f6593d490bf2815c2ba973a2e54274d3bb2b59c618698d2",
+  "comparison_page_count": 26,
+  "baseline_manuscript": {
+    "path": "baseline/manuscript/main.pdf",
+    "page": 1,
+    "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0",
+    "pages": 41
+  },
+  "final_manuscript": {
+    "path": "final/manuscript/main.pdf",
+    "page": 1,
+    "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c",
+    "pages": 40
+  },
+  "comparison_method": "RGB rendered-pixel SHA256 at the supplied common rendering size; no visual thresholds or rerendering used for page selection",
+  "same_index_identical_pixel_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "same_index_changed_pixel_pages": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "focused_page_correspondences": [
+    [
+      12,
+      11
+    ],
+    [
+      13,
+      12
+    ],
+    [
+      15,
+      15
+    ],
+    [
+      17,
+      16
+    ],
+    [
+      32,
+      32
+    ]
+  ],
+  "duplicate_same_index_pairs_omitted": [
+    15,
+    32
+  ],
+  "source_pdf_hashes_unchanged": true,
+  "scientific_recomputation": false,
+  "entries": [
+    {
+      "comparison_page": 1,
+      "kind": "figure_group",
+      "title": "Figure 1 | Matched SCAFFOLD-FedAvg coefficients",
+      "canvas_pdf_points": [
+        595.276,
+        640.64
+      ],
+      "embedding_scale": 1.0,
+      "panels": [
+        {
+          "name": "hist_matched_H2",
+          "label": "H = 2",
+          "before": {
+            "path": "baseline/manuscript/figures/redrawn/hist_matched_H2.pdf",
+            "page": 1,
+            "sha256": "8aa74bd88655de9e5c753cc6dd4cd9a1187c4ae3ff604e2532f2a33ccd051047"
+          },
+          "after": {
+            "path": "final/manuscript/figures/redrawn/hist_matched_H2.pdf",
+            "page": 1,
+            "sha256": "5c842528b670b58decd3b66b5efab98c7f38d1288c9663b281d955e3f1f9bc46"
+          }
+        },
+        {
+          "name": "hist_matched_H4",
+          "label": "H = 4",
+          "before": {
+            "path": "baseline/manuscript/figures/redrawn/hist_matched_H4.pdf",
+            "page": 1,
+            "sha256": "12b3b3dba06463d5788e86661c1bf4ce71dbe0f92e7343dc1a3f0af97c8d30d3"
+          },
+          "after": {
+            "path": "final/manuscript/figures/redrawn/hist_matched_H4.pdf",
+            "page": 1,
+            "sha256": "4ae7698c13d464a4db0443fb8f5f17de70bb7ec0a4f93509da43567eb9cb619f"
+          }
+        }
+      ]
+    },
+    {
+      "comparison_page": 2,
+      "kind": "figure_group",
+      "title": "Figure 2 | Fixed-step client-count experiment",
+      "canvas_pdf_points": [
+        595.276,
+        640.64
+      ],
+      "embedding_scale": 1.0,
+      "panels": [
+        {
+          "name": "hist_fixed_gamma_coord1",
+          "label": "Coordinate 1",
+          "before": {
+            "path": "baseline/manuscript/figures/redrawn/hist_fixed_gamma_coord1.pdf",
+            "page": 1,
+            "sha256": "cdac02c86faabeac2841f2098995a2e7d76300163630ccdcdf21895c5efeda17"
+          },
+          "after": {
+            "path": "final/manuscript/figures/redrawn/hist_fixed_gamma_coord1.pdf",
+            "page": 1,
+            "sha256": "72e6c1727b993cd5db13da00086233134c56857c3e5fb2940f87be27194b1602"
+          }
+        },
+        {
+          "name": "hist_fixed_gamma_coord2",
+          "label": "Coordinate 2",
+          "before": {
+            "path": "baseline/manuscript/figures/redrawn/hist_fixed_gamma_coord2.pdf",
+            "page": 1,
+            "sha256": "a105e588c4c35f74c839ab5ba48703d103985e20eb51de25f93df339ff9bfd27"
+          },
+          "after": {
+            "path": "final/manuscript/figures/redrawn/hist_fixed_gamma_coord2.pdf",
+            "page": 1,
+            "sha256": "ee8db26ada037a052d8ba51b72be5185a4ab03e2c8f1dd64ca2049334150dfa6"
+          }
+        }
+      ]
+    },
+    {
+      "comparison_page": 3,
+      "kind": "figure_group",
+      "title": "Figure 3 | Real-data allocation comparison",
+      "canvas_pdf_points": [
+        595.276,
+        622.64
+      ],
+      "embedding_scale": 1.0,
+      "panels": [
+        {
+          "name": "real_R0_allocation",
+          "label": "Fixed sampling budget",
+          "before": {
+            "path": "baseline/manuscript/figures/redrawn/real_R0_allocation.pdf",
+            "page": 1,
+            "sha256": "dfd992db8c79a34e9ac8aee9e61dcddbf976aa8f15f9fb62b8d070b97d6170a6"
+          },
+          "after": {
+            "path": "final/manuscript/figures/redrawn/real_R0_allocation.pdf",
+            "page": 1,
+            "sha256": "c8684dc45f89493c6dc1c9abf7be2fccebcb3781ed583d8cbd5b9fe6908f39df"
+          }
+        }
+      ]
+    },
+    {
+      "comparison_page": 4,
+      "kind": "figure_group",
+      "title": "Figure 4 | Temporal model averaging",
+      "canvas_pdf_points": [
+        595.276,
+        650.0
+      ],
+      "embedding_scale": 1.0,
+      "panels": [
+        {
+          "name": "e4_averaging_scaffold",
+          "label": "SCAFFOLD",
+          "before": {
+            "path": "baseline/manuscript/figures/redrawn/e4_averaging_scaffold.pdf",
+            "page": 1,
+            "sha256": "f99ee0eda48e7869afeb053a94563fe23049020d08eee9aff0c3a6dc477180fd"
+          },
+          "after": {
+            "path": "final/manuscript/figures/redrawn/e4_averaging_scaffold.pdf",
+            "page": 1,
+            "sha256": "36903e3a106f06f1d8bb30365ac2cba0c0071ecca1ec8d5e67603d7db1785e13"
+          }
+        },
+        {
+          "name": "e4_averaging_fedavg",
+          "label": "FedAvg",
+          "before": {
+            "path": "baseline/manuscript/figures/redrawn/e4_averaging_fedavg.pdf",
+            "page": 1,
+            "sha256": "45d9c0344a3edcf85a4e7e819fc0f60ca37ec169baea7b22ffa9809dd3912036"
+          },
+          "after": {
+            "path": "final/manuscript/figures/redrawn/e4_averaging_fedavg.pdf",
+            "page": 1,
+            "sha256": "1e336df1c8965319d207291fab74fc33bacd18c86eb1d7e930880d875a520e67"
+          }
+        }
+      ]
+    },
+    {
+      "comparison_page": 5,
+      "kind": "figure_group",
+      "title": "Figure 5 | H = 4 finite-grid diagnostics",
+      "canvas_pdf_points": [
+        595.276,
+        640.64
+      ],
+      "embedding_scale": 1.0,
+      "panels": [
+        {
+          "name": "hist_H4_smallstep",
+          "label": "Smaller-step grid",
+          "before": {
+            "path": "baseline/manuscript/figures/redrawn/hist_H4_smallstep.pdf",
+            "page": 1,
+            "sha256": "2661d48e268de93f119067edeac98656b19d34ba87a6b3838e9f09b67314ede2"
+          },
+          "after": {
+            "path": "final/manuscript/figures/redrawn/hist_H4_smallstep.pdf",
+            "page": 1,
+            "sha256": "8bfa81eefb599f0a5e31d762808bdd0cde0fe775928169b4585a001e56836897"
+          }
+        },
+        {
+          "name": "hist_H4_loglog_residual",
+          "label": "Residual diagnostic",
+          "before": {
+            "path": "baseline/manuscript/figures/redrawn/hist_H4_loglog_residual.pdf",
+            "page": 1,
+            "sha256": "3c4d48f40994c2447fc3c59496800e573032800cd12b7bd37ab15fa1a79f88c6"
+          },
+          "after": {
+            "path": "final/manuscript/figures/redrawn/hist_H4_loglog_residual.pdf",
+            "page": 1,
+            "sha256": "6c31c67b45f813daf0589040df874b0f1023f06a757d14b3e6499e81d62ac2a8"
+          }
+        }
+      ]
+    },
+    {
+      "comparison_page": 6,
+      "kind": "focused",
+      "title": "Manuscript pages | baseline 12 -> final 11",
+      "interpretation": "Figure-page correspondence selected from the baseline and revised manuscript.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 12,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 11,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_12.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "3610e20625786a5f05ce8d2d635b1ae9541fef0326ffebf092bf672f8cb4295d"
+      },
+      "after_render": {
+        "path": "final/rendered/page_11.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "e14b69fd872b8afa8fa587daf54960a3aded3ce1db7d53aae8340e793af66a3e"
+      }
+    },
+    {
+      "comparison_page": 7,
+      "kind": "focused",
+      "title": "Manuscript pages | baseline 13 -> final 12",
+      "interpretation": "Figure-page correspondence selected from the baseline and revised manuscript.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 13,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 12,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_13.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "30d55c1fb7b9a966c9c52df00a91ed1a05f9b5e9924e371390ad6f1e6a716de2"
+      },
+      "after_render": {
+        "path": "final/rendered/page_12.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "7ebbeacfc3706ab04eadc28fef367358fe9d5dcedb36d49a2ae55416fa00c6a5"
+      }
+    },
+    {
+      "comparison_page": 8,
+      "kind": "focused",
+      "title": "Manuscript pages | baseline 15 -> final 15",
+      "interpretation": "Figure-page correspondence selected from the baseline and revised manuscript.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 15,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 15,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_15.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "382133f0fcaca62fb60c8a46c8cf1bf2c39dde5f5487c6ef53aeb156e47273ae"
+      },
+      "after_render": {
+        "path": "final/rendered/page_15.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "46bcb47ec85ea118d0a7fcdeff0a87ebdd5a0b883d0724128eed670e8a090268"
+      }
+    },
+    {
+      "comparison_page": 9,
+      "kind": "focused",
+      "title": "Manuscript pages | baseline 17 -> final 16",
+      "interpretation": "Figure-page correspondence selected from the baseline and revised manuscript.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 17,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 16,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_17.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "813a1e4e4ae03fc65b11605972e6e11146292d8a24b2d88dc6f89829600ddb0b"
+      },
+      "after_render": {
+        "path": "final/rendered/page_16.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "3ad1813d2cf07dac913f2cb69993de7db7a73772b7e571e4d03f23f53a3a2387"
+      }
+    },
+    {
+      "comparison_page": 10,
+      "kind": "focused",
+      "title": "Manuscript pages | baseline 32 -> final 32",
+      "interpretation": "Figure-page correspondence selected from the baseline and revised manuscript.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 32,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 32,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_32.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "fb33d6d7d6da1775fd482487b99edb7aad975c0ad15b2f687b00aca4d1d616e3"
+      },
+      "after_render": {
+        "path": "final/rendered/page_32.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "9dc435452ba420f047e80849f58f24f9c26a19b72f54f43a9255555bb04596f4"
+      }
+    },
+    {
+      "comparison_page": 11,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 11 -> final 11",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 11,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 11,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_11.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "6a2234c9ab871243e116ccfc89e1c0b61b7cdb512e4d05751d11194f1b3d89ce"
+      },
+      "after_render": {
+        "path": "final/rendered/page_11.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "e14b69fd872b8afa8fa587daf54960a3aded3ce1db7d53aae8340e793af66a3e"
+      }
+    },
+    {
+      "comparison_page": 12,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 12 -> final 12",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 12,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 12,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_12.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "3610e20625786a5f05ce8d2d635b1ae9541fef0326ffebf092bf672f8cb4295d"
+      },
+      "after_render": {
+        "path": "final/rendered/page_12.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "7ebbeacfc3706ab04eadc28fef367358fe9d5dcedb36d49a2ae55416fa00c6a5"
+      }
+    },
+    {
+      "comparison_page": 13,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 13 -> final 13",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 13,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 13,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_13.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "30d55c1fb7b9a966c9c52df00a91ed1a05f9b5e9924e371390ad6f1e6a716de2"
+      },
+      "after_render": {
+        "path": "final/rendered/page_13.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "9e627ddf452b14eb2d98d8625a21c70fa57828022493a7059cf277f55c4164d6"
+      }
+    },
+    {
+      "comparison_page": 14,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 14 -> final 14",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 14,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 14,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_14.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "020544fea572b092d82ee3c0b759fd67f0ba6abf943bccc1fb03670f638fca83"
+      },
+      "after_render": {
+        "path": "final/rendered/page_14.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "9ec207aa97325cc76f12dbc362942059f127bd67ff4fc99731f20dcfc8b4839d"
+      }
+    },
+    {
+      "comparison_page": 15,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 16 -> final 16",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 16,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 16,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_16.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "8192941a95b21419fa5ff7bea0ba4fd4b278da04611f396b2f770db9165aaca2"
+      },
+      "after_render": {
+        "path": "final/rendered/page_16.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "3ad1813d2cf07dac913f2cb69993de7db7a73772b7e571e4d03f23f53a3a2387"
+      }
+    },
+    {
+      "comparison_page": 16,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 17 -> final 17",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 17,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 17,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_17.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "813a1e4e4ae03fc65b11605972e6e11146292d8a24b2d88dc6f89829600ddb0b"
+      },
+      "after_render": {
+        "path": "final/rendered/page_17.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "fae64451b16922cb955bbd402422bfa2f1d46930ea55ba9c3694261a0871f26c"
+      }
+    },
+    {
+      "comparison_page": 17,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 18 -> final 18",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 18,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 18,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_18.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "53ed3404ea33b545e2387c23d15b8004ee7264da0a9fdda6045cc80eaefae638"
+      },
+      "after_render": {
+        "path": "final/rendered/page_18.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "4b154a6ee58d802cc81ec0fb7b6b6607a918a9fe451ade21da94855b7d743af3"
+      }
+    },
+    {
+      "comparison_page": 18,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 33 -> final 33",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 33,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 33,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_33.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "5004f29ace7c3f3636804d13991ea5dc250eef1a3f0596eb94f22f265a56797f"
+      },
+      "after_render": {
+        "path": "final/rendered/page_33.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "652bf9b519c9269c16e25bd7102b15ba881f759daa252a410ad340ef8dcaa80c"
+      }
+    },
+    {
+      "comparison_page": 19,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 34 -> final 34",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 34,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 34,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_34.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "6b62d73e8bea9896c17ea5aee39e71d99704847789eec864ec64830692ebbea6"
+      },
+      "after_render": {
+        "path": "final/rendered/page_34.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "1645eb33386b67ed72bcb3c02bdc6727cb8018c72603fc33c150b4d84e72bbec"
+      }
+    },
+    {
+      "comparison_page": 20,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 35 -> final 35",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 35,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 35,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_35.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "1863c610742b482f4bb09c4c2855bfcf6848c55f690f795bf1966136f727b819"
+      },
+      "after_render": {
+        "path": "final/rendered/page_35.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "33b6d68a709742185739a7a2d8b39312ec9332d84c454b05b06292c9d92d209c"
+      }
+    },
+    {
+      "comparison_page": 21,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 36 -> final 36",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 36,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 36,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_36.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "f46425ffb5203acd3198ec8a3a83e32ad90dfdb4a0871af22eec295fe95cb9d2"
+      },
+      "after_render": {
+        "path": "final/rendered/page_36.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "dc99af9ae46bebc3da285451dd0ef400678ed1a1bcbf50f0598ea6e5c67d128d"
+      }
+    },
+    {
+      "comparison_page": 22,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 37 -> final 37",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 37,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 37,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_37.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "b2613a448403c8e5157078ae152854df87cb8ead61a2ab48e0d528bb86c73f10"
+      },
+      "after_render": {
+        "path": "final/rendered/page_37.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "e20ee1e0311576cbed14250a83ae2dba00d1ab6afe17311eba43204b931cbc9a"
+      }
+    },
+    {
+      "comparison_page": 23,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 38 -> final 38",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 38,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 38,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_38.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "cd1fb505b532de5e6834bc935b64796cb585795949b0817971eda0c36b17e9dd"
+      },
+      "after_render": {
+        "path": "final/rendered/page_38.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "b2385dc3dd39931f6123ae0a92d2f96c1b16bf14eb3e3fe159416bd6f60e90f0"
+      }
+    },
+    {
+      "comparison_page": 24,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 39 -> final 39",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 39,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 39,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_39.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "f9dca00322a9b0f5e52cac394135c0e119099cde252a4d9f103184fc45a4bf6b"
+      },
+      "after_render": {
+        "path": "final/rendered/page_39.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "a64529b07c7e14f0f94bb539ebb209851f403302b839efcb4a16ea0abd4f8439"
+      }
+    },
+    {
+      "comparison_page": 25,
+      "kind": "page_index",
+      "title": "Manuscript pages | baseline 40 -> final 40",
+      "interpretation": "PAGE-INDEX comparison: pagination differs; these same-number pages are not necessarily content-aligned.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 40,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": {
+        "path": "final/manuscript/main.pdf",
+        "page": 40,
+        "sha256": "81d84cbc4b9730d7fa682bb1b749d22aab053fce0636fa5dd1eeda5f913ae22c"
+      },
+      "before_render": {
+        "path": "baseline/rendered/page_40.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "fa199748b4f5ca7cc942d1962507be2a9d2dc031bed05d92dad1f490bd0e1a85"
+      },
+      "after_render": {
+        "path": "final/rendered/page_40.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "16d171b353512afb5f4a81b4c00ce37e0416eeaa6cc03fb0ceb3571dcdaae24e"
+      }
+    },
+    {
+      "comparison_page": 26,
+      "kind": "unpaired_baseline",
+      "title": "Manuscript pages | baseline 41 -> final no page 41",
+      "interpretation": "The baseline ends at page 41; the revised manuscript ends at page 40.",
+      "canvas_pdf_points": [
+        1262.552,
+        945.89
+      ],
+      "embedding_scale": 1.0,
+      "before": {
+        "path": "baseline/manuscript/main.pdf",
+        "page": 41,
+        "sha256": "9b005005254f025caee170df75bd3efc95b188fd519cf217aca548b23673ead0"
+      },
+      "after": null,
+      "before_render": {
+        "path": "baseline/rendered/page_41.png",
+        "width": 993,
+        "height": 1404,
+        "mode": "RGB",
+        "pixel_sha256": "b3d5bf2b920673e88c63b095ad98fd9ca0e7f5ffdfc8cb8b58f0e9ff1938eb73"
+      },
+      "after_render": null
+    }
+  ]
+}

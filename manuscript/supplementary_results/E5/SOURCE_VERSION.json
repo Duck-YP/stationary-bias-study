@@ -1,0 +1,14 @@
+{
+  "base_repository_git_HEAD": "7f6de2cea1f20db958163af0c4e020ae57ff2b65",
+  "E5_code_status": "new uncommitted analysis-only source; exact per-file SHA-256 in each ZIP SOURCE_SHA256.csv",
+  "working_tree_policy": "preexisting untracked research artifacts preserved; no commit, reset, checkout, push or manuscript edit",
+  "E5_brief_date": "2026-10-09",
+  "execution_local_date": "2026-10-10",
+  "timezone": "Asia/Taipei",
+  "primary_bootstrap_seed": 202610096,
+  "primary_independent_seed_units": [20001, 20002, 20003, 20004, 20005, 20006, 20007, 20008, 20009, 20010, 20011, 20012],
+  "new_training_runs": 0,
+  "new_optimizer_runs": 0,
+  "classification": "BRIDGE_DESCRIPTIVE_ONLY",
+  "stopping_rule": "NO MORE RUNS; return artifacts without manuscript integration"
+}

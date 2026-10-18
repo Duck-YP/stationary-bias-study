@@ -1,0 +1,13 @@
+{
+  "source": "executed typography_probe.tex using actual manuscript macros",
+  "body_size_TeX_pt": 10.95,
+  "formal_floor_TeX_pt": 8.95,
+  "enforced_floor_TeX_pt": 9.0,
+  "textwidth_TeX_pt": 452.9679,
+  "paired_width_TeX_pt": 221.95676,
+  "single_width_TeX_pt": 262.7222,
+  "TeX_points_per_inch": 72.27,
+  "PDF_points_per_inch": 72.0,
+  "body_font": "ec-lmr10 at 10.95pt",
+  "subcaption_size_TeX_pt": 10.0
+}

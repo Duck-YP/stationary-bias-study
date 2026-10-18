@@ -1,0 +1,369 @@
+--- a/manuscript/references.bib
++++ b/manuscript/references.bib
+@@ -199,3 +199,17 @@
+   doi = {10.1561/2200000083},
+   url = {https://doi.org/10.1561/2200000083}
+ }
++
++@InProceedings{glasgow2022sharp,
++  title = {Sharp Bounds for Federated Averaging ({Local SGD}) and Continuous Perspective},
++  author = {Glasgow, Margalit R. and Yuan, Honglin and Ma, Tengyu},
++  booktitle = {Proceedings of The 25th International Conference on Artificial Intelligence and Statistics},
++  pages = {9050--9090},
++  year = {2022},
++  editor = {Camps-Valls, Gustau and Ruiz, Francisco J. R. and Valera, Isabel},
++  volume = {151},
++  series = {Proceedings of Machine Learning Research},
++  month = {28--30 Mar},
++  publisher = {PMLR},
++  url = {https://proceedings.mlr.press/v151/glasgow22a.html}
++}
+--- a/manuscript/sections/01_introduction.tex
++++ b/manuscript/sections/01_introduction.tex
+@@ -4,7 +4,7 @@
+ 
+ Federated learning enables multiple clients to collaboratively train a shared model while keeping their data distributed. To reduce communication costs, clients may perform several local stochastic-gradient updates before synchronizing their models with a central server. Although clients typically solve the same learning task using a common loss function, differences in their local data distributions can lead to different local optimization objectives and client drift. \Scaf{}, introduced by \citet{karimireddy2020scaffold}, uses control variates to mitigate this drift.
+ 
+-Even when all clients optimize the same objective function, constant-step stochastic updates can produce a systematic parameter displacement. The global model continues to fluctuate, and its expected parameters under the stationary distribution may differ from the objective minimizer. This difference is the \emph{stationary mean bias}. Increasing the number of clients reduces the variance of independent gradient noise averaged at the server, but local updates also change where gradients are evaluated before aggregation. For nonlinear objectives, these local fluctuations can affect the mean as well as the variance. Which bias contributions are reduced by client averaging, and how do local updates and persistent controls shape those that remain?
++Even when all clients optimize the same objective function, constant-step stochastic updates can produce a systematic parameter displacement. The global model continues to fluctuate, and its expected parameters under the stationary distribution may differ from the objective minimizer. This difference is the \emph{stationary mean bias}. Increasing the number of clients reduces the variance of independent gradient noise averaged at the server, but local updates also change where gradients are evaluated before aggregation. For nonlinear objectives, these local fluctuations can affect the mean as well as the variance \citep{glasgow2022sharp}. Which bias contributions are reduced by client averaging, and how do local updates and persistent controls shape those that remain?
+ 
+ Client averaging at the server is distinct from temporal averaging of successive global models across communication rounds. Temporal averaging preserves the expected parameter under stationarity even as it reduces variance. Thus a small squared-bias share of single-checkpoint error need not remain small for an averaged output. Understanding this difference requires identifying how the systematic mean shift is generated, not only the fluctuations around it.
+ 
+@@ -43,9 +43,10 @@
+     \Scaf{} result to affine objective shifts.
+ 
+     \item \textbf{Controlled tests and real-data interpretation.}
+-    We assess coefficient predictions in controlled experiments and
+-    examine minibatch allocation, model averaging, and post-hoc
+-    directional agreement in real-data finite-tail studies.
++    We assess coefficient predictions, contraction cancellation, and
++    covariance-matched noise laws in controlled experiments, and examine
++    minibatch allocation, model averaging, and post-hoc directional
++    agreement in real-data finite-tail studies.
+ \end{itemize}
+ 
+ \paragraph{Significance and scope.}
+--- a/manuscript/sections/02_related_work.tex
++++ b/manuscript/sections/02_related_work.tex
+@@ -3,6 +3,15 @@
+ 
+ \paragraph{Federated optimization and stationary-bias characterization.}
+ \Scaf{} uses control variates to mitigate client drift caused by objective heterogeneity \citep{karimireddy2020scaffold}. Subsequent finite-time analyses refine the convergence theory of local-update methods. For example, \citet{luo2025revisiting} analyze LocalSGD and \Scaf{} under gradient and Hessian similarity, weak convexity, and higher-order smoothness conditions, while \citet{mangold2025sharper} establish sharper convergence guarantees for \Scaf{} on quadratic objectives.
++
++Stochastic local updates can introduce bias even without objective
++heterogeneity. \citet{glasgow2022sharp} study \emph{iterate bias}, the
++deviation of the expected SGD trajectory from deterministic gradient
++descent with the same initialization. Their finite-step bounds and
++continuous perspective connect this bias to nonlinearity, noise, and
++higher-order smoothness. Our quantity is instead the invariant-law global
++mean relative to the minimizer; we resolve its algorithm-specific
++second-order coefficients at a common stationary remainder precision.
+ 
+ Beyond finite-time convergence, constant-step stochastic optimization can be studied through the stationary distribution of its underlying Markov chain \citep{dieuleveut2020bridging,chen2022stationary}. \citet{mangold2025fedavg} derive stationary bias and variance expansions for \FedAvg{}, while \citet{mangold2025scaffold} analyze the joint global-model/control process of \Scaf{}. Table~\ref{tab:prior-bias-resolution} compares the analytical resolution of these results with ours for the same algorithms: the updates and their stationary biases are unchanged, but the analyses differ in how precisely they characterize the bias beyond the shared leading term.
+ 
+@@ -31,6 +40,14 @@
+ 
+ Dividing the cited remainder bounds by $\gamma^2$ gives $O(H+\gamma^{-1/2})$, or $O(H^2+H\gamma^{-1/2})$, neither of which guarantees identification of the second-order coefficient. Under the additional regularity and noise assumptions of Section~\ref{sec:setting}, subtracting both explicit bias terms from our expansion and dividing by $\gamma^2$ instead leaves $O_{H,d}(1/N+\gamma)$, uniformly in $N$ for fixed $d,H$. This residual vanishes along every joint limit $\gamma\to0$, $N\to\infty$. The resulting formulas specify the direction, magnitude, and local-step dependence of the client-independent second-order contribution, and separate the part shared with ordinary local updates from the additional persistent-control contribution. This sharper characterization concerns the shared submodel; the prior results retain their broader coverage of heterogeneous objectives and state-dependent noise.
+ 
++The leading stationary control covariance is also explicit in
++\citet[Lemma~5.1]{mangold2025scaffold}. In the common-objective,
++common-covariance setting it is $(1-1/N)C/H+O_H(\gamma)$, providing the
++control-fluctuation term used in our within-round analysis. The additional
++step here is to propagate this term into the matched stationary mean
++expansions while controlling the other contributions with a common
++$N$-uniform remainder.
++
+ The controlled experiments in Section~\ref{sec:num-controlled} assess these newly resolved quantitative predictions: the algorithm-specific coefficients, their matched difference, and its local-step dependence. The earlier upper bounds remain compatible with the observations but do not specify these coefficient targets. Thus, the experiments examine the additional information supplied by the analysis, not a reduction in bias obtained by modifying either algorithm.
+ 
+ \paragraph{Mechanisms and attribution of stationary bias.}
+--- a/manuscript/sections/05_mechanism.tex
++++ b/manuscript/sections/05_mechanism.tex
+@@ -33,7 +33,7 @@
+ &=\gamma^2\left(h+\frac{h^2}{H}\right)C
+   +O_{H,d}\!\left(\frac{\gamma^2}{N}+\gamma^3\right).
+ \end{align}
+-The shared $hC$ term comes from the accumulated fresh gradient noise during local updates. SCAFFOLD's persistent controls add the $h^2C/H$ term at the resolved client-independent order. This occurs because a single round-start control influences each of the first $h$ local steps, so its second-moment effect scales quadratically with $h$. The factor $1/H$ reflects the leading stationary second moment of those controls. Appendix~\ref{app:scaf-proof} establishes the exact control estimates.
++The shared $hC$ term comes from the accumulated fresh gradient noise during local updates. SCAFFOLD's persistent controls add the $h^2C/H$ term at the resolved client-independent order. This occurs because a single round-start control influences each of the first $h$ local steps, so its second-moment effect scales quadratically with $h$. The factor $1/H$ reflects the leading stationary control covariance identified by \citet[Lemma~5.1]{mangold2025scaffold}. Appendix~\ref{app:scaf-proof} supplies the moment estimates at the remainder precision used here.
+ 
+ \subsection{Local fluctuations are converted into a mean shift by curvature}
+ 
+--- a/manuscript/sections/07_numerical_study.tex
++++ b/manuscript/sections/07_numerical_study.tex
+@@ -67,7 +67,7 @@
+ leading coefficient without imposing its theoretical value. Together these
+ designs examine local-step dependence; multidimensional and affine-shift
+ checks address coordinate consistency and the exact control translation.
+-Each design uses its own independent runs and inference procedure.
++Each design uses its own independent runs and inference procedure. Section~\ref{sec:num-mechanism-controls} then varies covariance geometry and the noise law to test the specificity of the matched coefficient.
+ 
+ \subsubsection{Individual stationary-bias coefficients}
+ \label{sec:num-coefficients}
+@@ -248,6 +248,69 @@
+ 
+ The affine translation in Proposition~\ref{prop:affine-shift} is checked in 24 configurations of 2,000 rounds, using corresponding initial controls and identical noises. The maximum control residual is $1.64313\times10^{-14}$; this tests the exact translation rather than general heterogeneous coefficients (Appendix~\ref{app:num-affine-checks}).
+ 
++\FloatBarrier
++
++\subsubsection{Contraction cancellation and covariance-matched noise}
++\label{sec:num-mechanism-controls}
++
++Do the coefficients depend on the specific contraction $T[C]$, rather than
++on nonlinearity and noise alone? We use a nonquadratic trigonometric
++objective with $A=\operatorname{diag}(1,2)$ and $T\ne0$, and set
++$C_\rho=\operatorname{diag}(1+\rho,1-\rho)$ for
++$\rho\in\{-1/4,0,1/4\}$. All three covariances have trace two. At
++$\rho=0$, $T[C_0]=0$ although $B_{11}=(-0.0125,0)^\top\ne0$; the
++prediction is a zero client-independent second-order coefficient, not a
++zero raw mean. The two other covariances give opposite-signed control
++coefficients. At $\rho=1/4$, we also compare symmetric and asymmetric
++bounded noise laws with identical covariance and different third and
++fourth moments. Appendix~\ref{app:targeted-model} specifies the model and laws.
++
++We fix $H=4$ and use the Cartesian grid
++$N\in\{64,128\}$, $\gamma\in\{1/512,1/1024,1/2048\}$, with twelve
++independent matched pairs per configuration. Separate, unconstrained fits
++on $(1,\gamma,1/N)$ estimate the normalized coefficients in
++Equations~\eqref{eq:num-C} and~\eqref{eq:num-D}.
++Table~\ref{tab:mechanism-controls} shows the first-coordinate paired
++intercepts: the contraction null is separated from both signed controls,
++and the covariance-matched law contrast is small. For both coordinates,
++the null and law-contrast intervals lie within the prespecified
++coefficient-resolution margin $\pm0.004375$, equal to 20\% of the nonzero
++paired target magnitude. This is a fitted-coefficient resolution criterion,
++not a threshold for predictive performance.
++
++\begin{table}[!htbp]
++\centering\small
++\setlength{\tabcolsep}{4pt}
++\caption{Contraction and noise-law checks for the first-coordinate
++matched coefficient at $H=4$. Estimates are unconstrained finite-grid
++intercepts of the normalized paired difference; the last row compares
++the two fitted noise-law coefficients. Intervals are approximate
++simultaneous 95\% sampling intervals over the prespecified 36-scalar
++family and exclude burn-in and deterministic grid error.}
++\label{tab:mechanism-controls}
++\begin{tabular}{@{}clrrl@{}}
++\toprule
++$\rho$ & Noise law & Target & Estimate & Simultaneous interval \\
++\midrule
++$-1/4$ & Symmetric & $0.021875$ & $0.02187858$ & $[0.02184128,\ 0.02191589]$ \\
++$0$ & Symmetric & $0.000000$ & $-0.00002056$ & $[-0.00006150,\ 0.00002039]$ \\
++$+1/4$ & Symmetric & $-0.021875$ & $-0.02185115$ & $[-0.02189536,\ -0.02180693]$ \\
++$+1/4$ & Asymmetric & $-0.021875$ & $-0.02188179$ & $[-0.02193153,\ -0.02183205]$ \\
++\midrule
++\multicolumn{2}{@{}l}{Symmetric minus asymmetric ($\rho=1/4$)} & $0.000000$ & $0.00003064$ & $[-0.00003564,\ 0.00009692]$ \\
++\bottomrule
++\end{tabular}
++\end{table}
++
++These comparisons support the contraction-dependent matched increment at
++the reported resolution. Individual-algorithm first-coordinate null and
++law contrasts remain less precisely resolved; one paired second-coordinate
++interval excludes exact zero despite lying inside its resolution margin.
++Appendix~\ref{app:targeted-results} gives the complementary coordinates,
++individual estimates, and grid and temporal sensitivities.
++
++\FloatBarrier
++
+ \subsection{Real-data implications of a fixed sampling budget}
+ \label{sec:num-real}
+ 
+--- a/manuscript/appendix/C_numerical_details.tex
++++ b/manuscript/appendix/C_numerical_details.tex
+@@ -111,6 +111,78 @@
+ Section~\ref{sec:num-supp-theory} and Table~\ref{tab:supp-control}.
+ Each seed supplies a full grid vector; OLS with designs $(1,\gamma)$ and
+ $(1,\gamma,1/N)$ is applied seedwise before averaging coefficients. Reported nominal Student-$t$ intervals use eleven degrees of freedom. Bonferroni family sizes are 16 leading-intercept coordinates, six control-intercept coordinates, twelve $H$-intercept contrasts, and two coordinates of the $H=4$ minus $3.5(H=2)$ contrast. A seed-block bootstrap with 2,000 resamples provides a sensitivity check. None of these intervals includes finite-grid Taylor error.
++
++\subsubsection{Trigonometric contraction and noise-law design}
++\label{app:targeted-model}
++
++For Section~\ref{sec:num-mechanism-controls}, let $\alpha=1/20$ and define
++\begin{equation}
++\label{eq:targeted-objective}
++\begin{aligned}
++f(x)&=\tfrac12(x_1^2+2x_2^2)+\alpha g(x),\\
++g(x)&=-4(\sin x_1-x_1)
++ +\sin(x_1+x_2)-(x_1+x_2)
++ +\sin(x_1-x_2)-(x_1-x_2).
++\end{aligned}
++\end{equation}
++The perturbation has Hessian norm at most $8\alpha=0.4$, so
++$0.6I\preceq\nabla^2f(x)\preceq2.4I$ globally. Derivatives of orders
++three to five are bounded, $x^\star=0$, and $A=\operatorname{diag}(1,2)$.
++For symmetric $M$, the nonzero third derivatives at the origin give
++\[
++T[M]=(2\alpha(M_{11}-M_{22}),-4\alpha M_{12})^\top.
++\]
++The covariances in Section~\ref{sec:num-mechanism-controls} yield
++$S_{C_\rho}=\operatorname{diag}((1+\rho)/2,(1-\rho)/4)$ and
++$T[C_\rho]=(\rho/5,0)^\top$. At $H=4$, the targets are
++\begin{equation}
++\label{eq:targeted-coefficients}
++\begin{aligned}
++ B_{11}(\rho)&=\left(-\frac{1+3\rho}{80},0\right)^\top,
++ &B_{20}^{\FedAvg}(4;\rho)&=\left(-\frac{3\rho}{20},0\right)^\top,\\
++ B_{20}^{\Scaf}(4;\rho)&=\left(-\frac{19\rho}{80},0\right)^\top,
++ &B_{20}^{\mathrm{ctrl}}(4;\rho)&=\left(-\frac{7\rho}{80},0\right)^\top.
++\end{aligned}
++\end{equation}
++
++Noise is $\varepsilon=C_\rho^{1/2}z$ with independent coordinates.
++The symmetric scalar law is $z_i=\pm1$ with equal probabilities; the
++asymmetric law assigns $\sqrt2$ and $-1/\sqrt2$ probabilities $1/3$ and
++$2/3$. Both have zero mean and unit variance. Their third moments are
++$0$ and $1/\sqrt2$, and fourth moments $1$ and $3/2$; all vector noises
++share the bound $\|\varepsilon\|\le\sqrt5$. Fresh blocks are independent,
++without sample recentering or rescaling. The theorem predicts common
++resolved coefficients at fixed $C$, not identical finite-step means:
++law differences may remain of order $\gamma^2/N+\gamma^3$.
++
++Each run uses $\tau=\lceil(0.6H\gamma)^{-1}\rceil$, $50\tau$ burn-in
++rounds, and 64 batches of $10\tau$ rounds. This schedule is heuristic.
++The grid lies below the imported threshold $\gamma_{\rm imp}=1/288$ in
++Equation~\eqref{eq:imported-step-threshold}; this does not certify every
++later absorption condition. The nonlinear balance observable in
++Equation~\eqref{eq:num-balance-estimator} is primary, with post-round
++global means as a same-run check. Noise is shared only within matched
++algorithm pairs; configurations, noise laws, and pilot and production
++runs use independent streams.
++
++The primary analysis uses the full grid and unweighted OLS with an
++intercept and regressors $(\gamma,1/N)$. A 4,000-draw bootstrap resamples
++run vectors independently within each grid cell, keeping algorithms,
++coordinates, and estimators together. This differs from reusing a seed
++label across the joint-grid path. A centered, standardized bootstrap
++maximum constructs approximate simultaneous intervals over 24 coefficient
++coordinates, six law contrasts, and six signed-covariance contrasts.
++Marginal intervals and Bonferroni-$t$ intervals with eleven degrees of
++freedom provide sensitivity checks. Sampling intervals exclude burn-in
++and deterministic grid error. Only two client counts are used, so these
++fits do not identify an inverse-client-count rate.
++
++The zero-target resolution margins are $0.011875$ for \Scaf{}, $0.0075$
++for \FedAvg{}, and $0.004375$ for their difference, each 20\% of its
++nonzero first-coordinate target. A comparison is resolved at that margin
++only when its entire interval lies inside the corresponding symmetric
++band; merely including zero is insufficient. The only restricted-grid
++analysis omits the largest step size and does not replace the primary fit.
+ 
+ \subsection{Coefficient estimates and finite-grid diagnostics}
+ \label{app:num-coefficient-results}
+@@ -295,6 +367,100 @@
+ fits assess finite-grid dependence; they do not replace the primary fits
+ or resolve the $H=8$ discrepancies.
+ 
++\subsubsection{Contraction and noise-law resolution}
++\label{app:targeted-results}
++
++Table~\ref{tab:mechanism-controls} gives the paired first-coordinate
++results. Table~\ref{tab:mechanism-complement} adds the individual
++coefficients and contrasts, together with the paired second coordinate.
++For the paired signed-covariance contrast, the coordinate estimates and
++simultaneous intervals are
++\[
++\begin{aligned}
++ j=1:&\quad -0.04372973,\qquad [-0.04378778,-0.04367168],\\
++ j=2:&\quad -0.00002676,\qquad [-0.00005541,0.00000188],
++\end{aligned}
++\]
++with target $(-0.04375,0)^\top$.
++The individual first-coordinate null and law-comparison intervals are
++wider than their resolution bands. Thus the sharper paired result does
++not resolve each algorithm's coefficient separately.
++
++\begin{table}[!htbp]
++\centering\small
++\setlength{\tabcolsep}{3pt}
++\caption{Complementary trigonometric-model results: individual-algorithm
++coefficients and contrasts in both coordinates, followed by the matched
++second coordinate. All displayed estimates and interval endpoints are
++multiplied by $10^3$. S: \Scaf{}; F: \FedAvg{}; D: paired difference.
++Targets follow Equation~\eqref{eq:targeted-coefficients}. The law contrast
++is symmetric minus asymmetric at $\rho=1/4$; the covariance contrast is
++$\rho=1/4$ minus $\rho=-1/4$ under symmetric noise. Intervals use the same
++primary family as Table~\ref{tab:mechanism-controls}, whose paired
++first-coordinate results are not repeated here.}
++\label{tab:mechanism-complement}
++\begin{tabular}{@{}lcrlrl@{}}
++\toprule
++Condition / contrast & Alg. & Estimate$_1$ & Interval$_1$ & Estimate$_2$ & Interval$_2$ \\
++\midrule
++$-1/4$, sym. & S & $56.0908$ & $[42.4573,\ 69.7243]$ & $2.6156$ & $[-4.5559,\ 9.7871]$ \\
++$-1/4$, sym. & F & $34.2122$ & $[20.5757,\ 47.8487]$ & $2.6118$ & $[-4.5609,\ 9.7844]$ \\
++\addlinespace
++$0$, sym. & S & $4.6861$ & $[-18.0942,\ 27.4663]$ & $2.4973$ & $[-6.0117,\ 11.0064]$ \\
++$0$, sym. & F & $4.7066$ & $[-18.0689,\ 27.4822]$ & $2.5118$ & $[-5.9994,\ 11.0230]$ \\
++\addlinespace
++$+1/4$, sym. & S & $-46.8325$ & $[-67.9207,\ -25.7443]$ & $2.2185$ & $[-4.0669,\ 8.5038]$ \\
++$+1/4$, sym. & F & $-24.9813$ & $[-46.0714,\ -3.8913]$ & $2.2414$ & $[-4.0463,\ 8.5291]$ \\
++\addlinespace
++$+1/4$, asym. & S & $-58.1461$ & $[-81.4153,\ -34.8769]$ & $2.7156$ & $[-4.1149,\ 9.5460]$ \\
++$+1/4$, asym. & F & $-36.2643$ & $[-59.5301,\ -12.9986]$ & $2.7160$ & $[-4.1137,\ 9.5457]$ \\
++\addlinespace
++Law contrast & S & $11.3136$ & $[-20.1352,\ 42.7624]$ & $-0.4971$ & $[-9.8863,\ 8.8921]$ \\
++Law contrast & F & $11.2830$ & $[-20.1627,\ 42.7287]$ & $-0.4747$ & $[-9.8649,\ 8.9156]$ \\
++\addlinespace
++Covariance contrast & S & $-102.9233$ & $[-127.9666,\ -77.8799]$ & $-0.3971$ & $[-9.8315,\ 9.0372]$ \\
++Covariance contrast & F & $-59.1935$ & $[-84.2420,\ -34.1451]$ & $-0.3704$ & $[-9.8073,\ 9.0665]$ \\
++\addlinespace
++\midrule
++\multicolumn{6}{@{}l}{Additional paired second-coordinate results (zero target)} \\
++$-1/4$, sym. & D & \multicolumn{2}{c}{---} & $0.0038$ & $[-0.0175,\ 0.0251]$ \\
++$0$, sym. & D & \multicolumn{2}{c}{---} & $-0.0145$ & $[-0.0349,\ 0.0059]$ \\
++$+1/4$, sym. & D & \multicolumn{2}{c}{---} & $-0.0229$ & $[-0.0423,\ -0.0035]$ \\
++$+1/4$, asym. & D & \multicolumn{2}{c}{---} & $-0.0005$ & $[-0.0213,\ 0.0204]$ \\
++Law contrast & D & \multicolumn{2}{c}{---} & $-0.0224$ & $[-0.0511,\ 0.0062]$ \\
++\bottomrule
++\end{tabular}
++\end{table}
++
++\paragraph{Grid and inferential sensitivity.}
++Omitting the largest step changes the $\rho=1/4$ symmetric
++first-coordinate estimates to $-0.01675171$ for \Scaf{} and $0.00510137$
++for \FedAvg{}, with intervals $[-0.05907084,0.02556741]$ and
++$[-0.03721159,0.04741432]$. Both lose sign resolution and narrowly
++exclude their targets. The \Scaf{} signed-covariance contrast is
++$-0.06840058$ with interval $[-0.11872928,-0.01807187]$, also narrowly
++excluding its target $-0.11875$. All three Bonferroni-$t$ sensitivity
++intervals include their targets; the restricted grid is not a more
++precise confirmation analysis.
++
++For the $\rho=1/4$ symmetric paired second coordinate, the primary
++interval excludes exact zero while remaining inside the resolution band.
++Both its Bonferroni-$t$ interval and the restricted-grid interval include
++zero. In this symmetric-noise setting, the objective and updates are
++invariant under reflection of the second coordinate, so the ideal
++finite-time second-coordinate mean from zero initial states is zero.
++The small interval exclusion is therefore not evidence of a nonzero
++second-order coefficient. Exact-zero inclusion and resolution within a
++specified margin are distinct conclusions.
++
++First/last-half balance comparisons have eight nominal 95\% exclusions
++among 144 scalar diagnostics, all for individual algorithms. None of the
++paired comparisons excludes zero, but this does not establish
++stationarity. Direct-mean estimates have substantially larger sampling
++variation than balance estimates. Finite-window update identities check
++time alignment and arithmetic, not stationary approximation; grid,
++transient, and sampling effects remain distinct sources of uncertainty.
++
+ \subsection{Estimator and structural consistency checks}
+ \label{app:num-consistency}
+ 
+@@ -351,6 +517,16 @@
+ Four of the 68 algorithm--configuration comparisons in
+ the independent controlled study have nominal raw-versus-balance
+ intervals excluding zero; the balance estimator remains primary.
++
++A separate reanalysis of the existing $H=4$ Cartesian-grid runs gives
++paired raw-minus-balance fitted-intercept differences of approximately
++$-2.39\times10^{-7}$ and $-2.92\times10^{-7}$. Thus replacing the balance
++observable by the direct mean has little effect on those paired
++intercepts. Finite-window identities agree on windows with available
++endpoints, but missing endpoints and individual noise sums prevent a
++complete reconstruction of every window. This check does not identify the
++cause of the joint-grid discrepancies in
++Appendix~\ref{app:num-h4-diagnostics}.
+ 
+ \subsubsection{Orthogonal coordinate equivariance}
+ \label{app:equivariance-check}

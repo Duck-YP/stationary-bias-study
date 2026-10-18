@@ -1,0 +1,1582 @@
+{
+  "status": "PASS",
+  "checks": 226,
+  "results": [
+    {
+      "check": "complete_baseline_sidecar_records",
+      "panel": "hist_matched_H2",
+      "rows": 26,
+      "byte_identical": true,
+      "pass": true
+    },
+    {
+      "check": "complete_baseline_sidecar_records",
+      "panel": "hist_matched_H4",
+      "rows": 26,
+      "byte_identical": true,
+      "pass": true
+    },
+    {
+      "check": "complete_baseline_sidecar_records",
+      "panel": "hist_fixed_gamma_coord1",
+      "rows": 13,
+      "byte_identical": true,
+      "pass": true
+    },
+    {
+      "check": "complete_baseline_sidecar_records",
+      "panel": "hist_fixed_gamma_coord2",
+      "rows": 13,
+      "byte_identical": true,
+      "pass": true
+    },
+    {
+      "check": "complete_baseline_sidecar_records",
+      "panel": "real_R0_allocation",
+      "rows": 6,
+      "byte_identical": true,
+      "pass": true
+    },
+    {
+      "check": "complete_baseline_sidecar_records",
+      "panel": "e4_averaging_scaffold",
+      "rows": 7,
+      "byte_identical": true,
+      "pass": true
+    },
+    {
+      "check": "complete_baseline_sidecar_records",
+      "panel": "e4_averaging_fedavg",
+      "rows": 7,
+      "byte_identical": true,
+      "pass": true
+    },
+    {
+      "check": "complete_baseline_sidecar_records",
+      "panel": "hist_H4_smallstep",
+      "rows": 22,
+      "byte_identical": true,
+      "pass": true
+    },
+    {
+      "check": "complete_baseline_sidecar_records",
+      "panel": "hist_H4_loglog_residual",
+      "rows": 18,
+      "byte_identical": true,
+      "pass": true
+    },
+    {
+      "check": "historical_seven_panels_against_ten_saved_inputs",
+      "pass": true,
+      "verifier_sha256": "94de8e8e95dd0ac2543a720457d249876f2651858734c9dea5b5f16d2bd82c6a",
+      "report": "figure_layout_revision_20261018\\qa\\historical_authority"
+    },
+    {
+      "check": "E4_exact_row_selection",
+      "panel": "e4_averaging_scaffold",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "1",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "2",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "4",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "8",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "16",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "32",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_scaffold",
+      "K": "64",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_full_interval_within_display_limits",
+      "panel": "e4_averaging_scaffold",
+      "pass": true
+    },
+    {
+      "check": "E4_signed_and_cross_zero_records_preserved",
+      "panel": "e4_averaging_scaffold",
+      "negative_U_count": 0,
+      "cross_zero_U_interval_count": 3,
+      "source_sha256": "0a403edf7cb6f0b32b5fba70896c186f7aece60f51af8ed11a5c4ab6a0b93c66",
+      "pass": true
+    },
+    {
+      "check": "E4_exact_row_selection",
+      "panel": "e4_averaging_fedavg",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "1",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "2",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "4",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "8",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "16",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "32",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "cell_id",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "algorithm",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "H",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "N",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "m",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "gamma",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "K",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "checkpoint_count",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "independent_seeds",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "U",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "U_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "U_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "V",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "V_lower_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_authoritative_saved_column",
+      "panel": "e4_averaging_fedavg",
+      "K": "64",
+      "column": "V_upper_simultaneous",
+      "pass": true
+    },
+    {
+      "check": "E4_full_interval_within_display_limits",
+      "panel": "e4_averaging_fedavg",
+      "pass": true
+    },
+    {
+      "check": "E4_signed_and_cross_zero_records_preserved",
+      "panel": "e4_averaging_fedavg",
+      "negative_U_count": 1,
+      "cross_zero_U_interval_count": 4,
+      "source_sha256": "0a403edf7cb6f0b32b5fba70896c186f7aece60f51af8ed11a5c4ab6a0b93c66",
+      "pass": true
+    }
+  ],
+  "limits": "This verifies saved plotting records and their authoritative inputs. PDF geometry and script routing are checked separately."
+}

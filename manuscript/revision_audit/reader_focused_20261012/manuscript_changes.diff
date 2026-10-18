@@ -1,0 +1,821 @@
+--- before/manuscript/appendix/C_numerical_details.tex
++++ after/manuscript/appendix/C_numerical_details.tex
+@@ -1,10 +1,8 @@
+ \section{Numerical protocols, results, and diagnostics}
+ \label{app:num-details}
+ 
+-This appendix supplies the settings, uncertainty estimates, and diagnostics
+-not shown in Section~\ref{sec:numerics}. Point summaries already presented
+-there are referenced rather than reproduced. All results are retained from
+-the recorded studies; no experiments were rerun for this presentation.
++This appendix gives the experimental settings, estimation methods,
++and diagnostics needed to interpret Section~\ref{sec:numerics}.
+ 
+ \subsection{Controlled instances and estimation}
+ \label{app:num-instance}
+@@ -62,7 +60,7 @@
+ \subsection{Simulation and inference protocol}
+ \label{app:num-protocol-details}
+ 
+-The historical studies use the heuristic time scale $m_{\rm mix}=\lceil(\mu_{\rm mix}H\gamma)^{-1}\rceil$, with
++The joint-grid and supporting multidimensional studies use the heuristic time scale $m_{\rm mix}=\lceil(\mu_{\rm mix}H\gamma)^{-1}\rceil$, with
+ $\mu_{\rm mix}=0.85$ in $d=2$ and $0.8037572789$ in $d=5$;
+ it is not a proved mixing time. Burn-in is $100m_{\rm mix}$ rounds and
+ batch length is $20m_{\rm mix}$. Precision is checked after 100 batches,
+@@ -72,7 +70,7 @@
+  h_j\le\max\{0.0025,\,0.10|B_{20,j}^{\rm target}(H)|\},
+ \]
+ where the target is SCAFFOLD, FedAvg, or the control coefficient as appropriate.
+-All reported production runs met this rule at the first 100-batch check.
++All reported runs met this rule at the first 100-batch check.
+ Validity checks require finite states, a coordinatewise stationarity diagnostic
+ with threshold $z=3$, and at least seven valid units out of eight.
+ SCAFFOLD's maximum absolute control-sum tolerance is $10^{-10}$.
+@@ -85,27 +83,23 @@
+ studies use 2,000 replicates and quantiles $(0.0125,0.9875)$; the $d=5$
+ study uses 5,000 and $(0.005,0.995)$. Both constructions give nominal
+ familywise 95\% intervals across coordinates.
+-Seed blocks and artifact identifiers are collected once in
+-Appendix~\ref{app:reproducibility}.
++
+ 
+ \subsection{Interval supplements to the coefficient summary}
+ \label{app:num-coefficients}
+ 
+-Table~\ref{tab:num-core} supplements the point and target vectors in
+-Table~\ref{tab:num-attribution-summary} without repeating them.
+-The original-precision records are retained in
+-\nolinkurl{supplementary_results/presentation_source/historical_coefficient_intercepts.csv}.
+-These intervals retain every primary and smaller-step outcome discussed in
+-Sections~\ref{sec:num-coefficients} and~\ref{sec:num-attribution}.
++Table~\ref{tab:num-core} gives the simultaneous intervals corresponding
++to the point estimates in Table~\ref{tab:num-attribution-summary}.
++Both the primary and smaller-step grids are included.
+ 
+ \begin{table}[tbp]
+ \centering\small
+ \setlength{\tabcolsep}{4pt}
+-\caption{Original simultaneous 95\% seed-block-bootstrap intervals for the
+-historical vectors in Table~\ref{tab:num-attribution-summary}.
++\caption{Simultaneous 95\% seed-block-bootstrap intervals for the
++joint-grid coefficient vectors in Table~\ref{tab:num-attribution-summary}.
+ S: SCAFFOLD; F: FedAvg; D: separately simulated paired difference.
+ P/S in the Grid column denote the primary/smaller-step paths.
+-Interval endpoints retain their recorded precision.}
++}
+ \label{tab:num-core}
+ \label{tab:E-fa}
+ \label{tab:E-control}
+@@ -132,12 +126,12 @@
+ \subsection{Matched \texorpdfstring{$H=4$}{H=4} finite-grid diagnostics}
+ \label{app:num-h4-diagnostics}
+ 
+-For the combined nine-point saved grid, define
++For the combined nine-point grid, define
+ $e_{\Delta,j}=\widehat D_j-B_{20,j}^{\rm ctrl}(4)$.
+ Table~\ref{tab:E-h4diag} reports its behavior relative to
+ $\delta_{\gamma,N}=\gamma+1/N$, the normalized remainder scale.
+ Figure~\ref{fig:E-control-h4} displays the smaller-step paired path and the
+-saved-data residual diagnostic. A post-hoc quadratic fit over all nine points
++residual diagnostic. A post-hoc quadratic fit over all nine points
+ gives intercepts $-0.056008582$ and $-0.070000016$, with target errors
+ $3.90\times10^{-6}$ and $5.84\times10^{-6}$. These descriptive fits do not
+ identify a next-order analytic coefficient or change the target-inclusion
+@@ -145,7 +139,7 @@
+ 
+ \begin{table}[tbp]
+ \centering\small
+-\caption{Matched $H=4$ saved-grid residuals, with $\delta=\gamma+1/N$.}
++\caption{Matched $H=4$ grid residuals, with $\delta=\gamma+1/N$.}
+ \label{tab:E-h4diag}
+ \begin{tabular}{@{}ccccc@{}}
+ \toprule
+@@ -173,24 +167,22 @@
+ \end{subfigure}
+ \caption{Matched $H=4$ diagnostics. (a): the smaller-step paired path;
+ its extrapolated intercept intervals still exclude the targets.
+-(b): absolute residuals on the combined saved grid; the log--log slopes
++(b): absolute residuals on the combined grid; the log--log slopes
+ and scaled ranges in Table~\ref{tab:E-h4diag} are compatible with the
+ allowed $O(\gamma+1/N)$ normalized remainder. Pointwise bars in (a) are
+ simultaneous Student-$t$ intervals; its fitted-intercept bars are
+-simultaneous seed-block-bootstrap intervals. The path uses the saved
+-descriptive linear fit, and (b) retains all nine saved grid points.}
++simultaneous seed-block-bootstrap intervals. The path uses the descriptive linear fit, and (b) shows all nine grid points.}
+ \label{fig:E-control-h4}
+ \label{fig:E-h4diag}
+ \end{figure}
+ 
+ \paragraph{Unresolved sources.}
+-The two historical paths have identical $\gamma$ and $1/N$ regressors, as
+-noted in Section~\ref{sec:num-attribution}; their post-hoc quadratic fit
++Both paths use $\gamma=1/N$. Their post-hoc quadratic fit therefore
+ cannot separate finite-step from finite-client corrections or identify
+-next-order analytic coefficients. The implementation checks in
+-Appendix~\ref{app:reproducibility} also do not quantify all finite-burn-in
+-or finite-run bias. No independently varied-grid and length reruns of this
+-historical cohort are reported; the supplementary study below is separate.
++next-order analytic coefficients. These paths also do not quantify
++finite-burn-in effects. The independently implemented Cartesian-grid
++study in Section~\ref{sec:num-supp-theory} uses different runs; it does
++not replace the target exclusions of this joint-grid comparison.
+ 
+ \subsection{Fixed-step and five-dimensional results}
+ \label{app:num-supporting-results}
+@@ -259,8 +251,8 @@
+          \operatorname{SE}_{{\rm bal},j}^2}.
+ \]
+ In the two-dimensional FedAvg primary study, 156 of 160 chain-coordinate
+-checks pass; Table~\ref{tab:E-direct-balance} retains all four exceptions.
+-All recorded checks pass for the two-dimensional SCAFFOLD primary and
++checks satisfy the criterion; Table~\ref{tab:E-direct-balance} lists the four exceptions.
++All checks satisfy the criterion for the two-dimensional SCAFFOLD primary and
+ smaller-step studies, the fixed-step study, the $d=5$ SCAFFOLD study, and
+ the FedAvg smaller-step study. These counts exclude paired attribution,
+ whose secondary statistic is itself a paired difference.
+@@ -272,18 +264,18 @@
+ $|\Delta\widehat b|$ before normalization; $\widehat C_{\rm bal}$ and
+ $\widehat C_{\rm dir}$ show the corresponding second-order statistics.}
+ \label{tab:E-direct-balance}
+-\begin{tabular}{@{}ccccrrrr@{}}
+-\toprule
+-$H$ & $N$ & $j$ & Seed & $\widehat C_{\rm bal}$ & $\widehat C_{\rm dir}$ &
++\begin{tabular}{@{}cccrrrr@{}}
++\toprule
++$H$ & $N$ & $j$ & $\widehat C_{\rm bal}$ & $\widehat C_{\rm dir}$ &
+ $|\Delta\widehat b|$ & $3\operatorname{SE}_{\rm comb}$ \\
+ \midrule
+-2 & 16 & 2 & 1108 &
++2 & 16 & 2 &
+ $-0.0408082$ & $ 0.924598$ & $0.00377112$ & $0.00331567$ \\
+-2 & 48 & 1 & 1103 &
++2 & 48 & 1 &
+ $-0.0323449$ & $ 3.070686$ & $0.00134680$ & $0.00115744$ \\
+-4 & 16 & 2 & 1108 &
++4 & 16 & 2 &
+ $-0.1080240$ & $ 0.841309$ & $0.00370833$ & $0.00334677$ \\
+-4 & 48 & 1 & 1103 &
++4 & 48 & 1 &
+ $-0.0933450$ & $ 2.615233$ & $0.00117560$ & $0.00110953$ \\
+ \bottomrule
+ \end{tabular}
+@@ -324,7 +316,7 @@
+  0.8660254037844386&-0.5\\0.5&0.8660254037844386
+  \end{pmatrix},
+ \]
+-with transformed noise $Q\eps$ rather than independent draws. There are 16 paired paths: four seeds for each combination
++with transformed noise $Q\eps$ rather than independent draws. There are 16 paired paths: four independent paired runs for each combination
+ of $H\in\{2,4\}$ and $(N,\gamma)\in\{(16,1/16),(64,1/64)\}$.
+ The maximum infinity-norm residuals over the complete paths are
+ \[
+@@ -337,15 +329,23 @@
+ These are representation-consistency checks of the SCAFFOLD implementation.
+ 
+ 
+-\subsection{Independent supplementary controlled study}
++\subsection{Cartesian-grid and local-step study}
+ \label{app:supp-controlled}
+ 
+-The independent supplementary implementation uses a separately frozen protocol, not a refit or replacement of the historical studies above. Its 34 controlled configurations share twelve paired seeds, 20001--20012. For the objective in Equation~\eqref{eq:num-objective}, the recorded curvature proxy is $\mu_{\rm mix}=0.85$. With $\tau_0=\lceil(\mu_{\rm mix}H\gamma)^{-1}\rceil$, the schedule uses $50\tau_0$ burn-in rounds and batches of $10\tau_0$ rounds. Primary estimates use the first 64 batches. Only $(H,N,\gamma)=(4,64,1/256)$ was extended to 133 batches for within-run sensitivity windows $[5,69)$, $[0,128)$, and $[5,133)$, indexed from zero; those correlated windows do not replace the primary tail.
++The independently implemented study uses 34 controlled configurations
++with twelve independent paired runs per configuration. For the objective
++in Equation~\eqref{eq:num-objective}, set $\mu_{\rm mix}=0.85$ and
++$\tau_0=\lceil(\mu_{\rm mix}H\gamma)^{-1}\rceil$. Each run has
++$50\tau_0$ burn-in rounds and batches of $10\tau_0$ rounds; primary
++estimates use the first 64 batches. A longer trajectory at
++$(H,N,\gamma)=(4,64,1/256)$ provides shifted and extended-window
++sensitivity checks. These overlapping windows are not independent
++replications and do not replace the primary analysis.
+ 
+ The grids and primary control estimates are in
+ Section~\ref{sec:num-supp-theory} and Table~\ref{tab:supp-control}.
+ Each seed supplies a full grid vector; OLS with designs $(1,\gamma)$ and
+-$(1,\gamma,1/N)$ is applied seedwise before averaging coefficients. Reported nominal Student-$t$ intervals use eleven degrees of freedom. Bonferroni family sizes are 16 leading-intercept coordinates, six control-intercept coordinates, twelve $H$-intercept contrasts, and two coordinates of the $H=4$ minus $3.5(H=2)$ contrast. Seed-block bootstrap outputs use 2,000 draws and remain in the companion result tables. None of these intervals includes finite-grid Taylor error.
++$(1,\gamma,1/N)$ is applied seedwise before averaging coefficients. Reported nominal Student-$t$ intervals use eleven degrees of freedom. Bonferroni family sizes are 16 leading-intercept coordinates, six control-intercept coordinates, twelve $H$-intercept contrasts, and two coordinates of the $H=4$ minus $3.5(H=2)$ contrast. A seed-block bootstrap with 2,000 resamples provides a sensitivity check. None of these intervals includes finite-grid Taylor error.
+ 
+ \begin{table}[tbp]
+ \centering\small
+@@ -363,45 +363,69 @@
+ 8 & F & $-0.025913$ & $[-0.026712,-0.025114]$ & $-0.032560$ & $[-0.033559,-0.031562]$ \\
+ \bottomrule\end{tabular}\end{table}
+ 
+-Table~\ref{tab:supp-leading} supplies the individual leading-intercept estimates. Smaller-step sensitivity omits only the largest configured $\gamma$; the control study additionally reports omission of $N=32$. These are named descriptive windows, not outcome-selected replacement fits. All 118 coefficient-table rows and fourteen $H$ contrasts are retained in \nolinkurl{supplementary_results/fitted_coefficients.csv} and \nolinkurl{supplementary_results/tables/E1_intercept_contrasts.csv}. Primary interpretations remain those in Section~\ref{sec:num-supp-theory}.
++Table~\ref{tab:supp-leading} gives the individual leading-intercept
++estimates. Sensitivity analyses omit the largest step size or, for
++the control fits, the smallest client count $N=32$. These restricted-grid
++fits assess finite-grid dependence; they do not replace the primary fits
++or resolve the $H=8$ discrepancies.
+ 
+ The affine checks use $N\in\{8,32\}$, $H\in\{2,4,8\}$ and balanced shifts $a_c=\pm\rho u$, $\rho\in\{0,0.25,0.5,1\}$. The path length and maximum residual are reported in
+ Section~\ref{sec:num-supp-theory}; all configurations use $\gamma=1/128$,
+-corresponding initial controls and the same fresh noise. Separate zero-initialization transients are retained as diagnostics and are not required to coincide pathwise.
++corresponding initial controls and the same fresh noise. Initializing both control systems at zero does not give corresponding
++translated states, so their transient paths need not coincide.
+ 
+ \subsection{Real-data objectives, estimands, and results}
+ \label{app:supp-real}
+ 
+-The a9a training and test files are identified by hashes and source URLs in the supplementary data manifest. Training retains 32,512 of the 32,561 rows using a fixed permutation (seed 20261009), so disjoint partitions can be equal-sized. Each 123-feature row is divided by $\max\{1,\|z_i\|\}$, then augmented by an intercept. Labels are encoded as $y_i\in\{0,1\}$, and all 124 parameters are regularized with $\lambda=0.01$:
++We use the a9a training and test sets from the LIBSVM data collection.\footnote{\url{https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html}}
++A fixed random permutation selects 32,512 of the 32,561 training examples
++so that disjoint partitions can be equal-sized. Each 123-feature row is divided by $\max\{1,\|z_i\|\}$, then augmented by an intercept. Labels are encoded as $y_i\in\{0,1\}$, and all 124 parameters are regularized with $\lambda=0.01$:
+ \begin{equation}
+ \label{eq:real-objective}
+ f_c(x)=\frac1{|D_c|}\sum_{i\in D_c}\{\log(1+e^{z_i^\top x})-y_i z_i^\top x\}+\frac{\lambda}{2}\|x\|^2.
+ \end{equation}
+-Beyond the shared-objective R0 regime in Section~\ref{sec:num-real},
+-R1 partitions the retained data randomly and disjointly; R2 assigns two label-sorted shards to each client. For R1/R2, seed 4101 defines primary partitions and 4102/4103 define separately reported sensitivity partitions. Equal client weights preserve the global empirical objective. IID partitioning does not make finite-sample objectives identical. The R0 aggregate covariance described in Section~\ref{sec:num-real}
+-has trace $0.001060$ after rounding; R1/R2 reference covariances can change
+-with their partitions.
+-
+-Minibatches are sampled with replacement. The largest single-example smoothness bound is $L_{\rm sample}=0.51$, giving $\gamma_b=0.1/L_{\rm sample}$. The reference Newton solve reports gradient norm $1.253\times10^{-16}$ and a strong-convexity parameter-error bound $1.253\times10^{-14}$; a separately initialized solver differs by $8.43\times10^{-15}$. These are floating-point residual checks rather than interval-arithmetic certificates. Let $A_{\rm ref}=\nabla^2 f(x_{\rm ref})$ and $T_{\rm ref}=\nabla^3 f(x_{\rm ref})$. The fixed projection direction is the normalized vector $-A_{\rm ref}^{-1}T_{\rm ref}[\Sigma_{\rm ref}]$, calculated before production; it is not a real-data coefficient target.
+-
+-Each real-data configuration has twelve independent paired runs. The schedule uses $\tau_0=\lceil(\lambda H\gamma)^{-1}\rceil$, burn-in $50\tau_0$ and batch length $10\tau_0$. R0 collected 64 batches for all nine configurations: three allocations, three additional $\gamma/H$ policies and three $H=1$ checks. Its primary signed means and comparisons in Section~\ref{sec:num-real} are therefore finite-tail quantities. No 133-batch extension belongs to this original R0 production cohort; the two later, separately seeded pilots in Appendix~\ref{app:e4-averaging} do not replace it. Changing $\gamma$ or $H$ changes the horizon; sample-gradient and communication costs are stored separately.
++In the shared-objective setting, every client uses the same empirical
++objective. The disjoint IID setting instead partitions the examples
++randomly; the label-skew setting assigns two label-sorted shards to each
++client. Both disjoint settings use a fixed primary partition and two
++alternative partitions for sensitivity checks. Equal client weights
++preserve the global empirical objective, but IID partitioning does not
++make finite-sample local objectives identical. The shared-objective
++aggregate covariance described in Section~\ref{sec:num-real} has trace
++$0.001060$ after rounding; disjoint partitions may have different
++reference covariances.
++
++Minibatches are sampled with replacement. The largest single-example smoothness bound is $L_{\rm sample}=0.51$, giving $\gamma_b=0.1/L_{\rm sample}$. The reference Newton solve reports gradient norm $1.253\times10^{-16}$ and a strong-convexity parameter-error bound $1.253\times10^{-14}$; a separately initialized solver differs by $8.43\times10^{-15}$. These are floating-point residual checks rather than interval-arithmetic certificates. Let $A_{\rm ref}=\nabla^2 f(x_{\rm ref})$ and $T_{\rm ref}=\nabla^3 f(x_{\rm ref})$. The fixed projection direction is the normalized vector $-A_{\rm ref}^{-1}T_{\rm ref}[\Sigma_{\rm ref}]$, calculated before the training runs; it is not a real-data coefficient target.
++
++Each real-data configuration has twelve independent paired runs, with
++$\tau_0=\lceil(\lambda H\gamma)^{-1}\rceil$, $50\tau_0$ burn-in rounds,
++and batch length $10\tau_0$. The nine shared-objective configurations
++comprise three allocations, three additional step-size/local-step
++settings, and three $H=1$ checks; each has 64 batches. The comparisons
++in Section~\ref{sec:num-real} concern these finite tails. The two
++longer-run pilots in Appendix~\ref{app:e4-averaging} are analyzed
++separately. Changing $\gamma$ or $H$ changes the horizon, so equal
++batch counts do not imply equal computational or communication cost.
+ 
+ Squared mean displacement uses the unclipped cross-run statistic
+ $\widehat U_K$ in Equation~\eqref{eq:e4-estimators}, evaluated at the full
+-recorded tail. Raw checkpoint squared errors, accumulated separately, estimate parameter MSE. The variance estimate is their average minus the same cross-run statistic formed from raw means. Jackknife-$t$ intervals are nominal and can be unreliable near zero; negative estimates are retained rather than clipped. The $10^{-4}$ pointwise signed-projection half-width target is not met by 32 of the 35 real-data cells, including the principal R0 allocation cells. This precision flag is retained even where an allocation contrast is resolved. Cellwise projections use the frozen 105-member family, whereas the descriptive allocation/policy contrasts use their recorded 36-member family. Exact per-run vectors and all interval columns are supplied with the result tables.
++recorded tail. Raw checkpoint squared errors, accumulated separately, estimate parameter MSE. The variance estimate is their average minus the same cross-run statistic formed from raw means. Jackknife-$t$ intervals are nominal and can be unreliable near zero; negative estimates are retained rather than clipped. The $10^{-4}$ pointwise signed-projection half-width target is not met by 32 of the 35 real-data cells, including the principal shared-objective allocations. Failure to meet this precision target does not imply that a separately
++computed allocation contrast is unresolved. Cellwise projections use a 105-member simultaneous-inference family;
++allocation and training-configuration contrasts use a separate 36-member family.
+ 
+ \begin{table}[tbp]
+ \centering\small
+ \caption{Additional allocation results at $H=4,\gamma_b,Nm=256$.
+-The R0 panel supplements Figure~\ref{fig:real-allocation} without repeating
+-its projection paths; the R1/R2 panel gives disjoint-partition results with
++The upper panel adds error and loss measurements for the shared-objective
++setting in Figure~\ref{fig:real-allocation}; the lower panel gives
++disjoint-partition results with
+ nominal 95\% projection intervals. In both panels, MSE is the raw-checkpoint
+ parameter MSE multiplied by $10^3$. Held-out loss evaluates each run's own
+ tail-average model, then averages over runs. S: SCAFFOLD; F: FedAvg.}
+ \label{tab:supp-real-full}
+ \begin{tabular}{@{}crrrr@{}}
+ \toprule
+-\multicolumn{5}{c}{R0: additional error and loss measurements} \\
++\multicolumn{5}{c}{Shared objective: additional error and loss measurements} \\
+ $N$ & MSE (S) & MSE (F) & Test loss (S) & Test loss (F) \\
+ \midrule
+ 8 & $2.3511$ & $2.3509$ & $0.424981$ & $0.424983$ \\
+@@ -411,43 +435,69 @@
+ \end{tabular}
+ 
+ \medskip
+-\begin{tabular}{@{}cccrlrr@{}}
+-\toprule
+-Regime & $N$ & Alg. & Projection & Nominal interval & MSE & Test loss \\
+-\midrule
+-R1 & 8 & S & $0.000341$ & $[0.000213,0.000468]$ & $2.3458$ & $0.424978$ \\
+-R1 & 8 & F & $0.000268$ & $[0.000140,0.000396]$ & $2.3454$ & $0.424981$ \\
+-R1 & 32 & S & $0.000880$ & $[0.000638,0.001123]$ & $2.3661$ & $0.424963$ \\
+-R1 & 32 & F & $0.000472$ & $[0.000230,0.000715]$ & $2.3643$ & $0.424977$ \\
+-R1 & 128 & S & $0.003553$ & $[0.003393,0.003714]$ & $2.3642$ & $0.424884$ \\
+-R1 & 128 & F & $0.001994$ & $[0.001830,0.002158]$ & $2.3507$ & $0.424936$ \\
+-R2 & 8 & S & $0.000243$ & $[0.000050,0.000436]$ & $2.2526$ & $0.424984$ \\
+-R2 & 8 & F & $-0.039298$ & $[-0.039491,-0.039104]$ & $5.6791$ & $0.426589$ \\
+-R2 & 32 & S & $0.000352$ & $[0.000143,0.000561]$ & $2.2180$ & $0.424981$ \\
+-R2 & 32 & F & $-0.055891$ & $[-0.056096,-0.055686]$ & $9.0666$ & $0.427274$ \\
+-R2 & 128 & S & $0.001256$ & $[0.001096,0.001416]$ & $2.1956$ & $0.424956$ \\
+-R2 & 128 & F & $-0.062027$ & $[-0.062182,-0.061872]$ & $10.7951$ & $0.427548$ \\
++\begin{tabular}{@{}ccrlrr@{}}
++\toprule
++$N$ & Alg. & Projection & Nominal interval & MSE & Test loss \\
++\midrule
++\multicolumn{6}{l}{\emph{Disjoint IID partition}} \\
++8 & S & $0.000341$ & $[0.000213,0.000468]$ & $2.3458$ & $0.424978$ \\
++8 & F & $0.000268$ & $[0.000140,0.000396]$ & $2.3454$ & $0.424981$ \\
++32 & S & $0.000880$ & $[0.000638,0.001123]$ & $2.3661$ & $0.424963$ \\
++32 & F & $0.000472$ & $[0.000230,0.000715]$ & $2.3643$ & $0.424977$ \\
++128 & S & $0.003553$ & $[0.003393,0.003714]$ & $2.3642$ & $0.424884$ \\
++128 & F & $0.001994$ & $[0.001830,0.002158]$ & $2.3507$ & $0.424936$ \\
++\midrule
++\multicolumn{6}{l}{\emph{Disjoint label-skew partition}} \\
++8 & S & $0.000243$ & $[0.000050,0.000436]$ & $2.2526$ & $0.424984$ \\
++8 & F & $-0.039298$ & $[-0.039491,-0.039104]$ & $5.6791$ & $0.426589$ \\
++32 & S & $0.000352$ & $[0.000143,0.000561]$ & $2.2180$ & $0.424981$ \\
++32 & F & $-0.055891$ & $[-0.056096,-0.055686]$ & $9.0666$ & $0.427274$ \\
++128 & S & $0.001256$ & $[0.001096,0.001416]$ & $2.1956$ & $0.424956$ \\
++128 & F & $-0.062027$ & $[-0.062182,-0.061872]$ & $10.7951$ & $0.427548$ \\
+ \bottomrule
+ \end{tabular}
+ \end{table}
+ 
+-At $N=32,H=4$ in R2, the deterministic FedAvg limiting point is about $0.08365$ from $x_{\rm ref}$. Thus the large SCAFFOLD--FedAvg displacement difference includes heterogeneity drift correction, not only stochastic control effects. Table~\ref{tab:supp-real-full} and the R1/R2 partition sensitivities are retained as contextual results, without attributing their whole difference to $B_{20}^{\rm ctrl}$.
+-
+-\subsection{Supplementary batch and numerical-integrity checks}
++At $N=32,H=4$ in the label-skew setting, the deterministic FedAvg
++limiting point is about $0.08365$ from $x_{\rm ref}$. Thus the large
++SCAFFOLD--FedAvg displacement difference includes correction of
++heterogeneity-induced drift and cannot be attributed entirely to
++$B_{20}^{\rm ctrl}$.
++
++\subsection{Run-length and numerical sensitivity}
+ \label{app:supp-audit}
+ 
+-An analysis-only recomputation from the retained batch sums covers all 408 E1 and 108 R0 paired runs (33,852 stored batches). Primary means, raw means and raw second moments reconstruct exactly; the corresponding 118 fitted-coefficient rows, fourteen $H$ contrasts and twelve R0 policy/allocation contrasts agree numerically with the frozen results. It does not reconstruct unsaved round-level trajectories or validate the stationary law. Raw examples, R1/R2 batches and complete restart states are not part of this independent batch audit.
+-
+-No first/last-half projected contrast in this audit excludes zero under the original $2\times69$ family adjustment. Batch autocorrelation proxies are retained, not interpreted as certified effective sample sizes. Four of the 68 E1 algorithm-cell raw-versus-balance projected differences have nominal intervals excluding zero; the stored balance estimator remains primary. In R0, direct and primary observables are identical by construction, so their agreement is not a separate estimator validation. R0 first- and last-half endpoint allocation contrasts are respectively $0.003098$ and $0.003129$ for SCAFFOLD, and $0.002053$ and $0.002092$ for FedAvg. These post-hoc subdivisions of the same 64 batches support within-tail consistency; they are not extended-burn or extended-tail runs.
+-
+-The original fourteen short implementation checks and the affine checks pass. The separate full-horizon $H=1$ audit retains 48 strict $10^{-10}$ failures among 132 checks across all regimes; the R0 subset has 24 among 60, independently reproduced here. The maximum R0 coordinate discrepancy is $4.33\times10^{-10}$, whereas the reported all-regime maximum vector discrepancy is about $7.54\times10^{-10}$; these are different norms. A stable endpoint-increment kernel was separately checked on two long R0 $H=1$ paths and reduced their vector discrepancies to about $10^{-12}$. These post-hoc checks neither replace frozen production outputs nor amount to a full-grid stable-kernel rerun. The numerical-identity and precision flags remain in the registry and companion tables.
++First/last-half projected contrasts do not exclude zero under the
++$2\times69$ family adjustment, but this is not a test of temporal
++equivalence. Four of the 68 algorithm--configuration comparisons in
++the independent controlled study have nominal raw-versus-balance
++intervals excluding zero; the balance estimator remains primary.
++In the shared-objective real-data study, the direct and primary
++observables coincide by construction, so their agreement is not a
++separate validation.
++
++The first- and last-half endpoint allocation contrasts are $0.003098$
++and $0.003129$ for SCAFFOLD, and $0.002053$ and $0.002092$ for FedAvg.
++These subdivisions of the same 64 batches support within-tail
++consistency, but are not independent or longer-run replications.
++
++The short-run update-identity and affine-translation checks pass.
++Over longer trajectories, 48 of 132 $H=1$ arithmetic checks exceed
++the strict $10^{-10}$ tolerance, with a maximum vector discrepancy
++of about $7.54\times10^{-10}$. The shared-objective subset has 24
++exceedances among 60 checks and maximum coordinate discrepancy
++$4.33\times10^{-10}$. Two additional shared-objective paths using
++a stable endpoint-increment computation reduce vector discrepancies
++to about $10^{-12}$. These two checks do not establish numerical
++agreement over the full set of configurations and do not replace
++the reported results.
+ 
+ \subsection{Finite-tail model averaging: protocol, estimators, and diagnostics}
+ \label{app:e4-averaging}
+ 
+-For the saved-data analysis in Section~\ref{sec:num-averaging}, the 1,512
+-reconstructed models reuse the original training runs, not independent
+-replications. With $Y_{r,K}^{\mathcal A}$ as defined in
++The model-averaging analysis in Section~\ref{sec:num-averaging} uses
++multiple windows from the same training runs; the windows are not
++independent replications. With $Y_{r,K}^{\mathcal A}$ as defined in
+ Section~\ref{sec:num-averaging}, set
+ $e_{r,K}^{\mathcal A}=Y_{r,K}^{\mathcal A}-x_{\rm ref}$.
+ With $R=12$ and $\bar e_K=R^{-1}\sum_r e_{r,K}$, suppressing the algorithm
+@@ -466,13 +516,12 @@
+ 
+ Beyond the primary configuration specified in
+ Section~\ref{sec:num-averaging}, the $N=8,32$ allocations are secondary and
+-the other six cells are diagnostics. All cells and windows are retained.
+-They end at round 88,320 in the primary configuration; across cells,
+-equal $K$ need not mean equal compute because batch lengths differ. Costs, start/end rounds and window
+-lengths are recorded in \texttt{WINDOW\_RESULTS.csv} and
+-\texttt{PRACTICAL\_IMPLICATIONS.csv} in \texttt{supplementary\_results/E4/}.
+-
+-Intervals use 19,999 paired-seed bootstrap draws (seed 202610094), preserving
++the other six configurations provide step-size, local-step, and
++$H=1$ comparisons. Windows end at round 88,320 in the primary
++configuration. Across configurations, equal $K$ need not mean equal
++compute because batch lengths differ.
++
++Intervals use 19,999 paired-seed bootstrap draws, preserving
+ one resampled seed index vector across algorithms, cells and windows. The
+ maximum standardized, empirical-population-centered deviation gives approximate
+ simultaneous 95\% intervals within the separately specified primary (196
+@@ -480,14 +529,12 @@
+ jackknife with Bonferroni-$t$ intervals is retained as a sensitivity analysis.
+ With twelve seeds, these are approximate sampling intervals; they exclude
+ burn-in, stationary-approximation, and dataset uncertainty.
+-Table~\ref{tab:e4-primary} adds statistics not displayed in the main text;
+-the complete original-precision results remain in
+-\nolinkurl{supplementary_results/E4/BIAS_VARIANCE_MSE.csv} and
+-\nolinkurl{supplementary_results/E4/PRACTICAL_IMPLICATIONS.csv}.
++Table~\ref{tab:e4-primary} reports additional absolute errors and
++losses, together with their sampling uncertainty.
+ 
+ \begin{table}[t]
+ \centering\small
+-\caption{Additional E4 primary statistics at $K=64$.
++\caption{Additional longest-window model-averaging statistics at $K=64$.
+ The plotted $\widehat U_K,\widehat V_K$, their shares, and the paired total-MSE
+ contrast are given in Section~\ref{sec:num-averaging} and
+ Figure~\ref{fig:e4-averaging}. This table supplies the remaining absolute
+@@ -525,7 +572,8 @@
+ about $0.00769\%$ of reference test loss. Seed intervals condition on the
+ fixed test set. At $N=32$ and $8$, the longest-window
+ SCAFFOLD/FedAvg share estimates are $14.97\%/7.77\%$ and $1.61\%/0.97\%$;
+-weaker identification in those cells remains in the full tables.
++their squared-mean-displacement intervals provide weaker evidence
++against zero than those of the primary configuration.
+ 
+ \paragraph{Temporal uncertainty and crossover.}
+ None of the 144 predeclared temporal-equivalence checks meets both the
+@@ -542,13 +590,11 @@
+ parameter-MSE share is a researcher-chosen reference, not a predictive-loss
+ threshold. All results remain finite-tail, with no certified stationary floor.
+ 
+-Two later diagnostic pilots, seeds 30001 and 30002, separately used 25,600
+-burn-in rounds and 128 batches of 1,280 rounds (189,440 rounds per run).
+-They were not pooled with the original twelve seeds. These two-run pilots
+-cannot settle stationarity or practical significance; the proposed 48-seed
+-extension was not executed. Their finite states and maximum control-sum
+-residual $6.50\times10^{-11}$ do not replace the historical $H=1$ arithmetic
+-diagnostics in Appendix~\ref{app:supp-audit}.
++Two separate longer-run pilots use 25,600 burn-in rounds and 128
++batches of 1,280 rounds, totaling 189,440 rounds per run. They are not
++pooled with the twelve primary runs. Two runs are insufficient to
++resolve the temporal-equivalence or practical-significance questions;
++the reported main comparisons remain those of the primary finite tails.
+ 
+ 
+ \subsection{Exploratory reference-point coefficient comparison}
+@@ -559,7 +605,7 @@
+ Table~\ref{tab:e5-bridge}. This appendix supplies their reference-direction,
+ window, and uncertainty diagnostics.
+ 
+-For context, the frozen reference-parameter direction has cosine point estimates
++For context, the fixed reference-parameter direction has cosine point estimates
+ $0.8953$--$0.9087$, and the unpreconditioned direction
+ $-T_{\rm ref}[\Sigma_{\rm ref}]$ has $0.6590$--$0.6929$, over the same six
+ $K=64$ configurations. The direction of the plug-in vector is therefore more
+@@ -572,8 +618,9 @@
+ $1.8907$, a descriptive three-point trend rather than an identified
+ asymptotic rate. Across allocations,
+ $N$ and $m$ change together, so this is not a fixed-covariance client-count test.
+-All seven windows and 124 coordinates remain in the companion tables; over
+-all nonzero-proxy windows, cosine ranges down to $0.872197$.
++Across the seven averaging windows, the full-vector cosine is as low
++as $0.872197$ for shorter windows, compared with the longest-window
++values in Table~\ref{tab:e5-bridge}.
+ 
+ For the $H=4/H=2$ projected ratio reported in
+ Section~\ref{sec:num-directional}, the exploratory simultaneous interval $[2.7415,3.1125]$, jackknife interval
+@@ -583,12 +630,12 @@
+ The $H=1$ residuals are approximately $10^{-11}$--$10^{-10}$; their zero-proxy
+ structure is an implementation check, not exclusive coefficient identification.
+ 
+-The analysis uses 19,999 paired-seed resamples (seed 202610096), with separately
++The analysis uses 19,999 paired-seed resamples, with separately
+ 95\% scalar (1,068 statistics) and vector (117 comparisons) families and
+ jackknife sensitivities. These exploratory intervals exclude proxy approximation,
+ asymptotic remainder, and dataset uncertainty; the two families are not jointly
+-95\%. All 54 early/late paired contrasts are retained without replacing E4's
+-algorithm-specific temporal checks. These diagnostics retain the empirical
+-scope stated in Section~\ref{sec:num-directional}; they do not alter the
+-E4 or historical $H=4,H=8$ outcomes.
+-
++95\%. The 54 early/late paired contrasts assess stability of the algorithm
++difference, not temporal equivalence of each algorithm separately.
++Consequently they do not establish stationarity or resolve the
++model-averaging diagnostics in Appendix~\ref{app:e4-averaging}.
++
+--- before/manuscript/appendix/D_reproducibility.tex
++++ after/manuscript/appendix/D_reproducibility.tex
+@@ -1,82 +0,0 @@
+-\section{Computational provenance and reproducibility}
+-\label{app:reproducibility}
+-
+-The reported numerical results come from recorded experiment artifacts.
+-Production artifacts retain configuration snapshots, source-commit identifiers,
+-seed blocks, raw run/batch summaries, fitted coefficients, bootstrap outputs,
+-validity checks, and target-inclusion outcomes. Diagnostic artifacts retain
+-the corresponding audits and provenance records.
+-Table~\ref{tab:F-artifacts} identifies the studies and their seed blocks.
+-Artifact names are reproduced verbatim; terms such as \texttt{confirmation}
+-and \texttt{validation} are bookkeeping labels, not assessments of evidence.
+-
+-\begin{table}[htbp]
+-\centering\small
+-\caption{Experiment artifacts and seed blocks. The $d=5$ seed block belongs
+-to a separate workstream; the rotation study uses four paired seeds per setting.}
+-\label{tab:F-artifacts}
+-\begin{tabular}{@{}p{0.33\linewidth}p{0.63\linewidth}@{}}
+-\toprule
+-Study and seeds & Repository artifact identifier \\
+-\midrule
+-SCAFFOLD $d=2$ primary; 901--908 &
+-\nolinkurl{p2-d2-coefficient-primary} \\
+-SCAFFOLD smaller step; 1001--1008 &
+-\nolinkurl{p2-d2-h4-small-step-confirmation} \\
+-Fixed-$\gamma$ check; 1301--1308 &
+-\nolinkurl{p2-d2-fixed-gamma-largeN-plateau} \\
+-Orthogonal equivariance &
+-\nolinkurl{p2-d2-rotation-invariance} \\
+-SCAFFOLD $d=5$; 1201--1208 &
+-\nolinkurl{p2-d5-controlled-validation} \\
+-FedAvg $d=2$ primary; 1101--1108 &
+-\nolinkurl{p3-d2-coefficient-primary} \\
+-FedAvg smaller step; 1201--1208 &
+-\nolinkurl{p3-d2-h4-small-step-confirmation} \\
+-Matched primary; 2101--2108 &
+-\nolinkurl{p3-d2-matched-attribution-primary} \\
+-Matched smaller step; 2201--2208 &
+-\nolinkurl{p3-d2-matched-attribution-h4-small-step-confirmation} \\
+-Matched saved-data diagnostic &
+-\nolinkurl{p3-d2-matched-attribution-h4-diagnostic} \\
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-Matched pairs receive identical noise blocks keyed by seed, round, client,
+-and local-step index, regardless of differences in their state trajectories.
+-The $H=4$ diagnostic reads saved primary and smaller-step paired artifacts;
+-it generates no new stationary production chains.
+-Saved audits verify the identity
+-$\widehat D=\widehat{\mathcal C}^{\Scaf}-\widehat{\mathcal C}^{\FedAvg}$
+-and the residual decomposition to machine precision.
+-The largest recorded control-sum error is $7.27\times10^{-12}$,
+-below $10^{-10}$; the fixed-seed reference-kernel audit reports zero discrepancy.
+-The four secondary direct--balance failures are retained in
+-\texttt{p3-d2-coefficient-primary} and Table~\ref{tab:E-direct-balance}.
+-
+-\paragraph{Supplementary provenance.}
+-The supplementary study was frozen on 9 October 2026 under the identifier \nolinkurl{independent-supplement-v1}. It records 69 production configurations and 828 paired runs (seeds 20001--20012); pilot and affine checks are separate. Numerical kernels, objective, data-processing code and engine match retained frozen hashes. The source manifest distinguishes reporting/scheduling changes; four complete freeze-time files are unavailable, so the current source is not represented as a complete historical checkout.
+-
+-The local \nolinkurl{supplementary_results/} directory supplies recorded tables, frozen settings, diagnostic summaries, manifests and the source-review snapshot. Data hashes and source URLs identify a9a from \url{https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html}. Full production arrays, restart states and examples remain in the experiment archive.
+-
+-The source manifest lists \url{https://github.com/Duck-YP/stationary-bias-study} at commit \texttt{7f6de2c}, with the supplementary directory untracked. That commit is therefore not a verified supplementary-code release. Reproduction requires the recorded source, environment, commands and experiment arrays. The analysis-only batch audit covers E1 and R0, not R1/R2 batches or raw-example task-loss regeneration. Historical studies remain separate, and all discrepancy records are preserved.
+-
+-\paragraph{Model-averaging and reference-point analyses.}
+-The \texttt{E4/} and \texttt{E5/} subdirectories of
+-\texttt{supplementary\_results/} retain the exact submitted analysis tables,
+-protocols, source receipts, and scope decisions used in
+-Appendices~\ref{app:e4-averaging} and~\ref{app:e5-bridge}.
+-E4 reuses the nine R0 cells and seeds 20001--20012; its separately recorded
+-pilots use seeds 30001--30002. E5 is a post-hoc reanalysis of those saved
+-production models, not new training. Windows, algorithms and reanalyses are
+-not independent repetitions of the original experiment.
+-The included E4 model vectors and E5 reference/paired vectors permit the
+-point estimates and plotted values to be checked; the analysis source snapshots
+-and input hashes identify the full external inputs. The manuscript package
+-is not a replacement for the production arrays, data and restart archive,
+-and does not establish a public supplementary-code release.
+-The new figure panels are separately generated from saved E4 interval columns;
+-LaTeX composes them at the audited final size. No estimates, interval rules,
+-or original figure data were refitted during manuscript integration.
+-
+--- before/manuscript/figures_gallery.tex
++++ after/manuscript/figures_gallery.tex
+@@ -15,7 +15,7 @@
+ \includegraphics[width=\linewidth]{figures/redrawn/hist_matched_H4.pdf}
+ \caption{Four local steps}
+ \end{subfigure}
+-\caption{Historical primary matched differences. Pointwise simultaneous
++\caption{Matched differences on the joint step-size/client-count grid. Pointwise simultaneous
+ Student-$t$ intervals and simultaneous seed-block-bootstrap intercept
+ intervals retain their original definitions.}
+ \end{figure}
+@@ -32,14 +32,14 @@
+ \includegraphics[width=\linewidth]{figures/redrawn/hist_fixed_gamma_coord2.pdf}
+ \caption{Coordinate 2}
+ \end{subfigure}
+-\caption{Historical fixed-step SCAFFOLD checks. Theory lines are asymptotic
++\caption{Fixed-step SCAFFOLD checks. Theory lines are asymptotic
+ references, not certified exact fixed-step infinite-client limits.}
+ \end{figure}
+ \clearpage
+ \begin{figure}[p]
+ \centering
+ \includegraphics[width=0.58\textwidth]{figures/redrawn/real_R0_allocation.pdf}
+-\caption{Recorded R0 allocation at a fixed sampling budget. Bars are
++\caption{Shared-objective allocation at a fixed sampling budget. Bars are
+ nominal intervals of finite-tail signed displacement; they are not
+ adjusted endpoint-contrast intervals.}
+ \end{figure}
+@@ -56,7 +56,7 @@
+ \includegraphics[width=\linewidth]{figures/redrawn/hist_H4_loglog_residual.pdf}
+ \caption{Absolute residuals}
+ \end{subfigure}
+-\caption{Historical four-step diagnostics. The smaller-step fitted
++\caption{Four-local-step diagnostics. The smaller-step fitted
+ intervals continue to exclude their targets. The residual panel retains
+ the complete combined nine-point saved grid.}
+ \end{figure}
+@@ -74,7 +74,7 @@
+ \includegraphics[width=\linewidth]{figures/redrawn/e4_averaging_fedavg.pdf}
+ \caption{FedAvg}
+ \end{subfigure}
+-\caption{E4 finite-tail averaging. The symmetric-log scale preserves negative
++\caption{Finite-tail model averaging. The symmetric-log scale preserves negative
+ squared-mean estimates. Each $K$ is a count of 1,280-round batches; all windows
+ use the same end time and twelve paired seeds. Bars are the original
+ simultaneous primary-family intervals, not stationarity certificates.}
+--- before/manuscript/main.tex
++++ after/manuscript/main.tex
+@@ -37,6 +37,7 @@
+ \input{sections/07_numerical_study}
+ \input{sections/08_discussion_limitations}
+ \input{sections/09_conclusion}
++\input{sections/10_code_availability}
+ 
+ \clearpage
+ \begingroup
+@@ -50,6 +51,5 @@
+ \input{appendix/A_scaffold_proof}
+ \input{appendix/B_fedavg_proof}
+ \input{appendix/C_numerical_details}
+-\input{appendix/D_reproducibility}
+ 
+ \end{document}
+--- before/manuscript/sections/07_numerical_study.tex
++++ after/manuscript/sections/07_numerical_study.tex
+@@ -66,7 +66,7 @@
+ leading coefficient without imposing its theoretical value. Together these
+ designs examine local-step dependence; multidimensional and affine-shift
+ checks address coordinate consistency and the exact control translation.
+-The separate studies retain their original grids and inference procedures.
++Each design uses its own independent runs and inference procedure.
+ 
+ \subsubsection{Individual stationary-bias coefficients}
+ \label{sec:num-coefficients}
+@@ -79,7 +79,7 @@
+ toward the theoretical coefficients and their intervals include both targets.
+ Table~\ref{tab:num-attribution-summary} compares the target and estimated
+ vectors for both algorithms and the separately simulated paired difference.
+-The original coordinatewise intervals are in Appendix~\ref{app:num-coefficients}.
++The coordinatewise intervals are in Appendix~\ref{app:num-coefficients}.
+ 
+ \begin{table}[!htbp]
+ \centering\small
+@@ -89,8 +89,7 @@
+ P: primary grid; S: smaller-step grid. For the algorithm rows the target is
+ $B_{20}^{\mathcal A}(H)$; for the paired rows it is $B_{20}^{\rm ctrl}(H)$.
+ The coordinates are displayed as vectors, rounded to seven decimal places.
+-Appendix~\ref{app:num-coefficients} gives the original simultaneous intervals;
+-all original-precision values remain in the accompanying result files.}
++Appendix~\ref{app:num-coefficients} gives the simultaneous intervals.}
+ \label{tab:num-attribution-summary}
+ \begin{tabular}{@{}lccrr@{}}
+ \toprule
+@@ -152,7 +151,7 @@
+ intercepts are compared with the theoretical control-associated coefficient.
+ Pointwise bars are simultaneous Student-$t$ intervals; fitted-intercept
+ bars are simultaneous seed-block-bootstrap intervals. The plotted lines
+-use the saved descriptive linear fits.}
++show the descriptive linear fits.}
+ \label{fig:num-matched-primary}
+ \end{figure}
+ 
+@@ -164,8 +163,8 @@
+ compatible with the normalized remainder scale $O_{H,d}(1/N+\gamma)$.
+ Both coefficient grids follow $\gamma=1/N$, so the remaining discrepancy
+ cannot be separated into finite-step and finite-client effects from these
+-paths alone. Appendix~\ref{app:num-h4-diagnostics} retains the complete
+-diagnostic interpretation and unresolved sources; the full intervals are
++paths alone. Appendix~\ref{app:num-h4-diagnostics} examines the residuals and
++unresolved sources; the full intervals are
+ in Appendix~\ref{app:num-coefficients}.
+ 
+ \subsubsection{Client-count behavior and multidimensional checks}
+@@ -199,7 +198,7 @@
+ are not interpreted as exact fixed-$\gamma$, $N\to\infty$ limits.
+ Pointwise bars are simultaneous Student-$t$ intervals; fitted-intercept
+ bars are simultaneous seed-block-bootstrap intervals. The plotted lines
+-use the saved descriptive linear fits.}
++show the descriptive linear fits.}
+ \label{fig:E-p2-plateau}
+ \end{figure}
+ 
+@@ -220,7 +219,8 @@
+ 
+ A separate implementation uses twelve paired runs per configuration. At $N=32$, it fits $(N/\gamma)\widehat b$ against $\gamma\in\{1/64,1/128,1/256,1/512\}$ separately for each algorithm and $H\in\{1,2,4,8\}$, without subtracting $B_{11}$ or imposing a shared intercept. The $H=1,2,4$ primary nominal intervals include their targets, but both algorithms show offsets at $H=8$. SCAFFOLD's adjusted $H=8$ versus $H=2$ intercept contrasts exclude zero. Omitting the largest step moves estimates toward the target; it does not replace the primary fits (Appendix~\ref{app:supp-controlled}).
+ 
+-To estimate the control coefficient separately, we fit Equation~\eqref{eq:num-D} against $(1,\gamma,1/N)$ on the Cartesian grid $N\in\{32,64,128\}$ and $\gamma\in\{1/128,1/256,1/512\}$. Table~\ref{tab:supp-control} retains all primary intercepts, including the $H=8$ target exclusions. The adjusted $H=4$ minus $3.5(H=2)$ contrast includes zero in both coordinates. This is compatible with the predicted fixed-$H$ coefficient relation, not $H$-independence of the entire bias. Historical $H=4$ exclusions remain separate and unchanged.
++To estimate the control coefficient separately, we fit Equation~\eqref{eq:num-D} against $(1,\gamma,1/N)$ on the Cartesian grid $N\in\{32,64,128\}$ and $\gamma\in\{1/128,1/256,1/512\}$. Table~\ref{tab:supp-control} retains all primary intercepts, including the $H=8$ target exclusions. The adjusted $H=4$ minus $3.5(H=2)$ contrast includes zero in both coordinates. This is compatible with the predicted fixed-$H$ coefficient relation, not $H$-independence of the entire bias. These independently generated results do not resolve the $H=4$ target
++exclusions on the joint grid in Section~\ref{sec:num-attribution}.
+ 
+ \begin{table}[t]
+ \centering\small
+@@ -244,11 +244,12 @@
+ \subsection{Real-data implications of a fixed sampling budget}
+ \label{sec:num-real}
+ 
+-Does equal server-average gradient noise make client allocations interchangeable? We use a9a regularized logistic regression with 123 features and a regularized intercept. The primary real-data regime, R0, replicates one empirical objective across clients to isolate allocation effects. Natural minibatch noise is state dependent, so this tests an implication, not the exact additive-noise coefficients. Appendix~\ref{app:supp-real} gives data preparation and the disjoint IID/label-skew regimes R1/R2.
+-
+-We fix $H=4$, $\gamma_b=0.1960784314$, and $Nm=256$, where $m$ is each client's batch size. The allocations $(N,m)=(8,32),(32,8),(128,2)$ use equal total example gradients per local-step level. Let $x_{\rm ref}$ be the optimizer of the shared empirical objective and $\Sigma_{\rm ref}$ the single-example gradient-noise covariance evaluated there. At this common reference point, the R0 server-averaged minibatch noise has covariance $\Sigma_{\rm ref}/(Nm)$ in all three allocations. Inserting the local covariance $C=\Sigma_{\rm ref}/m$ into the additive-noise expression in Equation~\eqref{eq:ctrl-def} suggests a mean-shift term proportional to $\gamma^2/m$. This motivates a distinction between identical reference aggregate noise and different local trajectory effects; it is not an exact coefficient prediction under state-dependent minibatch noise.
+-
+-Twelve independent paired runs per allocation provide means over the frozen post-burn-in tail. The projection direction $v$ was fixed before production as the normalized vector $-A_{\rm ref}^{-1}T_{\rm ref}[\Sigma_{\rm ref}]$, where $A_{\rm ref}=\nabla^2f(x_{\rm ref})$ and $T_{\rm ref}=\nabla^3f(x_{\rm ref})$. We report
++Does equal server-average gradient noise make client allocations interchangeable? We use a9a regularized logistic regression with 123 features and a regularized intercept. The shared-objective experiment assigns the same empirical objective to
++every client to isolate allocation effects. Natural minibatch noise is state dependent, so this tests an implication, not the exact additive-noise coefficients. Appendix~\ref{app:supp-real} gives data preparation and the disjoint IID and label-skew partitions.
++
++We fix $H=4$, $\gamma_b=0.1960784314$, and $Nm=256$, where $m$ is each client's batch size. The allocations $(N,m)=(8,32),(32,8),(128,2)$ use equal total example gradients per local-step level. Let $x_{\rm ref}$ be the optimizer of the shared empirical objective and $\Sigma_{\rm ref}$ the single-example gradient-noise covariance evaluated there. At this common reference point, the server-averaged minibatch noise has covariance $\Sigma_{\rm ref}/(Nm)$ in all three allocations. Inserting the local covariance $C=\Sigma_{\rm ref}/m$ into the additive-noise expression in Equation~\eqref{eq:ctrl-def} suggests a mean-shift term proportional to $\gamma^2/m$. This motivates a distinction between identical reference aggregate noise and different local trajectory effects; it is not an exact coefficient prediction under state-dependent minibatch noise.
++
++Twelve independent paired runs per allocation provide means over the prespecified post-burn-in tail. The projection direction $v$ was fixed before the training runs as the normalized vector $-A_{\rm ref}^{-1}T_{\rm ref}[\Sigma_{\rm ref}]$, where $A_{\rm ref}=\nabla^2f(x_{\rm ref})$ and $T_{\rm ref}=\nabla^3f(x_{\rm ref})$. We report
+ \begin{equation}
+ \label{eq:real-projection}
+ \widehat\delta_v^{\mathcal A}=v^\top(\overline x^{\mathcal A}-x_{\rm ref}),
+@@ -258,17 +259,17 @@
+ \begin{figure}[t]
+ \centering
+ \includegraphics[width=.58\textwidth]{figures/redrawn/real_R0_allocation.pdf}
+-\caption{Fixed-budget real-data allocation experiment in R0. Each client uses $m=256/N$ samples per local step, with $H=4$ and the fixed base step size. Bars are nominal 95\% intervals over twelve independent run seeds. The ordinate is the signed displacement in Equation~\eqref{eq:real-projection}, not total MSE. Categorical horizontal positions show $(N,m)$; the ordinate and interval endpoints are multiplied by 1000 for display. Small horizontal offsets distinguish the two algorithms at the same allocation. The full R0/R1/R2 figure is retained in the companion artifacts.}
++\caption{Fixed-budget real-data allocation experiment with a shared objective. Each client uses $m=256/N$ samples per local step, with $H=4$ and the fixed base step size. Bars are nominal 95\% intervals over twelve independent run seeds. The ordinate is the signed displacement in Equation~\eqref{eq:real-projection}, not total MSE. Categorical horizontal positions show $(N,m)$; the ordinate and interval endpoints are multiplied by 1000 for display. Small horizontal offsets distinguish the two algorithms at the same allocation.}
+ \label{fig:real-allocation}
+ \end{figure}
+ 
+-Displacement increases as more clients receive smaller batches (Figure~\ref{fig:real-allocation}). The $N=128$ minus $N=8$ contrasts are $0.003114$ for SCAFFOLD and $0.002072$ for FedAvg, with adjusted intervals $[0.002749,0.003478]$ and $[0.001713,0.002431]$. Raw variance estimates stay near $0.00235$--$0.00236$. The allocation difference remains in post-hoc first- and last-half checks of the original R0 tails. These are finite-tail findings; Section~\ref{sec:num-averaging} examines averaging within the same runs and reports the remaining temporal uncertainty.
++Displacement increases as more clients receive smaller batches (Figure~\ref{fig:real-allocation}). The $N=128$ minus $N=8$ contrasts are $0.003114$ for SCAFFOLD and $0.002072$ for FedAvg, with adjusted intervals $[0.002749,0.003478]$ and $[0.001713,0.002431]$. Raw variance estimates stay near $0.00235$--$0.00236$. The allocation difference remains in post-hoc first- and last-half checks of the same run tails. These are finite-tail findings; Section~\ref{sec:num-averaging} examines averaging within the same runs and reports the remaining temporal uncertainty.
+ 
+ At $N=32,m=8$, lowering $\gamma$ reduces both displacement and variance, whereas lowering $H$ changes displacement with much less change in variance (Table~\ref{tab:supp-policy}). The horizons differ, so this is not a fixed-cost efficiency ranking. At $N=128$, squared mean displacement accounts for about $0.50\%$ and $0.23\%$ of the \emph{raw-checkpoint} parameter MSE for SCAFFOLD and FedAvg. These small fractions describe the variance-dominated individual checkpoints. The next experiment asks whether that interpretation survives temporal averaging. Held-out loss can improve slightly while displacement increases, so its response is assessed separately.
+ 
+ \begin{table}[t]
+ \centering\small
+-\caption{Real-data R0 policy comparisons at $N=32,m=8$. Entries are multiplied by $10^3$. $\widehat\delta_v$ is the signed mean displacement; $\widehat V$ is the raw parameter-variance estimate. These are finite-tail point estimates, not exact step-size scaling laws. Full intervals and contrasts are in the companion tables described in Appendix~\ref{app:supp-real}. S: SCAFFOLD; F: FedAvg.}
++\caption{Shared-objective training-configuration comparisons at $N=32,m=8$. Entries are multiplied by $10^3$. $\widehat\delta_v$ is the signed mean displacement; $\widehat V$ is the raw parameter-variance estimate. These are finite-tail point estimates, not exact step-size scaling laws. The estimation and uncertainty procedures are described in Appendix~\ref{app:supp-real}. S: SCAFFOLD; F: FedAvg.}
+ \label{tab:supp-policy}
+ \begin{tabular}{@{}lrrrr@{}}\toprule
+ Setting & $\widehat\delta_v^{\rm S}$ & $\widehat\delta_v^{\rm F}$ & $\widehat V^{\rm S}$ & $\widehat V^{\rm F}$ \\ \midrule
+@@ -293,9 +294,8 @@
+ \label{sec:num-averaging}
+ 
+ Does the small mean-displacement share of raw-checkpoint error persist after
+-temporal model averaging? We reconstruct time-averaged models from all nine
+-frozen R0 configurations and their twelve paired seeds, without new production
+-training. Let $Y_{r,K}^{\mathcal A}$ denote the global model obtained by averaging
++temporal model averaging? We form time-averaged models from the same twelve paired runs for each
++of the nine shared-objective configurations. Let $Y_{r,K}^{\mathcal A}$ denote the global model obtained by averaging
+ the last $K\in\{1,2,4,8,16,32,64\}$ equal-length batches of rounds \emph{within}
+ run $r$ of algorithm $\mathcal A$, with a common end time. Each run supplies
+ its own averaged output; independent runs, not batches, are the inferential
+@@ -339,7 +339,7 @@
+ \includegraphics[width=\linewidth]{figures/redrawn/e4_averaging_fedavg.pdf}
+ \caption{FedAvg}
+ \end{subfigure}
+-\caption{Finite-tail error components of time-averaged R0 models at
++\caption{Finite-tail error components of time-averaged models with a shared objective at
+ $H=4,N=128,m=2,\gamma_b$. Each batch contains
+ 1,280 rounds. Bars retain the approximate simultaneous 95\% primary-family
+ intervals across twelve independent runs; overlapping windows are not
+@@ -363,7 +363,7 @@
+ \label{sec:num-directional}
+ 
+ Does the derived curvature--noise geometry describe the real-data algorithm
+-difference? The post-hoc E5 analysis substitutes the reference-point
++difference? The post-hoc comparison substitutes the reference-point
+ quantities $A_{\rm ref}$, $T_{\rm ref}$, and $\Sigma_{\rm ref}$ defined
+ in Section~\ref{sec:num-real} into the additive-noise control coefficient,
+ yielding the plug-in vector
+@@ -379,14 +379,14 @@
+ $\widehat\Delta_K=R^{-1}\sum_r(Y_{r,K}^{\Scaf}-Y_{r,K}^{\FedAvg})$,
+ from $R=12$ paired runs. The fixed projection $v$ of
+ Equation~\eqref{eq:real-projection} uses the same curvature--noise
+-direction; E5 evaluates the full 124-dimensional difference rather than
++direction; the present comparison evaluates the full 124-dimensional difference rather than
+ agreement along that single projection. Table~\ref{tab:e5-bridge} reports
+ the three full-vector summary measures.
+ 
+ \begin{table}[!htbp]
+ \centering\small
+ \setlength{\tabcolsep}{5pt}
+-\caption{Post-hoc E5 full-vector comparison at $K=64$, without direction or
++\caption{Post-hoc full-vector comparison at $K=64$, without direction or
+ amplitude fitting. All six nonzero-proxy configurations are shown.
+ For $p=p_{\gamma,H,m}$, the cosine is
+ $p^\top\widehat\Delta_K/(\|p\|\|\widehat\Delta_K\|)$,
+@@ -418,7 +418,7 @@
+ captured more closely than its amplitude; all six proxy magnitudes exceed the
+ observed norms (Appendix~\ref{app:e5-bridge}). At fixed $H=4,N=32,m=8$,
+ halving the step size twice moves the projection ratio toward one and reduces
+-the relative residual. The frozen reference-parameter and unpreconditioned
++the relative residual. The fixed reference-parameter and unpreconditioned
+ curvature--noise directions have lower cosine point estimates
+ (Appendix~\ref{app:e5-bridge}).
+ 
+@@ -428,7 +428,7 @@
+ $N=32,m=8$, the observed $H=4/H=2$ projected ratio is $2.927$, rather than
+ $3.5$. The result is a descriptive directional explanation, not an exact
+ coefficient for state-dependent noise or a stationarity certificate.
+-Appendix~\ref{app:e5-bridge} retains all configurations, windows,
+-reference-direction comparisons, and uncertainty diagnostics.
++Appendix~\ref{app:e5-bridge} examines window sensitivity, alternative
++reference directions, and uncertainty.
+ 
+ \FloatBarrier
+--- before/manuscript/sections/10_code_availability.tex
++++ after/manuscript/sections/10_code_availability.tex
+@@ -0,0 +1,10 @@
++\paragraph{Code availability.}
++The companion repository for the implementations, detailed configurations,
++numerical records, and reproduction instructions is
++\begin{center}
++\url{https://github.com/Duck-YP/stationary-bias-study}.
++\end{center}
++
++% Before submission, upload the accompanying repository documentation and
++% verify that the public release covers the studies reported in this paper.
++% This local revision does not itself publish or verify a repository release.

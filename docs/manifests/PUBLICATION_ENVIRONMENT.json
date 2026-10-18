@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-18",
+  "python": "3.12.14",
+  "platform": "Windows",
+  "machine": "AMD64",
+  "tex": "pdfTeX 3.141592653-2.6-1.40.26 (TeX Live 2024)",
+  "installation": "New isolated venv; pip install -e .[dev] -r configs/environments/figure_redraw.requirements.lock",
+  "resolved_lock": "configs/environments/publication_20261018.requirements.lock",
+  "historical_environment_scope": "Original recorded environments remain separately archived; this record describes publication checks."
+}

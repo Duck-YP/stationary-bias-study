@@ -1,0 +1,61 @@
+{
+  "pilot_cpu_seconds": 157.53125,
+  "forecast_cpu_hours": 1.8408440874642207,
+  "feasible": true,
+  "precision": [
+    {
+      "condition": "rho_minus_symmetric",
+      "observable": "SCAFFOLD",
+      "coordinate": 1,
+      "initial_intercept_se": 0.010397625331538094,
+      "marginal_95_halfwidth": 0.02288501905490825,
+      "bonferroni_36_halfwidth": 0.044085862452622235,
+      "resolution_margin": 0.011875
+    },
+    {
+      "condition": "rho_minus_symmetric",
+      "observable": "SCAFFOLD",
+      "coordinate": 2,
+      "initial_intercept_se": 0.0027491507829928573,
+      "marginal_95_halfwidth": 0.006050840076221588,
+      "bonferroni_36_halfwidth": 0.011656381088566616,
+      "resolution_margin": 0.011875
+    },
+    {
+      "condition": "rho_minus_symmetric",
+      "observable": "FedAvg",
+      "coordinate": 1,
+      "initial_intercept_se": 0.010383002211535746,
+      "marginal_95_halfwidth": 0.022852833784788845,
+      "bonferroni_36_halfwidth": 0.04402386052078725,
+      "resolution_margin": 0.0075
+    },
+    {
+      "condition": "rho_minus_symmetric",
+      "observable": "FedAvg",
+      "coordinate": 2,
+      "initial_intercept_se": 0.0027501450090993453,
+      "marginal_95_halfwidth": 0.006053028353127744,
+      "bonferroni_36_halfwidth": 0.011660596600664794,
+      "resolution_margin": 0.0075
+    },
+    {
+      "condition": "rho_minus_symmetric",
+      "observable": "difference",
+      "coordinate": 1,
+      "initial_intercept_se": 2.1446579105217753e-05,
+      "marginal_95_halfwidth": 4.720360234531569e-05,
+      "bonferroni_36_halfwidth": 9.093335318056203e-05,
+      "resolution_margin": 0.004375
+    },
+    {
+      "condition": "rho_minus_symmetric",
+      "observable": "difference",
+      "coordinate": 2,
+      "initial_intercept_se": 1.3754337403138397e-05,
+      "marginal_95_halfwidth": 3.027309251120098e-05,
+      "bonferroni_36_halfwidth": 5.831829937576887e-05,
+      "resolution_margin": 0.004375
+    }
+  ]
+}

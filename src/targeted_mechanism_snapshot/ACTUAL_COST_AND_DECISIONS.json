@@ -1,0 +1,22 @@
+{
+  "pilot": {
+    "completed_runs": 16,
+    "measured_simulation_cpu_seconds": 157.53125,
+    "simulation_cpu_hours": 0.043758680555555554,
+    "sum_per_run_kernel_wall_seconds": 158.70291100023314,
+    "paired_rounds": 4714080
+  },
+  "production": {
+    "completed_runs": 288,
+    "measured_simulation_cpu_seconds": 4544.21875,
+    "simulation_cpu_hours": 1.2622829861111111,
+    "sum_per_run_kernel_wall_seconds": 4576.144375901902,
+    "paired_rounds": 99028800
+  },
+  "total_simulation_cpu_hours": 1.3060416666666668,
+  "cap_cpu_hours": 6.0,
+  "forecast_cpu_hours": 1.8408440874642207,
+  "cap_met": true,
+  "measurement_scope": "process_time around compiled simulation chunks, accumulated across all workers; includes first-use kernel loading within a chunk. Python checkpoint I/O, compilation warmup, analysis and unit tests are separate from simulation timing; the 25% pre-production reserve covered engineering overhead. Two 2000-round microbenchmarks additionally measured 0.109375 CPU seconds total.",
+  "decisions": "Executed complete frozen 24-cell x 12-run study after measured feasible forecast. No horizon extension, condition removal, or target-dependent refitting. No RESOURCE_LIMITED configurations."
+}

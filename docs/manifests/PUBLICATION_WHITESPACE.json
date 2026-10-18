@@ -1,0 +1,145 @@
+{
+  "status": "PARTIAL_FROZEN_WHITESPACE",
+  "full_staged_check_exit": 2,
+  "maintenance_check": "PASS",
+  "maintenance_files_checked": 111,
+  "frozen_files_with_whitespace": 27,
+  "scope": "Literal patch context, blank EOF lines and historical source/document whitespace retained byte-exact. No new publication-maintenance whitespace failure.",
+  "files": [
+    {
+      "path": "artifacts/canonical_paper_export/targeted_mechanism/literature/proposed_related_work.patch",
+      "sha256": "6b133a26ddf79d17547b74d9f826589e2a053ce0920ab96e9a7d455477dbbfd5",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "artifacts/canonical_paper_export/targeted_mechanism/literature/proposed_related_work_insert.tex",
+      "sha256": "877e4b22c3a683c5927422aa06f592842606781db8a2b768befd38e503057ef1",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "configs/environments/original.requirements.lock",
+      "sha256": "1e38d17cdc9c5bbc8ec5cc561ace8442aedae445a8212ecfa0aa0add3e34d283",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "docs/figure_audit/layout_20261018/FIGURE_LAYOUT_REVISION.patch",
+      "sha256": "b309f25c957fe81f853a7c3baf5f75d7bd8786fe40f563c5c9762c98f23ebe85",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "docs/figure_audit/qa_latex/LATEX_REVISION.diff",
+      "sha256": "0e254840c09b829721a594a6430d69d5f8a690cbf3dc50e6061f964c2f3dd741",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/APPENDIX_NAVIGATION_NOTES_20261013.md",
+      "sha256": "9547f3f6a25b85796ef0c9c8ef808542eff958137b23f6301099520552b5ac98",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/revision_audit/e5_maintext_20261010/manuscript_changes.diff",
+      "sha256": "da918b1bc04a83cac2aaddb860f45ae30a453696c690ed160f97d56868b8de5c",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/revision_audit/full_update_20261010/integration.diff",
+      "sha256": "d0a353e924c074102f5e2590140708990406ea5f704b1cbd1e4ecd5b85ca8b3e",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/revision_audit/manuscript_changes.diff",
+      "sha256": "08a1a19259f4de1382955d5758f952e5741cdb09b48ebbb95c5591ab095f705f",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/revision_audit/narrative_refinement_20261010/manuscript_changes.diff",
+      "sha256": "014fa13f2465d2ad472913e69fe859e8c5e098b8f9ee66c74ed0034927663ff8",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/revision_audit/presentation_dedup_20261012/manuscript_changes.diff",
+      "sha256": "b00414eae14215e215896f5e529e3fc153d6339ecef9bf4fab4106cc13f8a947",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/revision_audit/reader_focused_20261012/manuscript_changes.diff",
+      "sha256": "91ecbb808ee73014ff0cdcb2b7bb8951af881cfc79121007e0e63ff9275c0942",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/revision_audit/targeted_mechanism_20261015/MANUSCRIPT_CHANGES.diff",
+      "sha256": "a09cecc9800661332ac634a510644b177359bcadda58b70aa917a522a300a43d",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/revision_audit/text_only_readability_20261012/revision.diff",
+      "sha256": "a3123c164e855a495bfeeced4660349e3e43f744fa7b5729ca02f0561fca02d7",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/sections/01_introduction.tex",
+      "sha256": "a11c922aa81ae6ee3d4a79c03728838b84b6e12355057056979963e0cf8acd59",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/sections/02_related_work.tex",
+      "sha256": "eab208c93efcd4c5a39ac64e73520dfeb39b934bd1e0120e97911d761ef77fa7",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/sections/07_numerical_study.tex",
+      "sha256": "431f087597a4800578115662b05a15fbf103ef1389e8320fcaf25f64b49bd474",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/supplementary_results/source_review_snapshot/legacy_repository/docs/numerical_protocol.md",
+      "sha256": "bb4cf6875c3bbf4779da659d4f7c3b5c6ff58f435283c7ca32f824ea3cc65dfc",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/supplementary_results/source_review_snapshot/legacy_repository/docs/reproducibility.md",
+      "sha256": "0dd9bc2054b4c5530292809e72e6499bca1456f3988a9ec7ec5b2357435c58e3",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/supplementary_results/source_review_snapshot/legacy_repository/shared/configs/simulation_defaults.yaml",
+      "sha256": "c995a42e92e490630580d5bccdbe556e0508895be225780e34de1bd9d1b74360",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/supplementary_results/source_review_snapshot/legacy_repository/src/stationary_bias/__main__.py",
+      "sha256": "d61c74a67d97269e0df4d5cca67699491954a03c5294b5472a24885acc79b7a9",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/supplementary_results/source_review_snapshot/legacy_repository/src/stationary_bias/core/theory/one_dimensional.py",
+      "sha256": "88f2a8c495aa094f419ad3c349c95fac5309faf2eb46134823833587afd61325",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/supplementary_results/source_review_snapshot/legacy_repository/src/stationary_bias/workstreams/p2_multidimensional_validation/algorithm.py",
+      "sha256": "00bacc4538827eb2afe3677fa17d01e596cd93fc54607f24291d9d208f741b61",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "manuscript/supplementary_results/source_review_snapshot/legacy_repository/workstreams/p3/configs/d2_matched_attribution_smoke.yaml",
+      "sha256": "490a43343e9d43dbe59f4c4525246358b40385aa83dd64d5aedcc49aa0d79a94",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "src/targeted_mechanism_snapshot/literature/proposed_related_work.patch",
+      "sha256": "6b133a26ddf79d17547b74d9f826589e2a053ce0920ab96e9a7d455477dbbfd5",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "src/targeted_mechanism_snapshot/literature/proposed_related_work_insert.tex",
+      "sha256": "877e4b22c3a683c5927422aa06f592842606781db8a2b768befd38e503057ef1",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    },
+    {
+      "path": "tests/archived_original/workstreams/p2_multidimensional_validation/test_theory_and_inference.py",
+      "sha256": "4416bd421457b0e8c6e98cfb8187471ef723a5765230604150b8bc6e7f385ee1",
+      "scope": "unchanged pre-publication file; retain frozen bytes"
+    }
+  ]
+}

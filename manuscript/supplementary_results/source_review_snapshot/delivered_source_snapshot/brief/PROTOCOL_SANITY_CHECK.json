@@ -1,0 +1,84 @@
+{
+  "kind": "protocol algebra and package sanity check only; no experiment implementation or production executed",
+  "B11": [
+    -0.02445942816773269,
+    -0.03057428520966586
+  ],
+  "mu_controlled": 0.8499999999999999,
+  "L_controlled": 1.565036762718386,
+  "H_coefficients": [
+    {
+      "H": 1,
+      "kappa": 0.0,
+      "B20_scaffold": [
+        -0.0,
+        -0.0
+      ],
+      "B20_fedavg": [
+        -0.0,
+        -0.0
+      ],
+      "B20_control": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "H": 2,
+      "kappa": 0.125,
+      "B20_scaffold": [
+        -0.04800401639520742,
+        -0.06000502049400926
+      ],
+      "B20_fedavg": [
+        -0.032002677596804946,
+        -0.040003346996006175
+      ],
+      "B20_control": [
+        -0.016001338798402473,
+        -0.020001673498003088
+      ]
+    },
+    {
+      "H": 4,
+      "kappa": 0.4375,
+      "B20_scaffold": [
+        -0.1520127185848235,
+        -0.19001589823102932
+      ],
+      "B20_fedavg": [
+        -0.09600803279041484,
+        -0.12001004098801853
+      ],
+      "B20_control": [
+        -0.056004685794408655,
+        -0.07000585724301081
+      ]
+    },
+    {
+      "H": 8,
+      "kappa": 1.09375,
+      "B20_scaffold": [
+        -0.36403045766365627,
+        -0.45503807207957025
+      ],
+      "B20_fedavg": [
+        -0.22401874317763462,
+        -0.28002342897204324
+      ],
+      "B20_control": [
+        -0.14001171448602165,
+        -0.175014643107527
+      ]
+    }
+  ],
+  "local_samples_per_level": [
+    256,
+    256,
+    256
+  ],
+  "retained_training_rows": 32512,
+  "excluded_training_rows": 49,
+  "logistic_parameters_including_intercept": 124,
+  "manuscript_zip_sha256": "c5518a244cc3a79b9e6a9bd3a61e0fc9d1164376dc12363af4295453687cc389"
+}

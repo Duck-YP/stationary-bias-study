@@ -1,0 +1,188 @@
+{
+  "unchanged_files": [
+    {
+      "path": "sections/02_related_work.tex",
+      "byte_identical": true,
+      "sha256": "1800f5ba190272bcd007f2a86d0d01871f8cec541efd3599238539172bebf7e3"
+    },
+    {
+      "path": "sections/03_setting_preliminaries.tex",
+      "byte_identical": true,
+      "sha256": "5f050f14e48d40e3128cb0080d5f14c9f3357f1db718f5e9584b00bf78a24af0"
+    },
+    {
+      "path": "sections/04_main_results.tex",
+      "byte_identical": true,
+      "sha256": "0e8a5caefb5dec45e057e60afe3297faf10adfc094992631b6ac095ec5c74251"
+    },
+    {
+      "path": "sections/05_mechanism.tex",
+      "byte_identical": true,
+      "sha256": "ae434a5df0830db35c7841594485b75937e281ad1848e5548aabc4e9c90dc525"
+    },
+    {
+      "path": "appendix/A_scaffold_proof.tex",
+      "byte_identical": true,
+      "sha256": "766191e21a69244f7618d84d32b4b3b20ccdb842c67a6dd9a73195820f987e8f"
+    },
+    {
+      "path": "appendix/B_fedavg_proof.tex",
+      "byte_identical": true,
+      "sha256": "bf7155de27d8fea135f950c4b7bb35dcde6c57eee7bdee907aafec769d00d9af"
+    },
+    {
+      "path": "references.bib",
+      "byte_identical": true,
+      "sha256": "e6994eb9f3977fcfd22dfb24b3c1785cb0ebf32a26073681937bb6fca0c769ce"
+    },
+    {
+      "path": "macros.tex",
+      "byte_identical": true,
+      "sha256": "72cef93401f007dd4d61ed89a9ef8ccc497265bf345b9c2f2e8a959bb4fa4d31"
+    },
+    {
+      "path": "figures/redrawn/data/hist_H4_loglog_residual.csv",
+      "byte_identical": true,
+      "sha256": "d0c78c25b0967ae0fcba39a3f30537b4099176cc353c186035b8c85c27e39142"
+    },
+    {
+      "path": "figures/redrawn/data/hist_H4_smallstep.csv",
+      "byte_identical": true,
+      "sha256": "9749866d0d6af4f7a4eadb473ef984fecb65e12383342eaa3e259e5dbd2375e3"
+    },
+    {
+      "path": "figures/redrawn/data/hist_fixed_gamma_coord1.csv",
+      "byte_identical": true,
+      "sha256": "358011a4292558f12298e74096786499001c416b5014c4a76c925fb9b2e09fc3"
+    },
+    {
+      "path": "figures/redrawn/data/hist_fixed_gamma_coord2.csv",
+      "byte_identical": true,
+      "sha256": "91bcd78223a3badc059086c5b00ab5c29d21bafc8b613453f18a9b08f06d2fac"
+    },
+    {
+      "path": "figures/redrawn/data/hist_matched_H2.csv",
+      "byte_identical": true,
+      "sha256": "03e8f0183ba3102e4019e40be55ab18801546ecf5370fde0b69eaeed4480f822"
+    },
+    {
+      "path": "figures/redrawn/data/hist_matched_H4.csv",
+      "byte_identical": true,
+      "sha256": "ba8d89b1a0b99e318bb97fcaf0183ec44c3a8c997feb1e48c68df8e1d1d708e4"
+    },
+    {
+      "path": "figures/redrawn/data/provenance.json",
+      "byte_identical": true,
+      "sha256": "aa7fb56d0961bdc49e05141c4968e4b79b52cf7d0845531f5ee4bcef26e354f6"
+    },
+    {
+      "path": "figures/redrawn/data/real_R0_allocation.csv",
+      "byte_identical": true,
+      "sha256": "6c32333bef008af0e5dc91675c1dc12ab11dd23a84c317928bde24826f0111d7"
+    },
+    {
+      "path": "figures/redrawn/hist_H4_loglog_residual.pdf",
+      "byte_identical": true,
+      "sha256": "3c4d48f40994c2447fc3c59496800e573032800cd12b7bd37ab15fa1a79f88c6"
+    },
+    {
+      "path": "figures/redrawn/hist_H4_loglog_residual.png",
+      "byte_identical": true,
+      "sha256": "a3e48f1e64b4862337b3de41a73c89a5d5f1ae64defe7d63fbef2479e227bfc1"
+    },
+    {
+      "path": "figures/redrawn/hist_H4_smallstep.pdf",
+      "byte_identical": true,
+      "sha256": "2661d48e268de93f119067edeac98656b19d34ba87a6b3838e9f09b67314ede2"
+    },
+    {
+      "path": "figures/redrawn/hist_H4_smallstep.png",
+      "byte_identical": true,
+      "sha256": "12f8ca18834c47754ca07c84fcfc5b7cb46edee1c4d78c45135fb04b70aa64b5"
+    },
+    {
+      "path": "figures/redrawn/hist_fixed_gamma_coord1.pdf",
+      "byte_identical": true,
+      "sha256": "cdac02c86faabeac2841f2098995a2e7d76300163630ccdcdf21895c5efeda17"
+    },
+    {
+      "path": "figures/redrawn/hist_fixed_gamma_coord1.png",
+      "byte_identical": true,
+      "sha256": "7c9f3bb4e2cfd846c9ee2e2497a2be7cc5a33aabee11f28dbc287b7baaabc5fe"
+    },
+    {
+      "path": "figures/redrawn/hist_fixed_gamma_coord2.pdf",
+      "byte_identical": true,
+      "sha256": "a105e588c4c35f74c839ab5ba48703d103985e20eb51de25f93df339ff9bfd27"
+    },
+    {
+      "path": "figures/redrawn/hist_fixed_gamma_coord2.png",
+      "byte_identical": true,
+      "sha256": "af7563ff57be2d3f9d2e9f434e75c8ea4d51f20d9f43c814931c619a69360d6b"
+    },
+    {
+      "path": "figures/redrawn/hist_matched_H2.pdf",
+      "byte_identical": true,
+      "sha256": "8aa74bd88655de9e5c753cc6dd4cd9a1187c4ae3ff604e2532f2a33ccd051047"
+    },
+    {
+      "path": "figures/redrawn/hist_matched_H2.png",
+      "byte_identical": true,
+      "sha256": "96fad92460ef622232620fa7b718ef969dcf6f038b9249c99ffbc4872dfd5b74"
+    },
+    {
+      "path": "figures/redrawn/hist_matched_H4.pdf",
+      "byte_identical": true,
+      "sha256": "12b3b3dba06463d5788e86661c1bf4ce71dbe0f92e7343dc1a3f0af97c8d30d3"
+    },
+    {
+      "path": "figures/redrawn/hist_matched_H4.png",
+      "byte_identical": true,
+      "sha256": "8a55346a96313182b1c28cd898534336b78c5437eeba9a368ac54ac1846f601c"
+    },
+    {
+      "path": "figures/redrawn/real_R0_allocation.pdf",
+      "byte_identical": true,
+      "sha256": "dfd992db8c79a34e9ac8aee9e61dcddbf976aa8f15f9fb62b8d070b97d6170a6"
+    },
+    {
+      "path": "figures/redrawn/real_R0_allocation.png",
+      "byte_identical": true,
+      "sha256": "a56511be6dfaa66e5a86937bca0eccd22353182745791e36a0b7ec8ab0dd5a46"
+    },
+    {
+      "path": "figures/supplement/E1_control_kappa.pdf",
+      "byte_identical": true,
+      "sha256": "63f08a917679e12acadb95c9bb38d356b6e261892ebd8abb19c7bf00af7adc54"
+    },
+    {
+      "path": "figures/supplement/E1_leading_intercepts.pdf",
+      "byte_identical": true,
+      "sha256": "9344463354b57eec1b5c8440ec3a9a8f155381e9104524432233230a73d2fe99"
+    },
+    {
+      "path": "figures/supplement/E3_allocation_signed_projection.pdf",
+      "byte_identical": true,
+      "sha256": "c5ab93976a4939b5fdaf117cfd6e75ea805dd1cd8cf26bafb2d75540671a5a83"
+    }
+  ],
+  "original_tables_byte_identical": [
+    "tab:prior-bias-resolution",
+    "tab:num-attribution-summary",
+    "tab:supp-control",
+    "tab:supp-policy",
+    "tab:F-artifacts",
+    "tab:num-core",
+    "tab:E-h4diag",
+    "tab:E-plateau",
+    "tab:E-d5",
+    "tab:E-direct-balance",
+    "tab:supp-leading",
+    "tab:supp-real-full"
+  ],
+  "original_tables_count": 12,
+  "new_tables": [
+    "tab:e5-bridge",
+    "tab:e4-primary"
+  ]
+}

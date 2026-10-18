@@ -1,0 +1,35 @@
+% Keep the closing discussion together after the completed experimental figures/tables.
+\clearpage
+\section{Discussion}
+\label{sec:discussion}
+
+The value of this characterization lies in distinguishing algorithmic
+mean-shift contributions that the shared leading-order term leaves
+unresolved. The explicit coefficients quantify the additional effect
+of persistent controls, while the local-moment analysis explains how
+it arises despite direct cancellation at the server.
+
+For either algorithm's invariant law $\pi$ and $b=\E_\pi[x]-x^\star$,
+parameter error decomposes as
+\begin{equation}
+\label{eq:stationary-bias-variance}
+\E_\pi\|x-x^\star\|^2
+=
+\underbrace{\|b\|^2}_{\text{squared mean bias}}
++
+\underbrace{\operatorname{tr}\Cov_\pi(x)}_{\text{stationary variance}}.
+\end{equation}
+Averaging stationary iterates preserves $b$, while temporal dependence governs
+the variance of the average. The error share of a systematic displacement
+therefore depends on how the final model is formed. The real-data studies
+complement this characterization through finite-tail error decomposition
+and post-hoc directional agreement with the derived curvature--noise
+structure. They provide empirical interpretation, rather than identification
+of the exact additive-noise coefficients under state-dependent minibatch
+noise or certification of stationarity.
+
+The formulas make the roles of client count, step size, local training
+length, objective geometry, and noise explicit at the resolved orders.
+This is an interpretable account of existing algorithms, not an overall
+performance ranking: parameter MSE also depends on fluctuations and
+averaging, while predictive loss depends on the learning problem.

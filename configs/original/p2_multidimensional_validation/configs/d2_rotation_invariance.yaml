@@ -1,0 +1,188 @@
+schema_version: 2
+protocol_status: frozen_not_executed
+protocol_frozen_at: "2026-09-10"
+experiment: p2_d2_rotation_invariance
+matrix_identifier: p2-d2-rotation-invariance
+study_role: numerical_coordinate_equivariance_sanity
+
+coordinate_transform:
+  dimension: 2
+  angle: pi / 6
+  angle_degrees: 30
+  angle_radians: 0.5235987755982988
+  Q:
+    - [0.8660254037844386, -0.5]
+    - [0.5, 0.8660254037844386]
+  convention:
+    forward: y = Q @ x
+    inverse: x = Q.T @ y
+    objective_identity: f_rot(y) = f(Q.T @ y)
+    gradient_identity: grad_f_rot(y) = Q @ grad_f(Q.T @ y)
+  orthogonality_identity: Q.T @ Q = I
+
+original_system:
+  objective: rank_one_log_cosh
+  A:
+    - [1.2, 0.2]
+    - [0.2, 1.0]
+  C:
+    - [1.0, 0.2]
+    - [0.2, 0.7]
+  u: [0.7071067811865475, 0.7071067811865475]
+  alpha: 0.25
+  objective_definition: f(x) = 0.5 * x.T @ A @ x + alpha * psi(u.T @ x)
+
+rotated_system:
+  construction:
+    A_rot: Q @ A @ Q.T
+    C_rot: Q @ C @ Q.T
+    u_rot: Q @ u
+  A_rot:
+    - [0.976794919243112, 0.186602540378444]
+    - [0.186602540378444, 1.223205080756888]
+  C_rot:
+    - [0.751794919243112, 0.229903810567666]
+    - [0.229903810567666, 0.948205080756888]
+  u_rot: [0.258819045102521, 0.965925826289068]
+  objective_definition: f_rot(y) = 0.5 * y.T @ A_rot @ y + alpha * psi(u_rot.T @ y)
+  same_mathematical_objective: true
+
+noncommuting_check:
+  identity: A @ C - C @ A != 0
+  original_commutator_frobenius_norm: 0.028284271247461926
+  rotated_commutator_frobenius_norm: 0.028284271247461926
+  orthogonal_similarity_preserves_norm: true
+
+theory:
+  transformation_laws:
+    S_rot: Q @ S_C @ Q.T
+    tensor_contraction: T_rot[M] = Q @ T[Q.T @ M @ Q]
+    B11_d_rot: Q @ B11_d
+    B20_rot: Q @ B20
+  original:
+    S_C:
+      - [0.413009404388715, 0.021943573667712]
+      - [0.021943573667712, 0.345611285266458]
+    B11_d: [-0.024459428167733, -0.030574285209666]
+    by_H:
+      2:
+        B20: [-0.048004016395207, -0.060005020494009]
+      4:
+        B20: [-0.152012718584823, -0.190015898231029]
+  rotated:
+    S_rot:
+      - [0.377156182362097, 0.040156028497438]
+      - [0.040156028497438, 0.381464507293076]
+    B11_d_rot: [-0.005895343550464, -0.038707821777988]
+    by_H:
+      2:
+        B20_rot: [-0.011570187434929, -0.075967880300021]
+      4:
+        B20_rot: [-0.036638926877277, -0.240564954283401]
+  rotated_lyapunov_identity: A_rot @ S_rot + S_rot @ A_rot = C_rot
+
+noise_coupling:
+  original_construction: epsilon = cholesky(C) @ z
+  base_coordinates: independent Rademacher
+  generate_original_epsilon_once: true
+  rotated_construction: epsilon_rot = Q @ epsilon
+  covariance_identity: Cov(epsilon_rot) = Q @ C @ Q.T = C_rot
+  same_realization_across_each_pair: [seed, communication_round, local_step, client]
+  independently_generate_from_C_rot: forbidden
+  fresh_rotated_draw: forbidden
+  rationale: Rademacher noise is not rotationally invariant
+
+initialization:
+  x0: [0.2, -0.1]
+  x0_rot_construction: x0_rot = Q @ x0
+  x0_rot: [0.223205080756888, 0.013397459621556]
+  xi_by_client: zero
+  xi_rot_by_client: zero
+
+paired_matrix:
+  dimension: 2
+  communication_rounds: 200
+  H_values: [2, 4]
+  settings:
+    - {N: 16, gamma_numerator: 1, gamma_denominator: 16}
+    - {N: 64, gamma_numerator: 1, gamma_denominator: 64}
+  seeds: [1101, 1102, 1103, 1104]
+  paired_run_count: 16
+  systems_per_pair: [original, rotated]
+  pair_definition: one original-coordinate run and one rotated-coordinate run with matched noise blocks
+
+pathwise_equivariance:
+  identities:
+    global_iterate: x_rot_t = Q @ x_t
+    client_control: xi_rot_c_t = Q @ xi_c_t
+    estimator_local_quantity: qbar_rot_t_h = Q @ qbar_t_h
+    optional_local_endpoint: theta_rot_c = Q @ theta_c
+  residuals:
+    r_x: max_t norm_inf(x_rot_t - Q @ x_t)
+    r_xi: max_t_c norm_inf(xi_rot_c_t - Q @ xi_c_t)
+    r_qbar: max_t_h norm_inf(qbar_rot_t_h - Q @ qbar_t_h)
+  reporting: per_pair_and_global_maxima
+  primary_gate:
+    quantity: max(r_x, r_xi, r_qbar)
+    tolerance: 1.0e-10
+    scope: every_paired_run
+    post_result_loosening: forbidden
+
+theory_equivariance_gates:
+  R0:
+    residual: norm_fro(Q.T @ Q - I)
+    tolerance: 1.0e-14
+  R1:
+    residual: norm_fro(A_rot - Q @ A @ Q.T)
+    tolerance: 1.0e-13
+  R2:
+    residual: norm_fro(C_rot - Q @ C @ Q.T)
+    tolerance: 1.0e-13
+  R3:
+    residual: norm_2(u_rot - Q @ u)
+    tolerance: 1.0e-13
+  R4:
+    residual: norm_fro(S_rot - Q @ S_C @ Q.T)
+    tolerance: 1.0e-12
+  R5:
+    residual: norm_2(B11_d_rot - Q @ B11_d)
+    tolerance: 1.0e-12
+  R6:
+    residual: norm_2(B20_rot(H) - Q @ B20(H))
+    H_values: [2, 4]
+    tolerance: 1.0e-12
+  required_before_pathwise_interpretation: true
+
+optional_estimator_transformation_diagnostic:
+  role: secondary_only
+  identities:
+    stationary_bias: b_hat_rot approximately Q @ b_hat
+    normalized_coefficient: C_hat_rot approximately Q @ C_hat
+  require_new_long_stationarity_experiment: false
+  replaces_pathwise_gate: false
+
+artifact_contract:
+  namespace: workstreams/p2_multidimensional_validation/artifacts/formal/p2-d2-rotation-invariance
+  create_during_protocol_freeze: false
+  minimum_future_files:
+    - run_start_provenance.json
+    - pair_summary.csv
+    - rotation_residual_summary.csv
+    - theory_rotation_summary.csv
+    - rotation_manifest.json
+    - p2_d2_rotation_report.md
+  optional_future_files:
+    - plot
+
+interpretation_boundary:
+  permitted_conclusion: The implementation and theoretical coefficient are equivariant under the pre-registered 30-degree orthogonal coordinate transformation.
+  classification: empirical_numerical_sanity
+  exact_coordinate_algebra: true
+  numerical_test_scope: implementation_and_representation_consistency
+  excluded_claims:
+    - new_theorem_proof
+    - independent_coefficient_validation
+    - invariance_under_every_coordinate_transformation
+    - robustness_to_a_different_noise_law
+    - d5_validation
+    - heterogeneity_validation

@@ -1,0 +1,118 @@
+# Table 8: Run schedules
+
+Status: **partial**. Section C.1.2, page 29.
+
+tab:num-run-schedules; normalized source-backed protocol inventory, not verbatim manuscript layout. Not covered: the heuristic ceiling formulas are not stored as structured formula fields for supplementary/targeted cells; actual tau/tau0, burn, batch length and batch counts are preserved; original YAML min/max batch policy is a planned policy; this inventory alone does not establish each run's realized stopping batch
+
+| study / component | saved field / derivation | value |
+| --- | --- | --- |
+| Primary joint grid | mixing and batch policy | {"mixing_mu": 0.85, "burn_in_multiples": 100, "batch_length_multiples": 20, "min_batches": 100, "max_batches": 400, "extension_batches": 50} |
+| Smaller-step joint grid | mixing and batch policy | {"mixing_mu": 0.85, "burn_in_multiples": 100, "batch_length_multiples": 20, "min_batches": 100, "max_batches": 400, "extension_batches": 50} |
+| Fixed-step client count | mixing and batch policy | {"mixing_mu": 0.85, "burn_in_multiples": 100, "batch_length_multiples": 20, "min_batches": 100, "max_batches": 400, "extension_batches": 50} |
+| Five-dimensional | mixing and batch policy | {"mixing_mu": 0.8037572789315114, "burn_in_multiples": 100, "batch_length_multiples": 20, "min_batches": 100, "max_batches": 400, "extension_batches": 50} |
+| E1_controlled_p0_H1_N32_g0.015625 | frozen schedule in communication rounds | {"tau0": 76, "burn": 3800, "batch_length": 760, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H1_N32_g0.0078125 | frozen schedule in communication rounds | {"tau0": 151, "burn": 7550, "batch_length": 1510, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H1_N32_g0.00390625 | frozen schedule in communication rounds | {"tau0": 302, "burn": 15100, "batch_length": 3020, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H1_N32_g0.001953125 | frozen schedule in communication rounds | {"tau0": 603, "burn": 30150, "batch_length": 6030, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H2_N32_g0.015625 | frozen schedule in communication rounds | {"tau0": 38, "burn": 1900, "batch_length": 380, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H2_N32_g0.0078125 | frozen schedule in communication rounds | {"tau0": 76, "burn": 3800, "batch_length": 760, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H2_N32_g0.00390625 | frozen schedule in communication rounds | {"tau0": 151, "burn": 7550, "batch_length": 1510, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H2_N32_g0.001953125 | frozen schedule in communication rounds | {"tau0": 302, "burn": 15100, "batch_length": 3020, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H4_N32_g0.015625 | frozen schedule in communication rounds | {"tau0": 19, "burn": 950, "batch_length": 190, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H4_N32_g0.0078125 | frozen schedule in communication rounds | {"tau0": 38, "burn": 1900, "batch_length": 380, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H4_N32_g0.00390625 | frozen schedule in communication rounds | {"tau0": 76, "burn": 3800, "batch_length": 760, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H4_N32_g0.001953125 | frozen schedule in communication rounds | {"tau0": 151, "burn": 7550, "batch_length": 1510, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H8_N32_g0.015625 | frozen schedule in communication rounds | {"tau0": 10, "burn": 500, "batch_length": 100, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H8_N32_g0.0078125 | frozen schedule in communication rounds | {"tau0": 19, "burn": 950, "batch_length": 190, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H8_N32_g0.00390625 | frozen schedule in communication rounds | {"tau0": 38, "burn": 1900, "batch_length": 380, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H8_N32_g0.001953125 | frozen schedule in communication rounds | {"tau0": 76, "burn": 3800, "batch_length": 760, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H2_N64_g0.0078125 | frozen schedule in communication rounds | {"tau0": 76, "burn": 3800, "batch_length": 760, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H2_N64_g0.00390625 | frozen schedule in communication rounds | {"tau0": 151, "burn": 7550, "batch_length": 1510, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H2_N64_g0.001953125 | frozen schedule in communication rounds | {"tau0": 302, "burn": 15100, "batch_length": 3020, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H2_N128_g0.0078125 | frozen schedule in communication rounds | {"tau0": 76, "burn": 3800, "batch_length": 760, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H2_N128_g0.00390625 | frozen schedule in communication rounds | {"tau0": 151, "burn": 7550, "batch_length": 1510, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H2_N128_g0.001953125 | frozen schedule in communication rounds | {"tau0": 302, "burn": 15100, "batch_length": 3020, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H4_N64_g0.0078125 | frozen schedule in communication rounds | {"tau0": 38, "burn": 1900, "batch_length": 380, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H4_N64_g0.00390625 | frozen schedule in communication rounds | {"tau0": 76, "burn": 3800, "batch_length": 760, "batches": 133, "primary_batches": 64, "sensitivity": "primary first64; burn2x batches5:69; tail2x first128; combined batches5:133"} |
+| E1_controlled_p0_H4_N64_g0.001953125 | frozen schedule in communication rounds | {"tau0": 151, "burn": 7550, "batch_length": 1510, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H4_N128_g0.0078125 | frozen schedule in communication rounds | {"tau0": 38, "burn": 1900, "batch_length": 380, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H4_N128_g0.00390625 | frozen schedule in communication rounds | {"tau0": 76, "burn": 3800, "batch_length": 760, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H4_N128_g0.001953125 | frozen schedule in communication rounds | {"tau0": 151, "burn": 7550, "batch_length": 1510, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H8_N64_g0.0078125 | frozen schedule in communication rounds | {"tau0": 19, "burn": 950, "batch_length": 190, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H8_N64_g0.00390625 | frozen schedule in communication rounds | {"tau0": 38, "burn": 1900, "batch_length": 380, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H8_N64_g0.001953125 | frozen schedule in communication rounds | {"tau0": 76, "burn": 3800, "batch_length": 760, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H8_N128_g0.0078125 | frozen schedule in communication rounds | {"tau0": 19, "burn": 950, "batch_length": 190, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H8_N128_g0.00390625 | frozen schedule in communication rounds | {"tau0": 38, "burn": 1900, "batch_length": 380, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E1_controlled_p0_H8_N128_g0.001953125 | frozen schedule in communication rounds | {"tau0": 76, "burn": 3800, "batch_length": 760, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R0_p0_H4_N8_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R0_p0_H4_N32_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R0_p0_H4_N128_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R0_p0_H4_N32_g0.0980392156863 | frozen schedule in communication rounds | {"tau0": 256, "burn": 12800, "batch_length": 2560, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R0_p0_H4_N32_g0.0490196078431 | frozen schedule in communication rounds | {"tau0": 511, "burn": 25550, "batch_length": 5110, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R0_p0_H2_N32_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 256, "burn": 12800, "batch_length": 2560, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R0_p0_H1_N8_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 511, "burn": 25550, "batch_length": 5110, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R0_p0_H1_N32_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 511, "burn": 25550, "batch_length": 5110, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R0_p0_H1_N128_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 511, "burn": 25550, "batch_length": 5110, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4101_H4_N8_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4101_H4_N32_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4101_H4_N128_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4101_H4_N32_g0.0980392156863 | frozen schedule in communication rounds | {"tau0": 256, "burn": 12800, "batch_length": 2560, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4101_H4_N32_g0.0490196078431 | frozen schedule in communication rounds | {"tau0": 511, "burn": 25550, "batch_length": 5110, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4101_H2_N32_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 256, "burn": 12800, "batch_length": 2560, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4101_H1_N8_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 511, "burn": 25550, "batch_length": 5110, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4101_H1_N32_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 511, "burn": 25550, "batch_length": 5110, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4101_H1_N128_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 511, "burn": 25550, "batch_length": 5110, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4102_H4_N8_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4102_H4_N128_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4103_H4_N8_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R1_p4103_H4_N128_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R2_p4101_H4_N8_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R2_p4101_H4_N32_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R2_p4101_H4_N128_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R2_p4101_H4_N32_g0.0980392156863 | frozen schedule in communication rounds | {"tau0": 256, "burn": 12800, "batch_length": 2560, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R2_p4101_H4_N32_g0.0490196078431 | frozen schedule in communication rounds | {"tau0": 511, "burn": 25550, "batch_length": 5110, "batches": 133, "primary_batches": 64, "sensitivity": "primary first64; burn2x batches5:69; tail2x first128; combined batches5:133"} |
+| E3_R2_p4101_H2_N32_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 256, "burn": 12800, "batch_length": 2560, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R2_p4101_H1_N8_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 511, "burn": 25550, "batch_length": 5110, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R2_p4101_H1_N32_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 511, "burn": 25550, "batch_length": 5110, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R2_p4101_H1_N128_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 511, "burn": 25550, "batch_length": 5110, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R2_p4102_H4_N8_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R2_p4102_H4_N128_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R2_p4103_H4_N8_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| E3_R2_p4103_H4_N128_g0.196078431373 | frozen schedule in communication rounds | {"tau0": 128, "burn": 6400, "batch_length": 1280, "batches": 64, "primary_batches": 64, "sensitivity": "none"} |
+| rho_minus_symmetric; N=64; gamma=1/512 | frozen schedule in communication rounds | {"tau": 214, "burn": 10700, "batch_length": 2140, "batches": 64} |
+| rho_minus_symmetric; N=64; gamma=1/1024 | frozen schedule in communication rounds | {"tau": 427, "burn": 21350, "batch_length": 4270, "batches": 64} |
+| rho_minus_symmetric; N=64; gamma=1/2048 | frozen schedule in communication rounds | {"tau": 854, "burn": 42700, "batch_length": 8540, "batches": 64} |
+| rho_minus_symmetric; N=128; gamma=1/512 | frozen schedule in communication rounds | {"tau": 214, "burn": 10700, "batch_length": 2140, "batches": 64} |
+| rho_minus_symmetric; N=128; gamma=1/1024 | frozen schedule in communication rounds | {"tau": 427, "burn": 21350, "batch_length": 4270, "batches": 64} |
+| rho_minus_symmetric; N=128; gamma=1/2048 | frozen schedule in communication rounds | {"tau": 854, "burn": 42700, "batch_length": 8540, "batches": 64} |
+| rho_zero_symmetric; N=64; gamma=1/512 | frozen schedule in communication rounds | {"tau": 214, "burn": 10700, "batch_length": 2140, "batches": 64} |
+| rho_zero_symmetric; N=64; gamma=1/1024 | frozen schedule in communication rounds | {"tau": 427, "burn": 21350, "batch_length": 4270, "batches": 64} |
+| rho_zero_symmetric; N=64; gamma=1/2048 | frozen schedule in communication rounds | {"tau": 854, "burn": 42700, "batch_length": 8540, "batches": 64} |
+| rho_zero_symmetric; N=128; gamma=1/512 | frozen schedule in communication rounds | {"tau": 214, "burn": 10700, "batch_length": 2140, "batches": 64} |
+| rho_zero_symmetric; N=128; gamma=1/1024 | frozen schedule in communication rounds | {"tau": 427, "burn": 21350, "batch_length": 4270, "batches": 64} |
+| rho_zero_symmetric; N=128; gamma=1/2048 | frozen schedule in communication rounds | {"tau": 854, "burn": 42700, "batch_length": 8540, "batches": 64} |
+| rho_plus_symmetric; N=64; gamma=1/512 | frozen schedule in communication rounds | {"tau": 214, "burn": 10700, "batch_length": 2140, "batches": 64} |
+| rho_plus_symmetric; N=64; gamma=1/1024 | frozen schedule in communication rounds | {"tau": 427, "burn": 21350, "batch_length": 4270, "batches": 64} |
+| rho_plus_symmetric; N=64; gamma=1/2048 | frozen schedule in communication rounds | {"tau": 854, "burn": 42700, "batch_length": 8540, "batches": 64} |
+| rho_plus_symmetric; N=128; gamma=1/512 | frozen schedule in communication rounds | {"tau": 214, "burn": 10700, "batch_length": 2140, "batches": 64} |
+| rho_plus_symmetric; N=128; gamma=1/1024 | frozen schedule in communication rounds | {"tau": 427, "burn": 21350, "batch_length": 4270, "batches": 64} |
+| rho_plus_symmetric; N=128; gamma=1/2048 | frozen schedule in communication rounds | {"tau": 854, "burn": 42700, "batch_length": 8540, "batches": 64} |
+| rho_plus_asymmetric; N=64; gamma=1/512 | frozen schedule in communication rounds | {"tau": 214, "burn": 10700, "batch_length": 2140, "batches": 64} |
+| rho_plus_asymmetric; N=64; gamma=1/1024 | frozen schedule in communication rounds | {"tau": 427, "burn": 21350, "batch_length": 4270, "batches": 64} |
+| rho_plus_asymmetric; N=64; gamma=1/2048 | frozen schedule in communication rounds | {"tau": 854, "burn": 42700, "batch_length": 8540, "batches": 64} |
+| rho_plus_asymmetric; N=128; gamma=1/512 | frozen schedule in communication rounds | {"tau": 214, "burn": 10700, "batch_length": 2140, "batches": 64} |
+| rho_plus_asymmetric; N=128; gamma=1/1024 | frozen schedule in communication rounds | {"tau": 427, "burn": 21350, "batch_length": 4270, "batches": 64} |
+| rho_plus_asymmetric; N=128; gamma=1/2048 | frozen schedule in communication rounds | {"tau": 854, "burn": 42700, "batch_length": 8540, "batches": 64} |
+| Contraction/noise law | certified curvature lower bound | 3/5 |
+| Real-data training | regularization lambda | 0.01 |
+
+Sources:
+
+- `configs/original/p2_multidimensional_validation/configs/d2_coefficient_primary.yaml`
+- `configs/original/p2_multidimensional_validation/configs/d2_h4_small_step_confirmation.yaml`
+- `configs/original/p2_multidimensional_validation/configs/d2_fixed_gamma_largeN_plateau.yaml`
+- `configs/original/p2_multidimensional_validation/configs/d5_controlled_validation.yaml`
+- `configs/supplementary/PROTOCOL_FROZEN.json`
+- `artifacts/canonical_paper_export/targeted_mechanism/PROTOCOL_FROZEN.json`
+- `artifacts/canonical_paper_export/targeted_mechanism/certificate/independent_model_checks.json`
+- `manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json`

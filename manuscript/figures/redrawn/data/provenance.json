@@ -1,0 +1,74 @@
+{
+  "inputs": {
+    "inputs/p3_primary/paired_setting_summary.csv": {
+      "sha256": "00e0a848340f2f50b27909aa6b6d2252941cdccc7273b02e4463c670f99195b5",
+      "bytes": 5875
+    },
+    "inputs/p3_primary/paired_fit_summary.csv": {
+      "sha256": "91be94dbfaeb6c6d280f38e00a76353153ba665211ee3ffa3fbb4b858382b52d",
+      "bytes": 892
+    },
+    "inputs/p2_plateau/setting_summary.csv": {
+      "sha256": "f88ff5580373c123862718a18e6e1fa72a258b02a73e43c4e3d4c14f2608a0a2",
+      "bytes": 7173
+    },
+    "inputs/p2_plateau/plateau_fit_summary.csv": {
+      "sha256": "baafa9b4ff2e6168bbe74b3632029e416ea68e3af61b30b12bb0fccbd2553f5f",
+      "bytes": 748
+    },
+    "inputs/p2_plateau/plateau_fit_curve.csv": {
+      "sha256": "3ca61f251e4f84bd69e0b918faa58fff2b10ba0fa2b3d8752ea3432331620866",
+      "bytes": 1635
+    },
+    "inputs/supplement/E3_allocation_signed_projection.csv": {
+      "sha256": "23b5f53672035f3b9ee0742b44490887db283a2ff66047c4336320e35d8b9cdf",
+      "bytes": 116777
+    },
+    "inputs/p3_smallstep/paired_setting_summary.csv": {
+      "sha256": "4c85af50d46a86091d03c55707279d34b982900ffefc18b534271733082cda82",
+      "bytes": 2630
+    },
+    "inputs/p3_smallstep/paired_fit_summary.csv": {
+      "sha256": "12c4bd2184506078742d211d8f3ae70bbf9399651323b9140a09a0e816080e21",
+      "bytes": 527
+    },
+    "inputs/p3_diagnostic/pointwise_diagnostics.csv": {
+      "sha256": "044d61e6a93b5bcfa8aabc4028b59242aab1dca28829f8817503ba33a050b546",
+      "bytes": 10681
+    },
+    "inputs/p3_diagnostic/scaling_summary.csv": {
+      "sha256": "4a5f47c8b260279c9f440114a5700b2938d0f4f1bac3ee8244a969629a70c6d0",
+      "bytes": 870
+    }
+  },
+  "panels": {
+    "hist_matched_H2": 26,
+    "hist_matched_H4": 26,
+    "hist_fixed_gamma_coord1": 13,
+    "hist_fixed_gamma_coord2": 13,
+    "real_R0_allocation": 6,
+    "hist_H4_smallstep": 22,
+    "hist_H4_loglog_residual": 18
+  },
+  "method": "Read saved records and saved fit coefficients only; no simulations, bootstrap or regression.",
+  "display": {
+    "R0_y": "signed_projection * 1000, including nominal CI endpoints",
+    "R0_x": "Categorical index for N=8,32,128; fixed +/-0.045 marker dodge only",
+    "log_y": "abs(saved e_Delta); nine saved points per coordinate; no new fit"
+  },
+  "font": {
+    "text": "Latin Modern Roman via TeX T1/lmodern; no fallback permitted",
+    "requested_tick_TeX_pt": 9.7,
+    "requested_legend_TeX_pt": 9.7,
+    "requested_label_TeX_pt": 10.5,
+    "units_note": "usetex converts these TeX point requests to PDF points; FINAL_FONT_AUDIT measures actual sizes"
+  },
+  "physical": {
+    "textwidth_TeX_pt": 452.9679,
+    "paired_width_inch": 3.0711812785388126,
+    "R0_width_inch": 3.6352757990867577,
+    "TeX_pt_per_inch": 72.27,
+    "PDF_pt_per_inch": 72
+  },
+  "single_axes_asserted": true
+}

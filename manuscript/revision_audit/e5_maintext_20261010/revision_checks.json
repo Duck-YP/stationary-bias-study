@@ -1,0 +1,96 @@
+{
+  "baseline_zip": "SCAFFOLD_Final_E4_E5_20261010.zip",
+  "baseline_pages": 37,
+  "pages": 38,
+  "main_text_pages": 17,
+  "reference_pages": 2,
+  "appendix_pages": 19,
+  "abstract_whitespace_word_count": 234,
+  "protected_files_unchanged": {
+    "sections/02_related_work.tex": true,
+    "sections/03_setting_preliminaries.tex": true,
+    "sections/04_main_results.tex": true,
+    "sections/05_mechanism.tex": true,
+    "appendix/A_scaffold_proof.tex": true,
+    "appendix/B_fedavg_proof.tex": true,
+    "appendix/D_reproducibility.tex": true,
+    "macros.tex": true,
+    "references.bib": true
+  },
+  "tables_unchanged": [
+    {
+      "file": "sections/02_related_work.tex",
+      "count": 1,
+      "unchanged": true
+    },
+    {
+      "file": "sections/07_numerical_study.tex",
+      "count": 3,
+      "unchanged": true
+    },
+    {
+      "file": "appendix/C_numerical_details.tex",
+      "count": 9,
+      "unchanged": true
+    },
+    {
+      "file": "appendix/D_reproducibility.tex",
+      "count": 1,
+      "unchanged": true
+    }
+  ],
+  "total_unchanged_tables": 14,
+  "unchanged_figure_files": 32,
+  "unchanged_supplementary_files": 129,
+  "active_panels": 9,
+  "labels": 156,
+  "references": 152,
+  "undefined_references": [],
+  "duplicate_labels": {},
+  "bare_equation_refs": [],
+  "latex_issues": [],
+  "e5_proxy_equation_relocated_unchanged": true,
+  "E5_K64_nonzero_proxy_cells": 6,
+  "E5_numeric_ranges": {
+    "cosine": [
+      0.9964998404978601,
+      0.9992541455001172
+    ],
+    "norm_ratio": [
+      0.7182434956502062,
+      0.9404717442001228
+    ],
+    "projection_ratio": [
+      0.7157295288540559,
+      0.9383269397472326
+    ],
+    "relative_residual": [
+      0.08850549217057732,
+      0.29054201303032917
+    ]
+  },
+  "E5_reference_direction_ranges": {
+    "frozen_x_ref": [
+      0.8952777025990974,
+      0.9086583144716047
+    ],
+    "negative_T_Sigma": [
+      0.6590423936487069,
+      0.6928654645454114
+    ]
+  },
+  "E5_H_ratio": 2.927004345237522,
+  "E5_H_proxy_ratio": 3.5,
+  "figure_final_min_pt": 9.663787974161824,
+  "new_training": false,
+  "new_bootstrap": false,
+  "new_proof_audit": false,
+  "changed_manuscript_files": [
+    "main.tex",
+    "sections/01_introduction.tex",
+    "sections/07_numerical_study.tex",
+    "sections/08_discussion_limitations.tex",
+    "sections/09_conclusion.tex",
+    "appendix/C_numerical_details.tex"
+  ]
+}

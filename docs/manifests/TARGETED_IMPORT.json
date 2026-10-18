@@ -1,0 +1,32 @@
+{
+  "archives": [
+    {
+      "name": "TARGETED_MECHANISM_REVIEW.zip",
+      "bytes": 12228264,
+      "sha256": "d65425d30237a646371d76bfb664d72109528f40ca6b8d76296a283142ce563a",
+      "entries": 440,
+      "destination": "artifacts/canonical_paper_export/targeted_mechanism",
+      "crc_verified": true
+    },
+    {
+      "name": "SOURCE_TARGETED_MECHANISM.zip",
+      "bytes": 244554,
+      "sha256": "7be6a3c046792a83187e90c0639b135db3a448f34c5fa06239fa9312d691a8d4",
+      "entries": 86,
+      "destination": "src/targeted_mechanism_snapshot",
+      "crc_verified": true
+    },
+    {
+      "name": "SCAFFOLD_Targeted_Mechanism_Independent_Audit_20261015.zip",
+      "bytes": 404958,
+      "sha256": "9507bbf2bb652e418604868c80ad5e727eeb409200982ec52212b4f1dc9d0546",
+      "entries": 20,
+      "destination": "docs/targeted_mechanism/independent_audit",
+      "crc_verified": true
+    }
+  ],
+  "files": 548,
+  "metadata_variants": 26,
+  "scientific_recomputation": false,
+  "original_internal_manifests": "Preserved historical source hashes; TARGETED_COPY_MANIFEST.csv describes current public bytes and metadata variants."
+}

@@ -1,0 +1,37 @@
+{
+  "zip_path": "manuscript\\supplementary_results\\SOURCE_REVIEW.zip",
+  "sha256": "0f26743d91095fa7c1cb6b8cc0d3c9b06dc5ab7dc6bc32f93359eaca4c392818",
+  "member_count": 216,
+  "available_prefixes": [
+    "SOURCE_REVIEW/ENVIRONMENT_ORIGINAL.txt",
+    "SOURCE_REVIEW/EXPORT_LOG.md",
+    "SOURCE_REVIEW/EXPORT_REPRODUCTION.md",
+    "SOURCE_REVIEW/EXPORT_SOURCE_MANIFEST.json",
+    "SOURCE_REVIEW/EXPORT_TASK_SPEC_ORIGINAL.md",
+    "SOURCE_REVIEW/FROZEN_SOURCE_AVAILABILITY.csv",
+    "SOURCE_REVIEW/LEGACY_SOURCE_PATH_MAP.csv",
+    "SOURCE_REVIEW/PRODUCTION_SOURCE_STATUS.md",
+    "SOURCE_REVIEW/PROTOCOL_FROZEN.json",
+    "SOURCE_REVIEW/README_REVIEW.md",
+    "SOURCE_REVIEW/SOURCE_MANIFEST_ORIGINAL.json",
+    "SOURCE_REVIEW/VERSION.json",
+    "SOURCE_REVIEW/available_frozen_source",
+    "SOURCE_REVIEW/delivered_source_snapshot",
+    "SOURCE_REVIEW/legacy_repository",
+    "SOURCE_REVIEW/supplementary_study",
+    "SOURCE_REVIEW/tools"
+  ],
+  "available_frozen_files": [
+    "SOURCE_REVIEW/available_frozen_source/requirements.lock",
+    "SOURCE_REVIEW/available_frozen_source/study/__init__.py",
+    "SOURCE_REVIEW/available_frozen_source/study/checks.py",
+    "SOURCE_REVIEW/available_frozen_source/study/data.py",
+    "SOURCE_REVIEW/available_frozen_source/study/engine.py",
+    "SOURCE_REVIEW/available_frozen_source/study/kernels.py",
+    "SOURCE_REVIEW/available_frozen_source/study/model.py",
+    "SOURCE_REVIEW/available_frozen_source/study/protocol.py"
+  ],
+  "archive_crc_error": null,
+  "historical_commit_verified": false,
+  "historical_commit_note": "SOURCE_MANIFEST imported_repository_base_commit is a legacy import label, not a recovered supplementary production commit."
+}

@@ -1,0 +1,57 @@
+schema_version: 1
+experiment: small_step_confirmation
+description: Confirm the H=4 asymptotic coefficient at smaller step sizes.
+study_role: confirmatory_follow_up
+designed_after: coefficient_convergence
+research_status: CANDIDATE_THEOREM
+original_result_status: CONTRADICTION_CANDIDATE
+original_result_commit: 95611d821580e85c7b4311897a57af05922a7ed1
+protocol_commit: c9abd1c0533ca4a46401c0a44e7836ee487ac005
+
+model:
+  objective: nonlinear_main
+  noise: rademacher
+  H: 4
+  a: 1.0
+  tau: 0.5
+  sigma2: 1.0
+  B_theory: -0.59375
+
+grid:
+  - {gamma_denominator: 64, N: 64}
+  - {gamma_denominator: 96, N: 96}
+  - {gamma_denominator: 128, N: 128}
+  - {gamma_denominator: 192, N: 192}
+
+chains:
+  seeds: [201, 202, 203, 204, 205, 206, 207, 208]
+  initial_x:
+    201: -1.0
+    202: 0.0
+    203: 1.0
+    204: -1.0
+    205: 0.0
+    206: 1.0
+    207: -0.5
+    208: 0.5
+  initial_control: zero
+
+protocol:
+  mixing_mu: 0.5
+  burn_in_multiples: 100
+  batch_length_multiples: 20
+  min_batches: 100
+  max_batches: 400
+  extension_batches: 50
+
+bootstrap:
+  repetitions: 5000
+  seed: 20260820
+
+adjudication:
+  relative_tolerance: 0.02
+  scaled_error_ratio_max: 2.0
+  directional_small_reversal_combined_se_multiplier: 1.0
+  directional_ci_overlap_min_fraction: 0.5
+  near_zero_rule: scaled_error_95pct_ci_contains_zero
+  persistent_smallest_points: 2

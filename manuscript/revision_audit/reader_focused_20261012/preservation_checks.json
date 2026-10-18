@@ -1,0 +1,1041 @@
+{
+  "basis": "SCAFFOLD_Text_Readability_20261012.zip",
+  "pages": 35,
+  "changed_tex": [
+    "manuscript/appendix/C_numerical_details.tex",
+    "manuscript/appendix/D_reproducibility.tex",
+    "manuscript/figures_gallery.tex",
+    "manuscript/main.tex",
+    "manuscript/sections/07_numerical_study.tex",
+    "manuscript/sections/10_code_availability.tex"
+  ],
+  "checks": [
+    {
+      "check": "unchanged:macros.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unchanged:references.bib",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unchanged:appendix/A_scaffold_proof.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unchanged:appendix/B_fedavg_proof.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unchanged:sections/01_introduction.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unchanged:sections/02_related_work.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unchanged:sections/03_setting_preliminaries.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unchanged:sections/04_main_results.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unchanged:sections/05_mechanism.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unchanged:sections/08_discussion_limitations.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unchanged:sections/09_conclusion.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/data/e4_averaging_fedavg.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/data/e4_averaging_scaffold.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/data/e4_provenance.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/data/hist_H4_loglog_residual.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/data/hist_H4_smallstep.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/data/hist_fixed_gamma_coord1.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/data/hist_fixed_gamma_coord2.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/data/hist_matched_H2.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/data/hist_matched_H4.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/data/provenance.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/data/real_R0_allocation.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/e4_averaging_fedavg.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/e4_averaging_fedavg.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/e4_averaging_scaffold.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/e4_averaging_scaffold.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/hist_H4_loglog_residual.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/hist_H4_loglog_residual.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/hist_H4_smallstep.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/hist_H4_smallstep.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/hist_fixed_gamma_coord1.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/hist_fixed_gamma_coord1.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/hist_fixed_gamma_coord2.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/hist_fixed_gamma_coord2.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/hist_matched_H2.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/hist_matched_H2.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/hist_matched_H4.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/hist_matched_H4.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/real_R0_allocation.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/redrawn/real_R0_allocation.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/supplement/E1_control_kappa.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/supplement/E1_leading_intercepts.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/figures/supplement/E3_allocation_signed_projection.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/CLAIM_EVIDENCE_MAP.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/DATA_MANIFEST.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/AUTOCORRELATION_PROXIES.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/BIAS_VARIANCE_MSE.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/CLAIM_EVIDENCE_MAP.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/DIAGNOSTICS.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/E4_v1_PROTOCOL_FROZEN.sha256",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/E4_v2_PROTOCOL_FROZEN.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/E4_v2_PROTOCOL_FROZEN.sha256",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/ENVIRONMENT.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/INTEGRATION_MANIFEST.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/MISSING_ITEMS.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/PILOT_AND_BUDGET.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/PRACTICAL_IMPLICATIONS.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/README_INTEGRATION.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/REPRODUCE.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/SCIENTIFIC_SUMMARY.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/SOURCE_SHA256.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/STATISTICAL_METHOD_RECEIPT.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/TEMPORAL_DIAGNOSTICS.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/WINDOW_RESULTS.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/inference_arrays.npz",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/models.npz",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/pilots/PILOT_BIAS_VARIANCE_MSE.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/pilots/PILOT_EXECUTION_RECEIPT.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/pilots/PILOT_RUN_MANIFEST.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/pilots/PILOT_TEMPORAL_DIAGNOSTICS.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/pilots/PILOT_WINDOW_RESULTS.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/source_snapshot/audit_fonts.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/source_snapshot/figures.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/source_snapshot/freeze.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/source_snapshot/package.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/source_snapshot/pilot_analysis.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/source_snapshot/prepare.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/source_snapshot/replay.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E4/source_snapshot/v2.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/ALL_CELLS_ALL_WINDOWS.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/CLAIM_EVIDENCE_MAP.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/E5_POSTHOC_ANALYSIS_SPEC.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/EARLY_LATE_PAIRED_DIAGNOSTICS.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/FINAL_AUDIT.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/FULL_VECTOR_ALIGNMENT.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/IMPLEMENTATION_NOTES.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/INPUT_SHA256.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/INTEGRATION_MANIFEST.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/NEGATIVE_CONTROLS.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/NUMERICAL_CROSSCHECKS.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/PAIRED_BOOTSTRAP_SENSITIVITY.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/PAIRED_SEED_RESULTS.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/PROTOCOL_AND_POSTHOC_STATUS.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/README_INTEGRATION.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/REVIEWER_RISK_DECISION.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/SCALING_COMPARISONS.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/SCIENTIFIC_SUMMARY.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/SCOPE_AND_LIMITATIONS.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/SOURCE_SHA256.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/SOURCE_VERSION.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/STATISTICAL_METHOD_RECEIPT.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/VECTORS.npz",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/source_snapshot/bridge.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/source_snapshot/compare_replay.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/source_snapshot/delivery.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/source_snapshot/final_audit.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/source_snapshot/package.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/source_snapshot/prepare.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/source_snapshot/reports.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/E5/source_snapshot/test_bridge.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/EXPERIMENT_REGISTRY.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/METRIC_DEFINITIONS.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/MISSING_ITEMS.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/PROTOCOL_FROZEN.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/RUN_COMMANDS.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/SCIENTIFIC_SUMMARY.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/SENSITIVITY_SCOPE.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/SOURCE_MANIFEST.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/SOURCE_REVIEW.zip",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/THEORY_SCOPE.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/batch_audit/BATCH_AUDIT_REPORT.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/batch_audit/R0_H1_identity_recomputed.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/batch_audit/R0_posthoc_within_tail_endpoint_sensitivity.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/batch_audit/R0_reference_matrices.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/batch_audit/SUMMARY.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/batch_audit/cell_diagnostics.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/batch_audit/input_integrity.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/batch_audit/reconstructed_H_contrasts.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/batch_audit/reconstructed_R0_policy_contrasts.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/batch_audit/reconstructed_coefficients.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/batch_audit/reconstructed_full_results.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/diagnostics/E3_H1_actual_data_checks.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/diagnostics/pilot_batch_sensitivity.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/diagnostics/retained_objective_gradient_agreement.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/diagnostics/stable_arithmetic_roundoff_audit.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/diagnostics/stationarity_and_estimator_checks.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/diagnostics/window_sensitivity_runs.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/diagnostics/window_sensitivity_summary.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E1_H4_complete_diagnostic.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E1_control_kappa.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E1_leading_intercepts.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E1_normalized_control_grid.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E1_perpendicular_residuals.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E2_affine_path_residuals.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E2_zero_initialization_transient.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E3_allocation_bias_squared_U.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E3_allocation_heldout_log_loss.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E3_allocation_raw_variance_trace.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E3_allocation_signed_projection.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E3_allocation_total_parameter_MSE.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E3_policy_heldout_log_loss.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E3_policy_mean_model_training_objective_gap.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/figure_data/E3_policy_signed_projection.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/fitted_coefficients.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/full_results.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/optimizer_certificates.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/per_run_estimates.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/presentation_source/README.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/presentation_source/historical_coefficient_intercepts.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/presentation_source/original_table_cells.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/reference_optimizers.npz",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/E1_intercept_contrasts.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/E2_exact_checks.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/E2_zero_initialization.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/E3_across_partition_sensitivity.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/E3_conditional_partition_estimates.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/E3_noise_associated_displacements.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/E3_policy_allocation_contrasts.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/E3_reference_covariance_projections.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/deterministic_baselines.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/fitted_coefficients.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/full_results.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/full_vector_means.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/supplementary_results/tables/partition_diagnostics.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/tools/audit_narrative_revision.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/tools/check_saved_e4_e5.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "preserved asset:manuscript/tools/plot_e4_for_manuscript.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "displayed equations unchanged:sections/07_numerical_study.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "displayed equations unchanged:appendix/C_numerical_details.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "scientific table labels:sections/02_related_work.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:prior-bias-resolution",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "scientific table labels:sections/07_numerical_study.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:num-attribution-summary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:supp-control",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:supp-policy",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:e5-bridge",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "scientific table labels:appendix/C_numerical_details.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:num-core",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:E-h4diag",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:E-plateau",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:E-d5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:E-direct-balance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:supp-leading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:supp-real-full",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table math entries unchanged:tab:e4-primary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "scientific labels unchanged:sections/07_numerical_study.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "scientific labels unchanged:appendix/C_numerical_details.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no visible development codes",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "no visible result filenames",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "no visible result directory",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "no visible seeds or commit IDs",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "repository URL present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "clean final LaTeX log",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "no standalone font files",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 205,
+  "failed": 0
+}

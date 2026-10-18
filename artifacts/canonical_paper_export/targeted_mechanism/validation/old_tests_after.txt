@@ -1,0 +1,22 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0 -- python
+rootdir: .
+configfile: pyproject.toml
+collecting ... collected 14 items
+
+supplementary_study/study/tests.py::test_reference_production_rounds PASSED [  7%]
+supplementary_study/study/tests.py::test_h1_nonzero_controls PASSED      [ 14%]
+supplementary_study/study/tests.py::test_quadratic_global_linear_dynamics_covariance PASSED [ 21%]
+supplementary_study/study/tests.py::test_deterministic_consistency PASSED [ 28%]
+supplementary_study/study/tests.py::test_derivatives PASSED              [ 35%]
+supplementary_study/study/tests.py::test_orthogonal_path PASSED          [ 42%]
+supplementary_study/study/tests.py::test_noise_keys_and_covariance PASSED [ 50%]
+supplementary_study/study/tests.py::test_compiled_controlled_and_balance PASSED [ 57%]
+supplementary_study/study/tests.py::test_checkpoint_chunk_agreement PASSED [ 64%]
+supplementary_study/study/tests.py::test_logistic_global_objective_and_derivatives PASSED [ 71%]
+supplementary_study/study/tests.py::test_logistic_reference_production_h1_resume PASSED [ 78%]
+supplementary_study/study/tests.py::test_cross_run_ustat_zero_bias_calibration PASSED [ 85%]
+supplementary_study/study/tests.py::test_r0_h1_allocation_identity PASSED [ 92%]
+supplementary_study/study/tests.py::test_actual_checkpoint_file_resume PASSED [100%]
+
+============================= 14 passed in 1.83s ==============================

@@ -1,0 +1,124 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Allmeier and Gast(2024)]{allmeier2024bias}
+Sebastian Allmeier and Nicolas Gast.
+\newblock Computing the bias of constant-step stochastic approximation with
+  {Markovian} noise.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~37, pages 137873--137902, 2024.
+\newblock \doi{10.52202/079017-4379}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2024/hash/f949c1f490beb42124a267b7476cd353-Abstract-Conference.html}.
+
+\bibitem[Chen et~al.(2022)Chen, Mou, and Maguluri]{chen2022stationary}
+Zaiwei Chen, Shancong Mou, and Siva~Theja Maguluri.
+\newblock Stationary behavior of constant stepsize {SGD}-type algorithms: An
+  asymptotic characterization.
+\newblock \emph{Proceedings of the ACM on Measurement and Analysis of Computing
+  Systems}, 6\penalty0 (1):\penalty0 19:1--19:24, 2022.
+\newblock \doi{10.1145/3508039}.
+\newblock URL \url{https://doi.org/10.1145/3508039}.
+
+\bibitem[Dieuleveut et~al.(2020)Dieuleveut, Durmus, and
+  Bach]{dieuleveut2020bridging}
+Aymeric Dieuleveut, Alain Durmus, and Francis Bach.
+\newblock Bridging the gap between constant step size stochastic gradient
+  descent and {Markov} chains.
+\newblock \emph{The Annals of Statistics}, 48\penalty0 (3):\penalty0
+  1348--1382, 2020.
+\newblock \doi{10.1214/19-AOS1850}.
+\newblock URL \url{https://doi.org/10.1214/19-AOS1850}.
+
+\bibitem[Glasgow et~al.(2022)Glasgow, Yuan, and Ma]{glasgow2022sharp}
+Margalit~R. Glasgow, Honglin Yuan, and Tengyu Ma.
+\newblock Sharp bounds for federated averaging ({Local SGD}) and continuous
+  perspective.
+\newblock In Gustau Camps-Valls, Francisco J.~R. Ruiz, and Isabel Valera,
+  editors, \emph{Proceedings of The 25th International Conference on Artificial
+  Intelligence and Statistics}, volume 151 of \emph{Proceedings of Machine
+  Learning Research}, pages 9050--9090. PMLR, 28--30 Mar 2022.
+\newblock URL \url{https://proceedings.mlr.press/v151/glasgow22a.html}.
+
+\bibitem[Huo et~al.(2024)Huo, Zhang, Chen, and Xie]{huo2024collusion}
+Dongyan~Lucy Huo, Yixuan Zhang, Yudong Chen, and Qiaomin Xie.
+\newblock The collusion of memory and nonlinearity in stochastic approximation
+  with constant stepsize.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~37, pages 21699--21762, 2024.
+\newblock \doi{10.52202/079017-0684}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2024/hash/2676109d49d1eb26d6bc584a8f556305-Abstract-Conference.html}.
+
+\bibitem[Karimireddy et~al.(2020)Karimireddy, Kale, Mohri, Reddi, Stich, and
+  Suresh]{karimireddy2020scaffold}
+Sai~Praneeth Karimireddy, Satyen Kale, Mehryar Mohri, Sashank Reddi, Sebastian
+  Stich, and Ananda~Theertha Suresh.
+\newblock {SCAFFOLD}: Stochastic controlled averaging for federated learning.
+\newblock In Hal~Daum{\'e} III and Aarti Singh, editors, \emph{Proceedings of
+  the 37th International Conference on Machine Learning}, volume 119 of
+  \emph{Proceedings of Machine Learning Research}, pages 5132--5143. PMLR,
+  13--18 Jul 2020.
+\newblock URL \url{https://proceedings.mlr.press/v119/karimireddy20a.html}.
+
+\bibitem[Luo et~al.(2025)Luo, Stich, Horv{\'a}th, and
+  Tak{\'a}{\v{c}}]{luo2025revisiting}
+Ruichen Luo, Sebastian~U Stich, Samuel Horv{\'a}th, and Martin Tak{\'a}{\v{c}}.
+\newblock Revisiting {LocalSGD} and {SCAFFOLD}: Improved rates and missing
+  analysis.
+\newblock In Yingzhen Li, Stephan Mandt, Shipra Agrawal, and Emtiyaz Khan,
+  editors, \emph{Proceedings of The 28th International Conference on Artificial
+  Intelligence and Statistics}, volume 258 of \emph{Proceedings of Machine
+  Learning Research}, pages 2539--2547. PMLR, 03--05 May 2025.
+\newblock URL \url{https://proceedings.mlr.press/v258/luo25c.html}.
+
+\bibitem[Mangold and Moulines(2025)]{mangold2025sharper}
+Paul Mangold and Eric Moulines.
+\newblock A sharper analysis of {SCAFFOLD} on quadratics.
+\newblock In Feras~M. Awaysheh and Sadi Alawadi, editors, \emph{2025 3rd
+  International Conference on Federated Learning Technologies and Applications,
+  FLTA 2025}, pages 332--339. Institute of Electrical and Electronics Engineers
+  Inc., 2025.
+\newblock \doi{10.1109/FLTA67013.2025.11336626}.
+\newblock URL \url{https://ieeexplore.ieee.org/document/11336626}.
+
+\bibitem[Mangold et~al.(2025{\natexlab{a}})Mangold, Durmus, Dieuleveut, and
+  Moulines]{mangold2025scaffold}
+Paul Mangold, Alain Durmus, Aymeric Dieuleveut, and Eric Moulines.
+\newblock {SCAFFOLD} with stochastic gradients: New analysis with linear
+  speed-up.
+\newblock In Aarti Singh, Maryam Fazel, Daniel Hsu, Simon Lacoste-Julien, Felix
+  Berkenkamp, Tegan Maharaj, Kiri Wagstaff, and Jerry Zhu, editors,
+  \emph{Proceedings of the 42nd International Conference on Machine Learning},
+  volume 267 of \emph{Proceedings of Machine Learning Research}, pages
+  42902--42946. PMLR, 13--19 Jul 2025{\natexlab{a}}.
+\newblock URL \url{https://proceedings.mlr.press/v267/mangold25a.html}.
+\newblock Author version used for theorem numbering:
+  \url{https://arxiv.org/abs/2503.07594v1}.
+
+\bibitem[Mangold et~al.(2025{\natexlab{b}})Mangold, Durmus, Dieuleveut,
+  Samsonov, and Moulines]{mangold2025fedavg}
+Paul Mangold, Alain~Oliviero Durmus, Aymeric Dieuleveut, Sergey Samsonov, and
+  Eric Moulines.
+\newblock Refined analysis of constant step size {Federated Averaging} and
+  {Federated Richardson--Romberg Extrapolation}.
+\newblock In Yingzhen Li, Stephan Mandt, Shipra Agrawal, and Emtiyaz Khan,
+  editors, \emph{Proceedings of The 28th International Conference on Artificial
+  Intelligence and Statistics}, volume 258 of \emph{Proceedings of Machine
+  Learning Research}, pages 5023--5031. PMLR, 03--05 May 2025{\natexlab{b}}.
+\newblock URL \url{https://proceedings.mlr.press/v258/mangold25a.html}.
+\newblock Author version used for theorem numbering:
+  \url{https://arxiv.org/abs/2412.01389v2}.
+
+\bibitem[Versini et~al.(2026)Versini, Mangold, and Dieuleveut]{versini2026dsgd}
+Lucas Versini, Paul Mangold, and Aymeric Dieuleveut.
+\newblock Tight analysis of decentralized {SGD}: A {Markov} chain perspective.
+\newblock In \emph{Proceedings of the 29th International Conference on
+  Artificial Intelligence and Statistics}, volume 300, 2026.
+\newblock URL \url{https://openreview.net/forum?id=5ob5u8lZeL}.
+
+\end{thebibliography}

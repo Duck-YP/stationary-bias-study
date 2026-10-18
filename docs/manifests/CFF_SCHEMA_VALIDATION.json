@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "schema": "https://raw.githubusercontent.com/citation-file-format/citation-file-format/1.2.0/schema.json",
+  "schema_sha256": "0b8d22140da702d766df318dcff3a91af2f39521298dcf36d76315fd99cc169b",
+  "cff_sha256": "a664d2aa03c0ba826bd65aa9ce30308f167799e08ea749372299ad202c648891",
+  "scope": "Official CFF 1.2.0 JSON Schema; validator installed separately from publication environment"
+}

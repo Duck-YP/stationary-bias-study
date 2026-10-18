@@ -1,0 +1,46 @@
+\section{Related work}
+\label{sec:related}
+
+\paragraph{Federated optimization and stationary-bias characterization.}
+\Scaf{} uses control variates to mitigate heterogeneity-induced client drift \citep{karimireddy2020scaffold}. Finite-time analyses study LocalSGD and \Scaf{} under gradient and Hessian similarity, weak convexity, and higher-order smoothness \citep{luo2025revisiting}, and establish sharper \Scaf{} convergence guarantees on quadratic objectives \citep{mangold2025sharper}.
+
+Stochastic local updates can induce bias even with identical client objectives. \citet{glasgow2022sharp} study \emph{iterate bias}, which is the deviation of the expected SGD trajectory from deterministic gradient descent with the same initialization. Their finite-step bounds and continuous perspective connect this bias to nonlinearity and noise under higher-order smoothness assumptions. Our estimand is instead the invariant-law global mean relative to the minimizer.
+
+Stationary distributions provide a complementary perspective on constant-step stochastic optimization \citep{dieuleveut2020bridging,chen2022stationary}. For federated learning, \citet{mangold2025fedavg} derive stationary bias and variance expansions for \FedAvg{}, while \citet{mangold2025scaffold} analyze the joint global-model/control process of \Scaf{}. Table~\ref{tab:prior-bias-resolution} compares the analytical resolution of these results with ours for the same algorithms and stationary-bias quantities.
+
+The comparison specializes the prior results to a common objective and bounded additive noise, with the shared coefficient $B_{11}$ given in Equation~\eqref{eq:scaf-B}. The \FedAvg{} Theorem~3 row additionally assumes identical client noise laws (Assumption~A6); its Theorem~4, specialized to $f_c=f$, allows distinct noise laws and has no heterogeneity contribution.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Analytical resolution beyond the shared leading bias term. Each entry characterizes $b^{\mathcal A}_{\gamma,N,H}-(\gamma/N)B_{11}$ in the common-objective, additive-noise setting. Prior bounds leave the client-independent second-order coefficient unresolved; the last row identifies it explicitly and bounds the residual.}
+\label{tab:prior-bias-resolution}
+\begin{tabularx}{\linewidth}{@{}p{0.46\linewidth}X@{}}
+\toprule
+Analysis & Characterization beyond the shared leading term \\
+\midrule
+\Scaf{}, \citet[Theorem~5.3]{mangold2025scaffold}
+& $O(\gamma^2H+\gamma^{3/2})$ \\
+\FedAvg{}, \citet[Theorem~3]{mangold2025fedavg}
+& $O(\gamma^2H+\gamma^{3/2})$ \\
+\FedAvg{}, \citet[Theorem~4]{mangold2025fedavg}, with $f_c=f$
+& $O(\gamma^2H^2+\gamma^{3/2}H)$ \\
+This work, Theorems~\ref{thm:scaf-main} and~\ref{thm:fa-main}
+& $\gamma^2B_{20}^{\mathcal A}(H)$
+  ${}+O_{H,d}(\gamma^2/N+\gamma^3)$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Dividing the prior remainder bounds by $\gamma^2$ gives $O(H+\gamma^{-1/2})$ or $O(H^2+H\gamma^{-1/2})$, so neither identifies the second-order coefficient. Under the additional assumptions of Section~\ref{sec:setting}, our normalized remainder is $O_{H,d}(1/N+\gamma)$, uniformly in $N$ for fixed $H,d$, and vanishes in every joint limit $\gamma\to0$, $N\to\infty$. The explicit coefficients thus identify the direction, magnitude, and local-step dependence of the client-independent contribution, separating ordinary local updates from the additional persistent-control effect. 
+
+\citet[Lemma~5.1]{mangold2025scaffold} already identify the leading
+stationary control covariance, $(1-1/N)C/H+O_H(\gamma)$ in the
+common-objective, common-covariance setting. Our analysis propagates
+this control-fluctuation term through local second moments into the
+matched stationary mean coefficients, with a common $N$-uniform
+remainder.
+
+
+\paragraph{Mechanisms and attribution of stationary bias.}
+Related work has examined distinct sources of bias:
+\citet{allmeier2024bias} derive a Lyapunov-based first-order expression for time-averaged bias under Markovian noise; \citet{huo2024collusion} separate memory, nonlinearity, and their interaction in nonlinear stochastic approximation; and \citet{versini2026dsgd} distinguish stochasticity and decentralization in decentralized SGD. Our analysis instead quantifies the additional stationary mean-bias coefficient attributable to persistent controls through a matched \Scaf{}--\FedAvg{} comparison.

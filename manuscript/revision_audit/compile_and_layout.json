@@ -1,0 +1,28 @@
+{
+  "document": {
+    "pages": 37,
+    "body_pages": 16,
+    "reference_pages": [
+      17,
+      18
+    ],
+    "appendix_pages": [
+      19,
+      37
+    ]
+  },
+  "warnings": [],
+  "text_outside_page": [],
+  "changed_tex": [
+    "appendix/C_numerical_details.tex",
+    "appendix/D_reproducibility.tex",
+    "figures_gallery.tex",
+    "main.tex",
+    "sections/01_introduction.tex",
+    "sections/07_numerical_study.tex",
+    "sections/08_discussion_limitations.tex",
+    "sections/09_conclusion.tex"
+  ],
+  "equation_reference_style": "Equation~\\eqref; Equations~\\eqref and~\\eqref",
+  "abstract_whitespace_word_count": 217
+}

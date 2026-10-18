@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "panels": [
+    {
+      "panel": "hist_matched_H2",
+      "sha256": "5c842528b670b58decd3b66b5efab98c7f38d1288c9663b281d955e3f1f9bc46",
+      "drawing_paths": 74,
+      "stroked_paths": 72,
+      "filled_paths": 49,
+      "outside_canvas_paths": [],
+      "pass": true
+    },
+    {
+      "panel": "hist_matched_H4",
+      "sha256": "4ae7698c13d464a4db0443fb8f5f17de70bb7ec0a4f93509da43567eb9cb619f",
+      "drawing_paths": 74,
+      "stroked_paths": 72,
+      "filled_paths": 49,
+      "outside_canvas_paths": [],
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord1",
+      "sha256": "72e6c1727b993cd5db13da00086233134c56857c3e5fb2940f87be27194b1602",
+      "drawing_paths": 53,
+      "stroked_paths": 51,
+      "filled_paths": 34,
+      "outside_canvas_paths": [],
+      "pass": true
+    },
+    {
+      "panel": "hist_fixed_gamma_coord2",
+      "sha256": "ee8db26ada037a052d8ba51b72be5185a4ab03e2c8f1dd64ca2049334150dfa6",
+      "drawing_paths": 53,
+      "stroked_paths": 51,
+      "filled_paths": 34,
+      "outside_canvas_paths": [],
+      "pass": true
+    },
+    {
+      "panel": "real_R0_allocation",
+      "sha256": "c8684dc45f89493c6dc1c9abf7be2fccebcb3781ed583d8cbd5b9fe6908f39df",
+      "drawing_paths": 51,
+      "stroked_paths": 49,
+      "filled_paths": 33,
+      "outside_canvas_paths": [],
+      "pass": true
+    },
+    {
+      "panel": "e4_averaging_scaffold",
+      "sha256": "36903e3a106f06f1d8bb30365ac2cba0c0071ecca1ec8d5e67603d7db1785e13",
+      "drawing_paths": 88,
+      "stroked_paths": 86,
+      "filled_paths": 61,
+      "outside_canvas_paths": [],
+      "pass": true
+    },
+    {
+      "panel": "e4_averaging_fedavg",
+      "sha256": "1e336df1c8965319d207291fab74fc33bacd18c86eb1d7e930880d875a520e67",
+      "drawing_paths": 88,
+      "stroked_paths": 86,
+      "filled_paths": 61,
+      "outside_canvas_paths": [],
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_smallstep",
+      "sha256": "8bfa81eefb599f0a5e31d762808bdd0cde0fe775928169b4585a001e56836897",
+      "drawing_paths": 66,
+      "stroked_paths": 64,
+      "filled_paths": 43,
+      "outside_canvas_paths": [],
+      "pass": true
+    },
+    {
+      "panel": "hist_H4_loglog_residual",
+      "sha256": "6c31c67b45f813daf0589040df874b0f1023f06a757d14b3e6499e81d62ac2a8",
+      "drawing_paths": 40,
+      "stroked_paths": 38,
+      "filled_paths": 30,
+      "outside_canvas_paths": [],
+      "pass": true
+    }
+  ],
+  "method": "Transform PDF path vertices/control points by the current transformation matrix; pad by half the stroke width. All bounding boxes must remain within the native page, with 0.5 PDF pt roundoff/layout tolerance.",
+  "limits": "Conservative canvas-bound check; internal axes clipping is checked separately against actual data/errorbar vertices and limits. Visual inspection checks overlapping elements."
+}

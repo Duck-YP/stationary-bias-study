@@ -1,0 +1,7 @@
+document,panel_id,subcaption_minimum_TeX_pt,glyph_count,status
+gallery,hist_matched_H2,9.999959749999999,16,PASS
+gallery,hist_matched_H4,9.999959749999999,17,PASS
+gallery,hist_fixed_gamma_coord1,9.999959749999999,14,PASS
+gallery,hist_fixed_gamma_coord2,9.999959749999999,14,PASS
+gallery,hist_H4_smallstep,9.999959749999999,19,PASS
+gallery,hist_H4_loglog_residual,9.999959749999999,20,PASS

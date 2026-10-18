@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "manuscript_version": "20261015",
+  "source_archive": {
+    "name": "SCAFFOLD_Targeted_Mechanism_Integrated_20261015.zip",
+    "sha256": "10ec90589e0f1ba73926cea7d6b17e03e3885191a313af109f46acf398cf41cc"
+  },
+  "main_pdf": {
+    "path": "manuscript/main.pdf",
+    "sha256": "1bea9883e8f828f3a4c7029ed26fdcced6808d3420470a09ccbcdd346232be1f",
+    "bytes": 748160,
+    "pages": 40
+  },
+  "main_tex": {
+    "path": "manuscript/main.tex",
+    "sha256": "b1ca5c0ff081d4c231464e3a7ac088d9c75f3c6329be3bafbb51ff188e45653b",
+    "bytes": 3310
+  },
+  "active_graphics": [
+    "figures/redrawn/e4_averaging_fedavg.pdf",
+    "figures/redrawn/e4_averaging_scaffold.pdf",
+    "figures/redrawn/hist_H4_loglog_residual.pdf",
+    "figures/redrawn/hist_H4_smallstep.pdf",
+    "figures/redrawn/hist_fixed_gamma_coord1.pdf",
+    "figures/redrawn/hist_fixed_gamma_coord2.pdf",
+    "figures/redrawn/hist_matched_H2.pdf",
+    "figures/redrawn/hist_matched_H4.pdf",
+    "figures/redrawn/real_R0_allocation.pdf"
+  ],
+  "publication_manifest": "docs/manifests/PUBLICATION_COPY_MANIFEST.csv",
+  "historical_receipt_scope": "2026-10-09 figure build and font audit are archived receipts; they do not validate the current PDF layout. Current PDF was copied from the supplied integrated manuscript without recompilation.",
+  "scientific_recomputation": false
+}

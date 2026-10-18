@@ -1,0 +1,209 @@
+{
+  "audit_date_local": "2026-10-14",
+  "timezone": "Asia/Taipei",
+  "scope": {
+    "required_papers": 4,
+    "additional_papers": 0
+  },
+  "baseline_files": [
+    {
+      "path": "manuscript/main.tex",
+      "sha256": "b1ca5c0ff081d4c231464e3a7ac088d9c75f3c6329be3bafbb51ff188e45653b"
+    },
+    {
+      "path": "manuscript/sections/02_related_work.tex",
+      "sha256": "0afdbe904229c778a5661638bc63ca7945e33321567643a7d5bfdae984c971f2"
+    },
+    {
+      "path": "manuscript/sections/03_setting_preliminaries.tex",
+      "sha256": "5f050f14e48d40e3128cb0080d5f14c9f3357f1db718f5e9584b00bf78a24af0"
+    },
+    {
+      "path": "manuscript/sections/04_main_results.tex",
+      "sha256": "8e5b34f99c35ed600adacea44d6859a1091bc357a7cef88448acf5f0b42f44fa"
+    },
+    {
+      "path": "manuscript/references.bib",
+      "sha256": "e6994eb9f3977fcfd22dfb24b3c1785cb0ebf32a26073681937bb6fca0c769ce"
+    }
+  ],
+  "sources": [
+    {
+      "id": "glasgow_pmlr",
+      "file": "glasgow2022_pmlr.pdf",
+      "url": "https://proceedings.mlr.press/v151/glasgow22a/glasgow22a.pdf",
+      "version": "PMLR 151 (2022)",
+      "anchors": {
+        "Definition 2.1": [
+          5
+        ],
+        "Assumptions 1-2": [
+          5,
+          6
+        ],
+        "Theorems 2.4-2.5; Section 2.3": [
+          6,
+          7
+        ],
+        "Theorems A.3-A.4": [
+          14
+        ]
+      },
+      "visual_qa": [
+        "qa_glasgow-06.png"
+      ],
+      "sha256": "69a8af1950170b9165f4dc32f23e768eb16bb827c3e5406fd62af3e8539c96f9",
+      "bytes": 1030208,
+      "access": "downloaded primary PDF; relevant full pages read using pdftotext -layout",
+      "page_numbering": "one-based PDF pages"
+    },
+    {
+      "id": "fedavg_v2",
+      "file": "mangold_fedavg_v2.pdf",
+      "url": "https://arxiv.org/pdf/2412.01389v2",
+      "version": "arXiv:2412.01389v2",
+      "anchors": {
+        "A1": [
+          3
+        ],
+        "A3": [
+          5
+        ],
+        "A6; Theorems 3-4": [
+          7
+        ],
+        "Appendix B.5-B.6": [
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ]
+      },
+      "sha256": "09de2b2d150557ea9c322bed41ff1f12ddc82f5f1a3ca7c93e16aa1afa353d29",
+      "bytes": 1108447,
+      "access": "downloaded primary PDF; relevant full pages read using pdftotext -layout",
+      "page_numbering": "one-based PDF pages"
+    },
+    {
+      "id": "fedavg_pmlr",
+      "file": "mangold_fedavg_pmlr.pdf",
+      "url": "https://raw.githubusercontent.com/mlresearch/v258/main/assets/mangold25a/mangold25a.pdf",
+      "version": "Official PMLR 258 (2025), landing https://proceedings.mlr.press/v258/mangold25a.html",
+      "purpose": "Compared the stationary mean formulas/remainders with the manuscript-cited v2",
+      "sha256": "3fb93600b4de5d73d66e383e706bdfd144845f65c0e4158e358a7409e00e543a",
+      "bytes": 933753,
+      "access": "downloaded primary PDF; relevant full pages read using pdftotext -layout",
+      "page_numbering": "one-based PDF pages"
+    },
+    {
+      "id": "scaffold_v1",
+      "file": "mangold_scaffold_v1.pdf",
+      "url": "https://arxiv.org/pdf/2503.07594v1",
+      "version": "arXiv:2503.07594v1",
+      "anchors": {
+        "A1-A5": [
+          2,
+          3
+        ],
+        "A6; Theorem 5.3": [
+          8
+        ],
+        "Lemma 5.1": [
+          7,
+          42
+        ],
+        "Lemma E.3": [
+          43,
+          44
+        ],
+        "Lemma E.4": [
+          44
+        ],
+        "Theorem 5.3 restated": [
+          45
+        ]
+      },
+      "visual_qa": [
+        "qa_scaffold-42.png",
+        "qa_scaffold_detail-44.png"
+      ],
+      "sha256": "e35ce132f53c9d957958b85c564b042a0431c1c3571dc7db6b18c40686bb50e0",
+      "bytes": 840745,
+      "access": "downloaded primary PDF; relevant full pages read using pdftotext -layout",
+      "page_numbering": "one-based PDF pages"
+    },
+    {
+      "id": "scaffold_pmlr",
+      "file": "mangold_scaffold_pmlr.pdf",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/mangold25a/mangold25a.pdf",
+      "version": "Official PMLR 267 (2025), landing https://proceedings.mlr.press/v267/mangold25a.html",
+      "purpose": "Compared the stationary mean formula/remainder with the manuscript-cited v1",
+      "sha256": "97fbf3f1ceb59046c57c36bd109c1de3567f9d7949edcac2af9f5b8befa8fce1",
+      "bytes": 654387,
+      "access": "downloaded primary PDF; relevant full pages read using pdftotext -layout",
+      "page_numbering": "one-based PDF pages"
+    },
+    {
+      "id": "ddb_v2",
+      "file": "dieuleveut_arxiv_v2.pdf",
+      "url": "https://arxiv.org/pdf/1707.06386v2",
+      "version": "arXiv v2, dated April 12, 2018; not claimed identical to final 2020 journal article",
+      "anchors": {
+        "A1-A5": [
+          5,
+          6
+        ],
+        "Theorem 4": [
+          13,
+          14
+        ],
+        "Theorem 7": [
+          17
+        ]
+      },
+      "visual_qa": [
+        "qa_ddb-13.png"
+      ],
+      "sha256": "38e9feeba815c737e87880e94f0963b87b118486113cf129986cb0f8323eae5a",
+      "bytes": 570312,
+      "access": "downloaded primary PDF; relevant full pages read using pdftotext -layout",
+      "page_numbering": "one-based PDF pages"
+    },
+    {
+      "id": "ddb_earlier_author",
+      "file": "dieuleveut_author_20180326.pdf",
+      "url": "https://www.cmap.polytechnique.fr/~aymeric.dieuleveut/papers/Dieuleveut-Durmus-Bach.pdf",
+      "version": "Author-hosted manuscript; footer March 26, 2018",
+      "anchors": {
+        "Theorem 4": [
+          13
+        ]
+      },
+      "purpose": "Cross-checked the coefficient as printed in another primary author version",
+      "sha256": "956022a55a1c5b18904ec08d6e28480d8bffc8d7b459376b14cc5d203f6758b7",
+      "bytes": 635009,
+      "access": "downloaded primary PDF; relevant full pages read using pdftotext -layout",
+      "page_numbering": "one-based PDF pages"
+    }
+  ],
+  "access_gaps": [
+    {
+      "url": "https://doi.org/10.1214/19-AOS1850",
+      "status": "web tool inaccessible"
+    },
+    {
+      "url": "https://projecteuclid.org/journals/annals-of-statistics/volume-48/issue-3/Bridging-the-gap-between-constant-step-size-stochastic-gradient-descent/10.1214/19-AOS1850.full",
+      "status": "wrapper only, final publisher article not read"
+    }
+  ],
+  "network_note": "Initial sandbox HTTP downloads could not resolve hosts. Approved read-only primary-source downloads then succeeded. No paywall bypass used.",
+  "packaging": "Keep PDFs, extracted full texts and QA renders under literature/sources locally. Distribute report, proposed patch/snippets and this manifest; source retrieval URLs and hashes suffice for a compact review bundle.",
+  "no_master_mutation": true,
+  "patch_is_unapplied": true
+}

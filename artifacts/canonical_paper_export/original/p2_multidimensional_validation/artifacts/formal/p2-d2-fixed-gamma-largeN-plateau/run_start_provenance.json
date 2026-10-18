@@ -1,0 +1,88 @@
+{
+  "artifact_namespace": "workstreams/p2_multidimensional_validation/artifacts/formal/p2-d2-fixed-gamma-largeN-plateau",
+  "bootstrap_repetitions": 2000,
+  "bootstrap_seed": 3901,
+  "capture_point": "before_any_p2_plateau_output_write",
+  "commands": {
+    "analyze": ".venv/bin/python run.py p2 plateau analyze",
+    "check": ".venv/bin/python run.py p2 plateau check",
+    "report": ".venv/bin/python run.py p2 plateau report",
+    "run": ".venv/bin/python run.py p2 plateau run"
+  },
+  "config_path": "workstreams/p2_multidimensional_validation/configs/d2_fixed_gamma_largeN_plateau.yaml",
+  "config_sha256": "e11693b2b6966a029ae71f4819526a73b53c5e19581798470a9adc760b5bb148",
+  "config_snapshot": "d2_fixed_gamma_largeN_plateau_config_snapshot.yaml",
+  "environment": {
+    "git_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
+    "git_dirty": false,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.14"
+  },
+  "expected_chain_count": 40,
+  "matrix_id": "p2-d2-fixed-gamma-largeN-plateau",
+  "phase": "formal_fixed_gamma_large_N_plateau",
+  "planned_coordinate_run_rows": 160,
+  "protocol_path": "workstreams/p2_multidimensional_validation/artifacts/archive/protocols/d2_fixed_gamma_largeN_plateau_protocol.md",
+  "protocol_sha256": "9debb9802ac3dbd990195fbc8da9e6b8268962328c53e656b6209636ad7a33b5",
+  "run_matrix": {
+    "H_values": [
+      2
+    ],
+    "N_values": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "all_unique": true,
+    "chains": 40,
+    "chains_per_setting": [
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "d_values": [
+      2
+    ],
+    "gamma_fixed": true,
+    "gamma_values": [
+      0.041666666666666664
+    ],
+    "matrix_id": "p2-d2-fixed-gamma-largeN-plateau",
+    "seeds": [
+      1301,
+      1302,
+      1303,
+      1304,
+      1305,
+      1306,
+      1307,
+      1308
+    ],
+    "settings": 5,
+    "unique_run_ids": 40
+  },
+  "schema_version": 2,
+  "seeds": [
+    1301,
+    1302,
+    1303,
+    1304,
+    1305,
+    1306,
+    1307,
+    1308
+  ],
+  "source_commit": "85e97fa34e23084410c148b63d814c75d92dbc1e",
+  "source_dirty_at_run_start": false,
+  "study": "p2_multidimensional_validation"
+}

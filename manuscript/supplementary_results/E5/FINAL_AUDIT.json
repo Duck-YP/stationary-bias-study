@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "required_files": 17,
+  "primary_numerical_checks": 339,
+  "independent_receipts": {
+    "independent_formula/qa/FORMULA_AUDIT_SUMMARY.json": {
+      "sha256": "626355b925fffd0f4113fa6aab28f8477689f88f6b676759907c78511c72f4a6",
+      "status": "PASS",
+      "checks": 392
+    },
+    "independent_formula/crosscheck/PRIMARY_CROSSCHECK_SUMMARY.json": {
+      "sha256": "a5f35c2298f92a857917dcc783906d89c3f4fdd2206c139ee2b98ea6c37d5dd8",
+      "status": "PASS",
+      "checks": 1436
+    },
+    "independent_audit/INDEPENDENT_OUTPUT_AUDIT.json": {
+      "sha256": "dac68946e8751af6f551b3e94143e068f60e756dca205fbae256797910eeb657",
+      "status": "PASS",
+      "checks": 6739
+    },
+    "independent_audit/FINAL_VISUAL_QA_RECEIPT.json": {
+      "sha256": "008e51e6308fb4859364c61f900c49aeedb353b0615bf212426edcccdeca6686",
+      "status": "PASS",
+      "checks": null
+    },
+    "reviewer_audit/INDEPENDENT_ASSESSMENT_QA.json": {
+      "sha256": "3867147efecc197bdac91b363e416c3ac882b7988e25c6463dc0236baca5317a",
+      "status": "PASS",
+      "checks": 672
+    },
+    "reviewer_audit/PROTECTION_FINAL.json": {
+      "sha256": "e7be77e83cfe331d31cc188935bc8edbfba867e23495f141c72ed11e99742ac9",
+      "status": "PASS",
+      "checks": null
+    },
+    "FIGURE_NUMERIC_PRESERVATION.json": {
+      "sha256": "142f79f82bdb66be167459d248e3feba3be4d68ab7793e89d54cf8f68890ef97",
+      "status": "PASS",
+      "checks": 594
+    },
+    "PORTABLE_REPLAY_QA.json": {
+      "sha256": "8c2a691e6b482bc80230cbd9e7aad080f1cb8a47bee530ef1d026c79dfa39e8d",
+      "status": "PASS",
+      "checks": null
+    }
+  },
+  "figures": 6,
+  "final_minimum_font_TeX_pt": 9.70057894807802,
+  "classification": "BRIDGE_DESCRIPTIVE_ONLY",
+  "new_training_runs": 0,
+  "new_optimizer_runs": 0,
+  "preserved_E4_failed_temporal_gates": 144,
+  "E4_crossover_classification": "NO_CERTIFIED_CROSSOVER",
+  "E4_overall_classification": "INCONCLUSIVE_PRECISION_OR_STATIONARITY",
+  "source_version_sha256": "5a9ca14714f81472b6df99f111548d6173bd4f8367352bed2974d72ced99840e",
+  "manuscript_edited": false,
+  "stop_after_handoff": true
+}

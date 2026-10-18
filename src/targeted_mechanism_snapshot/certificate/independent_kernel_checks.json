@@ -1,0 +1,110 @@
+{
+  "status": "PASS_INDEPENDENT_KERNEL_CHECKS",
+  "unit_round_cases": [
+    {
+      "N": 3,
+      "H": 1,
+      "gamma": 0.001953125,
+      "alpha": 0.05,
+      "initial_control_mean": [
+        0.0,
+        0.0
+      ],
+      "rounds": 19,
+      "status": "PASS"
+    },
+    {
+      "N": 7,
+      "H": 4,
+      "gamma": 0.001953125,
+      "alpha": 0.05,
+      "initial_control_mean": [
+        0.0,
+        0.0
+      ],
+      "rounds": 19,
+      "status": "PASS"
+    },
+    {
+      "N": 7,
+      "H": 4,
+      "gamma": 0.00048828125,
+      "alpha": 0.05,
+      "initial_control_mean": [
+        0.13,
+        -0.21
+      ],
+      "rounds": 19,
+      "status": "PASS"
+    },
+    {
+      "N": 11,
+      "H": 4,
+      "gamma": 0.0009765625,
+      "alpha": 0.0,
+      "initial_control_mean": [
+        0.0,
+        0.0
+      ],
+      "rounds": 19,
+      "status": "PASS"
+    },
+    {
+      "N": 11,
+      "H": 4,
+      "gamma": 0.00048828125,
+      "alpha": 0.0,
+      "initial_control_mean": [
+        0.07,
+        0.11
+      ],
+      "rounds": 19,
+      "status": "PASS"
+    }
+  ],
+  "maxima": {
+    "state_max_abs_difference": 1.1102230246251565e-16,
+    "control_max_abs_difference": 1.1390888232654106e-13,
+    "balance_max_abs_difference": 2.42861286636753e-17,
+    "eta_max_abs_difference": 0.0,
+    "control_mean_max_abs_drift": 4.440892098500626e-16,
+    "gradient_max_abs_difference": 4.440892098500626e-16
+  },
+  "H1_global_identity_max_abs_difference": 0.0,
+  "deterministic_rounds": 27,
+  "indexed_path_cases": [
+    {
+      "asymmetric": false,
+      "rounds": 79,
+      "checkpoint_round": 29,
+      "bitwise_resume_equal": true,
+      "active_scalar_path_max_abs_difference": 6.786238238021269e-15,
+      "pre_window_identity_max_abs_residual": 1.9042158409159966e-18,
+      "post_window_identity_max_abs_residual": 1.931320895228134e-18,
+      "paired_post_window_identity_max_abs_residual": 6.505213034913027e-19
+    },
+    {
+      "asymmetric": true,
+      "rounds": 79,
+      "checkpoint_round": 29,
+      "bitwise_resume_equal": true,
+      "active_scalar_path_max_abs_difference": 9.242606680004428e-15,
+      "pre_window_identity_max_abs_residual": 1.0910642115518682e-18,
+      "post_window_identity_max_abs_residual": 1.0639591572397306e-18,
+      "paired_post_window_identity_max_abs_residual": 1.463672932855431e-18
+    }
+  ],
+  "source_sha256": {
+    "targeted/kernels.py": "3ea86b1c51a32ddb86777a0bf507fcfc1ede19875e638a84acbae2fce662f8c3",
+    "certificate/independent_kernel_checks.py": "ee0446a759ef8d4575f443312f3b410df36b6a26fc40cce4bd1e51e62735e854"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "python",
+    "numpy": "2.5.3",
+    "numba": "0.68.0",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "noise_generator_assessment": "Deterministic indexed pseudorandom hash with fixed key and disjoint round/step/client-coordinate indices. Within-condition algorithms share the same explicit array. Symmetric mapping has one bit; asymmetric mapping rejects 2^64-1 and maps modulo 3. Exact support moments are separately verified. This is a simulation PRNG assumption, not a mathematical independence certificate for a finite keyed generator.",
+  "scope": "No coefficient targets were imported or injected. Tests verify recursions, selected model, control preservation, timing and checkpoint state; they do not establish stationarity or asymptotic coefficients."
+}

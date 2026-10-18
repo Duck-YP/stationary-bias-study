@@ -1,0 +1,23 @@
+{
+  "status": "POST_HOC_EXPLORATORY_NOT_PREREGISTERED",
+  "prior_exploratory_results_seen": true,
+  "training_allowed": false,
+  "K": [1, 2, 4, 8, 16, 32, 64],
+  "primary_K": 64,
+  "paired_seed_count": 12,
+  "dimension": 124,
+  "bootstrap": {"draws": 19999, "seed": 202610096, "cluster": "paired_seed_shared_across_all_cells_and_K"},
+  "alpha": 0.05,
+  "scalar_family": "all cell-window metrics, fixed comparators, paired early-late diagnostics, and scaling statistics jointly",
+  "vector_family": "separate simultaneous mean-vector balls for all 63 cell-windows and all 54 paired early-late contrasts",
+  "comparators": ["zero_vector_amplitude_null", "frozen_x_ref_direction_only", "negative_T_Sigma_direction_only"],
+  "gamma_comparisons": "all three pairwise gamma contrasts at H4 N32 m8; signed frozen-direction projection primary, norm sensitivity",
+  "H_comparison": "H4/H2 at N32 m8 gamma_base; proxy ratio 3.5",
+  "allocation_comparisons": "all three pairwise allocations H4 gamma_base; N and m both vary",
+  "early_late": "first K vs last K for K1,2,4,8,16,32; paired S-F only, not replacement E4 stationarity gates",
+  "intervals": "functional-centered bootstrap max-standardized deviations; delete-one paired jackknife Bonferroni t sensitivity; full-vector balls and denominator-safe scaling transformations",
+  "nonlinear_interval_caveat": "small R, nonregular near-zero norms and near-unit cosines; vector-ball sensitivity retained",
+  "no_proxy_uncertainty_coverage": true,
+  "no_fitted_scale": true,
+  "no_new_E4_classification": true
+}

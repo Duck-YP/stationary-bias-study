@@ -1,0 +1,40 @@
+{
+  "scope": "E1 and E3/R0 supplied production batches, independent audit from retained sums; no new stochastic training or optimizer solve",
+  "paired_runs": {
+    "E1": 408,
+    "E3": 108
+  },
+  "cells": 43,
+  "E1_cells": 34,
+  "R0_cells": 9,
+  "total_batches": 33852,
+  "algorithm_parameter_summaries": 1032,
+  "extended_collections": {
+    "('E1', 64)": 396,
+    "('E1', 133)": 12,
+    "('E3', 64)": 108
+  },
+  "checks": 26970,
+  "failed": 0,
+  "max_absolute_replay_difference": 4.656612873077393e-10,
+  "coefficient_rows": 118,
+  "H_contrasts": 14,
+  "R0_policy_contrasts": 12,
+  "first_last_adjusted_flags": 0,
+  "raw_primary_nominal_flags": 4,
+  "window_comparisons": 6,
+  "window_adjusted_flags": 0,
+  "R0_H1_checks": 60,
+  "R0_H1_strict_failures": 24,
+  "R0_H1_max_coordinate_residual": 4.32594737809211e-10,
+  "paired_tail_covariances_checked": 43,
+  "missing_required_files": [],
+  "limits": [
+    "Raw source examples not supplied; sample-derived optimizer, held-out losses and covariance not regenerated from examples",
+    "R1/R2 production batches and matrices absent; only E1 and R0 have independent batch coverage",
+    "No per-round full trajectories; retained second moments cannot be independently reconstructed from batch means",
+    "No full-grid improved-arithmetic rerun; long-H1 failures retained",
+    "Batch-IACT is a proxy; nonsignificant first/last or window differences do not prove stationarity",
+    "Finite-tail CIs exclude deterministic burn-in/remainder/optimizer and rounding error"
+  ]
+}

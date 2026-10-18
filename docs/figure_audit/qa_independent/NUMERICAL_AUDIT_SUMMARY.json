@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "mode": "FULL_ORIGINAL_WORKSPACE_AUDIT",
+  "checks": 2737,
+  "failed_checks": 0,
+  "failure_details": [],
+  "original_files_protected": 95,
+  "protected_scientific_tex": 11,
+  "input_csvs_checked": 10,
+  "broader_original_and_proof_preservation": {
+    "status": "REEXECUTED",
+    "receipt_available": true,
+    "archived_original_file_count": 95,
+    "archived_scientific_tex_count": 11,
+    "reason": "Original workspace files and manuscript scientific content were checked in this execution."
+  },
+  "panels": [
+    "hist_matched_H2",
+    "hist_matched_H4",
+    "hist_fixed_gamma_coord1",
+    "hist_fixed_gamma_coord2",
+    "real_R0_allocation",
+    "hist_H4_smallstep",
+    "hist_H4_loglog_residual"
+  ],
+  "no_simulation": true,
+  "no_refit": true,
+  "no_resampling": true,
+  "scope_limits": [
+    "This audit checks numeric records and protected source content, not image pixels, final font sizes, or theorem correctness.",
+    "Exact binary comparisons use Python float conversion of original CSV strings; no rounded manuscript-table values.",
+    "Display inversion permits at most one source-value ULP to account for binary multiplication/division."
+  ]
+}

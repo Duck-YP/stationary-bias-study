@@ -1,0 +1,37 @@
+{
+  "A": "Matrix([[1, 0], [0, 2]])",
+  "T_nonzero": {
+    "111": "1/10",
+    "122": "-1/10",
+    "212": "-1/10",
+    "221": "-1/10"
+  },
+  "TC": "Matrix([[rho/5], [0]])",
+  "B11": "Matrix([[-3*rho/80 - 1/80], [0]])",
+  "H4_FedAvg": "Matrix([[-3*rho/20], [0]])",
+  "H4_difference": "Matrix([[-7*rho/80], [0]])",
+  "noise_moments": {
+    "symmetric": [
+      "0",
+      "1",
+      "0",
+      "1"
+    ],
+    "asymmetric": [
+      "0",
+      "1",
+      "sqrt(2)/2",
+      "3/2"
+    ]
+  },
+  "global_hessian_bounds": [
+    "3/5",
+    "12/5"
+  ],
+  "short_round_comparisons": 128,
+  "max_state_error": 2.7755575615628914e-17,
+  "max_control_error": 2.7755575615628914e-14,
+  "max_balance_error": 4.197556473413411e-17,
+  "max_mean_control_drift": 2.4223047810003414e-16,
+  "reflection_identity": "f(x1,-x2)=f(x1,x2); original updates commute with joint x2/control2/noise2 sign reflection. With symmetric diagonal noise and zero starts, ideal finite-time E[x2]=0. This is an additional algebraic interpretation, not a new empirical test."
+}

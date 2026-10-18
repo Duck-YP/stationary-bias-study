@@ -1,0 +1,146 @@
+{
+  "bootstrap": {
+    "marginal_diagnostic_quantiles": [
+      0.025,
+      0.975
+    ],
+    "preserve_same_seed_across_settings": true,
+    "repetitions": 2000,
+    "seed": 4902,
+    "simultaneous_quantiles": [
+      0.0125,
+      0.9875
+    ],
+    "unit": "paired_seed_label_block"
+  },
+  "capture_point": "before_any_p3_matched_formal_output_write",
+  "config_path": "workstreams\\p3\\configs\\d2_matched_h4_small_step_confirmation.yaml",
+  "config_sha256": "1006a8de4d2552194b9df0783598f2c69095f03f9a39b9c53160a41f9a724697",
+  "metadata_namespace": "p3",
+  "metadata_normalization": "identifier_only",
+  "covariance": [
+    [
+      1.0,
+      0.2
+    ],
+    [
+      0.2,
+      0.7
+    ]
+  ],
+  "environment": {
+    "git_commit": "e6f574d0f8e3ad0e5078d7bc81fa78dc950b669f",
+    "git_dirty": false,
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    },
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.10"
+  },
+  "gates": {
+    "P3-F0": "every pair passes both finite-state and stationarity checks plus SCAFFOLD zero-sum control",
+    "P3-F3": "both H=4 targets lie within simultaneous smaller-step paired-bootstrap intervals",
+    "P3-F3_closeness": "report whether each smaller-step intercept is closer than its primary counterpart",
+    "P3-F4": "require the expected signed direction on sufficiently small path settings",
+    "P3-F5": "paired direct sample difference is diagnostic only",
+    "P3-F6": "include every frozen setting, pair seed, and algorithm member",
+    "P3-F7": "every pair records exact indexed-noise equality"
+  },
+  "matrix_id": "p3-d2-matched-attribution-h4-small-step-confirmation",
+  "objective": {
+    "A": [
+      [
+        1.2,
+        0.2
+      ],
+      [
+        0.2,
+        1.0
+      ]
+    ],
+    "alpha": 0.25,
+    "d": 2,
+    "global_hessian_bounds": {
+      "L": 1.565036762718386,
+      "mu": 0.85
+    },
+    "name": "rank_one_log_cosh",
+    "u": [
+      0.7071067811865475,
+      0.7071067811865475
+    ],
+    "x_star": [
+      0.0,
+      0.0
+    ]
+  },
+  "paired_seeds": [
+    2201,
+    2202,
+    2203,
+    2204,
+    2205,
+    2206,
+    2207,
+    2208
+  ],
+  "run_matrix": {
+    "H_values": [
+      4
+    ],
+    "N_values": [
+      64,
+      96,
+      128,
+      192
+    ],
+    "all_unique": true,
+    "gamma_equals_inverse_N": true,
+    "matrix_id": "p3-d2-matched-attribution-h4-small-step-confirmation",
+    "paired_chains": 32,
+    "pairs_per_setting": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "seeds": [
+      2201,
+      2202,
+      2203,
+      2204,
+      2205,
+      2206,
+      2207,
+      2208
+    ],
+    "settings": 4,
+    "target": "h4-small-step",
+    "unique_run_ids": 32
+  },
+  "schema_version": 1,
+  "source_commit": "e6f574d0f8e3ad0e5078d7bc81fa78dc950b669f",
+  "source_config_blob": "a7d2ca04c03e7e3eb5fccc3bf2807b54b604b0ee",
+  "source_config_sha256": "2b484e19864ff2e8ecf39bff1a60bfa7162a66c8baee8e8afb5e48f5f40cf8d1",
+  "source_dirty_at_run_start": false,
+  "study": "p3_matched",
+  "theory_targets": {
+    "4": {
+      "B20_FA": [
+        -0.09600803279041484,
+        -0.12001004098801853
+      ],
+      "B20_SCAF": [
+        -0.1520127185848235,
+        -0.19001589823102932
+      ],
+      "B20_ctrl": [
+        -0.05600468579440865,
+        -0.0700058572430108
+      ]
+    }
+  }
+}

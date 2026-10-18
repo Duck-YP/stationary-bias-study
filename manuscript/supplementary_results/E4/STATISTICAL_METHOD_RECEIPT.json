@@ -1,0 +1,27 @@
+{
+  "families": {
+    "primary": {
+      "coordinates": 196,
+      "bootstrap_max_critical": 3.3208875490656267,
+      "jackknife_Bonferroni_t": 5.293090119215704
+    },
+    "secondary": {
+      "coordinates": 392,
+      "bootstrap_max_critical": 3.6238890929436316,
+      "jackknife_Bonferroni_t": 5.754356046266111
+    },
+    "diagnostic": {
+      "coordinates": 1176,
+      "bootstrap_max_critical": 3.9982655949320476,
+      "jackknife_Bonferroni_t": 6.52967570634147
+    }
+  },
+  "temporal": {
+    "norm_max_critical": 3.030597143741047,
+    "projection_max_critical": 3.030597143741047,
+    "contrasts": 144
+  },
+  "draws": 19999,
+  "seed": 202610094,
+  "bootstrap_bias_center_corrected": true
+}

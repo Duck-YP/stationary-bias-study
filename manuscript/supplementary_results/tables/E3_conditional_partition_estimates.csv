@@ -1,0 +1,25 @@
+regime,N,algorithm,partition_seed,runs,mean,ci_lower,ci_upper,scope
+R1,8,scaffold,4101,12,0.00034062910616068203,0.00021321816128983258,0.0004680400510315315,conditional on this fixed partition; training seed uncertainty
+R1,8,scaffold,4102,12,0.0001631483224915348,-4.458719631298289e-05,0.0003708838412960525,conditional on this fixed partition; training seed uncertainty
+R1,8,scaffold,4103,12,0.00038612264491547636,0.00026093733988701717,0.0005113079499439355,conditional on this fixed partition; training seed uncertainty
+R1,8,fedavg,4101,12,0.0002680398924926456,0.00014024948110514203,0.00039583030388014924,conditional on this fixed partition; training seed uncertainty
+R1,8,fedavg,4102,12,9.785815600682158e-05,-0.00010942415918020687,0.00030514047119385,conditional on this fixed partition; training seed uncertainty
+R1,8,fedavg,4103,12,0.00028370329717181597,0.0001588885663022656,0.00040851802804136634,conditional on this fixed partition; training seed uncertainty
+R1,128,scaffold,4101,12,0.003553496918094952,0.0033926417276405915,0.003714352108549312,conditional on this fixed partition; training seed uncertainty
+R1,128,scaffold,4102,12,0.0034276342558408023,0.0032096733104361366,0.003645595201245468,conditional on this fixed partition; training seed uncertainty
+R1,128,scaffold,4103,12,0.003596877658862803,0.0034112145505361814,0.0037825407671894244,conditional on this fixed partition; training seed uncertainty
+R1,128,fedavg,4101,12,0.001994067201493624,0.0018297081496720167,0.002158426253315231,conditional on this fixed partition; training seed uncertainty
+R1,128,fedavg,4102,12,0.0019215121660331794,0.0017024206560974089,0.0021406036759689497,conditional on this fixed partition; training seed uncertainty
+R1,128,fedavg,4103,12,0.002247377448032566,0.002065332566360842,0.00242942232970429,conditional on this fixed partition; training seed uncertainty
+R2,8,scaffold,4101,12,0.00024293826678175578,5.036327033373068e-05,0.00043551326322978086,conditional on this fixed partition; training seed uncertainty
+R2,8,scaffold,4102,12,5.4395375326917546e-05,-0.0001388019112883812,0.0002475926619422163,conditional on this fixed partition; training seed uncertainty
+R2,8,scaffold,4103,12,0.000194332415862806,2.010579096729543e-06,0.00038665425262888244,conditional on this fixed partition; training seed uncertainty
+R2,8,fedavg,4101,12,-0.03929761943198547,-0.039490886613151845,-0.03910435225081909,conditional on this fixed partition; training seed uncertainty
+R2,8,fedavg,4102,12,-0.039152570512009814,-0.03934534032205679,-0.03895980070196284,conditional on this fixed partition; training seed uncertainty
+R2,8,fedavg,4103,12,-0.07724625970983225,-0.07744081013207617,-0.07705170928758832,conditional on this fixed partition; training seed uncertainty
+R2,128,scaffold,4101,12,0.0012557836032422909,0.001095553417309503,0.0014160137891750788,conditional on this fixed partition; training seed uncertainty
+R2,128,scaffold,4102,12,0.001338488818363022,0.001181936756917402,0.001495040879808642,conditional on this fixed partition; training seed uncertainty
+R2,128,scaffold,4103,12,0.001541311821738798,0.0014137100861169893,0.0016689135573606066,conditional on this fixed partition; training seed uncertainty
+R2,128,fedavg,4101,12,-0.062026674454513174,-0.06218181797915938,-0.06187153092986697,conditional on this fixed partition; training seed uncertainty
+R2,128,fedavg,4102,12,-0.05703717470406575,-0.05719038616868771,-0.056883963239443794,conditional on this fixed partition; training seed uncertainty
+R2,128,fedavg,4103,12,-0.042866185243673964,-0.04298868308903245,-0.04274368739831548,conditional on this fixed partition; training seed uncertainty

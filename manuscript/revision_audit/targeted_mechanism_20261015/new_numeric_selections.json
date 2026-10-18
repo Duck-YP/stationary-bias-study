@@ -1,0 +1,295 @@
+[
+  {
+    "table": "tab:mechanism-controls",
+    "comparison": "rho_minus_symmetric",
+    "observable": "difference",
+    "coordinate": 1,
+    "digits": 8,
+    "target_digits": 6,
+    "scale": 1
+  },
+  {
+    "table": "tab:mechanism-controls",
+    "comparison": "rho_zero_symmetric",
+    "observable": "difference",
+    "coordinate": 1,
+    "digits": 8,
+    "target_digits": 6,
+    "scale": 1
+  },
+  {
+    "table": "tab:mechanism-controls",
+    "comparison": "rho_plus_symmetric",
+    "observable": "difference",
+    "coordinate": 1,
+    "digits": 8,
+    "target_digits": 6,
+    "scale": 1
+  },
+  {
+    "table": "tab:mechanism-controls",
+    "comparison": "rho_plus_asymmetric",
+    "observable": "difference",
+    "coordinate": 1,
+    "digits": 8,
+    "target_digits": 6,
+    "scale": 1
+  },
+  {
+    "table": "tab:mechanism-controls",
+    "comparison": "rho_plus_symmetric minus rho_plus_asymmetric",
+    "observable": "difference",
+    "coordinate": 1,
+    "digits": 8,
+    "target_digits": 6,
+    "scale": 1
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_minus_symmetric",
+    "observable": "SCAFFOLD",
+    "coordinate": 1,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_minus_symmetric",
+    "observable": "SCAFFOLD",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_minus_symmetric",
+    "observable": "FedAvg",
+    "coordinate": 1,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_minus_symmetric",
+    "observable": "FedAvg",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_zero_symmetric",
+    "observable": "SCAFFOLD",
+    "coordinate": 1,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_zero_symmetric",
+    "observable": "SCAFFOLD",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_zero_symmetric",
+    "observable": "FedAvg",
+    "coordinate": 1,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_zero_symmetric",
+    "observable": "FedAvg",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric",
+    "observable": "SCAFFOLD",
+    "coordinate": 1,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric",
+    "observable": "SCAFFOLD",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric",
+    "observable": "FedAvg",
+    "coordinate": 1,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric",
+    "observable": "FedAvg",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_asymmetric",
+    "observable": "SCAFFOLD",
+    "coordinate": 1,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_asymmetric",
+    "observable": "SCAFFOLD",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_asymmetric",
+    "observable": "FedAvg",
+    "coordinate": 1,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_asymmetric",
+    "observable": "FedAvg",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric minus rho_plus_asymmetric",
+    "observable": "SCAFFOLD",
+    "coordinate": 1,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric minus rho_plus_asymmetric",
+    "observable": "SCAFFOLD",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric minus rho_plus_asymmetric",
+    "observable": "FedAvg",
+    "coordinate": 1,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric minus rho_plus_asymmetric",
+    "observable": "FedAvg",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric minus rho_minus_symmetric",
+    "observable": "SCAFFOLD",
+    "coordinate": 1,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric minus rho_minus_symmetric",
+    "observable": "SCAFFOLD",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric minus rho_minus_symmetric",
+    "observable": "FedAvg",
+    "coordinate": 1,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric minus rho_minus_symmetric",
+    "observable": "FedAvg",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_minus_symmetric",
+    "observable": "difference",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_zero_symmetric",
+    "observable": "difference",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric",
+    "observable": "difference",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_asymmetric",
+    "observable": "difference",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "tab:mechanism-complement",
+    "comparison": "rho_plus_symmetric minus rho_plus_asymmetric",
+    "observable": "difference",
+    "coordinate": 2,
+    "digits": 4,
+    "scale": 1000
+  },
+  {
+    "table": "app:targeted-results prose",
+    "comparison": "rho_plus_symmetric minus rho_minus_symmetric",
+    "observable": "difference",
+    "coordinate": 1,
+    "digits": 8,
+    "scale": 1
+  },
+  {
+    "table": "app:targeted-results prose",
+    "comparison": "rho_plus_symmetric minus rho_minus_symmetric",
+    "observable": "difference",
+    "coordinate": 2,
+    "digits": 8,
+    "scale": 1
+  }
+]

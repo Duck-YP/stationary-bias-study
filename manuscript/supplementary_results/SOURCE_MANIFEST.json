@@ -1,0 +1,33 @@
+{
+  "files": {
+    "study/__init__.py": "2a3bd6231c22e5555cb723fc4ff0be33ddc8462b3d9e762a993391d239deba73",
+    "study/accuracy.py": "c0932f25a7fd0a7719e296f54e50d87c70d2c68e609b8d5369784e3c9c5e549b",
+    "study/analysis.py": "a2f4b32fe5fdf0601162f231adbcf4e3019b10ac6a6f2bc00c3b78cfe2242683",
+    "study/checks.py": "03378ca213164fd92c697c655a2d68bd4a2b2801b03af472347521851cf66781",
+    "study/cli.py": "f80e28260f4aea3a97a6b439ee1f305e1ba8e3efb586ac1a7d63c7d1ec5962fc",
+    "study/data.py": "6b2a9e45784d4dec2079cb40d1e94fe438885b19fb4dda9a8c74aac0d647a906",
+    "study/engine.py": "9ec145e08f943e09fb40d86e5b73e4007361aab204633a2687c969aaecb6f575",
+    "study/figures.py": "5c1b65090d8deaec43c90d64cab92ce8f1035c3b89dd414c1e610585c485eb42",
+    "study/kernels.py": "e73789e425b139d0dfe55354b82a0ccc37bece48f51861dffe92afe09721e12e",
+    "study/model.py": "dd57091945ea11f6cb7914c3b98299d07c39fdf87dc5550b679516506322dc3f",
+    "study/protocol.py": "5c6a5b67841f59bc450ab26859c1e5e0d0c5521208d755098cc27892389b8e6c",
+    "study/report.py": "19342b9beeec420e0d897a6e057d55141cae4f31a85f7d612f394d8e448a0a12",
+    "study/tests.py": "88f25e2abe10bcfc7a55874f8c1fc2d99026fc5775230f615d1f367352f532ef",
+    "study/workers.py": "fdbbc6cea7d424af9059a9624601ab183b565a6b54099420eea23aa2c7ebab7b",
+    "run.py": "0563b59a01afb9f31bee7ef2c4c328bc06b4fa42a3cfd307783476d743056dfa",
+    "requirements.lock": "aa443028f86cfa058478ddc3f47f32718c7bb72ef6bae66b3db11bcd6944bce9",
+    "brief/CODEX_PROMPT.md": "698069f0bfa517190d755f10b0e33dc395a2c01dd838b3d88a6059cc719229bb",
+    "brief/PACKAGE_MANIFEST.json": "1c721b2e75130c942237e6915c049e739c9e84c9f940cbab9e829422f6174810",
+    "brief/PROTOCOL_SANITY_CHECK.json": "b3c0979546c99ea4e71a68e36e40756f744049dadd27a690505d215ef4d686f2",
+    "brief/README.md": "dca2e020d9576e73e14a96576af61c12949bef2e7a4e89bf8ee722ed6575a9ec",
+    "brief/RETURN_CHECKLIST.md": "902c09831a6a177befbf0fb378362ef2570881353c1a6304a0303d1da8a3e590",
+    "brief/SOURCE_BASIS.md": "ad5f6f6b41f721198fd00c46fcea78b0a27cea7af0513161cf29aa0e95f8fded",
+    "brief/START_HERE.txt": "f662c85d018e4a8d4d2e1ac99e121edbbcac9e91245f2f13f2cf05f92276ff8e",
+    "README.md": "ef4aab655db4373205bf810553dbfd789f065999d804ec1ce22f462a219ac0e4",
+    "Run-Study.ps1": "21c18fc18d9b6697b491c555ffed3c609771d551178e283a1cda499d27d77c38",
+    "configs/production_v1.json": "fd0f9ca205355f0bd4a3101985aa9fbaf4da938321bb56c529c2164b646153ec"
+  },
+  "source_scope": "independent supplementary implementation; legacy repository code not imported",
+  "imported_repository_base_commit": "7f6de2c",
+  "post_freeze_changes": "scheduler concurrency, logging, reporting, and additional tests; frozen numerical kernels/model/data/engine unchanged"
+}

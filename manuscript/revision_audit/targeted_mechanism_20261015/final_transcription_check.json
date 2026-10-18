@@ -1,0 +1,1140 @@
+{
+  "primary_entries": 36,
+  "numeric_tokens": 113,
+  "failures": 0,
+  "training": false,
+  "refitting": false,
+  "resampling": false,
+  "details": [
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "difference",
+        1
+      ],
+      "field": "estimate",
+      "display": "0.02187858",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "difference",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "0.02184128",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "difference",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "0.02191589",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "difference",
+        1
+      ],
+      "field": "target",
+      "display": "0.021875",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "difference",
+        1
+      ],
+      "field": "estimate",
+      "display": "-0.00002056",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "difference",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-0.00006150",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "difference",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "0.00002039",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "difference",
+        1
+      ],
+      "field": "target",
+      "display": "0.000000",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "difference",
+        1
+      ],
+      "field": "estimate",
+      "display": "-0.02185115",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "difference",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-0.02189536",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "difference",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "-0.02180693",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "difference",
+        1
+      ],
+      "field": "target",
+      "display": "-0.021875",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "difference",
+        1
+      ],
+      "field": "estimate",
+      "display": "-0.02188179",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "difference",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-0.02193153",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "difference",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "-0.02183205",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "difference",
+        1
+      ],
+      "field": "target",
+      "display": "-0.021875",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "difference",
+        1
+      ],
+      "field": "estimate",
+      "display": "0.00003064",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "difference",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-0.00003564",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "difference",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "0.00009692",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "difference",
+        1
+      ],
+      "field": "target",
+      "display": "0.000000",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "estimate",
+      "display": "56.0908",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "42.4573",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "69.7243",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "estimate",
+      "display": "2.6156",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-4.5559",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "9.7871",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "estimate",
+      "display": "34.2122",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "20.5757",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "47.8487",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "estimate",
+      "display": "2.6118",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-4.5609",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "9.7844",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "estimate",
+      "display": "4.6861",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-18.0942",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "27.4663",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "estimate",
+      "display": "2.4973",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-6.0117",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "11.0064",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "estimate",
+      "display": "4.7066",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-18.0689",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "27.4822",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "estimate",
+      "display": "2.5118",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-5.9994",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "11.0230",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "estimate",
+      "display": "-46.8325",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-67.9207",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "-25.7443",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "estimate",
+      "display": "2.2185",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-4.0669",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "8.5038",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "estimate",
+      "display": "-24.9813",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-46.0714",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "-3.8913",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "estimate",
+      "display": "2.2414",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-4.0463",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "8.5291",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "estimate",
+      "display": "-58.1461",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-81.4153",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "-34.8769",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "estimate",
+      "display": "2.7156",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-4.1149",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "9.5460",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "estimate",
+      "display": "-36.2643",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-59.5301",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "-12.9986",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "estimate",
+      "display": "2.7160",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-4.1137",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "9.5457",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "estimate",
+      "display": "11.3136",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-20.1352",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "42.7624",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "estimate",
+      "display": "-0.4971",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-9.8863",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "8.8921",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "estimate",
+      "display": "11.2830",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-20.1627",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "42.7287",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "estimate",
+      "display": "-0.4747",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-9.8649",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "8.9156",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "estimate",
+      "display": "-102.9233",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-127.9666",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "SCAFFOLD",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "-77.8799",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "estimate",
+      "display": "-0.3971",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-9.8315",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "SCAFFOLD",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "9.0372",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "estimate",
+      "display": "-59.1935",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-84.2420",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "FedAvg",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "-34.1451",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "estimate",
+      "display": "-0.3704",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-9.8073",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "FedAvg",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "9.0665",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "difference",
+        2
+      ],
+      "field": "estimate",
+      "display": "0.0038",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "difference",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-0.0175",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_minus_symmetric",
+        "difference",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "0.0251",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "difference",
+        2
+      ],
+      "field": "estimate",
+      "display": "-0.0145",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "difference",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-0.0349",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_zero_symmetric",
+        "difference",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "0.0059",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "difference",
+        2
+      ],
+      "field": "estimate",
+      "display": "-0.0229",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "difference",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-0.0423",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric",
+        "difference",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "-0.0035",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "difference",
+        2
+      ],
+      "field": "estimate",
+      "display": "-0.0005",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "difference",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-0.0213",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_asymmetric",
+        "difference",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "0.0204",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "difference",
+        2
+      ],
+      "field": "estimate",
+      "display": "-0.0224",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "difference",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-0.0511",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_plus_asymmetric",
+        "difference",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "0.0062",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "difference",
+        1
+      ],
+      "field": "estimate",
+      "display": "-0.04372973",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "difference",
+        1
+      ],
+      "field": "simultaneous_lower",
+      "display": "-0.04378778",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "difference",
+        1
+      ],
+      "field": "simultaneous_upper",
+      "display": "-0.04367168",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "difference",
+        2
+      ],
+      "field": "estimate",
+      "display": "-0.00002676",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "difference",
+        2
+      ],
+      "field": "simultaneous_lower",
+      "display": "-0.00005541",
+      "pass": true
+    },
+    {
+      "key": [
+        "rho_plus_symmetric minus rho_minus_symmetric",
+        "difference",
+        2
+      ],
+      "field": "simultaneous_upper",
+      "display": "0.00000188",
+      "pass": true
+    }
+  ]
+}

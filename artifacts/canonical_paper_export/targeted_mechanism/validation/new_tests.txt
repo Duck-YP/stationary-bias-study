@@ -1,0 +1,14 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0 -- python
+rootdir: .
+configfile: pyproject.toml
+collecting ... collected 6 items
+
+targeted_closure_20261014/targeted/tests.py::test_gradient_independence PASSED [ 16%]
+targeted_closure_20261014/targeted/tests.py::test_reference_explicit_nonzero PASSED [ 33%]
+targeted_closure_20261014/targeted/tests.py::test_h1_and_preserve_nonzero_control_mean PASSED [ 50%]
+targeted_closure_20261014/targeted/tests.py::test_quadratic_and_deterministic PASSED [ 66%]
+targeted_closure_20261014/targeted/tests.py::test_active_indexed_path_and_resume PASSED [ 83%]
+targeted_closure_20261014/targeted/tests.py::test_finite_window_pre_post_identity PASSED [100%]
+
+============================== 6 passed in 5.25s ==============================

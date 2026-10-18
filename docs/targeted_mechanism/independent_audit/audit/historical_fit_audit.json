@@ -1,0 +1,10 @@
+{
+  "seedwise_fits": 2592,
+  "fitted_terms": 7776,
+  "max_abs_error": 8.731149137020111e-11,
+  "matched_raw_minus_balance": {
+    "0": -2.3919732419774853e-07,
+    "1": -2.917829493020996e-07
+  },
+  "scope": "Replayed delivered historical per_run_windows sufficient statistics; original large archive not reopened in this check."
+}

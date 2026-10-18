@@ -1,0 +1,56 @@
+% arXiv/Overleaf single-root manuscript.
+\documentclass[11pt]{article}
+\input{macros}
+\geometry{a4paper,margin=1in}
+
+\title{Characterizing Client-Independent Stationary Bias for SCAFFOLD and FedAvg in Federated Learning}
+\author{Yi-Ping Tang and Guan-Ju Peng
+\thanks{Both authors are with the Graduate Institute of Data Science and Information Computing,
+National Chung Hsing University, Taichung, Taiwan.
+Email (Yi-Ping Tang): \email{s4109053021@gmail.com};
+Email (Guan-Ju Peng): \email{gjpeng@email.nchu.edu.tw};
+ORCID (Guan-Ju Peng): \url{https://orcid.org/0000-0001-5508-9485}.}}
+\date{}
+
+\ifpdf
+\hypersetup{
+  hypertexnames=false,
+  pdftitle={Characterizing Client-Independent Stationary Bias for SCAFFOLD and FedAvg in Federated Learning},
+  pdfauthor={Yi-Ping Tang; Guan-Ju Peng},
+  pdfsubject={Higher-order stationary bias in stochastic SCAFFOLD and matched FedAvg},
+  pdfkeywords={federated learning, SCAFFOLD, FedAvg, stationary bias, stochastic approximation, control variates}
+}
+\fi
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Even when all clients optimize the same strongly convex objective, the global model parameters produced by constant-step federated learning may still have a stationary mean that differs from the minimizer. Does increasing the number of clients eliminate this bias, or can some components persist? Answering this question clarifies the limits of client averaging. To this end, we study two federated learning algorithms, \Scaf{} and matched \FedAvg{}, under full participation, a sufficiently smooth objective, and independent bounded additive gradient noise. Analyzing global stationary balance and within-round local fluctuations yields multidimensional expansions with a shared $\gamma/N$ term and explicit client-independent $\gamma^2$ coefficients, where $\gamma$ is the step size and $N$ is the client count. The \Scaf{} coefficient combines the ordinary local-update contribution found in \FedAvg{} with an additional persistent-control contribution. Although zero-sum controls cancel from the direct server increment, they change local second moments, which interact with third-order curvature to shift the stationary mean. For fixed dimension $d$ and local-step count $H$, a remainder of $O_{H,d}(\gamma^2/N+\gamma^3)$, uniform in $N$ for sufficiently small $\gamma$, identifies the second-order coefficients along arbitrary joint small-step, large-client limits after removing the shared leading term. Controlled experiments assess the predicted coefficients. In real-data analyses, finite-tail mean displacement can account for a substantial share of averaged-model parameter error, and a post-hoc comparison shows directional agreement with the derived curvature--noise structure.
+\end{abstract}
+
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_setting_preliminaries}
+\input{sections/04_main_results}
+\input{sections/05_mechanism}
+\input{sections/07_numerical_study}
+% \input{sections/08_discussion_limitations}
+\input{sections/09_conclusion}
+\input{sections/10_code_availability}
+
+\clearpage
+\begingroup
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\clearpage
+\appendix
+\input{appendix/A_scaffold_proof}
+\input{appendix/B_fedavg_proof}
+\input{appendix/C_numerical_details}
+
+\end{document}

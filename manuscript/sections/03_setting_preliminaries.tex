@@ -1,0 +1,99 @@
+\section{Setting and preliminaries}
+\label{sec:setting}
+
+We study \Scaf{} and \FedAvg{} in a matched, full-participation setting with identical client objectives and bounded additive gradient noise. Both algorithms use the same client noise laws and local-update configuration; the key difference is that \Scaf{} maintains persistent client control vectors.
+
+\subsection{Objective and stochastic-gradient model}
+
+Let $x\in\R^d$ denote the global model parameter vector. All $N\geq2$ clients optimize the same objective $f:\R^d\to\R$ and participate in every communication round. Each client takes $H\geq2$ local steps of size $\gamma>0$ per round. The dimension $d$ and local-step count $H$ are fixed, while $N$ and $\gamma$ may vary.
+
+We assume $f\in C^5(\R^d)$, with uniformly bounded third-, fourth-, and fifth-order derivatives, and fixed constants $0<\mu\leq L<\infty$ such that
+\begin{equation}
+\label{eq:setting-regularity}
+\mu I_d\preceq\nabla^2 f(x)\preceq LI_d
+\qquad\text{for every }x\in\R^d.
+\end{equation}
+Thus $f$ has a unique minimizer $x^\star$. We translate it to the origin, so $x^\star=0$ and $\nabla f(0)=0$.
+
+At local step $h$ of round $t$, client $c$ uses the stochastic-gradient oracle
+\begin{equation}
+\label{eq:additive-oracle}
+\nabla F_{t,c,h}(y)=\nabla f(y)+\eps_{t,c,h},\qquad
+\E[\eps_{t,c,h}]=0,\qquad
+\E[\eps_{t,c,h}\eps_{t,c,h}^{\top}]=C\succeq0.
+\end{equation}
+For each fixed $N$, client $c$ has a noise law $\nu_{N,c}$ that is unchanged across rounds and local steps and does not depend on $\gamma$. Noise vectors are mutually independent across clients, rounds, and local steps; each round's fresh noise array is independent of the complete round-start state.
+
+The laws may differ across clients, and coordinates within a noise vector may be correlated. All clients nevertheless share the covariance $C$ and the almost-sure bound $\|\eps_{t,c,h}\|\leq K_\eps$, where $C$ and $K_\eps$ are independent of $N$ and $\gamma$.
+
+We define
+\begin{equation}
+\label{eq:ATC}
+A:=\nabla^2f(0)=A^{\top}\succ0,
+\qquad T:=\nabla^3f(0).
+\end{equation}
+Then, for any symmetric matrix $M\in\R^{d\times d}$, the vector $T[M]\in\R^d$ is the contraction
+\begin{equation}
+\label{eq:tensor-contraction}
+(T[M])_i:=\sum_{j,k=1}^{d}T_{ijk}M_{jk}.
+\end{equation}
+Finally, by letting $S_C$ denote the unique symmetric solution of the Lyapunov equation, we have
+\begin{equation}
+\label{eq:lyapunov}
+AS_C+S_CA=C,
+\end{equation}
+which exists because $A\succ0$. These quantities describe the local curvature, gradient noise, and leading stationary fluctuations appearing in the main results.
+
+\subsection{SCAFFOLD updates}
+
+At the start of a round, the server holds $x$ and client $c$ has a control vector $\xi_c$. We use the zero-sum parametrization
+\begin{equation}
+\label{eq:zero-sum}
+\sum_{c=1}^{N}\xi_c=0.
+\end{equation}
+Here, $\xi_c$ is the correction added to client $c$'s stochastic gradient. It remains fixed during the $H$ local steps and is updated only after server aggregation. Starting from $\theta_{c,0}=x$, each client updates using
+\begin{equation}
+\label{eq:scaf-local}
+\theta_{c,h+1}=\theta_{c,h}
+-\gamma\bigl(\nabla f(\theta_{c,h})+\xi_c+\eps_{c,h+1}\bigr),
+\qquad h=0,\ldots,H-1.
+\end{equation}
+We suppress the round index when considering one round. The server averages the final local models and refreshes the controls:
+\begin{equation}
+\label{eq:scaf-server}
+x^+=\frac1N\sum_{c=1}^{N}\theta_{c,H},\qquad
+\xi_c^+=\xi_c+\frac{\theta_{c,H}-x^+}{\gamma H},
+\end{equation}
+where $+$ denotes the next round-start state. Equation~\eqref{eq:scaf-server} preserves the zero-sum condition in Equation~\eqref{eq:zero-sum} exactly. This is the full-participation zero-sum representation of SCAFFOLD used by \citet{mangold2025scaffold}.
+
+\subsection{Matched FedAvg updates}
+
+For comparison, the matched \FedAvg{} algorithm uses the same objective, client noise laws, $N$, $H$, and $\gamma$, but maintains no control state. Matching concerns the stochastic setting and local-update configuration, not necessarily identical noise realizations. Starting from $\theta^{\FedAvg}_{c,0}=x$, its local and server updates are
+\begin{equation}
+\label{eq:fa-local}
+\theta^{\FedAvg}_{c,h+1}
+=\theta^{\FedAvg}_{c,h}-\gamma\bigl(
+\nabla f(\theta^{\FedAvg}_{c,h})+\eps_{c,h+1}\bigr),
+\quad h=0,\ldots,H-1,
+\end{equation}
+\begin{equation}
+\label{eq:fa-server}
+x^+=\frac1N\sum_{c=1}^{N}\theta^{\FedAvg}_{c,H}.
+\end{equation}
+
+\subsection{Stationary mean bias and coefficient notation}
+
+For sufficiently small $\gamma$, the two round-update chains admit unique invariant laws \citep{mangold2025scaffold,mangold2025fedavg}. Denote by $\pi^{\Scaf}_{\gamma,N,H}$ the invariant law of the joint global-model/control state, and by $\pi^{\FedAvg}_{\gamma,N,H}$ that of the \FedAvg{} global model. We study the stationary mean biases of the \emph{global model parameters}:
+\begin{align}
+\label{eq:scaf-bias-def}
+b^{\Scaf}_{\gamma,N,H}
+&:=\E_{\pi^{\Scaf}_{\gamma,N,H}}[x]-x^\star
+=\E_{\pi^{\Scaf}_{\gamma,N,H}}[x],\\
+\label{eq:fa-bias-def}
+b^{\FedAvg}_{\gamma,N,H}
+&:=\E_{\pi^{\FedAvg}_{\gamma,N,H}}[x]-x^\star
+=\E_{\pi^{\FedAvg}_{\gamma,N,H}}[x].
+\end{align}
+Unless stated otherwise, within-round expectations include both the stationary round-start state and the fresh noise of that round.
+
+We index the coefficients in our expansions by powers of $\gamma$ and $N^{-1}$. Specifically, $B_{11}$ denotes the $\gamma/N$ coefficient, while $B_{20}^{\mathcal A}(H)$ denotes the client-independent $\gamma^2$ coefficient for $\mathcal A\in\{\Scaf,\FedAvg\}$. Since $d$ is fixed, we omit a dimension superscript. All results below hold for $0<\gamma\leq\gamma_0$, where $\gamma_0>0$ may depend on the fixed objective/noise regularity constants, $H$, and $d$, but not on $N$; all stated $O_{H,d}(\cdot)$ constants are uniform over $N\geq2$ in this regime.

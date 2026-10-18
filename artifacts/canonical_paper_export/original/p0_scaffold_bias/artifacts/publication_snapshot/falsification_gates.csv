@@ -1,0 +1,116 @@
+gate_id,experiment,description,required,observed,threshold,status,notes
+G-V1:p3a:H2:N12:g0.08333333333,p3a,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3a:H2:N12:g0.08333333333,p3a,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3a:H2:N12:g0.08333333333,p3a,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3a:H2:N12:g0.08333333333,p3a,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3a:H2:N12:g0.08333333333,p3a,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3a:H2:N16:g0.0625,p3a,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3a:H2:N16:g0.0625,p3a,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3a:H2:N16:g0.0625,p3a,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3a:H2:N16:g0.0625,p3a,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3a:H2:N16:g0.0625,p3a,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3a:H2:N24:g0.04166666667,p3a,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3a:H2:N24:g0.04166666667,p3a,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3a:H2:N24:g0.04166666667,p3a,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3a:H2:N24:g0.04166666667,p3a,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3a:H2:N24:g0.04166666667,p3a,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3a:H2:N32:g0.03125,p3a,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3a:H2:N32:g0.03125,p3a,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3a:H2:N32:g0.03125,p3a,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3a:H2:N32:g0.03125,p3a,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3a:H2:N32:g0.03125,p3a,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3a:H2:N48:g0.02083333333,p3a,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3a:H2:N48:g0.02083333333,p3a,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3a:H2:N48:g0.02083333333,p3a,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3a:H2:N48:g0.02083333333,p3a,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3a:H2:N48:g0.02083333333,p3a,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3a:H4:N12:g0.08333333333,p3a,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3a:H4:N12:g0.08333333333,p3a,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3a:H4:N12:g0.08333333333,p3a,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3a:H4:N12:g0.08333333333,p3a,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3a:H4:N12:g0.08333333333,p3a,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3a:H4:N16:g0.0625,p3a,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3a:H4:N16:g0.0625,p3a,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3a:H4:N16:g0.0625,p3a,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3a:H4:N16:g0.0625,p3a,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3a:H4:N16:g0.0625,p3a,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3a:H4:N24:g0.04166666667,p3a,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3a:H4:N24:g0.04166666667,p3a,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3a:H4:N24:g0.04166666667,p3a,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3a:H4:N24:g0.04166666667,p3a,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3a:H4:N24:g0.04166666667,p3a,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3a:H4:N32:g0.03125,p3a,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3a:H4:N32:g0.03125,p3a,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3a:H4:N32:g0.03125,p3a,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3a:H4:N32:g0.03125,p3a,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3a:H4:N32:g0.03125,p3a,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3a:H4:N48:g0.02083333333,p3a,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3a:H4:N48:g0.02083333333,p3a,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3a:H4:N48:g0.02083333333,p3a,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3a:H4:N48:g0.02083333333,p3a,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3a:H4:N48:g0.02083333333,p3a,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3b:H2:N8:g0.04166666667,p3b,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3b:H2:N8:g0.04166666667,p3b,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3b:H2:N8:g0.04166666667,p3b,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3b:H2:N8:g0.04166666667,p3b,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3b:H2:N8:g0.04166666667,p3b,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3b:H2:N16:g0.04166666667,p3b,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3b:H2:N16:g0.04166666667,p3b,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3b:H2:N16:g0.04166666667,p3b,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3b:H2:N16:g0.04166666667,p3b,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3b:H2:N16:g0.04166666667,p3b,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3b:H2:N32:g0.04166666667,p3b,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3b:H2:N32:g0.04166666667,p3b,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3b:H2:N32:g0.04166666667,p3b,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3b:H2:N32:g0.04166666667,p3b,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3b:H2:N32:g0.04166666667,p3b,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3b:H2:N64:g0.04166666667,p3b,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3b:H2:N64:g0.04166666667,p3b,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3b:H2:N64:g0.04166666667,p3b,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3b:H2:N64:g0.04166666667,p3b,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3b:H2:N64:g0.04166666667,p3b,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3b:H2:N128:g0.04166666667,p3b,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3b:H2:N128:g0.04166666667,p3b,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3b:H2:N128:g0.04166666667,p3b,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3b:H2:N128:g0.04166666667,p3b,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3b:H2:N128:g0.04166666667,p3b,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3c:H2:N24:g0.04166666667,p3c,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3c:H2:N24:g0.04166666667,p3c,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3c:H2:N24:g0.04166666667,p3c,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3c:H2:N24:g0.04166666667,p3c,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3c:H2:N24:g0.04166666667,p3c,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3c:H2:N48:g0.02083333333,p3c,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3c:H2:N48:g0.02083333333,p3c,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3c:H2:N48:g0.02083333333,p3c,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3c:H2:N48:g0.02083333333,p3c,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3c:H2:N48:g0.02083333333,p3c,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3c:H2:N24:g0.04166666667,p3c,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3c:H2:N24:g0.04166666667,p3c,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3c:H2:N24:g0.04166666667,p3c,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3c:H2:N24:g0.04166666667,p3c,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3c:H2:N24:g0.04166666667,p3c,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3c:H2:N48:g0.02083333333,p3c,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3c:H2:N48:g0.02083333333,p3c,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3c:H2:N48:g0.02083333333,p3c,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3c:H2:N48:g0.02083333333,p3c,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3c:H2:N48:g0.02083333333,p3c,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3c:H1:N24:g0.04166666667,p3c,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3c:H1:N24:g0.04166666667,p3c,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3c:H1:N24:g0.04166666667,p3c,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3c:H1:N24:g0.04166666667,p3c,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3c:H1:N24:g0.04166666667,p3c,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+G-V1:p3c:H1:N48:g0.02083333333,p3c,Finite-state sanity,pass,pass,all states/statistics finite,PASS,VALID
+G-V2:p3c:H1:N48:g0.02083333333,p3c,Zero-sum control invariant,pass,pass,max <= 1e-10,PASS,VALID
+G-V3:p3c:H1:N48:g0.02083333333,p3c,Direct-vs-balance agreement,pass,pass,difference <= 3 combined SE,PASS,VALID
+G-V4:p3c:H1:N48:g0.02083333333,p3c,Post-burn stationarity,pass,pass,>= 7/8 chains,PASS,VALID
+G-PRECISION:p3c:H1:N48:g0.02083333333,p3c,Frozen coefficient CI half-width gate,main coefficient inference,reached,"max(0.02, 0.10 |B20(H)|)",PASS,Precision controls extension only; it is not a truth criterion.
+P3A-SUPPORT:H2,p3a,Joint coefficient-convergence support/contradiction logic,pre-registered composite gate,SUPPORT,P3-A specification,PASS,"beta0 CI [-0.18925, -0.185175]; contains B20=True"
+P3A-SUPPORT:H4,p3a,Joint coefficient-convergence support/contradiction logic,pre-registered composite gate,CONTRADICTION_CANDIDATE,P3-A specification,FAIL,"beta0 CI [-0.590776, -0.586514]; contains B20=False"
+P3B-N-NONVANISHING,p3b,"Negative, nonzero large-N plateau",pre-registered composite gate,SUPPORT_N_NONVANISHING,P3-B specification,PASS,"alpha0 CI [-0.190398, -0.188035]"
+P3C:no_stochastic_noise:N24:g0.0416666666666666,p3c,Negative-control or boundary-sanity gate,True,PASS,0.0,PASS,b gate 1e-10; last-batch max_abs_x=1.27764e-15
+P3C:no_stochastic_noise:N48:g0.0208333333333333,p3c,Negative-control or boundary-sanity gate,True,PASS,0.0,PASS,b gate 1e-10; last-batch max_abs_x=1.63553e-14
+P3C:no_nonlinear_conversion:N24:g0.0416666666666666,p3c,Negative-control or boundary-sanity gate,True,PASS,0.0,PASS,C_quad=0; 3SE_C=0
+P3C:no_nonlinear_conversion:N48:g0.0208333333333333,p3c,Negative-control or boundary-sanity gate,True,PASS,0.0,PASS,C_quad=0; 3SE_C=0
+P3C:h1_boundary_sanity:N24:g0.0416666666666666,p3c,Negative-control or boundary-sanity gate,True,SANITY_CONSISTENT,0.0,PASS,Boundary-only H=1 check; never a theorem-domain failure.
+P3C:h1_boundary_sanity:N48:g0.0208333333333333,p3c,Negative-control or boundary-sanity gate,True,SANITY_CONSISTENT,0.0,PASS,Boundary-only H=1 check; never a theorem-domain failure.
+P3C:no_persistent_control_fluctuation:N:g,p3c,Negative-control or boundary-sanity gate,False,NOT_RUN_MISSING_APPROVED_RECURSION,,NOT_RUN,NC4 was not run because no approved modified recursion is frozen.

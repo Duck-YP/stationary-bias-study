@@ -1,0 +1,45 @@
+{
+  "files": [
+    {
+      "file": "a9a",
+      "sha256": "f5d5ffd8d865ff41328e7ee043e4b020816914ff6843ff15b98905ddbedce906",
+      "source_url": "https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary/a9a",
+      "retrieved_date": "2026-10-09",
+      "validation": {
+        "rows": 32561,
+        "declared_features": 123,
+        "observed_max_feature": 123,
+        "unique_features": 123,
+        "labels": [
+          -1,
+          1
+        ],
+        "parameters": 124
+      }
+    },
+    {
+      "file": "a9a.t",
+      "sha256": "1f448a153f0320399a7e40836eb207655b0bde0f21fc941cc472193daa9f5de9",
+      "source_url": "https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary/a9a.t",
+      "retrieved_date": "2026-10-09",
+      "validation": {
+        "rows": 16281,
+        "declared_features": 123,
+        "observed_max_feature": 122,
+        "unique_features": 122,
+        "labels": [
+          -1,
+          1
+        ],
+        "parameters": 124
+      }
+    }
+  ],
+  "subset_seed": 20261009,
+  "retained_count": 32512,
+  "excluded_count": 49,
+  "row_id_origin": "0-based original file row",
+  "preprocessing": "row / max(1,l2 norm), then intercept=1; lambda=.01 on all 124 coordinates",
+  "processed_sha256": "5bab537d3c034a00afd29942e5f4ac436f40849ea8b82f925af3eb90a1430b6d",
+  "membership_sha256": "e8ab826501e53efdd3780cfe1fddc38dd7ddf20d1bcca1f41134d2b0df053536"
+}

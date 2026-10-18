@@ -1,0 +1,417 @@
+[
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "Appendix~\\ref{app:num-coefficients} gives the original simultaneous intervals;\nall original-precision values remain in the accompanying result files.",
+    "new": "Appendix~\\ref{app:num-coefficients} gives the simultaneous intervals.",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "Historical $H=4$ exclusions remain separate\nand unchanged.",
+    "new": "These independently generated results do not resolve the $H=4$ target\nexclusions on the joint grid in Section~\\ref{sec:num-attribution}.",
+    "occurrences": 1,
+    "whitespace_normalized": true
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "The primary real-data regime, R0, replicates one empirical objective across clients to isolate allocation effects.",
+    "new": "The shared-objective experiment assigns the same empirical objective to\nevery client to isolate allocation effects.",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "the disjoint IID/label-skew regimes R1/R2.",
+    "new": "the disjoint IID and label-skew partitions.",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "At this common reference point, the R0 server-averaged",
+    "new": "At this common reference point, the server-averaged",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "The full R0/R1/R2 figure is retained in the companion artifacts.",
+    "new": "",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "Fixed-budget real-data allocation experiment in R0.",
+    "new": "Fixed-budget real-data allocation experiment with a shared objective.",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "checks of the original R0 tails.",
+    "new": "checks of the same run tails.",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "Real-data R0 policy comparisons at",
+    "new": "Shared-objective training-configuration comparisons at",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": " Full intervals and contrasts are in the companion tables described in Appendix~\\ref{app:supp-real}.",
+    "new": " The estimation and uncertainty procedures are described in Appendix~\\ref{app:supp-real}.",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "We reconstruct time-averaged models from all nine\nfrozen R0 configurations and their twelve paired seeds, without new production\ntraining.",
+    "new": "We form time-averaged models from the same twelve paired runs for each\nof the nine shared-objective configurations.",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "Finite-tail error components of time-averaged R0 models at",
+    "new": "Finite-tail error components of time-averaged models with a shared objective at",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "The post-hoc E5 analysis substitutes",
+    "new": "The post-hoc comparison substitutes",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "direction; E5 evaluates the full 124-dimensional difference rather than",
+    "new": "direction; the present comparison evaluates the full 124-dimensional difference rather than",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "Post-hoc E5 full-vector comparison at",
+    "new": "Post-hoc full-vector comparison at",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "The frozen reference-parameter and unpreconditioned",
+    "new": "The fixed reference-parameter and unpreconditioned",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "Appendix~\\ref{app:e5-bridge} retains all configurations, windows,\nreference-direction comparisons, and uncertainty diagnostics.",
+    "new": "Appendix~\\ref{app:e5-bridge} examines window sensitivity, alternative\nreference directions, and uncertainty.",
+    "occurrences": 1
+  },
+  {
+    "file": "sections/07_numerical_study.tex",
+    "old": "The separate studies retain their original grids and inference procedures.",
+    "new": "Each design uses its own independent runs and inference procedure.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "This appendix supplies the settings, uncertainty estimates, and diagnostics\nnot shown in Section~\\ref{sec:numerics}. Point summaries already presented\nthere are referenced rather than reproduced. All results are retained from\nthe recorded studies; no experiments were rerun for this presentation.",
+    "new": "This appendix gives the experimental settings, estimation methods,\nand diagnostics needed to interpret Section~\\ref{sec:numerics}.\nImplementation and reproduction instructions are organized separately\nin the companion repository (Appendix~\\ref{app:reproducibility}).",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "The historical studies use the heuristic time scale",
+    "new": "The joint-grid and supporting multidimensional studies use the heuristic time scale",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "All reported production runs met this rule at the first 100-batch check.",
+    "new": "All reported runs met this rule at the first 100-batch check.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Seed blocks and artifact identifiers are collected once in\nAppendix~\\ref{app:reproducibility}.",
+    "new": "",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Table~\\ref{tab:num-core} supplements the point and target vectors in\nTable~\\ref{tab:num-attribution-summary} without repeating them.\nThe original-precision records are retained in\n\\nolinkurl{supplementary_results/presentation_source/historical_coefficient_intercepts.csv}.\nThese intervals retain every primary and smaller-step outcome discussed in\nSections~\\ref{sec:num-coefficients} and~\\ref{sec:num-attribution}.",
+    "new": "Table~\\ref{tab:num-core} gives the simultaneous intervals corresponding\nto the point estimates in Table~\\ref{tab:num-attribution-summary}.\nBoth the primary and smaller-step grids are included.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Original simultaneous 95\\% seed-block-bootstrap intervals for the\nhistorical vectors",
+    "new": "Simultaneous 95\\% seed-block-bootstrap intervals for the\njoint-grid coefficient vectors",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Interval endpoints retain their recorded precision.",
+    "new": "",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "For the combined nine-point saved grid, define",
+    "new": "For the combined nine-point grid, define",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "saved-data residual diagnostic.",
+    "new": "residual diagnostic.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Matched $H=4$ saved-grid residuals,",
+    "new": "Matched $H=4$ grid residuals,",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "absolute residuals on the combined saved grid;",
+    "new": "absolute residuals on the combined grid;",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "The path uses the saved\ndescriptive linear fit, and (b) retains all nine saved grid points.",
+    "new": "The path uses the descriptive linear fit, and (b) shows all nine grid points.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "The two historical paths have identical $\\gamma$ and $1/N$ regressors, as\nnoted in Section~\\ref{sec:num-attribution}; their post-hoc quadratic fit\ncannot separate finite-step from finite-client corrections or identify\nnext-order analytic coefficients. The implementation checks in\nAppendix~\\ref{app:reproducibility} also do not quantify all finite-burn-in\nor finite-run bias. No independently varied-grid and length reruns of this\nhistorical cohort are reported; the supplementary study below is separate.",
+    "new": "Both paths use $\\gamma=1/N$. Their post-hoc quadratic fit therefore\ncannot separate finite-step from finite-client corrections or identify\nnext-order analytic coefficients. These paths also do not quantify\nfinite-burn-in effects. The independently implemented Cartesian-grid\nstudy in Section~\\ref{sec:num-supp-theory} uses different runs; it does\nnot replace the target exclusions of this joint-grid comparison.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "checks pass; Table~\\ref{tab:E-direct-balance} retains all four exceptions.",
+    "new": "checks satisfy the criterion; Table~\\ref{tab:E-direct-balance} lists the four exceptions.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "All recorded checks pass for",
+    "new": "All checks satisfy the criterion for",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "four seeds for each combination",
+    "new": "four independent paired runs for each combination",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Independent supplementary controlled study",
+    "new": "Cartesian-grid and local-step study",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "The independent supplementary implementation uses a separately frozen protocol, not a refit or replacement of the historical studies above. Its 34 controlled configurations share twelve paired seeds, 20001--20012. For the objective in Equation~\\eqref{eq:num-objective}, the recorded curvature proxy is $\\mu_{\\rm mix}=0.85$. With $\\tau_0=\\lceil(\\mu_{\\rm mix}H\\gamma)^{-1}\\rceil$, the schedule uses $50\\tau_0$ burn-in rounds and batches of $10\\tau_0$ rounds. Primary estimates use the first 64 batches. Only $(H,N,\\gamma)=(4,64,1/256)$ was extended to 133 batches for within-run sensitivity windows $[5,69)$, $[0,128)$, and $[5,133)$, indexed from zero; those correlated windows do not replace the primary tail.",
+    "new": "The independently implemented study uses 34 controlled configurations\nwith twelve independent paired runs per configuration. For the objective\nin Equation~\\eqref{eq:num-objective}, set $\\mu_{\\rm mix}=0.85$ and\n$\\tau_0=\\lceil(\\mu_{\\rm mix}H\\gamma)^{-1}\\rceil$. Each run has\n$50\\tau_0$ burn-in rounds and batches of $10\\tau_0$ rounds; primary\nestimates use the first 64 batches. A longer trajectory at\n$(H,N,\\gamma)=(4,64,1/256)$ provides shifted and extended-window\nsensitivity checks. These overlapping windows are not independent\nreplications and do not replace the primary analysis.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Seed-block bootstrap outputs use 2,000 draws and remain in the companion result tables.",
+    "new": "A seed-block bootstrap with 2,000 resamples provides a sensitivity check.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Table~\\ref{tab:supp-leading} supplies the individual leading-intercept estimates. Smaller-step sensitivity omits only the largest configured $\\gamma$; the control study additionally reports omission of $N=32$. These are named descriptive windows, not outcome-selected replacement fits. All 118 coefficient-table rows and fourteen $H$ contrasts are retained in \\nolinkurl{supplementary_results/fitted_coefficients.csv} and \\nolinkurl{supplementary_results/tables/E1_intercept_contrasts.csv}. Primary interpretations remain those in Section~\\ref{sec:num-supp-theory}.",
+    "new": "Table~\\ref{tab:supp-leading} gives the individual leading-intercept\nestimates. Sensitivity analyses omit the largest step size or, for\nthe control fits, the smallest client count $N=32$. These restricted-grid\nfits assess finite-grid dependence; they do not replace the primary fits\nor resolve the $H=8$ discrepancies.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Separate zero-initialization transients are retained as diagnostics and are not required to coincide pathwise.",
+    "new": "Initializing both control systems at zero does not give corresponding\ntranslated states, so their transient paths need not coincide.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "The a9a training and test files are identified by hashes and source URLs in the supplementary data manifest. Training retains 32,512 of the 32,561 rows using a fixed permutation (seed 20261009), so disjoint partitions can be equal-sized.",
+    "new": "We use the a9a training and test sets from the LIBSVM data collection.\\footnote{\\url{https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html}}\nA fixed random permutation selects 32,512 of the 32,561 training examples\nso that disjoint partitions can be equal-sized.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Beyond the shared-objective R0 regime in Section~\\ref{sec:num-real},\nR1 partitions the retained data randomly and disjointly; R2 assigns two label-sorted shards to each client. For R1/R2, seed 4101 defines primary partitions and 4102/4103 define separately reported sensitivity partitions. Equal client weights preserve the global empirical objective. IID partitioning does not make finite-sample objectives identical. The R0 aggregate covariance described in Section~\\ref{sec:num-real}\nhas trace $0.001060$ after rounding; R1/R2 reference covariances can change\nwith their partitions.",
+    "new": "In the shared-objective setting, every client uses the same empirical\nobjective. The disjoint IID setting instead partitions the examples\nrandomly; the label-skew setting assigns two label-sorted shards to each\nclient. Both disjoint settings use a fixed primary partition and two\nalternative partitions for sensitivity checks. Equal client weights\npreserve the global empirical objective, but IID partitioning does not\nmake finite-sample local objectives identical. The shared-objective\naggregate covariance described in Section~\\ref{sec:num-real} has trace\n$0.001060$ after rounding; disjoint partitions may have different\nreference covariances.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "calculated before production;",
+    "new": "calculated before the training runs;",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Each real-data configuration has twelve independent paired runs. The schedule uses $\\tau_0=\\lceil(\\lambda H\\gamma)^{-1}\\rceil$, burn-in $50\\tau_0$ and batch length $10\\tau_0$. R0 collected 64 batches for all nine configurations: three allocations, three additional $\\gamma/H$ policies and three $H=1$ checks. Its primary signed means and comparisons in Section~\\ref{sec:num-real} are therefore finite-tail quantities. No 133-batch extension belongs to this original R0 production cohort; the two later, separately seeded pilots in Appendix~\\ref{app:e4-averaging} do not replace it. Changing $\\gamma$ or $H$ changes the horizon; sample-gradient and communication costs are stored separately.",
+    "new": "Each real-data configuration has twelve independent paired runs, with\n$\\tau_0=\\lceil(\\lambda H\\gamma)^{-1}\\rceil$, $50\\tau_0$ burn-in rounds,\nand batch length $10\\tau_0$. The nine shared-objective configurations\ncomprise three allocations, three additional step-size/local-step\nsettings, and three $H=1$ checks; each has 64 batches. The comparisons\nin Section~\\ref{sec:num-real} concern these finite tails. The two\nlonger-run pilots in Appendix~\\ref{app:e4-averaging} are analyzed\nseparately. Changing $\\gamma$ or $H$ changes the horizon, so equal\nbatch counts do not imply equal computational or communication cost.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "including the principal R0 allocation cells.",
+    "new": "including the principal shared-objective allocations.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "This precision flag is retained even where an allocation contrast is resolved.",
+    "new": "Failure to meet this precision target does not imply that a separately\ncomputed allocation contrast is unresolved.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Cellwise projections use the frozen 105-member family, whereas the descriptive allocation/policy contrasts use their recorded 36-member family. Exact per-run vectors and all interval columns are supplied with the result tables.",
+    "new": "Cellwise projections use a 105-member simultaneous-inference family;\nallocation and training-configuration contrasts use a separate 36-member family.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "The R0 panel supplements Figure~\\ref{fig:real-allocation} without repeating\nits projection paths; the R1/R2 panel gives disjoint-partition results with",
+    "new": "The upper panel adds error and loss measurements for the shared-objective\nsetting in Figure~\\ref{fig:real-allocation}; the lower panel gives\ndisjoint-partition results with",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "R0: additional error and loss measurements",
+    "new": "Shared objective: additional error and loss measurements",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "At $N=32,H=4$ in R2, the deterministic FedAvg limiting point is about $0.08365$ from $x_{\\rm ref}$. Thus the large SCAFFOLD--FedAvg displacement difference includes heterogeneity drift correction, not only stochastic control effects. Table~\\ref{tab:supp-real-full} and the R1/R2 partition sensitivities are retained as contextual results, without attributing their whole difference to $B_{20}^{\\rm ctrl}$.",
+    "new": "At $N=32,H=4$ in the label-skew setting, the deterministic FedAvg\nlimiting point is about $0.08365$ from $x_{\\rm ref}$. Thus the large\nSCAFFOLD--FedAvg displacement difference includes correction of\nheterogeneity-induced drift and cannot be attributed entirely to\n$B_{20}^{\\rm ctrl}$.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "For the saved-data analysis in Section~\\ref{sec:num-averaging}, the 1,512\nreconstructed models reuse the original training runs, not independent\nreplications.",
+    "new": "The model-averaging analysis in Section~\\ref{sec:num-averaging} uses\nmultiple windows from the same training runs; the windows are not\nindependent replications.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "the other six cells are diagnostics. All cells and windows are retained.\nThey end at round 88,320 in the primary configuration; across cells,\nequal $K$ need not mean equal compute because batch lengths differ. Costs, start/end rounds and window\nlengths are recorded in \\texttt{WINDOW\\_RESULTS.csv} and\n\\texttt{PRACTICAL\\_IMPLICATIONS.csv} in \\texttt{supplementary\\_results/E4/}.",
+    "new": "the other six configurations provide step-size, local-step, and\n$H=1$ comparisons. Windows end at round 88,320 in the primary\nconfiguration. Across configurations, equal $K$ need not mean equal\ncompute because batch lengths differ.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "19,999 paired-seed bootstrap draws (seed 202610094)",
+    "new": "19,999 paired-seed bootstrap draws",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Table~\\ref{tab:e4-primary} adds statistics not displayed in the main text;\nthe complete original-precision results remain in\n\\nolinkurl{supplementary_results/E4/BIAS_VARIANCE_MSE.csv} and\n\\nolinkurl{supplementary_results/E4/PRACTICAL_IMPLICATIONS.csv}.",
+    "new": "Table~\\ref{tab:e4-primary} reports additional absolute errors and\nlosses, together with their sampling uncertainty.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Additional E4 primary statistics at",
+    "new": "Additional longest-window model-averaging statistics at",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "weaker identification in those cells remains in the full tables.",
+    "new": "their squared-mean-displacement intervals provide weaker evidence\nagainst zero than those of the primary configuration.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "Two later diagnostic pilots, seeds 30001 and 30002, separately used 25,600\nburn-in rounds and 128 batches of 1,280 rounds (189,440 rounds per run).\nThey were not pooled with the original twelve seeds. These two-run pilots\ncannot settle stationarity or practical significance; the proposed 48-seed\nextension was not executed. Their finite states and maximum control-sum\nresidual $6.50\\times10^{-11}$ do not replace the historical $H=1$ arithmetic\ndiagnostics in Appendix~\\ref{app:supp-audit}.",
+    "new": "Two separate longer-run pilots use 25,600 burn-in rounds and 128\nbatches of 1,280 rounds, totaling 189,440 rounds per run. They are not\npooled with the twelve primary runs. Two runs are insufficient to\nresolve the temporal-equivalence or practical-significance questions;\nthe reported main comparisons remain those of the primary finite tails.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "the frozen reference-parameter direction",
+    "new": "the fixed reference-parameter direction",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "All seven windows and 124 coordinates remain in the companion tables; over\nall nonzero-proxy windows, cosine ranges down to $0.872197$.",
+    "new": "Across the seven averaging windows, the full-vector cosine is as low\nas $0.872197$ for shorter windows, compared with the longest-window\nvalues in Table~\\ref{tab:e5-bridge}.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "19,999 paired-seed resamples (seed 202610096)",
+    "new": "19,999 paired-seed resamples",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "All 54 early/late paired contrasts are retained without replacing E4's\nalgorithm-specific temporal checks. These diagnostics retain the empirical\nscope stated in Section~\\ref{sec:num-directional}; they do not alter the\nE4 or historical $H=4,H=8$ outcomes.",
+    "new": "The 54 early/late paired contrasts assess stability of the algorithm\ndifference, not temporal equivalence of each algorithm separately.\nConsequently they do not establish stationarity or resolve the\nmodel-averaging diagnostics in Appendix~\\ref{app:e4-averaging}.",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "\\begin{tabular}{@{}ccccrrrr@{}}",
+    "new": "\\begin{tabular}{@{}cccrrrr@{}}",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "$H$ & $N$ & $j$ & Seed & $\\widehat C_{\\rm bal}$",
+    "new": "$H$ & $N$ & $j$ & $\\widehat C_{\\rm bal}$",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "2 & 16 & 2 & 1108 &",
+    "new": "2 & 16 & 2 &",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "2 & 48 & 1 & 1103 &",
+    "new": "2 & 48 & 1 &",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "4 & 16 & 2 & 1108 &",
+    "new": "4 & 16 & 2 &",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "4 & 48 & 1 & 1103 &",
+    "new": "4 & 48 & 1 &",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "\\begin{tabular}{@{}cccrlrr@{}}\n\\toprule\nRegime & $N$ & Alg. & Projection & Nominal interval & MSE & Test loss \\\\\n\\midrule",
+    "new": "\\begin{tabular}{@{}ccrlrr@{}}\n\\toprule\n$N$ & Alg. & Projection & Nominal interval & MSE & Test loss \\\\\n\\midrule\n\\multicolumn{6}{l}{\\emph{Disjoint IID partition}} \\\\",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "R2 & 8 & S &",
+    "new": "\\midrule\n\\multicolumn{6}{l}{\\emph{Disjoint label-skew partition}} \\\\\n8 & S &",
+    "occurrences": 1
+  },
+  {
+    "file": "appendix/C_numerical_details.tex",
+    "old": "\\subsection{Supplementary batch and numerical-integrity checks}\n\\label{app:supp-audit}\n\nAn analysis-only recomputation from the retained batch sums covers all 408 E1 and 108 R0 paired runs (33,852 stored batches). Primary means, raw means and raw second moments reconstruct exactly; the corresponding 118 fitted-coefficient rows, fourteen $H$ contrasts and twelve R0 policy/allocation contrasts agree numerically with the frozen results. It does not reconstruct unsaved round-level trajectories or validate the stationary law. Raw examples, R1/R2 batches and complete restart states are not part of this independent batch audit.\n\nNo first/last-half projected contrast in this audit excludes zero under the original $2\\times69$ family adjustment. Batch autocorrelation proxies are retained, not interpreted as certified effective sample sizes. Four of the 68 E1 algorithm-cell raw-versus-balance projected differences have nominal intervals excluding zero; the stored balance estimator remains primary. In R0, direct and primary observables are identical by construction, so their agreement is not a separate estimator validation. R0 first- and last-half endpoint allocation contrasts are respectively $0.003098$ and $0.003129$ for SCAFFOLD, and $0.002053$ and $0.002092$ for FedAvg. These post-hoc subdivisions of the same 64 batches support within-tail consistency; they are not extended-burn or extended-tail runs.\n\nThe original fourteen short implementation checks and the affine checks pass. The separate full-horizon $H=1$ audit retains 48 strict $10^{-10}$ failures among 132 checks across all regimes; the R0 subset has 24 among 60, independently reproduced here. The maximum R0 coordinate discrepancy is $4.33\\times10^{-10}$, whereas the reported all-regime maximum vector discrepancy is about $7.54\\times10^{-10}$; these are different norms. A stable endpoint-increment kernel was separately checked on two long R0 $H=1$ paths and reduced their vector discrepancies to about $10^{-12}$. These post-hoc checks neither replace frozen production outputs nor amount to a full-grid stable-kernel rerun. The numerical-identity and precision flags remain in the registry and companion tables.\n\n",
+    "new": "\\subsection{Run-length and numerical sensitivity}\n\\label{app:supp-audit}\n\nFirst/last-half projected contrasts do not exclude zero under the\n$2\\times69$ family adjustment, but this is not a test of temporal\nequivalence. Four of the 68 algorithm--configuration comparisons in\nthe independent controlled study have nominal raw-versus-balance\nintervals excluding zero; the balance estimator remains primary.\nIn the shared-objective real-data study, the direct and primary\nobservables coincide by construction, so their agreement is not a\nseparate validation.\n\nThe first- and last-half endpoint allocation contrasts are $0.003098$\nand $0.003129$ for SCAFFOLD, and $0.002053$ and $0.002092$ for FedAvg.\nThese subdivisions of the same 64 batches support within-tail\nconsistency, but are not independent or longer-run replications.\n\nThe short-run update-identity and affine-translation checks pass.\nOver longer trajectories, 48 of 132 $H=1$ arithmetic checks exceed\nthe strict $10^{-10}$ tolerance, with a maximum vector discrepancy\nof about $7.54\\times10^{-10}$. The shared-objective subset has 24\nexceedances among 60 checks and maximum coordinate discrepancy\n$4.33\\times10^{-10}$. Two additional shared-objective paths using\na stable endpoint-increment computation reduce vector discrepancies\nto about $10^{-12}$. These two checks do not establish numerical\nagreement over the full set of configurations and do not replace\nthe reported results.\n\n",
+    "occurrences": 1
+  }
+]
