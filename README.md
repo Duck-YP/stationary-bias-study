@@ -25,6 +25,8 @@ Use Python 3.12 or newer. Figure rendering additionally requires a TeX installat
 Windows PowerShell:
 
 ```powershell
+git clone --config core.longpaths=true https://github.com/Duck-YP/stationary-bias-study.git
+cd stationary-bias-study
 python -m venv .venv
 .venv\Scripts\python.exe -m pip install -e ".[dev]" -r configs/environments/publication_20261018.requirements.lock
 .venv\Scripts\Activate.ps1
@@ -33,12 +35,14 @@ python -m venv .venv
 macOS/Linux:
 
 ```sh
+git clone https://github.com/Duck-YP/stationary-bias-study.git
+cd stationary-bias-study
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install -e '.[dev]' -r configs/environments/publication_20261018.requirements.lock
 ```
 
-The following commands run from the repository root with the environment active. In PowerShell, invoking `.venv\Scripts\python.exe` directly also works without activation.
+Use a short Windows checkout location near the drive root. For an existing checkout, run `git config core.longpaths true`; preserved historical directory names can exceed Git's default Windows path limit. This Git setting alone does not remove Python's path limit on every Windows installation: keep complete file paths below 260 characters unless Windows long-path support is enabled. Skip the clone/cd lines when already inside the repository. The following commands run from the repository root with the environment active. In PowerShell, invoking `.venv\Scripts\python.exe` directly also works without activation.
 
 ## Regenerate and verify saved artifacts
 

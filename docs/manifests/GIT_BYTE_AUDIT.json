@@ -1,7 +1,7 @@
 {
   "status": "PASS",
-  "examined_text_files": 1127,
-  "historical_CRLF_files": 728,
+  "examined_text_files": 1128,
+  "historical_CRLF_files": 729,
   "representative_filter_checks": 9,
   "samples": [
     {

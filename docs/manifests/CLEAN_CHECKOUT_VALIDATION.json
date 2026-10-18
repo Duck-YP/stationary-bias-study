@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "tested_commit": "951e375cd568ef3890cba72d50a3490d25c00214",
+  "install": "New virtual environment installed from publication lock; editable package verified to resolve inside the clean checkout",
+  "python_source_imports": [
+    "src/stationary_bias/__init__.py",
+    "src/study/__init__.py"
+  ],
+  "tests": {
+    "passed": 15,
+    "seconds": 20.57
+  },
+  "release_validation": "PASS",
+  "figure_panels": 9,
+  "figure_status": "PASS_RENDER_EQUIVALENT",
+  "table_export_files": 67,
+  "table_outputs_byte_identical": true,
+  "table_scope": "PASS_WITH_DISCLOSED_GAPS; four partial tables remain partial",
+  "representative_example": "PASS",
+  "saved_array_checks": 1507,
+  "saved_array_scalar_values": 221919,
+  "source_and_manuscript_unchanged": true,
+  "windows_note": "The initial deeper checkout hit the 260-character Python path limit. Repeated in a shorter fresh checkout with Git core.longpaths=true; all checks passed. README documents both requirements."
+}

@@ -38,6 +38,8 @@ Full-study reproduction remains partial because some original trajectories, batc
 
 ## Machine-readable and historical receipts
 
+A separate clean Git checkout of commit `951e375cd568ef3890cba72d50a3490d25c00214`, installed in a second fresh environment using the publication lock, passed all 15 tests in 20.57 seconds. Nine panels again passed rendered equivalence; all 67 table-package files were byte-identical; the representative example, validator and 1,507 saved-array checks passed. Imports were verified to resolve within that checkout. The first deeper Windows path hit Python's 260-character limit; a shorter clean checkout resolved it. README now documents short paths and Git `core.longpaths`. See `manifests/CLEAN_CHECKOUT_VALIDATION.json`. Subsequent publication changes only record this evidence and installation guidance.
+
 Current evidence is in `manifests/PUBLICATION_FIGURE_REPLAY.json`, `manifests/PUBLICATION_REPRESENTATIVE_CHECKS.json`, `manifests/PUBLICATION_SAVED_ARRAY_CHECKS.json`, `manifests/PUBLICATION_ENVIRONMENT.json` and `../artifacts/canonical_paper_export/tables/VALIDATION_RECEIPT.json`. `SOURCE_MANIFEST.csv` and `manifests/RELEASE_FILE_MANIFEST.csv` bind the current files; this receipt and the self-manifest are excluded from recursive hashing.
 
 The October 18 layout directory retains the earlier clean 40-page build, all-page 120-dpi pixel/text comparison and final-font audit bound to the same manuscript hash. These are earlier completed checks, not a new TeX compilation or font measurement by the release validator. Older October 9/15 evidence retains its original scope.
